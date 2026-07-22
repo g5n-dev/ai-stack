@@ -111,6 +111,34 @@
   const SAFE_PATH = /^(?:windows|topics)\/[a-z0-9][a-z0-9._/-]{0,220}\.json$/u;
   const CANONICAL_ORIGIN = "https://ai-stack.site";
   const GRAPH_ROUTE = "/scenarios/";
+  const FALLBACK_FONT_FAMILIES = Object.freeze({
+    sans: "system-ui, sans-serif",
+    mono: "monospace",
+  });
+  let resolvedFontFamilies = null;
+
+  function readCssFontFamily(propertyName, fallback) {
+    const documentRef = globalThis.document;
+    const view = documentRef?.defaultView || globalThis;
+    if (!documentRef?.documentElement || typeof view.getComputedStyle !== "function") {
+      return fallback;
+    }
+    const value = view.getComputedStyle(documentRef.documentElement)
+      .getPropertyValue(propertyName)
+      .trim();
+    return value || fallback;
+  }
+
+  function canvasFont(size, weight = 400, role = "mono") {
+    if (!resolvedFontFamilies) {
+      resolvedFontFamilies = Object.freeze({
+        sans: readCssFontFamily("--site-font-sans", FALLBACK_FONT_FAMILIES.sans),
+        mono: readCssFontFamily("--site-font-mono", FALLBACK_FONT_FAMILIES.mono),
+      });
+    }
+    const family = resolvedFontFamilies[role] || resolvedFontFamilies.mono;
+    return `${weight} ${size}px ${family}`;
+  }
 
   class TrendDataError extends Error {
     constructor(message = "invalid trend data") {
@@ -1564,7 +1592,7 @@
       const deltaX = node.x - point.x;
       const centered = Math.abs(deltaX) < point.cellRadiusX * 0.14;
       const alignRight = deltaX < 0;
-      context.font = "600 12px ui-monospace, SFMono-Regular, Menlo, monospace";
+      context.font = canvasFont(12, 600, "sans");
       context.textAlign = centered ? "center" : (alignRight ? "right" : "left");
       context.textBaseline = "middle";
       context.fillStyle = "rgba(222,237,238,0.92)";
@@ -1593,10 +1621,10 @@
     context.strokeRect(bounds.left + 0.5, bounds.top + 0.5, bounds.width - 1, bounds.height - 1);
     context.textAlign = "left";
     context.textBaseline = "alphabetic";
-    context.font = `700 ${titleSize}px ui-monospace, SFMono-Regular, Menlo, monospace`;
+    context.font = canvasFont(titleSize, 700, "sans");
     context.fillStyle = active ? visual.color : "rgba(222,237,238,0.96)";
     context.fillText(title, bounds.left + 9, bounds.top + (width >= 900 ? 17 : 15));
-    context.font = `${detailSize}px ui-monospace, SFMono-Regular, Menlo, monospace`;
+    context.font = canvasFont(detailSize, 400, "mono");
     context.fillStyle = heatRgba(visual, 0.88 + (visual.glow * 0.25));
     context.fillText(detail, bounds.left + 9, bounds.top + (width >= 900 ? 34 : 30));
     context.restore();
@@ -1696,7 +1724,7 @@
     context.fillStyle = "rgba(3,9,18,0.96)";
     context.fillRect(15, 15, 92, 30);
     context.strokeRect(14.5, 14.5, 93, 31);
-    context.font = "600 11px ui-monospace, SFMono-Regular, Menlo, monospace";
+    context.font = canvasFont(11, 600, "sans");
     context.textAlign = "center";
     context.textBaseline = "middle";
     context.fillStyle = "rgba(209,213,219,0.86)";
@@ -1704,7 +1732,7 @@
     const facetTotal = points.reduce((total, point) => total + (point.facets?.length || 0), 0);
     const hidden = Math.max(0, (center.totalCount || points.length) - points.length);
     const budget = `可见 ${points.length} 主题 / ${facetTotal} 维度${hidden ? ` / ${hidden} 待下钻` : ""}`;
-    context.font = "11px ui-monospace, SFMono-Regular, Menlo, monospace";
+    context.font = canvasFont(11, 400, "mono");
     context.textAlign = "left";
     context.fillStyle = "rgba(127,176,201,0.64)";
     context.fillText(budget, 14, height - 15);

@@ -11,23 +11,8 @@
     {{ $posts = sort $posts "Date" "desc" }}
     {{ $latestPost := cond (gt (len $posts) 0) (index $posts 0) nil }}
 
-    <div class="rain-container">
-        <div class="rain-streak r1"></div>
-        <div class="rain-streak r2"></div>
-        <div class="rain-streak r3"></div>
-        <div class="rain-streak r4"></div>
-        <div class="rain-streak r5"></div>
-        <div class="rain-streak r6"></div>
-        <div class="rain-streak r7"></div>
-        <div class="rain-streak r8"></div>
-        <div class="rain-streak r9"></div>
-        <div class="rain-streak r10"></div>
-    </div>
-    <div class="fog-container">
-        <div class="fog-cloud animate-fog" style="top: 10%; left: -20%;"></div>
-        <div class="fog-grey animate-fog-slow" style="top: 40%; right: -20%;"></div>
-        <div class="fog-cloud animate-fog" style="bottom: -10%; left: 10%; opacity: 0.03;"></div>
-    </div>
+    <div class="rain-container"></div>
+    <div class="fog-container"></div>
     <div class="ambient-glow"></div>
     <div class="scanlines"></div>
     <div class="frame-overlay hidden md:block">
@@ -39,244 +24,169 @@
         <div class="frame-label bottom-right">SECTOR_ID: AI_STACK // MODE: INDEX</div>
     </div>
 
-    <div class="relative flex h-screen w-full flex-col overflow-hidden z-10">
+    <div class="relative z-10 flex h-screen w-full flex-col overflow-hidden">
         {{ partial "site-header.html" . }}
 
-        <main class="flex flex-1 overflow-hidden">
-            <aside
-                class="hidden md:flex w-72 border-r border-muted-teal/5 bg-deep-navy/30 flex-col p-8 overflow-y-auto custom-scrollbar backdrop-blur-lg">
-                <div class="flex flex-col gap-10">
-                    <div class="flex flex-col border-l border-primary/40 pl-4">
-                        <h2 class="text-off-white text-sm font-bold tracking-wide">日志流</h2>
-                        <p class="text-muted-teal/50 text-[11px] mt-1 font-mono">Archive_v2049</p>
-                    </div>
+        <main class="site-shell site-shell--workbench flex-1 overflow-y-auto custom-scrollbar">
+            <div class="site-layout site-layout--split">
+                <aside class="site-rail">
+                    <header class="site-page-hero site-page-hero--rail">
+                        <div class="site-page-hero__copy">
+                            <p class="site-page-kicker">INTELLIGENCE ARCHIVE / LIVE INDEX</p>
+                            <h1 class="site-page-title">情报总览</h1>
+                            <p class="site-page-lead">自动探索、整理与串联 AI 技术情报，以极低成本形成可查询、可验证、可下钻的知识闭环。</p>
+                        </div>
+                    </header>
 
-                    <nav class="flex flex-col gap-2">
-                        <a href="/posts/"
-                            class="flex items-center gap-3 px-4 py-3 rounded bg-muted-teal/10 border border-muted-teal/20 text-primary">
-                            <span class="material-symbols-outlined text-lg">folder_open</span>
-                            <p class="text-sm font-bold tracking-wide">归档</p>
-                        </a>
-                        <a href="/tags/"
-                            class="flex items-center gap-3 px-4 py-3 hover:bg-muted-teal/5 rounded transition-colors group">
-                            <span
-                                class="material-symbols-outlined text-off-white/40 group-hover:text-primary text-lg transition-colors">sell</span>
-                            <p class="text-off-white/60 group-hover:text-off-white text-sm font-medium tracking-wide">标签
-                            </p>
-                        </a>
-                        <a href="/about/"
-                            class="flex items-center gap-3 px-4 py-3 hover:bg-muted-teal/5 rounded transition-colors group">
-                            <span
-                                class="material-symbols-outlined text-off-white/40 group-hover:text-primary text-lg transition-colors">account_circle</span>
-                            <p class="text-off-white/60 group-hover:text-off-white text-sm font-medium tracking-wide">关于
-                            </p>
-                        </a>
+                    <nav class="site-panel mt-6" aria-labelledby="home-navigation-heading">
+                        <h2 id="home-navigation-heading" class="site-panel__heading">探索入口</h2>
+                        <div class="site-panel__body">
+                            <ul class="site-quick-links">
+                                <li><a href="{{ "posts/" | relURL }}"><span>情报归档</span><span class="site-code-text ml-auto">POSTS</span></a></li>
+                                <li><a href="{{ "search/" | relURL }}"><span>全文检索</span><span class="site-code-text ml-auto">SEARCH</span></a></li>
+                                <li><a href="{{ "trends/" | relURL }}"><span>趋势洞察</span><span class="site-code-text ml-auto">TRENDS</span></a></li>
+                                <li><a href="{{ "scenarios/" | relURL }}"><span>知识图谱</span><span class="site-code-text ml-auto">GRAPH</span></a></li>
+                            </ul>
+                        </div>
                     </nav>
 
-                    <div class="mt-4">
-                        <h3 class="text-muted-teal/50 text-[11px] font-bold tracking-wide mb-6">系统事件</h3>
-                        <div class="flex flex-col gap-0 border-l border-muted-teal/10 ml-1">
-                            <div class="relative pl-6 pb-8">
-                                <div
-                                    class="absolute -left-[5px] top-0 size-2 rounded-full bg-primary/60 shadow-[0_0_10px_rgba(77,182,172,0.5)]">
-                                </div>
-                                <p class="text-off-white/80 text-[12px] leading-relaxed">神经归档访问授权：{{ .Site.Params.author
-                                    }}</p>
-                                <p class="text-muted-teal/40 text-[10px] mt-1.5 font-mono">{{ $buildTime.Format "15:04:05" }}
-                                </p>
-                            </div>
-                            <div class="relative pl-6 pb-2">
-                                <div
-                                    class="absolute -left-[5px] top-0 size-2 rounded-full bg-off-white/10 border border-muted-teal/20">
-                                </div>
-                                <p class="text-off-white/60 text-[12px] leading-relaxed">基线变更：去重模块 + DeepWiki 增强已上线</p>
-                                <p class="text-muted-teal/40 text-[10px] mt-1.5 font-mono">{{ $buildTime.AddDate 0 0 -1 |
-                                    time.Format "15:04:05" }}</p>
-                            </div>
+                    <section class="site-panel mt-4" aria-labelledby="home-system-log-heading">
+                        <div class="site-panel__heading">
+                            <h2 id="home-system-log-heading">日志流</h2>
+                            <span class="site-code-text text-primary">LIVE</span>
+                        </div>
+                        <div class="site-panel__body">
+                            <ol class="space-y-5 border-l border-muted-teal/20 pl-5">
+                                <li class="relative">
+                                    <span class="absolute -left-[23px] top-1 size-2 rounded-full bg-primary shadow-[0_0_9px_rgba(77,182,172,0.5)]"></span>
+                                    <p class="site-meta-text text-off-white/75">神经归档访问授权：{{ .Site.Params.author }}</p>
+                                    <time class="site-code-text mt-1 block text-primary/65">{{ $buildTime.Format "15:04:05" }}</time>
+                                </li>
+                                <li class="relative">
+                                    <span class="absolute -left-[23px] top-1 size-2 rounded-full border border-muted-teal/30 bg-deep-navy"></span>
+                                    <p class="site-meta-text text-off-white/65">数据管线：来源校验、去重、趋势与图谱索引已连接</p>
+                                    <time class="site-code-text mt-1 block text-off-white/55">{{ $buildTime.AddDate 0 0 -1 | time.Format "15:04:05" }}</time>
+                                </li>
+                            </ol>
+                        </div>
+                    </section>
+
+                    <section class="site-panel mt-4" aria-labelledby="home-loop-heading">
+                        <h2 id="home-loop-heading" class="site-panel__heading">最小闭环</h2>
+                        <div class="site-panel__body">
+                            <ol class="site-body-copy space-y-3 text-off-white/70">
+                                <li><span class="site-code-text mr-2 text-primary">01</span>采集多源公开情报</li>
+                                <li><span class="site-code-text mr-2 text-primary">02</span>校验、去重与结构化</li>
+                                <li><span class="site-code-text mr-2 text-primary">03</span>归档、趋势与图谱下钻</li>
+                            </ol>
+                        </div>
+                    </section>
+                </aside>
+
+                <section class="site-main">
+                    <div class="flex min-h-11 flex-wrap items-center justify-between gap-4 border-b border-muted-teal/15 pb-4">
+                        <div>
+                            <p class="site-page-kicker mb-0">LATEST INTELLIGENCE</p>
+                            <h2 class="site-section-title mt-1">最新情报</h2>
+                        </div>
+                        <div class="site-code-text text-right text-off-white/60">
+                            <p>{{ len $posts }} ENTRIES</p>
+                            <p class="mt-1">SNAPSHOT {{ $buildTime.Format "2006-01-02 15:04" }}</p>
                         </div>
                     </div>
-                </div>
-            </aside>
 
-            <section class="flex-1 flex flex-col overflow-y-auto custom-scrollbar px-6 md:px-12 py-8 md:py-10 relative">
-                <div class="max-w-6xl w-full mx-auto relative z-10">
-                    <div class="flex items-end justify-between border-b border-muted-teal/10 pb-6 mb-10">
-                        <div class="flex flex-col">
-                            <span class="text-primary/70 text-[12px] font-bold tracking-wide mb-1">索引检索</span>
-                            <h1 class="site-page-title text-off-white tracking-tight font-display">
-                                /ROOT/ARCHIVE/<span class="text-primary/40">2049</span>/</h1>
-                        </div>
-                        <div class="text-muted-teal/40 text-[11px] font-mono tracking-wide">
-                            Vault: 84% utilized
-                        </div>
-                    </div>
-
-                    <div class="glass-panel rounded-xl overflow-hidden mb-12">
-                        <table class="w-full table-fixed text-left border-collapse">
+                    <section class="site-panel site-ledger mt-5" aria-label="最新情报列表">
+                        <table class="site-ledger-table">
+                            <colgroup>
+                                <col class="site-ledger-col--type">
+                                <col>
+                                <col class="site-ledger-col--source">
+                                <col class="site-ledger-col--date">
+                                <col class="site-ledger-col--tags">
+                                <col class="site-ledger-col--actions">
+                            </colgroup>
                             <thead>
-                                <tr class="bg-muted-teal/5 border-b border-muted-teal/10">
-                                    <th
-                                        class="w-28 px-6 md:px-8 py-5 text-muted-teal/60 text-[11px] font-bold tracking-wide">
-                                        类型</th>
-                                    <th
-                                        class="w-24 px-6 md:px-8 py-5 text-muted-teal/60 text-[11px] font-bold tracking-wide text-right">
-                                        阅读</th>
-                                    <th class="px-6 md:px-8 py-5 text-off-white text-[11px] font-bold tracking-wide">条目
-                                    </th>
+                                <tr>
+                                    <th>类型</th>
+                                    <th>标题</th>
+                                    <th>来源</th>
+                                    <th>日期</th>
+                                    <th>标签</th>
+                                    <th>操作</th>
                                 </tr>
                             </thead>
-                            <tbody class="divide-y divide-muted-teal/5">
-                                {{ range first 20 $posts }}
-                                <tr class="hover:bg-muted-teal/5 transition-all group">
-                                    <td class="w-28 px-6 md:px-8 py-6">
-                                        {{- $kind := lower (.Params.entry_kind | default "") -}}
-                                        {{- $isManual := or (eq $kind "manual") (and (eq $kind "") (not .Params.source))
-                                        -}}
-                                        <div class="flex flex-col gap-1 leading-tight">
-                                            <span
-                                                class="text-[11px] {{ if $isManual }}text-off-white/60 group-hover:text-off-white{{ else }}text-primary/70 group-hover:text-primary{{ end }} transition-colors">
-                                                {{ if $isManual }}[手动]{{ else }}[自动]{{ end }}
-                                            </span>
-                                            <span
-                                                class="text-[11px] text-off-white/35 group-hover:text-off-white/55 transition-colors font-mono">
-                                                {{ with .Params.source }}{{ printf "[%s]" (upper .) }}{{ else }}[笔记]{{
-                                                end }}
-                                            </span>
+                            <tbody>
+                                {{ range first 14 $posts }}
+                                {{- $kind := lower (.Params.entry_kind | default "") -}}
+                                {{- $isManual := or (eq $kind "manual") (and (eq $kind "") (not .Params.source)) -}}
+                                {{- $source := .Params.source | default (cond $isManual "note" "system") -}}
+                                <tr class="site-ledger-row group">
+                                    <td data-label="类型"><span class="site-meta-text {{ if $isManual }}text-off-white/65{{ else }}text-primary{{ end }}">{{ if $isManual }}手动{{ else }}自动{{ end }}</span></td>
+                                    <td data-label="标题">
+                                        <a href="{{ .RelPermalink }}" data-entry-link="{{ .RelPermalink }}" data-entry-title="{{ .Title }}"
+                                            class="site-ledger-row__title hover:text-primary" title="{{ .Title }}">{{ .Title }}</a>
+                                        <p class="site-ledger-row__summary">{{ .Summary | plainify | truncate 78 }}</p>
+                                    </td>
+                                    <td data-label="来源"><span class="site-code-text text-off-white/70">{{ upper $source }}</span></td>
+                                    <td data-label="日期"><time class="site-code-text text-off-white/65" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "01-02" }}</time></td>
+                                    <td data-label="标签">
+                                        <div class="site-ledger-tags">
+                                            {{ range first 2 (.Params.tags | default (slice)) }}
+                                            <span class="site-ledger-tag">{{ . }}</span>
+                                            {{ end }}
                                         </div>
                                     </td>
-                                    <td
-                                        class="w-24 px-6 md:px-8 py-6 text-muted-teal/45 text-[11px] text-right font-mono">
-                                        {{ printf "%dmin" .ReadingTime }}
-                                    </td>
-                                    <td class="px-6 md:px-8 py-6">
-                                        <a href="{{ .RelPermalink }}" data-entry-link="{{ .RelPermalink }}"
-                                            data-entry-title="{{ .Title }}" class="flex items-center gap-4 min-w-0">
-                                            <span
-                                                class="material-symbols-outlined text-primary/40 group-hover:text-primary transition-all">
-                                                {{- $s := .Params.source -}}
-                                                {{- if eq $s "github_trending" -}}hub
-                                                {{- else if eq $s "hacker_news" -}}newspaper
-                                                {{- else if eq $s "arxiv" -}}school
-                                                {{- else if eq $s "blogs_podcasts" -}}mic
-                                                {{- else -}}sticky_note_2
-                                                {{- end -}}
-                                            </span>
-                                            <span
-                                                class="min-w-0 flex-1 text-off-white text-sm tracking-wide group-hover:translate-x-1 transition-transform truncate"
-                                                title="{{ .Title }}">{{ .Title }}</span>
-                                        </a>
-                                        <div
-                                            class="mt-2 flex flex-wrap items-center gap-2 text-[11px] text-off-white/45">
-                                            <span class="font-mono text-muted-teal/40">{{ .Date.Format "2006-01-02"
-                                                }}</span>
-                                            {{ range first 3 (.Params.tags | default (slice)) }}
-                                            <span
-                                                class="px-2 py-0.5 rounded border border-muted-teal/15 bg-terminal-bg/40 text-muted-teal/60">{{
-                                                . }}</span>
-                                            {{ end }}
+                                    <td data-label="操作">
+                                        <div class="site-ledger-actions">
+                                            <a href="{{ .RelPermalink }}" aria-label="阅读 {{ .Title }}">文章</a>
+                                            <a href="{{ "trends/" | relURL }}" aria-label="查看趋势">趋势</a>
+                                            <a href="{{ "scenarios/" | relURL }}" aria-label="查看图谱">图谱</a>
                                         </div>
                                     </td>
                                 </tr>
                                 {{ end }}
                             </tbody>
                         </table>
+                    </section>
+
+                    <div class="mt-5 grid gap-4 lg:grid-cols-2">
+                        <section class="site-panel" aria-labelledby="home-archive-heading">
+                            <div class="site-panel__heading">
+                                <h2 id="home-archive-heading" class="site-section-title">归档能力</h2>
+                                <span class="site-code-text">ARCHIVE</span>
+                            </div>
+                            <div class="site-panel__body">
+                                <p class="site-body-copy text-off-white/70">从公开信息流到长期档案，保留来源、质量状态、标签与关联线索；静态部署即可运行，日常维护成本接近零。</p>
+                                <a href="{{ "posts/" | relURL }}" class="site-control-text mt-4 inline-flex min-h-11 items-center text-primary hover:text-off-white">
+                                    浏览全部情报 <span class="material-symbols-outlined ml-2 text-base" aria-hidden="true">arrow_forward</span>
+                                </a>
+                            </div>
+                        </section>
+
+                        <section class="site-panel" aria-labelledby="home-topology-heading">
+                            <div class="site-panel__heading">
+                                <h2 id="home-topology-heading" class="site-section-title">关系探索</h2>
+                                <span class="site-code-text">TOPOLOGY</span>
+                            </div>
+                            <div class="site-panel__body">
+                                <p class="site-body-copy text-off-white/70">把标签社区、节点邻域与趋势证据连成一张可下钻网络，从热点回到文章，从文章继续追踪上下游关系。</p>
+                                <a href="{{ "scenarios/" | relURL }}" class="site-control-text mt-4 inline-flex min-h-11 items-center text-primary hover:text-off-white">
+                                    打开知识图谱 <span class="material-symbols-outlined ml-2 text-base" aria-hidden="true">hub</span>
+                                </a>
+                            </div>
+                        </section>
                     </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div
-                            class="glass-panel p-8 rounded-xl relative overflow-hidden group border-l-2 border-l-primary/30">
-                            <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
-                                <span class="material-symbols-outlined text-7xl text-primary">grain</span>
-                            </div>
-                            <h2 class="site-section-title text-primary tracking-wide mb-4">归档完整性</h2>
-                            <p class="site-body-copy text-off-white/70 mb-6">去重、DeepWiki
-                                增强、多源抓取模块运行正常，信息噪声已降到可控区间。</p>
-                            <div
-                                class="w-full bg-deep-navy/60 h-1.5 rounded-full overflow-hidden border border-muted-teal/10">
-                                <div class="bg-primary/50 h-full w-[72%] shadow-[0_0_10px_rgba(77,182,172,0.3)]"></div>
-                            </div>
-                            <div class="flex justify-between mt-3 font-mono text-[10px] text-muted-teal/60">
-                                <span>RECOVERY: 72%</span>
-                                <span>STATUS: NOMINAL</span>
-                            </div>
-                        </div>
-
-                        <div
-                            class="glass-panel p-8 rounded-xl relative overflow-hidden group border-l-2 border-l-las-vegas-orange/30">
-                            <div class="absolute top-0 right-0 p-6 opacity-5">
-                                <span class="material-symbols-outlined text-7xl text-off-white">lock</span>
-                            </div>
-                            <h2 class="site-section-title text-las-vegas-orange tracking-wide mb-4">写作协议</h2>
-                            <p class="site-body-copy text-off-white/70 mb-6 italic">“Interlinked.
-                                Cells. Interlinked.” —— 已启用「论证结构 + 可证伪判断 + 第一性原理」的深度写作模式。</p>
-                            <div class="flex items-center gap-3">
-                                <div
-                                    class="size-2 rounded-full bg-las-vegas-orange/40 shadow-[0_0_8px_rgba(217,119,6,0.5)]">
-                                </div>
-                                <span class="text-las-vegas-orange/70 font-mono text-[11px] tracking-wide">等待基线测试</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-12">
-                        <div class="flex items-center justify-between border-b border-muted-teal/10 pb-4 mb-8">
-                            <div class="flex flex-col">
-                                <span class="text-primary/70 text-[12px] font-bold tracking-wide mb-1">时间轴</span>
-                                <h2 class="site-section-title text-off-white tracking-tight font-display">
-                                    /CHRONOLOGICAL/<span class="text-primary/40">LOG</span>/</h2>
-                            </div>
-                        </div>
-
-                        <div class="glass-panel p-8 rounded-xl">
-                            <div class="flex flex-col gap-6">
-                                {{ range first 10 $posts }}
-                                <div class="relative pl-8 pb-6 last:pb-0">
-                                    <div
-                                        class="absolute -left-[5px] top-1 size-2 rounded-full {{ if eq . (index $posts 0) }}bg-primary/60 shadow-[0_0_10px_rgba(77,182,172,0.5)]{{ else }}bg-off-white/10 border border-muted-teal/20{{ end }}">
-                                    </div>
-                                    <div class="flex items-center gap-3 mb-2">
-                                        <span class="font-mono text-muted-teal/40 text-[11px]">{{ .Date.Format
-                                            "2006-01-02 15:04" }}</span>
-                                        {{ range first 1 (.Params.tags | default (slice)) }}
-                                        <span
-                                            class="px-2 py-0.5 rounded border border-muted-teal/15 bg-terminal-bg/40 text-muted-teal/60 text-[10px]">{{
-                                            . }}</span>
-                                        {{ end }}
-                                    </div>
-                                    <a href="{{ .RelPermalink }}"
-                                        class="text-off-white/80 text-[13px] leading-relaxed hover:text-primary transition-colors">
-                                        {{ .Title }}
-                                    </a>
-                                    <div class="mt-1 text-off-white/40 text-[10px] font-mono">
-                                        阅读: {{ printf "%dmin" .ReadingTime }}
-                                    </div>
-                                </div>
-                                {{ end }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </main>
 
-        <footer
-            class="h-14 border-t border-muted-teal/10 bg-deep-navy/80 backdrop-blur-2xl flex items-center px-6 md:px-10 gap-0 z-20">
-            <div class="terminal-label text-primary font-mono text-sm font-bold tracking-tight">CMD://</div>
-            <div class="flex-1 terminal-caret-host flex items-center">
-                <span class="terminal-caret text-primary font-mono text-sm font-bold tracking-tight"
-                    aria-hidden="true">█</span>
-                <input
-                    class="terminal-input flex-1 min-w-0 bg-transparent border-none focus:ring-0 text-primary font-mono text-sm placeholder:text-muted-teal/30"
-                    placeholder="输入命令…（help / ls / open 1 / search 关键词）" type="text" autocomplete="off"
-                    spellcheck="false" />
-                <div class="hidden md:flex gap-6 items-center border-l border-muted-teal/10 pl-6 ml-6 h-full">
-                    <span class="text-muted-teal/40 font-mono text-[9px] tracking-widest uppercase">Encryption:
-                        AES-256</span>
-                    <div class="flex items-center gap-2 text-primary/60">
-                        <span class="material-symbols-outlined text-base">cloud_queue</span>
-                        <span class="text-[9px] font-bold tracking-widest uppercase">Snapshot_Mode</span>
-                    </div>
-                </div>
+        <footer class="flex h-14 items-center gap-0 border-t border-muted-teal/10 bg-deep-navy/90 px-6 md:px-10 z-20">
+            <div class="terminal-label font-mono text-sm font-bold tracking-tight text-primary">CMD://</div>
+            <div class="terminal-caret-host flex min-w-0 flex-1 items-center">
+                <span class="terminal-caret font-mono text-sm font-bold tracking-tight text-primary" aria-hidden="true">█</span>
+                <input class="terminal-input min-w-0 flex-1 border-none bg-transparent font-mono text-sm text-primary placeholder:text-muted-teal/30 focus:ring-0"
+                    placeholder="输入命令…（help / ls / open 1 / search 关键词）" type="text" autocomplete="off" spellcheck="false" />
+                <span class="site-code-text hidden border-l border-muted-teal/10 pl-6 text-primary/60 md:block">ENCRYPTION AES-256</span>
             </div>
         </footer>
     </div>

@@ -8,7 +8,7 @@
             decoding="async">
         <span class="site-header__brand-copy">
             <strong class="site-header__title">{{ .Site.Title }}</strong>
-            <span class="site-header__description">{{ .Site.Params.description }}</span>
+            <span class="sr-only">{{ .Site.Params.description }}</span>
         </span>
     </a>
 
@@ -24,8 +24,7 @@
             </div>
             <div class="site-header__telemetry-latest">
                 <dt>最新内容</dt>
-                <dd>{{ index $siteStats "latestArticle" }}</dd>
-                <dd class="site-header__telemetry-note">非站点部署时间</dd>
+                <dd><time datetime="{{ index $siteStats "latestArticleISO" }}" title="{{ index $siteStats "latestArticleDate" }}">{{ index $siteStats "latestArticle" }}</time></dd>
             </div>
             <div class="site-header__telemetry-clock">
                 <dt>当前时间</dt>
@@ -53,7 +52,8 @@
         <div class="site-header__actions">
             {{- with .Site.Params.github }}
             <a class="site-header__secure" href="{{ . }}" aria-label="打开 AI Stack GitHub">
-                安全连接
+                <span>安全连接</span>
+                <span class="site-header__secure-state">OPERATIONAL</span>
             </a>
             {{- end }}
             <a class="site-header__rss" href="{{ "index.xml" | relURL }}" aria-label="订阅 RSS">

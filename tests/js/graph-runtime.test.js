@@ -1695,6 +1695,52 @@ test("community stylesheet keeps hotspot labels readable without invalid style k
   });
 });
 
+test("graph canvas labels use the shared sans family and readable CJK sizes", () => {
+  const sharedSans = '"AI Stack UI Sentinel", sans-serif';
+  const sharedMono = '"AI Stack Data Sentinel", monospace';
+  const window = {
+    document: { documentElement: {} },
+    getComputedStyle() {
+      return {
+        getPropertyValue(property) {
+          if (property === "--site-font-sans") return sharedSans;
+          if (property === "--site-font-mono") return sharedMono;
+          return "";
+        },
+      };
+    },
+  };
+  vm.runInNewContext(ENGINE_SOURCE, { window }, {
+    filename: "cytoscape-graph-engine.js",
+  });
+  const Engine = window.CytoscapeGraphEngine;
+  const engine = Object.create(Engine.prototype);
+  const stylesheet = engine._getStylesheet();
+  const styleFor = (selector) => stylesheet.find((entry) => entry.selector === selector).style;
+
+  assert.equal(styleFor("node")["font-family"], sharedSans);
+  assert.ok(styleFor("node")["font-size"] >= 12);
+  for (const selector of ["node", "node.overview-node", "node.community-hotspot"]) {
+    assert.ok(
+      styleFor(selector)["min-zoomed-font-size"] >= 10,
+      `${selector} keeps labels visible below the readable screen-size floor`
+    );
+  }
+  for (const selector of [
+    "node.overview-node",
+    "node.overview-node.overview-anchor",
+    "node.community-node",
+    "node.community-hotspot",
+    "node.focus-neighbor",
+    "node.focus-core",
+    "node.focus-context.focus-group-anchor",
+  ]) {
+    const style = styleFor(selector);
+    assert.notEqual(style["font-family"], sharedMono, selector);
+    assert.ok(style["font-size"] >= 10, `${selector} uses an unreadable label size`);
+  }
+});
+
 test("focus nodes use compact stellar tiers and reserve amber for the selected core", () => {
   const window = {};
   vm.runInNewContext(ENGINE_SOURCE, { window }, {

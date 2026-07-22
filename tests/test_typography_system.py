@@ -137,16 +137,16 @@ def test_regular_page_titles_share_one_semantic_class() -> None:
     # Article headlines/read copy intentionally retain their editorial scale. The graph
     # canvas is also excluded because its collision-aware labels are not DOM typography.
     regular_titles = {
-        "index.html": "/ROOT/ARCHIVE/",
-        "_default/list.html": "{{ .Title }}",
+        "index.html": "情报总览",
+        "_default/list.html": "情报归档",
         "_default/archive.html": "时间线归档",
-        "_default/terms.html": "{{ .Title }}",
-        "partials/compact-taxonomy.html": "{{ .Title }}",
+        "partials/compact-taxonomy.html": "{{ $pageTitle }}",
         "partials/compact-term.html": "{{ $termTitle }}",
         "scenarios/single.html": "{{ .Title }}",
         "search/list.html": "检索情报归档",
-        "about/single.html": "SUBJECT:",
+        "about/single.html": "{{ .Title }}",
         "trends/list.html": "趋势洞察",
+        "scenarios/list.html": "动态场景知识图谱",
     }
     for template, title_text in regular_titles.items():
         classes = _heading_classes_containing(template, title_text)
@@ -159,16 +159,16 @@ def test_home_and_about_keep_a_semantic_heading_hierarchy() -> None:
     home = (LAYOUTS / "index.html").read_text(encoding="utf-8")
     about = (LAYOUTS / "about/single.html").read_text(encoding="utf-8")
 
-    assert re.search(r'<h1\b[^>]*site-page-title[^>]*>.*?/ROOT/ARCHIVE/', home, re.DOTALL)
-    assert '<h2 class="text-off-white text-sm font-bold tracking-wide">日志流</h2>' in home
+    assert re.search(r'<h1\b[^>]*site-page-title[^>]*>.*?情报总览', home, re.DOTALL)
+    assert '<h2 id="home-system-log-heading">日志流</h2>' in home
     assert len(re.findall(r'<h2\b[^>]*site-section-title', home)) >= 3
-    assert re.search(r'<h1\b[^>]*site-page-title[^>]*>.*?SUBJECT:', about, re.DOTALL)
+    assert re.search(r'<h1\b[^>]*site-page-title[^>]*>.*?{{ \.Title }}', about, re.DOTALL)
     assert len(re.findall(r'<h2\b[^>]*site-section-title', about)) >= 2
 
 
 def test_workbench_and_module_titles_use_shared_semantic_classes() -> None:
     expectations = {
-        ("scenarios/list.html", "动态场景知识图谱"): "site-workbench-title",
+        ("scenarios/list.html", "动态场景知识图谱"): "site-page-title",
         ("scenarios/list.html", "节点详情"): "site-section-title",
         ("trends/list.html", "趋势筛选"): "site-section-title",
         ("trends/list.html", "趋势矩阵"): "site-section-title",
@@ -206,10 +206,40 @@ def test_graph_reset_preserves_component_type_and_dom_controls_use_tokens() -> N
     mobile_input = _css_rule(graph, ".graph-search input")
     assert "font-size: 16px" in mobile_input
 
-    assert "var(--site-workbench-title-size" in _css_rule(graph, ".console-heading h2")
+    graph_title_override = _css_rule(graph, ".console-heading h1")
+    for declaration in (
+        "font-family",
+        "font-size",
+        "font-weight",
+        "line-height",
+        "letter-spacing",
+    ):
+        assert declaration not in graph_title_override, (
+            "the graph page title must inherit the complete .site-page-title contract "
+            f"instead of redeclaring {declaration}"
+        )
     assert "var(--site-section-title-size" in _css_rule(
         graph, ".graph-detail__header h2"
     )
+
+    for selector in (
+        ".graph-search > label",
+        ".console-section summary",
+        ".graph-telemetry dt",
+        ".detail-identity dt",
+        ".graph-detail section h3",
+        ".detail-identity dd",
+        ".graph-stage__mode-chip",
+        ".detail-article-link span",
+        ".detail-article-lineage",
+        ".detail-list-heading span",
+        ".detail-intel-list__metric",
+    ):
+        assert "var(--graph-sans)" in _css_rule(graph, selector), (
+            f"{selector} contains Chinese UI copy and must use the shared sans role"
+        )
+
+    assert "var(--graph-mono)" in _css_rule(graph, ".detail-metrics dd")
 
 
 def test_trend_dom_titles_and_controls_use_the_shared_tokens() -> None:
@@ -245,6 +275,13 @@ def test_trend_dom_titles_and_controls_use_the_shared_tokens() -> None:
     kicker = _css_rule(trends, ".trend-kicker")
     assert "var(--site-meta-size" in kicker
     assert "var(--site-meta-line-height" in kicker
+
+    labels = _css_rule(trends, ".trend-control-group label")
+    assert "var(--site-font-sans)" in labels
+    assert "var(--site-control-size" in labels
+
+    kpi_labels = _css_rule(trends, ".trend-kpis dt")
+    assert "var(--site-font-sans)" in kpi_labels
 
 
 def test_lineage_uses_the_canonical_site_monospace_token() -> None:

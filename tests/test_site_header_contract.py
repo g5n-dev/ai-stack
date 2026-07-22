@@ -31,7 +31,7 @@ class SiteHeaderContractTest(unittest.TestCase):
         for path, source in documents:
             with self.subTest(template=path.relative_to(LAYOUTS).as_posix()):
                 self.assertEqual(source.count(SHARED_HEADER), 1)
-                self.assertNotIn("<header", source)
+                self.assertNotIn('class="site-header"', source)
 
     def test_taxonomy_wrappers_delegate_to_documents_with_shared_header(self) -> None:
         wrappers = {
@@ -98,12 +98,10 @@ class SiteHeaderContractTest(unittest.TestCase):
         for contract in (
             "data-site-header",
             "data-site-brand",
-            "site-header__description",
             ".Site.Params.description",
             'aria-label="主导航"',
             ".Site.Home.RelPermalink",
             "site-header__telemetry",
-            "site-header__telemetry-note",
             "data-site-clock",
             "条目",
             "延迟",
@@ -119,7 +117,7 @@ class SiteHeaderContractTest(unittest.TestCase):
         self.assertNotIn("DATA LIVE", source)
         self.assertNotIn("SYS_STABLE", source)
 
-    def test_telemetry_uses_shared_three_row_baseline_grid(self) -> None:
+    def test_telemetry_uses_shared_two_row_baseline_grid(self) -> None:
         css = (ROOT / "blog" / "static" / "css" / "style.css").read_text(
             encoding="utf-8"
         )
@@ -130,7 +128,6 @@ class SiteHeaderContractTest(unittest.TestCase):
             "--site-font-mono:",
             "--site-header-telemetry-label-row:",
             "--site-header-telemetry-value-row:",
-            "--site-header-telemetry-note-row:",
         ):
             with self.subTest(token=token):
                 self.assertIn(token, css)
@@ -143,7 +140,7 @@ class SiteHeaderContractTest(unittest.TestCase):
         self.assertIn("grid-template-rows:", telemetry)
         self.assertIn("var(--site-header-telemetry-label-row)", telemetry)
         self.assertIn("var(--site-header-telemetry-value-row)", telemetry)
-        self.assertIn("var(--site-header-telemetry-note-row)", telemetry)
+        self.assertNotIn("telemetry-note-row", telemetry)
         self.assertIn("align-content: center", telemetry)
 
     def test_header_geometry_and_type_scale_match_on_every_page(self) -> None:
@@ -153,14 +150,13 @@ class SiteHeaderContractTest(unittest.TestCase):
         expected_declarations = {
             ".site-header": (
                 "height: var(--site-header-height)",
-                "padding: 0 40px",
+                "padding: 0 var(--site-page-gutter)",
                 "font-family: var(--site-font-sans)",
             ),
-            ".site-header__title": ("font-size: 16px", "line-height: 1"),
-            ".site-header__description": ("font-size: 11px",),
+            ".site-header__title": ("font-size: 17px", "line-height: 1"),
             ".site-header__telemetry dt": ("font-size: 10px",),
             ".site-header__telemetry dd": ("font-size: 11px",),
-            ".site-header__nav a": ("font-size: 11px", "min-height: 44px"),
+            ".site-header__nav a": ("font-size: var(--site-control-size)", "min-height: 44px"),
             ".site-header__secure": ("font-size: 10px",),
         }
 
@@ -189,7 +185,7 @@ class SiteHeaderContractTest(unittest.TestCase):
         )
 
         self.assertIn("color: rgba(var(--muted-teal), 0.84);", css)
-        self.assertIn("color: rgba(var(--off-white), 0.62);", css)
+        self.assertIn("color: rgba(var(--off-white), 0.64);", css)
         self.assertNotIn("color: rgba(var(--muted-teal), 0.52);", css)
         self.assertNotIn("color: rgba(var(--off-white), 0.34);", css)
 
@@ -211,7 +207,7 @@ class SiteHeaderContractTest(unittest.TestCase):
         config = (ROOT / "blog" / "config.toml").read_text(encoding="utf-8")
         positions = [
             config.index(f'name = "{label}"')
-            for label in ("首页", "归档", "搜索", "标签", "趋势", "AI史塔克", "关于")
+            for label in ("首页", "归档", "搜索", "标签", "趋势", "图谱", "关于")
         ]
         self.assertEqual(positions, sorted(positions))
 

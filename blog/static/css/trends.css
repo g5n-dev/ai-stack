@@ -39,10 +39,12 @@
 }
 
 .trend-workbench {
-  width: min(1760px, 100%);
+  width: 100%;
+  max-width: var(--site-shell-max-width);
   min-height: calc(100vh - var(--site-header-height));
   margin: 0 auto;
-  padding: 26px 28px 34px;
+  padding-top: 0;
+  padding-bottom: 40px;
   box-sizing: border-box;
   font-family: var(--site-font-sans);
 }
@@ -52,8 +54,8 @@
   align-items: flex-end;
   justify-content: space-between;
   gap: 28px;
-  padding: 0 0 20px;
-  border-bottom: 1px solid var(--trend-border);
+  padding: var(--site-hero-block-padding);
+  border-bottom-color: var(--site-divider-color);
 }
 
 .trend-kicker,
@@ -72,7 +74,7 @@
   margin: 7px 0 0;
   color: rgb(var(--off-white));
   font-size: var(--site-page-title-size, 30px);
-  font-weight: 300;
+  font-weight: var(--site-page-title-weight, 600);
   letter-spacing: -0.025em;
   line-height: var(--site-page-title-line-height, 1.2);
 }
@@ -93,7 +95,7 @@
   gap: 4px 8px;
   min-width: 180px;
   color: rgba(var(--primary), 0.88);
-  font-family: var(--site-font-mono);
+  font-family: var(--site-font-sans);
   font-size: var(--site-meta-size, 11px);
   line-height: var(--site-meta-line-height, 1.45);
   letter-spacing: 0.05em;
@@ -102,6 +104,7 @@
 .trend-hero__status time {
   grid-column: 1 / -1;
   color: var(--trend-muted);
+  font-family: var(--site-font-mono);
   font-size: var(--site-meta-size, 11px);
 }
 
@@ -152,7 +155,7 @@
 
 .trend-kpis dt {
   color: rgba(var(--primary), 0.78);
-  font-family: var(--site-font-mono);
+  font-family: var(--site-font-sans);
   font-size: 11px;
   letter-spacing: 0.08em;
 }
@@ -176,12 +179,10 @@
 .trend-layout {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(238px, 280px) minmax(0, 1fr);
+  grid-template-columns: var(--site-rail-width) minmax(0, 1fr);
+  gap: var(--site-layout-gap);
   align-items: start;
-  border: 1px solid var(--trend-border);
-  border-radius: 10px;
-  background: rgba(var(--deep-navy), 0.94);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.26);
+  padding-block: 0;
 }
 
 .trend-controls,
@@ -204,7 +205,9 @@
   top: calc(var(--site-header-height) + 16px);
   grid-column: 1;
   padding: 20px;
-  border-right: 1px solid var(--trend-border);
+  border: 1px solid var(--site-border-color);
+  border-radius: var(--site-radius-panel);
+  background: var(--site-surface-1);
 }
 
 .trend-detail {
@@ -265,6 +268,9 @@
   grid-column: 2;
   min-height: 740px;
   padding: 20px 22px 28px;
+  border: 1px solid var(--site-border-color);
+  border-radius: var(--site-radius-panel);
+  background: rgba(var(--terminal-bg), 0.42);
 }
 
 .trend-panel-heading,
@@ -300,7 +306,7 @@
   border-radius: 4px;
   color: rgba(var(--primary), 0.86);
   background: rgba(var(--primary), 0.05);
-  font-family: var(--site-font-mono);
+  font-family: var(--site-font-sans);
   font-size: 11px;
   letter-spacing: 0.04em;
   white-space: nowrap;
@@ -318,9 +324,10 @@
   display: block;
   margin: 0 0 8px;
   color: var(--trend-muted);
-  font-family: var(--site-font-mono);
-  font-size: 11px;
+  font-family: var(--site-font-sans);
+  font-size: var(--site-control-size, 13px);
   font-weight: 600;
+  line-height: var(--site-control-line-height, 1.5);
   letter-spacing: 0.04em;
 }
 
@@ -661,7 +668,7 @@
 .trend-method-note strong,
 .trend-sample-notice strong {
   color: rgba(var(--primary), 0.94);
-  font-family: var(--site-font-mono);
+  font-family: var(--site-font-sans);
   font-size: 11px;
 }
 
@@ -697,7 +704,7 @@
 
 .trend-stage__actions > span {
   color: var(--trend-faint);
-  font-family: var(--site-font-mono);
+  font-family: var(--site-font-sans);
   font-size: 11px;
   white-space: nowrap;
 }
@@ -750,7 +757,7 @@
   background: rgba(3, 9, 18, 0.97);
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.46), 0 0 18px rgba(var(--tooltip-heat), 0.16);
   color: rgb(var(--off-white));
-  font-family: var(--site-font-mono);
+  font-family: var(--site-font-sans);
   pointer-events: none;
 }
 
@@ -859,7 +866,7 @@
   flex-wrap: wrap;
   gap: 6px 14px;
   color: var(--trend-muted);
-  font-family: var(--site-font-mono);
+  font-family: var(--site-font-sans);
   font-size: 11px;
 }
 
@@ -880,7 +887,7 @@
 
 .trend-matrix-legend strong {
   color: rgba(var(--off-white), 0.84);
-  font-weight: 650;
+  font-weight: 600;
 }
 
 .trend-matrix-legend span[data-heat="cold"]::before {
@@ -1040,7 +1047,7 @@
   overflow: hidden;
   color: rgb(var(--off-white));
   font-size: var(--site-copy-size, 14px);
-  font-weight: 650;
+  font-weight: 600;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -1049,7 +1056,7 @@
   display: block;
   margin-top: 5px;
   color: var(--trend-faint);
-  font-family: var(--site-font-mono);
+  font-family: var(--site-font-sans);
   font-size: 11px;
 }
 
@@ -1064,7 +1071,7 @@
 
 .trend-card__score strong {
   font-size: 16px;
-  font-weight: 650;
+  font-weight: 600;
 }
 
 .trend-card__heat-label {
@@ -1164,7 +1171,7 @@
 
 .trend-window-empty strong {
   color: rgb(var(--trend-amber));
-  font-family: var(--site-font-mono);
+  font-family: var(--site-font-sans);
   font-size: 12px;
 }
 
@@ -1225,7 +1232,7 @@
 
 .trend-metric-grid dt {
   color: var(--trend-faint);
-  font-family: var(--site-font-mono);
+  font-family: var(--site-font-sans);
   font-size: 11px;
 }
 
@@ -1245,7 +1252,7 @@
 .trend-detail-section h3 {
   margin: 0 0 12px;
   color: var(--trend-copy);
-  font-family: var(--site-font-mono);
+  font-family: var(--site-font-sans);
   font-size: 11px;
   letter-spacing: 0.06em;
 }
@@ -1346,7 +1353,7 @@
   color: rgb(var(--primary));
   font-family: var(--site-font-mono);
   font-size: 11px;
-  font-weight: 650;
+  font-weight: 600;
 }
 
 .trend-related-button {
@@ -1396,7 +1403,7 @@
   display: block;
   color: rgb(var(--off-white));
   font-size: var(--site-copy-size, 14px);
-  font-weight: 650;
+  font-weight: 600;
   line-height: 1.5;
 }
 
@@ -1466,11 +1473,11 @@
 
 @media (max-width: 1240px) {
   .trend-workbench {
-    padding: 22px 20px 30px;
+    padding-bottom: 30px;
   }
 
   .trend-layout {
-    grid-template-columns: 240px minmax(0, 1fr);
+    grid-template-columns: var(--site-rail-width) minmax(0, 1fr);
   }
 
   .trend-stage {
@@ -1484,11 +1491,11 @@
 
 @media (min-width: 761px) and (max-height: 900px) {
   .trend-workbench {
-    padding-top: 14px;
+    padding-top: 0;
   }
 
   .trend-hero {
-    padding-bottom: 12px;
+    padding: 20px 0 12px;
   }
 
   .trend-hero__lead {
@@ -1529,18 +1536,25 @@
 
 @media (max-width: 1020px) {
   .trend-layout {
-    grid-template-columns: 240px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .trend-controls {
-    grid-row: 1 / span 2;
+    position: static;
+    grid-row: auto;
+    width: 100%;
+  }
+
+  .trend-stage,
+  .trend-detail {
+    grid-column: 1;
   }
 
 }
 
 @media (max-width: 760px) {
   .trend-workbench {
-    padding: 18px 12px 26px;
+    padding-bottom: 26px;
   }
 
   .trend-hero {

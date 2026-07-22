@@ -96,7 +96,7 @@ url = "/trends/"
 weight = 5
 
 [[menu.main]]
-name = "AI史塔克"
+name = "图谱"
 url = "/scenarios/"
 weight = 6
 

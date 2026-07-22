@@ -19,93 +19,113 @@
 
     {{ partial "site-header.html" . }}
 
-    <main id="main-content" class="search-shell">
-        <div class="search-page__hero">
-            <p class="search-page__eyebrow">STATIC_INDEX / PAGEFIND_V1</p>
-            <h1 class="site-page-title search-page__title">检索情报归档</h1>
-            <p class="search-page__lead">
-                标题和正文参与全文检索；来源、日期、规范实体、标签与场景使用精确过滤。索引随静态站点构建，不宣称实时。
-            </p>
-        </div>
-
-        <form id="search-form" role="search" aria-describedby="search-help search-status"
-            class="search-form terminal-glass rounded-2xl border border-muted-teal/20">
-            <fieldset>
-                <legend class="sr-only">搜索条件</legend>
-                <div class="search-form__grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                    <div class="md:col-span-2 lg:col-span-3">
-                        <label for="search-query" class="search-label">关键词</label>
-                        <input id="search-query" name="query" type="search" autocomplete="off" maxlength="200"
-                            aria-controls="search-results" placeholder="搜索标题与正文"
-                            class="search-control" />
-                    </div>
-
-                    <div>
-                        <label id="search-source-label" for="search-source" class="search-label">来源</label>
-                        <div class="search-select" data-search-select>
-                            <select id="search-source" name="source" class="search-control">
-                                <option value="">全部来源</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div>
-                        <label for="search-date" class="search-label">日期</label>
-                        <input id="search-date" name="date" type="date"
-                            class="search-control" />
-                    </div>
-                    <div>
-                        <label id="search-entity-label" for="search-entity" class="search-label">规范实体 ID</label>
-                        <div class="search-autocomplete" data-search-autocomplete>
-                            <input id="search-entity" name="entity" type="text" list="search-entities" maxlength="200"
-                                autocomplete="off" placeholder="例如 entity-openai" class="search-control" />
-                            <datalist id="search-entities"></datalist>
-                        </div>
-                    </div>
-                    <div>
-                        <label id="search-tag-label" for="search-tag" class="search-label">标签</label>
-                        <div class="search-autocomplete" data-search-autocomplete>
-                            <input id="search-tag" name="tag" type="text" list="search-tags" maxlength="200"
-                                autocomplete="off" placeholder="输入或选择标签" class="search-control" />
-                            <datalist id="search-tags"></datalist>
-                        </div>
-                    </div>
-                    <div>
-                        <label id="search-scenario-label" for="search-scenario" class="search-label">场景</label>
-                        <div class="search-autocomplete" data-search-autocomplete>
-                            <input id="search-scenario" name="scenario" type="text" list="search-scenarios" maxlength="200"
-                                autocomplete="off" placeholder="输入或选择场景" class="search-control" />
-                            <datalist id="search-scenarios"></datalist>
-                        </div>
-                    </div>
-                </div>
-            </fieldset>
-
-            <p id="search-help" class="search-help">
-                实体过滤只接受账本中的稳定 entity_id；过滤值为精确匹配。
-            </p>
-            <div class="search-actions">
-                <button id="search-submit" type="submit"
-                    class="search-button search-button--primary min-h-[44px] border border-primary/40 bg-primary/10 text-primary hover:bg-primary/20 focus:ring-2 focus:ring-primary">
-                    搜索
-                </button>
-                <button type="reset"
-                    class="search-button search-button--quiet min-h-[44px] border border-muted-teal/20 text-off-white/70 hover:bg-muted-teal/10 focus:ring-2 focus:ring-primary">
-                    清除
-                </button>
-            </div>
-        </form>
-
-        <section aria-labelledby="search-results-heading" class="search-results-panel">
-            <h2 id="search-results-heading" class="site-section-title search-results-panel__title">搜索结果</h2>
-            <p id="search-status" role="status" aria-live="polite" aria-atomic="true"
-                class="search-status">输入关键词或至少选择一个过滤条件。</p>
-            <ol id="search-results" class="search-result-list grid list-none" aria-label="搜索结果列表"></ol>
-            <noscript>
-                <p class="mt-5 rounded-lg border border-amber-500/30 bg-amber-500/10 p-4 text-sm text-amber-200">
-                    静态搜索需要启用 JavaScript；归档和 RSS 在禁用 JavaScript 时仍可使用。
+    <main id="main-content" class="site-shell search-shell">
+        <header class="site-page-hero search-page__hero">
+            <div class="site-page-hero__copy">
+                <p class="site-page-kicker">STATIC INDEX / PAGEFIND_V2</p>
+                <h1 class="site-page-title search-page__title">检索情报归档</h1>
+                <p class="site-page-lead search-page__lead">
+                    从标题与正文检索长期情报，再用来源、日期、规范实体、标签和场景精确收敛。
                 </p>
-            </noscript>
-        </section>
+            </div>
+            <p class="site-page-summary search-page__summary">
+                <span>BUILD MODE</span>
+                <strong>STATIC / VERIFIABLE</strong>
+            </p>
+        </header>
+
+        <div class="site-layout search-workbench">
+            <aside class="site-rail search-filter-rail" aria-label="搜索条件">
+                <form id="search-form" role="search" aria-describedby="search-help search-status"
+                    class="search-form site-panel">
+                    <div class="site-panel__heading">
+                        <span>01 / QUERY FILTER</span>
+                        <span class="site-code-text">INDEXED</span>
+                    </div>
+                    <div class="site-panel__body search-form__body">
+                        <fieldset>
+                            <legend class="sr-only">搜索条件</legend>
+                            <div class="search-form__grid">
+                                <div class="search-field search-field--query">
+                                    <label for="search-query" class="search-label">关键词</label>
+                                    <input id="search-query" name="query" type="search" autocomplete="off" maxlength="200"
+                                        aria-controls="search-results" placeholder="搜索标题与正文"
+                                        class="search-control" />
+                                </div>
+
+                                <div class="search-field">
+                                    <label id="search-source-label" for="search-source" class="search-label">来源</label>
+                                    <div class="search-select" data-search-select>
+                                        <select id="search-source" name="source" class="search-control">
+                                            <option value="">全部来源</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="search-field">
+                                    <label for="search-date" class="search-label">日期</label>
+                                    <input id="search-date" name="date" type="date" class="search-control" />
+                                </div>
+                                <div class="search-field">
+                                    <label id="search-entity-label" for="search-entity" class="search-label">规范实体 ID</label>
+                                    <div class="search-autocomplete" data-search-autocomplete>
+                                        <input id="search-entity" name="entity" type="text" list="search-entities" maxlength="200"
+                                            autocomplete="off" placeholder="例如 entity-openai" class="search-control" />
+                                        <datalist id="search-entities"></datalist>
+                                    </div>
+                                </div>
+                                <div class="search-field">
+                                    <label id="search-tag-label" for="search-tag" class="search-label">标签</label>
+                                    <div class="search-autocomplete" data-search-autocomplete>
+                                        <input id="search-tag" name="tag" type="text" list="search-tags" maxlength="200"
+                                            autocomplete="off" placeholder="输入或选择标签" class="search-control" />
+                                        <datalist id="search-tags"></datalist>
+                                    </div>
+                                </div>
+                                <div class="search-field">
+                                    <label id="search-scenario-label" for="search-scenario" class="search-label">场景</label>
+                                    <div class="search-autocomplete" data-search-autocomplete>
+                                        <input id="search-scenario" name="scenario" type="text" list="search-scenarios" maxlength="200"
+                                            autocomplete="off" placeholder="输入或选择场景" class="search-control" />
+                                        <datalist id="search-scenarios"></datalist>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <p id="search-help" class="search-help">
+                            规范实体使用稳定 entity_id；所有筛选值均执行精确匹配。
+                        </p>
+                        <div class="search-actions">
+                            <button id="search-submit" type="submit"
+                                class="search-button search-button--primary min-h-[44px] border border-primary/40 bg-primary/10 text-primary hover:bg-primary/20 focus:ring-2 focus:ring-primary">
+                                执行检索
+                            </button>
+                            <button type="reset"
+                                class="search-button search-button--quiet min-h-[44px] border border-muted-teal/20 text-off-white/70 hover:bg-muted-teal/10 focus:ring-2 focus:ring-primary">
+                                清除条件
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </aside>
+
+            <section aria-labelledby="search-results-heading" class="site-main search-results-panel">
+                <header class="search-results-panel__header">
+                    <div>
+                        <p class="site-page-kicker">02 / RETRIEVAL LEDGER</p>
+                        <h2 id="search-results-heading" class="site-section-title search-results-panel__title">搜索结果</h2>
+                    </div>
+                    <p id="search-status" role="status" aria-live="polite" aria-atomic="true"
+                        class="search-status">输入关键词或至少选择一个过滤条件。</p>
+                </header>
+                <ol id="search-results" class="search-result-list site-panel site-ledger list-none" aria-label="搜索结果列表"></ol>
+                <noscript>
+                    <p class="search-noscript">
+                        静态搜索需要启用 JavaScript；归档和 RSS 在禁用 JavaScript 时仍可使用。
+                    </p>
+                </noscript>
+            </section>
+        </div>
     </main>
 
     <script src="{{ printf "%s?v=%s" ("js/search.js" | relURL) $searchVersion }}" defer></script>

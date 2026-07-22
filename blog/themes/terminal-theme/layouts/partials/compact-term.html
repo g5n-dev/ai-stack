@@ -1,38 +1,95 @@
 {{- $pages := .RegularPages.ByDate.Reverse -}}
 {{- $paginator := .Paginate $pages 50 -}}
 {{- $termTitle := .Data.Term | default .Title -}}
+{{- $plural := .Data.Plural | lower -}}
+{{- $isTags := eq $plural "tags" -}}
+{{- $taxonomyTitle := cond $isTags "标签索引" "分类索引" -}}
+{{- $taxonomyPath := cond $isTags "tags/" "categories/" -}}
+{{- $kicker := cond $isTags "TAG TAXONOMY / TERM INDEX" "CATEGORY TAXONOMY / TERM INDEX" -}}
 <!DOCTYPE html>
 <html class="dark" lang="{{ .Site.LanguageCode }}">
 <head>
-    {{ partial "site-head.html" (dict "Page" . "Title" (printf "%s - %s" $termTitle .Site.Title) "Canonical" ($paginator.URL | absURL) "Scripts" (slice ("js/terminal.js" | relURL))) }}
+    {{ partial "site-head.html" (dict
+        "Page" .
+        "Title" (printf "%s - %s" $termTitle .Site.Title)
+        "Description" (printf "浏览归入“%s”的 AI Stack 情报文章。" $termTitle)
+        "Canonical" ($paginator.URL | absURL)
+        "Scripts" (slice ("js/terminal.js" | relURL))
+    ) }}
 </head>
-<body data-pagefind-ignore="all" class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-display">
+<body data-pagefind-ignore="all" class="bg-deep-navy font-display text-off-white selection:bg-muted-teal selection:text-deep-navy">
     <div class="relative flex min-h-screen w-full flex-col">
         {{ partial "site-header.html" . }}
 
-        <main class="flex-1 w-full px-4 md:px-8 py-10">
-            <div class="w-full max-w-4xl mx-auto">
-                <div class="border-b border-muted-teal/20 pb-5 mb-6">
-                    <p class="text-primary/70 text-xs font-mono tracking-wide">{{ .Data.Plural | upper }} / TERM</p>
-                    <h1 class="site-page-title mt-2 text-off-white">{{ $termTitle }}</h1>
-                    <p class="mt-2 text-muted-teal/55 text-xs font-mono">共 {{ len $pages }} 篇</p>
-                </div>
+        <main id="main-content" class="site-shell site-shell--workbench flex-1">
+            <div class="site-layout site-layout--split">
+                <aside class="site-rail" aria-label="{{ $termTitle }} 概览">
+                    <header class="site-page-hero site-page-hero--rail">
+                        <div class="site-page-hero__copy">
+                            <p class="site-page-kicker">{{ $kicker }}</p>
+                            <h1 class="site-page-title break-words text-off-white">{{ $termTitle }}</h1>
+                            <p class="site-page-lead">追踪该主题下的历史文章、来源与发布时间。</p>
+                        </div>
+                    </header>
 
-                <ol class="divide-y divide-muted-teal/10 border-y border-muted-teal/10">
-                    {{ range $paginator.Pages }}
-                    <li class="py-4">
-                        <a href="{{ .RelPermalink }}" data-taxonomy-entry="{{ .RelPermalink }}"
-                            class="group flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
-                            <span class="site-body-copy text-off-white/85 group-hover:text-primary">{{ .Title }}</span>
-                            <span class="shrink-0 text-muted-teal/50 text-xs font-mono">
-                                {{ .Date.Format "2006-01-02" }}{{ with .Params.source }} · {{ upper . }}{{ end }}
-                            </span>
-                        </a>
-                    </li>
-                    {{ end }}
-                </ol>
+                    <section class="site-panel mt-6" aria-labelledby="term-status-heading">
+                        <h2 id="term-status-heading" class="site-panel__heading">
+                            <span>01 / TERM STATUS</span>
+                            <span class="site-code-text">ACTIVE</span>
+                        </h2>
+                        <div class="site-panel__body grid grid-cols-2 gap-4">
+                            <div>
+                                <p class="site-meta-text m-0 text-off-white/60">归档文章</p>
+                                <p class="site-code-text mt-1 text-lg text-primary">{{ len $pages }}</p>
+                            </div>
+                            <div>
+                                <p class="site-meta-text m-0 text-off-white/60">当前页</p>
+                                <p class="site-code-text mt-1 text-lg text-primary">{{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</p>
+                            </div>
+                        </div>
+                    </section>
 
-                {{ partial "pagination.html" $paginator }}
+                    <nav class="site-panel mt-4" aria-label="主题相关入口">
+                        <h2 class="site-panel__heading">02 / RELATED ROUTES</h2>
+                        <div class="site-panel__body grid gap-2">
+                            <a href="{{ $taxonomyPath | relURL }}" class="site-control-text flex min-h-[44px] items-center justify-between border-b border-muted-teal/10 text-off-white/75 hover:text-primary">
+                                <span>返回{{ $taxonomyTitle }}</span><span class="site-code-text">INDEX</span>
+                            </a>
+                            <a href="{{ "trends/" | relURL }}?{{ if $isTags }}topic{{ else }}scenario{{ end }}={{ $termTitle | urlquery }}" class="site-control-text flex min-h-[44px] items-center justify-between border-b border-muted-teal/10 text-off-white/75 hover:text-primary">
+                                <span>查看趋势</span><span class="site-code-text">TREND</span>
+                            </a>
+                            <a href="{{ "scenarios/" | relURL }}?focus={{ printf "%s:%s" (cond $isTags "tag" "concept") $termTitle | urlquery }}" class="site-control-text flex min-h-[44px] items-center justify-between text-off-white/75 hover:text-primary">
+                                <span>进入图谱</span><span class="site-code-text">GRAPH</span>
+                            </a>
+                        </div>
+                    </nav>
+                </aside>
+
+                <section class="site-main" aria-labelledby="term-ledger-heading">
+                    <header class="flex min-h-[56px] items-end justify-between gap-5 border-b border-muted-teal/15 pb-4">
+                        <div>
+                            <p class="site-page-kicker mb-1">03 / ARTICLE LEDGER</p>
+                            <h2 id="term-ledger-heading" class="site-section-title m-0 text-off-white">关联文章</h2>
+                        </div>
+                        <p class="site-page-summary m-0">按发布时间倒序</p>
+                    </header>
+
+                    <ol class="site-panel site-ledger mt-4 list-none p-0">
+                        {{ range $paginator.Pages }}
+                        <li class="site-ledger-row">
+                            <a href="{{ .RelPermalink }}" data-taxonomy-entry="{{ .RelPermalink }}"
+                                class="group grid min-h-[72px] grid-cols-1 items-center gap-2 px-5 py-3 hover:bg-muted-teal/[0.035] sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-6">
+                                <span class="site-body-copy min-w-0 truncate font-semibold text-off-white/85 group-hover:text-primary">{{ .Title }}</span>
+                                <span class="site-code-text shrink-0 text-muted-teal/70">
+                                    {{ .Date.Format "2006-01-02" }}{{ with .Params.source }} · {{ upper . }}{{ end }}
+                                </span>
+                            </a>
+                        </li>
+                        {{ end }}
+                    </ol>
+
+                    {{ partial "pagination.html" $paginator }}
+                </section>
             </div>
         </main>
     </div>

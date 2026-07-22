@@ -25,143 +25,126 @@
         <div class="frame-label bottom-right">SECTOR_ID: AI_STACK // MODE: ARCHIVE</div>
     </div>
 
-    <div class="relative flex h-screen w-full flex-col overflow-hidden z-10">
+    <div class="relative z-10 flex h-screen w-full flex-col overflow-hidden">
         {{ partial "site-header.html" . }}
 
-        <main class="flex-1 w-full overflow-y-auto custom-scrollbar px-4 md:px-8 py-8">
-            <div class="w-full max-w-4xl mx-auto">
-                <!-- 标题区 -->
-                <div class="text-center mb-12">
-                    <span class="text-primary/70 text-[12px] font-bold tracking-wide mb-2 block">TEMPORAL ARCHIVE</span>
-                    <h1 class="site-page-title text-off-white tracking-tight font-display mb-4">时间线归档</h1>
-                    <p class="text-off-white/40 text-sm">共 {{ len $pages }} 篇文章；当前第 {{
-                        $paginator.PageNumber }} / {{ $paginator.TotalPages }} 页</p>
-                </div>
+        <main class="site-shell site-shell--workbench flex-1 overflow-y-auto custom-scrollbar">
+            <div class="site-layout site-layout--split">
+                <aside class="site-rail">
+                    <header class="site-page-hero site-page-hero--rail">
+                        <div class="site-page-hero__copy">
+                            <p class="site-page-kicker">TEMPORAL ARCHIVE / LIVE INDEX</p>
+                            <h1 class="site-page-title">时间线归档</h1>
+                            <p class="site-page-lead">按年月回看已归档情报，保留来源、标签与阅读入口，方便复盘技术演进。</p>
+                        </div>
+                    </header>
 
-                <!-- 年份导航 -->
-                <nav class="flex flex-wrap justify-center gap-3 mb-12">
-                    {{ range $yearGroups }}
-                    <a href="#year-{{ .Key }}"
-                        class="px-4 py-2 rounded-full border border-muted-teal/20 bg-muted-teal/5 hover:bg-primary/10 hover:border-primary/30 text-off-white/70 hover:text-primary text-[11px] font-mono tracking-wide transition-all">
-                        {{ .Key }}
+                    <section class="site-panel mt-6" aria-labelledby="archive-overview-heading">
+                        <h2 id="archive-overview-heading" class="site-panel__heading">归档概览</h2>
+                        <dl class="site-panel__body grid grid-cols-2 gap-4">
+                            <div>
+                                <dt class="site-meta-text text-off-white/60">全部条目</dt>
+                                <dd class="site-code-text mt-1 text-xl text-off-white">{{ len $pages }}</dd>
+                            </div>
+                            <div>
+                                <dt class="site-meta-text text-off-white/60">当前页</dt>
+                                <dd class="site-code-text mt-1 text-xl text-off-white">{{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</dd>
+                            </div>
+                        </dl>
+                    </section>
+
+                    <nav class="site-panel mt-4" aria-labelledby="archive-year-heading">
+                        <h2 id="archive-year-heading" class="site-panel__heading">年份索引</h2>
+                        <div class="site-panel__body">
+                            <ul class="site-quick-links">
+                                {{ range $yearGroups }}
+                                <li>
+                                    <a href="#year-{{ .Key }}">
+                                        <span class="site-code-text text-primary">{{ .Key }}</span>
+                                        <span class="site-meta-text ml-auto text-off-white/60">{{ len .Pages }} 篇</span>
+                                    </a>
+                                </li>
+                                {{ end }}
+                            </ul>
+                        </div>
+                    </nav>
+
+                    <a href="{{ "posts/" | relURL }}"
+                        class="site-control-text mt-4 flex min-h-11 items-center justify-between border border-muted-teal/20 px-4 text-off-white/70 transition-colors hover:border-primary/40 hover:text-primary">
+                        <span>返回情报归档</span>
+                        <span class="site-code-text" aria-hidden="true">POSTS</span>
                     </a>
-                    {{ end }}
-                </nav>
+                </aside>
 
-                <!-- 时间线内容 -->
-                <div class="relative">
-                    <!-- 时间线中线 -->
-                    <div
-                        class="absolute left-4 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-muted-teal/30 to-transparent">
+                <section class="site-main" aria-label="时间线条目">
+                    <div class="flex min-h-11 items-center justify-between border-b border-muted-teal/15 pb-4">
+                        <div>
+                            <p class="site-page-kicker mb-0">CHRONOLOGICAL LEDGER</p>
+                            <h2 class="site-section-title mt-1">按时间浏览</h2>
+                        </div>
+                        <span class="site-code-text text-off-white/60">PAGE {{ printf "%02d" $paginator.PageNumber }}</span>
                     </div>
 
-                    <div class="space-y-12">
+                    <div class="mt-5 space-y-8">
                         {{ range $yearGroups }}
-                        {{$year := .Key}}
-
-                        <!-- 年份区块 -->
-                        <div id="year-{{ $year }}" class="relative">
-                            <!-- 年份标签 -->
-                            <div
-                                class="sticky top-0 z-10 bg-deep-navy/90 backdrop-blur-sm py-3 -mt-3 mb-6 border-b border-muted-teal/10">
-                                <div class="flex items-center gap-4">
-                                    <div class="w-3 h-3 rounded-full bg-primary shadow-[0_0_12px_#4db6ac]"></div>
-                                    <h2 class="site-section-title text-off-white tracking-tight">{{ $year }} 年</h2>
-                                    <span class="text-off-white/30 text-sm font-mono">{{ len .Pages }} 篇</span>
-                                </div>
+                        {{- $year := .Key -}}
+                        <section id="year-{{ $year }}" aria-labelledby="year-{{ $year }}-heading">
+                            <div class="flex min-h-11 items-center gap-3 border-b border-muted-teal/15">
+                                <span class="size-2 rounded-full bg-primary shadow-[0_0_10px_rgba(77,182,172,0.45)]"></span>
+                                <h2 id="year-{{ $year }}-heading" class="site-section-title">{{ $year }} 年</h2>
+                                <span class="site-meta-text ml-auto text-off-white/60">{{ len .Pages }} 篇</span>
                             </div>
 
-                            <!-- 月份列表 -->
-                            <div class="space-y-8 ml-8 md:ml-12">
-                                {{ range .Pages.GroupByDate "2006-01" }}
-                                {{$month := index (split .Key "-") 1}}
-                                {{$monthName := index $monthNames $month}}
-
-                                <div class="relative">
-                                    <!-- 月份标签 -->
-                                    <div class="flex items-center gap-3 mb-4">
-                                        <div class="w-2 h-2 rounded-full bg-muted-teal/60"></div>
-                                        <h3 class="text-primary/70 text-sm font-bold tracking-wider font-mono">{{
-                                            $monthName }}</h3>
-                                        <span
-                                            class="h-px flex-1 bg-gradient-to-r from-muted-teal/20 to-transparent"></span>
-                                        <span class="text-off-white/20 text-[10px] font-mono">{{ len .Pages }}</span>
-                                    </div>
-
-                                    <!-- 文章列表 -->
-                                    <div class="space-y-2 ml-5">
-                                        {{ range .Pages }}
-                                        <a href="{{ .RelPermalink }}" data-archive-entry="{{ .RelPermalink }}"
-                                            class="group flex items-start gap-4 p-3 rounded-lg hover:bg-muted-teal/5 transition-all">
-                                            <span
-                                                class="text-off-white/25 text-[11px] font-mono pt-0.5 group-hover:text-primary/50">{{
-                                                .Date.Format "02" }}</span>
-                                            <div class="flex-1 min-w-0">
-                                                <span
-                                                    class="text-off-white/80 text-sm group-hover:text-primary transition-colors block truncate"
-                                                    title="{{ .Title }}">{{ .Title }}</span>
-                                                <div class="flex items-center gap-2 mt-1">
-                                                    {{- $s := .Params.source -}}
-                                                    <span class="text-[10px] text-off-white/30 font-mono">
-                                                        {{- if eq $s "github_trending" -}}[GitHub]
-                                                        {{- else if eq $s "hacker_news" -}}[HN]
-                                                        {{- else if eq $s "arxiv" -}}[ArXiv]
-                                                        {{- else if eq $s "blogs_podcasts" -}}[Blog]
-                                                        {{- else -}}[Note]
-                                                        {{- end -}}
-                                                    </span>
-                                                    {{ range first 2 (.Params.tags | default (slice)) }}
-                                                    <span
-                                                        class="text-[10px] px-1.5 py-0.5 rounded border border-muted-teal/10 bg-terminal-bg/40 text-muted-teal/40">{{
-                                                        . }}</span>
-                                                    {{ end }}
-                                                </div>
+                            {{ range .Pages.GroupByDate "2006-01" }}
+                            {{- $month := index (split .Key "-") 1 -}}
+                            {{- $monthName := index $monthNames $month -}}
+                            <section class="site-panel site-ledger mt-4" aria-labelledby="month-{{ .Key }}-heading">
+                                <div class="site-panel__heading">
+                                    <h3 id="month-{{ .Key }}-heading">{{ $monthName }}</h3>
+                                    <span class="site-code-text text-off-white/60">{{ len .Pages }} ENTRIES</span>
+                                </div>
+                                <div>
+                                    {{ range .Pages }}
+                                    {{- $source := .Params.source | default "note" -}}
+                                    <article class="site-ledger-row grid grid-cols-[56px_minmax(0,1fr)_112px] items-center gap-4 px-4 py-3 max-sm:grid-cols-[48px_minmax(0,1fr)]">
+                                        <time class="site-code-text text-primary/75" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02" }}</time>
+                                        <div class="min-w-0">
+                                            <a href="{{ .RelPermalink }}" data-archive-entry="{{ .RelPermalink }}"
+                                                class="site-ledger-row__title hover:text-primary" title="{{ .Title }}">{{ .Title }}</a>
+                                            <div class="mt-1 flex flex-wrap items-center gap-2">
+                                                <span class="site-code-text text-off-white/60">{{ upper $source }}</span>
+                                                {{ range first 2 (.Params.tags | default (slice)) }}
+                                                <span class="site-ledger-tag">{{ . }}</span>
+                                                {{ end }}
                                             </div>
-                                            <span
-                                                class="text-off-white/20 group-hover:text-primary/40 transition-colors">
-                                                <span class="material-symbols-outlined text-lg">arrow_forward</span>
-                                            </span>
+                                        </div>
+                                        <a href="{{ .RelPermalink }}"
+                                            class="site-control-text flex min-h-11 items-center justify-end text-primary/80 hover:text-off-white max-sm:col-start-2 max-sm:justify-start">
+                                            阅读文章 <span class="material-symbols-outlined ml-2 text-base" aria-hidden="true">arrow_forward</span>
                                         </a>
-                                        {{ end }}
-                                    </div>
+                                    </article>
+                                    {{ end }}
                                 </div>
-                                {{ end }}
-                            </div>
-                        </div>
+                            </section>
+                            {{ end }}
+                        </section>
                         {{ end }}
                     </div>
-                </div>
 
-                <!-- 返回顶部 -->
-                <div class="mt-16 text-center">
-                    <a href="#"
-                        class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-muted-teal/20 bg-muted-teal/5 hover:bg-primary/10 hover:border-primary/30 text-off-white/60 hover:text-primary text-[11px] font-mono tracking-wide transition-all">
-                        <span class="material-symbols-outlined text-sm">keyboard_arrow_up</span>
-                        返回顶部
-                    </a>
-                </div>
-
-                {{ partial "pagination.html" $paginator }}
+                    <div class="mt-8 border-t border-muted-teal/15 pt-6">
+                        {{ partial "pagination.html" $paginator }}
+                    </div>
+                </section>
             </div>
         </main>
 
-        <footer
-            class="h-14 border-t border-muted-teal/10 bg-deep-navy/80 backdrop-blur-2xl flex items-center px-6 gap-0 z-20">
-            <div class="terminal-label text-primary font-mono text-sm font-bold tracking-tight">CMD://</div>
-            <div class="flex-1 terminal-caret-host flex items-center">
-                <span class="terminal-caret text-primary font-mono text-sm font-bold tracking-tight"
-                    aria-hidden="true">█</span>
-                <input
-                    class="terminal-input flex-1 min-w-0 bg-transparent border-none focus:ring-0 text-primary font-mono text-sm placeholder:text-muted-teal/30"
-                    placeholder="输入命令…（archive 归档 / posts 列表 / clear）" type="text" autocomplete="off"
-                    spellcheck="false" />
-                <div class="hidden md:flex gap-6 items-center border-l border-muted-teal/10 pl-6 ml-6 h-full">
-                    <span class="text-muted-teal/40 font-mono text-[9px] tracking-widest uppercase">Link: STABLE</span>
-                    <div class="flex items-center gap-2 text-primary/60">
-                        <span class="material-symbols-outlined text-base">cloud_queue</span>
-                        <span class="text-[9px] font-bold tracking-widest uppercase">Snapshot_Mode</span>
-                    </div>
-                </div>
+        <footer class="flex h-14 items-center gap-0 border-t border-muted-teal/10 bg-deep-navy/90 px-6 backdrop-blur-2xl z-20">
+            <div class="terminal-label font-mono text-sm font-bold tracking-tight text-primary">CMD://</div>
+            <div class="terminal-caret-host flex flex-1 items-center">
+                <span class="terminal-caret font-mono text-sm font-bold tracking-tight text-primary" aria-hidden="true">█</span>
+                <input class="terminal-input min-w-0 flex-1 border-none bg-transparent font-mono text-sm text-primary placeholder:text-muted-teal/30 focus:ring-0"
+                    placeholder="输入命令…（archive 归档 / posts 列表 / clear）" type="text" autocomplete="off" spellcheck="false" />
+                <span class="site-code-text hidden border-l border-muted-teal/10 pl-6 text-primary/60 md:block">SNAPSHOT_MODE</span>
             </div>
         </footer>
     </div>
