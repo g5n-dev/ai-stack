@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T18:25:24Z",
+  "generated_at": "2026-07-22T20:25:53Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -4565,7 +4565,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 35
+      "weight": 36
     },
     {
       "id": "edge:cooccurrence:tag:博客与播客->tag:深度学习",
@@ -4749,7 +4749,7 @@
       "strength": 1,
       "target": "tag:掘金",
       "type": "cooccurrence",
-      "weight": 9
+      "weight": 10
     },
     {
       "id": "edge:cooccurrence:tag:工程实践->tag:来源转写",
@@ -4757,7 +4757,7 @@
       "strength": 1,
       "target": "tag:来源转写",
       "type": "cooccurrence",
-      "weight": 9
+      "weight": 10
     },
     {
       "id": "edge:cooccurrence:tag:掘金->tag:数据库",
@@ -4789,7 +4789,7 @@
       "strength": 1,
       "target": "tag:来源转写",
       "type": "cooccurrence",
-      "weight": 9
+      "weight": 10
     },
     {
       "id": "edge:cooccurrence:tag:掘金->tag:深度学习",
@@ -6205,7 +6205,7 @@
       "legacy_id": "Kotlin",
       "level": 6,
       "name": "Kotlin",
-      "rank": 30,
+      "rank": 31,
       "related_count": 14,
       "weighted_degree": 27
     },
@@ -6516,7 +6516,7 @@
       "weighted_degree": 289.6
     },
     {
-      "article_count": 343,
+      "article_count": 344,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -6530,7 +6530,7 @@
       "name": "博客与播客",
       "rank": 4,
       "related_count": 62,
-      "weighted_degree": 681
+      "weighted_degree": 682
     },
     {
       "article_count": 141,
@@ -6567,7 +6567,7 @@
       "weighted_degree": 1223.2
     },
     {
-      "article_count": 10,
+      "article_count": 11,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Codex",
@@ -6579,12 +6579,12 @@
       "legacy_id": "工程实践",
       "level": 6,
       "name": "工程实践",
-      "rank": 31,
+      "rank": 30,
       "related_count": 9,
-      "weighted_degree": 25
+      "weighted_degree": 27
     },
     {
-      "article_count": 449,
+      "article_count": 450,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -6598,7 +6598,7 @@
       "name": "掘金",
       "rank": 3,
       "related_count": 25,
-      "weighted_degree": 1184
+      "weighted_degree": 1186
     },
     {
       "article_count": 146,
@@ -6635,7 +6635,7 @@
       "weighted_degree": 240
     },
     {
-      "article_count": 77,
+      "article_count": 78,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -6649,10 +6649,10 @@
       "name": "来源快报",
       "rank": 16,
       "related_count": 45,
-      "weighted_degree": 162
+      "weighted_degree": 163
     },
     {
-      "article_count": 9,
+      "article_count": 10,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Codex",
@@ -6666,7 +6666,7 @@
       "name": "来源转写",
       "rank": 38,
       "related_count": 2,
-      "weighted_degree": 18
+      "weighted_degree": 20
     },
     {
       "article_count": 32,

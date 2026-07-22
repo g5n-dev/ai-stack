@@ -1,7 +1,7 @@
 {
-  "active_count": 2176,
+  "active_count": 2178,
   "archived_count": 276,
-  "complete_count": 10,
+  "complete_count": 11,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -17980,6 +17980,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260723-blogs_podcasts-accelerating-the-frontiers-of-scientific-discovery-0-e08c4d4e6d.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260723-blogs_podcasts-ai-teammates-how-mondaycom-runs-production-ai-agen-0-804a63e343.md": {
       "reasons": [
         "concise_source_card"
@@ -18019,10 +18025,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2166,
-  "source_file_count": 2452,
-  "source_tree_sha256": "420983d614cdc838dd1f62b7384ad64df6ac77622d6858a30714fd0d29797b74",
-  "verified_provenance_count": 2176,
+  "source_brief_count": 2167,
+  "source_file_count": 2454,
+  "source_tree_sha256": "bf1ee2b7dbe7f56a2bccd8671ba1bc2ae8cc2e8a9f1e187c83df0dad13c6262d",
+  "verified_provenance_count": 2178,
   "warning_counts": {
     "source_excerpt_truncated": 742
   }
