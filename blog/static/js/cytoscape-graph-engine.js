@@ -86,6 +86,57 @@
     const FOCUS_GROUP_LIMIT = 6;
     const DEFAULT_INDEX_URL = "/data/tag-graph/index.json";
     const DEFAULT_WORKER_URL = "/js/data-parser-worker.js";
+    const GRAPH_FONT_FALLBACKS = Object.freeze({
+        sans: "system-ui, sans-serif",
+        mono: "monospace",
+        labelSize: 12,
+        smallLabelSize: 10,
+        featureLabelSize: 11,
+        minLabelSize: 10,
+        labelWeight: 500,
+        strongLabelWeight: 600
+    });
+    let resolvedGraphFontFamilies = null;
+
+    function readCssFontFamily(propertyName, fallback) {
+        const documentElement = global.document?.documentElement;
+        if (!documentElement || typeof global.getComputedStyle !== "function") {
+            return fallback;
+        }
+        const value = global.getComputedStyle(documentElement)
+            .getPropertyValue(propertyName)
+            .trim();
+        return value || fallback;
+    }
+
+    function readCssNumber(propertyName, fallback) {
+        const documentElement = global.document?.documentElement;
+        if (!documentElement || typeof global.getComputedStyle !== "function") {
+            return fallback;
+        }
+        const value = Number.parseFloat(
+            global.getComputedStyle(documentElement)
+                .getPropertyValue(propertyName)
+                .trim()
+        );
+        return Number.isFinite(value) ? value : fallback;
+    }
+
+    function graphFontFamilies() {
+        if (!resolvedGraphFontFamilies) {
+            resolvedGraphFontFamilies = Object.freeze({
+                sans: readCssFontFamily("--site-font-sans", GRAPH_FONT_FALLBACKS.sans),
+                mono: readCssFontFamily("--site-font-mono", GRAPH_FONT_FALLBACKS.mono),
+                labelSize: readCssNumber("--graph-node-label-size", GRAPH_FONT_FALLBACKS.labelSize),
+                smallLabelSize: readCssNumber("--graph-node-label-small-size", GRAPH_FONT_FALLBACKS.smallLabelSize),
+                featureLabelSize: readCssNumber("--graph-node-label-feature-size", GRAPH_FONT_FALLBACKS.featureLabelSize),
+                minLabelSize: readCssNumber("--graph-node-label-min-size", GRAPH_FONT_FALLBACKS.minLabelSize),
+                labelWeight: readCssNumber("--graph-node-label-weight", GRAPH_FONT_FALLBACKS.labelWeight),
+                strongLabelWeight: readCssNumber("--graph-node-label-strong-weight", GRAPH_FONT_FALLBACKS.strongLabelWeight)
+            });
+        }
+        return resolvedGraphFontFamilies;
+    }
 
     function asArray(value) {
         return Array.isArray(value) ? value : [];
@@ -828,6 +879,7 @@
         }
 
         _getStylesheet() {
+            const fonts = graphFontFamilies();
             return [
                 {
                     selector: "node",
@@ -838,10 +890,10 @@
                         "background-opacity": 0.9,
                         label: "data(label)",
                         color: "#e5f8f7",
-                        "font-family": "ui-monospace, SFMono-Regular, Menlo, monospace",
-                        "font-size": 11,
-                        "font-weight": 500,
-                        "min-zoomed-font-size": 8,
+                        "font-family": fonts.sans,
+                        "font-size": fonts.labelSize,
+                        "font-weight": fonts.labelWeight,
+                        "min-zoomed-font-size": fonts.minLabelSize,
                         "text-valign": "bottom",
                         "text-halign": "center",
                         "text-margin-y": 8,
@@ -872,9 +924,9 @@
                         "underlay-opacity": 0.035,
                         "overlay-opacity": 0,
                         color: "#d8eeee",
-                        "font-size": 7.8,
-                        "font-weight": 500,
-                        "min-zoomed-font-size": 6,
+                        "font-size": fonts.smallLabelSize,
+                        "font-weight": fonts.labelWeight,
+                        "min-zoomed-font-size": fonts.minLabelSize,
                         "text-margin-y": 5,
                         "text-outline-width": 2.2,
                         "text-max-width": 76
@@ -892,7 +944,7 @@
                     style: {
                         "background-opacity": 0.78,
                         "border-width": 1.3,
-                        "font-size": 7.6,
+                        "font-size": fonts.smallLabelSize,
                         "text-background-color": "#071019",
                         "text-background-opacity": 0.64,
                         "text-background-padding": 1.5
@@ -911,8 +963,8 @@
                         "text-valign": "top",
                         "text-halign": "center",
                         "text-margin-y": -88,
-                        "font-size": 9.5,
-                        "font-weight": 600,
+                        "font-size": fonts.featureLabelSize,
+                        "font-weight": fonts.strongLabelWeight,
                         "text-wrap": "wrap",
                         "text-max-width": 116,
                         "text-background-color": "#07131b",
@@ -953,7 +1005,7 @@
                     style: {
                         width: "mapData(overviewVisualSize, 5, 21, 4, 13)",
                         height: "mapData(overviewVisualSize, 5, 21, 4, 13)",
-                        "font-size": 6.5,
+                        "font-size": fonts.smallLabelSize,
                         "text-max-width": 56
                     }
                 },
@@ -963,7 +1015,7 @@
                         width: 15,
                         height: 15,
                         "text-margin-y": -47,
-                        "font-size": 7.5,
+                        "font-size": fonts.smallLabelSize,
                         "text-max-width": 78,
                         "text-background-padding": 2.5
                     }
@@ -984,8 +1036,8 @@
                         height: "data(communityVisualSize)",
                         "text-valign": "top",
                         "text-margin-y": -12,
-                        "font-size": 10.5,
-                        "font-weight": 600,
+                        "font-size": fonts.featureLabelSize,
+                        "font-weight": fonts.strongLabelWeight,
                         "text-wrap": "wrap",
                         "text-max-width": 118,
                         "text-background-color": "#07131b",
@@ -1039,7 +1091,7 @@
                 {
                     selector: "node.community-node.community-compact",
                     style: {
-                        "font-size": 8,
+                        "font-size": fonts.smallLabelSize,
                         "text-max-width": 82,
                         "text-valign": "top",
                         "text-halign": "center",
@@ -1084,9 +1136,9 @@
                         "border-color": "#efad53",
                         "border-width": 0.9,
                         color: "#ead2ad",
-                        "font-size": 8.2,
-                        "font-weight": 500,
-                        "min-zoomed-font-size": 6,
+                        "font-size": fonts.smallLabelSize,
+                        "font-weight": fonts.labelWeight,
+                        "min-zoomed-font-size": fonts.minLabelSize,
                         "text-valign": "center",
                         "text-halign": "right",
                         "text-margin-x": 6,
@@ -1164,8 +1216,8 @@
                         "underlay-opacity": 0.045,
                         "overlay-opacity": 0,
                         color: "#c8d8dc",
-                        "font-size": 9.5,
-                        "font-weight": 500,
+                        "font-size": fonts.smallLabelSize,
+                        "font-weight": fonts.labelWeight,
                         "text-margin-y": 6,
                         "text-outline-width": 2.2
                     }
@@ -1207,8 +1259,8 @@
                         "underlay-opacity": 0.14,
                         "overlay-opacity": 0,
                         color: "#fff2d5",
-                        "font-size": 10.5,
-                        "font-weight": 600,
+                        "font-size": fonts.labelSize,
+                        "font-weight": fonts.strongLabelWeight,
                         "text-margin-y": 7,
                         "text-outline-width": 3
                     }
@@ -1253,8 +1305,8 @@
                         "underlay-color": "#33e6d2",
                         "underlay-padding": 5,
                         "underlay-opacity": 0.06,
-                        "font-size": 8.4,
-                        "font-weight": 600,
+                        "font-size": fonts.smallLabelSize,
+                        "font-weight": fonts.strongLabelWeight,
                         "text-valign": "top",
                         "text-halign": "center",
                         "text-margin-y": -42,

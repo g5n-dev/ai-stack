@@ -47,21 +47,19 @@
 
     <main
       id="graph-workbench"
-      class="graph-workbench"
+      class="site-shell site-shell--workbench graph-workbench"
       data-index-url="{{ printf "%s?v=%s" ("data/tag-graph/index.json" | relURL) $graphAssetVersion }}"
       data-trends-index-url="{{ "data/stack-trends/index.json" | relURL }}"
       data-base-path="{{ .Site.Home.RelPermalink }}"
       data-worker-url="{{ printf "%s?v=%s" ("js/data-parser-worker.js" | relURL) $graphAssetVersion }}"
     >
-      <h1 class="sr-only">{{ .Title }}</h1>
-
       <section class="graph-console" aria-label="知识图谱控制台">
         <div class="console-heading">
-          <div>
-            <p class="console-kicker">INTELLIGENCE TOPOLOGY</p>
-            <h2 class="site-workbench-title">动态场景知识图谱</h2>
+          <div class="console-heading__meta">
+            <p class="site-page-kicker console-kicker">INTELLIGENCE GRAPH / LIVE TOPOLOGY</p>
+            <span id="graph-live-state" class="console-state" aria-live="polite">同步中</span>
           </div>
-          <span id="graph-live-state" class="console-state" aria-live="polite">同步中</span>
+          <h1 class="site-page-title">动态场景知识图谱</h1>
         </div>
 
         <div class="mode-switcher" role="group" aria-label="图谱探索模式">

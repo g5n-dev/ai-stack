@@ -43,7 +43,12 @@ def test_all_page_templates_share_the_strict_local_head() -> None:
     assert 'printf "%s?v=%s" ("css/tailwind.css" | relURL)' in head
     assert 'printf "%s?v=%s" ("css/style.css" | relURL)' in head
     for template in PAGE_TEMPLATES:
-        assert 'partial "site-head.html"' in template.read_text(encoding="utf-8"), template
+        source = template.read_text(encoding="utf-8")
+        if template.name == "terms.html" and 'partial "compact-taxonomy.html"' in source:
+            source = (LAYOUT_ROOT / "partials/compact-taxonomy.html").read_text(
+                encoding="utf-8"
+            )
+        assert 'partial "site-head.html"' in source, template
 
 
 def test_templates_do_not_depend_on_remote_or_inline_executable_scripts() -> None:

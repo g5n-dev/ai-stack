@@ -59,32 +59,34 @@
     <div class="relative flex h-screen w-full flex-col overflow-hidden z-10">
         {{ partial "site-header.html" . }}
 
-        <main class="flex-1 w-full overflow-y-auto custom-scrollbar px-4 md:px-8 py-8">
-            <div class="w-full max-w-6xl mx-auto flex gap-8">
-                <!-- 侧边栏筛选器 -->
-                <aside class="hidden lg:block w-56 flex-shrink-0">
-                    <div class="sticky top-8 space-y-6">
+        <main class="site-shell site-shell--workbench flex-1 w-full overflow-y-auto custom-scrollbar">
+            <div class="site-layout site-layout--split">
+                <aside class="site-rail">
+                    <div class="sticky top-6 space-y-5">
+                        <header class="site-page-hero site-page-hero--rail">
+                            <div class="site-page-hero__copy">
+                                <p class="site-page-kicker">INTELLIGENCE ARCHIVE / LIVE INDEX</p>
+                                <h1 class="site-page-title text-off-white">情报归档</h1>
+                                <p class="site-page-lead">按时间、来源与标签整理 AI 情报；每条记录可继续进入文章、趋势与知识图谱。</p>
+                            </div>
+                        </header>
+
                         {{ partialCached "period-filters.html" .Site .Site.Language.Lang }}
 
-                        <!-- 快速链接 -->
-                        <div class="glass-panel rounded-lg p-4">
-                            <h3
-                                class="site-meta-text text-primary/70 font-bold tracking-wide mb-3 flex items-center gap-2">
-                                <span class="material-symbols-outlined text-sm">bookmark</span>
-                                快速访问
-                            </h3>
-                            <ul class="space-y-1">
-                                <li><a href="/posts/"
-                                        class="site-control-text flex items-center px-3 py-1.5 rounded text-off-white/50 hover:bg-muted-teal/5 hover:text-off-white/70 transition-all">全部文章</a>
+                        <div class="site-panel">
+                            <h3 class="site-panel__heading">快速访问</h3>
+                            <ul class="site-panel__body site-quick-links">
+                                <li><a href="{{ "posts/" | relURL }}"
+                                        class="site-control-text">全部文章</a>
                                 </li>
-                                <li><a href="/tags/"
-                                        class="site-control-text flex items-center px-3 py-1.5 rounded text-off-white/50 hover:bg-muted-teal/5 hover:text-off-white/70 transition-all">标签云</a>
+                                <li><a href="{{ "tags/" | relURL }}"
+                                        class="site-control-text">标签索引</a>
                                 </li>
-                                <li><a href="/scenarios/"
-                                        class="site-control-text flex items-center px-3 py-1.5 rounded text-off-white/50 hover:bg-muted-teal/5 hover:text-off-white/70 transition-all">应用场景</a>
+                                <li><a href="{{ "scenarios/" | relURL }}"
+                                        class="site-control-text">知识图谱</a>
                                 </li>
-                                <li><a href="/archive/"
-                                        class="site-control-text flex items-center px-3 py-1.5 rounded text-off-white/50 hover:bg-muted-teal/5 hover:text-off-white/70 transition-all">时间线归档</a>
+                                <li><a href="{{ "archive/" | relURL }}"
+                                        class="site-control-text">时间线</a>
                                 </li>
                             </ul>
                         </div>
@@ -93,97 +95,89 @@
                     </div>
                 </aside>
 
-                <!-- 主内容区 -->
-                <div class="flex-1 min-w-0">
-                    <div class="flex items-end justify-between border-b border-muted-teal/10 pb-6 mb-8">
-                        <div class="flex flex-col">
-                            <span class="text-primary/70 text-[12px] font-bold tracking-wide mb-1">目录</span>
-                            <h1 class="site-page-title text-off-white tracking-tight font-display">{{ .Title }}</h1>
+                <div class="site-main">
+                    <div class="flex min-h-11 items-center justify-between border-b border-muted-teal/15 pb-4 mb-6">
+                        <div class="site-meta-text text-off-white/65">
+                            共 <span id="posts-count" class="text-off-white/80">{{ len $pages }}</span> 条情报
                         </div>
-                        <div class="text-muted-teal/45 text-[11px] font-mono tracking-wide">
-                            条目：<span id="posts-count">{{ len $pages }}</span>
+                        <div class="site-meta-text text-primary/75">
+                            排序：最新优先
                         </div>
                     </div>
 
-                    <!-- 按年月分组显示 -->
-                    <div class="space-y-8">
+                    <div class="space-y-6">
                         {{ range $pageItems.GroupByDate "2006-01" }}
                         {{$year := index (split .Key "-") 0}}
                         {{$month := index (split .Key "-") 1}}
                         {{$monthName := index $monthNames $month}}
 
-                        <section class="posts-month-group space-y-4" data-year-month="{{ .Key }}" data-year="{{ $year }}"
+                        <section class="posts-month-group space-y-3" data-year-month="{{ .Key }}" data-year="{{ $year }}"
                             data-month="{{ $month }}">
-                            <div class="flex items-center gap-3 mb-4">
-                                <span class="text-primary/70 text-[13px] font-bold tracking-wider font-mono">{{ $year }}年{{
+                            <div class="flex min-h-10 items-center gap-3">
+                                <span class="site-meta-text text-primary/80 font-bold tracking-wider">{{ $year }}年{{
                                     $monthName }}</span>
-                                <span class="h-px flex-1 bg-gradient-to-r from-muted-teal/30 to-transparent"></span>
-                                <span class="text-off-white/25 text-[10px] font-mono">{{ len .Pages }} 篇</span>
+                                <span class="h-px flex-1 bg-muted-teal/20"></span>
+                                <span class="site-code-text text-off-white/60">{{ len .Pages }} 篇</span>
                             </div>
 
-                            <div class="glass-panel rounded-xl overflow-hidden">
-                                <table class="w-full table-fixed text-left border-collapse">
+                            <div class="site-panel site-ledger">
+                                <table class="site-ledger-table">
+                                    <colgroup>
+                                        <col class="site-ledger-col site-ledger-col--type">
+                                        <col class="site-ledger-col site-ledger-col--title">
+                                        <col class="site-ledger-col site-ledger-col--source">
+                                        <col class="site-ledger-col site-ledger-col--date">
+                                        <col class="site-ledger-col site-ledger-col--tags">
+                                        <col class="site-ledger-col site-ledger-col--actions">
+                                    </colgroup>
                                     <thead>
-                                        <tr class="bg-muted-teal/5 border-b border-muted-teal/10">
-                                            <th
-                                                class="w-28 px-6 md:px-8 py-4 text-muted-teal/60 text-[11px] font-bold tracking-wide">
-                                                类型</th>
-                                            <th
-                                                class="w-20 px-6 md:px-8 py-4 text-muted-teal/60 text-[11px] font-bold tracking-wide text-right">
-                                                阅读</th>
-                                            <th
-                                                class="px-6 md:px-8 py-4 text-off-white text-[11px] font-bold tracking-wide">
-                                                条目</th>
+                                        <tr>
+                                            <th scope="col">类型</th>
+                                            <th scope="col">标题</th>
+                                            <th scope="col">来源</th>
+                                            <th scope="col">日期</th>
+                                            <th scope="col">标签</th>
+                                            <th scope="col">操作</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="divide-y divide-muted-teal/5">
+                                    <tbody>
                                         {{ range .Pages }}
-                                        <tr class="hover:bg-muted-teal/5 transition-all group">
-                                            <td class="w-28 px-6 md:px-8 py-5">
+                                        <tr class="site-ledger-row hover:bg-muted-teal/5 transition-colors group">
+                                            <td data-label="类型">
                                                 {{- $kind := lower (.Params.entry_kind | default "") -}}
                                                 {{- $isManual := or (eq $kind "manual") (and (eq $kind "") (not
                                                 .Params.source)) -}}
-                                                <div class="flex flex-col gap-1 leading-tight">
-                                                    <span
-                                                        class="text-[11px] {{ if $isManual }}text-off-white/60 group-hover:text-off-white{{ else }}text-primary/70 group-hover:text-primary{{ end }} transition-colors">
-                                                        {{ if $isManual }}[手动]{{ else }}[自动]{{ end }}
-                                                    </span>
-                                                    <span
-                                                        class="text-[11px] text-off-white/35 group-hover:text-off-white/55 transition-colors font-mono">
-                                                        {{ with .Params.source }}{{ printf "[%s]" (upper .) }}{{ else
-                                                        }}[笔记]{{ end }}
-                                                    </span>
+                                                <span class="site-meta-text {{ if $isManual }}text-off-white/65{{ else }}text-primary/80{{ end }}">
+                                                    {{ if $isManual }}手动{{ else }}自动{{ end }}
+                                                </span>
+                                            </td>
+                                            <td data-label="标题">
+                                                <a href="{{ .RelPermalink }}" data-entry-link="{{ .RelPermalink }}" data-entry-title="{{ .Title }}"
+                                                    class="block min-w-0 text-off-white hover:text-primary transition-colors">
+                                                    <span class="site-ledger-row__title" title="{{ .Title }}">{{ .Title }}</span>
+                                                </a>
+                                                {{ with .Description }}<p class="site-ledger-row__summary">{{ . | plainify }}</p>{{ end }}
+                                            </td>
+                                            <td data-label="来源" class="site-code-text">
+                                                {{ with .Params.source }}{{ upper . }}{{ else }}本站{{ end }}
+                                            </td>
+                                            <td data-label="日期" class="site-code-text">
+                                                {{ .Date.Format "01-02" }}<span class="mt-1 block text-off-white/55">{{ printf "%dmin" .ReadingTime }}</span>
+                                            </td>
+                                            <td data-label="标签">
+                                                <div class="site-ledger-tags">
+                                                    {{ range first 3 (.Params.tags | default (slice)) }}
+                                                    <span class="site-ledger-tag">{{ . }}</span>
+                                                    {{ end }}
                                                 </div>
                                             </td>
-                                            <td
-                                                class="w-20 px-6 md:px-8 py-5 text-muted-teal/45 text-[11px] text-right font-mono">
-                                                {{ printf "%dmin" .ReadingTime }}
-                                            </td>
-                                            <td class="px-6 md:px-8 py-5">
-                                                <a href="{{ .RelPermalink }}" data-entry-link="{{ .RelPermalink }}"
-                                                    data-entry-title="{{ .Title }}" class="flex items-center gap-4 min-w-0">
-                                                    <span
-                                                        class="material-symbols-outlined text-primary/40 group-hover:text-primary transition-all">
-                                                        {{- $s := .Params.source -}}
-                                                        {{- if eq $s "github_trending" -}}hub
-                                                        {{- else if eq $s "hacker_news" -}}newspaper
-                                                        {{- else if eq $s "arxiv" -}}school
-                                                        {{- else if eq $s "blogs_podcasts" -}}mic
-                                                        {{- else -}}sticky_note_2
-                                                        {{- end -}}
-                                                    </span>
-                                                    <span
-                                                        class="min-w-0 flex-1 text-off-white text-sm tracking-wide group-hover:translate-x-1 transition-transform truncate"
-                                                        title="{{ .Title }}">{{ .Title }}</span>
-                                                </a>
-                                                <div
-                                                    class="mt-2 flex flex-wrap items-center gap-2 text-[11px] text-off-white/45">
-                                                    <span class="font-mono text-muted-teal/40">{{ .Date.Format "01-02"
-                                                        }}</span>
-                                                    {{ range first 3 (.Params.tags | default (slice)) }}
-                                                    <span
-                                                        class="px-2 py-0.5 rounded border border-muted-teal/15 bg-terminal-bg/40 text-muted-teal/60">{{
-                                                        . }}</span>
+                                            <td data-label="操作">
+                                                <div class="site-ledger-actions">
+                                                    <a href="{{ .RelPermalink }}">文章</a>
+                                                    <a href="{{ printf "trends/?query=%s" (.Title | urlquery) | relURL }}">趋势</a>
+                                                    {{ range first 1 (.Params.tags | default (slice)) }}
+                                                    {{- $nodeId := printf "tag:%s" . -}}
+                                                    <a href="{{ printf "scenarios/?mode=focus&node=%s" ($nodeId | urlquery) | relURL }}">图谱</a>
                                                     {{ end }}
                                                 </div>
                                             </td>
@@ -196,8 +190,7 @@
                         {{ end }}
                     </div>
 
-                    <div id="posts-empty"
-                        class="hidden mt-10 text-center text-off-white/35 text-sm border border-muted-teal/10 bg-muted-teal/5 rounded-xl py-10">
+                    <div id="posts-empty" class="site-panel hidden mt-8 py-10 text-center text-sm text-off-white/40">
                         无匹配条目
                     </div>
 

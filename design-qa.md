@@ -174,7 +174,37 @@
 
 final result: passed
 
+## 情报账本全站重构与图谱字体复核（2026-07-22）
+
+- source visual truth path: `docs/assets/design-qa/site-redesign-reference-option-1.png`
+- implementation screenshot path: `docs/assets/design-qa/site-redesign-implementation-posts.png`
+- graph implementation screenshot path: `docs/assets/design-qa/site-redesign-implementation-graph.png`
+- comparison path: `docs/assets/design-qa/site-redesign-comparison-option-1.png`
+- comparison viewport: 1280×720；参考稿按宽度等比缩放后取相同首屏视域，未拉伸。
+
+![情报账本参考与归档实现同视域比较](docs/assets/design-qa/site-redesign-comparison-option-1.png)
+
+![动态场景知识图谱字体与社区模式实现](docs/assets/design-qa/site-redesign-implementation-graph.png)
+
+### 字体职责
+
+- 中文页面标题、菜单、筛选项、节点名、详情说明与文章条目统一使用共享 Sans；Mono 仅用于编号、时间、数量、状态、英文 kicker 与终端命令。
+- 页面标题统一为 30px / 1.2 / 600，模块标题、正文、控件与元信息继续复用全站语义令牌；图谱标题不再维护第二套字号或字重。
+- 图谱 Canvas 的普通、紧凑与特征节点分别使用 12px、10px、11px，统一字重为 500/600；屏幕字号低于 10px 时直接隐藏标签，避免缩放后出现 6–9px 的模糊 CJK 字形。
+- 图谱实时状态与英文 kicker 放在独立元信息行，标题获得完整栏宽；“同步 100%”不会再挤压标题换行。
+
+### 同视域复核
+
+- 参考与实现保持同一 64px 顶栏、紧凑左轨、深蓝底、青绿强调、细分隔线与高密度账本结构。
+- 图谱的技术总览、标签社区与节点邻域三态均复核；节点详情、模式浮标、检索与图层筛选未出现 Mono 泄漏或标题换行。
+- 归档页的标题、表头、条目、来源、日期、标签与操作建立清晰层级；默认日志层关闭后首屏无内容遮挡。
+- P0/P1/P2：0 / 0 / 0。
+
+final result: passed
+
 ## 全站子模块字体系统（2026-07-21）
+
+> 历史验收记录：该轮仍保留 22px 工作台标题与 Canvas 字体例外；最终状态已由上方 2026-07-22“情报账本全站重构与图谱字体复核”覆盖。
 
 本轮将首页、Posts、时间线归档、搜索、标签、趋势、知识图谱、About、场景详情与文章内的溯源模块放入同一排版契约。桌面对照均为 1280×720，比较图上半部分为修改前、下半部分为修改后；移动端统一使用 390×844。
 

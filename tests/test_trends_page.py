@@ -172,6 +172,6 @@ def test_trends_route_and_navigation_use_the_short_user_facing_name() -> None:
     assert 'name = "趋势"' in config
     assert 'url = "/trends/"' in config
     assert "STACK趋势" not in config
-    labels = ("首页", "归档", "搜索", "标签", "趋势", "AI史塔克", "关于")
+    labels = ("首页", "归档", "搜索", "标签", "趋势", "图谱", "关于")
     positions = [config.index(f'name = "{label}"') for label in labels]
     assert positions == sorted(positions)

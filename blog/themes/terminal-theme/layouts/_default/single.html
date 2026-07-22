@@ -114,14 +114,14 @@
     <div class="relative flex h-screen w-full flex-col overflow-hidden z-10">
         {{ partial "site-header.html" . }}
 
-        <main class="flex-1 w-full overflow-y-auto custom-scrollbar px-4 md:px-8 py-10">
+        <main class="site-shell flex-1 w-full overflow-y-auto custom-scrollbar">
             {{- $kind := lower (.Params.entry_kind | default "") -}}
             {{- $isManual := or (eq $kind "manual") (and (eq $kind "") (not .Params.source)) -}}
             {{- $source := .Params.source | default (cond $isManual "manual" "system") -}}
 
-            <div class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                <article class="lg:col-span-9 terminal-glass rounded-3xl overflow-hidden p-6 md:p-12 relative">
-                    <div class="flex flex-wrap items-center gap-3 mb-8 font-mono text-[10px] tracking-wide">
+            <div class="site-layout">
+                <article class="site-main order-2 site-panel overflow-hidden p-6 md:p-10 relative">
+                    <div class="site-code-text flex flex-wrap items-center gap-3 border-b border-muted-teal/10 pb-4 tracking-wide">
                         <a class="text-primary/40 hover:text-primary" href="{{ .Site.Home.RelPermalink }}">ROOT</a>
                         <span class="text-primary/20">/</span>
                         <a class="text-primary/40 hover:text-primary" href="{{ "posts/" | relURL }}">POSTS</a>
@@ -129,22 +129,22 @@
                         <span class="text-primary/80">ENTRY</span>
                     </div>
 
-                    <div class="mb-10 border-l-2 border-primary/60 pl-6">
-                        <h1
-                            class="text-off-white tracking-tight text-3xl md:text-5xl font-light leading-tight mb-4 font-display teal-glow-text">
-                            {{ .Title }}
-                        </h1>
-                        <div class="flex flex-wrap items-center gap-3 text-[11px] font-mono tracking-wide">
-                            <span class="text-primary/80">SRC: {{ $source | upper }}</span>
+                    <header class="site-page-hero mb-8">
+                        <div class="site-page-hero__copy">
+                            <p class="site-page-kicker">INTELLIGENCE RECORD / READ ONLY</p>
+                            <h1 class="site-reading-title">{{ .Title }}</h1>
+                            <div class="mt-4 flex flex-wrap items-center gap-3 tracking-wide">
+                            <span class="site-code-text text-primary/80">SRC: {{ $source | upper }}</span>
                             <span class="text-primary/20">•</span>
-                            <span class="text-muted-teal/40">TS: {{ .Date.Format "2006-01-02 15:04" }}</span>
+                            <span class="site-code-text text-muted-teal/70">TS: {{ .Date.Format "2006-01-02 15:04" }}</span>
                             <span class="text-primary/20">•</span>
-                            <span class="{{ if $isManual }}text-off-white/55{{ else }}text-primary/70{{ end }}">MODE: {{
-                                if $isManual }}手动{{ else }}自动{{ end }}</span>
+                            <span class="site-code-text text-off-white/55">MODE:</span>
+                            <span class="site-meta-text {{ if $isManual }}text-off-white/70{{ else }}text-primary/80{{ end }}">{{ if $isManual }}手动{{ else }}自动{{ end }}</span>
                             <span class="text-primary/20">•</span>
-                            <span class="text-off-white/35">ETA: {{ printf "%dmin" .ReadingTime }}</span>
+                            <span class="site-code-text text-off-white/60">ETA: {{ printf "%dmin" .ReadingTime }}</span>
+                            </div>
                         </div>
-                    </div>
+                    </header>
 
                     {{- if $isArchived }}
                     <div data-content-quality-status="archived"
@@ -177,7 +177,7 @@
                     <aside data-content-mode="source-brief"
                         class="mb-8 rounded-2xl border border-primary/20 bg-primary/[0.04] p-5 md:flex md:items-center md:justify-between md:gap-6">
                         <div>
-                            <p class="font-mono text-[10px] tracking-widest text-primary">SOURCE BRIEF / 来源快报</p>
+                            <p><span class="site-code-text tracking-widest text-primary">SOURCE BRIEF</span><span class="site-meta-text text-primary"> / 来源快报</span></p>
                             <p class="mt-2 text-sm leading-6 text-off-white/65">
                                 该条目是外部情报源的简报卡片，本站保留已有摘要，不补写无法核验的细节；事实与完整上下文请以原始来源为准。
                             </p>
@@ -188,14 +188,14 @@
                     {{- else if $isLegacyAnalysis }}
                     <aside data-content-mode="legacy-analysis"
                         class="mb-8 rounded-2xl border border-amber-400/20 bg-amber-400/[0.035] p-5">
-                        <p class="font-mono text-[10px] tracking-widest text-amber-300">LEGACY ANALYSIS / 历史分析</p>
+                        <p><span class="site-code-text tracking-widest text-amber-300">LEGACY ANALYSIS</span><span class="site-meta-text text-amber-300"> / 历史分析</span></p>
                         <p class="mt-2 text-sm leading-6 text-off-white/65">
                             正文已通过结构完整性与异常文本检查，但生成时未保存可逐条核验的来源快照，因此不等同于原文全文。事实性信息请以原始来源为准。
                         </p>
                     </aside>
                     {{- end }}
                     <div data-pagefind-body
-                        class="post-content prose prose-invert max-w-none font-display text-base md:text-lg text-slate-300 leading-relaxed">
+                        class="post-content site-reading-body prose prose-invert text-slate-300">
                         {{ .Content }}
                     </div>
                     {{- end }}
@@ -204,7 +204,7 @@
                     <div class="mt-12 pt-8 border-t border-muted-teal/10 flex flex-wrap items-center gap-2">
                         {{ range . }}
                         <a href="{{ .RelPermalink }}"
-                            class="px-2.5 py-1 rounded-full border border-muted-teal/15 bg-terminal-bg/40 text-muted-teal/60 text-[10px] font-mono tracking-wide hover:bg-muted-teal/10 hover:text-primary transition-colors">
+                            class="site-meta-text inline-flex min-h-8 items-center rounded border border-muted-teal/15 bg-terminal-bg/40 px-2.5 text-muted-teal/70 transition-colors hover:bg-muted-teal/10 hover:text-primary">
                             {{ .Data.Term }}
                         </a>
                         {{ end }}
@@ -247,7 +247,7 @@
                             {{- end -}}
                             {{- $scenarioConfidenceWidth := printf "w-[%.0f%%]" (mul $scenarioConfidence 100) -}}
                             <a href="{{ $scenarioURL }}"
-                                class="glass-panel rounded-lg p-5 border-l-2 border-primary/50 hover:border-primary transition-all group block">
+                                class="site-panel p-5 border-l-2 border-primary/50 hover:border-primary transition-all group block">
                                 <div class="flex items-center gap-3 mb-3">
                                     <span
                                         class="material-symbols-outlined text-primary group-hover:text-primary/80 transition-colors">{{
@@ -303,27 +303,27 @@
                         <div class="flex gap-3">
                             {{ if .PrevInSection }}
                             <a href="{{ .PrevInSection.RelPermalink }}"
-                                class="flex items-center gap-2 px-5 py-2 bg-muted-teal/5 border border-muted-teal/20 rounded-full hover:bg-muted-teal/10 transition-all text-[11px] font-mono tracking-wide text-off-white/70 hover:text-off-white">
+                                class="site-control-text flex min-h-11 items-center gap-2 rounded border border-muted-teal/20 bg-muted-teal/5 px-5 text-off-white/70 transition-colors hover:bg-muted-teal/10 hover:text-off-white">
                                 <span class="material-symbols-outlined text-base">arrow_back</span> 上一篇
                             </a>
                             {{ end }}
                             {{ if .NextInSection }}
                             <a href="{{ .NextInSection.RelPermalink }}"
-                                class="flex items-center gap-2 px-5 py-2 bg-muted-teal/5 border border-muted-teal/20 rounded-full hover:bg-muted-teal/10 transition-all text-[11px] font-mono tracking-wide text-off-white/70 hover:text-off-white">
+                                class="site-control-text flex min-h-11 items-center gap-2 rounded border border-muted-teal/20 bg-muted-teal/5 px-5 text-off-white/70 transition-colors hover:bg-muted-teal/10 hover:text-off-white">
                                 下一篇 <span class="material-symbols-outlined text-base">arrow_forward</span>
                             </a>
                             {{ end }}
                         </div>
                         <a href="{{ "posts/" | relURL }}"
-                            class="px-5 py-2 bg-primary/5 border border-primary/20 rounded-full hover:bg-primary/10 transition-all text-[11px] font-mono tracking-wide text-primary/70 hover:text-primary text-center">
+                            class="site-control-text flex min-h-11 items-center justify-center rounded border border-primary/20 bg-primary/5 px-5 text-center text-primary/80 transition-colors hover:bg-primary/10 hover:text-primary">
                             返回归档
                         </a>
                     </div>
                 </article>
 
-                <aside class="hidden lg:block lg:col-span-3 space-y-6 sticky top-8">
+                <aside class="site-rail order-1 hidden space-y-4 lg:block lg:sticky lg:top-6">
                     <div
-                        class="terminal-glass rounded-xl overflow-hidden border border-primary/20 flex flex-col h-96 relative">
+                        class="site-panel overflow-hidden flex flex-col h-80 relative">
                         <div
                             class="px-4 py-3 bg-primary/5 border-b border-primary/10 flex items-center justify-between">
                             <span class="text-[10px] font-mono font-bold text-primary tracking-wide">Decryption
@@ -361,27 +361,28 @@
                         </div>
                     </div>
 
-                    <div class="terminal-glass rounded-xl p-5 border border-primary/20">
-                        <div class="text-[10px] font-mono text-primary/45 tracking-wide mb-4">条目元数据</div>
+                    <div class="site-panel">
+                        <div class="site-panel__heading">条目元数据</div>
+                        <div class="site-panel__body">
                         <div class="space-y-3 text-[11px] text-off-white/70">
                             <div class="flex items-center justify-between">
-                                <span class="text-off-white/35 font-mono">MODE</span>
+                                <span class="site-code-text text-off-white/55">MODE</span>
                                 <span
-                                    class="{{ if $isManual }}text-off-white/70{{ else }}text-primary/80{{ end }} font-mono tracking-wide">{{
+                                    class="site-meta-text {{ if $isManual }}text-off-white/70{{ else }}text-primary/80{{ end }} tracking-wide">{{
                                     if $isManual }}手动{{ else }}自动{{ end }}</span>
                             </div>
                             <div class="flex items-center justify-between">
-                                <span class="text-off-white/35 font-mono">SOURCE</span>
-                                <span class="text-primary/70 font-mono tracking-wide">{{ $source | upper }}</span>
+                                <span class="site-code-text text-off-white/55">SOURCE</span>
+                                <span class="site-code-text text-primary/70 tracking-wide">{{ $source | upper }}</span>
                             </div>
                             <div class="flex items-center justify-between">
-                                <span class="text-off-white/35 font-mono">TIME</span>
-                                <span class="text-muted-teal/60 font-mono tracking-wide">{{ .Date.Format "2006-01-02"
+                                <span class="site-code-text text-off-white/55">TIME</span>
+                                <span class="site-code-text text-muted-teal/70 tracking-wide">{{ .Date.Format "2006-01-02"
                                     }}</span>
                             </div>
                             <div class="flex items-center justify-between">
-                                <span class="text-off-white/35 font-mono">READ</span>
-                                <span class="text-muted-teal/60 font-mono tracking-wide">{{ printf "%dmin" .ReadingTime
+                                <span class="site-code-text text-off-white/55">READ</span>
+                                <span class="site-code-text text-muted-teal/70 tracking-wide">{{ printf "%dmin" .ReadingTime
                                     }}</span>
                             </div>
                             {{ with .Params.external_url }}
@@ -392,6 +393,7 @@
                                 </a>
                             </div>
                             {{ end }}
+                        </div>
                         </div>
                     </div>
 
@@ -414,10 +416,10 @@
                     {{- end -}}
 
                     {{ if gt (len $related) 0 }}
-                    <div class="terminal-glass rounded-xl p-5 border border-primary/20"
+                    <div class="site-panel"
                         data-related-source="offline-index">
-                        <div class="text-[10px] font-mono text-primary/45 tracking-wide mb-4">相关条目</div>
-                        <div class="space-y-3">
+                        <div class="site-panel__heading">相关条目</div>
+                        <div class="site-panel__body space-y-3">
                             {{ range $related }}
                             <a class="block group" href="{{ .route }}" data-entry-link="{{ .route }}"
                                 data-entry-title="{{ .title }}">

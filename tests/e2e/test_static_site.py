@@ -292,7 +292,7 @@ def test_trends_typography_uses_the_shared_site_scale(
     )
     assert desktop["title"] == "30px"
     assert desktop["titleLine"] == "36px"
-    assert desktop["titleWeight"] == "300"
+    assert desktop["titleWeight"] == "600"
     assert desktop["lead"] == "14px"
     assert desktop["module"] == "18px"
     assert float(desktop["moduleLine"].removesuffix("px")) == pytest.approx(24.3, abs=0.1)
@@ -308,7 +308,7 @@ def test_trends_typography_uses_the_shared_site_scale(
 
     page.set_viewport_size({"width": 1440, "height": 901})
     expect(page.locator("#trend-page-title")).to_have_css("font-size", "30px")
-    expect(page.locator(".trend-hero__lead")).to_have_css("line-height", "24.5px")
+    expect(page.locator(".trend-hero__lead")).to_have_css("line-height", "23.1px")
 
     response = page.goto(f"{site_url}/search/", wait_until="domcontentloaded")
     assert response is not None and response.ok
@@ -318,7 +318,7 @@ def test_trends_typography_uses_the_shared_site_scale(
     page.set_viewport_size({"width": 390, "height": 844})
     response = page.goto(f"{site_url}/trends/?window=30d", wait_until="networkidle")
     assert response is not None and response.ok
-    expect(page.locator("#trend-page-title")).to_have_css("font-size", "30px")
+    expect(page.locator("#trend-page-title")).to_have_css("font-size", "27px")
     expect(page.locator("#trend-query")).to_have_css("font-size", "16px")
     assert runtime_errors == []
 
@@ -335,6 +335,7 @@ def test_all_regular_modules_share_one_dom_typography_hierarchy(
         "/tags/",
         "/about/",
         "/trends/?window=30d",
+        "/scenarios/",
     )
     title_styles: list[dict[str, str]] = []
 
@@ -362,18 +363,50 @@ def test_all_regular_modules_share_one_dom_typography_hierarchy(
     assert len({style["family"] for style in title_styles}) == 1
     assert {style["size"] for style in title_styles} == {"30px"}
     assert {style["line"] for style in title_styles} == {"36px"}
-    assert {style["weight"] for style in title_styles} == {"300"}
+    assert {style["weight"] for style in title_styles} == {"600"}
 
     response = page.goto(f"{site_url}/scenarios/", wait_until="domcontentloaded")
     assert response is not None and response.ok
-    expect(page.locator(".site-workbench-title")).to_have_css("font-size", "22px")
+    page.wait_for_function("() => window.graphEngine && window.graphEngine.cy")
+    expect(page.locator(".graph-console .site-page-title")).to_have_css("font-size", "30px")
     expect(page.locator(".mode-button").first).to_have_css("font-size", "13px")
     expect(page.locator(".graph-search input")).to_have_css("font-size", "13px")
+    graph_fonts = page.evaluate(
+        """
+        () => {
+          const family = (selector) => getComputedStyle(document.querySelector(selector)).fontFamily;
+          const sharedSans = getComputedStyle(document.documentElement)
+            .getPropertyValue("--site-font-sans")
+            .trim();
+          const nodeStyle = window.graphEngine
+            ._getStylesheet()
+            .find((entry) => entry.selector === "node")
+            .style;
+          return {
+            title: family(".graph-console .site-page-title"),
+            mode: family(".mode-button"),
+            search: family(".graph-search > label"),
+            chip: family(".graph-stage__mode-chip"),
+            detail: family(".graph-detail__header h2"),
+            sharedSans,
+            node: nodeStyle["font-family"],
+          };
+        }
+        """
+    )
+    assert {
+        graph_fonts["title"],
+        graph_fonts["mode"],
+        graph_fonts["search"],
+        graph_fonts["chip"],
+        graph_fonts["detail"],
+    } == {title_styles[0]["family"]}
+    assert graph_fonts["node"] == graph_fonts["sharedSans"]
 
     page.set_viewport_size({"width": 390, "height": 844})
     response = page.goto(f"{site_url}/scenarios/", wait_until="domcontentloaded")
     assert response is not None and response.ok
-    expect(page.locator(".site-workbench-title")).to_have_css("font-size", "18px")
+    expect(page.locator(".graph-console .site-page-title")).to_have_css("font-size", "27px")
     expect(page.locator(".mode-button").first).to_have_css("font-size", "13px")
 
 
