@@ -15,7 +15,7 @@ observation_id: obs_082c4173c70b04519142ea2a756f2c82885c05f2267804c9d63123d0bb7b
 event_id: evt_def3da98e612abd12f3de5593213f3581cc9344887627877f0108438341c8e19
 revision_id: rev_1568adfb7ba9e0657dc7a8ac2908b24f61999ec791eb98739e25592c6cbf9ca1
 source_published_at: 2026-07-22T13:00:00Z
-first_seen_at: 2026-07-22T23:20:33.345648Z
+first_seen_at: 2026-07-22T23:35:22Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 62
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community
 parent_observation_id: null
-last_seen_at: 2026-07-22T23:20:33.345648Z
+last_seen_at: 2026-07-23T00:00:00Z
 ---
 
 ## 基本信息

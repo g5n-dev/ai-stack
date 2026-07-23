@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T23:21:24Z",
+  "generated_at": "2026-07-23T00:18:44Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -639,7 +639,7 @@
       "legacy_id": "agent",
       "level": 4,
       "name": "AI Agent",
-      "rank": 96,
+      "rank": 97,
       "weighted_degree": 4.4
     },
     {
@@ -1438,7 +1438,7 @@
       "legacy_id": "nlp",
       "level": 3,
       "name": "自然语言处理",
-      "rank": 91,
+      "rank": 92,
       "weighted_degree": 5.6
     },
     {
