@@ -1,5 +1,5 @@
 {
-  "active_count": 2181,
+  "active_count": 2182,
   "archived_count": 276,
   "complete_count": 11,
   "legacy_analysis_count": 0,
@@ -18009,6 +18009,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260723-blogs_podcasts-introducing-openai-presence-0-839f7a51d7.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -18043,10 +18049,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2170,
-  "source_file_count": 2457,
-  "source_tree_sha256": "576a1f9343ac53a0cc9e27c9e1465ccf4dd6a1ea60de64fa426646f33e571ec9",
-  "verified_provenance_count": 2181,
+  "source_brief_count": 2171,
+  "source_file_count": 2458,
+  "source_tree_sha256": "c8cb2f7ac06bae1c36d2df3fee2262b2f9b88572aa412cff193d11bf31970eb5",
+  "verified_provenance_count": 2182,
   "warning_counts": {
     "source_excerpt_truncated": 742
   }
