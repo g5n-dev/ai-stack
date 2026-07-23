@@ -1,5 +1,5 @@
 {
-  "active_count": 2183,
+  "active_count": 2184,
   "archived_count": 276,
   "complete_count": 11,
   "legacy_analysis_count": 0,
@@ -17998,6 +17998,15 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260723-blogs_podcasts-ainews-laguna-s-21-released-cheaper-than-deepseek--0-b84094e090.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20260723-blogs_podcasts-building-ai-infrastructure-with-the-effingham-coun-0-082c4173c7.md": {
       "reasons": [
         "concise_source_card"
@@ -18055,11 +18064,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2172,
-  "source_file_count": 2459,
-  "source_tree_sha256": "0c37cfc558c4a2cafb1ee87cfc61a1487c152efe3a8636deec75d65dbbc0104f",
-  "verified_provenance_count": 2183,
+  "source_brief_count": 2173,
+  "source_file_count": 2460,
+  "source_tree_sha256": "533046472167bd18157f6127a6705a8e06a4434310490802585799cd20cabaf7",
+  "verified_provenance_count": 2184,
   "warning_counts": {
-    "source_excerpt_truncated": 742
+    "source_excerpt_truncated": 743
   }
 }
