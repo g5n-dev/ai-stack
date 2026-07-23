@@ -1,5 +1,5 @@
 {
-  "active_count": 2184,
+  "active_count": 2185,
   "archived_count": 276,
   "complete_count": 11,
   "legacy_analysis_count": 0,
@@ -18019,6 +18019,15 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260723-blogs_podcasts-inside-the-model-factory-eiso-kant-poolside-ai-0-7b83ab134e.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20260723-blogs_podcasts-introducing-openai-presence-0-839f7a51d7.md": {
       "reasons": [
         "concise_source_card"
@@ -18064,11 +18073,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2173,
-  "source_file_count": 2460,
-  "source_tree_sha256": "533046472167bd18157f6127a6705a8e06a4434310490802585799cd20cabaf7",
-  "verified_provenance_count": 2184,
+  "source_brief_count": 2174,
+  "source_file_count": 2461,
+  "source_tree_sha256": "3892c192be88aa39bc89212e246a02da6cff94b36fb1d725ef437311c26304f9",
+  "verified_provenance_count": 2185,
   "warning_counts": {
-    "source_excerpt_truncated": 743
+    "source_excerpt_truncated": 744
   }
 }
