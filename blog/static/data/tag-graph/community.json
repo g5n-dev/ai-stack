@@ -2,33 +2,33 @@
   "algorithm": "deterministic-weighted-label-propagation",
   "communities": [
     {
-      "article_count": 91,
+      "article_count": 92,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-384b3ff5ca77.json",
+      "hotspot_file": "community-hotspots/01-f40ff07fd3d1.json",
       "id": "community:tag:Amazon SageMaker",
       "leader_id": "tag:来源快报",
       "name": "来源快报",
       "node_count": 37,
       "rank": 1,
-      "tag_occurrences": 177,
-      "weighted_degree": 553.8
+      "tag_occurrences": 178,
+      "weighted_degree": 554.8
     },
     {
-      "article_count": 2181,
+      "article_count": 2182,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/02-4c314c65fb6e.json",
+      "hotspot_file": "community-hotspots/02-84ae35d2b57a.json",
       "id": "community:tag:掘金",
       "leader_id": "tag:Hacker News",
       "name": "Hacker News",
       "node_count": 28,
       "rank": 2,
-      "tag_occurrences": 4618,
-      "weighted_degree": 9966.2
+      "tag_occurrences": 4619,
+      "weighted_degree": 9967.2
     },
     {
       "article_count": 2,
       "hotspot_count": 8,
-      "hotspot_file": "community-hotspots/03-9e7537d943c0.json",
+      "hotspot_file": "community-hotspots/03-63d905a6c854.json",
       "id": "community:tag:Computer modeling",
       "leader_id": "tag:Artificial intelligence",
       "name": "Artificial intelligence",
@@ -40,7 +40,7 @@
     {
       "article_count": 11,
       "hotspot_count": 7,
-      "hotspot_file": "community-hotspots/04-de19cd155b80.json",
+      "hotspot_file": "community-hotspots/04-ebba6ce709bf.json",
       "id": "community:tag:Codex",
       "leader_id": "tag:工程实践",
       "name": "工程实践",
@@ -52,7 +52,7 @@
     {
       "article_count": 6,
       "hotspot_count": 7,
-      "hotspot_file": "community-hotspots/05-5810267731c4.json",
+      "hotspot_file": "community-hotspots/05-ca6602de666a.json",
       "id": "community:tag:Amazon RDS",
       "leader_id": "tag:Customer Solutions",
       "name": "Customer Solutions",
@@ -64,7 +64,7 @@
     {
       "article_count": 5,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/06-d3b873564d1c.json",
+      "hotspot_file": "community-hotspots/06-acacbb7f0529.json",
       "id": "community:tag:Gemini App",
       "leader_id": "tag:AI",
       "name": "AI",
@@ -76,7 +76,7 @@
     {
       "article_count": 3,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/07-e8373d94d215.json",
+      "hotspot_file": "community-hotspots/07-46d357c7ed79.json",
       "id": "community:tag:Elastic Load Balancing",
       "leader_id": "tag:AWS Fargate",
       "name": "AWS Fargate",
@@ -88,7 +88,7 @@
     {
       "article_count": 3,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/08-03af1ec4f744.json",
+      "hotspot_file": "community-hotspots/08-96214f2242ec.json",
       "id": "community:tag:Faculty",
       "leader_id": "tag:Safety",
       "name": "Safety",
@@ -100,7 +100,7 @@
     {
       "article_count": 1,
       "hotspot_count": 2,
-      "hotspot_file": "community-hotspots/09-e3b1dc61a101.json",
+      "hotspot_file": "community-hotspots/09-3c98020178ba.json",
       "id": "community:tag:Google Workspace",
       "leader_id": "tag:Google One",
       "name": "Google One",
@@ -110,7 +110,7 @@
       "weighted_degree": 8
     }
   ],
-  "generated_at": "2026-07-23T16:49:38Z",
+  "generated_at": "2026-07-23T20:23:55Z",
   "iterations": 5,
   "limit": 11,
   "links": [
@@ -176,7 +176,7 @@
       "strength": 1,
       "target": "community:tag:掘金",
       "type": "community",
-      "weight": 165
+      "weight": 166
     },
     {
       "id": "edge:community:community:tag:Codex->community:tag:掘金",
