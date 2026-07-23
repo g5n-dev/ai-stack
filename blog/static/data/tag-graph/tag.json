@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T00:18:44Z",
+  "generated_at": "2026-07-23T03:49:57Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -3928,6 +3928,22 @@
       "weight": 2
     },
     {
+      "id": "edge:cooccurrence:tag:Product->tag:博客与播客",
+      "source": "tag:Product",
+      "strength": 0.5,
+      "target": "tag:博客与播客",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Product->tag:来源快报",
+      "source": "tag:Product",
+      "strength": 0.5,
+      "target": "tag:来源快报",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
       "id": "edge:cooccurrence:tag:Python->tag:RAG",
       "source": "tag:Python",
       "strength": 1,
@@ -4565,7 +4581,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 39
+      "weight": 40
     },
     {
       "id": "edge:cooccurrence:tag:博客与播客->tag:深度学习",
@@ -6312,6 +6328,23 @@
       "weighted_degree": 10
     },
     {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:来源快报",
+      "degree": 2,
+      "description": "文章标签: Product",
+      "id": "tag:Product",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Product",
+      "level": 6,
+      "name": "Product",
+      "rank": 128,
+      "related_count": 2,
+      "weighted_degree": 2
+    },
+    {
       "article_count": 161,
       "category": "article_tag",
       "color": "#f59e0b",
@@ -6341,7 +6374,7 @@
       "legacy_id": "q-bio.GN",
       "level": 6,
       "name": "q-bio.GN",
-      "rank": 128,
+      "rank": 129,
       "related_count": 2,
       "weighted_degree": 2
     },
@@ -6516,11 +6549,11 @@
       "weighted_degree": 289.6
     },
     {
-      "article_count": 347,
+      "article_count": 348,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
-      "degree": 62,
+      "degree": 63,
       "description": "文章标签: 博客与播客",
       "id": "tag:博客与播客",
       "layer": "tag",
@@ -6529,8 +6562,8 @@
       "level": 6,
       "name": "博客与播客",
       "rank": 4,
-      "related_count": 62,
-      "weighted_degree": 688
+      "related_count": 63,
+      "weighted_degree": 690
     },
     {
       "article_count": 141,
@@ -6635,11 +6668,11 @@
       "weighted_degree": 240
     },
     {
-      "article_count": 81,
+      "article_count": 82,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
-      "degree": 45,
+      "degree": 46,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
@@ -6648,8 +6681,8 @@
       "level": 6,
       "name": "来源快报",
       "rank": 16,
-      "related_count": 45,
-      "weighted_degree": 169
+      "related_count": 46,
+      "weighted_degree": 171
     },
     {
       "article_count": 10,
@@ -6739,14 +6772,14 @@
   ],
   "stats": {
     "links_by_type": {
-      "cooccurrence": 587,
+      "cooccurrence": 589,
       "semantic": 31
     },
     "nodes_by_layer": {
-      "tag": 103
+      "tag": 104
     },
-    "total_links": 618,
-    "total_nodes": 103
+    "total_links": 620,
+    "total_nodes": 104
   },
   "version": 2
 }

@@ -27,7 +27,7 @@
       "focus-shards/004-08a9b1380f4a.json",
       "focus-shards/005-78d92140d3cd.json",
       "focus-shards/006-0c70646e6d3a.json",
-      "focus-shards/007-023b38bff14f.json",
+      "focus-shards/007-b8db14caa52a.json",
       "focus-shards/008-716f3e4953f4.json",
       "focus-shards/009-8a07cecca57c.json",
       "focus-shards/010-82102f585f91.json",
@@ -80,13 +80,13 @@
       "focus-shards/057-6fb23ad7ec16.json",
       "focus-shards/058-1542c4839aed.json",
       "focus-shards/059-9f3738661aa9.json",
-      "focus-shards/060-e25d7ddab7bf.json",
+      "focus-shards/060-19a9f417a8dd.json",
       "focus-shards/061-3115ff96b6dd.json",
       "focus-shards/062-1e7bd6da8064.json",
       "focus-shards/063-260e120295e6.json",
       "focus-shards/064-a4d3f1d9c615.json",
       "focus-shards/065-ec8837379f8c.json",
-      "focus-shards/066-9e1ca3473e83.json",
+      "focus-shards/066-cbab86b75d86.json",
       "focus-shards/067-603d45b9fea0.json",
       "focus-shards/068-1b61dd4791d8.json",
       "focus-shards/069-20f435f1f7cf.json",
@@ -153,7 +153,7 @@
     "tag": "tag.json",
     "tagHot": "tag.hot.json"
   },
-  "generated_at": "2026-07-23T00:18:44Z",
+  "generated_at": "2026-07-23T03:49:57Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -193,7 +193,7 @@
   },
   "stats": {
     "links_by_type": {
-      "cooccurrence": 587,
+      "cooccurrence": 589,
       "relation": 71,
       "semantic": 31
     },
@@ -203,13 +203,13 @@
       "language": 8,
       "model": 6,
       "scenario": 31,
-      "tag": 103
+      "tag": 104
     },
     "tag_stats": {
       "archived_article_files_skipped": 276,
       "archived_article_groups_skipped": 276,
       "avg_concepts_per_article": 0,
-      "avg_tags_per_article": 2.2265016047684547,
+      "avg_tags_per_article": 2.2268560953253895,
       "canonical_duplicate_files_skipped": 0,
       "incomplete_article_files_skipped": 0,
       "incomplete_article_groups_skipped": 0,
@@ -278,16 +278,16 @@
       ],
       "synthetic_article_files_skipped": 0,
       "synthetic_article_groups_skipped": 0,
-      "total_articles": 2181,
+      "total_articles": 2182,
       "total_concept_links": 0,
       "total_concepts": 0,
-      "total_tag_links": 587,
-      "total_tags": 103
+      "total_tag_links": 589,
+      "total_tags": 104
     },
-    "total_articles": 2181,
+    "total_articles": 2182,
     "total_communities": 12,
-    "total_links": 689,
-    "total_nodes": 172
+    "total_links": 691,
+    "total_nodes": 173
   },
   "version": 2
 }
