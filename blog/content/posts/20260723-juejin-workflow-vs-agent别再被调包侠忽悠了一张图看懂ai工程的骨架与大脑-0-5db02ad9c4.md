@@ -23,12 +23,12 @@ source_title_chars_original: 49
 description: "核心结论 Workflow与Agent的本质区别在于控制权归属。Workflow的控制权掌握在开发者手中，路径通过硬编码的图结构预先定义，工具调用按预设规则触发，其核心价值在于提供确定性，消除意外状况。"
 external_url: https://juejin.cn/post/7664862232594661402
 observation_id: obs_5db02ad9c4fb03a448d510db8fa148db661ef139b8a64e98ef820cc67b884c22
-revision_id: rev_4932492b57265a62efa25f4f49fd7bda838404f8186471ac02c2f811c7bbc573
+revision_id: rev_8981193d202b49a041e7231f6ded0e30f979e033eaa6754c423a74f2f0dae912
 event_id: evt_0fa99fa336cfb57fce8cfbcbd31292b6f48081a02059e06e77fba7ec54c8be9e
 lineage_relation: original
 parent_observation_id: null
-first_seen_at: 2026-07-22T20:24:25.154707Z
-last_seen_at: 2026-07-22T20:25:53Z
+first_seen_at: 2026-07-23T00:18:01.981073Z
+last_seen_at: 2026-07-23T00:00:00Z
 ---
 
 ## 转写说明
