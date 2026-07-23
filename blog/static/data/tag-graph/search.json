@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-07-23T16:49:38Z",
+  "generated_at": "2026-07-23T20:23:55Z",
   "items": [
     {
       "article_count": 653,
@@ -184,7 +184,7 @@
       "weighted_degree": 259
     },
     {
-      "article_count": 762,
+      "article_count": 763,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 19,
@@ -194,7 +194,7 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 14,
-      "weighted_degree": 257
+      "weighted_degree": 258
     },
     {
       "article_count": 98,
@@ -210,7 +210,7 @@
       "weighted_degree": 240
     },
     {
-      "article_count": 86,
+      "article_count": 87,
       "category": "article_tag",
       "community_id": "community:tag:Amazon SageMaker",
       "degree": 48,
@@ -220,7 +220,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 16,
-      "weighted_degree": 179
+      "weighted_degree": 180
     },
     {
       "article_count": 42,
