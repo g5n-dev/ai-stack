@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-07-23T12:13:58Z",
+  "generated_at": "2026-07-23T16:49:38Z",
   "items": [
     {
       "article_count": 653,
@@ -54,17 +54,17 @@
       "weighted_degree": 1186
     },
     {
-      "article_count": 351,
+      "article_count": 352,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
-      "degree": 63,
+      "degree": 64,
       "description": "文章标签: 博客与播客",
       "id": "tag:博客与播客",
       "layer": "tag",
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 4,
-      "weighted_degree": 693
+      "weighted_degree": 698
     },
     {
       "article_count": 161,
@@ -210,17 +210,17 @@
       "weighted_degree": 240
     },
     {
-      "article_count": 85,
+      "article_count": 86,
       "category": "article_tag",
-      "community_id": "community:tag:来源快报",
-      "degree": 46,
+      "community_id": "community:tag:Amazon SageMaker",
+      "degree": 48,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 16,
-      "weighted_degree": 174
+      "weighted_degree": 179
     },
     {
       "article_count": 42,
@@ -340,17 +340,30 @@
       "weighted_degree": 45.2
     },
     {
-      "article_count": 8,
+      "article_count": 9,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon RDS",
-      "degree": 21,
+      "community_id": "community:tag:Amazon SageMaker",
+      "degree": 22,
       "description": "文章标签: Amazon Bedrock",
       "id": "tag:Amazon Bedrock",
       "layer": "tag",
       "legacy_id": "Amazon Bedrock",
       "name": "Amazon Bedrock",
       "rank": 26,
-      "weighted_degree": 37
+      "weighted_degree": 42
+    },
+    {
+      "article_count": 7,
+      "category": "article_tag",
+      "community_id": "community:tag:Amazon SageMaker",
+      "degree": 13,
+      "description": "文章标签: Intermediate (200)",
+      "id": "tag:Intermediate (200)",
+      "layer": "tag",
+      "legacy_id": "Intermediate (200)",
+      "name": "Intermediate (200)",
+      "rank": 27,
+      "weighted_degree": 30
     },
     {
       "article_count": 10,
@@ -362,7 +375,7 @@
       "layer": "tag",
       "legacy_id": "Swift",
       "name": "Swift",
-      "rank": 27,
+      "rank": 28,
       "weighted_degree": 28.6
     },
     {
@@ -375,7 +388,7 @@
       "layer": "tag",
       "legacy_id": "Customer Solutions",
       "name": "Customer Solutions",
-      "rank": 28,
+      "rank": 29,
       "weighted_degree": 28
     },
     {
@@ -388,7 +401,7 @@
       "layer": "tag",
       "legacy_id": "Go",
       "name": "Go",
-      "rank": 29,
+      "rank": 30,
       "weighted_degree": 27.6
     },
     {
@@ -401,7 +414,7 @@
       "layer": "tag",
       "legacy_id": "工程实践",
       "name": "工程实践",
-      "rank": 30,
+      "rank": 31,
       "weighted_degree": 27
     },
     {
@@ -414,21 +427,21 @@
       "layer": "tag",
       "legacy_id": "Kotlin",
       "name": "Kotlin",
-      "rank": 31,
+      "rank": 32,
       "weighted_degree": 27
     },
     {
-      "article_count": 6,
+      "article_count": 4,
       "category": "article_tag",
-      "community_id": "community:tag:Foundational (100)",
-      "degree": 11,
-      "description": "文章标签: Intermediate (200)",
-      "id": "tag:Intermediate (200)",
+      "community_id": "community:tag:Amazon SageMaker",
+      "degree": 18,
+      "description": "文章标签: Technical How-to",
+      "id": "tag:Technical How-to",
       "layer": "tag",
-      "legacy_id": "Intermediate (200)",
-      "name": "Intermediate (200)",
-      "rank": 32,
-      "weighted_degree": 25
+      "legacy_id": "Technical How-to",
+      "name": "Technical How-to",
+      "rank": 33,
+      "weighted_degree": 26
     },
     {
       "article_count": 4,
@@ -440,20 +453,20 @@
       "layer": "tag",
       "legacy_id": "Advanced (300)",
       "name": "Advanced (300)",
-      "rank": 33,
+      "rank": 34,
       "weighted_degree": 24
     },
     {
       "article_count": 5,
       "category": "article_tag",
-      "community_id": "community:tag:Foundational (100)",
+      "community_id": "community:tag:Amazon SageMaker",
       "degree": 9,
       "description": "文章标签: Announcements",
       "id": "tag:Announcements",
       "layer": "tag",
       "legacy_id": "Announcements",
       "name": "Announcements",
-      "rank": 34,
+      "rank": 35,
       "weighted_degree": 21
     },
     {
@@ -466,7 +479,7 @@
       "layer": "tag",
       "legacy_id": "Amazon DynamoDB",
       "name": "Amazon DynamoDB",
-      "rank": 35,
+      "rank": 36,
       "weighted_degree": 21
     },
     {
@@ -479,19 +492,6 @@
       "layer": "tag",
       "legacy_id": "AWS Lambda",
       "name": "AWS Lambda",
-      "rank": 36,
-      "weighted_degree": 21
-    },
-    {
-      "article_count": 3,
-      "category": "article_tag",
-      "community_id": "community:tag:Amazon SageMaker",
-      "degree": 16,
-      "description": "文章标签: Technical How-to",
-      "id": "tag:Technical How-to",
-      "layer": "tag",
-      "legacy_id": "Technical How-to",
-      "name": "Technical How-to",
       "rank": 37,
       "weighted_degree": 21
     },
@@ -537,7 +537,7 @@
     {
       "article_count": 7,
       "category": "article_tag",
-      "community_id": "community:tag:来源快报",
+      "community_id": "community:tag:Amazon SageMaker",
       "degree": 2,
       "description": "文章标签: cs.AI",
       "id": "tag:cs.AI",
@@ -602,7 +602,7 @@
     {
       "article_count": 2,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon Bedrock AgentCore",
+      "community_id": "community:tag:Elastic Load Balancing",
       "degree": 13,
       "description": "文章标签: AWS Fargate",
       "id": "tag:AWS Fargate",
@@ -628,7 +628,7 @@
     {
       "article_count": 3,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon Nova",
+      "community_id": "community:tag:Amazon SageMaker",
       "degree": 8,
       "description": "文章标签: Amazon Quick Suite",
       "id": "tag:Amazon Quick Suite",
@@ -636,6 +636,19 @@
       "legacy_id": "Amazon Quick Suite",
       "name": "Amazon Quick Suite",
       "rank": 48,
+      "weighted_degree": 12
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "community_id": "community:tag:Elastic Load Balancing",
+      "degree": 11,
+      "description": "文章标签: Amazon Bedrock AgentCore",
+      "id": "tag:Amazon Bedrock AgentCore",
+      "layer": "tag",
+      "legacy_id": "Amazon Bedrock AgentCore",
+      "name": "Amazon Bedrock AgentCore",
+      "rank": 49,
       "weighted_degree": 12
     },
     {
@@ -648,7 +661,7 @@
       "layer": "tag",
       "legacy_id": "Safety",
       "name": "Safety",
-      "rank": 49,
+      "rank": 50,
       "weighted_degree": 11
     },
     {
@@ -661,7 +674,7 @@
       "layer": "tag",
       "legacy_id": "Amazon SageMaker",
       "name": "Amazon SageMaker",
-      "rank": 50,
+      "rank": 51,
       "weighted_degree": 11
     },
     {
@@ -674,33 +687,33 @@
       "layer": "application",
       "legacy_id": "webapp",
       "name": "Web应用",
-      "rank": 51,
+      "rank": 52,
       "weighted_degree": 11
     },
     {
       "article_count": 5,
       "category": "article_tag",
-      "community_id": "community:tag:来源快报",
+      "community_id": "community:tag:Amazon SageMaker",
       "degree": 2,
       "description": "文章标签: cs.CV",
       "id": "tag:cs.CV",
       "layer": "tag",
       "legacy_id": "cs.CV",
       "name": "cs.CV",
-      "rank": 52,
+      "rank": 53,
       "weighted_degree": 10
     },
     {
       "article_count": 2,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon Nova",
+      "community_id": "community:tag:Amazon SageMaker",
       "degree": 8,
       "description": "文章标签: Partner solutions",
       "id": "tag:Partner solutions",
       "layer": "tag",
       "legacy_id": "Partner solutions",
       "name": "Partner solutions",
-      "rank": 53,
+      "rank": 54,
       "weighted_degree": 10
     },
     {
@@ -713,7 +726,7 @@
       "layer": "tag",
       "legacy_id": "Best Practices",
       "name": "Best Practices",
-      "rank": 54,
+      "rank": 55,
       "weighted_degree": 10
     },
     {
@@ -726,7 +739,7 @@
       "layer": "application",
       "legacy_id": "api",
       "name": "API服务",
-      "rank": 55,
+      "rank": 56,
       "weighted_degree": 9.6
     },
     {
@@ -739,20 +752,20 @@
       "layer": "tag",
       "legacy_id": "Foundational (100)",
       "name": "Foundational (100)",
-      "rank": 56,
+      "rank": 57,
       "weighted_degree": 9
     },
     {
       "article_count": 4,
       "category": "article_tag",
-      "community_id": "community:tag:来源快报",
+      "community_id": "community:tag:Amazon SageMaker",
       "degree": 2,
       "description": "文章标签: cs.CL",
       "id": "tag:cs.CL",
       "layer": "tag",
       "legacy_id": "cs.CL",
       "name": "cs.CL",
-      "rank": 57,
+      "rank": 58,
       "weighted_degree": 8
     },
     {
@@ -765,7 +778,7 @@
       "layer": "model",
       "legacy_id": "llm",
       "name": "大语言模型",
-      "rank": 58,
+      "rank": 59,
       "weighted_degree": 7.6
     },
     {
@@ -778,20 +791,20 @@
       "layer": "language",
       "legacy_id": "python",
       "name": "Python",
-      "rank": 59,
+      "rank": 60,
       "weighted_degree": 7.6
     },
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon Bedrock AgentCore",
+      "community_id": "community:tag:Elastic Load Balancing",
       "degree": 8,
       "description": "文章标签: Amazon API Gateway",
       "id": "tag:Amazon API Gateway",
       "layer": "tag",
       "legacy_id": "Amazon API Gateway",
       "name": "Amazon API Gateway",
-      "rank": 60,
+      "rank": 61,
       "weighted_degree": 7.6
     },
     {
@@ -804,7 +817,7 @@
       "layer": "tag",
       "legacy_id": "Computer science and technology",
       "name": "Computer science and technology",
-      "rank": 61,
+      "rank": 62,
       "weighted_degree": 7.6
     },
     {
@@ -817,7 +830,7 @@
       "layer": "tag",
       "legacy_id": "Design",
       "name": "Design",
-      "rank": 62,
+      "rank": 63,
       "weighted_degree": 7.6
     },
     {
@@ -830,7 +843,7 @@
       "layer": "tag",
       "legacy_id": "Systems design",
       "name": "Systems design",
-      "rank": 63,
+      "rank": 64,
       "weighted_degree": 7.6
     },
     {
@@ -843,7 +856,7 @@
       "layer": "tag",
       "legacy_id": "ACP",
       "name": "ACP",
-      "rank": 64,
+      "rank": 65,
       "weighted_degree": 7
     },
     {
@@ -856,19 +869,6 @@
       "layer": "tag",
       "legacy_id": "Algorithms",
       "name": "Algorithms",
-      "rank": 65,
-      "weighted_degree": 7
-    },
-    {
-      "article_count": 1,
-      "category": "article_tag",
-      "community_id": "community:tag:Amazon Bedrock AgentCore",
-      "degree": 7,
-      "description": "文章标签: Amazon Bedrock AgentCore",
-      "id": "tag:Amazon Bedrock AgentCore",
-      "layer": "tag",
-      "legacy_id": "Amazon Bedrock AgentCore",
-      "name": "Amazon Bedrock AgentCore",
       "rank": 66,
       "weighted_degree": 7
     },
@@ -992,7 +992,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon Bedrock AgentCore",
+      "community_id": "community:tag:Elastic Load Balancing",
       "degree": 7,
       "description": "文章标签: Elastic Load Balancing",
       "id": "tag:Elastic Load Balancing",
@@ -1018,7 +1018,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon Bedrock AgentCore",
+      "community_id": "community:tag:Elastic Load Balancing",
       "degree": 7,
       "description": "文章标签: Expert (400)",
       "id": "tag:Expert (400)",
@@ -1148,7 +1148,7 @@
     {
       "article_count": 3,
       "category": "article_tag",
-      "community_id": "community:tag:来源快报",
+      "community_id": "community:tag:Amazon SageMaker",
       "degree": 2,
       "description": "文章标签: Company",
       "id": "tag:Company",
@@ -1161,7 +1161,7 @@
     {
       "article_count": 3,
       "category": "article_tag",
-      "community_id": "community:tag:来源快报",
+      "community_id": "community:tag:Amazon SageMaker",
       "degree": 2,
       "description": "文章标签: Global Affairs",
       "id": "tag:Global Affairs",
@@ -1187,7 +1187,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon Nova",
+      "community_id": "community:tag:Amazon SageMaker",
       "degree": 6,
       "description": "文章标签: Amazon Bedrock Guardrails",
       "id": "tag:Amazon Bedrock Guardrails",
@@ -1278,7 +1278,7 @@
     {
       "article_count": 2,
       "category": "article_tag",
-      "community_id": "community:tag:来源快报",
+      "community_id": "community:tag:Amazon SageMaker",
       "degree": 2,
       "description": "文章标签: cs.CR",
       "id": "tag:cs.CR",
@@ -1291,7 +1291,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Foundational (100)",
+      "community_id": "community:tag:Amazon SageMaker",
       "degree": 4,
       "description": "文章标签: Amazon Bedrock Knowledge Bases",
       "id": "tag:Amazon Bedrock Knowledge Bases",
@@ -1304,7 +1304,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Foundational (100)",
+      "community_id": "community:tag:Amazon SageMaker",
       "degree": 4,
       "description": "文章标签: Amazon Rekognition",
       "id": "tag:Amazon Rekognition",
@@ -1317,7 +1317,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon Nova",
+      "community_id": "community:tag:Amazon SageMaker",
       "degree": 4,
       "description": "文章标签: Artificial Intelligence",
       "id": "tag:Artificial Intelligence",
@@ -1330,7 +1330,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Foundational (100)",
+      "community_id": "community:tag:Amazon SageMaker",
       "degree": 4,
       "description": "文章标签: AWS DeepRacer",
       "id": "tag:AWS DeepRacer",
@@ -1343,7 +1343,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:other",
+      "community_id": "community:tag:Google Workspace",
       "degree": 4,
       "description": "文章标签: Google One",
       "id": "tag:Google One",
@@ -1356,7 +1356,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:other",
+      "community_id": "community:tag:Google Workspace",
       "degree": 4,
       "description": "文章标签: Google Workspace",
       "id": "tag:Google Workspace",
@@ -1564,7 +1564,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:来源快报",
+      "community_id": "community:tag:Amazon SageMaker",
       "degree": 3,
       "description": "文章标签: AI Adoption",
       "id": "tag:AI Adoption",
@@ -1577,7 +1577,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:来源快报",
+      "community_id": "community:tag:Amazon SageMaker",
       "degree": 3,
       "description": "文章标签: AI Research",
       "id": "tag:AI Research",
@@ -1590,7 +1590,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:来源快报",
+      "community_id": "community:tag:Amazon SageMaker",
       "degree": 3,
       "description": "文章标签: Security",
       "id": "tag:Security",
@@ -1629,7 +1629,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:来源快报",
+      "community_id": "community:tag:Amazon SageMaker",
       "degree": 2,
       "description": "文章标签: cs.LG",
       "id": "tag:cs.LG",
@@ -1642,7 +1642,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:来源快报",
+      "community_id": "community:tag:Amazon SageMaker",
       "degree": 2,
       "description": "文章标签: econ.EM",
       "id": "tag:econ.EM",
@@ -1655,7 +1655,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:来源快报",
+      "community_id": "community:tag:Amazon SageMaker",
       "degree": 2,
       "description": "文章标签: hep-ph",
       "id": "tag:hep-ph",
@@ -1668,7 +1668,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:来源快报",
+      "community_id": "community:tag:Amazon SageMaker",
       "degree": 2,
       "description": "文章标签: Product",
       "id": "tag:Product",
@@ -1681,7 +1681,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:来源快报",
+      "community_id": "community:tag:Amazon SageMaker",
       "degree": 2,
       "description": "文章标签: q-bio.GN",
       "id": "tag:q-bio.GN",

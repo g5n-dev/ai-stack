@@ -1,5 +1,5 @@
 {
-  "active_count": 2185,
+  "active_count": 2186,
   "archived_count": 276,
   "complete_count": 11,
   "legacy_analysis_count": 0,
@@ -18039,6 +18039,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260724-blogs_podcasts-agentic-retrieval-for-amazon-bedrock-managed-knowl-0-9c3f97d9e0.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -18073,10 +18079,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2174,
-  "source_file_count": 2461,
-  "source_tree_sha256": "3892c192be88aa39bc89212e246a02da6cff94b36fb1d725ef437311c26304f9",
-  "verified_provenance_count": 2185,
+  "source_brief_count": 2175,
+  "source_file_count": 2462,
+  "source_tree_sha256": "56df3a0bea36e180d6e331b82d099c4613953c89dec498295c7b93392228dd69",
+  "verified_provenance_count": 2186,
   "warning_counts": {
     "source_excerpt_truncated": 744
   }
