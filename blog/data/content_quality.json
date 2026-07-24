@@ -18102,7 +18102,7 @@
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2178,
   "source_file_count": 2465,
-  "source_tree_sha256": "fcd1247c31ba481d12d5f817cd13e6841d8c0bbde06acecd8790cf7ca417a433",
+  "source_tree_sha256": "62c8638e9253946d6ed58e001b45d64d2a23a0dca13baf7ecc2898a46427d965",
   "verified_provenance_count": 2189,
   "warning_counts": {
     "source_excerpt_truncated": 745
