@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-07-24T03:47:13Z",
+  "generated_at": "2026-07-24T09:38:04Z",
   "items": [
     {
       "article_count": 653,
@@ -41,7 +41,7 @@
       "weighted_degree": 1223.2
     },
     {
-      "article_count": 450,
+      "article_count": 451,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 25,
@@ -51,7 +51,7 @@
       "legacy_id": "掘金",
       "name": "掘金",
       "rank": 3,
-      "weighted_degree": 1186
+      "weighted_degree": 1188
     },
     {
       "article_count": 353,
@@ -366,6 +366,19 @@
       "weighted_degree": 30
     },
     {
+      "article_count": 12,
+      "category": "article_tag",
+      "community_id": "community:tag:Codex",
+      "degree": 9,
+      "description": "文章标签: 工程实践",
+      "id": "tag:工程实践",
+      "layer": "tag",
+      "legacy_id": "工程实践",
+      "name": "工程实践",
+      "rank": 28,
+      "weighted_degree": 29
+    },
+    {
       "article_count": 10,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
@@ -375,7 +388,7 @@
       "layer": "tag",
       "legacy_id": "Swift",
       "name": "Swift",
-      "rank": 28,
+      "rank": 29,
       "weighted_degree": 28.6
     },
     {
@@ -388,7 +401,7 @@
       "layer": "tag",
       "legacy_id": "Customer Solutions",
       "name": "Customer Solutions",
-      "rank": 29,
+      "rank": 30,
       "weighted_degree": 28
     },
     {
@@ -401,21 +414,8 @@
       "layer": "tag",
       "legacy_id": "Go",
       "name": "Go",
-      "rank": 30,
-      "weighted_degree": 27.6
-    },
-    {
-      "article_count": 11,
-      "category": "article_tag",
-      "community_id": "community:tag:Codex",
-      "degree": 9,
-      "description": "文章标签: 工程实践",
-      "id": "tag:工程实践",
-      "layer": "tag",
-      "legacy_id": "工程实践",
-      "name": "工程实践",
       "rank": 31,
-      "weighted_degree": 27
+      "weighted_degree": 27.6
     },
     {
       "article_count": 8,
@@ -457,6 +457,19 @@
       "weighted_degree": 24
     },
     {
+      "article_count": 11,
+      "category": "article_tag",
+      "community_id": "community:tag:Codex",
+      "degree": 2,
+      "description": "文章标签: 来源转写",
+      "id": "tag:来源转写",
+      "layer": "tag",
+      "legacy_id": "来源转写",
+      "name": "来源转写",
+      "rank": 35,
+      "weighted_degree": 22
+    },
+    {
       "article_count": 5,
       "category": "article_tag",
       "community_id": "community:tag:Foundational (100)",
@@ -466,7 +479,7 @@
       "layer": "tag",
       "legacy_id": "Announcements",
       "name": "Announcements",
-      "rank": 35,
+      "rank": 36,
       "weighted_degree": 21
     },
     {
@@ -479,7 +492,7 @@
       "layer": "tag",
       "legacy_id": "Amazon DynamoDB",
       "name": "Amazon DynamoDB",
-      "rank": 36,
+      "rank": 37,
       "weighted_degree": 21
     },
     {
@@ -492,21 +505,8 @@
       "layer": "tag",
       "legacy_id": "AWS Lambda",
       "name": "AWS Lambda",
-      "rank": 37,
-      "weighted_degree": 21
-    },
-    {
-      "article_count": 10,
-      "category": "article_tag",
-      "community_id": "community:tag:Codex",
-      "degree": 2,
-      "description": "文章标签: 来源转写",
-      "id": "tag:来源转写",
-      "layer": "tag",
-      "legacy_id": "来源转写",
-      "name": "来源转写",
       "rank": 38,
-      "weighted_degree": 20
+      "weighted_degree": 21
     },
     {
       "article_count": 5,
