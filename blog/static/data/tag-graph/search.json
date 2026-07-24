@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-07-24T00:14:38Z",
+  "generated_at": "2026-07-24T03:47:13Z",
   "items": [
     {
       "article_count": 653,
@@ -119,7 +119,7 @@
       "weighted_degree": 470
     },
     {
-      "article_count": 576,
+      "article_count": 577,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 24,
@@ -129,7 +129,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 9,
-      "weighted_degree": 453
+      "weighted_degree": 455
     },
     {
       "article_count": 96,
@@ -210,7 +210,7 @@
       "weighted_degree": 240
     },
     {
-      "article_count": 88,
+      "article_count": 89,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 49,
@@ -220,7 +220,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 16,
-      "weighted_degree": 184
+      "weighted_degree": 186
     },
     {
       "article_count": 42,
@@ -522,6 +522,19 @@
       "weighted_degree": 17.6
     },
     {
+      "article_count": 8,
+      "category": "article_tag",
+      "community_id": "community:tag:来源快报",
+      "degree": 2,
+      "description": "文章标签: cs.AI",
+      "id": "tag:cs.AI",
+      "layer": "tag",
+      "legacy_id": "cs.AI",
+      "name": "cs.AI",
+      "rank": 40,
+      "weighted_degree": 16
+    },
+    {
       "article_count": 3,
       "category": "article_tag",
       "community_id": "community:tag:Amazon SageMaker",
@@ -531,21 +544,8 @@
       "layer": "tag",
       "legacy_id": "Amazon Quick Sight",
       "name": "Amazon Quick Sight",
-      "rank": 40,
-      "weighted_degree": 16
-    },
-    {
-      "article_count": 7,
-      "category": "article_tag",
-      "community_id": "community:tag:来源快报",
-      "degree": 2,
-      "description": "文章标签: cs.AI",
-      "id": "tag:cs.AI",
-      "layer": "tag",
-      "legacy_id": "cs.AI",
-      "name": "cs.AI",
       "rank": 41,
-      "weighted_degree": 14
+      "weighted_degree": 16
     },
     {
       "article_count": 3,

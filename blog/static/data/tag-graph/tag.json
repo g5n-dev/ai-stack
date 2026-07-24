@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T00:14:38Z",
+  "generated_at": "2026-07-24T03:47:13Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -2053,7 +2053,7 @@
       "strength": 1,
       "target": "tag:cs.AI",
       "type": "cooccurrence",
-      "weight": 7
+      "weight": 8
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:cs.CL",
@@ -2149,7 +2149,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 22
+      "weight": 23
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:深度学习",
@@ -4573,7 +4573,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 7
+      "weight": 8
     },
     {
       "id": "edge:cooccurrence:tag:cs.CL->tag:来源快报",
@@ -5425,7 +5425,7 @@
       "legacy_id": "Amazon Quick Sight",
       "level": 6,
       "name": "Amazon Quick Sight",
-      "rank": 40,
+      "rank": 41,
       "related_count": 12,
       "weighted_degree": 16
     },
@@ -5634,7 +5634,7 @@
       "weighted_degree": 14
     },
     {
-      "article_count": 576,
+      "article_count": 577,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -5648,7 +5648,7 @@
       "name": "ArXiv",
       "rank": 9,
       "related_count": 24,
-      "weighted_degree": 453
+      "weighted_degree": 455
     },
     {
       "article_count": 1,
@@ -5804,7 +5804,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 7,
+      "article_count": 8,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -5816,9 +5816,9 @@
       "legacy_id": "cs.AI",
       "level": 6,
       "name": "cs.AI",
-      "rank": 41,
+      "rank": 40,
       "related_count": 2,
-      "weighted_degree": 14
+      "weighted_degree": 16
     },
     {
       "article_count": 4,
@@ -6756,7 +6756,7 @@
       "weighted_degree": 240
     },
     {
-      "article_count": 88,
+      "article_count": 89,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -6770,7 +6770,7 @@
       "name": "来源快报",
       "rank": 16,
       "related_count": 49,
-      "weighted_degree": 184
+      "weighted_degree": 186
     },
     {
       "article_count": 10,
