@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:d0e4df81d2c93656c1a4c927af069354ee961fb4db4ea566
 source_payload_sha256: "sha256:3bbaf7739f5bf0b7208705f39fd2042af93f6cfe8a7abeca60a91a3134dc1eae"
 observation_id: obs_9c3f97d9e0a04dd255508d5a7e3b3a0b49402fd2daef69c69f9ac69d1bd5530f
 event_id: evt_d979b6febe4224368bb0eee71852c735ab2921e7517a8b48ac481c339f4e0be5
-revision_id: rev_4a4576230eabffa9db16d4e630c6b63aada00e6825d81e83917b9532f12a7448
+revision_id: rev_b3c8f096918bec19e3fc0e48c40cc97814c84dd0706680c2a2950b9f9a10b4f5
 source_published_at: 2026-07-23T16:30:20Z
 first_seen_at: 2026-07-23T17:12:15Z
 timestamp_confidence: feed
@@ -27,7 +27,7 @@ source_title_chars_original: 59
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/agentic-retrieval-for-amazon-bedrock-managed-knowledge-base
 parent_observation_id: null
-last_seen_at: 2026-07-23T16:48:57.656494Z
+last_seen_at: 2026-07-24T00:00:00Z
 ---
 
 ## 基本信息

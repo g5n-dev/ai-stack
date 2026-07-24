@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T20:23:55Z",
+  "generated_at": "2026-07-24T00:14:38Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -656,7 +656,7 @@
       "legacy_id": "ai_ml",
       "level": 5,
       "name": "AI/ML项目",
-      "rank": 87,
+      "rank": 88,
       "weighted_degree": 6
     },
     {
@@ -690,7 +690,7 @@
       "legacy_id": "api",
       "level": 4,
       "name": "API服务",
-      "rank": 56,
+      "rank": 58,
       "weighted_degree": 9.6
     },
     {
@@ -1319,7 +1319,7 @@
       "legacy_id": "llm",
       "level": 3,
       "name": "大语言模型",
-      "rank": 59,
+      "rank": 61,
       "weighted_degree": 7.6
     },
     {
@@ -1506,7 +1506,7 @@
       "legacy_id": "python",
       "level": 1,
       "name": "Python",
-      "rank": 60,
+      "rank": 62,
       "weighted_degree": 7.6
     },
     {
@@ -1523,7 +1523,7 @@
       "legacy_id": "pytorch",
       "level": 2,
       "name": "PyTorch",
-      "rank": 85,
+      "rank": 86,
       "weighted_degree": 7
     },
     {
@@ -1540,7 +1540,7 @@
       "legacy_id": "rag",
       "level": 4,
       "name": "RAG应用",
-      "rank": 86,
+      "rank": 87,
       "weighted_degree": 6.6
     },
     {
@@ -1778,7 +1778,7 @@
       "legacy_id": "webapp",
       "level": 4,
       "name": "Web应用",
-      "rank": 52,
+      "rank": 54,
       "weighted_degree": 11
     }
   ],

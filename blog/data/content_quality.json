@@ -1,5 +1,5 @@
 {
-  "active_count": 2187,
+  "active_count": 2188,
   "archived_count": 276,
   "complete_count": 11,
   "legacy_analysis_count": 0,
@@ -18046,6 +18046,15 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260724-blogs_podcasts-best-practices-for-applying-amazon-bedrock-guardra-0-b203d420c7.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20260724-hacker_news-show-hn-palmier-pro-open-source-macos-video-editor-0-a2a7e4d4b5.md": {
       "reasons": [
         "concise_source_card"
@@ -18085,11 +18094,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2176,
-  "source_file_count": 2463,
-  "source_tree_sha256": "f3a399440310413a76dfee76ee717c6413a2714186b74e01da0fd4494ecb61e1",
-  "verified_provenance_count": 2187,
+  "source_brief_count": 2177,
+  "source_file_count": 2464,
+  "source_tree_sha256": "f335ac431bc0aeb92cb9d65a21b59779888610a4909d2835e4480fc798181e27",
+  "verified_provenance_count": 2188,
   "warning_counts": {
-    "source_excerpt_truncated": 744
+    "source_excerpt_truncated": 745
   }
 }

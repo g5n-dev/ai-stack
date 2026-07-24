@@ -28,7 +28,7 @@ source_title_chars_original: 84
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://www.latent.space/p/ainews-laguna-s-21-released-cheaper
 parent_observation_id: null
-last_seen_at: 2026-07-23T09:38:54.445034Z
+last_seen_at: 2026-07-24T00:00:00Z
 ---
 
 ## 基本信息

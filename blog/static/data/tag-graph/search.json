@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-07-23T20:23:55Z",
+  "generated_at": "2026-07-24T00:14:38Z",
   "items": [
     {
       "article_count": 653,
@@ -54,17 +54,17 @@
       "weighted_degree": 1186
     },
     {
-      "article_count": 352,
+      "article_count": 353,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
-      "degree": 64,
+      "degree": 65,
       "description": "文章标签: 博客与播客",
       "id": "tag:博客与播客",
       "layer": "tag",
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 4,
-      "weighted_degree": 698
+      "weighted_degree": 702
     },
     {
       "article_count": 161,
@@ -210,17 +210,17 @@
       "weighted_degree": 240
     },
     {
-      "article_count": 87,
+      "article_count": 88,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon SageMaker",
-      "degree": 48,
+      "community_id": "community:tag:来源快报",
+      "degree": 49,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 16,
-      "weighted_degree": 180
+      "weighted_degree": 184
     },
     {
       "article_count": 42,
@@ -342,7 +342,7 @@
     {
       "article_count": 9,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon SageMaker",
+      "community_id": "community:tag:Amazon RDS",
       "degree": 22,
       "description": "文章标签: Amazon Bedrock",
       "id": "tag:Amazon Bedrock",
@@ -355,7 +355,7 @@
     {
       "article_count": 7,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon SageMaker",
+      "community_id": "community:tag:Foundational (100)",
       "degree": 13,
       "description": "文章标签: Intermediate (200)",
       "id": "tag:Intermediate (200)",
@@ -459,7 +459,7 @@
     {
       "article_count": 5,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon SageMaker",
+      "community_id": "community:tag:Foundational (100)",
       "degree": 9,
       "description": "文章标签: Announcements",
       "id": "tag:Announcements",
@@ -537,7 +537,7 @@
     {
       "article_count": 7,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon SageMaker",
+      "community_id": "community:tag:来源快报",
       "degree": 2,
       "description": "文章标签: cs.AI",
       "id": "tag:cs.AI",
@@ -545,6 +545,19 @@
       "legacy_id": "cs.AI",
       "name": "cs.AI",
       "rank": 41,
+      "weighted_degree": 14
+    },
+    {
+      "article_count": 3,
+      "category": "article_tag",
+      "community_id": "community:tag:Amazon SageMaker",
+      "degree": 9,
+      "description": "文章标签: Best Practices",
+      "id": "tag:Best Practices",
+      "layer": "tag",
+      "legacy_id": "Best Practices",
+      "name": "Best Practices",
+      "rank": 42,
       "weighted_degree": 14
     },
     {
@@ -557,7 +570,7 @@
       "layer": "tag",
       "legacy_id": "Artificial intelligence",
       "name": "Artificial intelligence",
-      "rank": 42,
+      "rank": 43,
       "weighted_degree": 14
     },
     {
@@ -570,7 +583,7 @@
       "layer": "tag",
       "legacy_id": "Machine learning",
       "name": "Machine learning",
-      "rank": 43,
+      "rank": 44,
       "weighted_degree": 14
     },
     {
@@ -583,7 +596,7 @@
       "layer": "tag",
       "legacy_id": "Research",
       "name": "Research",
-      "rank": 44,
+      "rank": 45,
       "weighted_degree": 14
     },
     {
@@ -596,7 +609,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Nova",
       "name": "Amazon Nova",
-      "rank": 45,
+      "rank": 46,
       "weighted_degree": 13
     },
     {
@@ -609,7 +622,7 @@
       "layer": "tag",
       "legacy_id": "AWS Fargate",
       "name": "AWS Fargate",
-      "rank": 46,
+      "rank": 47,
       "weighted_degree": 13
     },
     {
@@ -622,20 +635,20 @@
       "layer": "tag",
       "legacy_id": "Amazon Elastic Kubernetes Service",
       "name": "Amazon Elastic Kubernetes Service",
-      "rank": 47,
+      "rank": 48,
       "weighted_degree": 12.6
     },
     {
       "article_count": 3,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon SageMaker",
+      "community_id": "community:tag:Partner solutions",
       "degree": 8,
       "description": "文章标签: Amazon Quick Suite",
       "id": "tag:Amazon Quick Suite",
       "layer": "tag",
       "legacy_id": "Amazon Quick Suite",
       "name": "Amazon Quick Suite",
-      "rank": 48,
+      "rank": 49,
       "weighted_degree": 12
     },
     {
@@ -648,7 +661,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Bedrock AgentCore",
       "name": "Amazon Bedrock AgentCore",
-      "rank": 49,
+      "rank": 50,
       "weighted_degree": 12
     },
     {
@@ -661,7 +674,20 @@
       "layer": "tag",
       "legacy_id": "Safety",
       "name": "Safety",
-      "rank": 50,
+      "rank": 51,
+      "weighted_degree": 11
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "community_id": "community:tag:Elastic Load Balancing",
+      "degree": 11,
+      "description": "文章标签: Expert (400)",
+      "id": "tag:Expert (400)",
+      "layer": "tag",
+      "legacy_id": "Expert (400)",
+      "name": "Expert (400)",
+      "rank": 52,
       "weighted_degree": 11
     },
     {
@@ -674,7 +700,7 @@
       "layer": "tag",
       "legacy_id": "Amazon SageMaker",
       "name": "Amazon SageMaker",
-      "rank": 51,
+      "rank": 53,
       "weighted_degree": 11
     },
     {
@@ -687,20 +713,20 @@
       "layer": "application",
       "legacy_id": "webapp",
       "name": "Web应用",
-      "rank": 52,
+      "rank": 54,
       "weighted_degree": 11
     },
     {
       "article_count": 5,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon SageMaker",
+      "community_id": "community:tag:来源快报",
       "degree": 2,
       "description": "文章标签: cs.CV",
       "id": "tag:cs.CV",
       "layer": "tag",
       "legacy_id": "cs.CV",
       "name": "cs.CV",
-      "rank": 53,
+      "rank": 55,
       "weighted_degree": 10
     },
     {
@@ -708,25 +734,25 @@
       "category": "article_tag",
       "community_id": "community:tag:Amazon SageMaker",
       "degree": 8,
-      "description": "文章标签: Partner solutions",
-      "id": "tag:Partner solutions",
+      "description": "文章标签: Amazon Bedrock Guardrails",
+      "id": "tag:Amazon Bedrock Guardrails",
       "layer": "tag",
-      "legacy_id": "Partner solutions",
-      "name": "Partner solutions",
-      "rank": 54,
+      "legacy_id": "Amazon Bedrock Guardrails",
+      "name": "Amazon Bedrock Guardrails",
+      "rank": 56,
       "weighted_degree": 10
     },
     {
       "article_count": 2,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon SageMaker",
-      "degree": 7,
-      "description": "文章标签: Best Practices",
-      "id": "tag:Best Practices",
+      "community_id": "community:tag:Partner solutions",
+      "degree": 8,
+      "description": "文章标签: Partner solutions",
+      "id": "tag:Partner solutions",
       "layer": "tag",
-      "legacy_id": "Best Practices",
-      "name": "Best Practices",
-      "rank": 55,
+      "legacy_id": "Partner solutions",
+      "name": "Partner solutions",
+      "rank": 57,
       "weighted_degree": 10
     },
     {
@@ -739,7 +765,7 @@
       "layer": "application",
       "legacy_id": "api",
       "name": "API服务",
-      "rank": 56,
+      "rank": 58,
       "weighted_degree": 9.6
     },
     {
@@ -752,20 +778,20 @@
       "layer": "tag",
       "legacy_id": "Foundational (100)",
       "name": "Foundational (100)",
-      "rank": 57,
+      "rank": 59,
       "weighted_degree": 9
     },
     {
       "article_count": 4,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon SageMaker",
+      "community_id": "community:tag:来源快报",
       "degree": 2,
       "description": "文章标签: cs.CL",
       "id": "tag:cs.CL",
       "layer": "tag",
       "legacy_id": "cs.CL",
       "name": "cs.CL",
-      "rank": 58,
+      "rank": 60,
       "weighted_degree": 8
     },
     {
@@ -778,7 +804,7 @@
       "layer": "model",
       "legacy_id": "llm",
       "name": "大语言模型",
-      "rank": 59,
+      "rank": 61,
       "weighted_degree": 7.6
     },
     {
@@ -791,7 +817,7 @@
       "layer": "language",
       "legacy_id": "python",
       "name": "Python",
-      "rank": 60,
+      "rank": 62,
       "weighted_degree": 7.6
     },
     {
@@ -804,7 +830,7 @@
       "layer": "tag",
       "legacy_id": "Amazon API Gateway",
       "name": "Amazon API Gateway",
-      "rank": 61,
+      "rank": 63,
       "weighted_degree": 7.6
     },
     {
@@ -817,7 +843,7 @@
       "layer": "tag",
       "legacy_id": "Computer science and technology",
       "name": "Computer science and technology",
-      "rank": 62,
+      "rank": 64,
       "weighted_degree": 7.6
     },
     {
@@ -830,7 +856,7 @@
       "layer": "tag",
       "legacy_id": "Design",
       "name": "Design",
-      "rank": 63,
+      "rank": 65,
       "weighted_degree": 7.6
     },
     {
@@ -843,7 +869,7 @@
       "layer": "tag",
       "legacy_id": "Systems design",
       "name": "Systems design",
-      "rank": 64,
+      "rank": 66,
       "weighted_degree": 7.6
     },
     {
@@ -856,7 +882,7 @@
       "layer": "tag",
       "legacy_id": "ACP",
       "name": "ACP",
-      "rank": 65,
+      "rank": 67,
       "weighted_degree": 7
     },
     {
@@ -869,7 +895,7 @@
       "layer": "tag",
       "legacy_id": "Algorithms",
       "name": "Algorithms",
-      "rank": 66,
+      "rank": 68,
       "weighted_degree": 7
     },
     {
@@ -882,7 +908,7 @@
       "layer": "tag",
       "legacy_id": "Amazon CloudWatch",
       "name": "Amazon CloudWatch",
-      "rank": 67,
+      "rank": 69,
       "weighted_degree": 7
     },
     {
@@ -895,7 +921,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Elastic File System (EFS)",
       "name": "Amazon Elastic File System (EFS)",
-      "rank": 68,
+      "rank": 70,
       "weighted_degree": 7
     },
     {
@@ -908,7 +934,7 @@
       "layer": "tag",
       "legacy_id": "Amazon EventBridge",
       "name": "Amazon EventBridge",
-      "rank": 69,
+      "rank": 71,
       "weighted_degree": 7
     },
     {
@@ -921,7 +947,7 @@
       "layer": "tag",
       "legacy_id": "Amazon RDS",
       "name": "Amazon RDS",
-      "rank": 70,
+      "rank": 72,
       "weighted_degree": 7
     },
     {
@@ -934,7 +960,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Simple Notification Service (SNS)",
       "name": "Amazon Simple Notification Service (SNS)",
-      "rank": 71,
+      "rank": 73,
       "weighted_degree": 7
     },
     {
@@ -947,7 +973,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Simple Queue Service (SQS)",
       "name": "Amazon Simple Queue Service (SQS)",
-      "rank": 72,
+      "rank": 74,
       "weighted_degree": 7
     },
     {
@@ -960,7 +986,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Simple Storage Service (S3)",
       "name": "Amazon Simple Storage Service (S3)",
-      "rank": 73,
+      "rank": 75,
       "weighted_degree": 7
     },
     {
@@ -973,7 +999,7 @@
       "layer": "tag",
       "legacy_id": "Codex",
       "name": "Codex",
-      "rank": 74,
+      "rank": 76,
       "weighted_degree": 7
     },
     {
@@ -986,7 +1012,7 @@
       "layer": "tag",
       "legacy_id": "Computer modeling",
       "name": "Computer modeling",
-      "rank": 75,
+      "rank": 77,
       "weighted_degree": 7
     },
     {
@@ -999,7 +1025,7 @@
       "layer": "tag",
       "legacy_id": "Elastic Load Balancing",
       "name": "Elastic Load Balancing",
-      "rank": 76,
+      "rank": 78,
       "weighted_degree": 7
     },
     {
@@ -1012,20 +1038,7 @@
       "layer": "tag",
       "legacy_id": "Ethics",
       "name": "Ethics",
-      "rank": 77,
-      "weighted_degree": 7
-    },
-    {
-      "article_count": 1,
-      "category": "article_tag",
-      "community_id": "community:tag:Elastic Load Balancing",
-      "degree": 7,
-      "description": "文章标签: Expert (400)",
-      "id": "tag:Expert (400)",
-      "layer": "tag",
-      "legacy_id": "Expert (400)",
-      "name": "Expert (400)",
-      "rank": 78,
+      "rank": 79,
       "weighted_degree": 7
     },
     {
@@ -1038,7 +1051,7 @@
       "layer": "tag",
       "legacy_id": "Faculty",
       "name": "Faculty",
-      "rank": 79,
+      "rank": 80,
       "weighted_degree": 7
     },
     {
@@ -1051,7 +1064,7 @@
       "layer": "tag",
       "legacy_id": "Harness",
       "name": "Harness",
-      "rank": 80,
+      "rank": 81,
       "weighted_degree": 7
     },
     {
@@ -1064,7 +1077,7 @@
       "layer": "tag",
       "legacy_id": "Interview",
       "name": "Interview",
-      "rank": 81,
+      "rank": 82,
       "weighted_degree": 7
     },
     {
@@ -1077,7 +1090,7 @@
       "layer": "tag",
       "legacy_id": "Kimi K3",
       "name": "Kimi K3",
-      "rank": 82,
+      "rank": 83,
       "weighted_degree": 7
     },
     {
@@ -1090,7 +1103,7 @@
       "layer": "tag",
       "legacy_id": "Mental health",
       "name": "Mental health",
-      "rank": 83,
+      "rank": 84,
       "weighted_degree": 7
     },
     {
@@ -1103,7 +1116,7 @@
       "layer": "tag",
       "legacy_id": "Open Interpreter",
       "name": "Open Interpreter",
-      "rank": 84,
+      "rank": 85,
       "weighted_degree": 7
     },
     {
@@ -1116,7 +1129,7 @@
       "layer": "framework",
       "legacy_id": "pytorch",
       "name": "PyTorch",
-      "rank": 85,
+      "rank": 86,
       "weighted_degree": 7
     },
     {
@@ -1129,7 +1142,7 @@
       "layer": "application",
       "legacy_id": "rag",
       "name": "RAG应用",
-      "rank": 86,
+      "rank": 87,
       "weighted_degree": 6.6
     },
     {
@@ -1142,33 +1155,33 @@
       "layer": "scenario",
       "legacy_id": "ai_ml",
       "name": "AI/ML项目",
-      "rank": 87,
-      "weighted_degree": 6
-    },
-    {
-      "article_count": 3,
-      "category": "article_tag",
-      "community_id": "community:tag:Amazon SageMaker",
-      "degree": 2,
-      "description": "文章标签: Company",
-      "id": "tag:Company",
-      "layer": "tag",
-      "legacy_id": "Company",
-      "name": "Company",
       "rank": 88,
       "weighted_degree": 6
     },
     {
       "article_count": 3,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon SageMaker",
+      "community_id": "community:tag:来源快报",
+      "degree": 2,
+      "description": "文章标签: Company",
+      "id": "tag:Company",
+      "layer": "tag",
+      "legacy_id": "Company",
+      "name": "Company",
+      "rank": 89,
+      "weighted_degree": 6
+    },
+    {
+      "article_count": 3,
+      "category": "article_tag",
+      "community_id": "community:tag:来源快报",
       "degree": 2,
       "description": "文章标签: Global Affairs",
       "id": "tag:Global Affairs",
       "layer": "tag",
       "legacy_id": "Global Affairs",
       "name": "Global Affairs",
-      "rank": 89,
+      "rank": 90,
       "weighted_degree": 6
     },
     {
@@ -1181,19 +1194,6 @@
       "layer": "tag",
       "legacy_id": "Search",
       "name": "Search",
-      "rank": 90,
-      "weighted_degree": 6
-    },
-    {
-      "article_count": 1,
-      "category": "article_tag",
-      "community_id": "community:tag:Amazon SageMaker",
-      "degree": 6,
-      "description": "文章标签: Amazon Bedrock Guardrails",
-      "id": "tag:Amazon Bedrock Guardrails",
-      "layer": "tag",
-      "legacy_id": "Amazon Bedrock Guardrails",
-      "name": "Amazon Bedrock Guardrails",
       "rank": 91,
       "weighted_degree": 6
     },
@@ -1278,7 +1278,7 @@
     {
       "article_count": 2,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon SageMaker",
+      "community_id": "community:tag:来源快报",
       "degree": 2,
       "description": "文章标签: cs.CR",
       "id": "tag:cs.CR",
@@ -1291,7 +1291,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon SageMaker",
+      "community_id": "community:tag:Foundational (100)",
       "degree": 4,
       "description": "文章标签: Amazon Bedrock Knowledge Bases",
       "id": "tag:Amazon Bedrock Knowledge Bases",
@@ -1304,7 +1304,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon SageMaker",
+      "community_id": "community:tag:Foundational (100)",
       "degree": 4,
       "description": "文章标签: Amazon Rekognition",
       "id": "tag:Amazon Rekognition",
@@ -1317,7 +1317,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon SageMaker",
+      "community_id": "community:tag:Partner solutions",
       "degree": 4,
       "description": "文章标签: Artificial Intelligence",
       "id": "tag:Artificial Intelligence",
@@ -1330,7 +1330,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon SageMaker",
+      "community_id": "community:tag:Foundational (100)",
       "degree": 4,
       "description": "文章标签: AWS DeepRacer",
       "id": "tag:AWS DeepRacer",
@@ -1343,7 +1343,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Google Workspace",
+      "community_id": "community:other",
       "degree": 4,
       "description": "文章标签: Google One",
       "id": "tag:Google One",
@@ -1356,7 +1356,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Google Workspace",
+      "community_id": "community:other",
       "degree": 4,
       "description": "文章标签: Google Workspace",
       "id": "tag:Google Workspace",
@@ -1564,7 +1564,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon SageMaker",
+      "community_id": "community:tag:来源快报",
       "degree": 3,
       "description": "文章标签: AI Adoption",
       "id": "tag:AI Adoption",
@@ -1577,7 +1577,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon SageMaker",
+      "community_id": "community:tag:来源快报",
       "degree": 3,
       "description": "文章标签: AI Research",
       "id": "tag:AI Research",
@@ -1590,7 +1590,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon SageMaker",
+      "community_id": "community:tag:来源快报",
       "degree": 3,
       "description": "文章标签: Security",
       "id": "tag:Security",
@@ -1629,7 +1629,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon SageMaker",
+      "community_id": "community:tag:来源快报",
       "degree": 2,
       "description": "文章标签: cs.LG",
       "id": "tag:cs.LG",
@@ -1642,7 +1642,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon SageMaker",
+      "community_id": "community:tag:来源快报",
       "degree": 2,
       "description": "文章标签: econ.EM",
       "id": "tag:econ.EM",
@@ -1655,7 +1655,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon SageMaker",
+      "community_id": "community:tag:来源快报",
       "degree": 2,
       "description": "文章标签: hep-ph",
       "id": "tag:hep-ph",
@@ -1668,7 +1668,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon SageMaker",
+      "community_id": "community:tag:来源快报",
       "degree": 2,
       "description": "文章标签: Product",
       "id": "tag:Product",
@@ -1681,7 +1681,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon SageMaker",
+      "community_id": "community:tag:来源快报",
       "degree": 2,
       "description": "文章标签: q-bio.GN",
       "id": "tag:q-bio.GN",
