@@ -23,11 +23,11 @@
       "focus-shards/000-9f26f0a6a095.json",
       "focus-shards/001-f8aa1c656f4c.json",
       "focus-shards/002-1f6580b97e6b.json",
-      "focus-shards/003-c32fc6bf06c9.json",
+      "focus-shards/003-590d5a63be19.json",
       "focus-shards/004-08a9b1380f4a.json",
       "focus-shards/005-78d92140d3cd.json",
       "focus-shards/006-0c70646e6d3a.json",
-      "focus-shards/007-e1620c73af12.json",
+      "focus-shards/007-0ce0aaa7e5ed.json",
       "focus-shards/008-716f3e4953f4.json",
       "focus-shards/009-8a07cecca57c.json",
       "focus-shards/010-82102f585f91.json",
@@ -75,7 +75,7 @@
       "focus-shards/052-97605c94a270.json",
       "focus-shards/053-1fde8c068e4f.json",
       "focus-shards/054-b57c28532b70.json",
-      "focus-shards/055-ec73f438a8aa.json",
+      "focus-shards/055-03bf8502bc00.json",
       "focus-shards/056-24c3cf7ce469.json",
       "focus-shards/057-6fb23ad7ec16.json",
       "focus-shards/058-1542c4839aed.json",
@@ -153,7 +153,7 @@
     "tag": "tag.json",
     "tagHot": "tag.hot.json"
   },
-  "generated_at": "2026-07-24T00:14:38Z",
+  "generated_at": "2026-07-24T03:47:13Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -209,7 +209,7 @@
       "archived_article_files_skipped": 276,
       "archived_article_groups_skipped": 276,
       "avg_concepts_per_article": 0,
-      "avg_tags_per_article": 2.229433272394881,
+      "avg_tags_per_article": 2.229785290086798,
       "canonical_duplicate_files_skipped": 0,
       "incomplete_article_files_skipped": 0,
       "incomplete_article_groups_skipped": 0,
@@ -242,7 +242,7 @@
         [
           "ArXiv",
           {
-            "article_count": 576,
+            "article_count": 577,
             "category": "article_tag",
             "description": "文章标签: ArXiv",
             "id": "ArXiv",
@@ -278,13 +278,13 @@
       ],
       "synthetic_article_files_skipped": 0,
       "synthetic_article_groups_skipped": 0,
-      "total_articles": 2188,
+      "total_articles": 2189,
       "total_concept_links": 0,
       "total_concepts": 0,
       "total_tag_links": 600,
       "total_tags": 104
     },
-    "total_articles": 2188,
+    "total_articles": 2189,
     "total_communities": 12,
     "total_links": 702,
     "total_nodes": 173

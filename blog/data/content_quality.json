@@ -1,5 +1,5 @@
 {
-  "active_count": 2188,
+  "active_count": 2189,
   "archived_count": 276,
   "complete_count": 11,
   "legacy_analysis_count": 0,
@@ -18040,6 +18040,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260724-arxiv-unsupervised-consensus-based-anomaly-detection-for-0-ce50b80b11.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260724-blogs_podcasts-agentic-retrieval-for-amazon-bedrock-managed-knowl-0-9c3f97d9e0.md": {
       "reasons": [
         "concise_source_card"
@@ -18094,10 +18100,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2177,
-  "source_file_count": 2464,
-  "source_tree_sha256": "f335ac431bc0aeb92cb9d65a21b59779888610a4909d2835e4480fc798181e27",
-  "verified_provenance_count": 2188,
+  "source_brief_count": 2178,
+  "source_file_count": 2465,
+  "source_tree_sha256": "fcd1247c31ba481d12d5f817cd13e6841d8c0bbde06acecd8790cf7ca417a433",
+  "verified_provenance_count": 2189,
   "warning_counts": {
     "source_excerpt_truncated": 745
   }
