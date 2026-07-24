@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T09:38:04Z",
+  "generated_at": "2026-07-24T11:59:27Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -2912,6 +2912,14 @@
       "weight": 6
     },
     {
+      "id": "edge:cooccurrence:tag:GitHub->tag:Jupyter Notebook",
+      "source": "tag:GitHub",
+      "strength": 0.5,
+      "target": "tag:Jupyter Notebook",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
       "id": "edge:cooccurrence:tag:GitHub->tag:Kotlin",
       "source": "tag:GitHub",
       "strength": 0.5,
@@ -2980,6 +2988,14 @@
       "source": "tag:GitHub",
       "strength": 0.5,
       "target": "tag:机器学习",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:GitHub->tag:来源快报",
+      "source": "tag:GitHub",
+      "strength": 0.5,
+      "target": "tag:来源快报",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -3614,6 +3630,14 @@
       "target": "tech:javascript",
       "type": "semantic",
       "weight": 0.6
+    },
+    {
+      "id": "edge:cooccurrence:tag:Jupyter Notebook->tag:来源快报",
+      "source": "tag:Jupyter Notebook",
+      "strength": 0.5,
+      "target": "tag:来源快报",
+      "type": "cooccurrence",
+      "weight": 1
     },
     {
       "id": "edge:cooccurrence:tag:Kimi K3->tag:Open Interpreter",
@@ -6076,11 +6100,11 @@
       "weighted_degree": 5
     },
     {
-      "article_count": 40,
+      "article_count": 41,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
-      "degree": 18,
+      "degree": 20,
       "description": "文章标签: GitHub",
       "id": "tag:GitHub",
       "layer": "tag",
@@ -6089,8 +6113,8 @@
       "level": 6,
       "name": "GitHub",
       "rank": 23,
-      "related_count": 18,
-      "weighted_degree": 55
+      "related_count": 20,
+      "weighted_degree": 57
     },
     {
       "article_count": 3,
@@ -6283,6 +6307,23 @@
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
+      "community_id": "community:tag:掘金",
+      "degree": 2,
+      "description": "文章标签: Jupyter Notebook",
+      "id": "tag:Jupyter Notebook",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Jupyter Notebook",
+      "level": 6,
+      "name": "Jupyter Notebook",
+      "rank": 128,
+      "related_count": 2,
+      "weighted_degree": 2
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
       "community_id": "community:tag:Codex",
       "degree": 7,
       "description": "文章标签: Kimi K3",
@@ -6428,7 +6469,7 @@
       "legacy_id": "Product",
       "level": 6,
       "name": "Product",
-      "rank": 128,
+      "rank": 129,
       "related_count": 2,
       "weighted_degree": 2
     },
@@ -6462,7 +6503,7 @@
       "legacy_id": "q-bio.GN",
       "level": 6,
       "name": "q-bio.GN",
-      "rank": 129,
+      "rank": 130,
       "related_count": 2,
       "weighted_degree": 2
     },
@@ -6756,11 +6797,11 @@
       "weighted_degree": 240
     },
     {
-      "article_count": 89,
+      "article_count": 90,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
-      "degree": 49,
+      "degree": 51,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
@@ -6769,8 +6810,8 @@
       "level": 6,
       "name": "来源快报",
       "rank": 16,
-      "related_count": 49,
-      "weighted_degree": 186
+      "related_count": 51,
+      "weighted_degree": 188
     },
     {
       "article_count": 11,
@@ -6860,14 +6901,14 @@
   ],
   "stats": {
     "links_by_type": {
-      "cooccurrence": 600,
+      "cooccurrence": 603,
       "semantic": 31
     },
     "nodes_by_layer": {
-      "tag": 104
+      "tag": 105
     },
-    "total_links": 631,
-    "total_nodes": 104
+    "total_links": 634,
+    "total_nodes": 105
   },
   "version": 2
 }
