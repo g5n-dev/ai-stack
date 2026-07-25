@@ -145,6 +145,8 @@ def test_trends_runtime_uses_safe_text_progressive_loading_and_distinct_links() 
     assert "MAX_MATRIX_PIXELS = 8 * 1024 * 1024" in source
     assert "createTrendSelect" in source
     assert "aria-activedescendant" in source
+    assert "elements.source.options.length <= 1" in source
+    assert "elements.scenario.options.length <= 1" in source
     assert "heatVisual" in source
     assert "matrixTooltipCopy" in source
     assert "renderMatrixTooltip" in source

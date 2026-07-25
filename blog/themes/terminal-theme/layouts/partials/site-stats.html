@@ -5,7 +5,7 @@
 {{- $latestISO := "" -}}
 {{- with first 1 $posts -}}
     {{- range . -}}
-        {{- $latest = .Date.Format "15:04" -}}
+        {{- $latest = .Date.Format "2006-01-02 15:04" -}}
         {{- $latestDate = .Date.Format "2006-01-02" -}}
         {{- $latestISO = .Date.Format "2006-01-02T15:04:05Z07:00" -}}
     {{- end -}}

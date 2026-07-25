@@ -2313,8 +2313,12 @@
       root.querySelectorAll("[data-trend-view]").forEach((button) => {
         button.disabled = !ready;
       });
-      [elements.query, elements.signal, elements.source, elements.scenario, elements.clear]
+      [elements.query, elements.signal, elements.clear]
         .forEach((control) => { control.disabled = !ready; });
+      // A valid observation window may have no source or scenario facets.
+      // Disable a no-op selector instead of exposing only its "全部" option.
+      elements.source.disabled = !ready || elements.source.options.length <= 1;
+      elements.scenario.disabled = !ready || elements.scenario.options.length <= 1;
       elements.matrix.setAttribute("aria-disabled", String(!ready));
       elements.matrix.tabIndex = ready ? 0 : -1;
       if (!ready) elements.matrix.style.cursor = "default";
