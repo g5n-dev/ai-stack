@@ -94,6 +94,9 @@ class SiteHeaderContractTest(unittest.TestCase):
         source = (LAYOUTS / "partials" / "site-header.html").read_text(
             encoding="utf-8"
         )
+        stats = (LAYOUTS / "partials" / "site-stats.html").read_text(
+            encoding="utf-8"
+        )
 
         for contract in (
             "data-site-header",
@@ -116,6 +119,8 @@ class SiteHeaderContractTest(unittest.TestCase):
         self.assertNotIn("<small", source)
         self.assertNotIn("DATA LIVE", source)
         self.assertNotIn("SYS_STABLE", source)
+        self.assertIn('.Date.Format "2006-01-02 15:04"', stats)
+        self.assertNotIn('.Date.Format "15:04"', stats)
 
     def test_telemetry_uses_shared_two_row_baseline_grid(self) -> None:
         css = (ROOT / "blog" / "static" / "css" / "style.css").read_text(

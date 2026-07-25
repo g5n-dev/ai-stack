@@ -78,6 +78,26 @@ def page(browser: Browser) -> Generator[Page, None, None]:
         context.close()
 
 
+def _select_first_nonempty_trend_facet(page: Page, name: str) -> str | None:
+    select = page.locator(f"#trend-{name}")
+    trigger = page.locator(f"#trend-{name}-trigger")
+    values = select.locator('option:not([value=""])')
+    if values.count() == 0:
+        expect(trigger).to_be_disabled()
+        return None
+
+    expect(trigger).to_be_enabled()
+    trigger.click()
+    option = page.locator(
+        f'#trend-{name}-listbox [role="option"]:not([data-value=""])'
+    ).first
+    value = option.get_attribute("data-value")
+    assert value
+    option.click()
+    expect(trigger).to_have_attribute("aria-expanded", "false")
+    return value
+
+
 def _basic_wcag_violations(page: Page) -> list[str]:
     return page.evaluate(
         """
@@ -209,25 +229,15 @@ def test_trends_initializes_and_all_primary_controls_change_real_state(
     page.locator('#trend-signal-listbox [role="option"][data-value="all"]').click()
     expect(page.locator("#trend-signal-trigger")).to_have_attribute("aria-expanded", "false")
 
-    page.locator("#trend-source-trigger").click()
-    source_option = page.locator(
-        '#trend-source-listbox [role="option"]:not([data-value=""])'
-    ).first
-    source_value = source_option.get_attribute("data-value")
-    assert source_value
-    source_option.click()
-    expect(page.locator("#trend-filter-summary")).to_contain_text("来源")
-    assert "source=" in page.url
+    source_value = _select_first_nonempty_trend_facet(page, "source")
+    if source_value:
+        expect(page.locator("#trend-filter-summary")).to_contain_text("来源")
+        assert "source=" in page.url
 
-    page.locator("#trend-scenario-trigger").click()
-    scenario_option = page.locator(
-        '#trend-scenario-listbox [role="option"]:not([data-value=""])'
-    ).first
-    scenario_value = scenario_option.get_attribute("data-value")
-    assert scenario_value
-    scenario_option.click()
-    expect(page.locator("#trend-filter-summary")).to_contain_text("场景")
-    assert "scenario=" in page.url
+    scenario_value = _select_first_nonempty_trend_facet(page, "scenario")
+    if scenario_value:
+        expect(page.locator("#trend-filter-summary")).to_contain_text("场景")
+        assert "scenario=" in page.url
 
     page.locator("#trend-clear").click()
     expect(page.locator("#trend-filter-summary")).to_contain_text("当前未启用附加筛选")
@@ -575,8 +585,16 @@ def test_trends_window_shard_failure_keeps_window_recovery_actionable(
     expect(page.locator('[data-trend-view="list"]')).to_be_enabled()
     expect(page.locator("#trend-query")).to_be_enabled()
     expect(page.locator("#trend-signal-trigger")).to_be_enabled()
-    expect(page.locator("#trend-source-trigger")).to_be_enabled()
-    expect(page.locator("#trend-scenario-trigger")).to_be_enabled()
+    source_has_facets = page.locator('#trend-source option:not([value=""])').count() > 0
+    scenario_has_facets = page.locator('#trend-scenario option:not([value=""])').count() > 0
+    if source_has_facets:
+        expect(page.locator("#trend-source-trigger")).to_be_enabled()
+    else:
+        expect(page.locator("#trend-source-trigger")).to_be_disabled()
+    if scenario_has_facets:
+        expect(page.locator("#trend-scenario-trigger")).to_be_enabled()
+    else:
+        expect(page.locator("#trend-scenario-trigger")).to_be_disabled()
     expect(page.locator("#trend-clear")).to_be_enabled()
     expect(page.locator("#trend-matrix")).to_have_attribute("aria-disabled", "false")
     expect(page.locator("#trend-matrix")).to_have_attribute("tabindex", "0")

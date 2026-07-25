@@ -2269,13 +2269,12 @@ def build_lineage_assets(
                     and (
                         not isinstance(existing_first_seen, str)
                         or git_first_seen < existing_first_seen
-                        or (
-                            git_first_seen == existing_first_seen
-                            and authoritative_confidence
-                            in {TimestampConfidence.UNKNOWN, TimestampConfidence.OBSERVED}
-                        )
                     )
                 ):
+                    # Git history is only a fallback for an earlier observation
+                    # time. A newly generated Post has no commit timestamp until
+                    # the persist job commits it, so relabeling an equal time
+                    # made the pre-commit and PR validation builds disagree.
                     authoritative_confidence = TimestampConfidence.GIT
             observation = replace(
                 persisted.observation,

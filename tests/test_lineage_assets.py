@@ -317,6 +317,87 @@ source_is_truncated: false
     assert record["timestamp_confidence"] == TimestampConfidence.GIT.value
 
 
+@pytest.mark.parametrize(
+    ("confidence", "git_seen"),
+    [
+        (TimestampConfidence.UNKNOWN, "2026-07-20T08:00:00Z"),
+        (TimestampConfidence.OBSERVED, "2026-07-20T08:00:00Z"),
+        (TimestampConfidence.OBSERVED, "2026-07-20T09:00:00Z"),
+    ],
+)
+def test_non_earlier_git_time_does_not_relabel_persisted_observation(
+    tmp_path: Path,
+    confidence: TimestampConfidence,
+    git_seen: str,
+) -> None:
+    content_root = tmp_path / "content"
+    post = content_root / "posts" / "new-signal.md"
+    post.parent.mkdir(parents=True)
+    first_seen = "2026-07-20T08:00:00Z"
+    post.write_text(
+        f"""---
+title: Newly observed signal
+date: {first_seen}
+draft: false
+source: fixture
+external_url: https://example.com/new-signal
+source_capture_mode: metadata_only
+source_completeness: metadata_only
+source_is_truncated: false
+first_seen_at: {first_seen}
+timestamp_confidence: {confidence.value}
+---
+
+## 来源摘要/节选
+
+> Newly observed source metadata.
+""",
+        encoding="utf-8",
+    )
+    internal = tmp_path / "internal"
+    public = tmp_path / "public"
+
+    build_lineage_assets(
+        content_root=content_root,
+        internal_dir=internal,
+        public_dir=public,
+        as_of=first_seen,
+        first_seen_by_path={},
+    )
+    first_apply = apply_lineage_post_metadata(
+        content_root=content_root,
+        internal_dir=internal,
+        apply=True,
+    )
+    assert first_apply["changed"] == 1
+    internal_before = _tree_bytes(internal)
+    public_before = _tree_bytes(public)
+    post_before = post.read_bytes()
+
+    # The persist commit introduces the path only after the first build. Full
+    # Git history must not make the committed validation build change again.
+    build_lineage_assets(
+        content_root=content_root,
+        internal_dir=internal,
+        public_dir=public,
+        as_of=first_seen,
+        first_seen_by_path={post.resolve(): git_seen},
+    )
+    second_apply = apply_lineage_post_metadata(
+        content_root=content_root,
+        internal_dir=internal,
+        apply=True,
+    )
+
+    assert second_apply["changed"] == 0
+    assert _tree_bytes(internal) == internal_before
+    assert _tree_bytes(public) == public_before
+    assert post.read_bytes() == post_before
+    record = next(iter(LineageRegistry.load(internal)._records.values()))
+    assert record["first_seen_at"] == first_seen
+    assert record["timestamp_confidence"] == confidence.value
+
+
 def test_public_cluster_schema_exposes_safe_timeline_and_duplicate_relation(
     tmp_path: Path,
 ) -> None:
