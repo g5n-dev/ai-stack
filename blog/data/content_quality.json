@@ -1,5 +1,5 @@
 {
-  "active_count": 2191,
+  "active_count": 2193,
   "archived_count": 276,
   "complete_count": 12,
   "legacy_analysis_count": 0,
@@ -18072,6 +18072,21 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260725-blogs_podcasts-build-an-explainable-next-best-product-recommendat-0-af4a9a88db.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
+    "posts/20260725-github_trending-firerpa-lamda-0-80c2355439.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -18106,11 +18121,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2179,
-  "source_file_count": 2467,
-  "source_tree_sha256": "fb58d0d5772ba63c77f0e8bdb2cbf6f4b90c77b3f13aa3be12c845505783935c",
-  "verified_provenance_count": 2191,
+  "source_brief_count": 2181,
+  "source_file_count": 2469,
+  "source_tree_sha256": "340823e9d3f554dd11ecd4374b23816bf1d47287829388e78f2ee3b338b2dbed",
+  "verified_provenance_count": 2193,
   "warning_counts": {
-    "source_excerpt_truncated": 745
+    "source_excerpt_truncated": 746
   }
 }
