@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-07-25T04:31:13Z",
+  "generated_at": "2026-07-25T06:32:52Z",
   "items": [
     {
       "article_count": 653,
@@ -210,17 +210,17 @@
       "weighted_degree": 240
     },
     {
-      "article_count": 92,
+      "article_count": 93,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
-      "degree": 54,
+      "degree": 55,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 16,
-      "weighted_degree": 195
+      "weighted_degree": 197
     },
     {
       "article_count": 42,
@@ -301,7 +301,7 @@
       "weighted_degree": 81.2
     },
     {
-      "article_count": 42,
+      "article_count": 43,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 20,
@@ -311,7 +311,7 @@
       "legacy_id": "GitHub",
       "name": "GitHub",
       "rank": 23,
-      "weighted_degree": 59
+      "weighted_degree": 61
     },
     {
       "article_count": 21,
@@ -379,6 +379,19 @@
       "weighted_degree": 30
     },
     {
+      "article_count": 7,
+      "category": "article_tag",
+      "community_id": "community:tag:掘金",
+      "degree": 13,
+      "description": "文章标签: Go",
+      "id": "tag:Go",
+      "layer": "tag",
+      "legacy_id": "Go",
+      "name": "Go",
+      "rank": 29,
+      "weighted_degree": 29.6
+    },
+    {
       "article_count": 12,
       "category": "article_tag",
       "community_id": "community:tag:Codex",
@@ -388,7 +401,7 @@
       "layer": "tag",
       "legacy_id": "工程实践",
       "name": "工程实践",
-      "rank": 29,
+      "rank": 30,
       "weighted_degree": 29
     },
     {
@@ -401,7 +414,7 @@
       "layer": "tag",
       "legacy_id": "Advanced (300)",
       "name": "Advanced (300)",
-      "rank": 30,
+      "rank": 31,
       "weighted_degree": 29
     },
     {
@@ -414,7 +427,7 @@
       "layer": "tag",
       "legacy_id": "Swift",
       "name": "Swift",
-      "rank": 31,
+      "rank": 32,
       "weighted_degree": 28.6
     },
     {
@@ -427,21 +440,8 @@
       "layer": "tag",
       "legacy_id": "Customer Solutions",
       "name": "Customer Solutions",
-      "rank": 32,
-      "weighted_degree": 28
-    },
-    {
-      "article_count": 6,
-      "category": "article_tag",
-      "community_id": "community:tag:掘金",
-      "degree": 12,
-      "description": "文章标签: Go",
-      "id": "tag:Go",
-      "layer": "tag",
-      "legacy_id": "Go",
-      "name": "Go",
       "rank": 33,
-      "weighted_degree": 27.6
+      "weighted_degree": 28
     },
     {
       "article_count": 8,
@@ -1575,7 +1575,7 @@
       "weighted_degree": 2.6
     },
     {
-      "article_count": 6,
+      "article_count": 7,
       "category": "language",
       "community_id": null,
       "degree": 3,

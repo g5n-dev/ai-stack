@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-25T04:31:13Z",
+  "generated_at": "2026-07-25T06:32:52Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -2965,7 +2965,7 @@
       "strength": 1,
       "target": "tag:Go",
       "type": "cooccurrence",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:GitHub->tag:Java",
@@ -3069,7 +3069,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:GitHub->tag:深度学习",
@@ -3174,6 +3174,14 @@
       "target": "tag:掘金",
       "type": "cooccurrence",
       "weight": 4
+    },
+    {
+      "id": "edge:cooccurrence:tag:Go->tag:来源快报",
+      "source": "tag:Go",
+      "strength": 0.5,
+      "target": "tag:来源快报",
+      "type": "cooccurrence",
+      "weight": 1
     },
     {
       "id": "edge:cooccurrence:tag:Go->tag:生成式 AI",
@@ -5223,7 +5231,7 @@
       "legacy_id": "Advanced (300)",
       "level": 6,
       "name": "Advanced (300)",
-      "rank": 30,
+      "rank": 31,
       "related_count": 17,
       "weighted_degree": 29
     },
@@ -6039,7 +6047,7 @@
       "legacy_id": "Customer Solutions",
       "level": 6,
       "name": "Customer Solutions",
-      "rank": 32,
+      "rank": 33,
       "related_count": 17,
       "weighted_degree": 28
     },
@@ -6214,7 +6222,7 @@
       "weighted_degree": 5
     },
     {
-      "article_count": 42,
+      "article_count": 43,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -6228,7 +6236,7 @@
       "name": "GitHub",
       "rank": 23,
       "related_count": 20,
-      "weighted_degree": 59
+      "weighted_degree": 61
     },
     {
       "article_count": 3,
@@ -6248,11 +6256,11 @@
       "weighted_degree": 6
     },
     {
-      "article_count": 6,
+      "article_count": 7,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
-      "degree": 12,
+      "degree": 13,
       "description": "文章标签: Go",
       "id": "tag:Go",
       "layer": "tag",
@@ -6260,9 +6268,9 @@
       "legacy_id": "Go",
       "level": 6,
       "name": "Go",
-      "rank": 33,
-      "related_count": 11,
-      "weighted_degree": 27.6
+      "rank": 29,
+      "related_count": 12,
+      "weighted_degree": 29.6
     },
     {
       "article_count": 1,
@@ -6736,7 +6744,7 @@
       "legacy_id": "Swift",
       "level": 6,
       "name": "Swift",
-      "rank": 31,
+      "rank": 32,
       "related_count": 15,
       "weighted_degree": 28.6
     },
@@ -6855,7 +6863,7 @@
       "legacy_id": "工程实践",
       "level": 6,
       "name": "工程实践",
-      "rank": 29,
+      "rank": 30,
       "related_count": 9,
       "weighted_degree": 29
     },
@@ -6911,11 +6919,11 @@
       "weighted_degree": 240
     },
     {
-      "article_count": 92,
+      "article_count": 93,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
-      "degree": 54,
+      "degree": 55,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
@@ -6924,8 +6932,8 @@
       "level": 6,
       "name": "来源快报",
       "rank": 16,
-      "related_count": 54,
-      "weighted_degree": 195
+      "related_count": 55,
+      "weighted_degree": 197
     },
     {
       "article_count": 11,
@@ -7015,13 +7023,13 @@
   ],
   "stats": {
     "links_by_type": {
-      "cooccurrence": 613,
+      "cooccurrence": 614,
       "semantic": 31
     },
     "nodes_by_layer": {
       "tag": 107
     },
-    "total_links": 644,
+    "total_links": 645,
     "total_nodes": 107
   },
   "version": 2
