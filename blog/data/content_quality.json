@@ -18129,7 +18129,7 @@
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2182,
   "source_file_count": 2471,
-  "source_tree_sha256": "88808ffaf96118cbb5c99338f4e65c931d778ca7777f4e7e1051b4b36362e303",
+  "source_tree_sha256": "082d153820c207955ae8f4d6c504913e6f0cdd1373441996948996c5e23c3409",
   "verified_provenance_count": 2195,
   "warning_counts": {
     "source_excerpt_truncated": 746
