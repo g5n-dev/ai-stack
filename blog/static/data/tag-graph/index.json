@@ -27,7 +27,7 @@
       "focus-shards/004-08a9b1380f4a.json",
       "focus-shards/005-78d92140d3cd.json",
       "focus-shards/006-0c70646e6d3a.json",
-      "focus-shards/007-8a5cb4f1c04e.json",
+      "focus-shards/007-39ab36e57aca.json",
       "focus-shards/008-716f3e4953f4.json",
       "focus-shards/009-1be0e4d33466.json",
       "focus-shards/010-82102f585f91.json",
@@ -96,7 +96,7 @@
       "focus-shards/073-0e421fbeb34f.json",
       "focus-shards/074-9d5103f231ff.json",
       "focus-shards/075-82af4a912090.json",
-      "focus-shards/076-cdeb4436e736.json",
+      "focus-shards/076-33e576693d3b.json",
       "focus-shards/077-3dd7a0f41cca.json",
       "focus-shards/078-0269085fbd08.json",
       "focus-shards/079-3f9052b8e1f6.json",
@@ -153,7 +153,7 @@
     "tag": "tag.json",
     "tagHot": "tag.hot.json"
   },
-  "generated_at": "2026-07-25T10:48:02Z",
+  "generated_at": "2026-07-26T06:52:26Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -209,7 +209,7 @@
       "archived_article_files_skipped": 276,
       "archived_article_groups_skipped": 276,
       "avg_concepts_per_article": 0,
-      "avg_tags_per_article": 2.233257403189066,
+      "avg_tags_per_article": 2.233151183970856,
       "canonical_duplicate_files_skipped": 0,
       "incomplete_article_files_skipped": 0,
       "incomplete_article_groups_skipped": 0,
@@ -266,7 +266,7 @@
         [
           "掘金",
           {
-            "article_count": 452,
+            "article_count": 453,
             "category": "article_tag",
             "description": "文章标签: 掘金",
             "id": "掘金",
@@ -278,13 +278,13 @@
       ],
       "synthetic_article_files_skipped": 0,
       "synthetic_article_groups_skipped": 0,
-      "total_articles": 2195,
+      "total_articles": 2196,
       "total_concept_links": 0,
       "total_concepts": 0,
       "total_tag_links": 614,
       "total_tags": 107
     },
-    "total_articles": 2195,
+    "total_articles": 2196,
     "total_communities": 12,
     "total_links": 716,
     "total_nodes": 176
