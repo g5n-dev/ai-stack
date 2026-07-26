@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-26T06:52:26Z",
+  "generated_at": "2026-07-26T09:27:33Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -3349,7 +3349,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 10
+      "weight": 11
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:深度学习",
@@ -6307,7 +6307,7 @@
       "weighted_degree": 4
     },
     {
-      "article_count": 763,
+      "article_count": 764,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -6319,9 +6319,9 @@
       "legacy_id": "Hacker News",
       "level": 6,
       "name": "Hacker News",
-      "rank": 14,
+      "rank": 13,
       "related_count": 19,
-      "weighted_degree": 258
+      "weighted_degree": 259
     },
     {
       "article_count": 1,
@@ -6919,7 +6919,7 @@
       "weighted_degree": 240
     },
     {
-      "article_count": 94,
+      "article_count": 95,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -6933,7 +6933,7 @@
       "name": "来源快报",
       "rank": 16,
       "related_count": 55,
-      "weighted_degree": 198
+      "weighted_degree": 199
     },
     {
       "article_count": 12,
@@ -6982,7 +6982,7 @@
       "legacy_id": "生成式 AI",
       "level": 6,
       "name": "生成式 AI",
-      "rank": 13,
+      "rank": 14,
       "related_count": 22,
       "weighted_degree": 259
     },
