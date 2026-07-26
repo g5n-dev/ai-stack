@@ -1,5 +1,5 @@
 {
-  "active_count": 2195,
+  "active_count": 2196,
   "archived_count": 276,
   "complete_count": 13,
   "legacy_analysis_count": 0,
@@ -18093,6 +18093,15 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260726-juejin-长上下文时代rag-还有必要吗-从企业级实践出发的深度分析-0-86be526e69.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     }
   },
   "quarantined_count": 0,
@@ -18127,11 +18136,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2182,
-  "source_file_count": 2471,
-  "source_tree_sha256": "082d153820c207955ae8f4d6c504913e6f0cdd1373441996948996c5e23c3409",
-  "verified_provenance_count": 2195,
+  "source_brief_count": 2183,
+  "source_file_count": 2472,
+  "source_tree_sha256": "5a1aec39e87ebd287c97edfa1ea9f57a7f48d74e7c5a2ff1d3954d3b065e2473",
+  "verified_provenance_count": 2196,
   "warning_counts": {
-    "source_excerpt_truncated": 746
+    "source_excerpt_truncated": 747
   }
 }

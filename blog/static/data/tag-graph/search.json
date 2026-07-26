@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-07-25T10:48:02Z",
+  "generated_at": "2026-07-26T06:52:26Z",
   "items": [
     {
       "article_count": 653,
@@ -41,7 +41,7 @@
       "weighted_degree": 1223.2
     },
     {
-      "article_count": 452,
+      "article_count": 453,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 25,
@@ -51,7 +51,7 @@
       "legacy_id": "掘金",
       "name": "掘金",
       "rank": 3,
-      "weighted_degree": 1190
+      "weighted_degree": 1191
     },
     {
       "article_count": 354,
@@ -210,7 +210,7 @@
       "weighted_degree": 240
     },
     {
-      "article_count": 93,
+      "article_count": 94,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 55,
@@ -220,7 +220,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 16,
-      "weighted_degree": 197
+      "weighted_degree": 198
     },
     {
       "article_count": 42,
