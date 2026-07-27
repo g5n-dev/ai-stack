@@ -29,7 +29,7 @@
   <img src="./docs/assets/readme/graph-community.webp" alt="AI Stack 标签社区知识图谱真实界面" width="100%" />
 </a>
 
-<p align="center"><sub>真实生产界面 · 社区聚类、语义缩放、图层筛选与按需加载</sub></p>
+<p align="center"><sub>生产快照 · 2026-07-27 · 社区聚类、语义缩放、图层筛选与按需加载</sub></p>
 
 ## ⚡ 为什么是 AI Stack
 
@@ -71,7 +71,7 @@ flowchart LR
   <img src="./docs/assets/readme/graph-demo.gif" alt="AI Stack 动态场景知识图谱演示" width="100%" />
 </a>
 
-<p align="center"><sub>8.3 秒真实交互：技术总览 → 标签社区 → 搜索 → 节点邻域 → 详情联动</sub></p>
+<p align="center"><sub>8.3 秒生产交互快照 · 2026-07-27：技术总览 → 标签社区 → 搜索 → 节点邻域 → 详情联动</sub></p>
 
 ## 🛰️ 从信息洪流到可追溯洞察
 
@@ -89,7 +89,7 @@ flowchart LR
 <table>
   <tr>
     <td width="50%" valign="top"><a href="https://ai-stack.site/scenarios/"><img src="./docs/assets/readme/graph-overview.webp" alt="AI Stack 技术总览分层图谱" width="100%" /></a><br /><sub><strong>技术总览</strong> · 首屏只载入 69 个核心节点与 71 条关系。</sub></td>
-    <td width="50%" valign="top"><a href="https://ai-stack.site/scenarios/"><img src="./docs/assets/readme/graph-focus.webp" alt="AI Stack API 搜索与节点邻域详情" width="100%" /></a><br /><sub><strong>节点邻域</strong> · 搜索后只展开一跳强关系与真实指标。</sub></td>
+    <td width="50%" valign="top"><a href="https://ai-stack.site/scenarios/"><img src="./docs/assets/readme/graph-focus.webp" alt="AI Stack 搜索与节点邻域详情" width="100%" /></a><br /><sub><strong>节点邻域</strong> · 搜索后只展开一跳强关系与真实指标。</sub></td>
   </tr>
 </table>
 
@@ -107,7 +107,7 @@ flowchart LR
   <img src="./docs/assets/readme/trends-overview.webp" alt="AI Stack 趋势洞察工作台真实界面" width="100%" />
 </a>
 
-<p align="center"><sub>真实界面 · 24h / 7d / 30d 窗口、证据矩阵、评分解释、文章与图谱双通道下钻</sub></p>
+<p align="center"><sub>生产快照 · 2026-07-27 · 24h / 7d / 30d 窗口、证据矩阵、评分解释、文章与图谱双通道下钻</sub></p>
 
 ## ⚡ 60 秒开始
 
