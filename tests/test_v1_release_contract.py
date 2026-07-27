@@ -82,6 +82,15 @@ def test_release_and_contribution_docs_cover_the_v1_operating_contract() -> None
         assert marker in runbook
 
 
+def test_readme_secondary_capability_headings_are_centered() -> None:
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+
+    for heading in ("📈 可解释趋势", "🕸️ 活的知识图谱"):
+        assert (
+            f'<div align="center"><strong>{heading}</strong></div>' in readme
+        ), f"{heading} must be explicitly centered inside its table cell"
+
+
 def test_issue_forms_are_safe_and_route_work_to_the_v1_milestone() -> None:
     forms = (
         ROOT / ".github" / "ISSUE_TEMPLATE" / "bug.yml",
