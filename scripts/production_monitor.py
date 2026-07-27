@@ -68,7 +68,13 @@ def evaluate_production_state(
     generated = _utc(str(marker.get("generated_at", "")), "generated_at")
     stale_age = current - generated
     if stale_age >= timedelta(hours=max_stale_hours):
-        raise MonitoringError("production data is stale")
+        stale_hours = max(0.0, stale_age.total_seconds() / 3600)
+        raise MonitoringError(
+            "production trend data is stale "
+            f"(data_as_of={marker.get('generated_at')}, "
+            f"stale_hours={stale_hours:.3f}, "
+            f"threshold_hours={max_stale_hours:g})"
+        )
     if live_sha == main_sha:
         status = "healthy"
         divergence_hours = 0.0

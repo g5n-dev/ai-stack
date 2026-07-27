@@ -390,6 +390,37 @@ def summarize_processed_postability(processed_data: dict) -> dict:
     return summary
 
 
+_GENERATION_TERMINAL_FIELDS = (
+    "created",
+    "policy_rejected",
+    "skipped_existing",
+    "skipped_quality",
+    "contract_failed",
+    "generation_failed",
+)
+
+
+def validate_generation_accounting(stats: dict) -> None:
+    """Require every processed candidate to have one terminal outcome."""
+
+    try:
+        processed = int(stats.get("processed", 0) or 0)
+        outcomes = {
+            field: int(stats.get(field, 0) or 0)
+            for field in _GENERATION_TERMINAL_FIELDS
+        }
+    except (AttributeError, TypeError, ValueError) as exc:
+        raise RuntimeError("generation accounting is invalid") from exc
+    if processed < 0 or any(value < 0 for value in outcomes.values()):
+        raise RuntimeError("generation accounting is invalid")
+    terminal_total = sum(outcomes.values())
+    if terminal_total != processed:
+        raise RuntimeError(
+            "generation accounting mismatch: "
+            f"processed={processed} terminal_outcomes={terminal_total}"
+        )
+
+
 def _relref_target_exists(*, content_root: Path, target: str) -> bool:
     raw = str(target or "").strip().strip('"').strip("'").strip()
     if not raw:
@@ -678,9 +709,8 @@ class SuperEnhancedContentGenerator:
             )
             crawled_data = self._filter_unseen_crawled_data(
                 crawled_data,
-                max_items_per_source=self.max_new_items_per_source,
+                max_items_per_source=None,
             )
-            crawled_data = self._hydrate_selected_juejin_articles(crawled_data)
             unseen_items = sum(len(items) for items in crawled_data.values())
             logger.info(
                 "✓ Selected %s archive-new items for AI processing",
@@ -690,9 +720,19 @@ class SuperEnhancedContentGenerator:
             # 2. 超级增强处理（15次大模型调用）
             logger.info("\n[2/4] Applying evidence-aware content policy...")
             if unseen_items > 0:
-                processed_data = self.processor.process_by_source(crawled_data)
+                processed_data = self._process_candidates_with_quota(
+                    crawled_data,
+                    max_items_per_source=self.max_new_items_per_source,
+                )
             else:
                 processed_data = {source: [] for source in crawled_data}
+                self.last_quota_stats = {
+                    "available_candidates": 0,
+                    "processed_candidates": 0,
+                    "policy_rejected": 0,
+                    "eligible_candidates": 0,
+                    "quota_deferred": 0,
+                }
                 logger.info("No archive-new items; skipping LLM processing")
             logger.info(f"✓ Super enhanced content from {len(processed_data)} sources")
             postability = summarize_processed_postability(processed_data)
@@ -705,9 +745,12 @@ class SuperEnhancedContentGenerator:
             )
             generation_stats = getattr(self, "last_generation_stats", {})
             logger.info(
-                "✓ Markdown write summary: created=%s skipped_existing=%s "
-                "skipped_quality=%s contract_failed=%s generation_failed=%s",
+                "✓ Markdown write summary: processed=%s created=%s "
+                "policy_rejected=%s skipped_existing=%s skipped_quality=%s "
+                "contract_failed=%s generation_failed=%s",
+                int(generation_stats.get("processed", 0) or 0),
                 posts_created,
+                int(generation_stats.get("policy_rejected", 0) or 0),
                 int(generation_stats.get("skipped_existing", 0) or 0),
                 int(generation_stats.get("skipped_quality", 0) or 0),
                 int(generation_stats.get("contract_failed", 0) or 0),
@@ -787,13 +830,16 @@ class SuperEnhancedContentGenerator:
         selected: dict[str, list[dict]] = {}
         candidate_count = 0
         skipped_historical = 0
+        invalid_candidates = 0
+        quota_deferred = 0
 
         for source, raw_items in (crawled_data or {}).items():
             chosen: list[dict] = []
             items = raw_items if isinstance(raw_items, list) else []
             candidate_count += len(items)
-            for item in items:
+            for index, item in enumerate(items):
                 if not isinstance(item, dict):
+                    invalid_candidates += 1
                     continue
                 external_url = canonicalize_content_url(
                     item.get("url") or item.get("repo_url") or item.get("link")
@@ -810,6 +856,7 @@ class SuperEnhancedContentGenerator:
                     and max_items_per_source > 0
                     and len(chosen) >= max_items_per_source
                 ):
+                    quota_deferred += len(items) - index - 1
                     break
             selected[str(source)] = chosen
 
@@ -817,16 +864,157 @@ class SuperEnhancedContentGenerator:
             "candidates": candidate_count,
             "historical_urls": len(existing_urls),
             "skipped_historical": skipped_historical,
+            "invalid_candidates": invalid_candidates,
             "selected": sum(len(items) for items in selected.values()),
+            "quota_deferred": quota_deferred,
         }
+        accounted_candidates = (
+            self.last_filter_stats["skipped_historical"]
+            + self.last_filter_stats["invalid_candidates"]
+            + self.last_filter_stats["selected"]
+            + self.last_filter_stats["quota_deferred"]
+        )
+        if candidate_count != accounted_candidates:
+            raise RuntimeError(
+                "archive filter accounting mismatch: "
+                f"candidates={candidate_count} accounted={accounted_candidates}"
+            )
         logger.info(
-            "Archive dedupe: candidates=%s historical_urls=%s skipped=%s selected=%s",
+            "Archive dedupe: candidates=%s historical_urls=%s skipped=%s "
+            "invalid=%s selected=%s quota_deferred=%s",
             self.last_filter_stats["candidates"],
             self.last_filter_stats["historical_urls"],
             self.last_filter_stats["skipped_historical"],
+            self.last_filter_stats["invalid_candidates"],
             self.last_filter_stats["selected"],
+            self.last_filter_stats["quota_deferred"],
         )
         return selected
+
+    def _process_candidates_with_quota(
+        self,
+        candidates: dict,
+        *,
+        max_items_per_source: int | None,
+    ) -> dict:
+        """Scan past policy rejects until each source fills its eligible quota."""
+
+        if max_items_per_source is not None and max_items_per_source <= 0:
+            raise ValueError("per-source candidate quota must be positive")
+
+        normalized = {
+            str(source): [item for item in items if isinstance(item, dict)]
+            for source, items in (candidates or {}).items()
+            if isinstance(items, list)
+        }
+        available_candidates = sum(len(items) for items in normalized.values())
+
+        if max_items_per_source is None:
+            hydrated = self._hydrate_selected_juejin_articles(normalized)
+            processed = self.processor.process_by_source(hydrated)
+            processed_candidates = 0
+            policy_rejected = 0
+            eligible_candidates = 0
+            for source, source_candidates in hydrated.items():
+                bulk_results = (
+                    processed.get(source) if isinstance(processed, dict) else None
+                )
+                if (
+                    not isinstance(bulk_results, list)
+                    or len(bulk_results) != len(source_candidates)
+                    or any(not isinstance(item, dict) for item in bulk_results)
+                ):
+                    raise RuntimeError(
+                        f"processor result count mismatch for source {source}"
+                    )
+                processed_candidates += len(bulk_results)
+                for item in bulk_results:
+                    if self._policy_rejection_reason(item) is not None:
+                        policy_rejected += 1
+                    else:
+                        eligible_candidates += 1
+            quota_deferred = 0
+        else:
+            processed = {}
+            processed_candidates = 0
+            policy_rejected = 0
+            eligible_candidates = 0
+            quota_deferred = 0
+            for source, source_candidates in normalized.items():
+                source_processed_results: list[dict] = []
+                source_eligible = 0
+                for index, candidate in enumerate(source_candidates):
+                    if source_eligible >= max_items_per_source:
+                        quota_deferred += len(source_candidates) - index
+                        break
+
+                    preflight = self.processor.preflight_candidate(candidate)
+                    if not isinstance(preflight, dict):
+                        raise RuntimeError(
+                            f"processor preflight result mismatch for source {source}"
+                        )
+                    if self._policy_rejection_reason(preflight) is not None:
+                        source_processed_results.append(preflight)
+                        processed_candidates += 1
+                        policy_rejected += 1
+                        continue
+
+                    processed_candidates += 1
+                    source_eligible += 1
+                    eligible_candidates += 1
+                    candidate_batch = {source: [preflight]}
+                    if source == "juejin":
+                        candidate_batch = self._hydrate_selected_juejin_articles(
+                            candidate_batch
+                        )
+                    batch_result = self.processor.process_by_source(candidate_batch)
+                    batch_items = (
+                        batch_result.get(source)
+                        if isinstance(batch_result, dict)
+                        else None
+                    )
+                    if (
+                        not isinstance(batch_items, list)
+                        or len(batch_items) != 1
+                        or not isinstance(batch_items[0], dict)
+                    ):
+                        raise RuntimeError(
+                            f"processor result count mismatch for source {source}"
+                        )
+                    item = batch_items[0]
+                    source_processed_results.append(item)
+                processed[source] = source_processed_results
+
+        self.last_quota_stats = {
+            "available_candidates": available_candidates,
+            "processed_candidates": processed_candidates,
+            "policy_rejected": policy_rejected,
+            "eligible_candidates": eligible_candidates,
+            "quota_deferred": quota_deferred,
+        }
+        if available_candidates != processed_candidates + quota_deferred:
+            raise RuntimeError(
+                "candidate quota accounting mismatch: "
+                f"available={available_candidates} "
+                f"processed={processed_candidates} deferred={quota_deferred}"
+            )
+        if processed_candidates != policy_rejected + eligible_candidates:
+            raise RuntimeError(
+                "candidate policy accounting mismatch: "
+                f"processed={processed_candidates} "
+                f"policy_rejected={policy_rejected} "
+                f"eligible={eligible_candidates}"
+            )
+        logger.info(
+            "Candidate quota: available=%s processed=%s policy_rejected=%s "
+            "eligible=%s deferred=%s",
+            available_candidates,
+            processed_candidates,
+            policy_rejected,
+            eligible_candidates,
+            quota_deferred,
+        )
+        return processed
 
     def _apply_lineage_policy(
         self,
@@ -1150,7 +1338,9 @@ class SuperEnhancedContentGenerator:
         Returns:
             int: 创建的文章数量
         """
+        processed_count = 0
         created_count = 0
+        policy_rejected = 0
         skipped_existing = 0
         skipped_quality = 0
         contract_failed = 0
@@ -1160,9 +1350,41 @@ class SuperEnhancedContentGenerator:
 
         for source, items in processed_data.items():
             for idx, item in enumerate(items):
+                processed_count += 1
                 try:
                     verify_source_contract(item)
+                    processing_failure = self._processing_failure_reason(item)
+                    if processing_failure is not None:
+                        generation_failed += 1
+                        logger.error(
+                            "Candidate processing failed before Markdown generation: "
+                            "source=%s category=%s title=%s",
+                            source,
+                            str(
+                                item.get("processing_error_category")
+                                or "processing_error"
+                            ),
+                            item.get("title", "Untitled"),
+                        )
+                        continue
+                    policy_reason = self._policy_rejection_reason(item)
+                    if policy_reason is not None:
+                        policy_rejected += 1
+                        logger.info(
+                            "↷ Policy rejected candidate: source=%s reason=%s title=%s",
+                            source,
+                            policy_reason,
+                            item.get("title", "Untitled"),
+                        )
+                        continue
                     if self._should_skip_post(item):
+                        skipped_quality += 1
+                        logger.warning(
+                            "Skipped candidate without a publishable guarded body: "
+                            "source=%s title=%s",
+                            source,
+                            item.get("title", "Untitled"),
+                        )
                         continue
 
                     # 生成文件名
@@ -1236,12 +1458,15 @@ class SuperEnhancedContentGenerator:
                     continue
 
         self.last_generation_stats = {
+            "processed": processed_count,
             "created": created_count,
+            "policy_rejected": policy_rejected,
             "skipped_existing": skipped_existing,
             "skipped_quality": skipped_quality,
             "contract_failed": contract_failed,
             "generation_failed": generation_failed,
         }
+        validate_generation_accounting(self.last_generation_stats)
         return created_count
 
     def _publication_payload(self, item: dict) -> dict:
@@ -1357,14 +1582,33 @@ class SuperEnhancedContentGenerator:
 
         return False
 
-    def _should_skip_post(self, item: dict) -> bool:
+    @staticmethod
+    def _processing_failure_reason(item: dict) -> str | None:
         if not isinstance(item, dict):
-            return True
-        if item.get("skip_post", False):
-            return True
+            return None
+        if "processing_error" not in item:
+            return None
+        reason = str(item.get("processing_error") or "").strip()
+        return reason or "unknown_processing_error"
+
+    @staticmethod
+    def _policy_rejection_reason(item: dict) -> str | None:
+        if not isinstance(item, dict):
+            return "invalid_candidate"
+        if SuperEnhancedContentGenerator._processing_failure_reason(item) is not None:
+            return None
         if item.get("ai_related") is False:
-            return True
+            return "not_ai_related"
         if item.get("should_publish") is False:
+            return "moderation_rejected"
+        if item.get("skip_post", False):
+            return "skip_post"
+        return None
+
+    def _should_skip_post(self, item: dict) -> bool:
+        if self._processing_failure_reason(item) is not None:
+            return True
+        if self._policy_rejection_reason(item) is not None:
             return True
         guard_failed_sections = [
             str(section).strip()

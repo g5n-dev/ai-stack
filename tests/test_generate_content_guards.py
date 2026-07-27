@@ -6,7 +6,7 @@ import sys
 import tempfile
 import types
 import unittest
-from datetime import datetime, timezone
+from datetime import UTC, datetime, timezone
 from pathlib import Path
 
 import yaml as real_yaml
@@ -392,6 +392,146 @@ class GenerateContentGuardsTest(unittest.TestCase):
                 ],
             )
 
+    def test_policy_rejections_do_not_consume_per_source_quota(self):
+        generator = self.module.SuperEnhancedContentGenerator.__new__(
+            self.module.SuperEnhancedContentGenerator
+        )
+        processed_titles = []
+
+        class RecordingProcessor:
+            def preflight_candidate(self, candidate):
+                item = dict(candidate)
+                processed_titles.append(item["title"])
+                if item["title"] == "Non AI first":
+                    item["skip_post"] = True
+                    item["ai_related"] = False
+                    item["should_publish"] = False
+                else:
+                    item["ai_related"] = True
+                    item["should_publish"] = True
+                return item
+
+            @staticmethod
+            def process_by_source(candidates):
+                source, items = next(iter(candidates.items()))
+                item = dict(items[0])
+                return {source: [item]}
+
+        generator.processor = RecordingProcessor()
+        processed = generator._process_candidates_with_quota(
+            {
+                "hacker_news": [
+                    {"title": "Non AI first", "source": "hacker_news"},
+                    {"title": "AI second", "source": "hacker_news"},
+                    {"title": "AI deferred", "source": "hacker_news"},
+                ]
+            },
+            max_items_per_source=1,
+        )
+
+        self.assertEqual(processed_titles, ["Non AI first", "AI second"])
+        self.assertEqual(
+            [item["title"] for item in processed["hacker_news"]],
+            ["Non AI first", "AI second"],
+        )
+        self.assertEqual(
+            generator.last_quota_stats,
+            {
+                "available_candidates": 3,
+                "processed_candidates": 2,
+                "policy_rejected": 1,
+                "eligible_candidates": 1,
+                "quota_deferred": 1,
+            },
+        )
+
+    def test_juejin_hydrates_only_the_candidate_that_fills_quota(self):
+        generator = self.module.SuperEnhancedContentGenerator.__new__(
+            self.module.SuperEnhancedContentGenerator
+        )
+        preflight_titles = []
+        hydration_batches = []
+        fully_processed_titles = []
+
+        class RecordingProcessor:
+            def preflight_candidate(self, candidate):
+                item = dict(candidate)
+                preflight_titles.append(item["title"])
+                if item["title"] == "Non AI first":
+                    item["skip_post"] = True
+                    item["ai_related"] = False
+                    item["should_publish"] = False
+                else:
+                    item["ai_related"] = True
+                    item["should_publish"] = True
+                return item
+
+            @staticmethod
+            def process_by_source(candidates):
+                source, items = next(iter(candidates.items()))
+                item = dict(items[0])
+                fully_processed_titles.append(item["title"])
+                return {source: [item]}
+
+        def record_hydration(_generator, candidates):
+            hydration_batches.append(
+                [item["title"] for item in candidates["juejin"]]
+            )
+            return candidates
+
+        generator.processor = RecordingProcessor()
+        generator._hydrate_selected_juejin_articles = types.MethodType(
+            record_hydration,
+            generator,
+        )
+
+        processed = generator._process_candidates_with_quota(
+            {
+                "juejin": [
+                    {"title": "Non AI first", "source": "juejin"},
+                    {"title": "AI second", "source": "juejin"},
+                    {"title": "AI deferred", "source": "juejin"},
+                ]
+            },
+            max_items_per_source=1,
+        )
+
+        self.assertEqual(preflight_titles, ["Non AI first", "AI second"])
+        self.assertEqual(hydration_batches, [["AI second"]])
+        self.assertEqual(fully_processed_titles, ["AI second"])
+        self.assertEqual(
+            [item["title"] for item in processed["juejin"]],
+            ["Non AI first", "AI second"],
+        )
+
+    def test_filter_stats_count_invalid_candidates(self):
+        generator = self.module.SuperEnhancedContentGenerator.__new__(
+            self.module.SuperEnhancedContentGenerator
+        )
+        generator._post_index = []
+
+        selected = generator._filter_unseen_crawled_data(
+            {
+                "hacker_news": [
+                    None,
+                    {
+                        "title": "Valid candidate",
+                        "url": "https://example.com/valid-candidate",
+                    },
+                ]
+            },
+            max_items_per_source=None,
+        )
+
+        self.assertEqual(len(selected["hacker_news"]), 1)
+        self.assertEqual(generator.last_filter_stats["invalid_candidates"], 1)
+        self.assertEqual(
+            generator.last_filter_stats["candidates"],
+            generator.last_filter_stats["selected"]
+            + generator.last_filter_stats["skipped_historical"]
+            + generator.last_filter_stats["invalid_candidates"],
+        )
+
     def test_archived_posts_do_not_block_a_fresh_source_contract_capture(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             posts_dir = Path(temp_dir)
@@ -551,6 +691,126 @@ class GenerateContentGuardsTest(unittest.TestCase):
             self.assertEqual(target.read_bytes(), original)
             self.assertEqual(generator.last_generation_stats["generation_failed"], 1)
             self.assertEqual(generator.last_generation_stats["skipped_existing"], 0)
+
+    def test_generate_posts_accounts_for_policy_rejections(self):
+        generated_at = datetime(2026, 7, 15, 2, 0, tzinfo=UTC)
+        with tempfile.TemporaryDirectory() as temp_dir:
+            generator = self.module.SuperEnhancedContentGenerator.__new__(
+                self.module.SuperEnhancedContentGenerator
+            )
+            generator.posts_dir = Path(temp_dir)
+            generator._post_index = []
+            not_ai = self._contract(
+                {
+                    "title": "Rejected as non AI",
+                    "source": "hacker_news",
+                    "url": "https://example.com/rejected-as-non-ai",
+                    "summary": "A source-backed but non-AI item.",
+                }
+            )
+            not_ai["skip_post"] = True
+            not_ai["ai_related"] = False
+            not_ai["should_publish"] = False
+            moderated = self._contract(
+                {
+                    "title": "Rejected by moderation",
+                    "source": "hacker_news",
+                    "url": "https://example.com/rejected-by-moderation",
+                    "summary": "A source-backed item rejected by moderation.",
+                }
+            )
+            moderated["skip_post"] = True
+            moderated["ai_related"] = True
+            moderated["should_publish"] = False
+
+            created = generator._generate_posts(
+                {"hacker_news": [not_ai, moderated]},
+                generated_at=generated_at,
+            )
+
+            self.assertEqual(created, 0)
+            self.assertEqual(
+                generator.last_generation_stats,
+                {
+                    "processed": 2,
+                    "created": 0,
+                    "policy_rejected": 2,
+                    "skipped_existing": 0,
+                    "skipped_quality": 0,
+                    "contract_failed": 0,
+                    "generation_failed": 0,
+                },
+            )
+
+    def test_processing_error_is_not_a_policy_rejection_and_zero_output_fails(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            generator = self.module.SuperEnhancedContentGenerator.__new__(
+                self.module.SuperEnhancedContentGenerator
+            )
+            generator.posts_dir = Path(temp_dir)
+            generator._post_index = []
+            failed = self._contract(
+                {
+                    "title": "Eligible AI rewrite",
+                    "source": "hacker_news",
+                    "url": "https://example.com/eligible-ai-rewrite",
+                    "summary": "A source-backed AI item whose rewrite failed.",
+                }
+            )
+            failed["ai_related"] = True
+            failed["should_publish"] = False
+            failed["skip_post"] = True
+            failed["processing_error"] = "rewrite crashed"
+
+            created = generator._generate_posts({"hacker_news": [failed]})
+
+            self.assertEqual(created, 0)
+            self.assertEqual(generator.last_generation_stats["policy_rejected"], 0)
+            self.assertEqual(generator.last_generation_stats["generation_failed"], 1)
+            postability = self.module.summarize_processed_postability(
+                {"hacker_news": [failed]}
+            )
+            with self.assertRaisesRegex(
+                RuntimeError,
+                "rendering or persistence failed",
+            ):
+                generator._raise_for_fatal_post_generation_state(
+                    posts_created=created,
+                    postability=postability,
+                    generation_failed_items=generator.last_generation_stats[
+                        "generation_failed"
+                    ],
+                )
+
+    def test_empty_processing_error_marker_still_fails_closed(self):
+        generator = self.module.SuperEnhancedContentGenerator.__new__(
+            self.module.SuperEnhancedContentGenerator
+        )
+        failed = {
+            "processing_error": "",
+            "should_publish": False,
+            "skip_post": True,
+        }
+
+        self.assertEqual(
+            generator._processing_failure_reason(failed),
+            "unknown_processing_error",
+        )
+        self.assertIsNone(generator._policy_rejection_reason(failed))
+
+    def test_generation_accounting_fails_closed_on_missing_terminal_outcome(self):
+        with self.assertRaisesRegex(RuntimeError, "generation accounting mismatch"):
+            self.module.validate_generation_accounting(
+                {
+                    "processed": 2,
+                    "created": 1,
+                    "policy_rejected": 0,
+                    "skipped_existing": 0,
+                    "skipped_quality": 0,
+                    "contract_failed": 0,
+                    "generation_failed": 0,
+                }
+            )
 
     def test_same_day_same_title_uses_url_identity_instead_of_silently_colliding(self):
         generated_at = datetime(2026, 7, 15, 2, 0, tzinfo=timezone.utc)
@@ -1148,6 +1408,119 @@ class GenerateContentGuardsTest(unittest.TestCase):
             self.assertIsNotNone(received)
             self.assertEqual(received["blogs_podcasts"], [origin])
             self.assertTrue(copy["lineage_suppressed"])
+
+    def test_run_scans_past_policy_rejection_before_satisfying_ci_quota(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            candidates = {
+                "hacker_news": [
+                    {
+                        "title": "Non AI first",
+                        "source": "hacker_news",
+                        "url": "https://example.com/non-ai-first",
+                    },
+                    {
+                        "title": "AI second",
+                        "source": "hacker_news",
+                        "url": "https://example.com/ai-second",
+                    },
+                    {
+                        "title": "AI deferred",
+                        "source": "hacker_news",
+                        "url": "https://example.com/ai-deferred",
+                    },
+                ]
+            }
+
+            class FakeCrawler:
+                last_observations = None
+
+                @staticmethod
+                def crawl_all():
+                    return candidates
+
+            class RecordingProcessor:
+                def __init__(self):
+                    self.preflight_titles = []
+
+                def preflight_candidate(self, candidate):
+                    item = dict(candidate)
+                    self.preflight_titles.append(item["title"])
+                    if item["title"] == "Non AI first":
+                        item["skip_post"] = True
+                        item["ai_related"] = False
+                        item["should_publish"] = False
+                    else:
+                        item["ai_related"] = True
+                        item["should_publish"] = True
+                    return item
+
+                @staticmethod
+                def process_by_source(value):
+                    return value
+
+            generator = self.module.SuperEnhancedContentGenerator.__new__(
+                self.module.SuperEnhancedContentGenerator
+            )
+            generator.runtime_profile = "ci"
+            generator.crawler = FakeCrawler()
+            generator.processor = RecordingProcessor()
+            generator.posts_dir = Path(temp_dir) / "posts"
+            generator.posts_dir.mkdir()
+            generator.lineage_registry_dir = Path(temp_dir) / "lineage"
+            generator.max_new_items_per_source = 1
+            generator._post_index = []
+            generator._apply_lineage_policy = types.MethodType(
+                lambda self, value, observations=None: value,
+                generator,
+            )
+            generated = {}
+
+            def record_generation(self, processed, generated_at=None):
+                generated.update(processed)
+                processed_count = sum(len(items) for items in processed.values())
+                policy_rejected = sum(
+                    bool(item.get("skip_post"))
+                    for items in processed.values()
+                    for item in items
+                )
+                self.last_generation_stats = {
+                    "processed": processed_count,
+                    "created": processed_count - policy_rejected,
+                    "policy_rejected": policy_rejected,
+                    "skipped_existing": 0,
+                    "skipped_quality": 0,
+                    "contract_failed": 0,
+                    "generation_failed": 0,
+                }
+                return processed_count - policy_rejected
+
+            generator._generate_posts = types.MethodType(record_generation, generator)
+            generator._raise_for_fatal_post_generation_state = types.MethodType(
+                lambda self, **kwargs: None,
+                generator,
+            )
+            generator._publish_content = types.MethodType(
+                lambda self, processed: None,
+                generator,
+            )
+            original_manifest = self.module.build_content_quality_manifest
+            self.module.build_content_quality_manifest = lambda _root: {
+                "quarantined_count": 0
+            }
+            try:
+                self.assertTrue(generator.run(sanitize_relrefs=False))
+            finally:
+                self.module.build_content_quality_manifest = original_manifest
+
+            self.assertEqual(
+                generator.processor.preflight_titles,
+                ["Non AI first", "AI second"],
+            )
+            self.assertEqual(
+                [item["title"] for item in generated["hacker_news"]],
+                ["Non AI first", "AI second"],
+            )
+            self.assertEqual(generator.last_quota_stats["quota_deferred"], 1)
 
     def test_generate_posts_rejects_items_without_a_crawler_contract(self):
         generated_at = datetime(2026, 7, 15, 2, 0, tzinfo=timezone.utc)

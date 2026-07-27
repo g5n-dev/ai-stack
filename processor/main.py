@@ -229,7 +229,25 @@ class ProcessorOrchestrator:
             return {}
 
     @staticmethod
-    def _metadata_source_brief(content: Dict) -> Dict:
+    def _source_evidence_review(content: Dict) -> Dict:
+        """Project only hash-bound crawler evidence into the policy surface."""
+
+        raw_evidence = content.get("evidence")
+        evidence: Dict = raw_evidence if isinstance(raw_evidence, dict) else {}
+        raw_fields = evidence.get("fields")
+        fields: Dict = raw_fields if isinstance(raw_fields, dict) else {}
+        return {
+            "source": str(evidence.get("source") or ""),
+            "title": str(fields.get("title") or ""),
+            "url": str(evidence.get("external_url") or ""),
+            "source_display_excerpt": str(fields.get("source_text") or ""),
+            "category": str(fields.get("category") or ""),
+            "language": str(fields.get("language") or ""),
+            "tags": list(fields.get("tags") or []),
+            "categories": [],
+        }
+
+    def _metadata_source_brief(self, content: Dict) -> Dict:
         """Return an honest Tier-C card without invoking any model."""
 
         result = dict(content)
@@ -269,6 +287,12 @@ class ProcessorOrchestrator:
             evidence_tags.append(str(evidence_fields["category"]))
         if source == "github_trending" and evidence_fields.get("language"):
             evidence_tags.append(str(evidence_fields["language"]))
+        evidence_tags = [
+            *self.ai_filter.evidence_topic_tags(
+                self._source_evidence_review(result)
+            ),
+            *evidence_tags,
+        ]
         evidence_tags.extend([source_labels.get(source, source), "来源快报"])
         source_note = (
             f"AI Stack {notes.get(capture_mode, notes['metadata_only'])}，"
@@ -290,6 +314,40 @@ class ProcessorOrchestrator:
         )
         return result
 
+    def preflight_candidate(self, content: dict) -> dict:
+        """Apply the deterministic evidence gate before a candidate uses quota."""
+
+        verify_source_contract(content)
+        result = dict(content)
+        if result.get("content_mode") not in {
+            "source_brief",
+            "evidence_backed_rewrite",
+        }:
+            return result
+
+        review = self._source_evidence_review(result)
+        review = self.ai_filter.filter_evidence_only(review)
+        review = self.ai_filter.moderate_evidence_only(review)
+        for key in (
+            "ai_related",
+            "ai_reason",
+            "ai_confidence",
+            "ai_filter_mode",
+            "should_publish",
+            "moderation_reason",
+            "moderation_confidence",
+            "moderation_flags",
+            "moderation_mode",
+        ):
+            if key in review:
+                result[key] = review[key]
+        if (not result.get("ai_related")) or (not result.get("should_publish")):
+            result["skip_post"] = True
+        else:
+            result.pop("skip_post", None)
+        verify_source_contract(result)
+        return result
+
     def process_single(self, content: Dict) -> Dict:
         """
         处理单个内容
@@ -306,6 +364,14 @@ class ProcessorOrchestrator:
 
             logger.info(f"Processing content from {source}: {content.get('title', 'N/A')}")
 
+            if content.get("content_mode") in {
+                "source_brief",
+                "evidence_backed_rewrite",
+            }:
+                content = self.preflight_candidate(content)
+                if content.get("skip_post"):
+                    return content
+
             if content.get("content_mode") == "evidence_backed_rewrite":
                 raw_evidence = content.get("evidence")
                 evidence: Dict = raw_evidence if isinstance(raw_evidence, dict) else {}
@@ -314,32 +380,6 @@ class ProcessorOrchestrator:
                     if isinstance(evidence.get("fields"), dict)
                     else {}
                 )
-                review = {
-                    "source": str(evidence.get("source") or source),
-                    "title": str(fields.get("title") or ""),
-                    "url": str(evidence.get("external_url") or ""),
-                    "source_display_excerpt": str(fields.get("source_text") or ""),
-                    "tags": list(fields.get("tags") or []),
-                    "categories": [],
-                }
-                review = self.ai_filter.filter_evidence_only(review)
-                review = self.ai_filter.moderate_evidence_only(review)
-                for key in (
-                    "ai_related",
-                    "ai_reason",
-                    "ai_confidence",
-                    "ai_filter_mode",
-                    "should_publish",
-                    "moderation_reason",
-                    "moderation_confidence",
-                    "moderation_flags",
-                    "moderation_mode",
-                ):
-                    if key in review:
-                        content[key] = review[key]
-                if (not content.get("ai_related")) or (not content.get("should_publish")):
-                    content["skip_post"] = True
-                    return content
 
                 result = self.evidence_rewriter.rewrite(content)
                 result.update(
@@ -361,41 +401,6 @@ class ProcessorOrchestrator:
                 return result
 
             if content.get("content_mode") == "source_brief":
-                raw_evidence = content.get("evidence")
-                evidence: Dict = raw_evidence if isinstance(raw_evidence, dict) else {}
-                fields: Dict = (
-                    evidence.get("fields")
-                    if isinstance(evidence.get("fields"), dict)
-                    else {}
-                )
-                review = {
-                    "source": str(evidence.get("source") or source),
-                    "title": str(fields.get("title") or ""),
-                    "url": str(evidence.get("external_url") or ""),
-                    "source_display_excerpt": str(fields.get("source_text") or ""),
-                    "category": str(fields.get("category") or ""),
-                    "language": str(fields.get("language") or ""),
-                    "tags": list(fields.get("tags") or []),
-                    "categories": [],
-                }
-                review = self.ai_filter.filter_evidence_only(review)
-                review = self.ai_filter.moderate_evidence_only(review)
-                for key in (
-                    "ai_related",
-                    "ai_reason",
-                    "ai_confidence",
-                    "ai_filter_mode",
-                    "should_publish",
-                    "moderation_reason",
-                    "moderation_confidence",
-                    "moderation_flags",
-                    "moderation_mode",
-                ):
-                    if key in review:
-                        content[key] = review[key]
-                if (not content.get("ai_related")) or (not content.get("should_publish")):
-                    content["skip_post"] = True
-                    return content
                 result = self._metadata_source_brief(content)
                 verify_source_contract(result)
                 return result

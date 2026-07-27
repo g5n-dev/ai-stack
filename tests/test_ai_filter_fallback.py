@@ -81,12 +81,27 @@ class AIThemeFilterFallbackTest(unittest.TestCase):
         false_positive = flt.filter_evidence_only(
             {"title": "A chair design with stainless steel rails"}
         )
+        prefixed_token = flt.filter_evidence_only({"title": "xLLMs runtime"})
+        suffixed_token = flt.filter_evidence_only({"title": "LLMsomething runtime"})
         ai_story = flt.filter_evidence_only(
             {"title": "OpenAI releases an LLM agent runtime"}
         )
 
         self.assertFalse(false_positive["ai_related"])
+        self.assertFalse(prefixed_token["ai_related"])
+        self.assertFalse(suffixed_token["ai_related"])
         self.assertTrue(ai_story["ai_related"])
+        self.assertEqual(client.calls, [])
+
+    def test_evidence_topics_use_canonical_taxonomy_for_english_terms(self):
+        client = _FakeClient([])
+        flt = AIThemeFilter(client, {"enabled": True})
+        evidence = {"title": "Modern deep learning systems for production"}
+
+        result = flt.filter_evidence_only(dict(evidence))
+
+        self.assertTrue(result["ai_related"])
+        self.assertEqual(flt.evidence_topic_tags(evidence), ["深度学习"])
         self.assertEqual(client.calls, [])
 
     def test_evidence_only_moderation_rejects_non_ai_source_cards(self):
