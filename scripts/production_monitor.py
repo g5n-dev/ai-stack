@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""监控生产标记与 main 的收敛时间和数据新鲜度。"""
+"""监控生产标记与 main 收敛、证据刷新和事件时间。"""
 
 from __future__ import annotations
 
@@ -49,6 +49,8 @@ def evaluate_production_state(
     *,
     main_sha: str,
     main_committed_at: str,
+    refresh_as_of: str,
+    data_as_of: str,
     now: datetime | None = None,
     live_is_main_ancestor: bool = True,
     max_divergence_hours: float = 3,
@@ -65,14 +67,26 @@ def evaluate_production_state(
     assert isinstance(live_sha, str)
     if not _FULL_SHA.fullmatch(main_sha):
         raise MonitoringError("invalid main SHA")
-    generated = _utc(str(marker.get("generated_at", "")), "generated_at")
-    stale_age = current - generated
-    if stale_age >= timedelta(hours=max_stale_hours):
-        stale_hours = max(0.0, stale_age.total_seconds() / 3600)
+    marker_data_as_of = str(marker.get("generated_at", ""))
+    if data_as_of != marker_data_as_of:
+        raise MonitoringError("production data clock does not match release marker")
+    refresh_clock = _utc(refresh_as_of, "refresh")
+    data_clock = _utc(data_as_of, "data")
+    refresh_age = current - refresh_clock
+    data_age = current - data_clock
+    if refresh_age < timedelta(0):
+        raise MonitoringError("production refresh clock is in the future")
+    if data_age < timedelta(0):
+        raise MonitoringError("production data clock is in the future")
+    refresh_age_hours = refresh_age.total_seconds() / 3600
+    data_age_hours = data_age.total_seconds() / 3600
+    if refresh_age >= timedelta(hours=max_stale_hours):
         raise MonitoringError(
-            "production trend data is stale "
-            f"(data_as_of={marker.get('generated_at')}, "
-            f"stale_hours={stale_hours:.3f}, "
+            "production content refresh is stale "
+            f"(refresh_as_of={refresh_as_of}, "
+            f"refresh_age_hours={refresh_age_hours:.3f}, "
+            f"data_as_of={data_as_of}, "
+            f"data_age_hours={data_age_hours:.3f}, "
             f"threshold_hours={max_stale_hours:g})"
         )
     if live_sha == main_sha:
@@ -89,7 +103,13 @@ def evaluate_production_state(
         divergence_hours = max(0.0, divergence.total_seconds() / 3600)
     return {
         "status": status,
-        "stale_hours": max(0.0, stale_age.total_seconds() / 3600),
+        "refresh_as_of": refresh_as_of,
+        "refresh_age_hours": refresh_age_hours,
+        "data_as_of": data_as_of,
+        "data_age_hours": data_age_hours,
+        # Preserve the old machine-readable key while changing its source from
+        # event time to the successful evidence-refresh clock.
+        "stale_hours": refresh_age_hours,
         "divergence_hours": divergence_hours,
     }
 
@@ -154,7 +174,10 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
         marker = _load_marker(args.marker_url)
-        verify_production_sample(_base_url_from_marker_url(args.marker_url), marker)
+        sample = verify_production_sample(
+            _base_url_from_marker_url(args.marker_url),
+            marker,
+        )
         live_sha = marker.get("exact_sha")
         ancestor = False
         if isinstance(live_sha, str) and _FULL_SHA.fullmatch(live_sha):
@@ -167,6 +190,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             marker,
             main_sha=args.main_sha,
             main_committed_at=args.main_committed_at,
+            refresh_as_of=str(sample.get("refresh_as_of", "")),
+            data_as_of=str(sample.get("data_as_of", "")),
             live_is_main_ancestor=ancestor,
             max_divergence_hours=args.max_divergence_hours,
             max_stale_hours=args.max_stale_hours,

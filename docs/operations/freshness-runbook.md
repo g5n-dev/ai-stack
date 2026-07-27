@@ -1,16 +1,18 @@
 # 数据新鲜度排障手册
 
-这是一份面向静态博客的轻量手册。AI Stack 不建设独立监控服务：GitHub Actions 每小时第 41 分钟只读比较 `main` 与生产 release marker；版本分歧达到 **3 小时**或生产 release 达到 **12 小时**陈旧即失败。
+这是一份面向静态博客的轻量手册。AI Stack 不建设独立监控服务：GitHub Actions 每小时第 41 分钟只读比较 `main` 与生产 release marker；版本分歧达到 **3 小时**或已部署来源证据超过 **12 小时**没有成功刷新即失败。
 
 ## 先看三处证据
 
 1. **System Monitoring & Content Quality Tracking** 的最新运行状态。
-2. 失败运行的 **Actions Summary**：查看 `status`、`stale_hours`、`divergence_hours`，以及线上 marker 的精确 SHA、release ID 和 `data_as_of`。marker 的 `generated_at` 表示最新合格趋势事件时间，不是部署时间。
+2. 失败运行的 **Actions Summary**：查看 `status`、`refresh_as_of`、`refresh_age_hours`、`data_as_of`、`data_age_hours`、`divergence_hours`，以及线上 marker 的精确 SHA 和 release ID。公开 lineage index 的 `generated_at` 表示最近一次已部署证据刷新；marker 的 `generated_at` 表示最新合格趋势事件时间。两者都不是部署墙钟。
 3. 最近一次 **Build and Deploy** 中首个失败 job；当前顺序为 `refresh → validate → persist → build → deploy → production-verify → notify`。
 
 不要把“没有新增文章”直接判断为故障。规范 URL 去重和跨 URL 事件谱系后，本轮候选全部已存在或只是同一事件的重复观察，都可能是正常结果。
 
 刷新日志中的候选数必须闭合：归档过滤、来源配额和文章生成各自都要有明确终态。`policy_rejected` 可以为正，但被策略拒绝的候选不能提前耗尽该来源配额；无法闭合的计数应让任务失败。
+
+CI 会为每个启用来源请求 20–30 条轻量候选元数据，再执行归档与策略检查；只有检查通过的候选才进入每来源生成配额。扩大候选池不能扩大模型调用或掘金正文抓取配额。排障时如果来源实际返回量低于 20，应按上游 feed/访问异常处理，而不是放宽新鲜度阈值。
 
 ## 决策顺序
 
@@ -88,12 +90,13 @@ production-verify 失败时不会生成 `verified-release-<sha>`，也不会执�
 
 ## 线上新鲜度失败
 
-- **`main` 与线上 SHA 相同但趋势数据超过 12 小时**：部署已经收敛，但完整刷新没有推进合格趋势事件；向前追溯 scheduled Build and Deploy。
+- **`main` 与线上 SHA 相同但 `refresh_age_hours` 达到 12 小时**：部署已经收敛，但完整刷新没有持久化并发布新的来源观察；向前追溯 scheduled Build and Deploy。
+- **`data_age_hours` 超过 12 小时但 `refresh_age_hours` 正常**：采集发布链路健康，只是来源没有提供更新的合格事件；检查来源返回量和策略拒绝数，但不要用抓取时间覆盖真实事件时间。
 - **`main` 新、线上旧且接近 3 小时**：persist 后的构建、Pages 部署或缓存收敛问题；查看首个失败 job。
 - **SHA 相同但 release ID/摘要不符**：marker 与公开资产代际混用，重新构建并部署。
 - **网络/HTTP 错误**：先确认站点和 marker 可访问，不把传输故障误判为数据陈旧。
 
-3 小时收敛和 12 小时陈旧阈值已经为 GitHub 计划任务延迟留出余量。不要持续放宽阈值掩盖停止更新。
+3 小时收敛和 12 小时刷新阈值已经为 GitHub 计划任务延迟留出余量。不要持续放宽阈值掩盖停止更新，也不要把来源事件时间改写为抓取时间来制造“新鲜”趋势。
 
 ## 手动刷新与历史恢复
 

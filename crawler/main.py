@@ -182,10 +182,11 @@ class CrawlerOrchestrator:
                 url = canonicalize_url(item.get("url", "") or "")
                 item["url"] = url
                 by_url.setdefault(url, []).append(item)
-            return [
-                sorted(candidates, key=evidence_key)[0]
-                for _url, candidates in sorted(by_url.items())
-            ]
+            winner_ids = {
+                id(sorted(candidates, key=evidence_key)[0])
+                for candidates in by_url.values()
+            }
+            return [item for item in items if id(item) in winner_ids]
 
         deduped: Dict[str, List[Dict]] = {source: [] for source in results}
 

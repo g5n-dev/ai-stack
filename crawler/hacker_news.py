@@ -75,17 +75,36 @@ class HackerNewsCrawler:
             if not story_data.get('url'):
                 return None
 
-            return {
+            published_at = ""
+            story_time = story_data.get("time")
+            if (
+                isinstance(story_time, (int, float))
+                and not isinstance(story_time, bool)
+                and story_time > 0
+            ):
+                try:
+                    published_at = datetime.fromtimestamp(
+                        story_time,
+                        tz=timezone.utc,
+                    ).isoformat(timespec="seconds").replace("+00:00", "Z")
+                except (OSError, OverflowError, ValueError):
+                    published_at = ""
+
+            story = {
                 'title': story_data.get('title', ''),
                 'url': story_data.get('url', ''),
                 'author': story_data.get('by', ''),
                 'score': story_data.get('score', 0),
-                'time': story_data.get('time', 0),
+                'time': story_time or 0,
                 'descendants': story_data.get('descendants', 0),
                 'hn_id': story_id,
                 'source': 'hacker_news',
                 'crawled_at': datetime.now(timezone.utc).isoformat()
             }
+            if published_at:
+                story["published_at"] = published_at
+                story["timestamp_confidence"] = "platform"
+            return story
 
         except Exception as e:
             logger.warning(f"Failed to fetch story {story_id}: {e}")

@@ -10,6 +10,10 @@ import os
 from typing import Any, Dict
 
 
+CI_CANDIDATE_POOL_MIN = 20
+CI_CANDIDATE_POOL_MAX = 30
+
+
 def get_runtime_profile(profile: str | None = None) -> str:
     value = str(profile or os.environ.get("AI_STACK_RUNTIME_PROFILE") or "default").strip().lower()
     return value or "default"
@@ -25,14 +29,18 @@ def apply_sources_runtime_profile(config: Dict[str, Any] | None, profile: str | 
     search_fallback["timeout"] = 5
 
     sources = result.setdefault("sources", {})
-    # CI still limits expensive LLM processing downstream, but the crawlers need
-    # a wider candidate pool so archive dedupe can move past a repeated headline.
-    # Keeping only Top 1 made every hourly run regenerate the same article.
+    # CI still limits expensive LLM processing downstream, but deterministic
+    # archive and policy checks need a wider metadata pool.  A small crawler
+    # limit can otherwise discard every eligible candidate before the
+    # per-source generation quota is applied.
     for source_name in ["github_trending", "hacker_news", "arxiv_ai", "juejin", "blogs_podcasts"]:
         source = sources.setdefault(source_name, {})
         source["enabled"] = True
         configured_limit = int(source.get("limit", 8) or 8)
-        source["limit"] = max(8, min(configured_limit, 12))
+        source["limit"] = max(
+            CI_CANDIDATE_POOL_MIN,
+            min(configured_limit, CI_CANDIDATE_POOL_MAX),
+        )
 
     blogs = sources.setdefault("blogs_podcasts", {})
     blogs["timeout"] = min(int(blogs.get("timeout", 30) or 30), 10)

@@ -8,6 +8,8 @@ from ai_stack.source_contract import (
     apply_source_contract,
     verify_source_contract,
 )
+from crawler import hacker_news
+from crawler.hacker_news import HackerNewsCrawler
 from processor.ai_filter import AIThemeFilter
 from processor.main import ProcessorOrchestrator
 from processor.summarizer import ContentSummarizer
@@ -16,6 +18,35 @@ from processor.summarizer import ContentSummarizer
 class _Explodes:
     def __getattr__(self, name: str):
         raise AssertionError(f"metadata-only source must not call {name}")
+
+
+def test_hacker_news_crawler_preserves_platform_publication_time(monkeypatch) -> None:
+    class Response:
+        @staticmethod
+        def raise_for_status() -> None:
+            return None
+
+        @staticmethod
+        def json() -> dict[str, object]:
+            return {
+                "type": "story",
+                "title": "A new AI runtime",
+                "url": "https://example.com/story",
+                "by": "ada",
+                "score": 42,
+                "time": 1784541600,
+                "descendants": 7,
+            }
+
+    monkeypatch.setattr(hacker_news.requests, "get", lambda *_args, **_kwargs: Response())
+
+    item = HackerNewsCrawler()._fetch_story(123)
+    contracted = apply_source_contract(item)
+
+    assert item["published_at"] == "2026-07-20T10:00:00Z"
+    assert contracted["source_published_at"] == "2026-07-20T10:00:00Z"
+    assert contracted["timestamp_confidence"] == "platform"
+    verify_source_contract(contracted)
 
 
 def test_hacker_news_contract_is_metadata_only_and_deterministic() -> None:

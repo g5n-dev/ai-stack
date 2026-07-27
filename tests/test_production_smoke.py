@@ -102,10 +102,13 @@ def _fixture(*, include_lineage: bool = True) -> tuple[dict[str, bytes], dict[st
         index: dict[str, object] = {
             "files": file_records
         }
+        if product == "lineage":
+            index["generated_at"] = "2026-07-20T09:00:00Z"
         if product == "stack-trends":
             index.update(
                 {
                     "generated_at": "2026-07-20T08:00:00Z",
+                    "data_as_of": "2026-07-20T08:00:00Z",
                     "lineage_mode": "lineage_index_v1",
                 }
             )
@@ -171,9 +174,45 @@ def test_smoke_checks_routes_assets_marker_shards_and_internal_articles() -> Non
     )
 
     assert result["exact_sha"] == SHA
+    assert result["refresh_as_of"] == "2026-07-20T09:00:00Z"
+    assert result["data_as_of"] == "2026-07-20T08:00:00Z"
     assert sleeps == [5]
     assert set(payloads).issubset(requested)
     assert RETRY_DELAYS_SECONDS == (5, 10, 20, 30, 45, 60)
+
+
+@pytest.mark.parametrize("mutation", ["missing_refresh_clock", "event_clock_mismatch"])
+def test_smoke_rejects_inconsistent_release_clocks(mutation: str) -> None:
+    payloads, marker = _fixture()
+    if mutation == "missing_refresh_clock":
+        lineage = json.loads(payloads["/data/lineage/index.json"])
+        del lineage["generated_at"]
+        payloads["/data/lineage/index.json"] = _json(lineage)
+        _rebind_product(
+            payloads,
+            marker,
+            product="lineage",
+            marker_field="lineage_hash",
+        )
+    else:
+        trends = json.loads(payloads["/data/stack-trends/index.json"])
+        trends["data_as_of"] = "2026-07-20T07:00:00Z"
+        payloads["/data/stack-trends/index.json"] = _json(trends)
+        _rebind_product(
+            payloads,
+            marker,
+            product="stack-trends",
+            marker_field="trends_hash",
+        )
+
+    with pytest.raises(ProductionSmokeError, match="clock"):
+        run_smoke(
+            "https://example.test/",
+            expected_sha=SHA,
+            expected_release_id=str(marker["release_id"]),
+            fetch=lambda url: payloads[urlsplit(url).path],
+            sleep=lambda _: None,
+        )
 
 
 def test_smoke_percent_encodes_unicode_lineage_article_route() -> None:
