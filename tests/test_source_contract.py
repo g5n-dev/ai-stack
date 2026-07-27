@@ -462,7 +462,7 @@ def test_hacker_news_processor_returns_source_brief_without_any_llm_call() -> No
 
     assert result["content_mode"] == "source_brief"
     assert result["catchy_title"] == "A new AI runtime"
-    assert result["tags"] == ["Hacker News", "来源快报"]
+    assert result["tags"] == ["AI", "Hacker News", "来源快报"]
     assert result["categories"] == []
     assert result["scenarios"] == []
     assert "不生成扩展判断" in result["source_note"]
@@ -494,6 +494,27 @@ def test_non_ai_source_brief_is_rejected_without_any_llm_call() -> None:
     assert result["should_publish"] is False
 
 
+def test_source_brief_preflight_rejects_non_ai_evidence_without_any_llm_call() -> None:
+    processor = ProcessorOrchestrator.__new__(ProcessorOrchestrator)
+    processor.ai_filter = AIThemeFilter(_Explodes(), {"enabled": True})
+    contracted = apply_source_contract(
+        {
+            "source": "hacker_news",
+            "title": "PostgreSQL vacuum internals",
+            "url": "https://example.com/preflight-postgres-vacuum",
+            "hn_id": 654,
+            "crawled_at": "2026-07-15T12:00:00+00:00",
+        }
+    )
+
+    result = processor.preflight_candidate(contracted)
+
+    assert result["skip_post"] is True
+    assert result["ai_related"] is False
+    assert result["should_publish"] is False
+    verify_source_contract(result)
+
+
 def test_source_brief_tags_are_derived_from_immutable_crawler_evidence() -> None:
     processor = ProcessorOrchestrator.__new__(ProcessorOrchestrator)
     processor.ai_filter = AIThemeFilter(_Explodes(), {"enabled": True})
@@ -523,6 +544,29 @@ def test_source_brief_tags_are_derived_from_immutable_crawler_evidence() -> None
     assert "cs.AI" in result["tags"]
     assert "区块链" not in result["tags"]
     assert "cs.CR" not in result["tags"]
+
+
+def test_source_brief_derives_llm_topic_from_signed_feed_evidence() -> None:
+    processor = ProcessorOrchestrator.__new__(ProcessorOrchestrator)
+    processor.ai_filter = AIThemeFilter(_Explodes(), {"enabled": True})
+    contracted = apply_source_contract(
+        {
+            "source": "blogs_podcasts",
+            "title": "Teaching LLMs to Update Beliefs for Efficient Long-Horizon Interaction",
+            "url": "https://example.com/teaching-llms-to-update-beliefs",
+            "description": (
+                "A benchmark for language models that update beliefs over long interactions."
+            ),
+            "published_at": "2026-07-26T09:00:00Z",
+            "crawled_at": "2026-07-27T04:05:51Z",
+        }
+    )
+
+    result = processor.process_single(contracted)
+
+    assert not result.get("skip_post")
+    assert result["tags"] == ["大语言模型", "博客与播客", "来源快报"]
+    verify_source_contract(result)
 
 
 def test_mutable_top_level_tags_cannot_make_non_ai_evidence_publishable() -> None:

@@ -53,9 +53,35 @@ class AIThemeFilter:
         "机器学习", "深度学习", "神经网络", "transformer",
         "nlp", "自然语言处理", "计算机视觉", "cv",
         "rag", "agent", "prompt", "chatbot",
+        "deep learning",
         "模型训练", "推理", "微调",
         "ai开发", "ai应用", "ai工具",
     ]
+
+    EVIDENCE_TOPIC_GROUPS = (
+        (
+            "大语言模型",
+            frozenset(
+                {
+                    "llm",
+                    "gpt",
+                    "claude",
+                    "gemini",
+                    "llama",
+                    "mistral",
+                    "chatbot",
+                }
+            ),
+        ),
+        ("RAG", frozenset({"rag"})),
+        ("AI Agent", frozenset({"agent", "agents"})),
+        ("生成式 AI", frozenset({"generative ai", "diffusion"})),
+        ("机器学习", frozenset({"machine learning", "机器学习", "模型训练", "微调"})),
+        ("深度学习", frozenset({"deep learning", "深度学习", "神经网络"})),
+        ("自然语言处理", frozenset({"nlp", "自然语言处理"})),
+        ("计算机视觉", frozenset({"cv", "计算机视觉"})),
+        ("Prompt 工程", frozenset({"prompt"})),
+    )
 
     def __init__(self, client: AnthropicClient, config: Optional[Dict[str, Any]] = None):
         self.client = client
@@ -193,6 +219,23 @@ class AIThemeFilter:
             mode="evidence_only",
         )
         return content
+
+    def evidence_topic_tags(self, content: Dict[str, Any]) -> List[str]:
+        """Derive conservative taxonomy tags from the same evidence as the AI gate."""
+
+        keyword_matches, category_matches = self._fallback_matches(content)
+        matched = {keyword.lower() for keyword in keyword_matches}
+        topics = [
+            topic
+            for topic, keywords in self.EVIDENCE_TOPIC_GROUPS
+            if matched.intersection(keywords)
+        ]
+        for category in category_matches:
+            if category not in topics:
+                topics.append(category)
+        if (keyword_matches or category_matches) and not topics:
+            topics.append("AI")
+        return topics
 
     def _apply_filter_result(self, content: Dict[str, Any], result: FilterResult, *, mode: str) -> None:
         content["ai_related"] = result.is_ai_related
@@ -429,7 +472,10 @@ AI相关主题包括但不限于：
         except Exception:
             return None
 
-    def _fallback(self, content: Dict[str, Any]) -> FilterResult:
+    def _fallback_matches(
+        self,
+        content: Dict[str, Any],
+    ) -> tuple[List[str], List[str]]:
         title = (content.get("title") or "").lower()
         description = (content.get("description_translated") or content.get("description") or "").lower()
         summary = (content.get("summary_translated") or content.get("summary") or "").lower()
@@ -453,14 +499,18 @@ AI相关主题包括但不限于：
             token = keyword.lower()
             if not token.isascii():
                 return token in text
+            pattern = r"llms?" if token == "llm" else re.escape(token)
             return re.search(
-                rf"(?<![a-z0-9]){re.escape(token)}(?![a-z0-9])",
+                rf"(?<![a-z0-9]){pattern}(?![a-z0-9])",
                 text,
             ) is not None
 
         keyword_matches = [kw for kw in self.AI_RELATED_KEYWORDS if matches(kw)]
         category_matches = [cat for cat in self.AI_RELATED_CATEGORIES if any(cat.lower() in c for c in categories)]
+        return keyword_matches, category_matches
 
+    def _fallback(self, content: Dict[str, Any]) -> FilterResult:
+        keyword_matches, category_matches = self._fallback_matches(content)
         if keyword_matches or category_matches:
             confidence = min(0.9, 0.5 + 0.1 * len(keyword_matches))
             return FilterResult(

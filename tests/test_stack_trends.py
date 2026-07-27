@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 from collections.abc import Callable
+from datetime import UTC, datetime
 from pathlib import Path
 
 import pytest
@@ -10,7 +11,10 @@ import yaml
 
 from ai_stack.content_quality import write_content_quality_manifest
 from ai_stack.identity import canonicalize_url
+from ai_stack.source_contract import apply_source_contract
+from processor.ai_filter import AIThemeFilter
 from processor.intelligence import calculate_trends
+from processor.main import ProcessorOrchestrator
 from processor.stack_trends import (
     INDEX_SCHEMA_VERSION_V2,
     StackTrendsValidationError,
@@ -22,6 +26,7 @@ from processor.stack_trends import (
     verify_stack_trends,
 )
 from scripts.build_stack_trends import main as build_cli_main
+from scripts.generate_content import SuperEnhancedContentGenerator
 from scripts.verify_stack_trends import main as verify_cli_main
 
 AS_OF = "2026-07-16T12:00:00Z"
@@ -44,6 +49,7 @@ def _write_post(
     slug: str | None = None,
     url: str | None = None,
     body: str | None = None,
+    source_published_at: str | None = None,
 ) -> Path:
     posts = content_root / "posts"
     posts.mkdir(parents=True, exist_ok=True)
@@ -58,6 +64,8 @@ def _write_post(
         "description": description or f"{name} 的公开证据摘要，内容完整且可核验。",
         "external_url": external_url or f"https://example.com/{name}",
     }
+    if source_published_at is not None:
+        metadata["source_published_at"] = source_published_at
     if archived:
         metadata["archived"] = True
     if slug is not None:
@@ -419,6 +427,50 @@ def test_adapter_applies_quality_canonicalization_aliases_and_cutoff(tmp_path: P
     assert not any(event["title"] == "Evidence draft" for event in events)
     assert not any(event["title"] == "Evidence future" for event in events)
     assert not any(event["title"] == "Evidence archived" for event in events)
+
+
+def test_source_brief_semantic_tag_advances_trend_data_cutoff(tmp_path: Path) -> None:
+    processor = ProcessorOrchestrator.__new__(ProcessorOrchestrator)
+    processor.ai_filter = AIThemeFilter(object(), {"enabled": True})
+    processed = processor.process_single(
+        apply_source_contract(
+            {
+                "source": "blogs_podcasts",
+                "title": "Teaching LLMs to Update Beliefs for Efficient Long-Horizon Interaction",
+                "url": "https://example.com/teaching-llms-to-update-beliefs",
+                "description": (
+                    "A benchmark for language models that update beliefs over long interactions."
+                ),
+                "published_at": "2026-07-16T11:00:00Z",
+                "crawled_at": "2026-07-16T11:05:00Z",
+            }
+        )
+    )
+    content_root = tmp_path / "content"
+    post_path = content_root / "posts" / "fresh-llm-source-brief.md"
+    post_path.parent.mkdir(parents=True)
+    renderer = SuperEnhancedContentGenerator.__new__(
+        SuperEnhancedContentGenerator
+    )
+    document = renderer._format_super_enhanced_markdown(
+        processed,
+        generated_at=datetime(2026, 7, 16, 11, 5, tzinfo=UTC),
+    )
+    post_path.write_text(document, encoding="utf-8")
+    manifest_path = tmp_path / "quality.json"
+    manifest = write_content_quality_manifest(content_root, manifest_path)
+
+    dataset = adapt_posts_to_events(
+        content_root=content_root,
+        quality_manifest_path=manifest_path,
+        as_of=AS_OF,
+    )
+
+    assert manifest["source_brief_count"] == 1
+    assert manifest["verified_provenance_count"] == 1
+    assert manifest["pages"]["posts/fresh-llm-source-brief.md"]["status"] == "source_brief"
+    assert dataset["data_as_of"] == "2026-07-16T11:00:00Z"
+    assert [event["topics"] for event in dataset["events"]] == [["大语言模型"]]
 
 
 def test_adapter_consumes_lineage_without_merging_derivative_reports(tmp_path: Path) -> None:

@@ -64,13 +64,16 @@ def test_monitor_fails_after_three_hour_divergence_or_twelve_hour_staleness() ->
             now=NOW,
             live_is_main_ancestor=True,
         )
-    with pytest.raises(MonitoringError, match="stale"):
+    with pytest.raises(MonitoringError, match="trend data is stale") as exc_info:
         evaluate_production_state(
             _marker(generated_at="2026-07-20T00:00:00Z"),
             main_sha="a" * 40,
             main_committed_at="2026-07-20T00:00:00Z",
             now=NOW,
         )
+    assert "data_as_of=2026-07-20T00:00:00Z" in str(exc_info.value)
+    assert "stale_hours=12.000" in str(exc_info.value)
+    assert "threshold_hours=12" in str(exc_info.value)
     with pytest.raises(MonitoringError, match="ancestor"):
         evaluate_production_state(
             _marker(),
