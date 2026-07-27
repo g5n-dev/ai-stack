@@ -2,33 +2,33 @@
   "algorithm": "deterministic-weighted-label-propagation",
   "communities": [
     {
-      "article_count": 114,
+      "article_count": 115,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-b6330c833b83.json",
+      "hotspot_file": "community-hotspots/01-80be830a14d0.json",
       "id": "community:tag:Technical How-to",
       "leader_id": "tag:来源快报",
       "name": "来源快报",
       "node_count": 38,
       "rank": 1,
-      "tag_occurrences": 220,
-      "weighted_degree": 697.4
+      "tag_occurrences": 221,
+      "weighted_degree": 700.4
     },
     {
-      "article_count": 2207,
+      "article_count": 2209,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/02-4d4574b98c70.json",
+      "hotspot_file": "community-hotspots/02-1d81b6014d0b.json",
       "id": "community:tag:掘金",
       "leader_id": "tag:Hacker News",
       "name": "Hacker News",
-      "node_count": 29,
+      "node_count": 30,
       "rank": 2,
-      "tag_occurrences": 4670,
-      "weighted_degree": 10175.2
+      "tag_occurrences": 4674,
+      "weighted_degree": 10186.2
     },
     {
       "article_count": 8,
       "hotspot_count": 8,
-      "hotspot_file": "community-hotspots/03-0271550d13d9.json",
+      "hotspot_file": "community-hotspots/03-649f0d09794e.json",
       "id": "community:tag:Elastic Load Balancing",
       "leader_id": "tag:Technical How-to",
       "name": "Technical How-to",
@@ -40,7 +40,7 @@
     {
       "article_count": 2,
       "hotspot_count": 8,
-      "hotspot_file": "community-hotspots/04-cd3834fa6e03.json",
+      "hotspot_file": "community-hotspots/04-213bb1703cb8.json",
       "id": "community:tag:Computer modeling",
       "leader_id": "tag:Artificial intelligence",
       "name": "Artificial intelligence",
@@ -50,21 +50,21 @@
       "weighted_degree": 78.8
     },
     {
-      "article_count": 13,
+      "article_count": 14,
       "hotspot_count": 7,
-      "hotspot_file": "community-hotspots/05-eb060d7542e3.json",
+      "hotspot_file": "community-hotspots/05-ce3fcc546e78.json",
       "id": "community:tag:Codex",
       "leader_id": "tag:工程实践",
       "name": "工程实践",
       "node_count": 7,
       "rank": 5,
-      "tag_occurrences": 30,
-      "weighted_degree": 90
+      "tag_occurrences": 32,
+      "weighted_degree": 94
     },
     {
       "article_count": 6,
       "hotspot_count": 7,
-      "hotspot_file": "community-hotspots/06-a879750eedf1.json",
+      "hotspot_file": "community-hotspots/06-0e9563231184.json",
       "id": "community:tag:Amazon RDS",
       "leader_id": "tag:Customer Solutions",
       "name": "Customer Solutions",
@@ -76,7 +76,7 @@
     {
       "article_count": 3,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/07-754d72c76c73.json",
+      "hotspot_file": "community-hotspots/07-f52a2f7ecf9c.json",
       "id": "community:tag:Faculty",
       "leader_id": "tag:Safety",
       "name": "Safety",
@@ -88,7 +88,7 @@
     {
       "article_count": 2,
       "hotspot_count": 3,
-      "hotspot_file": "community-hotspots/08-2fb187328036.json",
+      "hotspot_file": "community-hotspots/08-72e476303123.json",
       "id": "community:tag:Amazon EventBridge",
       "leader_id": "tag:Amazon SageMaker",
       "name": "Amazon SageMaker",
@@ -100,7 +100,7 @@
     {
       "article_count": 1,
       "hotspot_count": 3,
-      "hotspot_file": "community-hotspots/09-a77dedeed535.json",
+      "hotspot_file": "community-hotspots/09-9be27da07550.json",
       "id": "community:tag:Gemini App",
       "leader_id": "tag:Android",
       "name": "Android",
@@ -112,7 +112,7 @@
     {
       "article_count": 1,
       "hotspot_count": 2,
-      "hotspot_file": "community-hotspots/10-2511fcdb9874.json",
+      "hotspot_file": "community-hotspots/10-578d94768cb5.json",
       "id": "community:tag:Google Workspace",
       "leader_id": "tag:Google One",
       "name": "Google One",
@@ -122,7 +122,7 @@
       "weighted_degree": 8
     }
   ],
-  "generated_at": "2026-07-27T22:21:35Z",
+  "generated_at": "2026-07-27T23:33:49Z",
   "iterations": 4,
   "limit": 11,
   "links": [
@@ -180,7 +180,7 @@
       "strength": 1,
       "target": "community:tag:掘金",
       "type": "community",
-      "weight": 36
+      "weight": 38
     },
     {
       "id": "edge:community:community:tag:Computer modeling->community:tag:Faculty",
@@ -260,11 +260,11 @@
       "strength": 1,
       "target": "community:tag:掘金",
       "type": "community",
-      "weight": 267
+      "weight": 270
     }
   ],
   "stats": {
-    "assigned_nodes": 110,
+    "assigned_nodes": 111,
     "detected_communities": 10,
     "emitted_communities": 10,
     "total_communities": 10,

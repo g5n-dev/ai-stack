@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-07-27T22:21:35Z",
+  "generated_at": "2026-07-27T23:33:49Z",
   "items": [
     {
       "article_count": 661,
@@ -41,7 +41,7 @@
       "weighted_degree": 1258.2
     },
     {
-      "article_count": 453,
+      "article_count": 454,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 25,
@@ -51,7 +51,7 @@
       "legacy_id": "掘金",
       "name": "掘金",
       "rank": 3,
-      "weighted_degree": 1191
+      "weighted_degree": 1193
     },
     {
       "article_count": 359,
@@ -106,17 +106,17 @@
       "weighted_degree": 507.6
     },
     {
-      "article_count": 581,
+      "article_count": 582,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
-      "degree": 24,
+      "degree": 25,
       "description": "文章标签: ArXiv",
       "id": "tag:ArXiv",
       "layer": "tag",
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 8,
-      "weighted_degree": 470
+      "weighted_degree": 473
     },
     {
       "article_count": 126,
@@ -197,30 +197,30 @@
       "weighted_degree": 267
     },
     {
-      "article_count": 99,
+      "article_count": 100,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
-      "degree": 24,
+      "degree": 26,
       "description": "文章标签: 机器学习",
       "id": "tag:机器学习",
       "layer": "tag",
       "legacy_id": "机器学习",
       "name": "机器学习",
       "rank": 15,
-      "weighted_degree": 247
+      "weighted_degree": 250
     },
     {
-      "article_count": 107,
+      "article_count": 108,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
-      "degree": 62,
+      "degree": 64,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 16,
-      "weighted_degree": 237
+      "weighted_degree": 240
     },
     {
       "article_count": 42,
@@ -405,6 +405,19 @@
       "weighted_degree": 35
     },
     {
+      "article_count": 14,
+      "category": "article_tag",
+      "community_id": "community:tag:Codex",
+      "degree": 9,
+      "description": "文章标签: 工程实践",
+      "id": "tag:工程实践",
+      "layer": "tag",
+      "legacy_id": "工程实践",
+      "name": "工程实践",
+      "rank": 31,
+      "weighted_degree": 33
+    },
+    {
       "article_count": 9,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
@@ -414,21 +427,8 @@
       "layer": "tag",
       "legacy_id": "AI",
       "name": "AI",
-      "rank": 31,
-      "weighted_degree": 31.6
-    },
-    {
-      "article_count": 13,
-      "category": "article_tag",
-      "community_id": "community:tag:Codex",
-      "degree": 9,
-      "description": "文章标签: 工程实践",
-      "id": "tag:工程实践",
-      "layer": "tag",
-      "legacy_id": "工程实践",
-      "name": "工程实践",
       "rank": 32,
-      "weighted_degree": 31
+      "weighted_degree": 31.6
     },
     {
       "article_count": 7,
@@ -483,7 +483,7 @@
       "weighted_degree": 27
     },
     {
-      "article_count": 12,
+      "article_count": 13,
       "category": "article_tag",
       "community_id": "community:tag:Codex",
       "degree": 2,
@@ -493,7 +493,7 @@
       "legacy_id": "来源转写",
       "name": "来源转写",
       "rank": 37,
-      "weighted_degree": 24
+      "weighted_degree": 26
     },
     {
       "article_count": 10,
@@ -1510,6 +1510,19 @@
       "weighted_degree": 3.1
     },
     {
+      "article_count": 1,
+      "category": "article_tag",
+      "community_id": "community:tag:掘金",
+      "degree": 3,
+      "description": "文章标签: quant-ph",
+      "id": "tag:quant-ph",
+      "layer": "tag",
+      "legacy_id": "quant-ph",
+      "name": "quant-ph",
+      "rank": 116,
+      "weighted_degree": 3
+    },
+    {
       "article_count": 0,
       "category": "web",
       "community_id": null,
@@ -1519,7 +1532,7 @@
       "layer": "framework",
       "legacy_id": "django",
       "name": "Django",
-      "rank": 116,
+      "rank": 117,
       "weighted_degree": 3
     },
     {
@@ -1532,7 +1545,7 @@
       "layer": "model",
       "legacy_id": "embedding",
       "name": "向量嵌入",
-      "rank": 117,
+      "rank": 118,
       "weighted_degree": 3
     },
     {
@@ -1545,7 +1558,7 @@
       "layer": "framework",
       "legacy_id": "fastapi",
       "name": "FastAPI",
-      "rank": 118,
+      "rank": 119,
       "weighted_degree": 3
     },
     {
@@ -1558,7 +1571,7 @@
       "layer": "framework",
       "legacy_id": "flask",
       "name": "Flask",
-      "rank": 119,
+      "rank": 120,
       "weighted_degree": 3
     },
     {
@@ -1571,7 +1584,7 @@
       "layer": "framework",
       "legacy_id": "langchain",
       "name": "LangChain",
-      "rank": 120,
+      "rank": 121,
       "weighted_degree": 3
     },
     {
@@ -1584,7 +1597,7 @@
       "layer": "model",
       "legacy_id": "multimodal",
       "name": "多模态模型",
-      "rank": 121,
+      "rank": 122,
       "weighted_degree": 2.8
     },
     {
@@ -1597,7 +1610,7 @@
       "layer": "scenario",
       "legacy_id": "llm_scene",
       "name": "大语言模型",
-      "rank": 122,
+      "rank": 123,
       "weighted_degree": 2.6
     },
     {
@@ -1610,7 +1623,7 @@
       "layer": "language",
       "legacy_id": "rust",
       "name": "Rust",
-      "rank": 123,
+      "rank": 124,
       "weighted_degree": 2.6
     },
     {
@@ -1623,7 +1636,7 @@
       "layer": "language",
       "legacy_id": "go",
       "name": "Go",
-      "rank": 124,
+      "rank": 125,
       "weighted_degree": 2.6
     },
     {
@@ -1636,7 +1649,7 @@
       "layer": "tag",
       "legacy_id": "AI Adoption",
       "name": "AI Adoption",
-      "rank": 125,
+      "rank": 126,
       "weighted_degree": 2.6
     },
     {
@@ -1649,7 +1662,7 @@
       "layer": "tag",
       "legacy_id": "AI Research",
       "name": "AI Research",
-      "rank": 126,
+      "rank": 127,
       "weighted_degree": 2.6
     },
     {
@@ -1662,7 +1675,7 @@
       "layer": "tag",
       "legacy_id": "Security",
       "name": "Security",
-      "rank": 127,
+      "rank": 128,
       "weighted_degree": 2.6
     },
     {
@@ -1675,7 +1688,7 @@
       "layer": "framework",
       "legacy_id": "react",
       "name": "React",
-      "rank": 128,
+      "rank": 129,
       "weighted_degree": 2.5
     },
     {
@@ -1688,7 +1701,7 @@
       "layer": "language",
       "legacy_id": "javascript",
       "name": "JavaScript",
-      "rank": 129,
+      "rank": 130,
       "weighted_degree": 2.1
     },
     {
@@ -1701,7 +1714,7 @@
       "layer": "tag",
       "legacy_id": "cs.LG",
       "name": "cs.LG",
-      "rank": 130,
+      "rank": 131,
       "weighted_degree": 2
     },
     {
@@ -1714,7 +1727,7 @@
       "layer": "tag",
       "legacy_id": "econ.EM",
       "name": "econ.EM",
-      "rank": 131,
+      "rank": 132,
       "weighted_degree": 2
     },
     {
@@ -1727,7 +1740,7 @@
       "layer": "tag",
       "legacy_id": "hep-ph",
       "name": "hep-ph",
-      "rank": 132,
+      "rank": 133,
       "weighted_degree": 2
     },
     {
@@ -1740,7 +1753,7 @@
       "layer": "tag",
       "legacy_id": "Jupyter Notebook",
       "name": "Jupyter Notebook",
-      "rank": 133,
+      "rank": 134,
       "weighted_degree": 2
     },
     {
@@ -1753,7 +1766,7 @@
       "layer": "tag",
       "legacy_id": "Product",
       "name": "Product",
-      "rank": 134,
+      "rank": 135,
       "weighted_degree": 2
     },
     {
@@ -1766,7 +1779,7 @@
       "layer": "tag",
       "legacy_id": "q-bio.GN",
       "name": "q-bio.GN",
-      "rank": 135,
+      "rank": 136,
       "weighted_degree": 2
     },
     {
@@ -1779,7 +1792,7 @@
       "layer": "framework",
       "legacy_id": "actix",
       "name": "Actix",
-      "rank": 136,
+      "rank": 137,
       "weighted_degree": 2
     },
     {
@@ -1792,7 +1805,7 @@
       "layer": "application",
       "legacy_id": "automation",
       "name": "自动化工具",
-      "rank": 137,
+      "rank": 138,
       "weighted_degree": 2
     },
     {
@@ -1805,7 +1818,7 @@
       "layer": "framework",
       "legacy_id": "axum",
       "name": "Axum",
-      "rank": 138,
+      "rank": 139,
       "weighted_degree": 2
     },
     {
@@ -1818,7 +1831,7 @@
       "layer": "scenario",
       "legacy_id": "backend",
       "name": "后端开发",
-      "rank": 139,
+      "rank": 140,
       "weighted_degree": 2
     },
     {
@@ -1831,7 +1844,7 @@
       "layer": "application",
       "legacy_id": "dashboard",
       "name": "数据仪表板",
-      "rank": 140,
+      "rank": 141,
       "weighted_degree": 2
     },
     {
@@ -1844,7 +1857,7 @@
       "layer": "framework",
       "legacy_id": "echo",
       "name": "Echo",
-      "rank": 141,
+      "rank": 142,
       "weighted_degree": 2
     },
     {
@@ -1857,7 +1870,7 @@
       "layer": "scenario",
       "legacy_id": "fullstack",
       "name": "全栈开发",
-      "rank": 142,
+      "rank": 143,
       "weighted_degree": 2
     },
     {
@@ -1870,7 +1883,7 @@
       "layer": "framework",
       "legacy_id": "gin",
       "name": "Gin",
-      "rank": 143,
+      "rank": 144,
       "weighted_degree": 2
     },
     {
@@ -1883,7 +1896,7 @@
       "layer": "application",
       "legacy_id": "monitoring",
       "name": "监控系统",
-      "rank": 144,
+      "rank": 145,
       "weighted_degree": 2
     },
     {
@@ -1896,7 +1909,7 @@
       "layer": "framework",
       "legacy_id": "nextjs",
       "name": "Next.js",
-      "rank": 145,
+      "rank": 146,
       "weighted_degree": 2
     },
     {
@@ -1909,7 +1922,7 @@
       "layer": "framework",
       "legacy_id": "vue",
       "name": "Vue",
-      "rank": 146,
+      "rank": 147,
       "weighted_degree": 2
     },
     {
@@ -1922,7 +1935,7 @@
       "layer": "scenario",
       "legacy_id": "rag_scene",
       "name": "RAG应用",
-      "rank": 147,
+      "rank": 148,
       "weighted_degree": 1.6
     },
     {
@@ -1935,7 +1948,7 @@
       "layer": "scenario",
       "legacy_id": "nlp_scene",
       "name": "自然语言处理",
-      "rank": 148,
+      "rank": 149,
       "weighted_degree": 1.6
     },
     {
@@ -1948,7 +1961,7 @@
       "layer": "scenario",
       "legacy_id": "data_science",
       "name": "数据科学",
-      "rank": 149,
+      "rank": 150,
       "weighted_degree": 1.6
     },
     {
@@ -1961,7 +1974,7 @@
       "layer": "model",
       "legacy_id": "diffusion",
       "name": "扩散模型",
-      "rank": 150,
+      "rank": 151,
       "weighted_degree": 1.5
     },
     {
@@ -1974,7 +1987,7 @@
       "layer": "scenario",
       "legacy_id": "kubernetes",
       "name": "Kubernetes",
-      "rank": 151,
+      "rank": 152,
       "weighted_degree": 1.2
     },
     {
@@ -1987,7 +2000,7 @@
       "layer": "scenario",
       "legacy_id": "design",
       "name": "设计工具",
-      "rank": 152,
+      "rank": 153,
       "weighted_degree": 1.2
     },
     {
@@ -2000,7 +2013,7 @@
       "layer": "scenario",
       "legacy_id": "automation_scene",
       "name": "自动化脚本",
-      "rank": 153,
+      "rank": 154,
       "weighted_degree": 1
     },
     {
@@ -2013,7 +2026,7 @@
       "layer": "scenario",
       "legacy_id": "devops",
       "name": "DevOps/运维",
-      "rank": 154,
+      "rank": 155,
       "weighted_degree": 1
     },
     {
@@ -2026,7 +2039,7 @@
       "layer": "scenario",
       "legacy_id": "frontend",
       "name": "前端开发",
-      "rank": 155,
+      "rank": 156,
       "weighted_degree": 1
     },
     {
@@ -2039,7 +2052,7 @@
       "layer": "scenario",
       "legacy_id": "monitoring_scene",
       "name": "监控/日志",
-      "rank": 156,
+      "rank": 157,
       "weighted_degree": 1
     },
     {
@@ -2052,7 +2065,7 @@
       "layer": "scenario",
       "legacy_id": "productivity",
       "name": "效率工具",
-      "rank": 157,
+      "rank": 158,
       "weighted_degree": 1
     },
     {
@@ -2065,7 +2078,7 @@
       "layer": "framework",
       "legacy_id": "svelte",
       "name": "Svelte",
-      "rank": 158,
+      "rank": 159,
       "weighted_degree": 1
     },
     {
@@ -2078,7 +2091,7 @@
       "layer": "scenario",
       "legacy_id": "visualization",
       "name": "数据可视化",
-      "rank": 159,
+      "rank": 160,
       "weighted_degree": 1
     },
     {
@@ -2091,7 +2104,7 @@
       "layer": "scenario",
       "legacy_id": "web_dev",
       "name": "Web应用开发",
-      "rank": 160,
+      "rank": 161,
       "weighted_degree": 1
     },
     {
@@ -2104,7 +2117,7 @@
       "layer": "scenario",
       "legacy_id": "database",
       "name": "数据库",
-      "rank": 161,
+      "rank": 162,
       "weighted_degree": 0.6
     },
     {
@@ -2117,7 +2130,7 @@
       "layer": "scenario",
       "legacy_id": "cli",
       "name": "命令行工具",
-      "rank": 162,
+      "rank": 163,
       "weighted_degree": 0.6
     },
     {
@@ -2130,7 +2143,7 @@
       "layer": "language",
       "legacy_id": "java",
       "name": "Java",
-      "rank": 163,
+      "rank": 164,
       "weighted_degree": 0.6
     },
     {
@@ -2143,7 +2156,7 @@
       "layer": "scenario",
       "legacy_id": "cv_scene",
       "name": "计算机视觉",
-      "rank": 164,
+      "rank": 165,
       "weighted_degree": 0.6
     },
     {
@@ -2156,7 +2169,7 @@
       "layer": "language",
       "legacy_id": "swift",
       "name": "Swift",
-      "rank": 165,
+      "rank": 166,
       "weighted_degree": 0.6
     },
     {
@@ -2169,7 +2182,7 @@
       "layer": "language",
       "legacy_id": "cpp",
       "name": "C++",
-      "rank": 166,
+      "rank": 167,
       "weighted_degree": 0.6
     },
     {
@@ -2182,7 +2195,7 @@
       "layer": "scenario",
       "legacy_id": "security",
       "name": "安全工具",
-      "rank": 167,
+      "rank": 168,
       "weighted_degree": 0.6
     },
     {
@@ -2195,7 +2208,7 @@
       "layer": "scenario",
       "legacy_id": "animation",
       "name": "动画/3D",
-      "rank": 168,
+      "rank": 169,
       "weighted_degree": 0
     },
     {
@@ -2208,7 +2221,7 @@
       "layer": "scenario",
       "legacy_id": "blockchain",
       "name": "区块链",
-      "rank": 169,
+      "rank": 170,
       "weighted_degree": 0
     },
     {
@@ -2221,7 +2234,7 @@
       "layer": "scenario",
       "legacy_id": "cloud",
       "name": "云原生/容器",
-      "rank": 170,
+      "rank": 171,
       "weighted_degree": 0
     },
     {
@@ -2234,7 +2247,7 @@
       "layer": "scenario",
       "legacy_id": "desktop",
       "name": "桌面应用",
-      "rank": 171,
+      "rank": 172,
       "weighted_degree": 0
     },
     {
@@ -2247,7 +2260,7 @@
       "layer": "scenario",
       "legacy_id": "documentation",
       "name": "文档工具",
-      "rank": 172,
+      "rank": 173,
       "weighted_degree": 0
     },
     {
@@ -2260,7 +2273,7 @@
       "layer": "scenario",
       "legacy_id": "editor",
       "name": "编辑器/IDE",
-      "rank": 173,
+      "rank": 174,
       "weighted_degree": 0
     },
     {
@@ -2273,7 +2286,7 @@
       "layer": "scenario",
       "legacy_id": "embedded",
       "name": "嵌入式系统",
-      "rank": 174,
+      "rank": 175,
       "weighted_degree": 0
     },
     {
@@ -2286,7 +2299,7 @@
       "layer": "scenario",
       "legacy_id": "game",
       "name": "游戏开发",
-      "rank": 175,
+      "rank": 176,
       "weighted_degree": 0
     },
     {
@@ -2299,7 +2312,7 @@
       "layer": "scenario",
       "legacy_id": "iot",
       "name": "物联网",
-      "rank": 176,
+      "rank": 177,
       "weighted_degree": 0
     },
     {
@@ -2312,7 +2325,7 @@
       "layer": "scenario",
       "legacy_id": "mobile",
       "name": "移动应用",
-      "rank": 177,
+      "rank": 178,
       "weighted_degree": 0
     },
     {
@@ -2325,7 +2338,7 @@
       "layer": "framework",
       "legacy_id": "nuxt",
       "name": "Nuxt",
-      "rank": 178,
+      "rank": 179,
       "weighted_degree": 0
     },
     {
@@ -2338,12 +2351,12 @@
       "layer": "scenario",
       "legacy_id": "testing",
       "name": "测试工具",
-      "rank": 179,
+      "rank": 180,
       "weighted_degree": 0
     }
   ],
   "stats": {
-    "total_items": 179
+    "total_items": 180
   },
   "version": 2
 }
