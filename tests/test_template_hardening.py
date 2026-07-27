@@ -87,8 +87,10 @@ def test_visible_build_identifiers_use_the_content_clock_not_wall_time() -> None
     index = (LAYOUT_ROOT / "index.html").read_text(encoding="utf-8")
     about = (LAYOUT_ROOT / "about/single.html").read_text(encoding="utf-8")
 
+    assert "$latestPost.Date" in index
+    assert ".Site.Data.related.index.data_as_of" not in index
+    assert ".Site.Data.related.index.data_as_of | time.AsTime" in about
     for template in (index, about):
-        assert ".Site.Data.related.index.data_as_of | time.AsTime" in template
         assert "now." not in template
 
     assert '$buildTime.Format "15:04:05"' in index

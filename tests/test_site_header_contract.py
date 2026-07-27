@@ -122,6 +122,19 @@ class SiteHeaderContractTest(unittest.TestCase):
         self.assertIn('.Date.Format "2006-01-02 15:04"', stats)
         self.assertNotIn('.Date.Format "15:04"', stats)
 
+    def test_home_snapshot_uses_the_latest_post_instead_of_missing_site_data(
+        self,
+    ) -> None:
+        source = (LAYOUTS / "index.html").read_text(encoding="utf-8")
+
+        self.assertNotIn(".Site.Data.related.index.data_as_of", source)
+        self.assertIn("$latestPost.Date", source)
+        self.assertIn(
+            'SNAPSHOT {{ if $latestPost }}{{ $buildTime.Format "2006-01-02 15:04" }}',
+            source,
+        )
+        self.assertIn("{{ else }}N/A{{ end }}", source)
+
     def test_telemetry_uses_shared_two_row_baseline_grid(self) -> None:
         css = (ROOT / "blog" / "static" / "css" / "style.css").read_text(
             encoding="utf-8"

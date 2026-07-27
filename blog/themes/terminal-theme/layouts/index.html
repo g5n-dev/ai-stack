@@ -6,10 +6,13 @@
 </head>
 
 <body class="bg-deep-navy selection:bg-muted-teal selection:text-deep-navy font-display">
-    {{ $buildTime := .Site.Data.related.index.data_as_of | time.AsTime }}
     {{ $posts := where .Site.RegularPages "Type" "posts" }}
     {{ $posts = sort $posts "Date" "desc" }}
     {{ $latestPost := cond (gt (len $posts) 0) (index $posts 0) nil }}
+    {{ $buildTime := .Site.Home.Date }}
+    {{ if $latestPost }}
+        {{ $buildTime = $latestPost.Date }}
+    {{ end }}
 
     <div class="rain-container"></div>
     <div class="fog-container"></div>
@@ -60,12 +63,12 @@
                                 <li class="relative">
                                     <span class="absolute -left-[23px] top-1 size-2 rounded-full bg-primary shadow-[0_0_9px_rgba(77,182,172,0.5)]"></span>
                                     <p class="site-meta-text text-off-white/75">神经归档访问授权：{{ .Site.Params.author }}</p>
-                                    <time class="site-code-text mt-1 block text-primary/65">{{ $buildTime.Format "15:04:05" }}</time>
+                                    <time class="site-code-text mt-1 block text-primary/65">{{ if $latestPost }}{{ $buildTime.Format "15:04:05" }}{{ else }}N/A{{ end }}</time>
                                 </li>
                                 <li class="relative">
                                     <span class="absolute -left-[23px] top-1 size-2 rounded-full border border-muted-teal/30 bg-deep-navy"></span>
                                     <p class="site-meta-text text-off-white/65">数据管线：来源校验、去重、趋势与图谱索引已连接</p>
-                                    <time class="site-code-text mt-1 block text-off-white/55">{{ $buildTime.AddDate 0 0 -1 | time.Format "15:04:05" }}</time>
+                                    <time class="site-code-text mt-1 block text-off-white/55">{{ if $latestPost }}{{ $buildTime.AddDate 0 0 -1 | time.Format "15:04:05" }}{{ else }}N/A{{ end }}</time>
                                 </li>
                             </ol>
                         </div>
@@ -91,7 +94,7 @@
                         </div>
                         <div class="site-code-text text-right text-off-white/60">
                             <p>{{ len $posts }} ENTRIES</p>
-                            <p class="mt-1">SNAPSHOT {{ $buildTime.Format "2006-01-02 15:04" }}</p>
+                            <p class="mt-1">SNAPSHOT {{ if $latestPost }}{{ $buildTime.Format "2006-01-02 15:04" }}{{ else }}N/A{{ end }}</p>
                         </div>
                     </div>
 
