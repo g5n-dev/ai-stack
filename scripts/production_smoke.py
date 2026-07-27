@@ -13,6 +13,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from collections.abc import Callable, Mapping, Sequence
+from datetime import datetime
 from html.parser import HTMLParser
 
 
@@ -137,6 +138,85 @@ def _json_object(body: bytes) -> dict[str, object]:
     return value
 
 
+def _canonical_clock(value: object, *, field: str) -> str:
+    if not isinstance(value, str) or not _CANONICAL_UTC.fullmatch(value):
+        raise ProductionSmokeError(f"production {field} clock is invalid")
+    try:
+        datetime.strptime(value, "%Y-%m-%dT%H:%M:%SZ")
+    except ValueError as exc:
+        raise ProductionSmokeError(f"production {field} clock is invalid") from exc
+    return value
+
+
+def _release_clocks(
+    marker: Mapping[str, object],
+    indexes: Mapping[str, Mapping[str, object]],
+) -> dict[str, str]:
+    trends = indexes.get("stack-trends")
+    if trends is None:
+        raise ProductionSmokeError("production event clock is unavailable")
+    generated_at = _canonical_clock(
+        trends.get("generated_at"),
+        field="trend generated_at",
+    )
+    data_as_of = _canonical_clock(
+        trends.get("data_as_of"),
+        field="trend data_as_of",
+    )
+    marker_data_as_of = _canonical_clock(
+        marker.get("generated_at"),
+        field="marker generated_at",
+    )
+    if generated_at != data_as_of or data_as_of != marker_data_as_of:
+        raise ProductionSmokeError("production event clock mismatch")
+
+    if marker.get("lineage_hash") == "unavailable":
+        refresh_as_of = data_as_of
+        refresh_clock_source = "legacy_trend"
+    else:
+        lineage = indexes.get("lineage")
+        if lineage is None:
+            raise ProductionSmokeError("production refresh clock is unavailable")
+        refresh_as_of = _canonical_clock(
+            lineage.get("generated_at"),
+            field="lineage generated_at",
+        )
+        refresh_clock_source = "lineage"
+    return {
+        "refresh_as_of": refresh_as_of,
+        "refresh_clock_source": refresh_clock_source,
+        "data_as_of": data_as_of,
+    }
+
+
+def _declared_index_tree_hash(
+    index_body: bytes,
+    index: Mapping[str, object],
+    *,
+    product: str,
+) -> str:
+    records: dict[str, str] = {}
+    for relative, expected in _references(index):
+        if (
+            relative == "index.json"
+            or not isinstance(expected, str)
+            or not _DIGEST.fullmatch(expected)
+        ):
+            raise ProductionSmokeError(
+                f"production {product} index tree is not directly hash-bound"
+            )
+        previous = records.get(relative)
+        if previous is not None and previous != expected:
+            raise ProductionSmokeError(
+                f"production {product} index has conflicting hashes"
+            )
+        records[relative] = expected
+    if not records:
+        raise ProductionSmokeError(f"production {product} index has no hash-bound shard")
+    records["index.json"] = hashlib.sha256(index_body).hexdigest()
+    return hashlib.sha256(_canonical_bytes(sorted(records.items()))).hexdigest()
+
+
 def validate_release_marker_payload(
     marker: Mapping[str, object],
     *,
@@ -168,9 +248,13 @@ def validate_release_marker_payload(
             raise ProductionSmokeError("production release marker lineage state is invalid")
     elif not isinstance(lineage_hash, str) or not _DIGEST.fullmatch(lineage_hash):
         raise ProductionSmokeError("production release marker hash is invalid")
-    generated_at = marker.get("generated_at")
-    if not isinstance(generated_at, str) or not _CANONICAL_UTC.fullmatch(generated_at):
-        raise ProductionSmokeError("production release marker timestamp is invalid")
+    try:
+        _canonical_clock(
+            marker.get("generated_at"),
+            field="release marker timestamp",
+        )
+    except ProductionSmokeError as exc:
+        raise ProductionSmokeError("production release marker timestamp is invalid") from exc
     identity = {
         key: marker[key]
         for key in sorted(_MARKER_FIELDS - {"release_id", "generated_at"})
@@ -322,16 +406,18 @@ def verify_production_sample(
     marker: Mapping[str, object],
     *,
     fetch: Callable[[str], bytes] = _default_fetch,
-    token: str = "monitor",
+    token: str | None = None,
 ) -> dict[str, object]:
     """供小时监控复用的轻量远端抽查：quality、各 index 与一个分片。"""
 
     checked = validate_release_marker_payload(marker)
-    quality = _fetch_path(base_url, "/data/content-quality.json", token, fetch)
+    cache_token = token or str(checked["release_id"])
+    quality = _fetch_path(base_url, "/data/content-quality.json", cache_token, fetch)
     if hashlib.sha256(quality).hexdigest() != checked["quality_hash"]:
         raise ProductionSmokeError("production quality hash mismatch")
     _validate_quality_payload(quality)
     sampled = 0
+    indexes: dict[str, dict[str, object]] = {}
     for field, product in (
         ("lineage_hash", "lineage"),
         ("graph_hash", "tag-graph"),
@@ -339,12 +425,36 @@ def verify_production_sample(
     ):
         if field == "lineage_hash" and checked[field] == "unavailable":
             continue
-        index = _json_object(_fetch_path(base_url, f"/data/{product}/index.json", token, fetch))
+        index_body = _fetch_path(
+            base_url,
+            f"/data/{product}/index.json",
+            cache_token,
+            fetch,
+        )
+        index = _json_object(index_body)
+        if product in {"lineage", "stack-trends"}:
+            declared_hash = _declared_index_tree_hash(
+                index_body,
+                index,
+                product=product,
+            )
+            expected_hash = checked[field]
+            assert isinstance(expected_hash, str)
+            if not hmac.compare_digest(declared_hash, expected_hash):
+                raise ProductionSmokeError(
+                    f"production {product} index tree hash mismatch"
+                )
+        indexes[product] = index
         references = _references(index)
         if not references:
             raise ProductionSmokeError(f"production {product} index has no shard")
         relative, expected = references[0]
-        shard = _fetch_path(base_url, f"/data/{product}/{relative}", token, fetch)
+        shard = _fetch_path(
+            base_url,
+            f"/data/{product}/{relative}",
+            cache_token,
+            fetch,
+        )
         if not shard:
             raise ProductionSmokeError(f"production {product} shard is empty")
         digest = hashlib.sha256(shard).hexdigest()
@@ -354,7 +464,11 @@ def verify_production_sample(
             raise ProductionSmokeError(f"production {product} sample hash mismatch")
         _json_object(shard)
         sampled += 1
-    return {"sampled_products": sampled, "quality": "verified"}
+    return {
+        "sampled_products": sampled,
+        "quality": "verified",
+        **_release_clocks(checked, indexes),
+    }
 
 
 def _verify_once(
@@ -421,6 +535,7 @@ def _verify_once(
     }
     shard_products = 0
     lineage_article: str | None = None
+    indexes: dict[str, dict[str, object]] = {}
     for field, product in products.items():
         expected = marker.get(field)
         if expected == "unavailable" and field == "lineage_hash":
@@ -430,6 +545,7 @@ def _verify_once(
         product_hash, payloads = _remote_product_tree(base_url, product, token, fetch)
         if product_hash != expected:
             raise ProductionSmokeError("production product tree hash mismatch")
+        indexes[product] = payloads["index.json"]
         article = _validate_product_tree(product, payloads)
         if article is not None:
             lineage_article = article
@@ -441,6 +557,7 @@ def _verify_once(
             raise ProductionSmokeError("production lineage article is unavailable")
         if any(item in text for item in _DEGRADED_MARKERS):
             raise ProductionSmokeError("degraded production placeholder detected")
+    clocks = _release_clocks(marker, indexes)
     return {
         "status": "healthy",
         "release_id": expected_release_id,
@@ -449,6 +566,7 @@ def _verify_once(
         "assets": len(assets) + 1,
         "internal_articles": len(links.articles),
         "verified_products": shard_products,
+        **clocks,
     }
 
 

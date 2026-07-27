@@ -1201,9 +1201,10 @@ class SuperEnhancedContentGenerator:
     def _hydrate_selected_juejin_articles(self, crawled_data: dict) -> dict:
         """Promote only selected Juejin candidates when complete SSR is provable.
 
-        Hydration intentionally happens after archive dedupe and the CI per-source
-        limit, so an hourly run performs at most one article request.  WAF and
-        structural failures keep the already hash-bound Tier-C RSS brief.
+        Hydration intentionally happens after archive dedupe and the CI
+        per-source eligible quota, so an hourly run performs at most one article
+        request.  WAF and structural failures keep the already hash-bound Tier-C
+        RSS brief.
         """
 
         selected = {

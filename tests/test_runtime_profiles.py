@@ -37,9 +37,12 @@ class RuntimeProfileTest(unittest.TestCase):
             with self.subTest(source=source_name):
                 self.assertGreaterEqual(
                     profiled["sources"][source_name]["limit"],
-                    8,
-                    "CI must fetch enough candidates to skip URLs already in the archive",
+                    20,
+                    "CI must scan past archive duplicates and deterministic policy rejects",
                 )
+        self.assertEqual(profiled["sources"]["github_trending"]["limit"], 20)
+        self.assertEqual(profiled["sources"]["hacker_news"]["limit"], 20)
+        self.assertEqual(profiled["sources"]["blogs_podcasts"]["limit"], 20)
         self.assertEqual(profiled["sources"]["blogs_podcasts"]["timeout"], 10)
         self.assertFalse(profiled["sources"]["reddit"]["enabled"])
         self.assertFalse(profiled["sources"]["twitter"]["enabled"])
@@ -53,6 +56,17 @@ class RuntimeProfileTest(unittest.TestCase):
         profiled = apply_sources_runtime_profile(config, "default")
 
         self.assertEqual(profiled, config)
+
+    def test_apply_sources_runtime_profile_ci_caps_candidate_pool(self):
+        config = {
+            "sources": {
+                "github_trending": {"enabled": True, "limit": 100},
+            },
+        }
+
+        profiled = apply_sources_runtime_profile(config, "ci")
+
+        self.assertEqual(profiled["sources"]["github_trending"]["limit"], 30)
 
     def test_apply_anthropic_runtime_profile_ci_disables_heavy_generation(self):
         config = {
