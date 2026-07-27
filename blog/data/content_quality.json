@@ -1,7 +1,7 @@
 {
-  "active_count": 2212,
+  "active_count": 2214,
   "archived_count": 276,
-  "complete_count": 13,
+  "complete_count": 14,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -18163,6 +18163,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260728-arxiv-quantum-spectral-model-data-reuploading-with-input-1-da50f0e886.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260728-arxiv-skill-self-play-pushing-the-frontier-of-llm-capabi-0-0f8bb094b1.md": {
       "reasons": [
         "concise_source_card"
@@ -18232,10 +18238,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2199,
-  "source_file_count": 2488,
-  "source_tree_sha256": "6b22e565e06c01e551fb4dab160aa3a9cebb06fca5fbdd1355adf64c04940c73",
-  "verified_provenance_count": 2212,
+  "source_brief_count": 2200,
+  "source_file_count": 2490,
+  "source_tree_sha256": "1c5e0b414422f6c8483acb5d708499ce32ea01e045a1ec9dacbc3ea625af2be7",
+  "verified_provenance_count": 2214,
   "warning_counts": {
     "source_excerpt_truncated": 747
   }
