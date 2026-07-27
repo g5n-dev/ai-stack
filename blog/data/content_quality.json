@@ -1,5 +1,5 @@
 {
-  "active_count": 2205,
+  "active_count": 2208,
   "archived_count": 276,
   "complete_count": 13,
   "legacy_analysis_count": 0,
@@ -18156,6 +18156,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260728-arxiv-skill-self-play-pushing-the-frontier-of-llm-capabi-0-0f8bb094b1.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260728-blogs_podcasts-beyond-rag-task-aware-knowledge-compression-for-en-0-46be0149e3.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260728-hacker_news-jensen-huangs-first-ever-post-on-x-is-in-defense-o-11-dc620c60e2.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -18190,10 +18208,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2192,
-  "source_file_count": 2481,
-  "source_tree_sha256": "16e1d88c593b219e0f45d9c7c465de57a2fec4483619a86cc0b06e1eed6a8f48",
-  "verified_provenance_count": 2205,
+  "source_brief_count": 2195,
+  "source_file_count": 2484,
+  "source_tree_sha256": "6767e0387a82b7b5f9da36160d342e122028329c2a73883a8b7989ebbe242356",
+  "verified_provenance_count": 2208,
   "warning_counts": {
     "source_excerpt_truncated": 747
   }

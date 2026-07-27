@@ -1,0 +1,57 @@
+{
+  "community_id": "community:tag:AWS Glue",
+  "generated_at": "2026-07-27T19:07:34Z",
+  "hotspot_limit": 24,
+  "link_limit": 32,
+  "links": [
+    {
+      "id": "edge:cooccurrence:tag:Amazon SageMaker AI->tag:AWS Glue",
+      "source": "tag:Amazon SageMaker AI",
+      "strength": 0.5,
+      "target": "tag:AWS Glue",
+      "type": "cooccurrence",
+      "weight": 1
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:AWS Glue",
+      "degree": 5,
+      "description": "文章标签: Amazon SageMaker AI",
+      "id": "tag:Amazon SageMaker AI",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon SageMaker AI",
+      "level": 6,
+      "name": "Amazon SageMaker AI",
+      "rank": 94,
+      "related_count": 5,
+      "weighted_degree": 5
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:AWS Glue",
+      "degree": 5,
+      "description": "文章标签: AWS Glue",
+      "id": "tag:AWS Glue",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "AWS Glue",
+      "level": 6,
+      "name": "AWS Glue",
+      "rank": 97,
+      "related_count": 5,
+      "weighted_degree": 5
+    }
+  ],
+  "stats": {
+    "total_links": 1,
+    "total_nodes": 2
+  },
+  "version": 2
+}
