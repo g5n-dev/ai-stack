@@ -12,10 +12,10 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-07-27T20:47:31Z",
+  "generated_at": "2026-07-27T22:21:35Z",
   "items": [
     {
-      "article_count": 659,
+      "article_count": 661,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 43,
@@ -25,20 +25,20 @@
       "legacy_id": "AI Agent",
       "name": "AI Agent",
       "rank": 1,
-      "weighted_degree": 1640.2
+      "weighted_degree": 1646.2
     },
     {
-      "article_count": 530,
+      "article_count": 531,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
-      "degree": 36,
+      "degree": 37,
       "description": "文章标签: 大语言模型",
       "id": "tag:大语言模型",
       "layer": "tag",
       "legacy_id": "大语言模型",
       "name": "大语言模型",
       "rank": 2,
-      "weighted_degree": 1254.2
+      "weighted_degree": 1258.2
     },
     {
       "article_count": 453,
@@ -106,6 +106,19 @@
       "weighted_degree": 507.6
     },
     {
+      "article_count": 581,
+      "category": "article_tag",
+      "community_id": "community:tag:掘金",
+      "degree": 24,
+      "description": "文章标签: ArXiv",
+      "id": "tag:ArXiv",
+      "layer": "tag",
+      "legacy_id": "ArXiv",
+      "name": "ArXiv",
+      "rank": 8,
+      "weighted_degree": 470
+    },
+    {
       "article_count": 126,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
@@ -115,21 +128,8 @@
       "layer": "tag",
       "legacy_id": "MCP",
       "name": "MCP",
-      "rank": 8,
-      "weighted_degree": 470
-    },
-    {
-      "article_count": 580,
-      "category": "article_tag",
-      "community_id": "community:tag:掘金",
-      "degree": 24,
-      "description": "文章标签: ArXiv",
-      "id": "tag:ArXiv",
-      "layer": "tag",
-      "legacy_id": "ArXiv",
-      "name": "ArXiv",
       "rank": 9,
-      "weighted_degree": 466
+      "weighted_degree": 470
     },
     {
       "article_count": 98,
@@ -184,7 +184,7 @@
       "weighted_degree": 284
     },
     {
-      "article_count": 767,
+      "article_count": 768,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 20,
@@ -194,7 +194,7 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 14,
-      "weighted_degree": 265
+      "weighted_degree": 267
     },
     {
       "article_count": 99,
@@ -210,7 +210,7 @@
       "weighted_degree": 247
     },
     {
-      "article_count": 105,
+      "article_count": 107,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 62,
@@ -220,7 +220,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 16,
-      "weighted_degree": 231
+      "weighted_degree": 237
     },
     {
       "article_count": 42,
@@ -496,6 +496,19 @@
       "weighted_degree": 24
     },
     {
+      "article_count": 10,
+      "category": "article_tag",
+      "community_id": "community:tag:Technical How-to",
+      "degree": 5,
+      "description": "文章标签: cs.AI",
+      "id": "tag:cs.AI",
+      "layer": "tag",
+      "legacy_id": "cs.AI",
+      "name": "cs.AI",
+      "rank": 38,
+      "weighted_degree": 24
+    },
+    {
       "article_count": 3,
       "category": "article_tag",
       "community_id": "community:tag:Elastic Load Balancing",
@@ -505,7 +518,7 @@
       "layer": "tag",
       "legacy_id": "Amazon DynamoDB",
       "name": "Amazon DynamoDB",
-      "rank": 38,
+      "rank": 39,
       "weighted_degree": 21
     },
     {
@@ -518,7 +531,7 @@
       "layer": "tag",
       "legacy_id": "AWS Lambda",
       "name": "AWS Lambda",
-      "rank": 39,
+      "rank": 40,
       "weighted_degree": 21
     },
     {
@@ -531,21 +544,8 @@
       "layer": "tag",
       "legacy_id": "Prompt 工程",
       "name": "Prompt 工程",
-      "rank": 40,
-      "weighted_degree": 21
-    },
-    {
-      "article_count": 9,
-      "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
-      "degree": 4,
-      "description": "文章标签: cs.AI",
-      "id": "tag:cs.AI",
-      "layer": "tag",
-      "legacy_id": "cs.AI",
-      "name": "cs.AI",
       "rank": 41,
-      "weighted_degree": 20
+      "weighted_degree": 21
     },
     {
       "article_count": 3,
@@ -834,7 +834,7 @@
       "weighted_degree": 9
     },
     {
-      "article_count": 530,
+      "article_count": 531,
       "category": "nlp",
       "community_id": null,
       "degree": 8,
@@ -1211,7 +1211,7 @@
       "weighted_degree": 6.6
     },
     {
-      "article_count": 678,
+      "article_count": 680,
       "category": "ai",
       "community_id": null,
       "degree": 8,
@@ -1328,7 +1328,7 @@
       "weighted_degree": 5
     },
     {
-      "article_count": 659,
+      "article_count": 661,
       "category": "ai",
       "community_id": null,
       "degree": 5,
@@ -1588,7 +1588,7 @@
       "weighted_degree": 2.8
     },
     {
-      "article_count": 530,
+      "article_count": 531,
       "category": "ai",
       "community_id": null,
       "degree": 3,
