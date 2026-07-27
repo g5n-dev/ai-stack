@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:7f7133e7556b17a140077253e0faf68daac1382f13c2cf90
 source_payload_sha256: "sha256:f6ffa613e4939487c08a6c5cb258c9ac30f9b834a1c2018b12feaa465b4ac6a6"
 observation_id: obs_804a63e343d055d4b032ed32e22dee2b7697f2606b843be418c6f500f0e5dc57
 event_id: evt_16c774b73dcae8d6a8cfb1e166c1431790b1cd49c6a0e9124ae1566d5ed79162
-revision_id: rev_2e65ccf9ff6d1d6cd257f8cf9ac053ed6395b0db82c3decafea8427f2ef5b1d6
+revision_id: rev_92e36aaea08ab129180cf52c81fd77132661b26914b64ee5ebaf5e43399feb0b
 source_published_at: 2026-07-22T15:54:28Z
 first_seen_at: 2026-07-22T17:03:42Z
 timestamp_confidence: feed
@@ -27,7 +27,7 @@ source_title_chars_original: 72
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/ai-teammates-how-monday-com-runs-production-ai-agents-on-amazon-bedrock
 parent_observation_id: null
-last_seen_at: 2026-07-24T00:00:00Z
+last_seen_at: 2026-07-27T00:00:00Z
 ---
 
 ## 基本信息

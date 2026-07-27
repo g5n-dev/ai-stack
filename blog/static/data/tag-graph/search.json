@@ -12,33 +12,33 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-07-27T06:31:08Z",
+  "generated_at": "2026-07-27T08:04:07Z",
   "items": [
     {
-      "article_count": 654,
+      "article_count": 655,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
-      "degree": 36,
+      "degree": 37,
       "description": "文章标签: AI Agent",
       "id": "tag:AI Agent",
       "layer": "tag",
       "legacy_id": "AI Agent",
       "name": "AI Agent",
       "rank": 1,
-      "weighted_degree": 1614.2
+      "weighted_degree": 1618.2
     },
     {
-      "article_count": 525,
+      "article_count": 526,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
-      "degree": 30,
+      "degree": 31,
       "description": "文章标签: 大语言模型",
       "id": "tag:大语言模型",
       "layer": "tag",
       "legacy_id": "大语言模型",
       "name": "大语言模型",
       "rank": 2,
-      "weighted_degree": 1230.2
+      "weighted_degree": 1234.2
     },
     {
       "article_count": 453,
@@ -54,7 +54,7 @@
       "weighted_degree": 1191
     },
     {
-      "article_count": 355,
+      "article_count": 356,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 67,
@@ -64,7 +64,7 @@
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 4,
-      "weighted_degree": 708
+      "weighted_degree": 712
     },
     {
       "article_count": 162,
@@ -171,17 +171,17 @@
       "weighted_degree": 289.6
     },
     {
-      "article_count": 92,
+      "article_count": 93,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
-      "degree": 24,
+      "degree": 25,
       "description": "文章标签: 生成式 AI",
       "id": "tag:生成式 AI",
       "layer": "tag",
       "legacy_id": "生成式 AI",
       "name": "生成式 AI",
       "rank": 13,
-      "weighted_degree": 266
+      "weighted_degree": 270
     },
     {
       "article_count": 764,
@@ -210,17 +210,17 @@
       "weighted_degree": 247
     },
     {
-      "article_count": 96,
+      "article_count": 97,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
-      "degree": 55,
+      "degree": 58,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 16,
-      "weighted_degree": 200
+      "weighted_degree": 204
     },
     {
       "article_count": 42,
@@ -795,7 +795,7 @@
       "weighted_degree": 8
     },
     {
-      "article_count": 525,
+      "article_count": 526,
       "category": "nlp",
       "community_id": null,
       "degree": 8,
@@ -1159,7 +1159,7 @@
       "weighted_degree": 6.6
     },
     {
-      "article_count": 669,
+      "article_count": 670,
       "category": "ai",
       "community_id": null,
       "degree": 8,
@@ -1302,7 +1302,7 @@
       "weighted_degree": 5
     },
     {
-      "article_count": 654,
+      "article_count": 655,
       "category": "ai",
       "community_id": null,
       "degree": 5,
@@ -1562,7 +1562,7 @@
       "weighted_degree": 2.8
     },
     {
-      "article_count": 525,
+      "article_count": 526,
       "category": "ai",
       "community_id": null,
       "degree": 3,
