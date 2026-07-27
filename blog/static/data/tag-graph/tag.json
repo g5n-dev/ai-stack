@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T06:31:08Z",
+  "generated_at": "2026-07-27T08:04:07Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -373,7 +373,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 154
+      "weight": 155
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:命令行工具",
@@ -389,7 +389,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 216
+      "weight": 217
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:工程实践",
@@ -424,6 +424,14 @@
       "weight": 31
     },
     {
+      "id": "edge:cooccurrence:tag:AI Agent->tag:来源快报",
+      "source": "tag:AI Agent",
+      "strength": 0.5,
+      "target": "tag:来源快报",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
       "id": "edge:cooccurrence:tag:AI Agent->tag:深度学习",
       "source": "tag:AI Agent",
       "strength": 1,
@@ -437,7 +445,7 @@
       "strength": 1,
       "target": "tag:生成式 AI",
       "type": "cooccurrence",
-      "weight": 44
+      "weight": 45
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:自然语言处理",
@@ -4861,7 +4869,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 79
+      "weight": 80
     },
     {
       "id": "edge:cooccurrence:tag:博客与播客->tag:数据库",
@@ -4885,7 +4893,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 47
+      "weight": 48
     },
     {
       "id": "edge:cooccurrence:tag:博客与播客->tag:深度学习",
@@ -4901,7 +4909,7 @@
       "strength": 1,
       "target": "tag:生成式 AI",
       "type": "cooccurrence",
-      "weight": 74
+      "weight": 75
     },
     {
       "id": "edge:cooccurrence:tag:博客与播客->tag:自然语言处理",
@@ -5016,6 +5024,14 @@
       "weight": 30
     },
     {
+      "id": "edge:cooccurrence:tag:大语言模型->tag:来源快报",
+      "source": "tag:大语言模型",
+      "strength": 0.5,
+      "target": "tag:来源快报",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
       "id": "edge:cooccurrence:tag:大语言模型->tag:深度学习",
       "source": "tag:大语言模型",
       "strength": 1,
@@ -5029,7 +5045,7 @@
       "strength": 1,
       "target": "tag:生成式 AI",
       "type": "cooccurrence",
-      "weight": 28
+      "weight": 29
     },
     {
       "id": "edge:cooccurrence:tag:大语言模型->tag:自然语言处理",
@@ -5224,6 +5240,14 @@
       "weight": 4
     },
     {
+      "id": "edge:cooccurrence:tag:来源快报->tag:生成式 AI",
+      "source": "tag:来源快报",
+      "strength": 0.5,
+      "target": "tag:生成式 AI",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
       "id": "edge:cooccurrence:tag:深度学习->tag:生成式 AI",
       "source": "tag:深度学习",
       "strength": 1,
@@ -5374,11 +5398,11 @@
       "weighted_degree": 2.6
     },
     {
-      "article_count": 654,
+      "article_count": 655,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
-      "degree": 36,
+      "degree": 37,
       "description": "文章标签: AI Agent",
       "id": "tag:AI Agent",
       "layer": "tag",
@@ -5387,8 +5411,8 @@
       "level": 6,
       "name": "AI Agent",
       "rank": 1,
-      "related_count": 34,
-      "weighted_degree": 1614.2
+      "related_count": 35,
+      "weighted_degree": 1618.2
     },
     {
       "article_count": 1,
@@ -6921,7 +6945,7 @@
       "weighted_degree": 289.6
     },
     {
-      "article_count": 355,
+      "article_count": 356,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -6935,7 +6959,7 @@
       "name": "博客与播客",
       "rank": 4,
       "related_count": 67,
-      "weighted_degree": 708
+      "weighted_degree": 712
     },
     {
       "article_count": 141,
@@ -6955,11 +6979,11 @@
       "weighted_degree": 507.6
     },
     {
-      "article_count": 525,
+      "article_count": 526,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
-      "degree": 30,
+      "degree": 31,
       "description": "文章标签: 大语言模型",
       "id": "tag:大语言模型",
       "layer": "tag",
@@ -6968,8 +6992,8 @@
       "level": 6,
       "name": "大语言模型",
       "rank": 2,
-      "related_count": 28,
-      "weighted_degree": 1230.2
+      "related_count": 29,
+      "weighted_degree": 1234.2
     },
     {
       "article_count": 13,
@@ -7040,11 +7064,11 @@
       "weighted_degree": 247
     },
     {
-      "article_count": 96,
+      "article_count": 97,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
-      "degree": 55,
+      "degree": 58,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
@@ -7053,8 +7077,8 @@
       "level": 6,
       "name": "来源快报",
       "rank": 16,
-      "related_count": 55,
-      "weighted_degree": 200
+      "related_count": 58,
+      "weighted_degree": 204
     },
     {
       "article_count": 12,
@@ -7091,11 +7115,11 @@
       "weighted_degree": 95
     },
     {
-      "article_count": 92,
+      "article_count": 93,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
-      "degree": 24,
+      "degree": 25,
       "description": "文章标签: 生成式 AI",
       "id": "tag:生成式 AI",
       "layer": "tag",
@@ -7104,8 +7128,8 @@
       "level": 6,
       "name": "生成式 AI",
       "rank": 13,
-      "related_count": 24,
-      "weighted_degree": 266
+      "related_count": 25,
+      "weighted_degree": 270
     },
     {
       "article_count": 27,
@@ -7144,13 +7168,13 @@
   ],
   "stats": {
     "links_by_type": {
-      "cooccurrence": 627,
+      "cooccurrence": 630,
       "semantic": 31
     },
     "nodes_by_layer": {
       "tag": 108
     },
-    "total_links": 658,
+    "total_links": 661,
     "total_nodes": 108
   },
   "version": 2

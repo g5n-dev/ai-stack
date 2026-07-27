@@ -27,7 +27,7 @@ source_title_chars_original: 62
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community
 parent_observation_id: null
-last_seen_at: 2026-07-23T00:00:00Z
+last_seen_at: 2026-07-27T00:00:00Z
 ---
 
 ## 基本信息

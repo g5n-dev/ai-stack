@@ -1,5 +1,5 @@
 {
-  "active_count": 2199,
+  "active_count": 2200,
   "archived_count": 276,
   "complete_count": 13,
   "legacy_analysis_count": 0,
@@ -18109,6 +18109,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260727-blogs_podcasts-ainews-claude-opus-5-fable-level-performance-at-op-0-013aaa4c67.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260727-blogs_podcasts-building-trade-assistant-how-jefferies-optimized-f-1-675fc28b9b.md": {
       "reasons": [
         "concise_source_card"
@@ -18154,10 +18160,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2186,
-  "source_file_count": 2475,
-  "source_tree_sha256": "643c017c622f32ca3fe16b4fcdfd372177a1caff26030532df515edf8d9e6300",
-  "verified_provenance_count": 2199,
+  "source_brief_count": 2187,
+  "source_file_count": 2476,
+  "source_tree_sha256": "8ce3cd57f195cbc9ada34fe485c1a487e8d7fa28880cecf695a303b0dcda3859",
+  "verified_provenance_count": 2200,
   "warning_counts": {
     "source_excerpt_truncated": 747
   }
