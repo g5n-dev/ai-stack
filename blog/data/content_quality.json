@@ -1,5 +1,5 @@
 {
-  "active_count": 2210,
+  "active_count": 2212,
   "archived_count": 276,
   "complete_count": 13,
   "legacy_analysis_count": 0,
@@ -18169,6 +18169,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260728-arxiv-the-regression-tax-decomposing-why-skills-help-and-0-89a606f362.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260728-blogs_podcasts-beyond-rag-task-aware-knowledge-compression-for-en-0-46be0149e3.md": {
       "reasons": [
         "concise_source_card"
@@ -18182,6 +18188,12 @@
       "status": "source_brief"
     },
     "posts/20260728-hacker_news-jensen-huangs-first-ever-post-on-x-is-in-defense-o-11-dc620c60e2.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260728-hacker_news-my-current-strategy-is-to-not-read-any-of-the-code-19-0cf6c55034.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -18220,10 +18232,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2197,
-  "source_file_count": 2486,
-  "source_tree_sha256": "695d52ac1f21b0325d8343c8e753c9cd3305834abcea489b5c565421a0418210",
-  "verified_provenance_count": 2210,
+  "source_brief_count": 2199,
+  "source_file_count": 2488,
+  "source_tree_sha256": "6b22e565e06c01e551fb4dab160aa3a9cebb06fca5fbdd1355adf64c04940c73",
+  "verified_provenance_count": 2212,
   "warning_counts": {
     "source_excerpt_truncated": 747
   }
