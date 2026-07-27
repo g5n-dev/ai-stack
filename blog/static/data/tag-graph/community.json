@@ -2,33 +2,33 @@
   "algorithm": "deterministic-weighted-label-propagation",
   "communities": [
     {
-      "article_count": 110,
+      "article_count": 112,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-a665f5f069de.json",
+      "hotspot_file": "community-hotspots/01-30920c110cbf.json",
       "id": "community:tag:Technical How-to",
       "leader_id": "tag:来源快报",
       "name": "来源快报",
-      "node_count": 32,
+      "node_count": 38,
       "rank": 1,
-      "tag_occurrences": 196,
-      "weighted_degree": 589.8
+      "tag_occurrences": 217,
+      "weighted_degree": 687.4
     },
     {
-      "article_count": 2203,
+      "article_count": 2205,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/02-72308d79371e.json",
+      "hotspot_file": "community-hotspots/02-823f1f678321.json",
       "id": "community:tag:掘金",
       "leader_id": "tag:Hacker News",
       "name": "Hacker News",
       "node_count": 29,
       "rank": 2,
-      "tag_occurrences": 4661,
-      "weighted_degree": 10140.2
+      "tag_occurrences": 4665,
+      "weighted_degree": 10159.2
     },
     {
       "article_count": 8,
       "hotspot_count": 8,
-      "hotspot_file": "community-hotspots/03-296b97679333.json",
+      "hotspot_file": "community-hotspots/03-ebc0f957af62.json",
       "id": "community:tag:Elastic Load Balancing",
       "leader_id": "tag:Technical How-to",
       "name": "Technical How-to",
@@ -40,7 +40,7 @@
     {
       "article_count": 2,
       "hotspot_count": 8,
-      "hotspot_file": "community-hotspots/04-a47efbf72e7a.json",
+      "hotspot_file": "community-hotspots/04-29ada755d4d1.json",
       "id": "community:tag:Computer modeling",
       "leader_id": "tag:Artificial intelligence",
       "name": "Artificial intelligence",
@@ -52,7 +52,7 @@
     {
       "article_count": 13,
       "hotspot_count": 7,
-      "hotspot_file": "community-hotspots/05-5f04eba1a922.json",
+      "hotspot_file": "community-hotspots/05-08e814e839df.json",
       "id": "community:tag:Codex",
       "leader_id": "tag:工程实践",
       "name": "工程实践",
@@ -64,7 +64,7 @@
     {
       "article_count": 6,
       "hotspot_count": 7,
-      "hotspot_file": "community-hotspots/06-cc4fe67c700c.json",
+      "hotspot_file": "community-hotspots/06-9dc3bd16eacc.json",
       "id": "community:tag:Amazon RDS",
       "leader_id": "tag:Customer Solutions",
       "name": "Customer Solutions",
@@ -74,94 +74,58 @@
       "weighted_degree": 73.6
     },
     {
-      "article_count": 8,
-      "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/07-82823f92445a.json",
-      "id": "community:tag:Gemini App",
-      "leader_id": "tag:AI",
-      "name": "AI",
-      "node_count": 5,
-      "rank": 7,
-      "tag_occurrences": 13,
-      "weighted_degree": 45.6
-    },
-    {
       "article_count": 3,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/08-a564f0b6fb48.json",
+      "hotspot_file": "community-hotspots/07-caa03186f723.json",
       "id": "community:tag:Faculty",
       "leader_id": "tag:Safety",
       "name": "Safety",
       "node_count": 5,
-      "rank": 8,
+      "rank": 7,
       "tag_occurrences": 7,
       "weighted_degree": 39
     },
     {
       "article_count": 2,
       "hotspot_count": 3,
-      "hotspot_file": "community-hotspots/09-cbbac692fd17.json",
+      "hotspot_file": "community-hotspots/08-01aeda080261.json",
       "id": "community:tag:Amazon EventBridge",
       "leader_id": "tag:Amazon SageMaker",
       "name": "Amazon SageMaker",
       "node_count": 3,
-      "rank": 9,
+      "rank": 8,
       "tag_occurrences": 4,
       "weighted_degree": 25
     },
     {
       "article_count": 1,
-      "hotspot_count": 2,
-      "hotspot_file": "community-hotspots/10-47b8eea56e20.json",
-      "id": "community:tag:AWS Glue",
-      "leader_id": "tag:Amazon SageMaker AI",
-      "name": "Amazon SageMaker AI",
-      "node_count": 2,
-      "rank": 10,
-      "tag_occurrences": 2,
-      "weighted_degree": 10
+      "hotspot_count": 3,
+      "hotspot_file": "community-hotspots/09-13d3213bfe6b.json",
+      "id": "community:tag:Gemini App",
+      "leader_id": "tag:Android",
+      "name": "Android",
+      "node_count": 3,
+      "rank": 9,
+      "tag_occurrences": 3,
+      "weighted_degree": 15
     },
     {
       "article_count": 1,
       "hotspot_count": 2,
-      "hotspot_file": "community-hotspots/11-5f49801851af.json",
+      "hotspot_file": "community-hotspots/10-21ba929a6097.json",
       "id": "community:tag:Google Workspace",
       "leader_id": "tag:Google One",
       "name": "Google One",
       "node_count": 2,
-      "rank": 11,
+      "rank": 10,
       "tag_occurrences": 2,
       "weighted_degree": 8
     }
   ],
-  "generated_at": "2026-07-27T19:07:34Z",
+  "generated_at": "2026-07-27T20:47:31Z",
   "iterations": 4,
   "limit": 11,
   "links": [
-    {
-      "id": "edge:community:community:tag:AWS Glue->community:tag:Elastic Load Balancing",
-      "source": "community:tag:AWS Glue",
-      "strength": 1,
-      "target": "community:tag:Elastic Load Balancing",
-      "type": "community",
-      "weight": 2
-    },
-    {
-      "id": "edge:community:community:tag:AWS Glue->community:tag:Technical How-to",
-      "source": "community:tag:AWS Glue",
-      "strength": 1,
-      "target": "community:tag:Technical How-to",
-      "type": "community",
-      "weight": 4
-    },
-    {
-      "id": "edge:community:community:tag:AWS Glue->community:tag:掘金",
-      "source": "community:tag:AWS Glue",
-      "strength": 1,
-      "target": "community:tag:掘金",
-      "type": "community",
-      "weight": 2
-    },
     {
       "id": "edge:community:community:tag:Amazon EventBridge->community:tag:Elastic Load Balancing",
       "source": "community:tag:Amazon EventBridge",
@@ -232,7 +196,7 @@
       "strength": 1,
       "target": "community:tag:Technical How-to",
       "type": "community",
-      "weight": 36
+      "weight": 38
     },
     {
       "id": "edge:community:community:tag:Elastic Load Balancing->community:tag:掘金",
@@ -259,20 +223,12 @@
       "weight": 2
     },
     {
-      "id": "edge:community:community:tag:Gemini App->community:tag:Google Workspace",
-      "source": "community:tag:Gemini App",
-      "strength": 1,
-      "target": "community:tag:Google Workspace",
-      "type": "community",
-      "weight": 2
-    },
-    {
       "id": "edge:community:community:tag:Gemini App->community:tag:Technical How-to",
       "source": "community:tag:Gemini App",
       "strength": 1,
       "target": "community:tag:Technical How-to",
       "type": "community",
-      "weight": 14
+      "weight": 6
     },
     {
       "id": "edge:community:community:tag:Gemini App->community:tag:掘金",
@@ -280,7 +236,7 @@
       "strength": 1,
       "target": "community:tag:掘金",
       "type": "community",
-      "weight": 13
+      "weight": 3
     },
     {
       "id": "edge:community:community:tag:Google Workspace->community:tag:Technical How-to",
@@ -288,7 +244,7 @@
       "strength": 1,
       "target": "community:tag:Technical How-to",
       "type": "community",
-      "weight": 2
+      "weight": 4
     },
     {
       "id": "edge:community:community:tag:Google Workspace->community:tag:掘金",
@@ -304,15 +260,15 @@
       "strength": 1,
       "target": "community:tag:掘金",
       "type": "community",
-      "weight": 234
+      "weight": 259
     }
   ],
   "stats": {
-    "assigned_nodes": 108,
-    "detected_communities": 11,
-    "emitted_communities": 11,
-    "total_communities": 11,
-    "total_links": 21,
+    "assigned_nodes": 110,
+    "detected_communities": 10,
+    "emitted_communities": 10,
+    "total_communities": 10,
+    "total_links": 17,
     "weighting": "cosine-association"
   },
   "version": 2
