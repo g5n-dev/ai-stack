@@ -27,7 +27,7 @@ description: "当前只保存了标题与来源元数据，未抓取外链全文
 external_url: https://github.com/higress-group/higress
 parent_observation_id: null
 source_published_at: null
-last_seen_at: 2026-07-27T00:00:00Z
+last_seen_at: 2026-07-28T00:00:00Z
 ---
 
 ## 基本信息

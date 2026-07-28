@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:cedd2326b32308a1dbb169c56741a4238c38aee86aa07cc2
 source_payload_sha256: "sha256:0ef53141be8165aab882a5dcb03c437851ce326751564240160861a06a31b630"
 observation_id: obs_46615b0bd8b570f72a0d02849b8cbb7a7d5da18fa6a6b81bb39da7f75376e043
 event_id: evt_fe95bb9ac5b905ff4271e849c1a40887eb556aaf6d69f93c2258ddd869cfa5ee
-revision_id: rev_52a466511bfdf6b3417e9d603816787bd2e9cc862a2c7cab594875113da7515c
+revision_id: rev_f94bfa5b2a08b536f1baa24d6b69144eb7be0d3d9ae7d98f38b1669bb93ff400
 source_published_at: 2026-07-27T16:07:44Z
 first_seen_at: 2026-07-27T21:03:21Z
 timestamp_confidence: feed
@@ -27,7 +27,7 @@ source_title_chars_original: 79
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/deepgram-enhances-amazon-sagemaker-ai-support-with-aws-iam-temporary-delegation
 parent_observation_id: null
-last_seen_at: 2026-07-27T20:46:45.915731Z
+last_seen_at: 2026-07-28T00:00:00Z
 ---
 
 ## 基本信息

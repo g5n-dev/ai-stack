@@ -1,5 +1,5 @@
 {
-  "active_count": 2214,
+  "active_count": 2215,
   "archived_count": 276,
   "complete_count": 14,
   "legacy_analysis_count": 0,
@@ -18157,6 +18157,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260728-arxiv-clinfusion-a-vision-centric-multimodal-llm-system--0-b57d828a5a.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260728-arxiv-explainable-reinforcement-learning-for-assisting-a-0-a7830b69da.md": {
       "reasons": [
         "concise_source_card"
@@ -18238,10 +18244,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2200,
-  "source_file_count": 2490,
-  "source_tree_sha256": "1c5e0b414422f6c8483acb5d708499ce32ea01e045a1ec9dacbc3ea625af2be7",
-  "verified_provenance_count": 2214,
+  "source_brief_count": 2201,
+  "source_file_count": 2491,
+  "source_tree_sha256": "e989d3b2a9f54d0c12e6309dd0c361f5c170706a476c7783f2bbca64a213b4c2",
+  "verified_provenance_count": 2215,
   "warning_counts": {
     "source_excerpt_truncated": 747
   }
