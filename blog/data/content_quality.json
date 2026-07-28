@@ -1,5 +1,5 @@
 {
-  "active_count": 2220,
+  "active_count": 2223,
   "archived_count": 276,
   "complete_count": 14,
   "legacy_analysis_count": 0,
@@ -18223,7 +18223,19 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260729-arxiv-global-convergence-of-dgm-and-pinn-algorithms-for--2-dd77e43025.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260729-arxiv-kanex-translating-kolmogorov-arnold-networks-inter-2-e709d21281.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260729-blogs_podcasts-499-gary-gallagher-american-civil-war-slavery-linc-0-bf852b6011.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -18236,6 +18248,12 @@
       "status": "source_brief"
     },
     "posts/20260729-hacker_news-discovering-cryptographic-weaknesses-with-claude-6-5f83f5347c.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260729-hacker_news-openai-just-open-sourced-codex-security-0-328a7b2dd5.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -18274,10 +18292,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2206,
-  "source_file_count": 2496,
-  "source_tree_sha256": "68f4e593d372fd6ca3783a43158dd48e9c881af5805568ceffc5daf600e16512",
-  "verified_provenance_count": 2220,
+  "source_brief_count": 2209,
+  "source_file_count": 2499,
+  "source_tree_sha256": "8962825ba34f9122b98084453f864f83d579928aeab6f709a139de0ddf306f3a",
+  "verified_provenance_count": 2223,
   "warning_counts": {
     "source_excerpt_truncated": 747
   }
