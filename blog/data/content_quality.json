@@ -1,5 +1,5 @@
 {
-  "active_count": 2217,
+  "active_count": 2220,
   "archived_count": 276,
   "complete_count": 14,
   "legacy_analysis_count": 0,
@@ -18169,6 +18169,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260728-arxiv-kanex-translating-kolmogorov-arnold-networks-inter-2-e709d21281.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260728-arxiv-quantum-spectral-model-data-reuploading-with-input-1-da50f0e886.md": {
       "reasons": [
         "concise_source_card"
@@ -18188,6 +18194,12 @@
       "status": "source_brief"
     },
     "posts/20260728-arxiv-the-regression-tax-decomposing-why-skills-help-and-0-89a606f362.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260728-blogs_podcasts-5-ways-ai-mode-in-search-helps-you-enjoy-the-real--0-388fcf76f8.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -18218,6 +18230,12 @@
       "status": "source_brief"
     },
     "posts/20260728-hacker_news-my-current-strategy-is-to-not-read-any-of-the-code-19-0cf6c55034.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260728-hacker_news-show-hn-formally-verified-3d-csg-trust-93-lines-sp-3-167f0086e4.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -18256,10 +18274,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2203,
-  "source_file_count": 2493,
-  "source_tree_sha256": "8dd1bde4f55613cadecd0ef0067d02298c1c9b9f78f36bd5b2450e99efc2d6a2",
-  "verified_provenance_count": 2217,
+  "source_brief_count": 2206,
+  "source_file_count": 2496,
+  "source_tree_sha256": "2d2d202552df166eb4211b048734d4f38652f004c48681ed3f298b55f665f78c",
+  "verified_provenance_count": 2220,
   "warning_counts": {
     "source_excerpt_truncated": 747
   }
