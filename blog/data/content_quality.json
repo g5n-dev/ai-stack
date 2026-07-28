@@ -1,5 +1,5 @@
 {
-  "active_count": 2217,
+  "active_count": 2219,
   "archived_count": 276,
   "complete_count": 14,
   "legacy_analysis_count": 0,
@@ -18222,6 +18222,18 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260729-blogs_podcasts-gemini-api-managed-agents-36-flash-hooks-and-more-0-9c57623ef6.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260729-hacker_news-show-hn-formally-verified-3d-csg-trust-93-lines-sp-12-167f0086e4.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -18256,10 +18268,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2203,
-  "source_file_count": 2493,
-  "source_tree_sha256": "8dd1bde4f55613cadecd0ef0067d02298c1c9b9f78f36bd5b2450e99efc2d6a2",
-  "verified_provenance_count": 2217,
+  "source_brief_count": 2205,
+  "source_file_count": 2495,
+  "source_tree_sha256": "cd580bf8d83608f27cdd28d568c9dac92ed4442f30772d829da5c79c5dcfe191",
+  "verified_provenance_count": 2219,
   "warning_counts": {
     "source_excerpt_truncated": 747
   }
