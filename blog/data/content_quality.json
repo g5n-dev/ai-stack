@@ -1,5 +1,5 @@
 {
-  "active_count": 2215,
+  "active_count": 2217,
   "archived_count": 276,
   "complete_count": 14,
   "legacy_analysis_count": 0,
@@ -18175,6 +18175,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260728-arxiv-rethinking-classifier-free-guidance-in-on-policy-d-2-29e5723d1c.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260728-arxiv-skill-self-play-pushing-the-frontier-of-llm-capabi-0-0f8bb094b1.md": {
       "reasons": [
         "concise_source_card"
@@ -18182,6 +18188,12 @@
       "status": "source_brief"
     },
     "posts/20260728-arxiv-the-regression-tax-decomposing-why-skills-help-and-0-89a606f362.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260728-blogs_podcasts-ainews-much-ado-about-open-weights-0-2b7537498f.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -18244,10 +18256,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2201,
-  "source_file_count": 2491,
-  "source_tree_sha256": "e989d3b2a9f54d0c12e6309dd0c361f5c170706a476c7783f2bbca64a213b4c2",
-  "verified_provenance_count": 2215,
+  "source_brief_count": 2203,
+  "source_file_count": 2493,
+  "source_tree_sha256": "8dd1bde4f55613cadecd0ef0067d02298c1c9b9f78f36bd5b2450e99efc2d6a2",
+  "verified_provenance_count": 2217,
   "warning_counts": {
     "source_excerpt_truncated": 747
   }
