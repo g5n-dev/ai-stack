@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:f10869108696070f17c1a7314141a416bd00a416e70ded26
 source_payload_sha256: "sha256:260bdd6a9a49cd9d14d562a43c2ed99a3b99327da76c2a8b4de2d631c930a2f1"
 observation_id: obs_46be0149e39dc713566a76826f27857ff47cb3bfcacac2874e094c81f76b73b2
 event_id: evt_0db1da6de71afb66f0d9e3e33a27e2676d9b1c9d12de8335b805c07e3c948161
-revision_id: rev_014eadad9e8094f576dc28ec6c4e43757b87f79cd7df693fb5af486d430a907f
+revision_id: rev_244b28dd00e691e25f7ddf66de3dd73bc61d3ea1f5b36ff7132edf3f7531770c
 source_published_at: 2026-07-27T16:11:32Z
 first_seen_at: 2026-07-27T19:23:20Z
 timestamp_confidence: feed
@@ -27,7 +27,7 @@ source_title_chars_original: 69
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/beyond-rag-task-aware-knowledge-compression-for-enterprise-ai-on-aws
 parent_observation_id: null
-last_seen_at: 2026-07-27T19:06:49.043749Z
+last_seen_at: 2026-07-28T00:00:00Z
 ---
 
 ## 基本信息

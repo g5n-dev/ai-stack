@@ -27,7 +27,7 @@ source_title_chars_original: 89
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/building-trade-assistant-how-jefferies-optimized-front-office-trading-operations-with-ai
 parent_observation_id: null
-last_seen_at: 2026-07-27T06:30:28.088482Z
+last_seen_at: 2026-07-28T00:00:00Z
 ---
 
 ## 基本信息
