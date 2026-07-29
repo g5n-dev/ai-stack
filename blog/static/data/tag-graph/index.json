@@ -23,11 +23,11 @@
       "focus-shards/000-13bb6bb2e4d7.json",
       "focus-shards/001-f8aa1c656f4c.json",
       "focus-shards/002-1f6580b97e6b.json",
-      "focus-shards/003-09681bbf8afa.json",
+      "focus-shards/003-ec6c79f057f8.json",
       "focus-shards/004-08a9b1380f4a.json",
       "focus-shards/005-78d92140d3cd.json",
       "focus-shards/006-520000d8af0f.json",
-      "focus-shards/007-e1a3fc368278.json",
+      "focus-shards/007-21d496099612.json",
       "focus-shards/008-716f3e4953f4.json",
       "focus-shards/009-1be0e4d33466.json",
       "focus-shards/010-82102f585f91.json",
@@ -36,8 +36,8 @@
       "focus-shards/013-39ecb2467ab5.json",
       "focus-shards/014-461ab09ac9c5.json",
       "focus-shards/015-5b47c92fc246.json",
-      "focus-shards/016-5719e16c4a0e.json",
-      "focus-shards/017-c7eb36bb4586.json",
+      "focus-shards/016-7c38f77f94aa.json",
+      "focus-shards/017-2089ac224a3e.json",
       "focus-shards/018-2c17627068d7.json",
       "focus-shards/019-4c9f81321652.json",
       "focus-shards/020-75cab59f61b8.json",
@@ -75,14 +75,14 @@
       "focus-shards/052-e99dea022c60.json",
       "focus-shards/053-01731be8d8f9.json",
       "focus-shards/054-b57c28532b70.json",
-      "focus-shards/055-cdae69b205c6.json",
+      "focus-shards/055-2edbd9c92719.json",
       "focus-shards/056-24c3cf7ce469.json",
       "focus-shards/057-6fb23ad7ec16.json",
       "focus-shards/058-1542c4839aed.json",
-      "focus-shards/059-9f3738661aa9.json",
-      "focus-shards/060-3cfbb1445b25.json",
+      "focus-shards/059-7621eb5f1505.json",
+      "focus-shards/060-b99aa630e939.json",
       "focus-shards/061-989b436c1bbb.json",
-      "focus-shards/062-93e17a3ef9fb.json",
+      "focus-shards/062-3f0a3a334088.json",
       "focus-shards/063-260e120295e6.json",
       "focus-shards/064-a4d3f1d9c615.json",
       "focus-shards/065-ec8837379f8c.json",
@@ -92,7 +92,7 @@
       "focus-shards/069-20f435f1f7cf.json",
       "focus-shards/070-1b64e1f0df84.json",
       "focus-shards/071-32ef0bf41a6a.json",
-      "focus-shards/072-16e56e25dbeb.json",
+      "focus-shards/072-1bfcb2bad850.json",
       "focus-shards/073-0e421fbeb34f.json",
       "focus-shards/074-9d5103f231ff.json",
       "focus-shards/075-c20e07c00dbb.json",
@@ -104,13 +104,13 @@
       "focus-shards/081-8ede3985ac86.json",
       "focus-shards/082-fe0dd237f42f.json",
       "focus-shards/083-8be09ecda047.json",
-      "focus-shards/084-5c56cd1767c0.json",
+      "focus-shards/084-b90cc96d27e2.json",
       "focus-shards/085-bbc865246422.json",
       "focus-shards/086-a75594d75494.json",
       "focus-shards/087-cf30e9190d1e.json",
       "focus-shards/088-70da52562f71.json",
       "focus-shards/089-da8ee6aa1264.json",
-      "focus-shards/090-57b5cd3cc052.json",
+      "focus-shards/090-6ffb01b310bf.json",
       "focus-shards/091-98e811f82b84.json",
       "focus-shards/092-58d79f0000d1.json",
       "focus-shards/093-ac7cf3c31218.json",
@@ -153,7 +153,7 @@
     "tag": "tag.json",
     "tagHot": "tag.hot.json"
   },
-  "generated_at": "2026-07-29T12:25:10Z",
+  "generated_at": "2026-07-29T15:33:58Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -193,7 +193,7 @@
   },
   "stats": {
     "links_by_type": {
-      "cooccurrence": 714,
+      "cooccurrence": 729,
       "relation": 71,
       "semantic": 32
     },
@@ -203,13 +203,13 @@
       "language": 8,
       "model": 6,
       "scenario": 31,
-      "tag": 115
+      "tag": 116
     },
     "tag_stats": {
       "archived_article_files_skipped": 276,
       "archived_article_groups_skipped": 276,
       "avg_concepts_per_article": 0,
-      "avg_tags_per_article": 2.276092774308653,
+      "avg_tags_per_article": 2.2797327394209352,
       "canonical_duplicate_files_skipped": 0,
       "incomplete_article_files_skipped": 0,
       "incomplete_article_groups_skipped": 0,
@@ -218,7 +218,7 @@
         [
           "Hacker News",
           {
-            "article_count": 775,
+            "article_count": 776,
             "category": "article_tag",
             "description": "文章标签: Hacker News",
             "id": "Hacker News",
@@ -230,19 +230,19 @@
         [
           "AI Agent",
           {
-            "article_count": 671,
+            "article_count": 674,
             "category": "article_tag",
             "description": "文章标签: AI Agent",
             "id": "AI Agent",
             "layer": "tag",
             "name": "AI Agent",
-            "related_count": 46
+            "related_count": 49
           }
         ],
         [
           "ArXiv",
           {
-            "article_count": 590,
+            "article_count": 591,
             "category": "article_tag",
             "description": "文章标签: ArXiv",
             "id": "ArXiv",
@@ -278,16 +278,16 @@
       ],
       "synthetic_article_files_skipped": 0,
       "synthetic_article_groups_skipped": 0,
-      "total_articles": 2242,
+      "total_articles": 2245,
       "total_concept_links": 0,
       "total_concepts": 0,
-      "total_tag_links": 714,
-      "total_tags": 115
+      "total_tag_links": 729,
+      "total_tags": 116
     },
-    "total_articles": 2242,
+    "total_articles": 2245,
     "total_communities": 10,
-    "total_links": 817,
-    "total_nodes": 184
+    "total_links": 832,
+    "total_nodes": 185
   },
   "version": 2
 }
