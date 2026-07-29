@@ -1,5 +1,5 @@
 {
-  "active_count": 2245,
+  "active_count": 2248,
   "archived_count": 276,
   "complete_count": 19,
   "legacy_analysis_count": 0,
@@ -18369,6 +18369,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260730-arxiv-falling-behind-drives-unsafe-development-in-an-ide-3-fd5ef5cf1f.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260730-blogs_podcasts-authenticate-with-private-key-jwt-using-amazon-bed-0-7586ee2add.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260730-hacker_news-anatomy-of-a-frontier-lab-agent-intrusion-a-techni-2-8088c1dfd6.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -18403,10 +18421,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2226,
-  "source_file_count": 2521,
-  "source_tree_sha256": "b61880b8fdf93d260f10f61e9a1c6d09c4621451fd4a3b7dc7e515e90a66b042",
-  "verified_provenance_count": 2245,
+  "source_brief_count": 2229,
+  "source_file_count": 2524,
+  "source_tree_sha256": "567992350ad96b95c2b2d657a8df39748c6bc24952913cdbd0c45a157a5148ba",
+  "verified_provenance_count": 2248,
   "warning_counts": {
     "source_excerpt_truncated": 750
   }
