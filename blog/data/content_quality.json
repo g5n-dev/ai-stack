@@ -1,5 +1,5 @@
 {
-  "active_count": 2224,
+  "active_count": 2227,
   "archived_count": 276,
   "complete_count": 15,
   "legacy_analysis_count": 0,
@@ -18235,13 +18235,31 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260729-arxiv-the-physics-of-multi-turn-long-horizon-planning-fr-2-4e457fdcc1.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260729-blogs_podcasts-499-gary-gallagher-american-civil-war-slavery-linc-0-bf852b6011.md": {
       "reasons": [
         "concise_source_card"
       ],
       "status": "source_brief"
     },
+    "posts/20260729-blogs_podcasts-how-agentcore-gateway-supports-the-mcp-2026-07-28--0-b734d716b0.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260729-blogs_podcasts-market-surveillance-agent-with-langgraph-and-stran-0-f5869c6c9f.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260729-hacker_news-anthropic-publishes-a-practical-key-recovery-attac-3-dce87fe1ab.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -18292,10 +18310,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2209,
-  "source_file_count": 2500,
-  "source_tree_sha256": "5d06c44ba24634a8f27c17b9b72307c550e36f4c07487227aa259c564acb96c6",
-  "verified_provenance_count": 2224,
+  "source_brief_count": 2212,
+  "source_file_count": 2503,
+  "source_tree_sha256": "81488cc18f1e3aa3a306ddf234e237ed055cf8f5807371129a80aabe74ceb89d",
+  "verified_provenance_count": 2227,
   "warning_counts": {
     "source_excerpt_truncated": 747
   }

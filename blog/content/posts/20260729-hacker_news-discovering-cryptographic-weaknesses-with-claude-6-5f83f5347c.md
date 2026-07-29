@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:f85cea2da3bc4384201afb8ad1484a8b538df1f600d3660a
 source_payload_sha256: "sha256:bb2295508c0ea6be696bc573bba79a932474acf2b73b3737045f025e09ec27fa"
 observation_id: obs_5f83f5347c32a35f18a99c26b62ed61e83cebbab35692f8d34d163fc1f88c4a4
 event_id: evt_0387105f1d131b5086d6777828ccb593a4e45d7ee971b8eec187aa784129a9d6
-revision_id: rev_9811cd2f1e976b597f2a0a1d392ea1961daa95747c96f18f18d51e317bce6d34
+revision_id: rev_e7dac63520ae6568c207a8e29aa0a9c8464df40bb94041ba4c2ae7cd980d7b14
 source_published_at: 2026-07-28T17:22:16Z
 first_seen_at: 2026-07-28T19:04:07Z
 timestamp_confidence: platform
@@ -27,7 +27,7 @@ source_title_chars_original: 48
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://www.anthropic.com/research/discovering-cryptographic-weaknesses
 parent_observation_id: null
-last_seen_at: 2026-07-28T18:47:52.931798Z
+last_seen_at: 2026-07-29T00:00:00Z
 ---
 
 ## 基本信息
