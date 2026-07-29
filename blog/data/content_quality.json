@@ -1,5 +1,5 @@
 {
-  "active_count": 2251,
+  "active_count": 2254,
   "archived_count": 276,
   "complete_count": 19,
   "legacy_analysis_count": 0,
@@ -18382,6 +18382,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260730-arxiv-unimem-complementary-episodic-to-parametric-memory-4-891fc9aeca.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260730-blogs_podcasts-authenticate-with-private-key-jwt-using-amazon-bed-0-7586ee2add.md": {
       "reasons": [
         "concise_source_card"
@@ -18397,6 +18403,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260730-blogs_podcasts-how-enabling-two-settings-tripled-our-scores-on-th-0-265c6a0134.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260730-hacker_news-ais-top-startups-are-barely-publishing-their-resea-1-4095f61d03.md": {
       "reasons": [
         "concise_source_card"
@@ -18404,6 +18416,12 @@
       "status": "source_brief"
     },
     "posts/20260730-hacker_news-anatomy-of-a-frontier-lab-agent-intrusion-a-techni-3-8088c1dfd6.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260730-hacker_news-commodification-of-intelligence-good-bad-and-ugly--13-166c60821a.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -18442,10 +18460,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2232,
-  "source_file_count": 2527,
-  "source_tree_sha256": "35cadaccbd942021335ba48c55dd94ec43b49075afc1c6355060bf418e21aa4f",
-  "verified_provenance_count": 2251,
+  "source_brief_count": 2235,
+  "source_file_count": 2530,
+  "source_tree_sha256": "6d0e66ff7708a00ed3682cac5a7f174cb92f16fc848fcbedcbc32b6e3ecee1ec",
+  "verified_provenance_count": 2254,
   "warning_counts": {
     "source_excerpt_truncated": 751
   }
