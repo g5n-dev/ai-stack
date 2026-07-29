@@ -1,7 +1,7 @@
 {
-  "active_count": 2238,
+  "active_count": 2242,
   "archived_count": 276,
-  "complete_count": 18,
+  "complete_count": 19,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -18247,6 +18247,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260729-arxiv-vetclaw-an-edge-cloud-multimodal-agentic-system-fo-2-9a501e20b0.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260729-arxiv-πmathbfr2-reactive-real-time-flow-policies-1-7e5f82b8d3.md": {
       "reasons": [
         "concise_source_card"
@@ -18260,6 +18266,15 @@
       "status": "source_brief"
     },
     "posts/20260729-blogs_podcasts-ainews-fearing-rsi-openai-anthropic-gdm-meta-think-0-f6d0815aa9.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
+    "posts/20260729-blogs_podcasts-codex-from-0-to-10m-users-building-chatgpt-work-ak-0-60a8b00e51.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -18299,6 +18314,12 @@
       "status": "source_brief"
     },
     "posts/20260729-hacker_news-discovering-cryptographic-weaknesses-with-claude-6-5f83f5347c.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260729-hacker_news-document-borne-ai-worms-can-self-propagate-through-1-119813105b.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -18361,11 +18382,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2220,
-  "source_file_count": 2514,
-  "source_tree_sha256": "007b489db759a3690a6677a33413917b4be78ff3874e0019287422c01040bff5",
-  "verified_provenance_count": 2238,
+  "source_brief_count": 2223,
+  "source_file_count": 2518,
+  "source_tree_sha256": "5420e3c33c0853af7dbba6ad42cab235163a88b55bf0ec8e53c83c472ebe6cb5",
+  "verified_provenance_count": 2242,
   "warning_counts": {
-    "source_excerpt_truncated": 748
+    "source_excerpt_truncated": 749
   }
 }
