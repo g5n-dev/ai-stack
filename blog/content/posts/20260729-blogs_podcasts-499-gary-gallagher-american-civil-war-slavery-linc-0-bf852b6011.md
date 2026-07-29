@@ -15,7 +15,7 @@ observation_id: obs_bf852b601103a8c8964e06777469fb1672c2c4ed4e1e85ef217e9fc41803
 event_id: evt_6d7c5d95c8a0f886e44fc377246204bfb49ba8ee514f7e2cb994a75ef064078d
 revision_id: rev_214e28f3f6622b3f82fadac4db515a1878b974e8230915f288cc71e8bd4c7a5a
 source_published_at: 2026-07-28T20:06:06Z
-first_seen_at: 2026-07-28T23:20:45.080107Z
+first_seen_at: 2026-07-28T23:39:21Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 72
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://lexfridman.com/gary-gallagher
 parent_observation_id: null
-last_seen_at: 2026-07-28T23:20:45.080107Z
+last_seen_at: 2026-07-29T00:00:00Z
 ---
 
 ## 基本信息
