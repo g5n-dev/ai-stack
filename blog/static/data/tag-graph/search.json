@@ -12,10 +12,10 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-07-29T21:16:53Z",
+  "generated_at": "2026-07-29T22:16:28Z",
   "items": [
     {
-      "article_count": 676,
+      "article_count": 677,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 53,
@@ -25,10 +25,10 @@
       "legacy_id": "AI Agent",
       "name": "AI Agent",
       "rank": 1,
-      "weighted_degree": 1709.2
+      "weighted_degree": 1716.2
     },
     {
-      "article_count": 540,
+      "article_count": 542,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 42,
@@ -38,7 +38,7 @@
       "legacy_id": "大语言模型",
       "name": "大语言模型",
       "rank": 2,
-      "weighted_degree": 1298.2
+      "weighted_degree": 1308.2
     },
     {
       "article_count": 459,
@@ -54,7 +54,7 @@
       "weighted_degree": 1203
     },
     {
-      "article_count": 368,
+      "article_count": 369,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 76,
@@ -64,7 +64,7 @@
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 4,
-      "weighted_degree": 772
+      "weighted_degree": 779
     },
     {
       "article_count": 162,
@@ -93,6 +93,19 @@
       "weighted_degree": 526.6
     },
     {
+      "article_count": 593,
+      "category": "article_tag",
+      "community_id": "community:tag:掘金",
+      "degree": 27,
+      "description": "文章标签: ArXiv",
+      "id": "tag:ArXiv",
+      "layer": "tag",
+      "legacy_id": "ArXiv",
+      "name": "ArXiv",
+      "rank": 7,
+      "weighted_degree": 509
+    },
+    {
       "article_count": 141,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
@@ -102,21 +115,8 @@
       "layer": "tag",
       "legacy_id": "命令行工具",
       "name": "命令行工具",
-      "rank": 7,
-      "weighted_degree": 507.6
-    },
-    {
-      "article_count": 592,
-      "category": "article_tag",
-      "community_id": "community:tag:掘金",
-      "degree": 27,
-      "description": "文章标签: ArXiv",
-      "id": "tag:ArXiv",
-      "layer": "tag",
-      "legacy_id": "ArXiv",
-      "name": "ArXiv",
       "rank": 8,
-      "weighted_degree": 506
+      "weighted_degree": 507.6
     },
     {
       "article_count": 126,
@@ -145,6 +145,19 @@
       "weighted_degree": 387.2
     },
     {
+      "article_count": 139,
+      "category": "article_tag",
+      "community_id": "community:tag:Technical How-to",
+      "degree": 72,
+      "description": "文章标签: 来源快报",
+      "id": "tag:来源快报",
+      "layer": "tag",
+      "legacy_id": "来源快报",
+      "name": "来源快报",
+      "rank": 11,
+      "weighted_degree": 346
+    },
+    {
       "article_count": 86,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
@@ -154,21 +167,8 @@
       "layer": "tag",
       "legacy_id": "Docker",
       "name": "Docker",
-      "rank": 11,
-      "weighted_degree": 338
-    },
-    {
-      "article_count": 136,
-      "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
-      "degree": 72,
-      "description": "文章标签: 来源快报",
-      "id": "tag:来源快报",
-      "layer": "tag",
-      "legacy_id": "来源快报",
-      "name": "来源快报",
       "rank": 12,
-      "weighted_degree": 334
+      "weighted_degree": 338
     },
     {
       "article_count": 99,
@@ -197,7 +197,7 @@
       "weighted_degree": 289.6
     },
     {
-      "article_count": 777,
+      "article_count": 778,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 20,
@@ -207,7 +207,7 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 15,
-      "weighted_degree": 285
+      "weighted_degree": 287
     },
     {
       "article_count": 102,
@@ -314,6 +314,19 @@
       "weighted_degree": 69
     },
     {
+      "article_count": 10,
+      "category": "article_tag",
+      "community_id": "community:tag:Technical How-to",
+      "degree": 31,
+      "description": "文章标签: Advanced (300)",
+      "id": "tag:Advanced (300)",
+      "layer": "tag",
+      "legacy_id": "Advanced (300)",
+      "name": "Advanced (300)",
+      "rank": 24,
+      "weighted_degree": 64
+    },
+    {
       "article_count": 21,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
@@ -323,7 +336,7 @@
       "layer": "tag",
       "legacy_id": "计算机视觉",
       "name": "计算机视觉",
-      "rank": 24,
+      "rank": 25,
       "weighted_degree": 63.2
     },
     {
@@ -336,21 +349,21 @@
       "layer": "tag",
       "legacy_id": "GitHub",
       "name": "GitHub",
-      "rank": 25,
+      "rank": 26,
       "weighted_degree": 61
     },
     {
       "article_count": 9,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
-      "degree": 31,
-      "description": "文章标签: Advanced (300)",
-      "id": "tag:Advanced (300)",
+      "degree": 18,
+      "description": "文章标签: Prompt 工程",
+      "id": "tag:Prompt 工程",
       "layer": "tag",
-      "legacy_id": "Advanced (300)",
-      "name": "Advanced (300)",
-      "rank": 26,
-      "weighted_degree": 57
+      "legacy_id": "Prompt 工程",
+      "name": "Prompt 工程",
+      "rank": 27,
+      "weighted_degree": 58
     },
     {
       "article_count": 21,
@@ -362,11 +375,11 @@
       "layer": "tag",
       "legacy_id": "AI 安全",
       "name": "AI 安全",
-      "rank": 27,
+      "rank": 28,
       "weighted_degree": 54.6
     },
     {
-      "article_count": 17,
+      "article_count": 18,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 22,
@@ -375,21 +388,8 @@
       "layer": "tag",
       "legacy_id": "AI",
       "name": "AI",
-      "rank": 28,
-      "weighted_degree": 52.6
-    },
-    {
-      "article_count": 8,
-      "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
-      "degree": 18,
-      "description": "文章标签: Prompt 工程",
-      "id": "tag:Prompt 工程",
-      "layer": "tag",
-      "legacy_id": "Prompt 工程",
-      "name": "Prompt 工程",
       "rank": 29,
-      "weighted_degree": 51
+      "weighted_degree": 54.6
     },
     {
       "article_count": 9,
@@ -405,6 +405,19 @@
       "weighted_degree": 48
     },
     {
+      "article_count": 7,
+      "category": "article_tag",
+      "community_id": "community:tag:Technical How-to",
+      "degree": 25,
+      "description": "文章标签: Technical How-to",
+      "id": "tag:Technical How-to",
+      "layer": "tag",
+      "legacy_id": "Technical How-to",
+      "name": "Technical How-to",
+      "rank": 31,
+      "weighted_degree": 45
+    },
+    {
       "article_count": 9,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
@@ -414,7 +427,7 @@
       "layer": "tag",
       "legacy_id": "Intermediate (200)",
       "name": "Intermediate (200)",
-      "rank": 31,
+      "rank": 32,
       "weighted_degree": 44
     },
     {
@@ -427,21 +440,8 @@
       "layer": "tag",
       "legacy_id": "工程实践",
       "name": "工程实践",
-      "rank": 32,
-      "weighted_degree": 43
-    },
-    {
-      "article_count": 6,
-      "category": "article_tag",
-      "community_id": "community:tag:Elastic Load Balancing",
-      "degree": 25,
-      "description": "文章标签: Technical How-to",
-      "id": "tag:Technical How-to",
-      "layer": "tag",
-      "legacy_id": "Technical How-to",
-      "name": "Technical How-to",
       "rank": 33,
-      "weighted_degree": 38
+      "weighted_degree": 43
     },
     {
       "article_count": 18,
@@ -457,7 +457,7 @@
       "weighted_degree": 36
     },
     {
-      "article_count": 12,
+      "article_count": 13,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 6,
@@ -467,7 +467,20 @@
       "legacy_id": "cs.AI",
       "name": "cs.AI",
       "rank": 35,
-      "weighted_degree": 30
+      "weighted_degree": 33
+    },
+    {
+      "article_count": 5,
+      "category": "article_tag",
+      "community_id": "community:tag:Technical How-to",
+      "degree": 19,
+      "description": "文章标签: Amazon Bedrock AgentCore",
+      "id": "tag:Amazon Bedrock AgentCore",
+      "layer": "tag",
+      "legacy_id": "Amazon Bedrock AgentCore",
+      "name": "Amazon Bedrock AgentCore",
+      "rank": 36,
+      "weighted_degree": 33
     },
     {
       "article_count": 7,
@@ -479,7 +492,7 @@
       "layer": "tag",
       "legacy_id": "Go",
       "name": "Go",
-      "rank": 36,
+      "rank": 37,
       "weighted_degree": 29.6
     },
     {
@@ -492,7 +505,7 @@
       "layer": "tag",
       "legacy_id": "Swift",
       "name": "Swift",
-      "rank": 37,
+      "rank": 38,
       "weighted_degree": 28.6
     },
     {
@@ -505,7 +518,7 @@
       "layer": "tag",
       "legacy_id": "cs.CV",
       "name": "cs.CV",
-      "rank": 38,
+      "rank": 39,
       "weighted_degree": 28
     },
     {
@@ -518,7 +531,7 @@
       "layer": "tag",
       "legacy_id": "Customer Solutions",
       "name": "Customer Solutions",
-      "rank": 39,
+      "rank": 40,
       "weighted_degree": 28
     },
     {
@@ -531,26 +544,13 @@
       "layer": "tag",
       "legacy_id": "Kotlin",
       "name": "Kotlin",
-      "rank": 40,
-      "weighted_degree": 27
-    },
-    {
-      "article_count": 4,
-      "category": "article_tag",
-      "community_id": "community:tag:Elastic Load Balancing",
-      "degree": 19,
-      "description": "文章标签: Amazon Bedrock AgentCore",
-      "id": "tag:Amazon Bedrock AgentCore",
-      "layer": "tag",
-      "legacy_id": "Amazon Bedrock AgentCore",
-      "name": "Amazon Bedrock AgentCore",
       "rank": 41,
-      "weighted_degree": 26
+      "weighted_degree": 27
     },
     {
       "article_count": 3,
       "category": "article_tag",
-      "community_id": "community:tag:Elastic Load Balancing",
+      "community_id": "community:tag:Technical How-to",
       "degree": 16,
       "description": "文章标签: Amazon DynamoDB",
       "id": "tag:Amazon DynamoDB",
@@ -563,7 +563,7 @@
     {
       "article_count": 3,
       "category": "article_tag",
-      "community_id": "community:tag:Elastic Load Balancing",
+      "community_id": "community:tag:Technical How-to",
       "degree": 16,
       "description": "文章标签: AWS Lambda",
       "id": "tag:AWS Lambda",
@@ -693,7 +693,7 @@
     {
       "article_count": 2,
       "category": "article_tag",
-      "community_id": "community:tag:Elastic Load Balancing",
+      "community_id": "community:tag:Technical How-to",
       "degree": 13,
       "description": "文章标签: AWS Fargate",
       "id": "tag:AWS Fargate",
@@ -745,7 +745,7 @@
     {
       "article_count": 2,
       "category": "article_tag",
-      "community_id": "community:tag:Elastic Load Balancing",
+      "community_id": "community:tag:Technical How-to",
       "degree": 11,
       "description": "文章标签: Expert (400)",
       "id": "tag:Expert (400)",
@@ -758,7 +758,7 @@
     {
       "article_count": 2,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon EventBridge",
+      "community_id": "community:tag:Technical How-to",
       "degree": 9,
       "description": "文章标签: Amazon SageMaker",
       "id": "tag:Amazon SageMaker",
@@ -873,7 +873,7 @@
       "weighted_degree": 8
     },
     {
-      "article_count": 540,
+      "article_count": 542,
       "category": "nlp",
       "community_id": null,
       "degree": 8,
@@ -901,7 +901,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Elastic Load Balancing",
+      "community_id": "community:tag:Technical How-to",
       "degree": 8,
       "description": "文章标签: Amazon API Gateway",
       "id": "tag:Amazon API Gateway",
@@ -979,7 +979,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon EventBridge",
+      "community_id": "community:tag:Technical How-to",
       "degree": 7,
       "description": "文章标签: Amazon CloudWatch",
       "id": "tag:Amazon CloudWatch",
@@ -1005,7 +1005,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Amazon EventBridge",
+      "community_id": "community:tag:Technical How-to",
       "degree": 7,
       "description": "文章标签: Amazon EventBridge",
       "id": "tag:Amazon EventBridge",
@@ -1109,7 +1109,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Elastic Load Balancing",
+      "community_id": "community:tag:Technical How-to",
       "degree": 7,
       "description": "文章标签: Elastic Load Balancing",
       "id": "tag:Elastic Load Balancing",
@@ -1237,7 +1237,7 @@
       "weighted_degree": 7
     },
     {
-      "article_count": 702,
+      "article_count": 704,
       "category": "ai",
       "community_id": null,
       "degree": 9,
@@ -1393,7 +1393,7 @@
       "weighted_degree": 5
     },
     {
-      "article_count": 676,
+      "article_count": 677,
       "category": "ai",
       "community_id": null,
       "degree": 5,
@@ -1692,7 +1692,7 @@
       "weighted_degree": 2.8
     },
     {
-      "article_count": 540,
+      "article_count": 542,
       "category": "ai",
       "community_id": null,
       "degree": 3,
