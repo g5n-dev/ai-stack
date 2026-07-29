@@ -1,5 +1,5 @@
 {
-  "active_count": 2248,
+  "active_count": 2251,
   "archived_count": 276,
   "complete_count": 19,
   "legacy_analysis_count": 0,
@@ -18370,6 +18370,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260730-arxiv-charm-a-multimodal-graph-foundation-model-with-hie-4-1f6bfb8771.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260730-arxiv-falling-behind-drives-unsafe-development-in-an-ide-4-fd5ef5cf1f.md": {
       "reasons": [
         "concise_source_card"
@@ -18377,6 +18383,21 @@
       "status": "source_brief"
     },
     "posts/20260730-blogs_podcasts-authenticate-with-private-key-jwt-using-amazon-bed-0-7586ee2add.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260730-blogs_podcasts-generate-autonomous-business-insights-with-ai-agen-0-89bc6f5296.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
+    "posts/20260730-hacker_news-ais-top-startups-are-barely-publishing-their-resea-1-4095f61d03.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -18421,11 +18442,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2229,
-  "source_file_count": 2524,
-  "source_tree_sha256": "5435d13d2ca59fa7efa3121f99fabf2732533651ecaa70e23fdc7f738663fc00",
-  "verified_provenance_count": 2248,
+  "source_brief_count": 2232,
+  "source_file_count": 2527,
+  "source_tree_sha256": "35cadaccbd942021335ba48c55dd94ec43b49075afc1c6355060bf418e21aa4f",
+  "verified_provenance_count": 2251,
   "warning_counts": {
-    "source_excerpt_truncated": 750
+    "source_excerpt_truncated": 751
   }
 }
