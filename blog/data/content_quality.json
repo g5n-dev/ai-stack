@@ -1,7 +1,7 @@
 {
-  "active_count": 2227,
+  "active_count": 2231,
   "archived_count": 276,
-  "complete_count": 15,
+  "complete_count": 16,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -18241,11 +18241,26 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260729-arxiv-πmathbfr2-reactive-real-time-flow-policies-1-7e5f82b8d3.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260729-blogs_podcasts-499-gary-gallagher-american-civil-war-slavery-linc-0-bf852b6011.md": {
       "reasons": [
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260729-blogs_podcasts-ainews-fearing-rsi-openai-anthropic-gdm-meta-think-0-f6d0815aa9.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     },
     "posts/20260729-blogs_podcasts-how-agentcore-gateway-supports-the-mcp-2026-07-28--0-b734d716b0.md": {
       "reasons": [
@@ -18266,6 +18281,12 @@
       "status": "source_brief"
     },
     "posts/20260729-hacker_news-discovering-cryptographic-weaknesses-with-claude-6-5f83f5347c.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260729-hacker_news-learnvector-andrew-ngs-ai-company-building-onetoon-0-f55778d40f.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -18310,11 +18331,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2212,
-  "source_file_count": 2503,
-  "source_tree_sha256": "81488cc18f1e3aa3a306ddf234e237ed055cf8f5807371129a80aabe74ceb89d",
-  "verified_provenance_count": 2227,
+  "source_brief_count": 2215,
+  "source_file_count": 2507,
+  "source_tree_sha256": "2ed8c73d49fd480a9efe109f17b3da3b5340baf9902d7b4f18756e7ebcb71a54",
+  "verified_provenance_count": 2231,
   "warning_counts": {
-    "source_excerpt_truncated": 747
+    "source_excerpt_truncated": 748
   }
 }
