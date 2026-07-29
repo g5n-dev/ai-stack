@@ -1,7 +1,7 @@
 {
-  "active_count": 2234,
+  "active_count": 2238,
   "archived_count": 276,
-  "complete_count": 17,
+  "complete_count": 18,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -18235,6 +18235,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260729-arxiv-spend-experts-where-you-are-unsure-confidence-adap-1-4ba24053b8.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260729-arxiv-the-physics-of-multi-turn-long-horizon-planning-fr-2-4e457fdcc1.md": {
       "reasons": [
         "concise_source_card"
@@ -18262,6 +18268,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260729-blogs_podcasts-gemini-api-managed-agents-36-flash-hooks-and-more-0-9c57623ef6.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260729-blogs_podcasts-how-agentcore-gateway-supports-the-mcp-2026-07-28--0-b734d716b0.md": {
       "reasons": [
         "concise_source_card"
@@ -18287,6 +18299,12 @@
       "status": "source_brief"
     },
     "posts/20260729-hacker_news-discovering-cryptographic-weaknesses-with-claude-6-5f83f5347c.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260729-hacker_news-hubble-open-source-notetaking-app-for-you-and-your-11-67b4a3f1a5.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -18343,10 +18361,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2217,
-  "source_file_count": 2510,
-  "source_tree_sha256": "531cc5466d6e046b7ec7de2d7bfee82653db79cb41f61dec99b4b4dd9c76c4d7",
-  "verified_provenance_count": 2234,
+  "source_brief_count": 2220,
+  "source_file_count": 2514,
+  "source_tree_sha256": "007b489db759a3690a6677a33413917b4be78ff3874e0019287422c01040bff5",
+  "verified_provenance_count": 2238,
   "warning_counts": {
     "source_excerpt_truncated": 748
   }
