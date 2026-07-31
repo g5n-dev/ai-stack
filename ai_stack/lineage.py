@@ -158,6 +158,7 @@ class LineageConfig:
     shard_max_bytes: int = 64 * 1024
     public_max_bytes: int = 3 * 1024 * 1024
     public_max_files: int = 300
+    public_retention_ratio: float = 0.85
     boilerplate_patterns: tuple[str, ...] = ()
 
     def __post_init__(self) -> None:
@@ -191,6 +192,7 @@ class LineageConfig:
             "derivative_containment",
             "same_event_title_similarity",
             "suppression_ratio_limit",
+            "public_retention_ratio",
         ):
             value = float(getattr(self, name))
             if not 0 < value <= 1:
@@ -2140,6 +2142,118 @@ def _event_records_from_observations(
     return result
 
 
+def _public_cluster_entry(
+    event_id: str,
+    event: Mapping[str, Any],
+    public_observation_records: Mapping[str, Mapping[str, Any]],
+) -> dict[str, Any]:
+    members = sorted(
+        (public_observation_records[identifier] for identifier in event["members"]),
+        key=lambda record: (
+            record["source_published_at"] or record["first_seen_at"] or "9999",
+            record["observation_id"],
+        ),
+    )
+    representative = public_observation_records[event["representative_observation_id"]]
+    lineage_links: list[dict[str, Any]] = []
+    for member in members:
+        parent_id = member.get("parent_observation_id")
+        if not isinstance(parent_id, str):
+            continue
+        parent = public_observation_records.get(parent_id)
+        if parent is None or parent.get("event_id") == event_id:
+            continue
+        lineage_links.append(
+            {
+                "from_observation_id": member["observation_id"],
+                "relation": member["relation"],
+                "target": _public_observation(parent),
+            }
+        )
+    lineage_links.sort(
+        key=lambda item: (
+            item["from_observation_id"],
+            item["target"]["observation_id"],
+        )
+    )
+    return {
+        "earliest_observed_id": event["earliest_observed_id"],
+        "event_aliases": event["event_aliases"],
+        "event_id": event_id,
+        "lineage_links": lineage_links[:6],
+        "observations": [_public_observation(member) for member in members],
+        "probable_origin_id": event["probable_origin_id"],
+        "representative_article_url": representative["article_url"],
+    }
+
+
+def _event_recency(
+    event: Mapping[str, Any],
+    public_observation_records: Mapping[str, Mapping[str, Any]],
+) -> str:
+    return max(
+        (
+            str(
+                public_observation_records[identifier].get("source_published_at")
+                or public_observation_records[identifier].get("first_seen_at")
+                or ""
+            )
+            for identifier in event["members"]
+        ),
+        default="",
+    )
+
+
+def _events_within_budget(
+    *,
+    public_event_records: Mapping[str, Mapping[str, Any]],
+    public_observation_records: Mapping[str, Mapping[str, Any]],
+    config: LineageConfig,
+) -> set[str]:
+    """Keep the most recent events whose published bytes stay inside the budget.
+
+    The hard ``public_max_bytes`` ceiling fails the build, so retention targets a
+    fraction of it and drops the oldest events first.  Lineage is read from an
+    article outwards, so recent events carry the reachable history; older ones
+    degrade to the "溯源数据暂不可用" notice while their Posts stay readable.
+    """
+
+    every_event = set(public_event_records)
+    # Reserve the index and per-shard envelopes so the estimate stays below the
+    # ceiling that verification enforces on the bytes actually written.
+    overhead = config.index_max_bytes + config.shard_count * 2 * 64
+    available = int(config.public_max_bytes * config.public_retention_ratio) - overhead
+    if available <= 0:
+        return every_event
+    sized: list[tuple[str, str, int]] = []
+    for event_id, event in public_event_records.items():
+        entry = _public_cluster_entry(event_id, event, public_observation_records)
+        cost = len(_json_bytes(entry)) + 1
+        for identifier in event["members"]:
+            cost += (
+                len(
+                    _json_bytes(
+                        {
+                            "event_id": event_id,
+                            "observation_id": identifier,
+                        }
+                    )
+                )
+                + 1
+            )
+        sized.append((_event_recency(event, public_observation_records), event_id, cost))
+    if sum(cost for _recency, _event_id, cost in sized) <= available:
+        return every_event
+    kept: set[str] = set()
+    used = 0
+    for _recency, event_id, cost in sorted(sized, reverse=True):
+        if kept and used + cost > available:
+            break
+        kept.add(event_id)
+        used += cost
+    return kept
+
+
 def _write_content_addressed_shards(
     *,
     public_dir: Path,
@@ -2299,6 +2413,9 @@ def build_lineage_assets(
         existing,
         _existing_event_states(existing_records),
     )
+    # Only these observations were rebuilt from a Post, so only their events are
+    # reachable: a reader always enters lineage from an article.
+    post_backed_ids = set(observation_records)
     for identifier, record in sorted(existing_records.items()):
         rebuilt = observation_records.get(identifier)
         if rebuilt is None:
@@ -2356,6 +2473,17 @@ def build_lineage_assets(
                 rebuilt["parent_observation_id"] = record.get("parent_observation_id")
                 rebuilt["relation"] = record.get("relation")
     event_records = _event_records_from_observations(observation_records, analyzed_events)
+    # Retire events no Post can reach.  A policy-rejected candidate still enters
+    # the registry so dedupe keeps recognizing its source, but it forms an event
+    # of its own that no article links to, so publishing it only grows the public
+    # assets with unreachable routes.  Suppressed duplicates stay published:
+    # they share the event of the Post that absorbed them, which keeps the
+    # mirror visible on that article's timeline.
+    for identifier, record in observation_records.items():
+        event = event_records.get(str(record.get("event_id") or ""))
+        members = event["members"] if event else (identifier,)
+        if not any(member in post_backed_ids for member in members):
+            record["active"] = False
     public_observation_records = {
         identifier: record
         for identifier, record in observation_records.items()
@@ -2365,6 +2493,24 @@ def build_lineage_assets(
         public_observation_records,
         analyzed_events,
     )
+    retained_events = _events_within_budget(
+        public_event_records=public_event_records,
+        public_observation_records=public_observation_records,
+        config=resolved,
+    )
+    if len(retained_events) != len(public_event_records):
+        for record in observation_records.values():
+            if str(record.get("event_id") or "") not in retained_events:
+                record["active"] = False
+        public_observation_records = {
+            identifier: record
+            for identifier, record in observation_records.items()
+            if bool(record.get("active", True))
+        }
+        public_event_records = _event_records_from_observations(
+            public_observation_records,
+            analyzed_events,
+        )
 
     internal_buckets: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for identifier, record in sorted(observation_records.items()):
@@ -2418,45 +2564,8 @@ def build_lineage_assets(
         )
     cluster_buckets: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for event_id, event in sorted(public_event_records.items()):
-        members = sorted(
-            (public_observation_records[identifier] for identifier in event["members"]),
-            key=lambda record: (
-                record["source_published_at"] or record["first_seen_at"] or "9999",
-                record["observation_id"],
-            ),
-        )
-        representative = public_observation_records[event["representative_observation_id"]]
-        lineage_links: list[dict[str, Any]] = []
-        for member in members:
-            parent_id = member.get("parent_observation_id")
-            if not isinstance(parent_id, str):
-                continue
-            parent = public_observation_records.get(parent_id)
-            if parent is None or parent.get("event_id") == event_id:
-                continue
-            lineage_links.append(
-                {
-                    "from_observation_id": member["observation_id"],
-                    "relation": member["relation"],
-                    "target": _public_observation(parent),
-                }
-            )
-        lineage_links.sort(
-            key=lambda item: (
-                item["from_observation_id"],
-                item["target"]["observation_id"],
-            )
-        )
         cluster_buckets[_bucket_for_id(event_id, resolved.shard_count)].append(
-            {
-                "earliest_observed_id": event["earliest_observed_id"],
-                "event_aliases": event["event_aliases"],
-                "event_id": event_id,
-                "lineage_links": lineage_links[:6],
-                "observations": [_public_observation(member) for member in members],
-                "probable_origin_id": event["probable_origin_id"],
-                "representative_article_url": representative["article_url"],
-            }
+            _public_cluster_entry(event_id, event, public_observation_records)
         )
     route_refs, public_paths = _write_content_addressed_shards(
         public_dir=public_dir,
