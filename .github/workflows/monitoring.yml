@@ -23,6 +23,9 @@ jobs:
     # A monitor cannot report an outage that also kills the monitor.
     timeout-minutes: 20
     permissions:
+      # Read-only view of workflow run history, to notice a broken release chain
+      # in one cycle instead of waiting for staleness to show up downstream.
+      actions: read
       contents: read
       # Alerts are delivered as Issues so GitHub itself pushes them to the owner
       # by email and in the app. A red Actions job was the only signal during the
@@ -132,6 +135,46 @@ jobs:
               --run-url "$RUN_URL"
           fi
 
+      # A cancelled run discards everything it generated and notifies nobody,
+      # so it has to be caught here rather than hours later via staleness.
+      - name: Check recent release runs
+        id: release_runs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -uo pipefail
+          python3 scripts/check_release_runs.py \
+            --repository "$GITHUB_REPOSITORY" \
+            --summary-output "$RUNNER_TEMP/release_runs.md"
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          if [ "$code" -gt 1 ]; then
+            exit "$code"
+          fi
+
+      - name: Deliver release run alert
+        if: always() && steps.release_runs.outputs.exit_code != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          if [ "${{ steps.release_runs.outputs.exit_code }}" = "0" ]; then
+            python3 scripts/ops_alert.py \
+              --repository "$GITHUB_REPOSITORY" \
+              --key release-runs \
+              --title "发布链中断：定时运行连续未完成" \
+              --resolved
+          else
+            python3 scripts/ops_alert.py \
+              --repository "$GITHUB_REPOSITORY" \
+              --key release-runs \
+              --title "发布链中断：定时运行连续未完成" \
+              --failing \
+              --summary-file "$RUNNER_TEMP/release_runs.md" \
+              --run-url "$RUN_URL"
+          fi
+
       # The job's own colour still reflects reality, so a broken alert channel
       # cannot make a real outage look healthy.
       - name: Fail the job when production is unhealthy
@@ -140,7 +183,11 @@ jobs:
           set -euo pipefail
           heartbeat="${{ steps.heartbeat.outputs.exit_code }}"
           release_state="${{ steps.release_state.outputs.exit_code }}"
-          if [ "${heartbeat:-2}" != "0" ] || [ "${release_state:-2}" != "0" ]; then
-            echo "production is unhealthy (heartbeat=${heartbeat:-unknown} release_state=${release_state:-unknown})" >&2
+          release_runs="${{ steps.release_runs.outputs.exit_code }}"
+          if [ "${heartbeat:-2}" != "0" ] \
+            || [ "${release_state:-2}" != "0" ] \
+            || [ "${release_runs:-2}" != "0" ]; then
+            echo "production is unhealthy (heartbeat=${heartbeat:-unknown}" >&2
+            echo " release_state=${release_state:-unknown} release_runs=${release_runs:-unknown})" >&2
             exit 1
           fi
