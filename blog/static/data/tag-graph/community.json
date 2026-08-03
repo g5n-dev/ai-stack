@@ -2,28 +2,28 @@
   "algorithm": "deterministic-weighted-label-propagation",
   "communities": [
     {
-      "article_count": 457,
+      "article_count": 460,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-aafe43e651c4.json",
+      "hotspot_file": "community-hotspots/01-bd9f76c389bd.json",
       "id": "community:tag:Technical How-to",
       "leader_id": "tag:博客与播客",
       "name": "博客与播客",
       "node_count": 53,
       "rank": 1,
-      "tag_occurrences": 682,
-      "weighted_degree": 1935.6
+      "tag_occurrences": 687,
+      "weighted_degree": 1945.6
     },
     {
-      "article_count": 2145,
+      "article_count": 2148,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/02-c64c3ba1f010.json",
+      "hotspot_file": "community-hotspots/02-309f7262a4f6.json",
       "id": "community:tag:掘金",
       "leader_id": "tag:Hacker News",
       "name": "Hacker News",
       "node_count": 32,
       "rank": 2,
-      "tag_occurrences": 4398,
-      "weighted_degree": 9750.2
+      "tag_occurrences": 4402,
+      "weighted_degree": 9758.2
     },
     {
       "article_count": 3,
@@ -172,7 +172,7 @@
       "strength": 1,
       "target": "community:tag:掘金",
       "type": "community",
-      "weight": 876
+      "weight": 882
     }
   ],
   "stats": {

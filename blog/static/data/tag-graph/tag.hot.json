@@ -205,7 +205,7 @@
       "strength": 1,
       "target": "tag:Hacker News",
       "type": "cooccurrence",
-      "weight": 9
+      "weight": 11
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:Search",
@@ -253,7 +253,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 19
+      "weight": 21
     },
     {
       "id": "edge:semantic:tag:AI->tech:ai_ml",
@@ -405,7 +405,7 @@
       "strength": 1,
       "target": "tag:Hacker News",
       "type": "cooccurrence",
-      "weight": 129
+      "weight": 130
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:Harness",
@@ -637,7 +637,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 21
+      "weight": 22
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:深度学习",
@@ -4045,7 +4045,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 26
+      "weight": 29
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:深度学习",
@@ -6276,7 +6276,7 @@
       "weighted_degree": 64
     },
     {
-      "article_count": 19,
+      "article_count": 21,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
@@ -6288,9 +6288,9 @@
       "legacy_id": "AI",
       "level": 6,
       "name": "AI",
-      "rank": 28,
+      "rank": 27,
       "related_count": 21,
-      "weighted_degree": 56.6
+      "weighted_degree": 60.6
     },
     {
       "article_count": 1,
@@ -6327,7 +6327,7 @@
       "weighted_degree": 2.6
     },
     {
-      "article_count": 678,
+      "article_count": 679,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -6341,7 +6341,7 @@
       "name": "AI Agent",
       "rank": 1,
       "related_count": 51,
-      "weighted_degree": 1720.2
+      "weighted_degree": 1722.2
     },
     {
       "article_count": 1,
@@ -7449,7 +7449,7 @@
       "weighted_degree": 4
     },
     {
-      "article_count": 779,
+      "article_count": 782,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -7461,9 +7461,9 @@
       "legacy_id": "Hacker News",
       "level": 6,
       "name": "Hacker News",
-      "rank": 15,
+      "rank": 14,
       "related_count": 20,
-      "weighted_degree": 289
+      "weighted_degree": 295
     },
     {
       "article_count": 1,
@@ -7767,7 +7767,7 @@
       "legacy_id": "Prompt 工程",
       "level": 6,
       "name": "Prompt 工程",
-      "rank": 27,
+      "rank": 28,
       "related_count": 18,
       "weighted_degree": 58
     },
@@ -8005,7 +8005,7 @@
       "legacy_id": "TypeScript",
       "level": 6,
       "name": "TypeScript",
-      "rank": 14,
+      "rank": 15,
       "related_count": 22,
       "weighted_degree": 289.6
     },
@@ -8129,7 +8129,7 @@
       "weighted_degree": 260
     },
     {
-      "article_count": 142,
+      "article_count": 145,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
@@ -8143,7 +8143,7 @@
       "name": "来源快报",
       "rank": 11,
       "related_count": 73,
-      "weighted_degree": 355
+      "weighted_degree": 361
     },
     {
       "article_count": 18,

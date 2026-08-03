@@ -18,7 +18,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 19
+      "weight": 21
     },
     {
       "id": "edge:cooccurrence:tag:cs.AI->tag:来源快报",
@@ -280,7 +280,7 @@
       "weighted_degree": 782
     },
     {
-      "article_count": 142,
+      "article_count": 145,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
@@ -294,7 +294,7 @@
       "name": "来源快报",
       "rank": 11,
       "related_count": 73,
-      "weighted_degree": 355
+      "weighted_degree": 361
     },
     {
       "article_count": 13,
@@ -331,6 +331,23 @@
       "weighted_degree": 64
     },
     {
+      "article_count": 21,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Technical How-to",
+      "degree": 22,
+      "description": "文章标签: AI",
+      "id": "tag:AI",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "AI",
+      "level": 6,
+      "name": "AI",
+      "rank": 27,
+      "related_count": 21,
+      "weighted_degree": 60.6
+    },
+    {
       "article_count": 9,
       "category": "article_tag",
       "color": "#f59e0b",
@@ -343,26 +360,9 @@
       "legacy_id": "Prompt 工程",
       "level": 6,
       "name": "Prompt 工程",
-      "rank": 27,
+      "rank": 28,
       "related_count": 18,
       "weighted_degree": 58
-    },
-    {
-      "article_count": 19,
-      "category": "article_tag",
-      "color": "#f59e0b",
-      "community_id": "community:tag:Technical How-to",
-      "degree": 22,
-      "description": "文章标签: AI",
-      "id": "tag:AI",
-      "layer": "tag",
-      "layer_name": "标签层",
-      "legacy_id": "AI",
-      "level": 6,
-      "name": "AI",
-      "rank": 28,
-      "related_count": 21,
-      "weighted_degree": 56.6
     },
     {
       "article_count": 9,

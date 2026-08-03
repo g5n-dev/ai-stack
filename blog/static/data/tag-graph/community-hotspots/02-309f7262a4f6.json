@@ -42,7 +42,7 @@
       "strength": 1,
       "target": "tag:Hacker News",
       "type": "cooccurrence",
-      "weight": 129
+      "weight": 130
     },
     {
       "id": "edge:cooccurrence:tag:掘金->tag:数据库",
@@ -263,7 +263,7 @@
   ],
   "nodes": [
     {
-      "article_count": 678,
+      "article_count": 679,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -277,7 +277,7 @@
       "name": "AI Agent",
       "rank": 1,
       "related_count": 51,
-      "weighted_degree": 1720.2
+      "weighted_degree": 1722.2
     },
     {
       "article_count": 544,
@@ -450,6 +450,23 @@
       "weighted_degree": 303
     },
     {
+      "article_count": 782,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:掘金",
+      "degree": 20,
+      "description": "文章标签: Hacker News",
+      "id": "tag:Hacker News",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Hacker News",
+      "level": 6,
+      "name": "Hacker News",
+      "rank": 14,
+      "related_count": 20,
+      "weighted_degree": 295
+    },
+    {
       "article_count": 69,
       "category": "article_tag",
       "color": "#f59e0b",
@@ -462,26 +479,9 @@
       "legacy_id": "TypeScript",
       "level": 6,
       "name": "TypeScript",
-      "rank": 14,
+      "rank": 15,
       "related_count": 22,
       "weighted_degree": 289.6
-    },
-    {
-      "article_count": 779,
-      "category": "article_tag",
-      "color": "#f59e0b",
-      "community_id": "community:tag:掘金",
-      "degree": 20,
-      "description": "文章标签: Hacker News",
-      "id": "tag:Hacker News",
-      "layer": "tag",
-      "layer_name": "标签层",
-      "legacy_id": "Hacker News",
-      "level": 6,
-      "name": "Hacker News",
-      "rank": 15,
-      "related_count": 20,
-      "weighted_degree": 289
     },
     {
       "article_count": 102,

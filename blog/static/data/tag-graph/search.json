@@ -15,7 +15,7 @@
   "generated_at": "2026-07-29T23:17:50Z",
   "items": [
     {
-      "article_count": 678,
+      "article_count": 679,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 53,
@@ -25,7 +25,7 @@
       "legacy_id": "AI Agent",
       "name": "AI Agent",
       "rank": 1,
-      "weighted_degree": 1720.2
+      "weighted_degree": 1722.2
     },
     {
       "article_count": 544,
@@ -145,7 +145,7 @@
       "weighted_degree": 387.2
     },
     {
-      "article_count": 142,
+      "article_count": 145,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 73,
@@ -155,7 +155,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 11,
-      "weighted_degree": 355
+      "weighted_degree": 361
     },
     {
       "article_count": 86,
@@ -184,6 +184,19 @@
       "weighted_degree": 303
     },
     {
+      "article_count": 782,
+      "category": "article_tag",
+      "community_id": "community:tag:掘金",
+      "degree": 20,
+      "description": "文章标签: Hacker News",
+      "id": "tag:Hacker News",
+      "layer": "tag",
+      "legacy_id": "Hacker News",
+      "name": "Hacker News",
+      "rank": 14,
+      "weighted_degree": 295
+    },
+    {
       "article_count": 69,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
@@ -193,21 +206,8 @@
       "layer": "tag",
       "legacy_id": "TypeScript",
       "name": "TypeScript",
-      "rank": 14,
-      "weighted_degree": 289.6
-    },
-    {
-      "article_count": 779,
-      "category": "article_tag",
-      "community_id": "community:tag:掘金",
-      "degree": 20,
-      "description": "文章标签: Hacker News",
-      "id": "tag:Hacker News",
-      "layer": "tag",
-      "legacy_id": "Hacker News",
-      "name": "Hacker News",
       "rank": 15,
-      "weighted_degree": 289
+      "weighted_degree": 289.6
     },
     {
       "article_count": 102,
@@ -353,6 +353,19 @@
       "weighted_degree": 61
     },
     {
+      "article_count": 21,
+      "category": "article_tag",
+      "community_id": "community:tag:Technical How-to",
+      "degree": 22,
+      "description": "文章标签: AI",
+      "id": "tag:AI",
+      "layer": "tag",
+      "legacy_id": "AI",
+      "name": "AI",
+      "rank": 27,
+      "weighted_degree": 60.6
+    },
+    {
       "article_count": 9,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
@@ -362,21 +375,8 @@
       "layer": "tag",
       "legacy_id": "Prompt 工程",
       "name": "Prompt 工程",
-      "rank": 27,
-      "weighted_degree": 58
-    },
-    {
-      "article_count": 19,
-      "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
-      "degree": 22,
-      "description": "文章标签: AI",
-      "id": "tag:AI",
-      "layer": "tag",
-      "legacy_id": "AI",
-      "name": "AI",
       "rank": 28,
-      "weighted_degree": 56.6
+      "weighted_degree": 58
     },
     {
       "article_count": 21,
@@ -1237,7 +1237,7 @@
       "weighted_degree": 7
     },
     {
-      "article_count": 706,
+      "article_count": 709,
       "category": "ai",
       "community_id": null,
       "degree": 9,
@@ -1393,7 +1393,7 @@
       "weighted_degree": 5
     },
     {
-      "article_count": 678,
+      "article_count": 679,
       "category": "ai",
       "community_id": null,
       "degree": 5,
