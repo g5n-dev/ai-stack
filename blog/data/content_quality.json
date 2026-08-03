@@ -1,5 +1,5 @@
 {
-  "active_count": 2264,
+  "active_count": 2267,
   "archived_count": 276,
   "complete_count": 20,
   "interpreted_brief_count": 3,
@@ -18481,6 +18481,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260804-arxiv-freeze-then-select-structured-field-adapters-and-s-2-192f491aca.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260804-blogs_podcasts-announcing-the-agentic-catalog-experience-in-amazo-1-c12cd3eece.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260804-hacker_news-whats-the-largest-software-project-ai-can-complete-4-246ad439bd.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -18515,10 +18533,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2241,
-  "source_file_count": 2540,
-  "source_tree_sha256": "277f497f79535af4e986284107b33f380b98b9a0f2e1cae2c98139f7817a6b26",
-  "verified_provenance_count": 2264,
+  "source_brief_count": 2244,
+  "source_file_count": 2543,
+  "source_tree_sha256": "e5d55e6b91144601ca693b19cb3ce49ed97cb80d6f1df83621028652173111e9",
+  "verified_provenance_count": 2267,
   "warning_counts": {
     "source_excerpt_truncated": 751
   }
