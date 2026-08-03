@@ -19,6 +19,10 @@ jobs:
     timeout-minutes: 10
     permissions:
       contents: read
+      # Alerts are delivered as Issues so GitHub itself pushes them to the owner
+      # by email and in the app. A red Actions job was the only signal during the
+      # 2026-07-30 outage, which is why it ran for four days unnoticed.
+      issues: write
     steps:
       - name: Checkout complete main history
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
@@ -26,11 +30,52 @@ jobs:
           ref: main
           fetch-depth: 0
 
+      # Runs first and independently of the release marker: nearly every failure
+      # mode ends in "no new article", including the ones where every job is green.
+      - name: Measure publication heartbeat
+        id: heartbeat
+        run: |
+          set -uo pipefail
+          python3 scripts/publish_heartbeat.py \
+            --repository-root . \
+            --summary-output "$RUNNER_TEMP/heartbeat.md"
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          # 2 means the age could not be established at all. That must fail the
+          # job rather than read as healthy.
+          if [ "$code" -gt 1 ]; then
+            exit "$code"
+          fi
+
+      - name: Deliver publication heartbeat alert
+        if: always() && steps.heartbeat.outputs.exit_code != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          if [ "${{ steps.heartbeat.outputs.exit_code }}" = "0" ]; then
+            python3 scripts/ops_alert.py \
+              --repository "$GITHUB_REPOSITORY" \
+              --key publish-heartbeat \
+              --title "内容生产停滞：站点已停止产出新文章" \
+              --resolved
+          else
+            python3 scripts/ops_alert.py \
+              --repository "$GITHUB_REPOSITORY" \
+              --key publish-heartbeat \
+              --title "内容生产停滞：站点已停止产出新文章" \
+              --failing \
+              --summary-file "$RUNNER_TEMP/heartbeat.md" \
+              --run-url "$RUN_URL"
+          fi
+
       - name: Enforce divergence and stale thresholds
+        id: release_state
         env:
           MAIN_SHA: ${{ github.sha }}
         run: |
-          set -euo pipefail
+          set -uo pipefail
           main_sha="$(git rev-parse HEAD)"
           main_committed_at="$(git show -s --format=%cI HEAD)"
           python3 scripts/production_monitor.py \
@@ -38,4 +83,54 @@ jobs:
             --main-sha "$main_sha" \
             --main-committed-at "$main_committed_at" \
             --max-divergence-hours 3 \
-            --max-stale-hours 12
+            --max-stale-hours 12 \
+            2> "$RUNNER_TEMP/release_state.err"
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          cat "$RUNNER_TEMP/release_state.err" >&2 || true
+          exit 0
+
+      - name: Deliver release state alert
+        if: always() && steps.release_state.outputs.exit_code != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          if [ "${{ steps.release_state.outputs.exit_code }}" = "0" ]; then
+            python3 scripts/ops_alert.py \
+              --repository "$GITHUB_REPOSITORY" \
+              --key release-state \
+              --title "生产发布状态异常" \
+              --resolved
+          else
+            {
+              echo "线上发布状态检查未通过。"
+              echo
+              echo '```'
+              head -c 4000 "$RUNNER_TEMP/release_state.err" || true
+              echo '```'
+              echo
+              echo "排查顺序：\`Build and Deploy\` 最近一次运行的 \`validate\` 阶段。"
+            } > "$RUNNER_TEMP/release_state.md"
+            python3 scripts/ops_alert.py \
+              --repository "$GITHUB_REPOSITORY" \
+              --key release-state \
+              --title "生产发布状态异常" \
+              --failing \
+              --summary-file "$RUNNER_TEMP/release_state.md" \
+              --run-url "$RUN_URL"
+          fi
+
+      # The job's own colour still reflects reality, so a broken alert channel
+      # cannot make a real outage look healthy.
+      - name: Fail the job when production is unhealthy
+        if: always()
+        run: |
+          set -euo pipefail
+          heartbeat="${{ steps.heartbeat.outputs.exit_code }}"
+          release_state="${{ steps.release_state.outputs.exit_code }}"
+          if [ "${heartbeat:-2}" != "0" ] || [ "${release_state:-2}" != "0" ]; then
+            echo "production is unhealthy (heartbeat=${heartbeat:-unknown} release_state=${release_state:-unknown})" >&2
+            exit 1
+          fi
