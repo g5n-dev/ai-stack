@@ -147,6 +147,77 @@ class GenerateContentGuardsTest(unittest.TestCase):
         self.assertEqual(summary["guard_failed_items"], 1)
         self.assertEqual(summary["guard_failed_examples"], ["github_trending: repo-b [engaging_intro,deep_comment]"])
 
+    def test_summarizes_model_failures_that_the_filter_reports_as_off_topic(self):
+        # processor/ai_filter.py turns an unreachable model into ai_related=False,
+        # so without this counter an outage looks like "nothing was about AI".
+        summary = self.module.summarize_processed_postability(
+            {
+                "arxiv": [
+                    {
+                        "title": "paper-a",
+                        "skip_post": True,
+                        "ai_reason": "Error: Model API request failed",
+                        "ai_error_category": "api",
+                    },
+                    {
+                        "title": "paper-b",
+                        "skip_post": True,
+                        "ai_error_category": "unknown",
+                    },
+                    {
+                        "title": "paper-c",
+                        "skip_post": True,
+                        "ai_reason": "fallback: 非AI或不确定",
+                    },
+                ]
+            }
+        )
+
+        self.assertEqual(summary["llm_error_items"], 2)
+        self.assertEqual(summary["llm_error_examples"][0], "arxiv[api]: paper-a")
+
+    def test_compatibility_failures_are_not_double_counted(self):
+        summary = self.module.summarize_processed_postability(
+            {
+                "arxiv": [
+                    {
+                        "title": "paper-a",
+                        "ai_error_category": "compatibility",
+                    }
+                ]
+            }
+        )
+
+        self.assertEqual(summary["compat_error_items"], 1)
+        self.assertEqual(summary["llm_error_items"], 0)
+
+    def test_model_outage_with_no_posts_is_fatal_instead_of_green(self):
+        generator = self.module.SuperEnhancedContentGenerator.__new__(
+            self.module.SuperEnhancedContentGenerator
+        )
+
+        with self.assertRaisesRegex(RuntimeError, "model was unreachable or erroring"):
+            generator._raise_for_fatal_post_generation_state(
+                posts_created=0,
+                postability={
+                    "total_items": 12,
+                    "llm_error_items": 12,
+                    "llm_error_examples": ["arxiv[api]: paper-a"],
+                },
+            )
+
+    def test_genuinely_off_topic_candidates_do_not_raise(self):
+        generator = self.module.SuperEnhancedContentGenerator.__new__(
+            self.module.SuperEnhancedContentGenerator
+        )
+
+        # No model error: the crawl really did surface nothing publishable, which
+        # is a normal outcome and must not be escalated into a release failure.
+        generator._raise_for_fatal_post_generation_state(
+            posts_created=0,
+            postability={"total_items": 12, "llm_error_items": 0},
+        )
+
     def test_raise_for_fatal_post_generation_state_on_auth_failure(self):
         generator = self.module.SuperEnhancedContentGenerator.__new__(self.module.SuperEnhancedContentGenerator)
 

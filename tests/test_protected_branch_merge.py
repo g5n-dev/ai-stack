@@ -7,6 +7,7 @@ import pytest
 
 from scripts.protected_branch_merge import (
     ProtectedBranchMergeError,
+    _publish_required_check,
     dispatch_deploy_and_wait,
     merge_validated_branch,
     validate_pull_request,
@@ -715,3 +716,84 @@ def test_rejects_unsafe_identity_before_api_calls(field: str, value: str) -> Non
             sleep=lambda _seconds: None,
         )
     assert api.calls == []
+
+
+def test_cancelled_run_is_reported_as_incomplete_rather_than_failed() -> None:
+    """A cancelled run blocks the merge, but must not read as a test failure.
+
+    Reporting "failed" for a run that never executed sent a reader hunting for a
+    broken test that did not exist, and the pull request could only be unblocked
+    by a human re-run.
+    """
+
+    captured: dict[str, object] = {}
+
+    class _Api:
+        def request(self, method: str, endpoint: str, body: dict | None = None):
+            if method == "POST" and endpoint.endswith("/check-runs"):
+                assert body is not None
+                captured.update(body)
+                return {
+                    "id": 555,
+                    "name": "Unit Tests",
+                    "head_sha": HEAD_SHA,
+                    "status": "completed",
+                    "conclusion": "failure",
+                    "details_url": f"https://github.com/{REPOSITORY}/runs/555",
+                    "external_id": body["external_id"],
+                    "output": body["output"],
+                    "app": {"id": 15368},
+                }
+            raise AssertionError(f"unexpected call: {method} {endpoint}")
+
+    _publish_required_check(
+        _Api(),
+        repository=REPOSITORY,
+        head_sha=HEAD_SHA,
+        run_id=99,
+        details_url=f"https://github.com/{REPOSITORY}/actions/runs/99",
+        conclusion="failure",
+        subject="pull request head",
+        raw_conclusion="cancelled",
+    )
+
+    summary = str(captured["output"]["summary"])  # type: ignore[index]
+    assert "did not complete" in summary
+    assert "cancelled" in summary
+    # Job timeouts are reported as cancelled and are this repository's dominant
+    # CI failure mode, so the summary has to point there rather than at tests.
+    assert "timeout" in summary
+    assert "failed" not in summary
+
+
+def test_a_genuine_test_failure_still_reads_as_failed() -> None:
+    captured: dict[str, object] = {}
+
+    class _Api:
+        def request(self, method: str, endpoint: str, body: dict | None = None):
+            assert body is not None
+            captured.update(body)
+            return {
+                "id": 556,
+                "name": "Unit Tests",
+                "head_sha": HEAD_SHA,
+                "status": "completed",
+                "conclusion": "failure",
+                "details_url": f"https://github.com/{REPOSITORY}/runs/556",
+                "external_id": body["external_id"],
+                "output": body["output"],
+                "app": {"id": 15368},
+            }
+
+    _publish_required_check(
+        _Api(),
+        repository=REPOSITORY,
+        head_sha=HEAD_SHA,
+        run_id=99,
+        details_url=f"https://github.com/{REPOSITORY}/actions/runs/99",
+        conclusion="failure",
+        subject="pull request head",
+        raw_conclusion="failure",
+    )
+
+    assert "failed" in str(captured["output"]["summary"])  # type: ignore[index]
