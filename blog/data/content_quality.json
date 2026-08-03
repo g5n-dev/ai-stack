@@ -1,8 +1,8 @@
 {
-  "active_count": 2261,
+  "active_count": 2264,
   "archived_count": 276,
   "complete_count": 20,
-  "interpreted_brief_count": 2,
+  "interpreted_brief_count": 3,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -18446,6 +18446,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260803-arxiv-extractbench-a-benchmark-for-schema-guided-enterpr-0-8eec27f0fa.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260803-arxiv-toktier-exact-stateful-tokenization-for-agentic-ll-0-44ebed60b6.md": {
       "reasons": [
         "interpreted_source_card"
@@ -18458,7 +18464,19 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260803-blogs_podcasts-ten-advances-in-mathematics-and-theoretical-comput-0-e299630b86.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260803-hacker_news-prevent-cognitive-debt-by-manually-retyping-llm-ge-4-bd0c05a966.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260803-hacker_news-show-hn-nightcrawler-a-local-ai-pentesting-agent-r-14-e5ea647e2e.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -18497,10 +18515,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2239,
-  "source_file_count": 2537,
-  "source_tree_sha256": "3a7c544c39ebf9fe960c43e466d5653c6c642e819ce325b30cbf04588b1e4d2c",
-  "verified_provenance_count": 2261,
+  "source_brief_count": 2241,
+  "source_file_count": 2540,
+  "source_tree_sha256": "277f497f79535af4e986284107b33f380b98b9a0f2e1cae2c98139f7817a6b26",
+  "verified_provenance_count": 2264,
   "warning_counts": {
     "source_excerpt_truncated": 751
   }
