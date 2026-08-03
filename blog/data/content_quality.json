@@ -1,8 +1,8 @@
 {
-  "active_count": 2271,
+  "active_count": 2274,
   "archived_count": 276,
   "complete_count": 21,
-  "interpreted_brief_count": 3,
+  "interpreted_brief_count": 4,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -18482,6 +18482,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260804-arxiv-agenthpobench-a-benchmark-for-evaluating-llm-agent-4-008a364895.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260804-arxiv-development-of-fdd-on-an-ontology-for-vav-hvac-sys-3-8fa1467945.md": {
       "reasons": [
         "concise_source_card"
@@ -18489,6 +18495,12 @@
       "status": "source_brief"
     },
     "posts/20260804-arxiv-freeze-then-select-structured-field-adapters-and-s-2-192f491aca.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260804-blogs_podcasts-alexander-rakhlin-named-director-of-the-mit-statis-0-8d2b1b80f2.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -18510,6 +18522,12 @@
       ]
     },
     "posts/20260804-hacker_news-launch-hn-hoplite-yc-s26-effortlessly-deploy-cloud-8-8030f5b826.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260804-hacker_news-llms-reward-expertise-1-e5ab63e782.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -18554,10 +18572,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2247,
-  "source_file_count": 2547,
-  "source_tree_sha256": "adc753e075f541939746554c2629752f561cc1175a774e0d918a8a27a6ea5610",
-  "verified_provenance_count": 2271,
+  "source_brief_count": 2249,
+  "source_file_count": 2550,
+  "source_tree_sha256": "2699d585d1c024cea7e91eadab7de2ee5b791121ccf9cac4a348ed773f27f507",
+  "verified_provenance_count": 2274,
   "warning_counts": {
     "source_excerpt_truncated": 752
   }
