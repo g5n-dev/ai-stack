@@ -122,7 +122,8 @@ def collect_gauges(repository_root: Path, *, include_build_output: bool = False)
                 "溯源公共资产总字节。2026-07-30 停更的直接原因，但此后已由 retention 接管："
                 f"构建会填充到 {config.public_retention_ratio:.0%} 并淘汰最旧事件维持在那里，"
                 "因此逼近该水位是正常状态而非风险，只有真正突破硬上限才值得告警。"
-                "（真正该盯的是「retention 开始淘汰事件」，那是历史在丢失，需 lineage 侧输出该计数。）"
+                "（真正该盯的是「retention 开始淘汰事件」——那是历史在丢失，"
+                "需要 lineage 侧输出该计数。）"
             ),
             structural=True,
         ),
