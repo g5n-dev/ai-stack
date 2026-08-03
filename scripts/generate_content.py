@@ -351,6 +351,8 @@ def summarize_processed_postability(processed_data: dict) -> dict:
         "auth_error_examples": [],
         "compat_error_items": 0,
         "compat_error_examples": [],
+        "llm_error_items": 0,
+        "llm_error_examples": [],
         "guard_failed_items": 0,
         "guard_failed_examples": [],
     }
@@ -389,6 +391,21 @@ def summarize_processed_postability(processed_data: dict) -> dict:
                 if len(summary["compat_error_examples"]) < 3:
                     title = str(item.get("title") or item.get("catchy_title") or "Untitled").strip()
                     summary["compat_error_examples"].append(f"{source}: {title}")
+            # Any other model failure category still has to be counted.  The
+            # relevance filter turns an unreachable model into ai_related=False
+            # (processor/ai_filter.py), so an outage otherwise reads as "none of
+            # today's candidates were about AI" and every job stays green.
+            other_llm_categories = {
+                category
+                for category in compat_categories
+                if category and category != "compatibility"
+            }
+            if other_llm_categories:
+                summary["llm_error_items"] += 1
+                if len(summary["llm_error_examples"]) < 3:
+                    title = str(item.get("title") or item.get("catchy_title") or "Untitled").strip()
+                    label = ",".join(sorted(other_llm_categories))
+                    summary["llm_error_examples"].append(f"{source}[{label}]: {title}")
             guard_failed_sections = item.get("guard_failed_sections", [])
             if isinstance(guard_failed_sections, list) and guard_failed_sections:
                 summary["guard_failed_items"] += 1
@@ -1262,6 +1279,7 @@ class SuperEnhancedContentGenerator:
         total_items = int(postability.get("total_items", 0) or 0)
         auth_error_items = int(postability.get("auth_error_items", 0) or 0)
         compat_error_items = int(postability.get("compat_error_items", 0) or 0)
+        llm_error_items = int(postability.get("llm_error_items", 0) or 0)
         guard_failed_items = int(postability.get("guard_failed_items", 0) or 0)
 
         if posts_created > 0:
@@ -1276,6 +1294,12 @@ class SuperEnhancedContentGenerator:
                     "Some content hit MiniMax compatibility issues: items=%s examples=%s",
                     compat_error_items,
                     ", ".join(postability.get("compat_error_examples", [])) or "n/a",
+                )
+            if llm_error_items > 0:
+                logger.warning(
+                    "Some content hit model failures: items=%s examples=%s",
+                    llm_error_items,
+                    ", ".join(postability.get("llm_error_examples", [])) or "n/a",
                 )
             if guard_failed_items > 0:
                 logger.warning(
@@ -1311,6 +1335,14 @@ class SuperEnhancedContentGenerator:
             raise RuntimeError(
                 "MiniMax compatibility failed and no Markdown posts were created. "
                 f"Examples: {examples}"
+            )
+        if llm_error_items > 0:
+            examples = ", ".join(postability.get("llm_error_examples", [])) or "n/a"
+            raise RuntimeError(
+                "The model was unreachable or erroring and no Markdown posts were created. "
+                "Without this check the relevance filter reports every candidate as "
+                "not AI-related, so a model outage publishes nothing while every job "
+                f"stays green. Items: {llm_error_items}. Examples: {examples}"
             )
         if guard_failed_items > 0:
             examples = ", ".join(postability.get("guard_failed_examples", [])) or "n/a"
