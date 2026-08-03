@@ -1,0 +1,180 @@
+{
+  "community_id": "community:tag:Computer modeling",
+  "generated_at": "2026-08-03T23:21:57Z",
+  "hotspot_limit": 24,
+  "link_limit": 32,
+  "links": [
+    {
+      "id": "edge:cooccurrence:tag:Algorithms->tag:Computer modeling",
+      "source": "tag:Algorithms",
+      "strength": 0.5,
+      "target": "tag:Computer modeling",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Algorithms->tag:Computer science and technology",
+      "source": "tag:Algorithms",
+      "strength": 0.5,
+      "target": "tag:Computer science and technology",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Algorithms->tag:Design",
+      "source": "tag:Algorithms",
+      "strength": 0.5,
+      "target": "tag:Design",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Algorithms->tag:Systems design",
+      "source": "tag:Algorithms",
+      "strength": 0.5,
+      "target": "tag:Systems design",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Computer modeling->tag:Computer science and technology",
+      "source": "tag:Computer modeling",
+      "strength": 0.5,
+      "target": "tag:Computer science and technology",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Computer modeling->tag:Design",
+      "source": "tag:Computer modeling",
+      "strength": 0.5,
+      "target": "tag:Design",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Computer modeling->tag:Systems design",
+      "source": "tag:Computer modeling",
+      "strength": 0.5,
+      "target": "tag:Systems design",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Computer science and technology->tag:Design",
+      "source": "tag:Computer science and technology",
+      "strength": 0.5,
+      "target": "tag:Design",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Computer science and technology->tag:Systems design",
+      "source": "tag:Computer science and technology",
+      "strength": 0.5,
+      "target": "tag:Systems design",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Design->tag:Systems design",
+      "source": "tag:Design",
+      "strength": 0.5,
+      "target": "tag:Systems design",
+      "type": "cooccurrence",
+      "weight": 1
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Computer modeling",
+      "degree": 8,
+      "description": "文章标签: Computer science and technology",
+      "id": "tag:Computer science and technology",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Computer science and technology",
+      "level": 6,
+      "name": "Computer science and technology",
+      "rank": 72,
+      "related_count": 7,
+      "weighted_degree": 7.6
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Computer modeling",
+      "degree": 8,
+      "description": "文章标签: Design",
+      "id": "tag:Design",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Design",
+      "level": 6,
+      "name": "Design",
+      "rank": 73,
+      "related_count": 7,
+      "weighted_degree": 7.6
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Computer modeling",
+      "degree": 8,
+      "description": "文章标签: Systems design",
+      "id": "tag:Systems design",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Systems design",
+      "level": 6,
+      "name": "Systems design",
+      "rank": 74,
+      "related_count": 7,
+      "weighted_degree": 7.6
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Computer modeling",
+      "degree": 7,
+      "description": "文章标签: Algorithms",
+      "id": "tag:Algorithms",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Algorithms",
+      "level": 6,
+      "name": "Algorithms",
+      "rank": 77,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Computer modeling",
+      "degree": 7,
+      "description": "文章标签: Computer modeling",
+      "id": "tag:Computer modeling",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Computer modeling",
+      "level": 6,
+      "name": "Computer modeling",
+      "rank": 89,
+      "related_count": 7,
+      "weighted_degree": 7
+    }
+  ],
+  "stats": {
+    "total_links": 10,
+    "total_nodes": 5
+  },
+  "version": 2
+}
