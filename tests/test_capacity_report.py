@@ -73,3 +73,59 @@ def test_summary_names_the_gauge_and_its_headroom() -> None:
 
     assert "example" in text
     assert "9.0%" in text
+
+
+def test_monitoring_path_can_report_ok_without_a_site_build(tmp_path) -> None:
+    """The recovery path must be reachable, or an alert can never close.
+
+    monitoring.yml only checks the repository out; blog/public exists solely
+    after a build. Including those gauges there made the report permanently
+    'unavailable', so `--resolved` was unreachable and an opened ops issue
+    could never auto-close — manufacturing the alert fatigue this file exists
+    to prevent.
+    """
+
+    from pathlib import Path
+
+    from scripts.capacity_report import build_report, collect_gauges
+
+    report = build_report(collect_gauges(Path(".")))
+
+    assert report["status"] == "ok"
+    measured = {row["name"] for row in report["gauges"]}  # type: ignore[union-attr]
+    assert "public_tree_bytes" not in measured
+    assert all(row["used"] is not None for row in report["gauges"])  # type: ignore[union-attr]
+
+
+def test_build_output_gauges_are_opt_in(tmp_path) -> None:
+    from pathlib import Path
+
+    from scripts.capacity_report import collect_gauges
+
+    names = {gauge.name for gauge in collect_gauges(Path("."), include_build_output=True)}
+
+    assert "public_tree_bytes" in names
+
+
+def test_retention_managed_ceiling_does_not_warn_at_its_target() -> None:
+    """lineage retention deliberately fills to public_retention_ratio.
+
+    Grading that as a growing quantity means the gauge measures the retention
+    target, converges on it, and reports warning-or-critical forever while the
+    system behaves exactly as designed.
+    """
+
+    from pathlib import Path
+
+    from ai_stack.lineage import load_lineage_config
+    from scripts.capacity_report import build_report, collect_gauges
+
+    config = load_lineage_config(Path("config/lineage.yaml"))
+    report = build_report(collect_gauges(Path(".")))
+    row = next(
+        item for item in report["gauges"] if item["name"] == "lineage_public_bytes"  # type: ignore[union-attr]
+    )
+
+    # Sitting at the retention target is the designed steady state, not a risk.
+    assert float(row["ratio"]) >= config.public_retention_ratio - 0.10
+    assert row["status"] == "ok"
