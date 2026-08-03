@@ -18,7 +18,7 @@ from ai_stack.source_contract import (
     promote_interpreted_brief,
     verify_source_contract,
 )
-from processor.source_interpreter import SourceInterpreter
+from processor.source_interpreter import _META_NARRATION_RE, SourceInterpreter
 from scripts.generate_content import SuperEnhancedContentGenerator
 
 _ABSTRACT = (
@@ -142,6 +142,47 @@ def test_ungrounded_reading_falls_back_to_the_source_brief(reason: str, reading:
 
     assert result["content_mode"] == "source_brief", reason
     assert "interpretation_text" not in result, reason
+
+
+@pytest.mark.parametrize(
+    "sentence",
+    [
+        # Domain vocabulary that a word-level blocklist wrongly rejected on the
+        # first production run, taking the pass rate to zero.
+        "适合需要长上下文的生产环境运行时。",
+        "该方法在上下文窗口受限时仍然可用。",
+        "论文摘要指出该方法提升了稳定性。",
+        "标题所述的校验机制用于事件流。",
+    ],
+)
+def test_domain_vocabulary_is_not_treated_as_meta_narration(sentence: str) -> None:
+    assert _META_NARRATION_RE.search(sentence) is None
+
+
+@pytest.mark.parametrize(
+    "sentence",
+    [
+        "由于未提供原文，只能基于标题推断。",
+        "根据摘要来看，该方法应该有效。",
+        "原文中没有给出实验细节。",
+        "本文将从三个方面分析。",
+        "我将为你分析这项工作。",
+        "受限于有限的信息，暂无法判断。",
+        "无法获取完整内容。",
+    ],
+)
+def test_claims_about_what_the_writer_could_see_are_rejected(sentence: str) -> None:
+    assert _META_NARRATION_RE.search(sentence) is not None
+
+
+def test_rejection_names_the_offending_phrase() -> None:
+    reading = _READING.replace("一种在", "由于未提供原文，推断这是一种在")
+
+    with pytest.raises(ValueError) as excinfo:
+        SourceInterpreter._validate(_arxiv(), body=reading, depth="full", budget=600)
+
+    # A rejection that cannot be tuned from CI logs is why the first run was opaque.
+    assert "未提供" in str(excinfo.value)
 
 
 def test_verbatim_republication_is_rejected() -> None:
