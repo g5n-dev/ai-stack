@@ -2,33 +2,33 @@
   "algorithm": "deterministic-weighted-label-propagation",
   "communities": [
     {
-      "article_count": 469,
+      "article_count": 472,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-b0b90b06e387.json",
+      "hotspot_file": "community-hotspots/01-f8b4f038e5ea.json",
       "id": "community:tag:Technical How-to",
       "leader_id": "tag:博客与播客",
       "name": "博客与播客",
-      "node_count": 53,
+      "node_count": 52,
       "rank": 1,
-      "tag_occurrences": 708,
-      "weighted_degree": 2027.6
+      "tag_occurrences": 713,
+      "weighted_degree": 2046
     },
     {
-      "article_count": 2157,
+      "article_count": 2161,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/02-97626fe82f97.json",
+      "hotspot_file": "community-hotspots/02-6df9a249a45e.json",
       "id": "community:tag:掘金",
       "leader_id": "tag:Hacker News",
       "name": "Hacker News",
       "node_count": 32,
       "rank": 2,
-      "tag_occurrences": 4421,
-      "weighted_degree": 9824.2
+      "tag_occurrences": 4426,
+      "weighted_degree": 9838.2
     },
     {
       "article_count": 3,
       "hotspot_count": 8,
-      "hotspot_file": "community-hotspots/03-a5895b54d54d.json",
+      "hotspot_file": "community-hotspots/03-99e7741a023a.json",
       "id": "community:tag:Computer modeling",
       "leader_id": "tag:Research",
       "name": "Research",
@@ -38,21 +38,21 @@
       "weighted_degree": 81.8
     },
     {
-      "article_count": 20,
+      "article_count": 21,
       "hotspot_count": 7,
-      "hotspot_file": "community-hotspots/04-74979c353ec5.json",
+      "hotspot_file": "community-hotspots/04-3e4e30d74bee.json",
       "id": "community:tag:Codex",
       "leader_id": "tag:工程实践",
       "name": "工程实践",
       "node_count": 7,
       "rank": 4,
-      "tag_occurrences": 44,
-      "weighted_degree": 118
+      "tag_occurrences": 46,
+      "weighted_degree": 122
     },
     {
       "article_count": 6,
       "hotspot_count": 7,
-      "hotspot_file": "community-hotspots/05-c450b374c7f1.json",
+      "hotspot_file": "community-hotspots/05-9d8174f6179d.json",
       "id": "community:tag:Amazon RDS",
       "leader_id": "tag:Customer Solutions",
       "name": "Customer Solutions",
@@ -64,7 +64,7 @@
     {
       "article_count": 3,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/06-a3d2b913d24b.json",
+      "hotspot_file": "community-hotspots/06-637abf85b36f.json",
       "id": "community:tag:Faculty",
       "leader_id": "tag:Safety",
       "name": "Safety",
@@ -74,31 +74,43 @@
       "weighted_degree": 39
     },
     {
+      "article_count": 2,
+      "hotspot_count": 3,
+      "hotspot_file": "community-hotspots/07-75eff0cc562e.json",
+      "id": "community:tag:ML Applications",
+      "leader_id": "tag:AI Research",
+      "name": "AI Research",
+      "node_count": 3,
+      "rank": 7,
+      "tag_occurrences": 4,
+      "weighted_degree": 18.8
+    },
+    {
       "article_count": 1,
       "hotspot_count": 3,
-      "hotspot_file": "community-hotspots/07-5e113ac91c62.json",
+      "hotspot_file": "community-hotspots/08-3e1974d7b70c.json",
       "id": "community:tag:Gemini App",
       "leader_id": "tag:Android",
       "name": "Android",
       "node_count": 3,
-      "rank": 7,
+      "rank": 8,
       "tag_occurrences": 3,
       "weighted_degree": 15
     },
     {
       "article_count": 1,
       "hotspot_count": 2,
-      "hotspot_file": "community-hotspots/08-b2bfd099ce23.json",
+      "hotspot_file": "community-hotspots/09-d348e15a21ad.json",
       "id": "community:tag:Google Workspace",
       "leader_id": "tag:Google One",
       "name": "Google One",
       "node_count": 2,
-      "rank": 8,
+      "rank": 9,
       "tag_occurrences": 2,
       "weighted_degree": 8
     }
   ],
-  "generated_at": "2026-08-03T17:22:22Z",
+  "generated_at": "2026-08-03T20:02:07Z",
   "iterations": 4,
   "limit": 11,
   "links": [
@@ -116,7 +128,7 @@
       "strength": 1,
       "target": "community:tag:掘金",
       "type": "community",
-      "weight": 50
+      "weight": 52
     },
     {
       "id": "edge:community:community:tag:Computer modeling->community:tag:Faculty",
@@ -167,20 +179,36 @@
       "weight": 6
     },
     {
+      "id": "edge:community:community:tag:ML Applications->community:tag:Technical How-to",
+      "source": "community:tag:ML Applications",
+      "strength": 1,
+      "target": "community:tag:Technical How-to",
+      "type": "community",
+      "weight": 8
+    },
+    {
+      "id": "edge:community:community:tag:ML Applications->community:tag:掘金",
+      "source": "community:tag:ML Applications",
+      "strength": 1,
+      "target": "community:tag:掘金",
+      "type": "community",
+      "weight": 3
+    },
+    {
       "id": "edge:community:community:tag:Technical How-to->community:tag:掘金",
       "source": "community:tag:Technical How-to",
       "strength": 1,
       "target": "community:tag:掘金",
       "type": "community",
-      "weight": 920
+      "weight": 927
     }
   ],
   "stats": {
-    "assigned_nodes": 117,
-    "detected_communities": 8,
-    "emitted_communities": 8,
-    "total_communities": 8,
-    "total_links": 9,
+    "assigned_nodes": 119,
+    "detected_communities": 9,
+    "emitted_communities": 9,
+    "total_communities": 9,
+    "total_links": 11,
     "weighting": "cosine-association"
   },
   "version": 2

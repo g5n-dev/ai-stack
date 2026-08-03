@@ -1,7 +1,7 @@
 {
-  "active_count": 2267,
+  "active_count": 2271,
   "archived_count": 276,
-  "complete_count": 20,
+  "complete_count": 21,
   "interpreted_brief_count": 3,
   "legacy_analysis_count": 0,
   "pages": {
@@ -18482,6 +18482,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260804-arxiv-development-of-fdd-on-an-ontology-for-vav-hvac-sys-3-8fa1467945.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260804-arxiv-freeze-then-select-structured-field-adapters-and-s-2-192f491aca.md": {
       "reasons": [
         "concise_source_card"
@@ -18489,6 +18495,21 @@
       "status": "source_brief"
     },
     "posts/20260804-blogs_podcasts-announcing-the-agentic-catalog-experience-in-amazo-1-c12cd3eece.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260804-blogs_podcasts-gem-training-how-meta-doubled-the-efficiency-of-it-0-a30c69d9a0.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
+    "posts/20260804-hacker_news-launch-hn-hoplite-yc-s26-effortlessly-deploy-cloud-8-8030f5b826.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -18533,11 +18554,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2244,
-  "source_file_count": 2543,
-  "source_tree_sha256": "e5d55e6b91144601ca693b19cb3ce49ed97cb80d6f1df83621028652173111e9",
-  "verified_provenance_count": 2267,
+  "source_brief_count": 2247,
+  "source_file_count": 2547,
+  "source_tree_sha256": "adc753e075f541939746554c2629752f561cc1175a774e0d918a8a27a6ea5610",
+  "verified_provenance_count": 2271,
   "warning_counts": {
-    "source_excerpt_truncated": 751
+    "source_excerpt_truncated": 752
   }
 }
