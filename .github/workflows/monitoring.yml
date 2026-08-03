@@ -48,7 +48,11 @@ jobs:
       - name: Measure publication heartbeat
         id: heartbeat
         run: |
+          # GitHub's default shell already sets -e, so a non-zero exit would
+          # abort before the code is recorded and the delivery step would be
+          # skipped — the check would detect the outage and tell no one.
           set -uo pipefail
+          set +e
           python3 scripts/publish_heartbeat.py \
             --repository-root . \
             --summary-output "$RUNNER_TEMP/heartbeat.md"
@@ -85,10 +89,15 @@ jobs:
 
       - name: Enforce divergence and stale thresholds
         id: release_state
+        if: always()
         env:
           MAIN_SHA: ${{ github.sha }}
         run: |
+          # GitHub's default shell already sets -e, so a non-zero exit would
+          # abort before the code is recorded and the delivery step would be
+          # skipped — the check would detect the outage and tell no one.
           set -uo pipefail
+          set +e
           main_sha="$(git rev-parse HEAD)"
           main_committed_at="$(git show -s --format=%cI HEAD)"
           python3 scripts/production_monitor.py \
@@ -139,10 +148,15 @@ jobs:
       # so it has to be caught here rather than hours later via staleness.
       - name: Check recent release runs
         id: release_runs
+        if: always()
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          # GitHub's default shell already sets -e, so a non-zero exit would
+          # abort before the code is recorded and the delivery step would be
+          # skipped — the check would detect the outage and tell no one.
           set -uo pipefail
+          set +e
           python3 scripts/check_release_runs.py \
             --repository "$GITHUB_REPOSITORY" \
             --summary-output "$RUNNER_TEMP/release_runs.md"
@@ -180,10 +194,15 @@ jobs:
       # scheduled work rather than an outage.
       - name: Measure capacity headroom
         id: capacity
+        if: always()
         env:
           PYTHONPATH: ${{ github.workspace }}
         run: |
+          # GitHub's default shell already sets -e, so a non-zero exit would
+          # abort before the code is recorded and the delivery step would be
+          # skipped — the check would detect the outage and tell no one.
           set -uo pipefail
+          set +e
           python3 scripts/capacity_report.py \
             --summary-output "$RUNNER_TEMP/capacity.md" \
             --fail-on never > "$RUNNER_TEMP/capacity.json"
