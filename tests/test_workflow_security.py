@@ -105,7 +105,7 @@ def test_deploy_uses_a_fail_closed_least_privilege_job_flow() -> None:
     workflow, text = _workflow("deploy.yml")
     assert workflow["name"] == "Build and Deploy"
     assert workflow["on"] == {
-        "schedule": [{"cron": "17 * * * *"}],
+        "schedule": [{"cron": "17 */2 * * *"}],
         "workflow_dispatch": {
             "inputs": {
                 "refresh_data": {
@@ -267,7 +267,7 @@ def test_branch_architecture_documents_the_active_release_coordinator() -> None:
         "PR CI",
         "Build and Deploy",
         "System Monitoring & Content Quality Tracking",
-        "17 * * * *",
+        "17 */2 * * *",
         "41 * * * *",
         "Unit Tests",
         "当前 v1 工作流已经覆盖内容来源门禁",

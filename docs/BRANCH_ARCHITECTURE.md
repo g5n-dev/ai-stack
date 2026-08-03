@@ -10,14 +10,14 @@
 - 功能分支通过 Pull Request 合入 `main`；本项目约定 Codex 分支使用 `codex/` 前缀。
 - 当前没有生产使用的 `content` 或 `ops` orphan 分支，也不以双 SHA 构建站点。
 - 机器人只能在生产工作流的 `persist` 阶段，以 expected base SHA 和路径白名单 CAS 写入 `main`；冲突直接失败，不 reset、rebase 或 force push。
-- `[skip ci]` 与 bot actor 条件阻止数据提交递归触发部署；小时任务不取消正在运行的生产链。
+- `[skip ci]` 与 bot actor 条件阻止数据提交递归触发部署；定时任务按两小时间隔触发，为一次完整刷新（实测约 68 分钟）留出余量，避免下一次触发落进同一 concurrency group 而取消正在运行的生产链。
 
 ## 稳定的 CI/CD 外部契约
 
 | 场景 | 工作流名 | 触发器 | 稳定检查或结果 |
 | --- | --- | --- | --- |
 | Pull Request | `PR CI` | `pull_request` → `main`；手动 | `Unit Tests`；同一 PR 的旧运行可取消 |
-| 发布与数据刷新 | `Build and Deploy` | push → `main`；`17 * * * *`；手动 | 精确 SHA 的验证、持久化、构建、部署与生产烟测 |
+| 发布与数据刷新 | `Build and Deploy` | push → `main`；`17 */2 * * *`；手动 | 精确 SHA 的验证、持久化、构建、部署与生产烟测 |
 | 生产状态巡检 | `System Monitoring & Content Quality Tracking` | `41 * * * *`；手动 | 只读比较 `main` 与生产 release marker；3 小时分歧、12 小时陈旧阈值 |
 | 安全删除 | `Delete Post` | 手动 | 只读分析与有保护的 writer 分离；重建派生数据后触发主部署 |
 | 已验证版本恢复 | `Production Recovery` | 手动 | 只接受仍有生产验证回执的完整 `main` 祖先 SHA |

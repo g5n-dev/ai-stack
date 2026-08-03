@@ -78,7 +78,8 @@ def test_deploy_is_a_fail_closed_least_privilege_job_chain() -> None:
     assert "ref: ${{ github.sha }}" in text
     assert "--branch main" not in text[text.index("  persist:"):text.index("  build:")]
     assert "[skip ci]" in text
-    assert 'cron: "17 * * * *"' in text
+    # 每两小时：一次完整刷新实测约 68 分钟，按小时调度会与自身重叠并被取消。
+    assert 'cron: "17 */2 * * *"' in text
     assert "github-actions[bot]" in text
     assert "secrets." not in text[text.index("  validate:"):text.index("  notify:")]
     assert "secrets." in text[text.index("  refresh:"):text.index("  validate:")]

@@ -2,8 +2,17 @@ name: Build and Deploy
 
 on:
   schedule:
-    # 避开整点拥塞；保留已锁定的 :17 触发。
-    - cron: "17 * * * *"
+    # 避开整点拥塞；保留已锁定的 :17 分触发点。
+    #
+    # 每两小时而非每小时：一次完整刷新实测约 68 分钟（refresh 32.7m +
+    # validate 5.3m + persist 30m），排队后跨度可达 82 分钟。按小时调度时，
+    # 下一次触发会与仍在运行的那次落进同一个 concurrency group，正在进行的
+    # 运行被取消——已经生成好的文章在 persist 阶段被整批丢弃，而 cancelled
+    # 既不是红也不是绿，不触发任何通知。
+    #
+    # 该重叠此前被 lineage 容量故障掩盖：那时运行都在 validate 阶段就快速
+    # 失败，从不会跑到重叠。容量问题修复后它立刻显形。
+    - cron: "17 */2 * * *"
   workflow_dispatch:
     inputs:
       refresh_data:
