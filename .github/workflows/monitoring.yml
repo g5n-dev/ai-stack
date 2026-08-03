@@ -16,7 +16,12 @@ jobs:
   verify-production-state:
     name: Verify Production Release State
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    # Raised from 10 deliberately, and only here. Elsewhere a timeout should stay
+    # tight so a slow checkout surfaces rather than being absorbed by a bigger
+    # budget — but this job is the thing that reports a stall, and run
+    # 30751525677 was already killed at 10m06s inside checkout, alerting nobody.
+    # A monitor cannot report an outage that also kills the monitor.
+    timeout-minutes: 20
     permissions:
       contents: read
       # Alerts are delivered as Issues so GitHub itself pushes them to the owner
@@ -29,6 +34,11 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
+          # Partial clone: full commit history is still required (build_lineage
+          # and publish_heartbeat derive first-seen times from git log), but the
+          # historical blobs are not. Fetching them made checkout exceed the job
+          # timeout on a 4.1 GB repository and silently stranded generated posts.
+          filter: blob:none
 
       # Runs first and independently of the release marker: nearly every failure
       # mode ends in "no new article", including the ones where every job is green.
