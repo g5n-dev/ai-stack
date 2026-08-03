@@ -295,14 +295,20 @@ def _publish_required_check(
     details_url: str,
     conclusion: str,
     subject: str,
+    raw_conclusion: str = "",
 ) -> tuple[int, str]:
     if conclusion not in {"success", "failure"}:
         raise ProtectedBranchMergeError("required check conclusion is invalid")
-    summary = (
-        f"PR Test Suite run {run_id} "
-        f"{'passed' if conclusion == 'success' else 'failed'} "
-        f"for the exact {subject}."
-    )
+    if conclusion == "success":
+        outcome = "passed"
+    elif raw_conclusion and raw_conclusion != "failure":
+        # A run that was cancelled, skipped or timed out still blocks the merge,
+        # but reporting it as "failed" sends a reader hunting for a test failure
+        # that does not exist.  Name what actually happened.
+        outcome = f"did not complete ({raw_conclusion})"
+    else:
+        outcome = "failed"
+    summary = f"PR Test Suite run {run_id} {outcome} for the exact {subject}."
     external_id = f"trusted-ci:{run_id}:{head_sha}"
     requested_details_url = f"https://github.com/{repository}/actions/runs/{run_id}"
     if details_url != requested_details_url:
@@ -463,7 +469,7 @@ def _run_trusted_ci(
         expected_workflow_name=expected_run_name,
         expected_success=conclusion == "success",
     )
-    return run_id, run_url, conclusion
+    return run_id, run_url, conclusion, str(raw_conclusion or "")
 
 
 def merge_validated_branch(
@@ -497,7 +503,7 @@ def merge_validated_branch(
     if _single_parent(api, repository, head_sha) != base_sha:
         raise ProtectedBranchMergeError("automation commit is not based on the expected main SHA")
 
-    run_id, run_url, conclusion = _run_trusted_ci(
+    run_id, run_url, conclusion, _raw_conclusion = _run_trusted_ci(
         api,
         repository=repository,
         target_sha=head_sha,
@@ -725,7 +731,7 @@ def validate_pull_request(
     _head_branch, base_sha = current_pr()
     if _ref_sha(api, repository, "main") != base_sha:
         raise ProtectedBranchMergeError("main moved before trusted PR validation")
-    run_id, run_url, conclusion = _run_trusted_ci(
+    run_id, run_url, conclusion, raw_conclusion = _run_trusted_ci(
         api,
         repository=repository,
         target_sha=head_sha,
@@ -745,6 +751,7 @@ def validate_pull_request(
         details_url=run_url,
         conclusion=conclusion,
         subject="pull request head",
+        raw_conclusion=raw_conclusion,
     )
     return {
         "check_conclusion": conclusion,

@@ -49,9 +49,14 @@ def test_pr_ci_runs_only_as_a_trusted_main_dispatch_for_one_exact_target() -> No
             }
         }
     }
+    # Keyed by run rather than by SHA. Grouping by SHA alone let a second
+    # dispatch of the same commit cancel the first, and the gate reports a
+    # cancelled run as a failed required check — blocking the pull request on
+    # tests that never ran. Each run is still pinned to one exact target_sha by
+    # the dispatch inputs, so the trust boundary is unchanged.
     assert workflow["concurrency"] == {
-        "group": "trusted-pr-ci-${{ inputs.target_sha }}",
-        "cancel-in-progress": "true",
+        "group": "trusted-pr-ci-${{ inputs.target_sha }}-${{ github.run_id }}",
+        "cancel-in-progress": "false",
     }
     assert workflow["permissions"] == {"contents": "read"}
     jobs = _jobs(workflow)

@@ -10,8 +10,14 @@ on:
         type: string
 
 concurrency:
-  group: trusted-pr-ci-${{ inputs.target_sha }}
-  cancel-in-progress: true
+  # Keyed by run, not by SHA. Grouping by SHA meant a second dispatch of the same
+  # commit cancelled the first, and the gate reports a cancelled run as a failed
+  # required check — so a race between two dispatches blocked the pull request on
+  # tests that never ran, recoverable only by a human re-run. Each dispatch is
+  # already scoped to one exact SHA by the caller, so nothing is lost by letting
+  # them proceed independently.
+  group: trusted-pr-ci-${{ inputs.target_sha }}-${{ github.run_id }}
+  cancel-in-progress: false
 
 permissions:
   contents: read
