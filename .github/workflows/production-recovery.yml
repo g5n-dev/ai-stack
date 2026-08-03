@@ -35,6 +35,11 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
+          # Partial clone: full commit history is still required (build_lineage
+          # and publish_heartbeat derive first-seen times from git log), but the
+          # historical blobs are not. Fetching them made checkout exceed the job
+          # timeout on a 4.1 GB repository and silently stranded generated posts.
+          filter: blob:none
 
       - name: Authorize only a verified main ancestor
         id: guard
@@ -86,6 +91,11 @@ jobs:
         with:
           ref: ${{ needs.authorize.outputs.target_sha }}
           fetch-depth: 0
+          # Partial clone: full commit history is still required (build_lineage
+          # and publish_heartbeat derive first-seen times from git log), but the
+          # historical blobs are not. Fetching them made checkout exceed the job
+          # timeout on a 4.1 GB repository and silently stranded generated posts.
+          filter: blob:none
 
       - name: Assert exact authorized build input
         run: test "$(git rev-parse HEAD)" = "${{ needs.authorize.outputs.target_sha }}"

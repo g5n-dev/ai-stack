@@ -35,6 +35,11 @@ jobs:
           ref: ${{ inputs.target_sha }}
           persist-credentials: false
           fetch-depth: 0
+          # Partial clone: full commit history is still required (build_lineage
+          # and publish_heartbeat derive first-seen times from git log), but the
+          # historical blobs are not. Fetching them made checkout exceed the job
+          # timeout on a 4.1 GB repository and silently stranded generated posts.
+          filter: blob:none
 
       - name: Assert exact checkout
         env:
