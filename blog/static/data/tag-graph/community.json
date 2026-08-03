@@ -2,33 +2,33 @@
   "algorithm": "deterministic-weighted-label-propagation",
   "communities": [
     {
-      "article_count": 466,
+      "article_count": 469,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-25db794c3ec9.json",
+      "hotspot_file": "community-hotspots/01-b0b90b06e387.json",
       "id": "community:tag:Technical How-to",
       "leader_id": "tag:博客与播客",
       "name": "博客与播客",
       "node_count": 53,
       "rank": 1,
-      "tag_occurrences": 700,
-      "weighted_degree": 1990.6
+      "tag_occurrences": 708,
+      "weighted_degree": 2027.6
     },
     {
-      "article_count": 2154,
+      "article_count": 2157,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/02-323f60600b5f.json",
+      "hotspot_file": "community-hotspots/02-97626fe82f97.json",
       "id": "community:tag:掘金",
       "leader_id": "tag:Hacker News",
       "name": "Hacker News",
       "node_count": 32,
       "rank": 2,
-      "tag_occurrences": 4415,
-      "weighted_degree": 9801.2
+      "tag_occurrences": 4421,
+      "weighted_degree": 9824.2
     },
     {
       "article_count": 3,
       "hotspot_count": 8,
-      "hotspot_file": "community-hotspots/03-794d82076cad.json",
+      "hotspot_file": "community-hotspots/03-a5895b54d54d.json",
       "id": "community:tag:Computer modeling",
       "leader_id": "tag:Research",
       "name": "Research",
@@ -40,7 +40,7 @@
     {
       "article_count": 20,
       "hotspot_count": 7,
-      "hotspot_file": "community-hotspots/04-57bbfa901f17.json",
+      "hotspot_file": "community-hotspots/04-74979c353ec5.json",
       "id": "community:tag:Codex",
       "leader_id": "tag:工程实践",
       "name": "工程实践",
@@ -52,7 +52,7 @@
     {
       "article_count": 6,
       "hotspot_count": 7,
-      "hotspot_file": "community-hotspots/05-cc213e387b76.json",
+      "hotspot_file": "community-hotspots/05-c450b374c7f1.json",
       "id": "community:tag:Amazon RDS",
       "leader_id": "tag:Customer Solutions",
       "name": "Customer Solutions",
@@ -64,7 +64,7 @@
     {
       "article_count": 3,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/06-4f3ee7cb5052.json",
+      "hotspot_file": "community-hotspots/06-a3d2b913d24b.json",
       "id": "community:tag:Faculty",
       "leader_id": "tag:Safety",
       "name": "Safety",
@@ -76,7 +76,7 @@
     {
       "article_count": 1,
       "hotspot_count": 3,
-      "hotspot_file": "community-hotspots/07-0d3e307858d8.json",
+      "hotspot_file": "community-hotspots/07-5e113ac91c62.json",
       "id": "community:tag:Gemini App",
       "leader_id": "tag:Android",
       "name": "Android",
@@ -88,7 +88,7 @@
     {
       "article_count": 1,
       "hotspot_count": 2,
-      "hotspot_file": "community-hotspots/08-f372c77e8345.json",
+      "hotspot_file": "community-hotspots/08-b2bfd099ce23.json",
       "id": "community:tag:Google Workspace",
       "leader_id": "tag:Google One",
       "name": "Google One",
@@ -98,7 +98,7 @@
       "weighted_degree": 8
     }
   ],
-  "generated_at": "2026-08-03T15:17:13Z",
+  "generated_at": "2026-08-03T17:22:22Z",
   "iterations": 4,
   "limit": 11,
   "links": [
@@ -172,7 +172,7 @@
       "strength": 1,
       "target": "community:tag:掘金",
       "type": "community",
-      "weight": 905
+      "weight": 920
     }
   ],
   "stats": {

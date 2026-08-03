@@ -1,0 +1,57 @@
+{
+  "community_id": "community:tag:Google Workspace",
+  "generated_at": "2026-08-03T17:22:22Z",
+  "hotspot_limit": 24,
+  "link_limit": 32,
+  "links": [
+    {
+      "id": "edge:cooccurrence:tag:Google One->tag:Google Workspace",
+      "source": "tag:Google One",
+      "strength": 0.5,
+      "target": "tag:Google Workspace",
+      "type": "cooccurrence",
+      "weight": 1
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Google Workspace",
+      "degree": 4,
+      "description": "文章标签: Google One",
+      "id": "tag:Google One",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Google One",
+      "level": 6,
+      "name": "Google One",
+      "rank": 113,
+      "related_count": 4,
+      "weighted_degree": 4
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Google Workspace",
+      "degree": 4,
+      "description": "文章标签: Google Workspace",
+      "id": "tag:Google Workspace",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Google Workspace",
+      "level": 6,
+      "name": "Google Workspace",
+      "rank": 114,
+      "related_count": 4,
+      "weighted_degree": 4
+    }
+  ],
+  "stats": {
+    "total_links": 1,
+    "total_nodes": 2
+  },
+  "version": 2
+}
