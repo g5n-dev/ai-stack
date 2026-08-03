@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T11:46:03Z",
+  "generated_at": "2026-08-03T15:17:13Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -626,7 +626,7 @@
       "weighted_degree": 2
     },
     {
-      "article_count": 681,
+      "article_count": 683,
       "category": "ai",
       "color": "#7aa6b8",
       "community_id": null,
@@ -639,11 +639,11 @@
       "legacy_id": "agent",
       "level": 4,
       "name": "AI Agent",
-      "rank": 107,
+      "rank": 108,
       "weighted_degree": 4.4
     },
     {
-      "article_count": 711,
+      "article_count": 714,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
@@ -792,7 +792,7 @@
       "legacy_id": "chatbot",
       "level": 4,
       "name": "聊天机器人",
-      "rank": 114,
+      "rank": 115,
       "weighted_degree": 4
     },
     {
@@ -860,7 +860,7 @@
       "legacy_id": "cv",
       "level": 3,
       "name": "计算机视觉",
-      "rank": 120,
+      "rank": 121,
       "weighted_degree": 3.1
     },
     {
@@ -1306,7 +1306,7 @@
       "weighted_degree": 3
     },
     {
-      "article_count": 547,
+      "article_count": 548,
       "category": "nlp",
       "color": "#d97706",
       "community_id": null,
@@ -1323,7 +1323,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 547,
+      "article_count": 548,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
@@ -1438,7 +1438,7 @@
       "legacy_id": "nlp",
       "level": 3,
       "name": "自然语言处理",
-      "rank": 100,
+      "rank": 101,
       "weighted_degree": 5.6
     },
     {
@@ -1659,7 +1659,7 @@
       "legacy_id": "tensorflow",
       "level": 2,
       "name": "TensorFlow",
-      "rank": 115,
+      "rank": 116,
       "weighted_degree": 4
     },
     {
@@ -1693,7 +1693,7 @@
       "legacy_id": "transformers",
       "level": 2,
       "name": "Transformers",
-      "rank": 116,
+      "rank": 117,
       "weighted_degree": 4
     },
     {
@@ -1710,7 +1710,7 @@
       "legacy_id": "typescript",
       "level": 1,
       "name": "TypeScript",
-      "rank": 117,
+      "rank": 118,
       "weighted_degree": 3.6
     },
     {
