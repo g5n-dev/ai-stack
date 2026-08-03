@@ -35,6 +35,11 @@ index_max_bytes: 65536
 shard_max_bytes: 65536
 public_max_bytes: 3145728
 public_max_files: 300
+# Retention target as a fraction of public_max_bytes. Exceeding the hard ceiling
+# fails the release, so the build retires the oldest events once it would cross
+# this fraction, keeping headroom for the next refresh. Their Posts stay
+# readable; only the lineage card degrades.
+public_retention_ratio: 0.85
 
 boilerplate_patterns:
   - '^subscribe (?:to|for) updates$'

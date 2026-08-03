@@ -7,6 +7,7 @@ from pathlib import Path
 import pytest
 
 from ai_stack.lineage import (
+    LineageConfig,
     LineageRegistry,
     LineageValidationError,
     ObservationInput,
@@ -1317,3 +1318,108 @@ def test_build_merges_previously_suppressed_registry_observation_without_article
     )
     assert suppressed_public["article_url"] is None
     assert suppressed_public["relation"] == "exact_copy"
+
+
+def test_build_excludes_registry_events_no_post_can_reach(tmp_path: Path) -> None:
+    content_root = tmp_path / "content"
+    posts = content_root / "posts"
+    posts.mkdir(parents=True)
+    excerpt = _source_text(0, 220)
+    (posts / "origin.md").write_text(
+        _post(
+            title="Published source",
+            url="https://origin.example/published",
+            excerpt=excerpt,
+            date="2026-07-01T08:00:00Z",
+        ),
+        encoding="utf-8",
+    )
+    # A policy-rejected candidate reaches the registry so dedupe keeps knowing
+    # the source, but it never produced a Post and forms an event of its own.
+    rejected = ObservationInput(
+        canonical_url="https://rejected.example/not-ai-related",
+        title="Rejected candidate",
+        source_text=_source_text(900, 1120),
+        source="fixture",
+        article_path="",
+        capture_mode="full_text",
+        source_completeness="complete",
+        source_published_at="2026-07-02T08:00:00Z",
+        first_seen_at="2026-07-02T09:00:00Z",
+        timestamp_confidence=TimestampConfidence.PUBLISHER,
+        article_url=None,
+    )
+    internal = tmp_path / "internal"
+    public = tmp_path / "public"
+    registry = LineageRegistry()
+    registry.resolve_batch([rejected])
+    registry.save(internal, generated_at="2026-07-20T00:00:00Z")
+
+    result = build_lineage_assets(
+        content_root=content_root,
+        internal_dir=internal,
+        public_dir=public,
+        as_of="2026-07-20T00:00:00Z",
+    )
+
+    # The registry keeps both records, but only the reachable Post is published.
+    assert result["observations"] == 1
+    assert len(LineageRegistry.load(internal)._records) == 2
+    index = json.loads((public / "index.json").read_text(encoding="utf-8"))
+    published = []
+    for reference in index["cluster_buckets"]:
+        payload = json.loads((public / reference["path"]).read_text(encoding="utf-8"))
+        for cluster in payload["clusters"]:
+            published.extend(cluster["observations"])
+    assert [item["source_url"] for item in published] == ["https://origin.example/published"]
+    assert all(item["article_url"] for item in published)
+
+
+def test_build_drops_oldest_events_when_public_budget_is_exceeded(tmp_path: Path) -> None:
+    content_root = tmp_path / "content"
+    posts = content_root / "posts"
+    posts.mkdir(parents=True)
+    dates = ("2026-03-01T08:00:00Z", "2026-05-01T08:00:00Z", "2026-07-01T08:00:00Z")
+    for index_, date in enumerate(dates):
+        (posts / f"post{index_}.md").write_text(
+            _post(
+                title=f"Story {index_}",
+                url=f"https://origin.example/story{index_}",
+                excerpt=_source_text(index_ * 400, index_ * 400 + 220),
+                date=date,
+            ),
+            encoding="utf-8",
+        )
+    internal = tmp_path / "internal"
+    public = tmp_path / "public"
+    config = LineageConfig(
+        shard_count=4,
+        index_max_bytes=2048,
+        public_max_bytes=4000,
+        public_max_files=32,
+    )
+
+    result = build_lineage_assets(
+        content_root=content_root,
+        internal_dir=internal,
+        public_dir=public,
+        config=config,
+        as_of="2026-07-20T00:00:00Z",
+    )
+
+    assert 0 < result["observations"] < len(dates)
+    published_bytes = sum(
+        path.stat().st_size for path in public.rglob("*.json") if path.is_file()
+    )
+    assert published_bytes <= config.public_max_bytes
+    index = json.loads((public / "index.json").read_text(encoding="utf-8"))
+    published = []
+    for reference in index["cluster_buckets"]:
+        payload = json.loads((public / reference["path"]).read_text(encoding="utf-8"))
+        for cluster in payload["clusters"]:
+            published.extend(cluster["observations"])
+    # Retention keeps the newest history and drops the oldest story first.
+    assert published[-1]["source_published_at"] == dates[-1]
+    assert all(item["source_published_at"] != dates[0] for item in published)
+    # Verification passes against the same ceiling the deploy job enforces.
+    verify_lineage_assets(public, internal_dir=internal, verify_hashes=True, config=config)
