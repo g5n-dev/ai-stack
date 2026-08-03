@@ -173,6 +173,7 @@ def test_inventory_is_stable_and_classifies_current_provenance(tmp_path: Path) -
     assert first["classification_counts"] == {
         "needs_source_recovery": 1,
         "terminal_unrecoverable": 0,
+        "verified_interpreted_brief": 0,
         "verified_rewrite": 1,
         "verified_source_brief": 1,
     }
@@ -223,6 +224,7 @@ def test_inventory_classifies_strict_recovery_failure_archive_as_terminal(
     assert report["classification_counts"] == {
         "needs_source_recovery": 0,
         "terminal_unrecoverable": 1,
+        "verified_interpreted_brief": 0,
         "verified_rewrite": 0,
         "verified_source_brief": 0,
     }

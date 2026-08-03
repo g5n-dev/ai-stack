@@ -21,6 +21,7 @@ from processor.enricher import enrich_github_repo
 from processor.scenario_analyzer import ScenarioAnalyzer
 from processor.ai_filter import AIThemeFilter
 from processor.evidence_rewriter import EvidenceBackedRewriter
+from processor.source_interpreter import SourceInterpreter
 from processor.tech_stack import export_to_json
 from runtime_profile import apply_anthropic_runtime_profile, get_runtime_profile
 from ai_stack.source_contract import verify_source_contract
@@ -32,6 +33,10 @@ logger = logging.getLogger(__name__)
 
 class ProcessorOrchestrator:
     """内容处理调度器"""
+
+    # Declared on the class so a partially assembled orchestrator still has a
+    # defined interpretation policy: absent one, no reading is attempted.
+    source_interpreter: SourceInterpreter | None = None
 
     def __init__(self, config_path='config/anthropic.yaml', runtime_profile: str | None = None):
         self.config_path = Path(config_path)
@@ -77,6 +82,10 @@ class ProcessorOrchestrator:
 
         ai_filter_config = self.config.get("ai_filter", {})
         self.ai_filter = AIThemeFilter(self.client, ai_filter_config)
+        self.source_interpreter = SourceInterpreter(
+            self.client,
+            enabled=not isinstance(self.client, NullAnthropicClient),
+        )
 
     def _extract_json(self, text: str) -> Optional[dict]:
         if not text:
@@ -403,6 +412,12 @@ class ProcessorOrchestrator:
             if content.get("content_mode") == "source_brief":
                 result = self._metadata_source_brief(content)
                 verify_source_contract(result)
+                # Runs after the relevance and moderation gates so a rejected
+                # candidate never spends an interpretation call.  Returns the
+                # brief unchanged whenever a reading cannot be grounded.
+                if self.source_interpreter is not None:
+                    result = self.source_interpreter.interpret(result)
+                    verify_source_contract(result)
                 return result
 
             content = self.ai_filter.filter(content)

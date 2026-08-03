@@ -12,6 +12,7 @@ from crawler import hacker_news
 from crawler.hacker_news import HackerNewsCrawler
 from processor.ai_filter import AIThemeFilter
 from processor.main import ProcessorOrchestrator
+from processor.source_interpreter import SourceInterpreter
 from processor.summarizer import ContentSummarizer
 
 
@@ -475,6 +476,9 @@ def test_hacker_news_processor_returns_source_brief_without_any_llm_call() -> No
     processor.generator = _Explodes()
     processor.tagger = _Explodes()
     processor.scenario_analyzer = _Explodes()
+    # A metadata-only capture must never reach the model, so wiring a
+    # client that raises on any call also guards the interpretation step.
+    processor.source_interpreter = SourceInterpreter(_Explodes())
 
     result = processor.process_single(
         apply_source_contract(
@@ -507,6 +511,9 @@ def test_non_ai_source_brief_is_rejected_without_any_llm_call() -> None:
     processor.generator = _Explodes()
     processor.tagger = _Explodes()
     processor.scenario_analyzer = _Explodes()
+    # A metadata-only capture must never reach the model, so wiring a
+    # client that raises on any call also guards the interpretation step.
+    processor.source_interpreter = SourceInterpreter(_Explodes())
 
     result = processor.process_single(
         apply_source_contract(
@@ -554,6 +561,9 @@ def test_source_brief_tags_are_derived_from_immutable_crawler_evidence() -> None
     processor.generator = _Explodes()
     processor.tagger = _Explodes()
     processor.scenario_analyzer = _Explodes()
+    # A metadata-only capture must never reach the model, so wiring a
+    # client that raises on any call also guards the interpretation step.
+    processor.source_interpreter = SourceInterpreter(_Explodes())
     contracted = apply_source_contract(
         {
             "source": "arxiv",
@@ -608,6 +618,9 @@ def test_mutable_top_level_tags_cannot_make_non_ai_evidence_publishable() -> Non
     processor.generator = _Explodes()
     processor.tagger = _Explodes()
     processor.scenario_analyzer = _Explodes()
+    # A metadata-only capture must never reach the model, so wiring a
+    # client that raises on any call also guards the interpretation step.
+    processor.source_interpreter = SourceInterpreter(_Explodes())
     contracted = apply_source_contract(
         {
             "source": "hacker_news",

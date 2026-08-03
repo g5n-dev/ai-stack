@@ -64,7 +64,12 @@ TOTAL_MAX_BYTES = 2 * 1024 * 1024
 TOTAL_MAX_FILES = 100
 
 _QUALITY_SCHEMA = "content_quality_manifest_v4"
-_ACTIVE_QUALITY_STATUSES = {"complete", "legacy_analysis", "source_brief"}
+_ACTIVE_QUALITY_STATUSES = {
+    "complete",
+    "interpreted_brief",
+    "legacy_analysis",
+    "source_brief",
+}
 _DENIED_PUBLIC_KEYS = {"body", "content", "external_url", "frontmatter", "local_path"}
 _ASSET_PATH_RE = re.compile(r"^(?:windows|topics)/[a-z0-9][a-z0-9._/-]{0,220}\.json$")
 _LINEAGE_PATH_RE = re.compile(

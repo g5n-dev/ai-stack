@@ -10,8 +10,9 @@
 {{- $sourceKey := lower (printf "%v" (.Params.source | default "")) -}}
 {{- $isSourceBriefFallback := and (eq $sourceKey "hacker_news") (lt (len .RawContent) 1200) (.Params.external_url | default false) -}}
 {{- $contentMode := .Params.content_mode | default "" -}}
-{{- $isSourceBrief := and (not $isQualityBlocked) (or (eq $qualityStatus "source_brief") (eq $contentMode "source_brief") (eq $contentMode "legacy_source_brief") $isSourceBriefFallback) -}}
-{{- $isLegacyAnalysis := and (not $isQualityBlocked) (not $isSourceBrief) (or (eq $qualityStatus "legacy_analysis") (eq (.Params.content_mode | default "") "legacy_analysis")) -}}
+{{- $isInterpretedBrief := and (not $isQualityBlocked) (or (eq $qualityStatus "interpreted_brief") (eq $contentMode "interpreted_brief")) -}}
+{{- $isSourceBrief := and (not $isQualityBlocked) (not $isInterpretedBrief) (or (eq $qualityStatus "source_brief") (eq $contentMode "source_brief") (eq $contentMode "legacy_source_brief") $isSourceBriefFallback) -}}
+{{- $isLegacyAnalysis := and (not $isQualityBlocked) (not $isSourceBrief) (not $isInterpretedBrief) (or (eq $qualityStatus "legacy_analysis") (eq (.Params.content_mode | default "") "legacy_analysis")) -}}
 {{- $lineageNoindex := .Params.lineage_noindex | default false -}}
 {{- $lineageCanonical := .Permalink -}}
 {{- with .Params.lineage_canonical_url -}}
@@ -173,7 +174,19 @@
                         {{- end }}
                     </div>
                     {{- else }}
-                    {{- if $isSourceBrief }}
+                    {{- if $isInterpretedBrief }}
+                    <aside data-content-mode="interpreted-brief"
+                        class="mb-8 rounded-2xl border border-primary/20 bg-primary/[0.04] p-5 md:flex md:items-center md:justify-between md:gap-6">
+                        <div>
+                            <p><span class="site-code-text tracking-widest text-primary">SOURCE BRIEF + 解读</span><span class="site-meta-text text-primary"> / 来源快报</span></p>
+                            <p class="mt-2 text-sm leading-6 text-off-white/65">
+                                页面上的「基本信息」与「来源摘要/节选」是抓取时保存的原始证据；「要点解读」由本站依据这些证据整理，标注「推测：」的部分是编辑判断。完整上下文请以原始来源为准。
+                            </p>
+                        </div>
+                        <a class="mt-4 inline-flex min-h-11 shrink-0 items-center rounded-lg border border-primary/30 px-4 text-sm text-primary hover:bg-primary/10 md:mt-0"
+                            href="{{ .Params.external_url }}" rel="noopener noreferrer nofollow">打开原始来源</a>
+                    </aside>
+                    {{- else if $isSourceBrief }}
                     <aside data-content-mode="source-brief"
                         class="mb-8 rounded-2xl border border-primary/20 bg-primary/[0.04] p-5 md:flex md:items-center md:justify-between md:gap-6">
                         <div>

@@ -26,7 +26,11 @@ from runtime_env import load_project_env
 load_project_env(project_root)
 from runtime_profile import get_runtime_profile
 
-from ai_stack.content_quality import analyze_post, build_content_quality_manifest
+from ai_stack.content_quality import (
+    INTERPRETATION_HEADING,
+    analyze_post,
+    build_content_quality_manifest,
+)
 from ai_stack.identity import canonicalize_url
 from ai_stack.lineage import (
     LineageRegistry,
@@ -35,6 +39,7 @@ from ai_stack.lineage import (
     parse_historical_post,
 )
 from ai_stack.source_contract import (
+    INTERPRETED_BRIEF_TIER,
     SourceContractError,
     apply_source_contract,
     publication_title_from_contract,
@@ -55,6 +60,11 @@ logger = logging.getLogger(__name__)
 
 SHANGHAI_TZ = ZoneInfo("Asia/Shanghai")
 CONTENT_TIMEZONE = SHANGHAI_TZ
+# Modes whose title, URL and provenance come from the hash-bound source
+# contract rather than from free-form crawler fields.
+_CONTRACT_MODES = frozenset({"source_brief", "interpreted_brief", "evidence_backed_rewrite"})
+# Modes that publish captured evidence as a card and must not carry internal links.
+_BRIEF_MODES = frozenset({"source_brief", "interpreted_brief"})
 _SOURCE_METADATA_URL_RE = re.compile(r"(?i)\b(?:https?://|www\.)\S+")
 _MARKDOWN_PUNCTUATION_RE = re.compile(r"([\\`*_[\]{}()#+.!|>~-])")
 
@@ -1489,6 +1499,22 @@ class SuperEnhancedContentGenerator:
                 "publication_tier": "B",
                 "source_snapshot_sha256": str(evidence.get("digest") or "").strip(),
             }
+        if str(item.get("content_mode") or "") == "interpreted_brief":
+            return {
+                "title": publication_title_from_contract(item),
+                "summary": self._truncate_seo_description(
+                    self._strip_markdown_for_seo(
+                        self._interpretation_summary(item.get("interpretation_text", ""))
+                    ),
+                    maximum_length=160,
+                ),
+                "url": str(evidence.get("external_url") or "").strip(),
+                "source": str(evidence.get("source") or "").strip(),
+                "tags": self._normalize_tags(item.get("tags", [])),
+                "content_mode": "interpreted_brief",
+                "publication_tier": INTERPRETED_BRIEF_TIER,
+                "source_snapshot_sha256": str(evidence.get("digest") or "").strip(),
+            }
         return {
             "title": publication_title_from_contract(item),
             "summary": (
@@ -1669,7 +1695,7 @@ class SuperEnhancedContentGenerator:
             if isinstance(evidence.get("fields"), dict)
             else {}
         )
-        if content_mode in {"source_brief", "evidence_backed_rewrite"}:
+        if content_mode in _CONTRACT_MODES:
             source = str(evidence.get("source") or "unknown")
             title = publication_title_from_contract(item)
         else:
@@ -1692,7 +1718,7 @@ class SuperEnhancedContentGenerator:
         # 获取 URL
         url = (
             evidence.get("external_url", "")
-            if content_mode in {"source_brief", "evidence_backed_rewrite"}
+            if content_mode in _CONTRACT_MODES
             else item.get('url', '')
         )
         if not url and source == 'github_trending':
@@ -1783,14 +1809,30 @@ class SuperEnhancedContentGenerator:
         truncation_reason = str(item.get("source_truncation_reason") or "").strip()
         if truncation_reason:
             lines.append(f'source_truncation_reason: "{self._yaml_escape(truncation_reason)}"')
-        if content_mode in {"source_brief", "evidence_backed_rewrite"}:
+        if content_mode in _CONTRACT_MODES:
             lines.append('source_support: 1.0')
             source_title = str(evidence_fields.get("title") or "").strip()
             if source_title:
                 lines.append(f"source_title_chars_original: {len(source_title)}")
+        if content_mode == "interpreted_brief":
+            interpretation_digest = str(item.get("interpretation_sha256") or "").strip()
+            if interpretation_digest:
+                lines.append(f'interpretation_sha256: "{interpretation_digest}"')
 
         if content_mode == "source_brief":
             seo_description = self._source_brief_note(
+                str(evidence.get("capture_mode") or "metadata_only"),
+                source,
+            )
+        elif content_mode == "interpreted_brief":
+            # Lead with what the thing is rather than a disclaimer; fall back to
+            # the capture note if the section cannot be recovered.
+            seo_description = self._truncate_seo_description(
+                self._strip_markdown_for_seo(
+                    self._interpretation_summary(item.get("interpretation_text", ""))
+                ),
+                maximum_length=160,
+            ) or self._source_brief_note(
                 str(evidence.get("capture_mode") or "metadata_only"),
                 source,
             )
@@ -1812,7 +1854,7 @@ class SuperEnhancedContentGenerator:
         lines.append('')
 
         # 根据来源生成不同格式
-        if content_mode == "source_brief":
+        if content_mode in _BRIEF_MODES:
             lines.extend(self._format_source_brief(item))
         elif content_mode == "evidence_backed_rewrite":
             lines.extend(self._format_evidence_backed_rewrite(item))
@@ -1831,7 +1873,7 @@ class SuperEnhancedContentGenerator:
         else:
             lines.extend(self._format_generic_super_enhanced(item))
 
-        if content_mode != "source_brief":
+        if content_mode not in _BRIEF_MODES:
             related = self._find_related_posts(item, current_filename=current_filename)
             self._inject_internal_links(lines, item, related)
         return '\n'.join(lines)
@@ -1876,8 +1918,18 @@ class SuperEnhancedContentGenerator:
         return lines
 
     def _format_source_brief(self, item: dict) -> list[str]:
-        """Render only crawler evidence; generated enrichment is never included."""
+        """Render captured evidence, plus a labelled reading when one exists.
 
+        A Tier-C card shows evidence only.  A Tier-C+ card adds the validated
+        interpretation between the metadata and the captured excerpt, so the
+        reading always sits next to the evidence it was drawn from.
+        """
+
+        interpretation = (
+            str(item.get("interpretation_text") or "").strip()
+            if str(item.get("content_mode") or "") == "interpreted_brief"
+            else ""
+        )
         evidence: dict[str, Any] = (
             item.get("evidence") if isinstance(item.get("evidence"), dict) else {}
         )
@@ -1901,6 +1953,38 @@ class SuperEnhancedContentGenerator:
             f"- **来源**: {safe(source)}",
             f"- **原始来源**: [{safe(url)}]({url})",
         ]
+        # The publishing host is the one piece of placement a reader can act on
+        # when no body text was captured: a vendor announcement and a personal
+        # blog post carry very different weight under the same headline.
+        host = urllib.parse.urlsplit(url).hostname or ""
+        if host:
+            lines.append(f"- **发布域名**: {safe(host)}")
+        if source == "github_trending":
+            for label, key in (
+                ("主要语言", "language"),
+                ("Star", "stars"),
+                ("今日新增 Star", "today_stars"),
+                ("许可协议", "license"),
+            ):
+                value = safe(fields.get(key))
+                if value:
+                    lines.append(f"- **{label}**: {value}")
+            topics = fields.get("topics")
+            if isinstance(topics, list):
+                labels = [safe(topic) for topic in topics if safe(topic)]
+                if labels:
+                    lines.append(f"- **主题标签**: {'、'.join(labels[:8])}")
+        elif source == "arxiv":
+            category = safe(fields.get("category"))
+            if category:
+                lines.append(f"- **分类**: {category}")
+            authors = fields.get("authors")
+            if isinstance(authors, list):
+                names = [safe(name) for name in authors if safe(name)]
+                if names:
+                    shown = "、".join(names[:3])
+                    suffix = " 等" if len(names) > 3 else ""
+                    lines.append(f"- **作者**: {shown}{suffix}")
         if source == "hacker_news":
             lines.extend(
                 [
@@ -1913,22 +1997,41 @@ class SuperEnhancedContentGenerator:
                 hn_url = f"https://news.ycombinator.com/item?id={fields.get('hn_id')}"
                 lines.append(f"- **HN 讨论**: [{hn_url}]({hn_url})")
 
+        if interpretation:
+            # Already validated at generation time: no links, no markup, no
+            # numbers or names absent from the evidence above.
+            lines.extend(["", f"## {INTERPRETATION_HEADING}", ""])
+            lines.extend(interpretation.splitlines())
+
         source_text = str(item.get("source_display_excerpt") or "").strip()
         if capture_mode != "metadata_only" and source_text:
             lines.extend(["", "## 来源摘要/节选", ""])
             lines.extend(f"> {safe(line)}" if line.strip() else ">" for line in source_text.splitlines())
 
-        lines.extend(
-            [
-                "",
-                "## 来源说明",
-                "",
-                safe(note),
-                "",
-                "> 本页只呈现已保存的来源证据，不包含基于缺失正文的扩展推断。",
-            ]
-        )
+        lines.extend(["", "## 来源说明", "", safe(note), ""])
+        if interpretation:
+            # The Tier-C promise ("no inference beyond the captured evidence")
+            # would be false on this page, so state what was added instead.
+            lines.append(
+                "> 「要点解读」由 AI Stack 依据上方已保存内容整理，"
+                "不代表来源的完整表述；标注「推测：」的判断来自编辑，不是来源陈述。"
+            )
+        else:
+            lines.append("> 本页只呈现已保存的来源证据，不包含基于缺失正文的扩展推断。")
         return lines
+
+    @staticmethod
+    def _interpretation_summary(interpretation: object) -> str:
+        """Return the prose under the reading's first section, for SEO use."""
+
+        text = str(interpretation or "")
+        match = re.search(
+            r"(?ms)^###[ \t]+这是什么[ \t]*$\n(?P<body>.*?)(?=^###[ \t]+|\Z)",
+            text,
+        )
+        if match is None:
+            return ""
+        return " ".join(line.strip() for line in match.group("body").splitlines() if line.strip())
 
     @staticmethod
     def _source_brief_note(capture_mode: str, source: str) -> str:

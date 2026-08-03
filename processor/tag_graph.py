@@ -272,10 +272,13 @@ class TagGraphBuilder:
         selected_articles.sort(key=lambda item: _stable_text_key(item[0].as_posix()))
         for md_file, content, frontmatter in selected_articles:
             self._parse_article_tags(md_file, content=content, frontmatter=frontmatter)
+            # Interpreted briefs are excluded alongside source briefs: mining an
+            # editorial reading would promote one page's inference into the
+            # site-wide tech graph, where it would read as an established fact.
             if (
                 self.enable_content_mining
                 and str(frontmatter.get("content_mode") or "").casefold()
-                != "source_brief"
+                not in {"source_brief", "interpreted_brief"}
             ):
                 self._mine_article_concepts(
                     md_file,
