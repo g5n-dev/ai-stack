@@ -23,6 +23,17 @@ EXTRACTOR_VERSION = "source-contract-v1"
 FULL_ARTICLE_EXTRACTOR_VERSION = "source-contract-v2"
 LEGACY_EVIDENCE_SCHEMA = "source_evidence_v1"
 EVIDENCE_SCHEMA = "source_evidence_v2"
+_COMPLETENESS_BY_CAPTURE_MODE = {
+    "abstract": "abstract_only",
+    "excerpt": "partial",
+    "metadata_only": "metadata_only",
+    "social_post": "single_item",
+}
+INTERPRETED_BRIEF_TIER = "C+"
+# Only captures that carry real prose can support an interpretation.  A
+# metadata-only record is a title and nothing else, so anything said about what
+# the linked work argues would be invention.
+INTERPRETABLE_CAPTURE_MODES = frozenset({"abstract", "excerpt"})
 _MAX_EVIDENCE_BYTES = 64 * 1024
 _MAX_STORED_SOURCE_BYTES = 24 * 1024
 _LEGACY_MAX_DISPLAY_EXCERPT_BYTES = 6_000
@@ -50,6 +61,17 @@ class SourceContractError(ValueError):
 
 def _text(value: object) -> str:
     return str(value or "").strip()
+
+
+def _interpretation_digest(value: str) -> str:
+    """Bind the published interpretation to a digest readers can recompute.
+
+    This proves the rendered reading is the one that passed generation-time
+    grounding checks.  It deliberately makes no claim about faithfulness to the
+    evidence: that is enforced when the text is produced, not by this hash.
+    """
+
+    return "sha256:" + hashlib.sha256(_text(value).encode("utf-8")).hexdigest()
 
 
 def _truncate_utf8(value: str, limit: int) -> tuple[str, bool]:
@@ -632,17 +654,35 @@ def verify_source_contract(item: Mapping[str, Any]) -> None:
             raise SourceContractError("full article cannot be published as a source brief")
         if extractor_version != EXTRACTOR_VERSION:
             raise SourceContractError("source brief extractor version is invalid")
-        expected_completeness = {
-            "abstract": "abstract_only",
-            "excerpt": "partial",
-            "metadata_only": "metadata_only",
-            "social_post": "single_item",
-        }.get(capture_mode, "unknown")
+        expected_completeness = _COMPLETENESS_BY_CAPTURE_MODE.get(capture_mode, "unknown")
         declared_completeness = _text(item.get("source_completeness"))
         if declared_completeness and declared_completeness != expected_completeness:
             raise SourceContractError("source brief completeness is invalid")
         if _text(item.get("parent_snapshot_sha256")):
             raise SourceContractError("source brief cannot declare a parent snapshot")
+    elif content_mode == "interpreted_brief":
+        # An interpreted brief publishes the same bounded evidence as a source
+        # brief plus an editorial reading of it.  The evidence contract is
+        # therefore identical; only the tier and the interpretation digest differ.
+        if publication_tier != INTERPRETED_BRIEF_TIER:
+            raise SourceContractError("interpreted brief must use publication tier C+")
+        if capture_mode not in INTERPRETABLE_CAPTURE_MODES:
+            raise SourceContractError("interpreted brief requires abstract or excerpt evidence")
+        if extractor_version != EXTRACTOR_VERSION:
+            raise SourceContractError("interpreted brief extractor version is invalid")
+        expected_completeness = _COMPLETENESS_BY_CAPTURE_MODE.get(capture_mode, "unknown")
+        declared_completeness = _text(item.get("source_completeness"))
+        if declared_completeness and declared_completeness != expected_completeness:
+            raise SourceContractError("interpreted brief completeness is invalid")
+        if _text(item.get("parent_snapshot_sha256")):
+            raise SourceContractError("interpreted brief cannot declare a parent snapshot")
+        if not _SHA256_DIGEST_RE.fullmatch(_text(item.get("interpretation_sha256"))):
+            raise SourceContractError("interpreted brief interpretation digest is invalid")
+        interpretation = _text(item.get("interpretation_text"))
+        if not interpretation:
+            raise SourceContractError("interpreted brief carries no interpretation")
+        if _interpretation_digest(interpretation) != _text(item.get("interpretation_sha256")):
+            raise SourceContractError("interpreted brief interpretation digest does not match")
     elif content_mode == "evidence_backed_rewrite":
         if publication_tier != "B":
             raise SourceContractError("evidence-backed rewrite must use publication tier B")
@@ -716,6 +756,41 @@ def promote_juejin_full_article(
     return promoted
 
 
+def promote_interpreted_brief(
+    item: Mapping[str, Any],
+    interpretation_text: str,
+) -> dict[str, Any]:
+    """Attach a validated editorial reading to a Tier-C source brief.
+
+    The captured evidence is left byte-for-byte intact, so the snapshot digest
+    and every lineage fingerprint derived from it stay unchanged.  Only the
+    publication mode and the interpretation are added, which keeps a reading
+    from ever being mistaken for recorded source evidence.
+    """
+
+    verify_source_contract(item)
+    if _text(item.get("content_mode")) != "source_brief":
+        raise SourceContractError("interpretation requires a Tier-C source brief")
+    if _text(item.get("source_capture_mode")) not in INTERPRETABLE_CAPTURE_MODES:
+        raise SourceContractError("interpretation requires abstract or excerpt evidence")
+    interpretation = _text(interpretation_text)
+    if not interpretation:
+        raise SourceContractError("interpretation is empty")
+    promoted = dict(item)
+    promoted.update(
+        {
+            "content_mode": "interpreted_brief",
+            "publication_tier": INTERPRETED_BRIEF_TIER,
+            "interpretation_text": interpretation,
+            "interpretation_sha256": _interpretation_digest(interpretation),
+        }
+    )
+    verify_source_contract(promoted)
+    if promoted["evidence"] is not item.get("evidence"):
+        raise SourceContractError("interpretation must not rewrite source evidence")
+    return promoted
+
+
 def publication_title_from_contract(item: Mapping[str, Any]) -> str:
     """Derive the bounded display title from hash-bound immutable evidence."""
 
@@ -734,10 +809,13 @@ __all__ = [
     "EVIDENCE_SCHEMA",
     "EXTRACTOR_VERSION",
     "FULL_ARTICLE_EXTRACTOR_VERSION",
+    "INTERPRETABLE_CAPTURE_MODES",
+    "INTERPRETED_BRIEF_TIER",
     "LEGACY_EVIDENCE_SCHEMA",
     "SourceContractError",
     "apply_source_contract",
     "publication_title_from_contract",
+    "promote_interpreted_brief",
     "promote_juejin_full_article",
     "verify_source_contract",
 ]

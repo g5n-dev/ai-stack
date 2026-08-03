@@ -27,6 +27,7 @@ from .content_quality import (
     analyze_post,
     is_curated_evidence_backed_rewrite,
     is_evidence_backed_rewrite,
+    is_interpreted_brief,
     is_source_brief,
     is_terminal_recovery_failure_archive,
     markdown_body,
@@ -53,6 +54,7 @@ _FENCE_LINE_RE = re.compile(r"^ {0,3}(?P<fence>`{3,}|~{3,})(?P<tail>.*)$")
 _CLASSIFICATIONS = (
     "needs_source_recovery",
     "terminal_unrecoverable",
+    "verified_interpreted_brief",
     "verified_rewrite",
     "verified_source_brief",
 )
@@ -120,11 +122,26 @@ def _verified_modern_source_brief(metadata: Mapping[str, Any], body: str) -> boo
     )
 
 
+def _verified_modern_interpreted_brief(metadata: Mapping[str, Any], body: str) -> bool:
+    return (
+        str(metadata.get("content_mode") or "").strip().casefold() == "interpreted_brief"
+        and str(metadata.get("publication_tier") or "").strip() == "C+"
+        and bool(
+            _SOURCE_DIGEST_RE.fullmatch(str(metadata.get("source_snapshot_sha256") or "").strip())
+        )
+        and str(metadata.get("extractor_version") or "").strip() == "source-contract-v1"
+        and metadata.get("source_support") == 1.0
+        and is_interpreted_brief(metadata, body)
+    )
+
+
 def _classification(metadata: Mapping[str, Any], body: str, current_status: str) -> str:
     if current_status == "archived" and is_terminal_recovery_failure_archive(metadata, body):
         return "terminal_unrecoverable"
     if current_status == "source_brief" and _verified_modern_source_brief(metadata, body):
         return "verified_source_brief"
+    if current_status == "interpreted_brief" and _verified_modern_interpreted_brief(metadata, body):
+        return "verified_interpreted_brief"
     declared_mode = str(metadata.get("content_mode") or "").strip().casefold()
     if current_status == "complete" and declared_mode == "evidence_backed_rewrite":
         if is_evidence_backed_rewrite(metadata, body) or is_curated_evidence_backed_rewrite(

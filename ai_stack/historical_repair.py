@@ -34,6 +34,7 @@ from .content_quality import (
     description_is_truncated,
     is_curated_evidence_backed_rewrite,
     is_evidence_backed_rewrite,
+    is_interpreted_brief,
     is_source_brief,
     remove_empty_section_headings,
     remove_misplaced_strong_markers,
@@ -1279,6 +1280,12 @@ def _active_provenance_metadata(metadata: Mapping[str, Any], body: str) -> dict[
         # evidence-backed provenance to ``legacy_no_snapshot``.
         result.pop("source_provenance", None)
         return result
+    if declared_mode == "interpreted_brief" and is_interpreted_brief(result, body):
+        # An interpreted brief carries the same immutable snapshot as a source
+        # brief plus a labelled reading of it.  Relabeling it as a legacy
+        # analysis would erase the interpretation on the next repair pass.
+        result.pop("source_provenance", None)
+        return result
     if declared_mode == "evidence_backed_rewrite" and (
         is_evidence_backed_rewrite(result, body)
         or is_curated_evidence_backed_rewrite(result, body)
@@ -1309,6 +1316,11 @@ def _provenance_priority(document: _Document) -> int:
     if is_evidence_backed_rewrite(metadata, body):
         return 0
     if declared_mode == "source_brief" and is_source_brief(metadata, body):
+        return 1
+    # An interpreted brief rests on exactly the same captured evidence as a
+    # source brief, so it ranks alongside one; the larger presentation then wins
+    # the tie, which is the reading rather than the bare card.
+    if declared_mode == "interpreted_brief" and is_interpreted_brief(metadata, body):
         return 1
     if declared_mode == "evidence_backed_rewrite" and is_curated_evidence_backed_rewrite(
         metadata, body

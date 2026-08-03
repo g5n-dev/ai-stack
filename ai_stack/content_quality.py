@@ -254,6 +254,9 @@ _REWRITE_REQUIRED_HEADINGS = (
     "来源与核验",
 )
 _MAX_MODERN_SOURCE_BRIEF_BODY_BYTES = 192 * 1024
+INTERPRETATION_HEADING = "要点解读"
+# Only prose captures can be interpreted; a metadata-only record is a title.
+_INTERPRETABLE_CAPTURE_MODES = frozenset({"abstract", "excerpt"})
 _STANDARD_FOOTER_PREFIXES = (
     "*本文由 AI Stack",
     "*这篇文章由 AI Stack",
@@ -963,6 +966,58 @@ def is_source_brief(metadata: Mapping[str, Any], body: str) -> bool:
     return any(len(re.sub(r"\s+", "", line)) >= 12 for line in narrative_lines)
 
 
+def is_interpreted_brief(metadata: Mapping[str, Any], body: str) -> bool:
+    """Return whether a Tier-C+ card carries evidence plus a labelled reading.
+
+    The provenance requirements are exactly those of a source brief: the
+    interpretation is added alongside the captured evidence, never in place of
+    it, so the evidence contract must still hold in full.
+    """
+
+    if str(metadata.get("entry_kind") or "").strip().casefold() != "auto":
+        return False
+    if str(metadata.get("content_mode") or "").strip().casefold() != "interpreted_brief":
+        return False
+    if str(metadata.get("publication_tier") or "").strip() != "C+":
+        return False
+    capture_mode = str(metadata.get("source_capture_mode") or "").strip()
+    if capture_mode not in _INTERPRETABLE_CAPTURE_MODES:
+        return False
+    if str(metadata.get("source_completeness") or "").strip() != (
+        _SOURCE_COMPLETENESS_BY_CAPTURE_MODE.get(capture_mode)
+    ):
+        return False
+    if str(metadata.get("extractor_version") or "").strip() != "source-contract-v1":
+        return False
+    if not str(metadata.get("discovery_method") or "").strip():
+        return False
+    source_is_truncated = metadata.get("source_is_truncated")
+    if not isinstance(source_is_truncated, bool):
+        return False
+    if bool(str(metadata.get("source_truncation_reason") or "").strip()) is not source_is_truncated:
+        return False
+    if metadata.get("source_support") != 1.0:
+        return False
+    for name in ("source_snapshot_sha256", "interpretation_sha256"):
+        if _SOURCE_DIGEST_RE.fullmatch(str(metadata.get(name) or "").strip()) is None:
+            return False
+    external_url = metadata.get("external_url")
+    if not isinstance(external_url, str):
+        return False
+    parsed = urlsplit(external_url.strip())
+    if parsed.scheme.casefold() not in _HTTP_SCHEMES or not parsed.hostname:
+        return False
+    text = str(body or "")
+    if len(text.encode("utf-8")) >= _MAX_MODERN_SOURCE_BRIEF_BODY_BYTES:
+        return False
+    # The evidence block and the labelled reading must both be present, so a
+    # reader can always see what was captured next to what was inferred.
+    return all(
+        re.search(rf"(?m)^##[ \t]+{re.escape(heading)}[ \t]*$", text)
+        for heading in ("基本信息", INTERPRETATION_HEADING)
+    )
+
+
 def is_evidence_backed_rewrite(metadata: Mapping[str, Any], body: str) -> bool:
     """Return whether a generated Tier-B rewrite has complete source provenance."""
 
@@ -1069,6 +1124,7 @@ def analyze_post(document: str) -> PostQualityAnalysis:
         fatal.add("title_generation_prompt_leak")
 
     source_brief = is_source_brief(metadata, body)
+    interpreted_brief = is_interpreted_brief(metadata, body)
     evidence_backed_rewrite = is_evidence_backed_rewrite(metadata, body)
     curated_evidence_backed_rewrite = is_curated_evidence_backed_rewrite(metadata, body)
     declared_mode = str(metadata.get("content_mode") or "").strip().casefold()
@@ -1080,6 +1136,8 @@ def analyze_post(document: str) -> PostQualityAnalysis:
         fatal.add("invalid_source_brief")
     if declared_mode == "legacy_source_brief" and not source_brief:
         fatal.add("invalid_source_brief")
+    if declared_mode == "interpreted_brief" and not interpreted_brief:
+        fatal.add("invalid_interpreted_brief")
     if declared_mode == "evidence_backed_rewrite" and not (
         evidence_backed_rewrite or curated_evidence_backed_rewrite
     ):
@@ -1106,6 +1164,8 @@ def analyze_post(document: str) -> PostQualityAnalysis:
         status = "quarantined"
     elif source_brief:
         status = "source_brief"
+    elif interpreted_brief:
+        status = "interpreted_brief"
     elif evidence_backed_rewrite:
         status = "complete"
     elif declared_mode == "legacy_analysis" or (entry_kind == "auto" and not declared_mode):
@@ -1131,6 +1191,7 @@ def build_content_quality_manifest(content_root: Path | str) -> dict[str, Any]:
     quarantined_count = 0
     archived_count = 0
     source_brief_count = 0
+    interpreted_brief_count = 0
     complete_count = 0
     legacy_analysis_count = 0
     verified_provenance_count = 0
@@ -1178,6 +1239,9 @@ def build_content_quality_manifest(content_root: Path | str) -> dict[str, Any]:
             elif status == "source_brief":
                 reasons = ("concise_source_card",)
                 source_brief_count += 1
+            elif status == "interpreted_brief":
+                reasons = ("interpreted_source_card",)
+                interpreted_brief_count += 1
             elif status == "legacy_analysis":
                 legacy_analysis_count += 1
             else:
@@ -1205,6 +1269,10 @@ def build_content_quality_manifest(content_root: Path | str) -> dict[str, Any]:
             and declared_mode == "source_brief"
             and is_source_brief(metadata, body)
         ) or (
+            status == "interpreted_brief"
+            and declared_mode == "interpreted_brief"
+            and is_interpreted_brief(metadata, body)
+        ) or (
             status == "complete"
             and (
                 is_evidence_backed_rewrite(metadata, body)
@@ -1214,7 +1282,7 @@ def build_content_quality_manifest(content_root: Path | str) -> dict[str, Any]:
             verified_provenance_count += 1
         if not reasons and not warnings and status == "complete":
             continue
-        if status != "source_brief":
+        if status not in {"source_brief", "interpreted_brief"}:
             reason_counts.update(reasons)
         page_record: dict[str, Any] = {
             "status": status,
@@ -1232,9 +1300,12 @@ def build_content_quality_manifest(content_root: Path | str) -> dict[str, Any]:
         "schema_version": _CONTENT_QUALITY_MANIFEST_SCHEMA,
         "source_tree_sha256": source_hash.hexdigest(),
         "source_file_count": source_file_count,
-        "active_count": complete_count + source_brief_count + legacy_analysis_count,
+        "active_count": (
+            complete_count + source_brief_count + interpreted_brief_count + legacy_analysis_count
+        ),
         "complete_count": complete_count,
         "source_brief_count": source_brief_count,
+        "interpreted_brief_count": interpreted_brief_count,
         "legacy_analysis_count": legacy_analysis_count,
         "verified_provenance_count": verified_provenance_count,
         "rehydration_pending_count": rehydration_pending_count,
