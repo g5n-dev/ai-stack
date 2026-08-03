@@ -56,8 +56,19 @@ _MAX_VERBATIM_RUN = 30
 
 # Phrases in which a model narrates its own missing context.  These are also
 # what ``synthetic_body_reasons`` quarantines, so producing them wastes a call.
+#
+# Matching is phrase-level, not word-level.  A word-level list rejected every
+# real reading on the first production run: "上下文" is ordinary vocabulary in
+# this domain (长上下文 / 上下文窗口), and so are 摘要 and 标题 on their own.
+# What makes a sentence meta-narration is the claim about what the writer could
+# or could not see, so only those structures are matched here.
 _META_NARRATION_RE = re.compile(
-    r"原文|全文|正文|摘要|标题|节选|未提供|没有提供|无法获取|无法访问|提示词|上下文|截断|本文将|以下内容"
+    r"原文|全文|提示词"
+    r"|(?:未|没有|并未|无法|不能)[^。；！？\n]{0,8}(?:提供|获取|访问|读取|拿到|看到)"
+    r"|(?:基于|根据|由于|鉴于|仅凭|仅有|只有|受限于)[^。；！？\n]{0,12}"
+    r"(?:标题|摘要|节选|有限的?信息|现有信息|已有信息)"
+    r"|(?:标题|摘要|节选|正文|内容)[^。；！？\n]{0,8}(?:未提供|不完整|被截断|缺失)"
+    r"|本文将|以下内容|接下来我|我(?:将|会)(?:为你)?(?:分析|推断|推测)"
 )
 _NUMBER_RE = re.compile(r"\d+(?:\.\d+)?")
 _LATIN_RE = re.compile(r"[A-Za-z][A-Za-z0-9+#.\-]*")
@@ -203,8 +214,10 @@ class SourceInterpreter:
 - 只能使用上面已保存内容里出现的事实。禁止引入其中没有的数字、比例、产品名、模型名、机构名或结论。
 - 不确定的地方就不写，不要猜测具体细节。
 - 不得整句照抄上面的内容，用你自己的话表达。
-- 不要提及你掌握的信息是否完整。
-- 不要出现「原文」「全文」「摘要」「标题」「未提供」「无法获取」这类字样。"""
+- 直接陈述结论，不要描述你看到了什么或没看到什么。
+- 禁止出现「原文」「全文」「未提供」「无法获取」「基于标题」「根据摘要」这类说法。
+  错误示范：「根据摘要来看，该方法……」「由于未提供原文，推测……」
+  正确示范：「该方法用状态机校验事件流。」"""
 
     @classmethod
     def _validate(cls, item: Mapping[str, Any], *, body: str, depth: str, budget: int) -> None:
@@ -241,8 +254,13 @@ class SourceInterpreter:
                     raise ValueError("every inference must be marked as speculation")
 
         prose = _prose_only(text)
-        if _META_NARRATION_RE.search(prose):
-            raise ValueError("interpretation narrates its own missing context")
+        meta = _META_NARRATION_RE.search(prose)
+        if meta:
+            # Name the offending phrase: without it a rejection cannot be tuned
+            # from CI logs, which is how the first production run stayed opaque.
+            raise ValueError(
+                f"interpretation narrates its own missing context: {meta.group(0)!r}"
+            )
         reasons = synthetic_body_reasons(prose)
         if reasons:
             raise ValueError(f"interpretation looks synthetic: {', '.join(sorted(reasons))}")
