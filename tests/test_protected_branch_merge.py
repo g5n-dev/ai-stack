@@ -758,7 +758,11 @@ def test_cancelled_run_is_reported_as_incomplete_rather_than_failed() -> None:
     )
 
     summary = str(captured["output"]["summary"])  # type: ignore[index]
-    assert "did not complete (cancelled)" in summary
+    assert "did not complete" in summary
+    assert "cancelled" in summary
+    # Job timeouts are reported as cancelled and are this repository's dominant
+    # CI failure mode, so the summary has to point there rather than at tests.
+    assert "timeout" in summary
     assert "failed" not in summary
 
 

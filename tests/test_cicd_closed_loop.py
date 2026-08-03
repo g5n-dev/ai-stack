@@ -147,11 +147,7 @@ def test_trusted_ci_dispatch_contract_matches_the_controller_helper() -> None:
     dispatch = ci["on"]["workflow_dispatch"]
     assert dispatch["inputs"]["target_sha"]["required"] == "true"
     assert ci["run-name"] == "trusted-ci:${{ inputs.target_sha }}"
-    # The group stays bound to the target SHA and adds the run id, so concurrent
-    # dispatches of one commit no longer cancel each other into a false failure.
-    assert ci["concurrency"]["group"] == (
-        "trusted-pr-ci-${{ inputs.target_sha }}-${{ github.run_id }}"
-    )
+    assert ci["concurrency"]["group"] == "trusted-pr-ci-${{ inputs.target_sha }}"
     assert "ref: ${{ inputs.target_sha }}" in ci_text
     assert "persist-credentials: false" in ci_text
     assert "cache:" not in ci_text

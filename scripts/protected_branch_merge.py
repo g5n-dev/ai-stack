@@ -301,10 +301,14 @@ def _publish_required_check(
         raise ProtectedBranchMergeError("required check conclusion is invalid")
     if conclusion == "success":
         outcome = "passed"
+    elif raw_conclusion == "cancelled":
+        # GitHub reports a job killed by timeout-minutes as 'cancelled', and on
+        # this repository that is the dominant way CI stops: a cold
+        # fetch-depth: 0 checkout of a multi-GB tree runs past the job budget.
+        # Calling it "failed" sends the reader hunting for a broken test that
+        # does not exist, when the fix is elsewhere entirely.
+        outcome = "did not complete (cancelled — typically a job timeout)"
     elif raw_conclusion and raw_conclusion != "failure":
-        # A run that was cancelled, skipped or timed out still blocks the merge,
-        # but reporting it as "failed" sends a reader hunting for a test failure
-        # that does not exist.  Name what actually happened.
         outcome = f"did not complete ({raw_conclusion})"
     else:
         outcome = "failed"
