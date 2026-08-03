@@ -175,6 +175,53 @@ jobs:
               --run-url "$RUN_URL"
           fi
 
+      # Every release-blocking ceiling had exactly two states before this:
+      # fine, and release fails. Grading them turns a capacity problem into
+      # scheduled work rather than an outage.
+      - name: Measure capacity headroom
+        id: capacity
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: |
+          set -uo pipefail
+          python3 scripts/capacity_report.py \
+            --summary-output "$RUNNER_TEMP/capacity.md" \
+            --fail-on never > "$RUNNER_TEMP/capacity.json"
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          cat "$RUNNER_TEMP/capacity.json"
+          if [ "$code" -gt 1 ]; then
+            exit "$code"
+          fi
+          # An unreadable report must alert rather than pass as healthy.
+          status="$(python3 -c 'import json,sys; print(json.load(sys.stdin)["status"])' \
+            < "$RUNNER_TEMP/capacity.json" 2>/dev/null || echo unreadable)"
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+
+      - name: Deliver capacity alert
+        if: always() && steps.capacity.outputs.exit_code != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          status="${{ steps.capacity.outputs.status }}"
+          if [ "$status" = "ok" ]; then
+            python3 scripts/ops_alert.py \
+              --repository "$GITHUB_REPOSITORY" \
+              --key capacity-headroom \
+              --title "容量水位接近上限" \
+              --resolved
+          else
+            python3 scripts/ops_alert.py \
+              --repository "$GITHUB_REPOSITORY" \
+              --key capacity-headroom \
+              --title "容量水位接近上限" \
+              --failing \
+              --summary-file "$RUNNER_TEMP/capacity.md" \
+              --run-url "$RUN_URL"
+          fi
+
       # The job's own colour still reflects reality, so a broken alert channel
       # cannot make a real outage look healthy.
       - name: Fail the job when production is unhealthy
@@ -184,6 +231,7 @@ jobs:
           heartbeat="${{ steps.heartbeat.outputs.exit_code }}"
           release_state="${{ steps.release_state.outputs.exit_code }}"
           release_runs="${{ steps.release_runs.outputs.exit_code }}"
+          capacity="${{ steps.capacity.outputs.status }}"
           if [ "${heartbeat:-2}" != "0" ] \
             || [ "${release_state:-2}" != "0" ] \
             || [ "${release_runs:-2}" != "0" ]; then
@@ -191,3 +239,14 @@ jobs:
             echo " release_state=${release_state:-unknown} release_runs=${release_runs:-unknown})" >&2
             exit 1
           fi
+          # A capacity warning is scheduled work, not an outage, so it alerts
+          # without failing the job. Critical means a release is about to start
+          # failing, and an unreadable report means the check itself is broken —
+          # both have to show up in the job's colour.
+          case "${capacity:-unreadable}" in
+            ok|warning) ;;
+            *)
+              echo "capacity check is ${capacity:-unreadable}" >&2
+              exit 1
+              ;;
+          esac
