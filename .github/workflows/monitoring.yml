@@ -16,7 +16,12 @@ jobs:
   verify-production-state:
     name: Verify Production Release State
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    # Raised from 10 deliberately, and only here. Elsewhere a timeout should stay
+    # tight so a slow checkout surfaces rather than being absorbed by a bigger
+    # budget — but this job is the thing that reports a stall, and run
+    # 30751525677 was already killed at 10m06s inside checkout, alerting nobody.
+    # A monitor cannot report an outage that also kills the monitor.
+    timeout-minutes: 20
     permissions:
       contents: read
       # Alerts are delivered as Issues so GitHub itself pushes them to the owner
