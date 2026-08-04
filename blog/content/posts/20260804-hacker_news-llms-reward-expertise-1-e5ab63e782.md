@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:84a16c3dcfd07e41df4757d8b25af5e52343c0a4dd60ad81
 source_payload_sha256: "sha256:6e629786eb56513f55b6d7cc2ff3baf2d7749bc5119ca92de753f919343d2f11"
 observation_id: obs_e5ab63e782eb47272150d3dbb61ffe43b216574f6c43a733888a63d8465c1194
 event_id: evt_302edc339688114846198bb584315a862d12a7b22c030965f76c4923dd9b7f38
-revision_id: rev_1ae5badd754f5df9a10156c158068b7a92180c47205909bd4b006ff38a408241
+revision_id: rev_4c7c1c5d4bac410b64ef873838e17452c5dd4d859178269a65168e5c8ba693ba
 source_published_at: 2026-08-03T21:13:53Z
 first_seen_at: 2026-08-03T21:34:07Z
 timestamp_confidence: platform
@@ -27,7 +27,7 @@ source_title_chars_original: 21
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://www.seangoedecke.com/llms-reward-expertise
 parent_observation_id: null
-last_seen_at: 2026-08-03T21:21:57.378051Z
+last_seen_at: 2026-08-04T00:00:00Z
 ---
 
 ## 基本信息

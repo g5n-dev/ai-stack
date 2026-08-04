@@ -27,7 +27,7 @@ source_title_chars_original: 57
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/announcing-the-agentic-catalog-experience-in-amazon-quick
 parent_observation_id: null
-last_seen_at: 2026-08-03T17:20:20.843672Z
+last_seen_at: 2026-08-04T00:00:00Z
 ---
 
 ## 基本信息

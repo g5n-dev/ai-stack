@@ -15,7 +15,7 @@ observation_id: obs_20eb9da94f2bded7e24f9a9c7d3624e8ddc45336085efade74fdb52b726c
 event_id: evt_7147bc784e40688f4115b33ec1f79adf5b5b90dec40636e630c501ddfe28497f
 revision_id: rev_6ed23b4a8e09342342eef339051c72becadb56765811797a60ea9bd03555470f
 source_published_at: 2026-08-03T21:44:03Z
-first_seen_at: 2026-08-03T23:19:37.619453Z
+first_seen_at: 2026-08-03T23:30:21Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:178e1306cf6beefa8f89833e8e996a0a5f06a82f653723e38
 description: "这是一期播客节目，邀请了 Baseten 的工程师讨论推理工程的核心问题，即如何将训练好的模型转化为可在生产环境中快速、可靠且低成本运行的 API。"
 external_url: https://www.latent.space/p/inference-eng
 parent_observation_id: null
-last_seen_at: 2026-08-03T23:19:37.619453Z
+last_seen_at: 2026-08-04T00:00:00Z
 ---
 
 ## 基本信息

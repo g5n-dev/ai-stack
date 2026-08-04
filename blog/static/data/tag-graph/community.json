@@ -2,33 +2,33 @@
   "algorithm": "deterministic-weighted-label-propagation",
   "communities": [
     {
-      "article_count": 476,
+      "article_count": 478,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-f7feb7a51255.json",
+      "hotspot_file": "community-hotspots/01-dea787d15c62.json",
       "id": "community:tag:Technical How-to",
       "leader_id": "tag:博客与播客",
       "name": "博客与播客",
-      "node_count": 53,
+      "node_count": 56,
       "rank": 1,
-      "tag_occurrences": 722,
-      "weighted_degree": 2082
+      "tag_occurrences": 736,
+      "weighted_degree": 2156
     },
     {
-      "article_count": 2166,
+      "article_count": 2168,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/02-3cadfd9898fa.json",
+      "hotspot_file": "community-hotspots/02-55683d4a4941.json",
       "id": "community:tag:掘金",
       "leader_id": "tag:Hacker News",
       "name": "Hacker News",
       "node_count": 32,
       "rank": 2,
-      "tag_occurrences": 4437,
-      "weighted_degree": 9887.2
+      "tag_occurrences": 4442,
+      "weighted_degree": 9914.2
     },
     {
       "article_count": 6,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/03-7b10ee6a45e1.json",
+      "hotspot_file": "community-hotspots/03-dfe21257546b.json",
       "id": "community:tag:Brain and cognitive sciences",
       "leader_id": "tag:Artificial intelligence",
       "name": "Artificial intelligence",
@@ -40,7 +40,7 @@
     {
       "article_count": 21,
       "hotspot_count": 7,
-      "hotspot_file": "community-hotspots/04-81e769fa2795.json",
+      "hotspot_file": "community-hotspots/04-a1518e03764e.json",
       "id": "community:tag:Codex",
       "leader_id": "tag:工程实践",
       "name": "工程实践",
@@ -50,21 +50,21 @@
       "weighted_degree": 122
     },
     {
-      "article_count": 6,
-      "hotspot_count": 7,
-      "hotspot_file": "community-hotspots/05-33681eeb7553.json",
+      "article_count": 2,
+      "hotspot_count": 5,
+      "hotspot_file": "community-hotspots/05-492d467a2f6b.json",
       "id": "community:tag:Amazon RDS",
-      "leader_id": "tag:Customer Solutions",
-      "name": "Customer Solutions",
-      "node_count": 7,
+      "leader_id": "tag:Amazon Elastic Kubernetes Service",
+      "name": "Amazon Elastic Kubernetes Service",
+      "node_count": 5,
       "rank": 5,
-      "tag_occurrences": 13,
-      "weighted_degree": 73.6
+      "tag_occurrences": 6,
+      "weighted_degree": 40.6
     },
     {
       "article_count": 1,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/06-a934433dcc11.json",
+      "hotspot_file": "community-hotspots/06-97ddfa31a901.json",
       "id": "community:tag:Computer modeling",
       "leader_id": "tag:Computer science and technology",
       "name": "Computer science and technology",
@@ -76,7 +76,7 @@
     {
       "article_count": 2,
       "hotspot_count": 3,
-      "hotspot_file": "community-hotspots/07-ba8082ce0d96.json",
+      "hotspot_file": "community-hotspots/07-d243e243ce75.json",
       "id": "community:tag:ML Applications",
       "leader_id": "tag:AI Research",
       "name": "AI Research",
@@ -88,7 +88,7 @@
     {
       "article_count": 1,
       "hotspot_count": 3,
-      "hotspot_file": "community-hotspots/08-4575d54dbef4.json",
+      "hotspot_file": "community-hotspots/08-ae8121a79ff0.json",
       "id": "community:tag:Gemini App",
       "leader_id": "tag:Android",
       "name": "Android",
@@ -100,7 +100,7 @@
     {
       "article_count": 1,
       "hotspot_count": 2,
-      "hotspot_file": "community-hotspots/09-25f2f16de4ea.json",
+      "hotspot_file": "community-hotspots/09-7b66b7dfdad8.json",
       "id": "community:tag:Google Workspace",
       "leader_id": "tag:Google One",
       "name": "Google One",
@@ -110,7 +110,7 @@
       "weighted_degree": 8
     }
   ],
-  "generated_at": "2026-08-03T23:21:57Z",
+  "generated_at": "2026-08-04T03:39:28Z",
   "iterations": 4,
   "limit": 11,
   "links": [
@@ -120,7 +120,7 @@
       "strength": 1,
       "target": "community:tag:Technical How-to",
       "type": "community",
-      "weight": 37
+      "weight": 20
     },
     {
       "id": "edge:community:community:tag:Brain and cognitive sciences->community:tag:Computer modeling",
@@ -192,11 +192,11 @@
       "strength": 1,
       "target": "community:tag:掘金",
       "type": "community",
-      "weight": 949
+      "weight": 968
     }
   ],
   "stats": {
-    "assigned_nodes": 124,
+    "assigned_nodes": 125,
     "detected_communities": 9,
     "emitted_communities": 9,
     "total_communities": 9,
