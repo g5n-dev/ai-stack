@@ -1,8 +1,8 @@
 {
-  "active_count": 2293,
+  "active_count": 2296,
   "archived_count": 276,
   "complete_count": 21,
-  "interpreted_brief_count": 14,
+  "interpreted_brief_count": 15,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -18647,6 +18647,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260805-arxiv-atumai-a-principled-framework-for-agentic-generati-3-6b435510f7.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260805-arxiv-pseudorandom-streams-within-diffusion-models-act-a-3-4858836990.md": {
       "reasons": [
         "interpreted_source_card"
@@ -18659,7 +18665,19 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260805-blogs_podcasts-third-party-cyber-evaluations-involving-openai-mod-0-c99ec862b4.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260805-hacker_news-apple-says-more-ex-employees-may-have-taken-confid-9-2ee06b8c34.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260805-hacker_news-mistrals-shieldstral-3b-open-weights-model-for-mul-1-a594752653.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -18698,10 +18716,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2258,
-  "source_file_count": 2569,
-  "source_tree_sha256": "96ab5f7ee6f4401c506d84519b3e28044f393c063d61e7dbebdbd6ef2c2570b5",
-  "verified_provenance_count": 2293,
+  "source_brief_count": 2260,
+  "source_file_count": 2572,
+  "source_tree_sha256": "a46bc0cc2a473e4a7a5cac850456ec16bfac709628e9852ec2fbeb5916d416f4",
+  "verified_provenance_count": 2296,
   "warning_counts": {
     "source_excerpt_truncated": 756
   }

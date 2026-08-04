@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T18:05:46Z",
+  "generated_at": "2026-08-04T21:37:38Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -639,11 +639,11 @@
       "legacy_id": "agent",
       "level": 4,
       "name": "AI Agent",
-      "rank": 122,
+      "rank": 123,
       "weighted_degree": 4.4
     },
     {
-      "article_count": 733,
+      "article_count": 734,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
@@ -792,7 +792,7 @@
       "legacy_id": "chatbot",
       "level": 4,
       "name": "聊天机器人",
-      "rank": 128,
+      "rank": 129,
       "weighted_degree": 4
     },
     {
@@ -826,7 +826,7 @@
       "legacy_id": "cloud",
       "level": 5,
       "name": "云原生/容器",
-      "rank": 189,
+      "rank": 190,
       "weighted_degree": 0.6
     },
     {
@@ -860,7 +860,7 @@
       "legacy_id": "cv",
       "level": 3,
       "name": "计算机视觉",
-      "rank": 134,
+      "rank": 135,
       "weighted_degree": 3.1
     },
     {
@@ -1013,7 +1013,7 @@
       "legacy_id": "django",
       "level": 2,
       "name": "Django",
-      "rank": 140,
+      "rank": 141,
       "weighted_degree": 3
     },
     {
@@ -1098,7 +1098,7 @@
       "legacy_id": "embedding",
       "level": 3,
       "name": "向量嵌入",
-      "rank": 141,
+      "rank": 142,
       "weighted_degree": 3
     },
     {
@@ -1115,7 +1115,7 @@
       "legacy_id": "fastapi",
       "level": 2,
       "name": "FastAPI",
-      "rank": 142,
+      "rank": 143,
       "weighted_degree": 3
     },
     {
@@ -1132,7 +1132,7 @@
       "legacy_id": "flask",
       "level": 2,
       "name": "Flask",
-      "rank": 143,
+      "rank": 144,
       "weighted_degree": 3
     },
     {
@@ -1217,7 +1217,7 @@
       "legacy_id": "go",
       "level": 1,
       "name": "Go",
-      "rank": 148,
+      "rank": 149,
       "weighted_degree": 2.6
     },
     {
@@ -1302,11 +1302,11 @@
       "legacy_id": "langchain",
       "level": 2,
       "name": "LangChain",
-      "rank": 144,
+      "rank": 145,
       "weighted_degree": 3
     },
     {
-      "article_count": 560,
+      "article_count": 562,
       "category": "nlp",
       "color": "#d97706",
       "community_id": null,
@@ -1323,7 +1323,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 560,
+      "article_count": 562,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
@@ -1336,7 +1336,7 @@
       "legacy_id": "llm_scene",
       "level": 5,
       "name": "大语言模型",
-      "rank": 146,
+      "rank": 147,
       "weighted_degree": 2.6
     },
     {
@@ -1404,7 +1404,7 @@
       "legacy_id": "multimodal",
       "level": 3,
       "name": "多模态模型",
-      "rank": 145,
+      "rank": 146,
       "weighted_degree": 2.8
     },
     {
@@ -1591,11 +1591,11 @@
       "legacy_id": "rust",
       "level": 1,
       "name": "Rust",
-      "rank": 147,
+      "rank": 148,
       "weighted_degree": 2.6
     },
     {
-      "article_count": 1,
+      "article_count": 2,
       "category": "infra",
       "color": "#cbd5e1",
       "community_id": null,
@@ -1608,7 +1608,7 @@
       "legacy_id": "security",
       "level": 5,
       "name": "安全工具",
-      "rank": 190,
+      "rank": 189,
       "weighted_degree": 0.6
     },
     {
@@ -1659,7 +1659,7 @@
       "legacy_id": "tensorflow",
       "level": 2,
       "name": "TensorFlow",
-      "rank": 129,
+      "rank": 130,
       "weighted_degree": 4
     },
     {
@@ -1693,7 +1693,7 @@
       "legacy_id": "transformers",
       "level": 2,
       "name": "Transformers",
-      "rank": 130,
+      "rank": 131,
       "weighted_degree": 4
     },
     {
@@ -1710,7 +1710,7 @@
       "legacy_id": "typescript",
       "level": 1,
       "name": "TypeScript",
-      "rank": 131,
+      "rank": 132,
       "weighted_degree": 3.6
     },
     {
