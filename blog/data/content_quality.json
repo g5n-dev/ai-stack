@@ -1,5 +1,5 @@
 {
-  "active_count": 2286,
+  "active_count": 2290,
   "archived_count": 276,
   "complete_count": 21,
   "interpreted_brief_count": 12,
@@ -18530,6 +18530,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260804-arxiv-uembed-unified-sparse-and-dense-multimodal-embeddi-1-6b69a87801.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260804-blogs_podcasts-ainews-qwen-38-max24t-and-27b-new-open-weights-mod-0-c09b9b5f69.md": {
       "reasons": [
         "interpreted_source_card"
@@ -18587,6 +18593,18 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260804-blogs_podcasts-the-latest-ai-news-we-announced-in-july-2026-0-639d81441a.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260804-hacker_news-agent-skills-that-bring-team-coding-standards-to-c-3-bf7e8634d9.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260804-hacker_news-ai-generated-images-discourage-me-from-reading-you-3-b58e629cd1.md": {
       "reasons": [
         "concise_source_card"
@@ -18610,6 +18628,15 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260804-juejin-langgraph-状态机实战-0-5341413a74.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     },
     "posts/20260804-juejin-走进-ai-agent-0-95c7946f7f.md": {
       "reasons": [
@@ -18653,11 +18680,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2253,
-  "source_file_count": 2562,
-  "source_tree_sha256": "63be95fdd2982876d60b471bbc20c171ed94ebf38e410c06cd33be0c784f061c",
-  "verified_provenance_count": 2286,
+  "source_brief_count": 2257,
+  "source_file_count": 2566,
+  "source_tree_sha256": "62adf2454de990b495b8ab413e66a5b59f67d2de05e30f148de59b29702b3c2d",
+  "verified_provenance_count": 2290,
   "warning_counts": {
-    "source_excerpt_truncated": 755
+    "source_excerpt_truncated": 756
   }
 }
