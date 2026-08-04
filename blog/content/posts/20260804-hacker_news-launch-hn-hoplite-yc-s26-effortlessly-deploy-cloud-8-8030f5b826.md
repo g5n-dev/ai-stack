@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:c53c709cfd4218c072e655bb98b1d390ac922675fbe38578
 source_payload_sha256: "sha256:32c036f344da0e040f6689b67aedb64b23cad03a1b33490c7c75bc5330132aad"
 observation_id: obs_8030f5b8262c823b310e9ec64b666572434f6e6ff801a3d936d94cd22304d310
 event_id: evt_449e2ca21bee962789c449352d795f0a2df7bfbda1727f4456526aeb8c7a21f1
-revision_id: rev_905c0d9c9fa990eacc02bebd06ec94471c6392ffe0e8b8f0cd2b9d61a508520b
+revision_id: rev_718a342d156c2962b9ab506cdfa7a1789f04b7f862095e55d0165b3ec268dec0
 source_published_at: 2026-08-03T16:32:06Z
 first_seen_at: 2026-08-03T20:12:33Z
 timestamp_confidence: platform
@@ -27,7 +27,7 @@ source_title_chars_original: 69
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://hoplite.sh
 parent_observation_id: null
-last_seen_at: 2026-08-03T19:57:10.898177Z
+last_seen_at: 2026-08-04T00:00:00Z
 ---
 
 ## 基本信息

@@ -1,8 +1,8 @@
 {
-  "active_count": 2276,
+  "active_count": 2278,
   "archived_count": 276,
   "complete_count": 21,
-  "interpreted_brief_count": 6,
+  "interpreted_brief_count": 8,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -18488,6 +18488,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260804-arxiv-aurora-lm-autoencoding-unified-representation-for--0-18c72caaa5.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260804-arxiv-development-of-fdd-on-an-ontology-for-vav-hvac-sys-3-8fa1467945.md": {
       "reasons": [
         "concise_source_card"
@@ -18517,6 +18523,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260804-blogs_podcasts-from-weeks-to-minutes-how-formula-1-uses-agentic-a-0-fbeab4f946.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
     },
     "posts/20260804-blogs_podcasts-gem-training-how-meta-doubled-the-efficiency-of-it-0-a30c69d9a0.md": {
       "reasons": [
@@ -18588,9 +18600,9 @@
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2249,
-  "source_file_count": 2552,
-  "source_tree_sha256": "1ccb670fd73484858590ef6d4200fbfcecfad04d28afe7941315377aa2be7ba5",
-  "verified_provenance_count": 2276,
+  "source_file_count": 2554,
+  "source_tree_sha256": "1990026a853a30e1b1edff9480d28f977a7b6a83c339596b658457a293e970eb",
+  "verified_provenance_count": 2278,
   "warning_counts": {
     "source_excerpt_truncated": 753
   }

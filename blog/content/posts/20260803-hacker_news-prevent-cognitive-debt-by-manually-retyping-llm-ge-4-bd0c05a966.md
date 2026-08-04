@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:f2e25ccb4be00f36886b2a8b35d5ed67a4f1b8adf829a72b
 source_payload_sha256: "sha256:95d8aa738c645f574e122467003be75484524427d95975d158c3afeeac57371f"
 observation_id: obs_bd0c05a966cb398dfc48ecde7eb5195ca301aea8bbdcd50cfa739f72aaa720f2
 event_id: evt_54edc8b9a391188bbd74ee44a0fab301f78e168224e8780a43ad0154eda6fbba
-revision_id: rev_30ca0b8a6d8f0d76526a0bd9fa7eaa328cc81c2c71791ed98639b4017c5ce1d6
+revision_id: rev_ae14cbe217b4ba89355e12172ea02e0b05d37784babd37084ee54897bc73f1f6
 source_published_at: 2026-08-03T09:32:07Z
 first_seen_at: 2026-08-03T11:54:31Z
 timestamp_confidence: platform
@@ -27,7 +27,7 @@ source_title_chars_original: 62
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://ankursethi.com/blog/prevent-cognitive-debt-by-manually-retyping-llm-generated-code
 parent_observation_id: null
-last_seen_at: 2026-08-03T11:43:42.565988Z
+last_seen_at: 2026-08-04T00:00:00Z
 ---
 
 ## 基本信息

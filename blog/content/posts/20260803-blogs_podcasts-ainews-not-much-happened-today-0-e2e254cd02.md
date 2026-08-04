@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:6f4fb0e03f0618b0913f15f638a06223a7d887514aa1dd50f
 description: "DeepSeek推出了V4-Flash的升级版本，仅通过后训练就实现了显著的性能提升，并在开源平台发布了模型权重，同时调整了API定价以增强市场竞争力。"
 external_url: https://www.latent.space/p/ainews-not-much-happened-today-038
 parent_observation_id: null
-last_seen_at: 2026-08-03T11:43:47.930675Z
+last_seen_at: 2026-08-04T00:00:00Z
 ---
 
 ## 基本信息
