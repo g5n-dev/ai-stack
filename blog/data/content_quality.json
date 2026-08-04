@@ -1,8 +1,8 @@
 {
-  "active_count": 2290,
+  "active_count": 2293,
   "archived_count": 276,
   "complete_count": 21,
-  "interpreted_brief_count": 12,
+  "interpreted_brief_count": 14,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -18646,6 +18646,24 @@
       "warnings": [
         "source_excerpt_truncated"
       ]
+    },
+    "posts/20260805-arxiv-pseudorandom-streams-within-diffusion-models-act-a-3-4858836990.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260805-blogs_podcasts-automated-web-insight-extraction-with-amazon-bedro-0-8434f80dc8.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260805-hacker_news-apple-says-more-ex-employees-may-have-taken-confid-9-2ee06b8c34.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -18680,10 +18698,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2257,
-  "source_file_count": 2566,
-  "source_tree_sha256": "62adf2454de990b495b8ab413e66a5b59f67d2de05e30f148de59b29702b3c2d",
-  "verified_provenance_count": 2290,
+  "source_brief_count": 2258,
+  "source_file_count": 2569,
+  "source_tree_sha256": "96ab5f7ee6f4401c506d84519b3e28044f393c063d61e7dbebdbd6ef2c2570b5",
+  "verified_provenance_count": 2293,
   "warning_counts": {
     "source_excerpt_truncated": 756
   }
