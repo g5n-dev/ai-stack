@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-04T09:53:30Z",
+  "generated_at": "2026-08-04T12:20:56Z",
   "items": [
     {
       "article_count": 690,
@@ -28,7 +28,7 @@
       "weighted_degree": 1767.2
     },
     {
-      "article_count": 556,
+      "article_count": 557,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 55,
@@ -38,7 +38,7 @@
       "legacy_id": "大语言模型",
       "name": "大语言模型",
       "rank": 2,
-      "weighted_degree": 1367.2
+      "weighted_degree": 1371.2
     },
     {
       "article_count": 462,
@@ -54,7 +54,7 @@
       "weighted_degree": 1209
     },
     {
-      "article_count": 376,
+      "article_count": 377,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 79,
@@ -64,7 +64,7 @@
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 4,
-      "weighted_degree": 808
+      "weighted_degree": 811
     },
     {
       "article_count": 162,
@@ -80,7 +80,7 @@
       "weighted_degree": 611.6
     },
     {
-      "article_count": 603,
+      "article_count": 604,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 31,
@@ -90,7 +90,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 545
+      "weighted_degree": 549
     },
     {
       "article_count": 146,
@@ -132,7 +132,7 @@
       "weighted_degree": 470
     },
     {
-      "article_count": 166,
+      "article_count": 169,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 78,
@@ -142,7 +142,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 10,
-      "weighted_degree": 431
+      "weighted_degree": 440
     },
     {
       "article_count": 98,
@@ -184,7 +184,7 @@
       "weighted_degree": 320
     },
     {
-      "article_count": 787,
+      "article_count": 788,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 20,
@@ -194,7 +194,7 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 14,
-      "weighted_degree": 305
+      "weighted_degree": 307
     },
     {
       "article_count": 69,
@@ -301,7 +301,7 @@
       "weighted_degree": 84.6
     },
     {
-      "article_count": 26,
+      "article_count": 28,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 25,
@@ -311,20 +311,20 @@
       "legacy_id": "AI",
       "name": "AI",
       "rank": 23,
-      "weighted_degree": 74.6
+      "weighted_degree": 79.6
     },
     {
-      "article_count": 12,
+      "article_count": 13,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
-      "degree": 20,
+      "degree": 21,
       "description": "文章标签: Prompt 工程",
       "id": "tag:Prompt 工程",
       "layer": "tag",
       "legacy_id": "Prompt 工程",
       "name": "Prompt 工程",
       "rank": 24,
-      "weighted_degree": 72
+      "weighted_degree": 76
     },
     {
       "article_count": 13,
@@ -665,6 +665,19 @@
       "weighted_degree": 16
     },
     {
+      "article_count": 5,
+      "category": "article_tag",
+      "community_id": "community:tag:Technical How-to",
+      "degree": 6,
+      "description": "文章标签: cs.LG",
+      "id": "tag:cs.LG",
+      "layer": "tag",
+      "legacy_id": "cs.LG",
+      "name": "cs.LG",
+      "rank": 51,
+      "weighted_degree": 15
+    },
+    {
       "article_count": 3,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
@@ -674,7 +687,7 @@
       "layer": "tag",
       "legacy_id": "Foundational (100)",
       "name": "Foundational (100)",
-      "rank": 51,
+      "rank": 52,
       "weighted_degree": 15
     },
     {
@@ -687,7 +700,7 @@
       "layer": "tag",
       "legacy_id": "Computer science and technology",
       "name": "Computer science and technology",
-      "rank": 52,
+      "rank": 53,
       "weighted_degree": 14.6
     },
     {
@@ -700,7 +713,7 @@
       "layer": "tag",
       "legacy_id": "Best Practices",
       "name": "Best Practices",
-      "rank": 53,
+      "rank": 54,
       "weighted_degree": 14
     },
     {
@@ -713,7 +726,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Simple Storage Service (S3)",
       "name": "Amazon Simple Storage Service (S3)",
-      "rank": 54,
+      "rank": 55,
       "weighted_degree": 14
     },
     {
@@ -726,7 +739,7 @@
       "layer": "tag",
       "legacy_id": "Faculty",
       "name": "Faculty",
-      "rank": 55,
+      "rank": 56,
       "weighted_degree": 14
     },
     {
@@ -739,7 +752,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Nova",
       "name": "Amazon Nova",
-      "rank": 56,
+      "rank": 57,
       "weighted_degree": 13
     },
     {
@@ -752,7 +765,7 @@
       "layer": "tag",
       "legacy_id": "AWS Fargate",
       "name": "AWS Fargate",
-      "rank": 57,
+      "rank": 58,
       "weighted_degree": 13
     },
     {
@@ -765,8 +778,21 @@
       "layer": "tag",
       "legacy_id": "Amazon Elastic Kubernetes Service",
       "name": "Amazon Elastic Kubernetes Service",
-      "rank": 58,
+      "rank": 59,
       "weighted_degree": 12.6
+    },
+    {
+      "article_count": 5,
+      "category": "article_tag",
+      "community_id": "community:tag:Technical How-to",
+      "degree": 3,
+      "description": "文章标签: Company",
+      "id": "tag:Company",
+      "layer": "tag",
+      "legacy_id": "Company",
+      "name": "Company",
+      "rank": 60,
+      "weighted_degree": 12
     },
     {
       "article_count": 2,
@@ -778,21 +804,8 @@
       "layer": "tag",
       "legacy_id": "Amazon SageMaker AI",
       "name": "Amazon SageMaker AI",
-      "rank": 59,
+      "rank": 61,
       "weighted_degree": 12
-    },
-    {
-      "article_count": 4,
-      "category": "article_tag",
-      "community_id": "community:tag:掘金",
-      "degree": 5,
-      "description": "文章标签: cs.LG",
-      "id": "tag:cs.LG",
-      "layer": "tag",
-      "legacy_id": "cs.LG",
-      "name": "cs.LG",
-      "rank": 60,
-      "weighted_degree": 11
     },
     {
       "article_count": 3,
@@ -804,7 +817,7 @@
       "layer": "tag",
       "legacy_id": "Safety",
       "name": "Safety",
-      "rank": 61,
+      "rank": 62,
       "weighted_degree": 11
     },
     {
@@ -817,7 +830,7 @@
       "layer": "tag",
       "legacy_id": "Expert (400)",
       "name": "Expert (400)",
-      "rank": 62,
+      "rank": 63,
       "weighted_degree": 11
     },
     {
@@ -830,7 +843,7 @@
       "layer": "tag",
       "legacy_id": "Amazon SageMaker",
       "name": "Amazon SageMaker",
-      "rank": 63,
+      "rank": 64,
       "weighted_degree": 11
     },
     {
@@ -843,7 +856,7 @@
       "layer": "application",
       "legacy_id": "webapp",
       "name": "Web应用",
-      "rank": 64,
+      "rank": 65,
       "weighted_degree": 11
     },
     {
@@ -856,7 +869,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Bedrock Guardrails",
       "name": "Amazon Bedrock Guardrails",
-      "rank": 65,
+      "rank": 66,
       "weighted_degree": 10
     },
     {
@@ -869,7 +882,7 @@
       "layer": "tag",
       "legacy_id": "Partner solutions",
       "name": "Partner solutions",
-      "rank": 66,
+      "rank": 67,
       "weighted_degree": 10
     },
     {
@@ -882,24 +895,11 @@
       "layer": "application",
       "legacy_id": "api",
       "name": "API服务",
-      "rank": 67,
+      "rank": 68,
       "weighted_degree": 9.6
     },
     {
-      "article_count": 4,
-      "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
-      "degree": 3,
-      "description": "文章标签: Company",
-      "id": "tag:Company",
-      "layer": "tag",
-      "legacy_id": "Company",
-      "name": "Company",
-      "rank": 68,
-      "weighted_degree": 9
-    },
-    {
-      "article_count": 556,
+      "article_count": 557,
       "category": "nlp",
       "community_id": null,
       "degree": 8,
@@ -977,7 +977,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 726,
+      "article_count": 728,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -1861,7 +1861,7 @@
       "weighted_degree": 2.8
     },
     {
-      "article_count": 556,
+      "article_count": 557,
       "category": "ai",
       "community_id": null,
       "degree": 3,
