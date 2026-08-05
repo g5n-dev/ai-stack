@@ -1,8 +1,8 @@
 {
-  "active_count": 2257,
+  "active_count": 2300,
   "archived_count": 276,
-  "complete_count": 19,
-  "interpreted_brief_count": 0,
+  "complete_count": 22,
+  "interpreted_brief_count": 16,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -18445,6 +18445,261 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260803-arxiv-extractbench-a-benchmark-for-schema-guided-enterpr-0-8eec27f0fa.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260803-arxiv-toktier-exact-stateful-tokenization-for-agentic-ll-0-44ebed60b6.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260803-blogs_podcasts-ainews-not-much-happened-today-0-e2e254cd02.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260803-blogs_podcasts-ten-advances-in-mathematics-and-theoretical-comput-0-e299630b86.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260803-hacker_news-prevent-cognitive-debt-by-manually-retyping-llm-ge-4-bd0c05a966.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260803-hacker_news-show-hn-nightcrawler-a-local-ai-pentesting-agent-r-14-e5ea647e2e.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260804-arxiv-agenthpobench-a-benchmark-for-evaluating-llm-agent-4-008a364895.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260804-arxiv-aurora-lm-autoencoding-unified-representation-for--0-18c72caaa5.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260804-arxiv-bridging-artificial-intelligence-and-power-systems-0-2ad50ee497.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260804-arxiv-development-of-fdd-on-an-ontology-for-vav-hvac-sys-3-8fa1467945.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260804-arxiv-freeze-then-select-structured-field-adapters-and-s-2-192f491aca.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260804-arxiv-gradcuit-credit-assigned-gradient-flow-enables-rob-1-9335779849.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260804-arxiv-the-condition-number-barrier-in-sparse-least-squar-1-3f1ca010f2.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260804-arxiv-the-theoretical-foundation-of-socratic-tests-dynam-4-94b193b291.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260804-arxiv-uembed-unified-sparse-and-dense-multimodal-embeddi-1-6b69a87801.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260804-blogs_podcasts-ainews-qwen-38-max24t-and-27b-new-open-weights-mod-0-c09b9b5f69.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
+    "posts/20260804-blogs_podcasts-alexander-rakhlin-named-director-of-the-mit-statis-0-8d2b1b80f2.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260804-blogs_podcasts-announcing-the-agentic-catalog-experience-in-amazo-1-c12cd3eece.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260804-blogs_podcasts-apple-is-getting-this-wrong-0-4a9b73e778.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260804-blogs_podcasts-from-weeks-to-minutes-how-formula-1-uses-agentic-a-0-fbeab4f946.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260804-blogs_podcasts-gem-training-how-meta-doubled-the-efficiency-of-it-0-a30c69d9a0.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
+    "posts/20260804-blogs_podcasts-the-benefits-of-medical-ai-assistance-vary-based-o-0-5926ba0167.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260804-blogs_podcasts-the-inference-engineering-masterclass-philip-kiely-0-20eb9da94f.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
+    "posts/20260804-blogs_podcasts-the-latest-ai-news-we-announced-in-july-2026-0-639d81441a.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260804-hacker_news-agent-skills-that-bring-team-coding-standards-to-c-3-bf7e8634d9.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260804-hacker_news-ai-generated-images-discourage-me-from-reading-you-3-b58e629cd1.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260804-hacker_news-launch-hn-hoplite-yc-s26-effortlessly-deploy-cloud-8-8030f5b826.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260804-hacker_news-llms-reward-expertise-1-e5ab63e782.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260804-hacker_news-whats-the-largest-software-project-ai-can-complete-4-246ad439bd.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260804-juejin-langgraph-状态机实战-0-5341413a74.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
+    "posts/20260804-juejin-走进-ai-agent-0-95c7946f7f.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
+    "posts/20260805-arxiv-atumai-a-principled-framework-for-agentic-generati-3-6b435510f7.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260805-arxiv-pseudorandom-streams-within-diffusion-models-act-a-3-4858836990.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260805-arxiv-structured-memory-for-edge-language-models-persist-3-821e48a180.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260805-blogs_podcasts-automated-web-insight-extraction-with-amazon-bedro-0-8434f80dc8.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260805-blogs_podcasts-introducing-web-search-on-amazon-bedrock-for-found-0-80911412e4.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260805-blogs_podcasts-third-party-cyber-evaluations-involving-openai-mod-0-c99ec862b4.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260805-hacker_news-ai-fuels-more-than-half-of-cybercrime-in-africa-as-0-efa7670b06.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260805-hacker_news-apple-says-more-ex-employees-may-have-taken-confid-9-2ee06b8c34.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260805-hacker_news-mistrals-shieldstral-3b-open-weights-model-for-mul-1-a594752653.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -18479,11 +18734,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2238,
-  "source_file_count": 2533,
-  "source_tree_sha256": "97d9f7e1eb92a331745f630ebab14aba65be84e7bbac70192381c1894479f2b1",
-  "verified_provenance_count": 2257,
+  "source_brief_count": 2262,
+  "source_file_count": 2576,
+  "source_tree_sha256": "1f9447febb07cfcb5b78ffb9b29aa7b6a143004961452841291e18ce60d84c1e",
+  "verified_provenance_count": 2300,
   "warning_counts": {
-    "source_excerpt_truncated": 751
+    "source_excerpt_truncated": 756
   }
 }
