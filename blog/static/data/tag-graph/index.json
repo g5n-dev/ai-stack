@@ -23,11 +23,11 @@
       "focus-shards/000-363fb6a12669.json",
       "focus-shards/001-eef3c54f5b72.json",
       "focus-shards/002-1f6580b97e6b.json",
-      "focus-shards/003-347a68595534.json",
+      "focus-shards/003-e42c648b025d.json",
       "focus-shards/004-08a9b1380f4a.json",
       "focus-shards/005-78d92140d3cd.json",
       "focus-shards/006-f41333001807.json",
-      "focus-shards/007-037ab11d16b0.json",
+      "focus-shards/007-886af7390a63.json",
       "focus-shards/008-716f3e4953f4.json",
       "focus-shards/009-a47aed5cd29e.json",
       "focus-shards/010-82102f585f91.json",
@@ -38,7 +38,7 @@
       "focus-shards/015-5b47c92fc246.json",
       "focus-shards/016-e3cb6bcf7786.json",
       "focus-shards/017-ac2f94ad9eb7.json",
-      "focus-shards/018-a0d10338d2ce.json",
+      "focus-shards/018-1228e3ac0ac7.json",
       "focus-shards/019-87e2fc690971.json",
       "focus-shards/020-75cab59f61b8.json",
       "focus-shards/021-ad17d919a032.json",
@@ -80,7 +80,7 @@
       "focus-shards/057-6fb23ad7ec16.json",
       "focus-shards/058-1542c4839aed.json",
       "focus-shards/059-7621eb5f1505.json",
-      "focus-shards/060-09fbce2a67b8.json",
+      "focus-shards/060-163a67a2f543.json",
       "focus-shards/061-989b436c1bbb.json",
       "focus-shards/062-db1fdfeae98e.json",
       "focus-shards/063-260e120295e6.json",
@@ -92,7 +92,7 @@
       "focus-shards/069-eac25151e0b4.json",
       "focus-shards/070-7f3a37239158.json",
       "focus-shards/071-18b1500e044a.json",
-      "focus-shards/072-ea6512793ab0.json",
+      "focus-shards/072-8ff9ddfa83ef.json",
       "focus-shards/073-0e421fbeb34f.json",
       "focus-shards/074-9d5103f231ff.json",
       "focus-shards/075-6a986b73c1f2.json",
@@ -104,7 +104,7 @@
       "focus-shards/081-8ede3985ac86.json",
       "focus-shards/082-09b72153e3db.json",
       "focus-shards/083-8be09ecda047.json",
-      "focus-shards/084-967a4c9e0f84.json",
+      "focus-shards/084-10e449b2ed6c.json",
       "focus-shards/085-bbc865246422.json",
       "focus-shards/086-a75594d75494.json",
       "focus-shards/087-cf30e9190d1e.json",
@@ -126,7 +126,7 @@
       "focus-shards/103-af20e8d5db08.json",
       "focus-shards/104-da498679f0d8.json",
       "focus-shards/105-a10686d53152.json",
-      "focus-shards/106-722923d337e2.json",
+      "focus-shards/106-2ab8f8373f33.json",
       "focus-shards/107-042f239c9ff7.json",
       "focus-shards/108-300f5c79f99c.json",
       "focus-shards/109-a7f6cd8ee157.json",
@@ -136,7 +136,7 @@
       "focus-shards/113-8e23842df7c1.json",
       "focus-shards/114-eb71c8e0c762.json",
       "focus-shards/115-6a7bc43f4801.json",
-      "focus-shards/116-272a2bad9c3c.json",
+      "focus-shards/116-8a513fe2a7e6.json",
       "focus-shards/117-cf096a78e4ee.json",
       "focus-shards/118-9b365f81d80c.json",
       "focus-shards/119-ffe1a3860164.json",
@@ -153,7 +153,7 @@
     "tag": "tag.json",
     "tagHot": "tag.hot.json"
   },
-  "generated_at": "2026-08-05T12:17:48Z",
+  "generated_at": "2026-08-05T14:37:43Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -193,7 +193,7 @@
   },
   "stats": {
     "links_by_type": {
-      "cooccurrence": 872,
+      "cooccurrence": 875,
       "relation": 71,
       "semantic": 35
     },
@@ -203,13 +203,13 @@
       "language": 8,
       "model": 6,
       "scenario": 31,
-      "tag": 133
+      "tag": 134
     },
     "tag_stats": {
       "archived_article_files_skipped": 276,
       "archived_article_groups_skipped": 276,
       "avg_concepts_per_article": 0,
-      "avg_tags_per_article": 2.343722943722944,
+      "avg_tags_per_article": 2.345438824038046,
       "canonical_duplicate_files_skipped": 0,
       "incomplete_article_files_skipped": 0,
       "incomplete_article_groups_skipped": 0,
@@ -218,7 +218,7 @@
         [
           "Hacker News",
           {
-            "article_count": 794,
+            "article_count": 795,
             "category": "article_tag",
             "description": "文章标签: Hacker News",
             "id": "Hacker News",
@@ -230,7 +230,7 @@
         [
           "AI Agent",
           {
-            "article_count": 700,
+            "article_count": 702,
             "category": "article_tag",
             "description": "文章标签: AI Agent",
             "id": "AI Agent",
@@ -242,7 +242,7 @@
         [
           "ArXiv",
           {
-            "article_count": 612,
+            "article_count": 613,
             "category": "article_tag",
             "description": "文章标签: ArXiv",
             "id": "ArXiv",
@@ -254,13 +254,13 @@
         [
           "大语言模型",
           {
-            "article_count": 573,
+            "article_count": 574,
             "category": "article_tag",
             "description": "文章标签: 大语言模型",
             "id": "大语言模型",
             "layer": "tag",
             "name": "大语言模型",
-            "related_count": 59
+            "related_count": 60
           }
         ],
         [
@@ -278,16 +278,16 @@
       ],
       "synthetic_article_files_skipped": 0,
       "synthetic_article_groups_skipped": 0,
-      "total_articles": 2310,
+      "total_articles": 2313,
       "total_concept_links": 0,
       "total_concepts": 0,
-      "total_tag_links": 872,
-      "total_tags": 133
+      "total_tag_links": 875,
+      "total_tags": 134
     },
-    "total_articles": 2310,
+    "total_articles": 2313,
     "total_communities": 9,
-    "total_links": 978,
-    "total_nodes": 202
+    "total_links": 981,
+    "total_nodes": 203
   },
   "version": 2
 }
