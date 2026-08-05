@@ -1,5 +1,5 @@
 {
-  "active_count": 2310,
+  "active_count": 2313,
   "archived_count": 276,
   "complete_count": 22,
   "interpreted_brief_count": 20,
@@ -18659,6 +18659,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260805-arxiv-past-bench-benchmarking-the-foundations-of-recursi-0-f371a2c8e8.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260805-arxiv-pseudorandom-streams-within-diffusion-models-act-a-3-4858836990.md": {
       "reasons": [
         "interpreted_source_card"
@@ -18701,6 +18707,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260805-blogs_podcasts-how-we-built-a-realtime-system-for-responsive-voic-2-deec56a13e.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260805-blogs_podcasts-inside-our-353000-person-vibe-coding-course-2-7359c9bb40.md": {
       "reasons": [
         "concise_source_card"
@@ -18738,6 +18750,12 @@
       "status": "source_brief"
     },
     "posts/20260805-hacker_news-apple-says-more-ex-employees-may-have-taken-confid-9-2ee06b8c34.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260805-hacker_news-cloudflare-os-an-open-platform-for-agents-apps-and-0-6fd49dfa94.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -18794,10 +18812,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2268,
-  "source_file_count": 2586,
-  "source_tree_sha256": "a7cffea70cb2088cedf49244b22681ce319e37dd01a59d4e45480593d2b8874b",
-  "verified_provenance_count": 2310,
+  "source_brief_count": 2271,
+  "source_file_count": 2589,
+  "source_tree_sha256": "a22cd16dd4c0096e3632b10baf4325d8176e378cb70cfd110038858d77dd5c15",
+  "verified_provenance_count": 2313,
   "warning_counts": {
     "source_excerpt_truncated": 756
   }
