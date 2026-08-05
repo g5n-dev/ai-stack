@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Technical How-to",
-  "generated_at": "2026-08-05T06:44:05Z",
+  "generated_at": "2026-08-05T09:50:46Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -10,7 +10,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 71
+      "weight": 72
     },
     {
       "id": "edge:cooccurrence:tag:Announcements->tag:博客与播客",
@@ -37,6 +37,14 @@
       "weight": 11
     },
     {
+      "id": "edge:cooccurrence:tag:cs.CL->tag:来源快报",
+      "source": "tag:cs.CL",
+      "strength": 1,
+      "target": "tag:来源快报",
+      "type": "cooccurrence",
+      "weight": 11
+    },
+    {
       "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:博客与播客",
       "source": "tag:Amazon Bedrock",
       "strength": 1,
@@ -49,14 +57,6 @@
       "source": "tag:Intermediate (200)",
       "strength": 1,
       "target": "tag:博客与播客",
-      "type": "cooccurrence",
-      "weight": 10
-    },
-    {
-      "id": "edge:cooccurrence:tag:cs.CL->tag:来源快报",
-      "source": "tag:cs.CL",
-      "strength": 1,
-      "target": "tag:来源快报",
       "type": "cooccurrence",
       "weight": 10
     },
@@ -263,11 +263,11 @@
   ],
   "nodes": [
     {
-      "article_count": 381,
+      "article_count": 382,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
-      "degree": 79,
+      "degree": 80,
       "description": "文章标签: 博客与播客",
       "id": "tag:博客与播客",
       "layer": "tag",
@@ -276,15 +276,15 @@
       "level": 6,
       "name": "博客与播客",
       "rank": 4,
-      "related_count": 79,
-      "weighted_degree": 829
+      "related_count": 80,
+      "weighted_degree": 832
     },
     {
-      "article_count": 184,
+      "article_count": 186,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
-      "degree": 79,
+      "degree": 80,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
@@ -293,8 +293,8 @@
       "level": 6,
       "name": "来源快报",
       "rank": 9,
-      "related_count": 79,
-      "weighted_degree": 487
+      "related_count": 80,
+      "weighted_degree": 493
     },
     {
       "article_count": 17,
@@ -433,7 +433,7 @@
       "weighted_degree": 35
     },
     {
-      "article_count": 10,
+      "article_count": 11,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
@@ -447,7 +447,7 @@
       "name": "cs.CL",
       "rank": 39,
       "related_count": 6,
-      "weighted_degree": 31
+      "weighted_degree": 34
     },
     {
       "article_count": 5,

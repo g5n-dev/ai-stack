@@ -1,8 +1,8 @@
 {
-  "active_count": 2305,
+  "active_count": 2307,
   "archived_count": 276,
   "complete_count": 22,
-  "interpreted_brief_count": 19,
+  "interpreted_brief_count": 20,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -18677,6 +18677,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260805-arxiv-worldcup-arena-prospective-leakage-free-evaluation-0-399723c4f1.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260805-blogs_podcasts-ainews-megakernels-are-so-dead-and-so-back-0-321af2fa26.md": {
       "reasons": [
         "concise_source_card"
@@ -18694,6 +18700,12 @@
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20260805-blogs_podcasts-teaching-ai-to-speak-the-language-of-pathology-0-89794e87fd.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20260805-blogs_podcasts-third-party-cyber-evaluations-involving-openai-mod-0-c99ec862b4.md": {
       "reasons": [
@@ -18764,10 +18776,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2264,
-  "source_file_count": 2581,
-  "source_tree_sha256": "5997a6542961381e26e9aff76de95fb14ff7dec32b633a77970ab3dbc69ffbb2",
-  "verified_provenance_count": 2305,
+  "source_brief_count": 2265,
+  "source_file_count": 2583,
+  "source_tree_sha256": "f3c44c7f1a117f17beedaad69e739b7f313645567aca54d78afedba0eed4f9c1",
+  "verified_provenance_count": 2307,
   "warning_counts": {
     "source_excerpt_truncated": 756
   }

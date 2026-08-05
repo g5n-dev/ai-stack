@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:掘金",
-  "generated_at": "2026-08-05T06:44:05Z",
+  "generated_at": "2026-08-05T09:50:46Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -26,7 +26,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 236
+      "weight": 237
     },
     {
       "id": "edge:cooccurrence:tag:大语言模型->tag:掘金",
@@ -280,7 +280,7 @@
       "weighted_degree": 1801.2
     },
     {
-      "article_count": 569,
+      "article_count": 570,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -294,7 +294,7 @@
       "name": "大语言模型",
       "rank": 2,
       "related_count": 59,
-      "weighted_degree": 1424.2
+      "weighted_degree": 1427.2
     },
     {
       "article_count": 464,
@@ -331,7 +331,7 @@
       "weighted_degree": 611.6
     },
     {
-      "article_count": 610,
+      "article_count": 611,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -345,7 +345,7 @@
       "name": "ArXiv",
       "rank": 6,
       "related_count": 31,
-      "weighted_degree": 571
+      "weighted_degree": 574
     },
     {
       "article_count": 146,
