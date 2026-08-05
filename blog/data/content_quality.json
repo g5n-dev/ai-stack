@@ -1,8 +1,8 @@
 {
-  "active_count": 2313,
+  "active_count": 2316,
   "archived_count": 276,
   "complete_count": 22,
-  "interpreted_brief_count": 20,
+  "interpreted_brief_count": 21,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -18778,6 +18778,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260806-arxiv-test-time-scaling-in-reasoning-llms-inference-regi-0-40ffe82cac.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260806-blogs_podcasts-circles-powers-telco-personalization-with-openai-t-2-97e92714d5.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260806-hacker_news-launch-hn-hyperprobe-yc-s26-agents-that-do-read-on-6-8d9a0a437f.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -18812,10 +18830,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2271,
-  "source_file_count": 2589,
-  "source_tree_sha256": "a22cd16dd4c0096e3632b10baf4325d8176e378cb70cfd110038858d77dd5c15",
-  "verified_provenance_count": 2313,
+  "source_brief_count": 2273,
+  "source_file_count": 2592,
+  "source_tree_sha256": "e30dc627d8d59d1710805fcd62dd57a263378f919a588e2875e2cf1dfc45e2b3",
+  "verified_provenance_count": 2316,
   "warning_counts": {
     "source_excerpt_truncated": 756
   }
