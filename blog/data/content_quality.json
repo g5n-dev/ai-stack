@@ -1,7 +1,7 @@
 {
-  "active_count": 2322,
+  "active_count": 2326,
   "archived_count": 276,
-  "complete_count": 22,
+  "complete_count": 23,
   "interpreted_brief_count": 24,
   "legacy_analysis_count": 0,
   "pages": {
@@ -18791,6 +18791,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260806-arxiv-can-large-language-models-recover-semantic-optimiz-2-5d21dbc50a.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260806-arxiv-test-time-scaling-in-reasoning-llms-inference-regi-0-40ffe82cac.md": {
       "reasons": [
         "interpreted_source_card"
@@ -18815,6 +18821,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260806-blogs_podcasts-how-mobileye-transformed-support-operations-using--0-db756ec4d6.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260806-hacker_news-beating-gpt-56-sol-on-retrieval-with-100x-cheaper--3-a55b16f646.md": {
       "reasons": [
         "concise_source_card"
@@ -18828,6 +18840,12 @@
       "status": "source_brief"
     },
     "posts/20260806-hacker_news-launch-hn-hyperprobe-yc-s26-agents-that-do-read-on-6-8d9a0a437f.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260806-hacker_news-prime-agent-a-self-improving-rlm-agent-9-2c19ce14b7.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -18866,10 +18884,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2276,
-  "source_file_count": 2598,
-  "source_tree_sha256": "6f6c9f34082b6db9cfa3c4de06dfcbd5c3bb2a212b0acc9b66e087fcc4a6d6b3",
-  "verified_provenance_count": 2322,
+  "source_brief_count": 2279,
+  "source_file_count": 2602,
+  "source_tree_sha256": "adea405d299bacfa1c2b1770b1b261b27bd51fe6d36cb867202ef886da07f994",
+  "verified_provenance_count": 2326,
   "warning_counts": {
     "source_excerpt_truncated": 756
   }
