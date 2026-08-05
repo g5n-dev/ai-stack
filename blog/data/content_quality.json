@@ -1,8 +1,8 @@
 {
-  "active_count": 2302,
+  "active_count": 2305,
   "archived_count": 276,
   "complete_count": 22,
-  "interpreted_brief_count": 17,
+  "interpreted_brief_count": 19,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -18665,6 +18665,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260805-arxiv-societybench-forecasting-counterfactual-social-wor-0-4a45358a62.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260805-arxiv-structured-memory-for-edge-language-models-persist-3-821e48a180.md": {
       "reasons": [
         "concise_source_card"
@@ -18695,6 +18701,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260805-blogs_podcasts-unpacking-chatgpt-work-the-agent-for-a-billion-use-0-dfc4aca081.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260805-hacker_news-ai-fuels-more-than-half-of-cybercrime-in-africa-as-0-efa7670b06.md": {
       "reasons": [
         "concise_source_card"
@@ -18708,6 +18720,12 @@
       "status": "source_brief"
     },
     "posts/20260805-hacker_news-mistrals-shieldstral-3b-open-weights-model-for-mul-1-a594752653.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260805-hacker_news-zero-mem-zero-token-memory-operations-for-llm-agen-7-de3bb4f64d.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -18746,10 +18764,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2263,
-  "source_file_count": 2578,
-  "source_tree_sha256": "58a2842070dba8ee26690e2165ddab335f67bb8c3202b9819a358759f889e9aa",
-  "verified_provenance_count": 2302,
+  "source_brief_count": 2264,
+  "source_file_count": 2581,
+  "source_tree_sha256": "5997a6542961381e26e9aff76de95fb14ff7dec32b633a77970ab3dbc69ffbb2",
+  "verified_provenance_count": 2305,
   "warning_counts": {
     "source_excerpt_truncated": 756
   }
