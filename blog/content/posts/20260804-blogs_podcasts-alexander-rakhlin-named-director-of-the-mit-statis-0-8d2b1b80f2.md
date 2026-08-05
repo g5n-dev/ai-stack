@@ -27,7 +27,7 @@ source_title_chars_original: 79
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://news.mit.edu/2026/alexander-rakhlin-named-director-mit-statistics-data-science-center-0803
 parent_observation_id: null
-last_seen_at: 2026-08-04T00:00:00Z
+last_seen_at: 2026-08-05T00:00:00Z
 ---
 
 ## 基本信息

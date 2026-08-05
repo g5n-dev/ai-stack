@@ -15,7 +15,7 @@ observation_id: obs_80911412e4d1c0f0cf5f71d0adb2b01d83689d9ff1dfcfa41904e7e4252c
 event_id: evt_03d475bcb580e344af114928150020d0c1db404126fd90240ead9ffcc4c5e50e
 revision_id: rev_e91bc1070f850a53869040ca392f58a9a2edcfa90f2c193a6a872f5931b2d00d
 source_published_at: 2026-08-04T18:39:14Z
-first_seen_at: 2026-08-04T23:18:53.691477Z
+first_seen_at: 2026-08-04T23:30:38Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:a1f8ecdf74a5fb40fc6f6db22740d5f184d6e58e5a76f10b8
 description: "Amazon Bedrock 新增了内置 Web Search 功能，让模型在需要最新网络信息时直接检索网页并生成带来源的答案，无需自行集成第三方搜索服务。该功能结合亚马逊自有的网页索引与知识图谱，以语义片段形式向模型提供精炼内容。"
 external_url: https://aws.amazon.com/blogs/machine-learning/introducing-web-search-on-amazon-bedrock-for-foundation-model-grounding
 parent_observation_id: null
-last_seen_at: 2026-08-04T23:18:53.691477Z
+last_seen_at: 2026-08-05T00:00:00Z
 ---
 
 ## 基本信息

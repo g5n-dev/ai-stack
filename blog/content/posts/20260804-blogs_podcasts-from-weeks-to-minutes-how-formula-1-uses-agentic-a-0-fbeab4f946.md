@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:41e21cf46faa185a79865271f2d0f5068b247c55b431644ff
 description: "介绍Formula 1在AWS上采用agentic AI，将原本需要数周的手动数据源接入压缩至约40分钟，实现MarTech平台的自动化和全链路可观测。"
 external_url: https://aws.amazon.com/blogs/machine-learning/from-weeks-to-minutes-how-formula-1-uses-agentic-ai-on-aws-to-accelerate-data-operations
 parent_observation_id: null
-last_seen_at: 2026-08-04T03:36:38.756926Z
+last_seen_at: 2026-08-05T00:00:00Z
 ---
 
 ## 基本信息

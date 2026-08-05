@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:178e1306cf6beefa8f89833e8e996a0a5f06a82f653723e38
 description: "这是一期播客节目，邀请了 Baseten 的工程师讨论推理工程的核心问题，即如何将训练好的模型转化为可在生产环境中快速、可靠且低成本运行的 API。"
 external_url: https://www.latent.space/p/inference-eng
 parent_observation_id: null
-last_seen_at: 2026-08-04T00:00:00Z
+last_seen_at: 2026-08-05T00:00:00Z
 ---
 
 ## 基本信息

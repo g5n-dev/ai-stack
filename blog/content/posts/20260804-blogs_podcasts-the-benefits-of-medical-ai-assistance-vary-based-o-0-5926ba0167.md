@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:850d54cb48332e47ee31ebaf7c00011f62f0071c5429e68c5
 description: "该研究探讨了在皮肤疾病诊断中，可解释AI对不同经验水平的用户产生的不同影响，发现非专业用户在使用解释功能时更倾向于盲目遵从，而临床医生在仅有预测时表现最佳。"
 external_url: https://news.mit.edu/2026/medical-ai-assistance-benefits-vary-based-on-user-expertise-0804
 parent_observation_id: null
-last_seen_at: 2026-08-04T09:50:57.108071Z
+last_seen_at: 2026-08-05T00:00:00Z
 ---
 
 ## 基本信息
