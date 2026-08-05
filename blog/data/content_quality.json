@@ -1,8 +1,8 @@
 {
-  "active_count": 2316,
+  "active_count": 2319,
   "archived_count": 276,
   "complete_count": 22,
-  "interpreted_brief_count": 21,
+  "interpreted_brief_count": 23,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -18779,6 +18779,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260806-arxiv-agogic-performance-timed-music-tokens-for-llm-nati-0-835fc53635.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260806-arxiv-test-time-scaling-in-reasoning-llms-inference-regi-0-40ffe82cac.md": {
       "reasons": [
         "interpreted_source_card"
@@ -18786,6 +18792,18 @@
       "status": "interpreted_brief"
     },
     "posts/20260806-blogs_podcasts-circles-powers-telco-personalization-with-openai-t-2-97e92714d5.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260806-blogs_podcasts-how-lendingtree-built-a-multi-agent-mortgage-assis-0-9eb8c760ed.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260806-hacker_news-im-scared-a-stranger-will-call-my-novel-ai-so-i-bu-11-552a5c9d4b.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -18830,10 +18848,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2273,
-  "source_file_count": 2592,
-  "source_tree_sha256": "e30dc627d8d59d1710805fcd62dd57a263378f919a588e2875e2cf1dfc45e2b3",
-  "verified_provenance_count": 2316,
+  "source_brief_count": 2274,
+  "source_file_count": 2595,
+  "source_tree_sha256": "ac3f94246b130ca20d916ea5c055314a06b326f898d2de039f177718ca0b672f",
+  "verified_provenance_count": 2319,
   "warning_counts": {
     "source_excerpt_truncated": 756
   }
