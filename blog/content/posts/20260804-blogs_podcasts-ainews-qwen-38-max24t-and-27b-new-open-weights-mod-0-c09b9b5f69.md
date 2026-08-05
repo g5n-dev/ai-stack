@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:72f4d074cdfe9d12f02014f808229fc441813e421fe2d0a0d
 description: "这是一条关于阿里巴巴 Qwen 发布新旗舰模型 Qwen 3.8 Max 及其 27B 版本的消息，强调超大规模参数、长期自主编码和多模态代理能力，提供付费 API 并承诺随后开放权重。"
 external_url: https://www.latent.space/p/ainews-qwen-38-max24t-and-27b-new
 parent_observation_id: null
-last_seen_at: 2026-08-04T06:40:45.034541Z
+last_seen_at: 2026-08-05T00:00:00Z
 ---
 
 ## 基本信息

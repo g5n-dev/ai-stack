@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:7145e0e2e8d0259ed1fecd566f1b6c466ead5a2d8b731f189
 description: "这是一篇介绍如何使用AWS服务构建自动化网页洞察提取系统的技术文章，核心是通过托管浏览器服务解决JavaScript渲染页面的抓取难题，并结合AI进行内容分析和语义搜索。"
 external_url: https://aws.amazon.com/blogs/machine-learning/automated-web-insight-extraction-with-amazon-bedrock-agentcore
 parent_observation_id: null
-last_seen_at: 2026-08-04T18:03:44.678243Z
+last_seen_at: 2026-08-05T00:00:00Z
 ---
 
 ## 基本信息

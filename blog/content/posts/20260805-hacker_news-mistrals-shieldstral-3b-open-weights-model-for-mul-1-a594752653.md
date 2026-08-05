@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:9a98e5434086b687b48d7a84879689a93b0f31df16cf043e
 source_payload_sha256: "sha256:1ff49515fbc67d373ae9a20ab7506a38add0c2ae125b9ff2f47c3173211ff6d1"
 observation_id: obs_a594752653c1015b8463a50f098aca8409612def93676aefed7f1686558f358f
 event_id: evt_1fc99633acee6a844e54d164a6ac0a2ce343eec5bc0fae3a9e15c388467be44f
-revision_id: rev_aec5a2a982c266f376a92caf73163a4f0bcb54536d60a3cb31a2ad03a1828638
+revision_id: rev_2f0462fd32a9dfccd701fb67a4f245111fa6658c413ebff1940a90ec878ca8d2
 source_published_at: 2026-08-04T16:36:05Z
 first_seen_at: 2026-08-04T21:47:13Z
 timestamp_confidence: platform
@@ -27,7 +27,7 @@ source_title_chars_original: 70
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://mistral.ai/news/shieldstral
 parent_observation_id: null
-last_seen_at: 2026-08-04T21:35:31.244696Z
+last_seen_at: 2026-08-05T00:00:00Z
 ---
 
 ## 基本信息
