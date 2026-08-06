@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:a9df3ad92011eb4b13c8210e2b4e176eec6631329ec5f1ac
 source_payload_sha256: "sha256:14666bb2b1a47df2ac6b719ee2ba222daaf92268e08ff823180f88ae1d9668e5"
 observation_id: obs_7d703edcfc16cd09ee95dcc98a621a78c97406cfa0bfe7b542ec1c795401b96f
 event_id: evt_2af9b98df4c93e46d21b78b907cf62234e7b6a1007e1b448ecb2769c5e5e580a
-revision_id: rev_11508b160cad37aa5d5c1c6114b0283c88a4b26f69f9992d68feb8759f93671d
+revision_id: rev_075cad68770719d54bd76d5ae398b118c2f9eb083acdecc00956a915818a71ef
 source_published_at: 2026-08-05T11:01:37Z
 first_seen_at: 2026-08-05T12:27:10Z
 timestamp_confidence: platform
@@ -27,7 +27,7 @@ source_title_chars_original: 25
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://openreview.net/challenge?redirect=%2Fforum%3Fid%3DklU4737opt
 parent_observation_id: null
-last_seen_at: 2026-08-05T12:16:00.621667Z
+last_seen_at: 2026-08-06T00:00:00Z
 ---
 
 ## 基本信息

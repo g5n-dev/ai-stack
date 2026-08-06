@@ -1,8 +1,8 @@
 {
-  "active_count": 2327,
+  "active_count": 2330,
   "archived_count": 276,
   "complete_count": 23,
-  "interpreted_brief_count": 25,
+  "interpreted_brief_count": 27,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -18785,6 +18785,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260806-arxiv-argus-a-general-purpose-agentic-runtime-for-long-h-1-2cf5155ca9.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260806-arxiv-assessment-of-conditional-diffusion-model-for-synt-1-b4c104457a.md": {
       "reasons": [
         "concise_source_card"
@@ -18833,6 +18839,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260806-blogs_podcasts-run-production-ai-agents-in-n8n-with-amazon-bedroc-0-4a6b874ba5.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260806-hacker_news-beating-gpt-56-sol-on-retrieval-with-100x-cheaper--3-a55b16f646.md": {
       "reasons": [
         "concise_source_card"
@@ -18846,6 +18858,12 @@
       "status": "source_brief"
     },
     "posts/20260806-hacker_news-launch-hn-hyperprobe-yc-s26-agents-that-do-read-on-6-8d9a0a437f.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260806-hacker_news-llms-wont-break-symmetric-crypto-1-838e9c0a46.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -18890,10 +18908,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2279,
-  "source_file_count": 2603,
-  "source_tree_sha256": "e53d0b3d63d3b32fa511efe76c7da173058b12ac258ee51319bb697f0ea1cac2",
-  "verified_provenance_count": 2327,
+  "source_brief_count": 2280,
+  "source_file_count": 2606,
+  "source_tree_sha256": "559c1caefe9c16f562ab4b93790879ace725078277cc68c56d84a2093fb27995",
+  "verified_provenance_count": 2330,
   "warning_counts": {
     "source_excerpt_truncated": 756
   }
