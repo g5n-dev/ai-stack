@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:404ce6df819ddc3c69990bb3d828d4fde34f0bf208d20201
 source_payload_sha256: "sha256:21b53bf7503a3fb4c0866f33ddaf8394718865becd6cbe94133a3926409a7844"
 observation_id: obs_dfc4aca081a338564421c1ddb8bde723681a750c4c9f005ed5a308049148a098
 event_id: evt_c0466f410ad3e232409da43671e0e7bf00c475876e7020f43561a71fcc1b705d
-revision_id: rev_52f08ba0e23c38ba45e04423c7116f5c2e05a7da65846cd918c03b01e733ffad
+revision_id: rev_3df0445060efef0c51198292112422bec821b22c9847d40e41892e5014873d0c
 source_published_at: 2026-08-04T18:20:14Z
 first_seen_at: 2026-08-05T06:53:04Z
 timestamp_confidence: feed
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:90dd3f85b04f0077bcd95ea21ae5ce378ad89d0c7c49c0e6b
 description: "这是一篇对 OpenAI 近期发布的 ChatGPT Work 进行深度拆解的分析，阐述它作为知识工作代理的定位、底层云虚拟机、任务持久化机制以及与现有产品（Chat、Codex 等）的融合路线。"
 external_url: https://www.latent.space/p/unpacking-chatgpt-work
 parent_observation_id: null
-last_seen_at: 2026-08-05T06:41:39.371686Z
+last_seen_at: 2026-08-06T00:00:00Z
 ---
 
 ## 基本信息

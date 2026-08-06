@@ -1,8 +1,8 @@
 {
-  "active_count": 2326,
+  "active_count": 2327,
   "archived_count": 276,
   "complete_count": 23,
-  "interpreted_brief_count": 24,
+  "interpreted_brief_count": 25,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -18827,6 +18827,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260806-blogs_podcasts-how-we-built-an-mcp-bridge-to-give-our-agentcore-h-0-ea850b1a9c.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260806-hacker_news-beating-gpt-56-sol-on-retrieval-with-100x-cheaper--3-a55b16f646.md": {
       "reasons": [
         "concise_source_card"
@@ -18885,9 +18891,9 @@
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2279,
-  "source_file_count": 2602,
-  "source_tree_sha256": "adea405d299bacfa1c2b1770b1b261b27bd51fe6d36cb867202ef886da07f994",
-  "verified_provenance_count": 2326,
+  "source_file_count": 2603,
+  "source_tree_sha256": "e53d0b3d63d3b32fa511efe76c7da173058b12ac258ee51319bb697f0ea1cac2",
+  "verified_provenance_count": 2327,
   "warning_counts": {
     "source_excerpt_truncated": 756
   }

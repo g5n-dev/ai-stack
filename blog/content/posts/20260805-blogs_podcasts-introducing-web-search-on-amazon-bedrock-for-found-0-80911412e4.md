@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:a1f8ecdf74a5fb40fc6f6db22740d5f184d6e58e5a76f10b8
 description: "Amazon Bedrock 新增了内置 Web Search 功能，让模型在需要最新网络信息时直接检索网页并生成带来源的答案，无需自行集成第三方搜索服务。该功能结合亚马逊自有的网页索引与知识图谱，以语义片段形式向模型提供精炼内容。"
 external_url: https://aws.amazon.com/blogs/machine-learning/introducing-web-search-on-amazon-bedrock-for-foundation-model-grounding
 parent_observation_id: null
-last_seen_at: 2026-08-05T00:00:00Z
+last_seen_at: 2026-08-06T00:00:00Z
 ---
 
 ## 基本信息

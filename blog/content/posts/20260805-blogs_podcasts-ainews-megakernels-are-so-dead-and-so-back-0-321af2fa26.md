@@ -27,7 +27,7 @@ source_title_chars_original: 44
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://www.latent.space/p/ainews-megakernels-are-so-dead-and
 parent_observation_id: null
-last_seen_at: 2026-08-05T03:31:55.990453Z
+last_seen_at: 2026-08-06T00:00:00Z
 ---
 
 ## 基本信息

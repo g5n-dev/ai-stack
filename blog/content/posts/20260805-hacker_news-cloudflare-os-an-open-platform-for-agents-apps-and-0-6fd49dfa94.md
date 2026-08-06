@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:52b73a2e927a6a4e1a23c9329d80fb1f4a5551b306da7e95
 source_payload_sha256: "sha256:94ba2cc44727a27c0549a39c20342be5474be29230745dace0cc58fb9ea89d01"
 observation_id: obs_6fd49dfa949117ea383fd0ed8e19fbdadddd178c9a4fc42500531da4f8ae18ad
 event_id: evt_b1b28f5cfc27aaed641494e425b7ff8f7f023fe2b9fdcb143d91da8dad367540
-revision_id: rev_eb0f1db0b4a8b9da21bcdd3e864d0e5c6794aa977803598c988bd928ca810dd8
+revision_id: rev_43bcb4813fdd50ee4707264acb1ed61b8a501fcf13a70a935271001bbd6820ec
 source_published_at: 2026-08-05T13:58:53Z
 first_seen_at: 2026-08-05T14:47:06Z
 timestamp_confidence: platform
@@ -27,7 +27,7 @@ source_title_chars_original: 58
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://blog.cloudflare.com/cloudflare-os
 parent_observation_id: null
-last_seen_at: 2026-08-05T14:35:20.460015Z
+last_seen_at: 2026-08-06T00:00:00Z
 ---
 
 ## 基本信息
