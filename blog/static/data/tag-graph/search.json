@@ -12,10 +12,10 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-06T03:37:46Z",
+  "generated_at": "2026-08-06T06:49:17Z",
   "items": [
     {
-      "article_count": 708,
+      "article_count": 709,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 61,
@@ -25,10 +25,10 @@
       "legacy_id": "AI Agent",
       "name": "AI Agent",
       "rank": 1,
-      "weighted_degree": 1849.2
+      "weighted_degree": 1853.2
     },
     {
-      "article_count": 585,
+      "article_count": 587,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 68,
@@ -38,10 +38,10 @@
       "legacy_id": "大语言模型",
       "name": "大语言模型",
       "rank": 2,
-      "weighted_degree": 1492.2
+      "weighted_degree": 1498.2
     },
     {
-      "article_count": 465,
+      "article_count": 466,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 25,
@@ -51,10 +51,10 @@
       "legacy_id": "掘金",
       "name": "掘金",
       "rank": 3,
-      "weighted_degree": 1215
+      "weighted_degree": 1217
     },
     {
-      "article_count": 389,
+      "article_count": 390,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 84,
@@ -64,7 +64,7 @@
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 4,
-      "weighted_degree": 870
+      "weighted_degree": 874
     },
     {
       "article_count": 162,
@@ -80,7 +80,7 @@
       "weighted_degree": 611.6
     },
     {
-      "article_count": 618,
+      "article_count": 619,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 33,
@@ -90,10 +90,10 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 596
+      "weighted_degree": 599
     },
     {
-      "article_count": 205,
+      "article_count": 208,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 86,
@@ -103,7 +103,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 7,
-      "weighted_degree": 553
+      "weighted_degree": 562
     },
     {
       "article_count": 146,
@@ -184,7 +184,7 @@
       "weighted_degree": 338
     },
     {
-      "article_count": 800,
+      "article_count": 801,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 20,
@@ -194,10 +194,10 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 14,
-      "weighted_degree": 333
+      "weighted_degree": 335
     },
     {
-      "article_count": 107,
+      "article_count": 108,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 46,
@@ -207,7 +207,7 @@
       "legacy_id": "机器学习",
       "name": "机器学习",
       "rank": 15,
-      "weighted_degree": 293
+      "weighted_degree": 297
     },
     {
       "article_count": 69,
@@ -275,7 +275,7 @@
       "weighted_degree": 119
     },
     {
-      "article_count": 36,
+      "article_count": 37,
       "category": "article_tag",
       "community_id": "community:tag:Google Cloud",
       "degree": 30,
@@ -285,7 +285,7 @@
       "legacy_id": "AI",
       "name": "AI",
       "rank": 21,
-      "weighted_degree": 107.6
+      "weighted_degree": 110.6
     },
     {
       "article_count": 34,
@@ -431,6 +431,19 @@
       "weighted_degree": 61
     },
     {
+      "article_count": 19,
+      "category": "article_tag",
+      "community_id": "community:tag:掘金",
+      "degree": 8,
+      "description": "文章标签: cs.AI",
+      "id": "tag:cs.AI",
+      "layer": "tag",
+      "legacy_id": "cs.AI",
+      "name": "cs.AI",
+      "rank": 33,
+      "weighted_degree": 55
+    },
+    {
       "article_count": 21,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
@@ -440,24 +453,11 @@
       "layer": "tag",
       "legacy_id": "AI 安全",
       "name": "AI 安全",
-      "rank": 33,
+      "rank": 34,
       "weighted_degree": 54.6
     },
     {
-      "article_count": 18,
-      "category": "article_tag",
-      "community_id": "community:tag:掘金",
-      "degree": 8,
-      "description": "文章标签: cs.AI",
-      "id": "tag:cs.AI",
-      "layer": "tag",
-      "legacy_id": "cs.AI",
-      "name": "cs.AI",
-      "rank": 34,
-      "weighted_degree": 52
-    },
-    {
-      "article_count": 23,
+      "article_count": 24,
       "category": "article_tag",
       "community_id": "community:tag:Codex",
       "degree": 9,
@@ -467,7 +467,7 @@
       "legacy_id": "工程实践",
       "name": "工程实践",
       "rank": 35,
-      "weighted_degree": 51
+      "weighted_degree": 53
     },
     {
       "article_count": 9,
@@ -483,7 +483,7 @@
       "weighted_degree": 49
     },
     {
-      "article_count": 22,
+      "article_count": 23,
       "category": "article_tag",
       "community_id": "community:tag:Codex",
       "degree": 2,
@@ -493,12 +493,12 @@
       "legacy_id": "来源转写",
       "name": "来源转写",
       "rank": 37,
-      "weighted_degree": 44
+      "weighted_degree": 46
     },
     {
       "article_count": 13,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:掘金",
       "degree": 6,
       "description": "文章标签: cs.CL",
       "id": "tag:cs.CL",
@@ -1003,7 +1003,7 @@
       "weighted_degree": 9.6
     },
     {
-      "article_count": 585,
+      "article_count": 587,
       "category": "nlp",
       "community_id": null,
       "degree": 8,
@@ -1081,7 +1081,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 754,
+      "article_count": 756,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -1627,7 +1627,7 @@
       "weighted_degree": 5
     },
     {
-      "article_count": 708,
+      "article_count": 709,
       "category": "ai",
       "community_id": null,
       "degree": 5,
@@ -1991,7 +1991,7 @@
       "weighted_degree": 2.8
     },
     {
-      "article_count": 585,
+      "article_count": 587,
       "category": "ai",
       "community_id": null,
       "degree": 3,

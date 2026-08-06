@@ -1,8 +1,8 @@
 {
-  "active_count": 2330,
+  "active_count": 2334,
   "archived_count": 276,
-  "complete_count": 23,
-  "interpreted_brief_count": 27,
+  "complete_count": 24,
+  "interpreted_brief_count": 28,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -18803,7 +18803,19 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260806-arxiv-octolong-mid-training-on-cross-repository-code-con-1-dfdc7103ce.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260806-arxiv-test-time-scaling-in-reasoning-llms-inference-regi-0-40ffe82cac.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260806-blogs_podcasts-ainews-jeff-sanjay-oriol-and-quoc-depart-deepmind--0-f98620a140.md": {
       "reasons": [
         "interpreted_source_card"
       ],
@@ -18846,6 +18858,12 @@
       "status": "interpreted_brief"
     },
     "posts/20260806-hacker_news-beating-gpt-56-sol-on-retrieval-with-100x-cheaper--3-a55b16f646.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260806-hacker_news-born-against-or-why-hobby-programming-communities--9-9527c3055c.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -18908,10 +18926,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2280,
-  "source_file_count": 2606,
-  "source_tree_sha256": "559c1caefe9c16f562ab4b93790879ace725078277cc68c56d84a2093fb27995",
-  "verified_provenance_count": 2330,
+  "source_brief_count": 2282,
+  "source_file_count": 2610,
+  "source_tree_sha256": "a57a94c15f70744e3cb7f2aa8cd2ce9b316b1dd677abade448765edb441966c4",
+  "verified_provenance_count": 2334,
   "warning_counts": {
     "source_excerpt_truncated": 756
   }
