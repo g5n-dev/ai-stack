@@ -23,11 +23,11 @@
       "focus-shards/000-363fb6a12669.json",
       "focus-shards/001-eef3c54f5b72.json",
       "focus-shards/002-1f6580b97e6b.json",
-      "focus-shards/003-9db8b200ad99.json",
+      "focus-shards/003-1cdeae93aa0b.json",
       "focus-shards/004-08a9b1380f4a.json",
       "focus-shards/005-78d92140d3cd.json",
       "focus-shards/006-f41333001807.json",
-      "focus-shards/007-93b5c4bd44fe.json",
+      "focus-shards/007-1df01ecb9536.json",
       "focus-shards/008-716f3e4953f4.json",
       "focus-shards/009-a47aed5cd29e.json",
       "focus-shards/010-82102f585f91.json",
@@ -95,7 +95,7 @@
       "focus-shards/072-4e57170cba9e.json",
       "focus-shards/073-0e421fbeb34f.json",
       "focus-shards/074-9d5103f231ff.json",
-      "focus-shards/075-9eb678042ea9.json",
+      "focus-shards/075-a99cceac694b.json",
       "focus-shards/076-43ff1027b470.json",
       "focus-shards/077-99a380081231.json",
       "focus-shards/078-0269085fbd08.json",
@@ -143,7 +143,7 @@
       "focus-shards/120-ab532269d95e.json",
       "focus-shards/121-f7f2234bd017.json",
       "focus-shards/122-a67a2573fb6d.json",
-      "focus-shards/123-d7e704e631bd.json",
+      "focus-shards/123-4d1dce57f0b1.json",
       "focus-shards/124-fe8174a216b7.json",
       "focus-shards/125-dac2fb202621.json",
       "focus-shards/126-178826c08633.json",
@@ -153,7 +153,7 @@
     "tag": "tag.json",
     "tagHot": "tag.hot.json"
   },
-  "generated_at": "2026-08-06T09:52:54Z",
+  "generated_at": "2026-08-06T12:21:11Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -193,7 +193,7 @@
   },
   "stats": {
     "links_by_type": {
-      "cooccurrence": 904,
+      "cooccurrence": 907,
       "relation": 71,
       "semantic": 35
     },
@@ -203,13 +203,13 @@
       "language": 8,
       "model": 6,
       "scenario": 31,
-      "tag": 138
+      "tag": 139
     },
     "tag_stats": {
       "archived_article_files_skipped": 276,
       "archived_article_groups_skipped": 276,
       "avg_concepts_per_article": 0,
-      "avg_tags_per_article": 2.3655821917808217,
+      "avg_tags_per_article": 2.3662815575524174,
       "canonical_duplicate_files_skipped": 0,
       "incomplete_article_files_skipped": 0,
       "incomplete_article_groups_skipped": 0,
@@ -242,13 +242,13 @@
         [
           "ArXiv",
           {
-            "article_count": 620,
+            "article_count": 621,
             "category": "article_tag",
             "description": "文章标签: ArXiv",
             "id": "ArXiv",
             "layer": "tag",
             "name": "ArXiv",
-            "related_count": 33
+            "related_count": 34
           }
         ],
         [
@@ -278,16 +278,16 @@
       ],
       "synthetic_article_files_skipped": 0,
       "synthetic_article_groups_skipped": 0,
-      "total_articles": 2336,
+      "total_articles": 2337,
       "total_concept_links": 0,
       "total_concepts": 0,
-      "total_tag_links": 904,
-      "total_tags": 138
+      "total_tag_links": 907,
+      "total_tags": 139
     },
-    "total_articles": 2336,
+    "total_articles": 2337,
     "total_communities": 9,
-    "total_links": 1010,
-    "total_nodes": 207
+    "total_links": 1013,
+    "total_nodes": 208
   },
   "version": 2
 }

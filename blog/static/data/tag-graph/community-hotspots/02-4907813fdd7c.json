@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:掘金",
-  "generated_at": "2026-08-06T09:52:54Z",
+  "generated_at": "2026-08-06T12:21:11Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -331,11 +331,11 @@
       "weighted_degree": 611.6
     },
     {
-      "article_count": 620,
+      "article_count": 621,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
-      "degree": 33,
+      "degree": 34,
       "description": "文章标签: ArXiv",
       "id": "tag:ArXiv",
       "layer": "tag",
@@ -344,8 +344,8 @@
       "level": 6,
       "name": "ArXiv",
       "rank": 6,
-      "related_count": 33,
-      "weighted_degree": 602
+      "related_count": 34,
+      "weighted_degree": 605
     },
     {
       "article_count": 146,
@@ -399,11 +399,11 @@
       "weighted_degree": 470
     },
     {
-      "article_count": 100,
+      "article_count": 101,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
-      "degree": 32,
+      "degree": 33,
       "description": "文章标签: RAG",
       "id": "tag:RAG",
       "layer": "tag",
@@ -412,8 +412,8 @@
       "level": 6,
       "name": "RAG",
       "rank": 11,
-      "related_count": 30,
-      "weighted_degree": 398.2
+      "related_count": 31,
+      "weighted_degree": 401.2
     },
     {
       "article_count": 108,

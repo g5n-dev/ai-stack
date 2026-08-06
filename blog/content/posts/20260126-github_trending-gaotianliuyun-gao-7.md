@@ -30,13 +30,13 @@ source_capture_sha256: sha256:ce833907a8ca95b8b615a90ef32dd81837ed72b4e1f10a1822
 source_capture_chars_original: 58
 source_publication_excerpt_chars: 58
 observation_id: obs_9424292c7445c3c37daaa66e81b01dc8a9b588ff9813d3994f3886c2207d220f
-revision_id: rev_76a287da3e9a7d72d55997ce361d798131a0fb6e43f6b01070387ca5f50a9499
+revision_id: rev_60f9956d704ce07637e53107ebca4c0890409a2eddccee7c995f38de0f52c3fc
 event_id: evt_37df5a78ffc909bd8062e267a7d37ddb9f408a6a850fc73ef2c295bf071d389d
 lineage_relation: original
 parent_observation_id: null
 source_published_at: null
 first_seen_at: 2026-01-26T12:14:33Z
-last_seen_at: 2026-07-29T00:00:00Z
+last_seen_at: 2026-08-06T00:00:00Z
 timestamp_confidence: git
 ---
 
