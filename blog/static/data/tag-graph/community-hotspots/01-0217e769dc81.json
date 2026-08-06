@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Technical How-to",
-  "generated_at": "2026-08-06T09:52:54Z",
+  "generated_at": "2026-08-06T12:21:11Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -280,11 +280,11 @@
       "weighted_degree": 874
     },
     {
-      "article_count": 209,
+      "article_count": 210,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
-      "degree": 86,
+      "degree": 87,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
@@ -293,8 +293,8 @@
       "level": 6,
       "name": "来源快报",
       "rank": 7,
-      "related_count": 86,
-      "weighted_degree": 565
+      "related_count": 87,
+      "weighted_degree": 568
     },
     {
       "article_count": 20,
