@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:9eb79c4519578a84dce6a48cea041acf3760bf85f322bfcaf
 description: "该内容描述了 LendingTree 如何在 Amazon Bedrock 上构建一个包含监督、教育和匹配三个独立智能体的抵押贷款助理，以在对话中为借款人提供信息解释与个性化方案推荐。"
 external_url: https://aws.amazon.com/blogs/machine-learning/how-lendingtree-built-a-multi-agent-mortgage-assistant-on-amazon-bedrock
 parent_observation_id: null
-last_seen_at: 2026-08-05T18:50:33.879162Z
+last_seen_at: 2026-08-06T00:00:00Z
 ---
 
 ## 基本信息

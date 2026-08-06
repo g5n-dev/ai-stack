@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Google Cloud",
-  "generated_at": "2026-08-05T22:23:59Z",
+  "generated_at": "2026-08-06T00:12:05Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -259,7 +259,7 @@
       "legacy_id": "AI",
       "level": 6,
       "name": "AI",
-      "rank": 20,
+      "rank": 21,
       "related_count": 29,
       "weighted_degree": 107.6
     },
@@ -276,7 +276,7 @@
       "legacy_id": "Google Cloud",
       "level": 6,
       "name": "Google Cloud",
-      "rank": 54,
+      "rank": 55,
       "related_count": 11,
       "weighted_degree": 14.6
     },
@@ -293,7 +293,7 @@
       "legacy_id": "Gemini models",
       "level": 6,
       "name": "Gemini models",
-      "rank": 58,
+      "rank": 59,
       "related_count": 11,
       "weighted_degree": 14
     },
@@ -310,7 +310,7 @@
       "legacy_id": "Search",
       "level": 6,
       "name": "Search",
-      "rank": 59,
+      "rank": 60,
       "related_count": 9,
       "weighted_degree": 13
     },
@@ -327,7 +327,7 @@
       "legacy_id": "Android",
       "level": 6,
       "name": "Android",
-      "rank": 64,
+      "rank": 65,
       "related_count": 11,
       "weighted_degree": 12
     },
@@ -344,7 +344,7 @@
       "legacy_id": "Developer tools",
       "level": 6,
       "name": "Developer tools",
-      "rank": 66,
+      "rank": 67,
       "related_count": 7,
       "weighted_degree": 12
     },

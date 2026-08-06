@@ -15,7 +15,7 @@ observation_id: obs_db756ec4d6e59ca936da7aa8eca44d5d6459a0ef221677a8ea82662f0ffa
 event_id: evt_1e28557a77c211bae90a2fbe49036ecc84ef2c559978f2329dce637941e053c2
 revision_id: rev_2153862914958c1b68cc12c581b6922ebaa4a65d9f0f68503427e259bf596825
 source_published_at: 2026-08-05T18:09:03Z
-first_seen_at: 2026-08-05T22:20:33.126599Z
+first_seen_at: 2026-08-05T22:32:26Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 74
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/how-mobileye-transformed-support-operations-using-amazon-bedrock-agentcore
 parent_observation_id: null
-last_seen_at: 2026-08-05T22:20:33.126599Z
+last_seen_at: 2026-08-06T00:00:00Z
 ---
 
 ## 基本信息

@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Brain and cognitive sciences",
-  "generated_at": "2026-08-05T22:23:59Z",
+  "generated_at": "2026-08-06T00:12:05Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -326,7 +326,7 @@
       "legacy_id": "Computer science and technology",
       "level": 6,
       "name": "Computer science and technology",
-      "rank": 53,
+      "rank": 54,
       "related_count": 11,
       "weighted_degree": 14.6
     },
@@ -343,7 +343,7 @@
       "legacy_id": "Faculty",
       "level": 6,
       "name": "Faculty",
-      "rank": 57,
+      "rank": 58,
       "related_count": 12,
       "weighted_degree": 14
     },
@@ -360,7 +360,7 @@
       "legacy_id": "Safety",
       "level": 6,
       "name": "Safety",
-      "rank": 67,
+      "rank": 68,
       "related_count": 9,
       "weighted_degree": 11
     },

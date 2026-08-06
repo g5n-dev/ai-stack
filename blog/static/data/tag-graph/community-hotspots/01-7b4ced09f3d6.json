@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Technical How-to",
-  "generated_at": "2026-08-05T22:23:59Z",
+  "generated_at": "2026-08-06T00:12:05Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -10,7 +10,15 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 76
+      "weight": 77
+    },
+    {
+      "id": "edge:cooccurrence:tag:Prompt 工程->tag:博客与播客",
+      "source": "tag:Prompt 工程",
+      "strength": 1,
+      "target": "tag:博客与播客",
+      "type": "cooccurrence",
+      "weight": 13
     },
     {
       "id": "edge:cooccurrence:tag:cs.CL->tag:来源快报",
@@ -21,10 +29,10 @@
       "weight": 13
     },
     {
-      "id": "edge:cooccurrence:tag:Prompt 工程->tag:博客与播客",
+      "id": "edge:cooccurrence:tag:Prompt 工程->tag:来源快报",
       "source": "tag:Prompt 工程",
       "strength": 1,
-      "target": "tag:博客与播客",
+      "target": "tag:来源快报",
       "type": "cooccurrence",
       "weight": 12
     },
@@ -49,14 +57,6 @@
       "source": "tag:Intermediate (200)",
       "strength": 1,
       "target": "tag:博客与播客",
-      "type": "cooccurrence",
-      "weight": 11
-    },
-    {
-      "id": "edge:cooccurrence:tag:Prompt 工程->tag:来源快报",
-      "source": "tag:Prompt 工程",
-      "strength": 1,
-      "target": "tag:来源快报",
       "type": "cooccurrence",
       "weight": 11
     },
@@ -157,6 +157,22 @@
       "weight": 5
     },
     {
+      "id": "edge:cooccurrence:tag:Amazon Bedrock AgentCore->tag:Prompt 工程",
+      "source": "tag:Amazon Bedrock AgentCore",
+      "strength": 1,
+      "target": "tag:Prompt 工程",
+      "type": "cooccurrence",
+      "weight": 5
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Bedrock AgentCore->tag:Technical How-to",
+      "source": "tag:Amazon Bedrock AgentCore",
+      "strength": 1,
+      "target": "tag:Technical How-to",
+      "type": "cooccurrence",
+      "weight": 5
+    },
+    {
       "id": "edge:cooccurrence:tag:Amazon Quick Suite->tag:博客与播客",
       "source": "tag:Amazon Quick Suite",
       "strength": 1,
@@ -189,6 +205,14 @@
       "weight": 5
     },
     {
+      "id": "edge:cooccurrence:tag:Technical How-to->tag:博客与播客",
+      "source": "tag:Technical How-to",
+      "strength": 1,
+      "target": "tag:博客与播客",
+      "type": "cooccurrence",
+      "weight": 5
+    },
+    {
       "id": "edge:cooccurrence:tag:Advanced (300)->tag:Amazon Bedrock",
       "source": "tag:Advanced (300)",
       "strength": 1,
@@ -213,18 +237,18 @@
       "weight": 4
     },
     {
-      "id": "edge:cooccurrence:tag:Amazon Bedrock AgentCore->tag:Prompt 工程",
+      "id": "edge:cooccurrence:tag:Amazon Bedrock AgentCore->tag:博客与播客",
       "source": "tag:Amazon Bedrock AgentCore",
       "strength": 1,
-      "target": "tag:Prompt 工程",
+      "target": "tag:博客与播客",
       "type": "cooccurrence",
       "weight": 4
     },
     {
-      "id": "edge:cooccurrence:tag:Amazon Bedrock AgentCore->tag:Technical How-to",
+      "id": "edge:cooccurrence:tag:Amazon Bedrock AgentCore->tag:来源快报",
       "source": "tag:Amazon Bedrock AgentCore",
       "strength": 1,
-      "target": "tag:Technical How-to",
+      "target": "tag:来源快报",
       "type": "cooccurrence",
       "weight": 4
     },
@@ -235,35 +259,11 @@
       "target": "tag:来源快报",
       "type": "cooccurrence",
       "weight": 4
-    },
-    {
-      "id": "edge:cooccurrence:tag:Intermediate (200)->tag:Prompt 工程",
-      "source": "tag:Intermediate (200)",
-      "strength": 1,
-      "target": "tag:Prompt 工程",
-      "type": "cooccurrence",
-      "weight": 4
-    },
-    {
-      "id": "edge:cooccurrence:tag:Technical How-to->tag:博客与播客",
-      "source": "tag:Technical How-to",
-      "strength": 1,
-      "target": "tag:博客与播客",
-      "type": "cooccurrence",
-      "weight": 4
-    },
-    {
-      "id": "edge:cooccurrence:tag:AWS Lambda->tag:Technical How-to",
-      "source": "tag:AWS Lambda",
-      "strength": 1,
-      "target": "tag:Technical How-to",
-      "type": "cooccurrence",
-      "weight": 3
     }
   ],
   "nodes": [
     {
-      "article_count": 387,
+      "article_count": 388,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
@@ -277,10 +277,10 @@
       "name": "博客与播客",
       "rank": 4,
       "related_count": 84,
-      "weighted_degree": 856
+      "weighted_degree": 863
     },
     {
-      "article_count": 202,
+      "article_count": 203,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
@@ -294,14 +294,14 @@
       "name": "来源快报",
       "rank": 7,
       "related_count": 86,
-      "weighted_degree": 541
+      "weighted_degree": 548
     },
     {
-      "article_count": 18,
+      "article_count": 19,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
-      "degree": 22,
+      "degree": 23,
       "description": "文章标签: Prompt 工程",
       "id": "tag:Prompt 工程",
       "layer": "tag",
@@ -309,9 +309,9 @@
       "legacy_id": "Prompt 工程",
       "level": 6,
       "name": "Prompt 工程",
-      "rank": 22,
-      "related_count": 22,
-      "weighted_degree": 105
+      "rank": 20,
+      "related_count": 23,
+      "weighted_degree": 112
     },
     {
       "article_count": 17,
@@ -382,7 +382,7 @@
       "weighted_degree": 61
     },
     {
-      "article_count": 8,
+      "article_count": 9,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
@@ -394,12 +394,12 @@
       "legacy_id": "Amazon Bedrock AgentCore",
       "level": 6,
       "name": "Amazon Bedrock AgentCore",
-      "rank": 32,
+      "rank": 31,
       "related_count": 23,
-      "weighted_degree": 54
+      "weighted_degree": 61
     },
     {
-      "article_count": 8,
+      "article_count": 9,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
@@ -411,9 +411,9 @@
       "legacy_id": "Technical How-to",
       "level": 6,
       "name": "Technical How-to",
-      "rank": 33,
+      "rank": 32,
       "related_count": 26,
-      "weighted_degree": 52
+      "weighted_degree": 59
     },
     {
       "article_count": 9,
@@ -506,6 +506,23 @@
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
       "degree": 14,
+      "description": "文章标签: Expert (400)",
+      "id": "tag:Expert (400)",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Expert (400)",
+      "level": 6,
+      "name": "Expert (400)",
+      "rank": 50,
+      "related_count": 14,
+      "weighted_degree": 18
+    },
+    {
+      "article_count": 3,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Technical How-to",
+      "degree": 14,
       "description": "文章标签: Artificial Intelligence",
       "id": "tag:Artificial Intelligence",
       "layer": "tag",
@@ -513,7 +530,7 @@
       "legacy_id": "Artificial Intelligence",
       "level": 6,
       "name": "Artificial Intelligence",
-      "rank": 50,
+      "rank": 51,
       "related_count": 14,
       "weighted_degree": 17
     },
@@ -530,7 +547,7 @@
       "legacy_id": "Amazon Quick Sight",
       "level": 6,
       "name": "Amazon Quick Sight",
-      "rank": 51,
+      "rank": 52,
       "related_count": 12,
       "weighted_degree": 16
     },
@@ -547,7 +564,7 @@
       "legacy_id": "Foundational (100)",
       "level": 6,
       "name": "Foundational (100)",
-      "rank": 52,
+      "rank": 53,
       "related_count": 7,
       "weighted_degree": 15
     },
@@ -564,7 +581,7 @@
       "legacy_id": "Best Practices",
       "level": 6,
       "name": "Best Practices",
-      "rank": 55,
+      "rank": 56,
       "related_count": 9,
       "weighted_degree": 14
     },
@@ -581,7 +598,7 @@
       "legacy_id": "Amazon Simple Storage Service (S3)",
       "level": 6,
       "name": "Amazon Simple Storage Service (S3)",
-      "rank": 56,
+      "rank": 57,
       "related_count": 13,
       "weighted_degree": 14
     },
@@ -598,7 +615,7 @@
       "legacy_id": "Amazon Nova",
       "level": 6,
       "name": "Amazon Nova",
-      "rank": 60,
+      "rank": 61,
       "related_count": 13,
       "weighted_degree": 13
     },
@@ -615,7 +632,7 @@
       "legacy_id": "AWS Fargate",
       "level": 6,
       "name": "AWS Fargate",
-      "rank": 61,
+      "rank": 62,
       "related_count": 13,
       "weighted_degree": 13
     },
@@ -632,7 +649,7 @@
       "legacy_id": "Company",
       "level": 6,
       "name": "Company",
-      "rank": 63,
+      "rank": 64,
       "related_count": 3,
       "weighted_degree": 12
     },
@@ -649,26 +666,9 @@
       "legacy_id": "Amazon SageMaker AI",
       "level": 6,
       "name": "Amazon SageMaker AI",
-      "rank": 65,
+      "rank": 66,
       "related_count": 9,
       "weighted_degree": 12
-    },
-    {
-      "article_count": 2,
-      "category": "article_tag",
-      "color": "#f59e0b",
-      "community_id": "community:tag:Technical How-to",
-      "degree": 11,
-      "description": "文章标签: Expert (400)",
-      "id": "tag:Expert (400)",
-      "layer": "tag",
-      "layer_name": "标签层",
-      "legacy_id": "Expert (400)",
-      "level": 6,
-      "name": "Expert (400)",
-      "rank": 68,
-      "related_count": 11,
-      "weighted_degree": 11
     }
   ],
   "stats": {

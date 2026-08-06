@@ -27,7 +27,7 @@ source_title_chars_original: 46
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://news.microsoft.com/signal/articles/teaching-ai-to-speak-the-language-of-pathology
 parent_observation_id: null
-last_seen_at: 2026-08-05T09:49:11.615912Z
+last_seen_at: 2026-08-06T00:00:00Z
 ---
 
 ## 基本信息

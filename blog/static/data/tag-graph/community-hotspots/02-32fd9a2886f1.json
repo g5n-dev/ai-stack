@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:掘金",
-  "generated_at": "2026-08-05T22:23:59Z",
+  "generated_at": "2026-08-06T00:12:05Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -18,7 +18,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 247
+      "weight": 248
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:大语言模型",
@@ -263,11 +263,11 @@
   ],
   "nodes": [
     {
-      "article_count": 706,
+      "article_count": 707,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
-      "degree": 60,
+      "degree": 61,
       "description": "文章标签: AI Agent",
       "id": "tag:AI Agent",
       "layer": "tag",
@@ -276,15 +276,15 @@
       "level": 6,
       "name": "AI Agent",
       "rank": 1,
-      "related_count": 58,
-      "weighted_degree": 1835.2
+      "related_count": 59,
+      "weighted_degree": 1842.2
     },
     {
-      "article_count": 581,
+      "article_count": 582,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
-      "degree": 67,
+      "degree": 68,
       "description": "文章标签: 大语言模型",
       "id": "tag:大语言模型",
       "layer": "tag",
@@ -293,8 +293,8 @@
       "level": 6,
       "name": "大语言模型",
       "rank": 2,
-      "related_count": 65,
-      "weighted_degree": 1473.2
+      "related_count": 66,
+      "weighted_degree": 1480.2
     },
     {
       "article_count": 465,
@@ -564,7 +564,7 @@
       "legacy_id": "深度学习",
       "level": 6,
       "name": "深度学习",
-      "rank": 21,
+      "rank": 22,
       "related_count": 24,
       "weighted_degree": 106
     },
@@ -649,7 +649,7 @@
       "legacy_id": "AI 安全",
       "level": 6,
       "name": "AI 安全",
-      "rank": 31,
+      "rank": 33,
       "related_count": 14,
       "weighted_degree": 54.6
     },
