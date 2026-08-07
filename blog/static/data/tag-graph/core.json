@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T11:09:27Z",
+  "generated_at": "2026-08-07T11:58:46Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -626,7 +626,7 @@
       "weighted_degree": 2
     },
     {
-      "article_count": 717,
+      "article_count": 718,
       "category": "ai",
       "color": "#7aa6b8",
       "community_id": null,
@@ -639,11 +639,11 @@
       "legacy_id": "agent",
       "level": 4,
       "name": "AI Agent",
-      "rank": 126,
+      "rank": 127,
       "weighted_degree": 4.4
     },
     {
-      "article_count": 769,
+      "article_count": 770,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
@@ -1438,7 +1438,7 @@
       "legacy_id": "nlp",
       "level": 3,
       "name": "自然语言处理",
-      "rank": 119,
+      "rank": 120,
       "weighted_degree": 5.6
     },
     {
@@ -1523,7 +1523,7 @@
       "legacy_id": "pytorch",
       "level": 2,
       "name": "PyTorch",
-      "rank": 113,
+      "rank": 114,
       "weighted_degree": 7
     },
     {
@@ -1540,7 +1540,7 @@
       "legacy_id": "rag",
       "level": 4,
       "name": "RAG应用",
-      "rank": 114,
+      "rank": 115,
       "weighted_degree": 6.6
     },
     {

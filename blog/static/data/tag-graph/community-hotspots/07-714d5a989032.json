@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:ML Applications",
-  "generated_at": "2026-08-07T11:09:27Z",
+  "generated_at": "2026-08-07T11:58:46Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -110,7 +110,7 @@
       "legacy_id": "Production Engineering",
       "level": 6,
       "name": "Production Engineering",
-      "rank": 125,
+      "rank": 126,
       "related_count": 5,
       "weighted_degree": 5
     }
