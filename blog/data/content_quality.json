@@ -1,8 +1,8 @@
 {
-  "active_count": 2341,
+  "active_count": 2344,
   "archived_count": 276,
-  "complete_count": 26,
-  "interpreted_brief_count": 32,
+  "complete_count": 27,
+  "interpreted_brief_count": 33,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -18911,11 +18911,26 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260807-blogs_podcasts-configure-rate-limits-for-ai-traffic-on-agentcore--0-0a728b4df1.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20260807-blogs_podcasts-securing-ai-agents-with-temporal-policies-in-amazo-0-93e5dec2f2.md": {
       "reasons": [
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20260807-hacker_news-humans-missed-1-in-3-threats-approving-ai-agent-co-15-a4f2be4eb8.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20260807-hacker_news-inside-vllm-anatomy-of-a-high-throughput-llm-infer-5-9d8c2e952a.md": {
       "reasons": [
@@ -18956,11 +18971,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2283,
-  "source_file_count": 2617,
-  "source_tree_sha256": "c28504170ef98c70964dfa382cbe49b382902050b8980b3755c8e894c7d0e18f",
-  "verified_provenance_count": 2341,
+  "source_brief_count": 2284,
+  "source_file_count": 2620,
+  "source_tree_sha256": "a0836263ff28f534fdaa0312dcff17d5d131c914bf265f5eab41109f9b1bbc20",
+  "verified_provenance_count": 2344,
   "warning_counts": {
-    "source_excerpt_truncated": 756
+    "source_excerpt_truncated": 757
   }
 }

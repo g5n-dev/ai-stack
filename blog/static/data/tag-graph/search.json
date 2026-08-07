@@ -12,10 +12,10 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-07T00:17:57Z",
+  "generated_at": "2026-08-07T03:18:52Z",
   "items": [
     {
-      "article_count": 710,
+      "article_count": 712,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 61,
@@ -25,10 +25,10 @@
       "legacy_id": "AI Agent",
       "name": "AI Agent",
       "rank": 1,
-      "weighted_degree": 1860.2
+      "weighted_degree": 1868.2
     },
     {
-      "article_count": 590,
+      "article_count": 591,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 69,
@@ -38,10 +38,10 @@
       "legacy_id": "大语言模型",
       "name": "大语言模型",
       "rank": 2,
-      "weighted_degree": 1510.2
+      "weighted_degree": 1516.2
     },
     {
-      "article_count": 468,
+      "article_count": 469,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 25,
@@ -51,10 +51,10 @@
       "legacy_id": "掘金",
       "name": "掘金",
       "rank": 3,
-      "weighted_degree": 1221
+      "weighted_degree": 1223
     },
     {
-      "article_count": 391,
+      "article_count": 392,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 84,
@@ -64,7 +64,7 @@
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 4,
-      "weighted_degree": 881
+      "weighted_degree": 887
     },
     {
       "article_count": 162,
@@ -93,7 +93,7 @@
       "weighted_degree": 608
     },
     {
-      "article_count": 213,
+      "article_count": 215,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 87,
@@ -103,7 +103,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 7,
-      "weighted_degree": 580
+      "weighted_degree": 588
     },
     {
       "article_count": 146,
@@ -171,6 +171,19 @@
       "weighted_degree": 344
     },
     {
+      "article_count": 803,
+      "category": "article_tag",
+      "community_id": "community:tag:掘金",
+      "degree": 20,
+      "description": "文章标签: Hacker News",
+      "id": "tag:Hacker News",
+      "layer": "tag",
+      "legacy_id": "Hacker News",
+      "name": "Hacker News",
+      "rank": 13,
+      "weighted_degree": 339
+    },
+    {
       "article_count": 86,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
@@ -180,21 +193,8 @@
       "layer": "tag",
       "legacy_id": "Docker",
       "name": "Docker",
-      "rank": 13,
-      "weighted_degree": 338
-    },
-    {
-      "article_count": 802,
-      "category": "article_tag",
-      "community_id": "community:tag:掘金",
-      "degree": 20,
-      "description": "文章标签: Hacker News",
-      "id": "tag:Hacker News",
-      "layer": "tag",
-      "legacy_id": "Hacker News",
-      "name": "Hacker News",
       "rank": 14,
-      "weighted_degree": 337
+      "weighted_degree": 338
     },
     {
       "article_count": 108,
@@ -340,7 +340,7 @@
       "weighted_degree": 84.6
     },
     {
-      "article_count": 12,
+      "article_count": 13,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 31,
@@ -350,10 +350,10 @@
       "legacy_id": "Advanced (300)",
       "name": "Advanced (300)",
       "rank": 26,
-      "weighted_degree": 78
+      "weighted_degree": 84
     },
     {
-      "article_count": 11,
+      "article_count": 12,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 24,
@@ -363,7 +363,7 @@
       "legacy_id": "Amazon Bedrock AgentCore",
       "name": "Amazon Bedrock AgentCore",
       "rank": 27,
-      "weighted_degree": 75
+      "weighted_degree": 81
     },
     {
       "article_count": 24,
@@ -396,12 +396,25 @@
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 21,
+      "description": "文章标签: Announcements",
+      "id": "tag:Announcements",
+      "layer": "tag",
+      "legacy_id": "Announcements",
+      "name": "Announcements",
+      "rank": 30,
+      "weighted_degree": 67
+    },
+    {
+      "article_count": 12,
+      "category": "article_tag",
+      "community_id": "community:tag:Technical How-to",
+      "degree": 21,
       "description": "文章标签: Intermediate (200)",
       "id": "tag:Intermediate (200)",
       "layer": "tag",
       "legacy_id": "Intermediate (200)",
       "name": "Intermediate (200)",
-      "rank": 30,
+      "rank": 31,
       "weighted_degree": 65
     },
     {
@@ -414,26 +427,13 @@
       "layer": "tag",
       "legacy_id": "GitHub",
       "name": "GitHub",
-      "rank": 31,
-      "weighted_degree": 61
-    },
-    {
-      "article_count": 11,
-      "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
-      "degree": 21,
-      "description": "文章标签: Announcements",
-      "id": "tag:Announcements",
-      "layer": "tag",
-      "legacy_id": "Announcements",
-      "name": "Announcements",
       "rank": 32,
       "weighted_degree": 61
     },
     {
-      "article_count": 26,
+      "article_count": 27,
       "category": "article_tag",
-      "community_id": "community:tag:Codex",
+      "community_id": "community:tag:来源转写",
       "degree": 9,
       "description": "文章标签: 工程实践",
       "id": "tag:工程实践",
@@ -441,7 +441,7 @@
       "legacy_id": "工程实践",
       "name": "工程实践",
       "rank": 33,
-      "weighted_degree": 57
+      "weighted_degree": 59
     },
     {
       "article_count": 19,
@@ -470,9 +470,9 @@
       "weighted_degree": 54.6
     },
     {
-      "article_count": 25,
+      "article_count": 26,
       "category": "article_tag",
-      "community_id": "community:tag:Codex",
+      "community_id": "community:tag:来源转写",
       "degree": 2,
       "description": "文章标签: 来源转写",
       "id": "tag:来源转写",
@@ -480,7 +480,7 @@
       "legacy_id": "来源转写",
       "name": "来源转写",
       "rank": 36,
-      "weighted_degree": 50
+      "weighted_degree": 52
     },
     {
       "article_count": 9,
@@ -862,7 +862,7 @@
     {
       "article_count": 2,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:AWS Marketplace",
       "degree": 9,
       "description": "文章标签: Amazon SageMaker AI",
       "id": "tag:Amazon SageMaker AI",
@@ -1003,7 +1003,7 @@
       "weighted_degree": 9.6
     },
     {
-      "article_count": 590,
+      "article_count": 591,
       "category": "nlp",
       "community_id": null,
       "degree": 8,
@@ -1081,7 +1081,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 757,
+      "article_count": 759,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -1226,7 +1226,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:AWS Marketplace",
       "degree": 7,
       "description": "文章标签: AWS Identity and Access Management (IAM)",
       "id": "tag:AWS Identity and Access Management (IAM)",
@@ -1239,7 +1239,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:AWS Marketplace",
       "degree": 7,
       "description": "文章标签: AWS Marketplace",
       "id": "tag:AWS Marketplace",
@@ -1577,7 +1577,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:AWS Marketplace",
       "degree": 5,
       "description": "文章标签: AWS Glue",
       "id": "tag:AWS Glue",
@@ -1627,7 +1627,7 @@
       "weighted_degree": 5
     },
     {
-      "article_count": 710,
+      "article_count": 712,
       "category": "ai",
       "community_id": null,
       "degree": 5,
@@ -2004,7 +2004,7 @@
       "weighted_degree": 2.8
     },
     {
-      "article_count": 590,
+      "article_count": 591,
       "category": "ai",
       "community_id": null,
       "degree": 3,
