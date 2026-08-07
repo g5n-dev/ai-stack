@@ -1,8 +1,8 @@
 {
-  "active_count": 2354,
+  "active_count": 2356,
   "archived_count": 276,
   "complete_count": 28,
-  "interpreted_brief_count": 36,
+  "interpreted_brief_count": 37,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -18929,6 +18929,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260807-arxiv-the-low-frequency-trap-video-language-models-fail--2-a8836da2d9.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260807-arxiv-tracing-the-heart-an-evidence-linked-pipeline-for--1-9b03f446d5.md": {
       "reasons": [
         "concise_source_card"
@@ -18983,6 +18989,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260807-hacker_news-interviewing-engineers-in-the-ai-era-lessons-from--5-4017238ddd.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260807-hacker_news-software-development-with-ai-is-starting-to-feel-l-8-01da3728f6.md": {
       "reasons": [
         "concise_source_card"
@@ -19031,10 +19043,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2290,
-  "source_file_count": 2630,
-  "source_tree_sha256": "ab33dad240a7a59cbb3d38c42e78d705270572c5faf2c848ffc9b507ad3807dd",
-  "verified_provenance_count": 2354,
+  "source_brief_count": 2291,
+  "source_file_count": 2632,
+  "source_tree_sha256": "bcf1f57ade3abbb8cda239d62f4260016e51c6a1099ea19ed3fb224e7afab8c6",
+  "verified_provenance_count": 2356,
   "warning_counts": {
     "source_excerpt_truncated": 759
   }
