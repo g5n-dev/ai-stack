@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Google Cloud",
-  "generated_at": "2026-08-07T06:22:32Z",
+  "generated_at": "2026-08-07T08:23:41Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -53,6 +53,14 @@
       "weight": 2
     },
     {
+      "id": "edge:cooccurrence:tag:AI->tag:cs.CY",
+      "source": "tag:AI",
+      "strength": 1,
+      "target": "tag:cs.CY",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
       "id": "edge:cooccurrence:tag:Gemini models->tag:Google Cloud",
       "source": "tag:Gemini models",
       "strength": 1,
@@ -89,14 +97,6 @@
       "source": "tag:AI",
       "strength": 0.5,
       "target": "tag:ai",
-      "type": "cooccurrence",
-      "weight": 1
-    },
-    {
-      "id": "edge:cooccurrence:tag:AI->tag:cs.CY",
-      "source": "tag:AI",
-      "strength": 0.5,
-      "target": "tag:cs.CY",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -247,7 +247,7 @@
   ],
   "nodes": [
     {
-      "article_count": 39,
+      "article_count": 40,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Google Cloud",
@@ -261,7 +261,7 @@
       "name": "AI",
       "rank": 21,
       "related_count": 30,
-      "weighted_degree": 114.6
+      "weighted_degree": 117.6
     },
     {
       "article_count": 2,
@@ -383,6 +383,23 @@
       "weighted_degree": 7
     },
     {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Google Cloud",
+      "degree": 3,
+      "description": "文章标签: cs.CY",
+      "id": "tag:cs.CY",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "cs.CY",
+      "level": 6,
+      "name": "cs.CY",
+      "rank": 117,
+      "related_count": 3,
+      "weighted_degree": 6
+    },
+    {
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
@@ -395,7 +412,7 @@
       "legacy_id": "Google One",
       "level": 6,
       "name": "Google One",
-      "rank": 130,
+      "rank": 131,
       "related_count": 4,
       "weighted_degree": 4
     },
@@ -412,26 +429,9 @@
       "legacy_id": "ai",
       "level": 6,
       "name": "ai",
-      "rank": 136,
+      "rank": 137,
       "related_count": 3,
       "weighted_degree": 3.6
-    },
-    {
-      "article_count": 1,
-      "category": "article_tag",
-      "color": "#f59e0b",
-      "community_id": "community:tag:Google Cloud",
-      "degree": 3,
-      "description": "文章标签: cs.CY",
-      "id": "tag:cs.CY",
-      "layer": "tag",
-      "layer_name": "标签层",
-      "legacy_id": "cs.CY",
-      "level": 6,
-      "name": "cs.CY",
-      "rank": 138,
-      "related_count": 3,
-      "weighted_degree": 3
     },
     {
       "article_count": 1,

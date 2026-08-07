@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Amazon RDS",
-  "generated_at": "2026-08-07T06:22:32Z",
+  "generated_at": "2026-08-07T08:23:41Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -192,7 +192,7 @@
       "legacy_id": "Amazon VPC",
       "level": 6,
       "name": "Amazon VPC",
-      "rank": 120,
+      "rank": 121,
       "related_count": 5,
       "weighted_degree": 5
     }

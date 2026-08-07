@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:AWS Marketplace",
-  "generated_at": "2026-08-07T06:22:32Z",
+  "generated_at": "2026-08-07T08:23:41Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -102,7 +102,7 @@
       "legacy_id": "AWS Glue",
       "level": 6,
       "name": "AWS Glue",
-      "rank": 121,
+      "rank": 122,
       "related_count": 5,
       "weighted_degree": 5
     }

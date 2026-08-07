@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-07T06:22:32Z",
+  "generated_at": "2026-08-07T08:23:41Z",
   "items": [
     {
       "article_count": 716,
@@ -67,7 +67,7 @@
       "weighted_degree": 895
     },
     {
-      "article_count": 624,
+      "article_count": 625,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 34,
@@ -77,7 +77,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 5,
-      "weighted_degree": 616
+      "weighted_degree": 619
     },
     {
       "article_count": 162,
@@ -93,7 +93,7 @@
       "weighted_degree": 611.6
     },
     {
-      "article_count": 221,
+      "article_count": 222,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 87,
@@ -103,7 +103,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 7,
-      "weighted_degree": 608
+      "weighted_degree": 611
     },
     {
       "article_count": 146,
@@ -275,7 +275,7 @@
       "weighted_degree": 126
     },
     {
-      "article_count": 39,
+      "article_count": 40,
       "category": "article_tag",
       "community_id": "community:tag:Google Cloud",
       "degree": 31,
@@ -285,7 +285,7 @@
       "legacy_id": "AI",
       "name": "AI",
       "rank": 21,
-      "weighted_degree": 114.6
+      "weighted_degree": 117.6
     },
     {
       "article_count": 34,
@@ -1081,7 +1081,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 765,
+      "article_count": 766,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -1523,6 +1523,19 @@
       "weighted_degree": 6
     },
     {
+      "article_count": 2,
+      "category": "article_tag",
+      "community_id": "community:tag:Google Cloud",
+      "degree": 3,
+      "description": "文章标签: cs.CY",
+      "id": "tag:cs.CY",
+      "layer": "tag",
+      "legacy_id": "cs.CY",
+      "name": "cs.CY",
+      "rank": 117,
+      "weighted_degree": 6
+    },
+    {
       "article_count": 1,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
@@ -1532,7 +1545,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Bedrock Agents",
       "name": "Amazon Bedrock Agents",
-      "rank": 117,
+      "rank": 118,
       "weighted_degree": 6
     },
     {
@@ -1545,7 +1558,7 @@
       "layer": "model",
       "legacy_id": "nlp",
       "name": "自然语言处理",
-      "rank": 118,
+      "rank": 119,
       "weighted_degree": 5.6
     },
     {
@@ -1558,7 +1571,7 @@
       "layer": "tag",
       "legacy_id": "Security",
       "name": "Security",
-      "rank": 119,
+      "rank": 120,
       "weighted_degree": 5.6
     },
     {
@@ -1571,7 +1584,7 @@
       "layer": "tag",
       "legacy_id": "Amazon VPC",
       "name": "Amazon VPC",
-      "rank": 120,
+      "rank": 121,
       "weighted_degree": 5
     },
     {
@@ -1584,7 +1597,7 @@
       "layer": "tag",
       "legacy_id": "AWS Glue",
       "name": "AWS Glue",
-      "rank": 121,
+      "rank": 122,
       "weighted_degree": 5
     },
     {
@@ -1597,7 +1610,7 @@
       "layer": "tag",
       "legacy_id": "Gemini App",
       "name": "Gemini App",
-      "rank": 122,
+      "rank": 123,
       "weighted_degree": 5
     },
     {
@@ -1610,7 +1623,7 @@
       "layer": "tag",
       "legacy_id": "Gemini Notebook",
       "name": "Gemini Notebook",
-      "rank": 123,
+      "rank": 124,
       "weighted_degree": 5
     },
     {
@@ -1623,7 +1636,7 @@
       "layer": "tag",
       "legacy_id": "Production Engineering",
       "name": "Production Engineering",
-      "rank": 124,
+      "rank": 125,
       "weighted_degree": 5
     },
     {
@@ -1636,7 +1649,7 @@
       "layer": "application",
       "legacy_id": "agent",
       "name": "AI Agent",
-      "rank": 125,
+      "rank": 126,
       "weighted_degree": 4.4
     },
     {
@@ -1649,7 +1662,7 @@
       "layer": "tag",
       "legacy_id": "cs.CR",
       "name": "cs.CR",
-      "rank": 126,
+      "rank": 127,
       "weighted_degree": 4
     },
     {
@@ -1662,7 +1675,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Bedrock Knowledge Bases",
       "name": "Amazon Bedrock Knowledge Bases",
-      "rank": 127,
+      "rank": 128,
       "weighted_degree": 4
     },
     {
@@ -1675,7 +1688,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Rekognition",
       "name": "Amazon Rekognition",
-      "rank": 128,
+      "rank": 129,
       "weighted_degree": 4
     },
     {
@@ -1688,7 +1701,7 @@
       "layer": "tag",
       "legacy_id": "AWS DeepRacer",
       "name": "AWS DeepRacer",
-      "rank": 129,
+      "rank": 130,
       "weighted_degree": 4
     },
     {
@@ -1701,7 +1714,7 @@
       "layer": "tag",
       "legacy_id": "Google One",
       "name": "Google One",
-      "rank": 130,
+      "rank": 131,
       "weighted_degree": 4
     },
     {
@@ -1714,7 +1727,7 @@
       "layer": "application",
       "legacy_id": "chatbot",
       "name": "聊天机器人",
-      "rank": 131,
+      "rank": 132,
       "weighted_degree": 4
     },
     {
@@ -1727,7 +1740,7 @@
       "layer": "framework",
       "legacy_id": "tensorflow",
       "name": "TensorFlow",
-      "rank": 132,
+      "rank": 133,
       "weighted_degree": 4
     },
     {
@@ -1740,7 +1753,7 @@
       "layer": "framework",
       "legacy_id": "transformers",
       "name": "Transformers",
-      "rank": 133,
+      "rank": 134,
       "weighted_degree": 4
     },
     {
@@ -1753,7 +1766,7 @@
       "layer": "language",
       "legacy_id": "typescript",
       "name": "TypeScript",
-      "rank": 134,
+      "rank": 135,
       "weighted_degree": 3.6
     },
     {
@@ -1766,7 +1779,7 @@
       "layer": "tag",
       "legacy_id": "C++",
       "name": "C++",
-      "rank": 135,
+      "rank": 136,
       "weighted_degree": 3.6
     },
     {
@@ -1779,7 +1792,7 @@
       "layer": "tag",
       "legacy_id": "ai",
       "name": "ai",
-      "rank": 136,
+      "rank": 137,
       "weighted_degree": 3.6
     },
     {
@@ -1792,21 +1805,8 @@
       "layer": "model",
       "legacy_id": "cv",
       "name": "计算机视觉",
-      "rank": 137,
-      "weighted_degree": 3.1
-    },
-    {
-      "article_count": 1,
-      "category": "article_tag",
-      "community_id": "community:tag:Google Cloud",
-      "degree": 3,
-      "description": "文章标签: cs.CY",
-      "id": "tag:cs.CY",
-      "layer": "tag",
-      "legacy_id": "cs.CY",
-      "name": "cs.CY",
       "rank": 138,
-      "weighted_degree": 3
+      "weighted_degree": 3.1
     },
     {
       "article_count": 1,
