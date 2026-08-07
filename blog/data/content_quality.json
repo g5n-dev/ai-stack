@@ -1,8 +1,8 @@
 {
-  "active_count": 2347,
+  "active_count": 2350,
   "archived_count": 276,
   "complete_count": 27,
-  "interpreted_brief_count": 34,
+  "interpreted_brief_count": 35,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -18917,6 +18917,21 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260807-arxiv-tracing-the-heart-an-evidence-linked-pipeline-for--1-9b03f446d5.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260807-blogs_podcasts-ainews-amd-buys-taalas-0-25f0af2b3d.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20260807-blogs_podcasts-configure-rate-limits-for-ai-traffic-on-agentcore--0-0a728b4df1.md": {
       "reasons": [
         "interpreted_source_card"
@@ -18945,6 +18960,12 @@
       "status": "source_brief"
     },
     "posts/20260807-hacker_news-inside-vllm-anatomy-of-a-high-throughput-llm-infer-5-9d8c2e952a.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260807-hacker_news-software-development-with-ai-is-starting-to-feel-l-8-01da3728f6.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -18992,11 +19013,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2286,
-  "source_file_count": 2623,
-  "source_tree_sha256": "0819e0eb4352e7af1b86bd26f031e1f4ea1157ba0bc1583efcd88b14061f335a",
-  "verified_provenance_count": 2347,
+  "source_brief_count": 2288,
+  "source_file_count": 2626,
+  "source_tree_sha256": "de648002825a0dd47cb37f18b360dedaa2105a9aebe313131ae7ab078e099f2e",
+  "verified_provenance_count": 2350,
   "warning_counts": {
-    "source_excerpt_truncated": 758
+    "source_excerpt_truncated": 759
   }
 }
