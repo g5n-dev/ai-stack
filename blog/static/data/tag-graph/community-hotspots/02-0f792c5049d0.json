@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Technical How-to",
-  "generated_at": "2026-08-07T21:57:16Z",
+  "generated_at": "2026-08-07T22:58:07Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -360,7 +360,7 @@
       "legacy_id": "Announcements",
       "level": 6,
       "name": "Announcements",
-      "rank": 30,
+      "rank": 31,
       "related_count": 21,
       "weighted_degree": 72
     },

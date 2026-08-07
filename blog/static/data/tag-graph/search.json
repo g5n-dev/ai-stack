@@ -12,10 +12,10 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-07T21:57:16Z",
+  "generated_at": "2026-08-07T22:58:07Z",
   "items": [
     {
-      "article_count": 726,
+      "article_count": 727,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 63,
@@ -25,7 +25,7 @@
       "legacy_id": "AI Agent",
       "name": "AI Agent",
       "rank": 1,
-      "weighted_degree": 1925.2
+      "weighted_degree": 1928.2
     },
     {
       "article_count": 605,
@@ -67,7 +67,7 @@
       "weighted_degree": 912
     },
     {
-      "article_count": 244,
+      "article_count": 245,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 89,
@@ -77,10 +77,10 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 5,
-      "weighted_degree": 676
+      "weighted_degree": 679
     },
     {
-      "article_count": 637,
+      "article_count": 638,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 36,
@@ -90,7 +90,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 659
+      "weighted_degree": 662
     },
     {
       "article_count": 162,
@@ -392,6 +392,19 @@
       "weighted_degree": 76.2
     },
     {
+      "article_count": 24,
+      "category": "article_tag",
+      "community_id": "community:tag:掘金",
+      "degree": 8,
+      "description": "文章标签: cs.AI",
+      "id": "tag:cs.AI",
+      "layer": "tag",
+      "legacy_id": "cs.AI",
+      "name": "cs.AI",
+      "rank": 30,
+      "weighted_degree": 72
+    },
+    {
       "article_count": 13,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
@@ -401,21 +414,8 @@
       "layer": "tag",
       "legacy_id": "Announcements",
       "name": "Announcements",
-      "rank": 30,
-      "weighted_degree": 72
-    },
-    {
-      "article_count": 23,
-      "category": "article_tag",
-      "community_id": "community:tag:掘金",
-      "degree": 8,
-      "description": "文章标签: cs.AI",
-      "id": "tag:cs.AI",
-      "layer": "tag",
-      "legacy_id": "cs.AI",
-      "name": "cs.AI",
       "rank": 31,
-      "weighted_degree": 69
+      "weighted_degree": 72
     },
     {
       "article_count": 31,
@@ -1094,7 +1094,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 783,
+      "article_count": 784,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -1653,7 +1653,7 @@
       "weighted_degree": 5
     },
     {
-      "article_count": 726,
+      "article_count": 727,
       "category": "ai",
       "community_id": null,
       "degree": 5,
