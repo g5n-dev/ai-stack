@@ -1,8 +1,8 @@
 {
-  "active_count": 2375,
+  "active_count": 2377,
   "archived_count": 276,
   "complete_count": 31,
-  "interpreted_brief_count": 44,
+  "interpreted_brief_count": 45,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19046,6 +19046,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260808-arxiv-does-flair-super-resolution-erase-or-hallucinate-s-4-7611c224c8.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260808-arxiv-rp-opsd-reasoning-pivot-guided-on-policy-self-dist-2-f3bfbad6c6.md": {
       "reasons": [
         "interpreted_source_card"
@@ -19105,6 +19111,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260808-hacker_news-the-claudyssey-a-line-for-line-translation-of-home-5-668bd4e07c.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -19139,10 +19151,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2300,
-  "source_file_count": 2651,
-  "source_tree_sha256": "fb4d571f7ac2ee1830504760928905a7d9b1e30586c72f1d2a6f80a756a4f7a8",
-  "verified_provenance_count": 2375,
+  "source_brief_count": 2301,
+  "source_file_count": 2653,
+  "source_tree_sha256": "10a664f7740b2b8017498294825253bb55436cde2d12793300e0b5951bcab359",
+  "verified_provenance_count": 2377,
   "warning_counts": {
     "source_excerpt_truncated": 759
   }
