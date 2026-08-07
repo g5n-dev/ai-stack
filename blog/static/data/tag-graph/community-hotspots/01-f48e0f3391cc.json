@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:掘金",
-  "generated_at": "2026-08-07T06:22:32Z",
+  "generated_at": "2026-08-07T08:23:41Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -170,7 +170,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 70
+      "weight": 71
     },
     {
       "id": "edge:cooccurrence:tag:RAG->tag:大语言模型",
@@ -331,7 +331,7 @@
       "weighted_degree": 895
     },
     {
-      "article_count": 624,
+      "article_count": 625,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -345,7 +345,7 @@
       "name": "ArXiv",
       "rank": 5,
       "related_count": 34,
-      "weighted_degree": 616
+      "weighted_degree": 619
     },
     {
       "article_count": 162,
@@ -365,7 +365,7 @@
       "weighted_degree": 611.6
     },
     {
-      "article_count": 221,
+      "article_count": 222,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -379,7 +379,7 @@
       "name": "来源快报",
       "rank": 7,
       "related_count": 87,
-      "weighted_degree": 608
+      "weighted_degree": 611
     },
     {
       "article_count": 146,
