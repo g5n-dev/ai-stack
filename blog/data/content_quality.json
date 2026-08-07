@@ -1,8 +1,8 @@
 {
-  "active_count": 2377,
+  "active_count": 2379,
   "archived_count": 276,
   "complete_count": 31,
-  "interpreted_brief_count": 45,
+  "interpreted_brief_count": 46,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19058,6 +19058,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260808-arxiv-rrc-unlocking-generative-reward-models-in-llm-rein-4-33ff60b41e.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260808-arxiv-trajdebug-tracing-error-lifecycle-to-identify-crit-2-5b5cbce254.md": {
       "reasons": [
         "concise_source_card"
@@ -19117,6 +19123,15 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260808-juejin-漫话火山-milvus为-agentrag-语义搜索而生ai-时代的极致性价比之选-0-2b68a6e5a7.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     }
   },
   "quarantined_count": 0,
@@ -19151,11 +19166,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2301,
-  "source_file_count": 2653,
-  "source_tree_sha256": "10a664f7740b2b8017498294825253bb55436cde2d12793300e0b5951bcab359",
-  "verified_provenance_count": 2377,
+  "source_brief_count": 2302,
+  "source_file_count": 2655,
+  "source_tree_sha256": "1f97dc15f0dfbf5b390fadece171a7d717e83fa6060b6effd21c5fe864e5892a",
+  "verified_provenance_count": 2379,
   "warning_counts": {
-    "source_excerpt_truncated": 759
+    "source_excerpt_truncated": 760
   }
 }
