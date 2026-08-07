@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:掘金",
-  "generated_at": "2026-08-07T13:41:07Z",
+  "generated_at": "2026-08-07T15:11:46Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -162,7 +162,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 75
+      "weight": 76
     },
     {
       "id": "edge:cooccurrence:tag:Python->tag:大语言模型",
@@ -331,7 +331,7 @@
       "weighted_degree": 897
     },
     {
-      "article_count": 629,
+      "article_count": 630,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -345,10 +345,10 @@
       "name": "ArXiv",
       "rank": 5,
       "related_count": 35,
-      "weighted_degree": 632
+      "weighted_degree": 635
     },
     {
-      "article_count": 229,
+      "article_count": 230,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -362,7 +362,7 @@
       "name": "来源快报",
       "rank": 6,
       "related_count": 88,
-      "weighted_degree": 630
+      "weighted_degree": 633
     },
     {
       "article_count": 162,
@@ -654,7 +654,7 @@
       "weighted_degree": 73.2
     },
     {
-      "article_count": 21,
+      "article_count": 22,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -666,9 +666,9 @@
       "legacy_id": "cs.AI",
       "level": 6,
       "name": "cs.AI",
-      "rank": 33,
+      "rank": 31,
       "related_count": 8,
-      "weighted_degree": 62
+      "weighted_degree": 65
     }
   ],
   "stats": {
