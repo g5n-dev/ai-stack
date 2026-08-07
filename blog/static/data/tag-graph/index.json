@@ -23,11 +23,11 @@
       "focus-shards/000-363fb6a12669.json",
       "focus-shards/001-eef3c54f5b72.json",
       "focus-shards/002-1f6580b97e6b.json",
-      "focus-shards/003-24a478b1c8a0.json",
+      "focus-shards/003-ae8bbfaad282.json",
       "focus-shards/004-08a9b1380f4a.json",
       "focus-shards/005-78d92140d3cd.json",
       "focus-shards/006-f41333001807.json",
-      "focus-shards/007-9e30c3291d5d.json",
+      "focus-shards/007-faa6e7b91b57.json",
       "focus-shards/008-716f3e4953f4.json",
       "focus-shards/009-8192c91e5b3e.json",
       "focus-shards/010-82102f585f91.json",
@@ -41,7 +41,7 @@
       "focus-shards/018-0be80c70f5df.json",
       "focus-shards/019-87e2fc690971.json",
       "focus-shards/020-75cab59f61b8.json",
-      "focus-shards/021-a7b24950ccd0.json",
+      "focus-shards/021-0da817d58303.json",
       "focus-shards/022-f03f00395ef3.json",
       "focus-shards/023-94fea1c15bda.json",
       "focus-shards/024-f9b15d46c361.json",
@@ -80,9 +80,9 @@
       "focus-shards/057-6fb23ad7ec16.json",
       "focus-shards/058-0df18770814d.json",
       "focus-shards/059-7621eb5f1505.json",
-      "focus-shards/060-2c5c3063da21.json",
+      "focus-shards/060-72694d57c140.json",
       "focus-shards/061-989b436c1bbb.json",
-      "focus-shards/062-205df705233f.json",
+      "focus-shards/062-8d4feb86e324.json",
       "focus-shards/063-260e120295e6.json",
       "focus-shards/064-ee6be01f98b2.json",
       "focus-shards/065-ec8837379f8c.json",
@@ -95,8 +95,8 @@
       "focus-shards/072-5d44eb09aa1c.json",
       "focus-shards/073-0e421fbeb34f.json",
       "focus-shards/074-9d5103f231ff.json",
-      "focus-shards/075-1976b85e4162.json",
-      "focus-shards/076-f1084a769de6.json",
+      "focus-shards/075-6460f4f5019a.json",
+      "focus-shards/076-f376078d039d.json",
       "focus-shards/077-99a380081231.json",
       "focus-shards/078-0269085fbd08.json",
       "focus-shards/079-3f9052b8e1f6.json",
@@ -104,7 +104,7 @@
       "focus-shards/081-9567482f5d71.json",
       "focus-shards/082-09b72153e3db.json",
       "focus-shards/083-8be09ecda047.json",
-      "focus-shards/084-19395841bdd5.json",
+      "focus-shards/084-fe08af40d398.json",
       "focus-shards/085-bbc865246422.json",
       "focus-shards/086-a75594d75494.json",
       "focus-shards/087-cf30e9190d1e.json",
@@ -118,7 +118,7 @@
       "focus-shards/095-5f5c1e3d5662.json",
       "focus-shards/096-fea1e6b849ab.json",
       "focus-shards/097-fa825349ae70.json",
-      "focus-shards/098-553b3d1d0ab5.json",
+      "focus-shards/098-00c4f0ff1a36.json",
       "focus-shards/099-5e083eae516f.json",
       "focus-shards/100-b84c9aab25ce.json",
       "focus-shards/101-690e1a6fd60e.json",
@@ -136,7 +136,7 @@
       "focus-shards/113-6a1d6219bb4d.json",
       "focus-shards/114-eb71c8e0c762.json",
       "focus-shards/115-6a7bc43f4801.json",
-      "focus-shards/116-cfcdd3e717f5.json",
+      "focus-shards/116-5645a10a10c5.json",
       "focus-shards/117-d614c465093e.json",
       "focus-shards/118-02e044bbb21d.json",
       "focus-shards/119-ffe1a3860164.json",
@@ -153,7 +153,7 @@
     "tag": "tag.json",
     "tagHot": "tag.hot.json"
   },
-  "generated_at": "2026-08-07T08:23:41Z",
+  "generated_at": "2026-08-07T10:12:40Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -193,7 +193,7 @@
   },
   "stats": {
     "links_by_type": {
-      "cooccurrence": 912,
+      "cooccurrence": 916,
       "relation": 71,
       "semantic": 35
     },
@@ -203,13 +203,13 @@
       "language": 8,
       "model": 6,
       "scenario": 31,
-      "tag": 139
+      "tag": 140
     },
     "tag_stats": {
       "archived_article_files_skipped": 276,
       "archived_article_groups_skipped": 276,
       "avg_concepts_per_article": 0,
-      "avg_tags_per_article": 2.3781369629944704,
+      "avg_tags_per_article": 2.3797790994052677,
       "canonical_duplicate_files_skipped": 0,
       "incomplete_article_files_skipped": 0,
       "incomplete_article_groups_skipped": 0,
@@ -230,43 +230,43 @@
         [
           "AI Agent",
           {
-            "article_count": 716,
+            "article_count": 717,
             "category": "article_tag",
             "description": "文章标签: AI Agent",
             "id": "AI Agent",
             "layer": "tag",
             "name": "AI Agent",
-            "related_count": 59
+            "related_count": 60
           }
         ],
         [
           "ArXiv",
           {
-            "article_count": 625,
+            "article_count": 626,
             "category": "article_tag",
             "description": "文章标签: ArXiv",
             "id": "ArXiv",
             "layer": "tag",
             "name": "ArXiv",
-            "related_count": 34
+            "related_count": 35
           }
         ],
         [
           "大语言模型",
           {
-            "article_count": 595,
+            "article_count": 596,
             "category": "article_tag",
             "description": "文章标签: 大语言模型",
             "id": "大语言模型",
             "layer": "tag",
             "name": "大语言模型",
-            "related_count": 67
+            "related_count": 68
           }
         ],
         [
           "掘金",
           {
-            "article_count": 470,
+            "article_count": 471,
             "category": "article_tag",
             "description": "文章标签: 掘金",
             "id": "掘金",
@@ -278,16 +278,16 @@
       ],
       "synthetic_article_files_skipped": 0,
       "synthetic_article_groups_skipped": 0,
-      "total_articles": 2351,
+      "total_articles": 2354,
       "total_concept_links": 0,
       "total_concepts": 0,
-      "total_tag_links": 912,
-      "total_tags": 139
+      "total_tag_links": 916,
+      "total_tags": 140
     },
-    "total_articles": 2351,
+    "total_articles": 2354,
     "total_communities": 11,
-    "total_links": 1018,
-    "total_nodes": 208
+    "total_links": 1022,
+    "total_nodes": 209
   },
   "version": 2
 }
