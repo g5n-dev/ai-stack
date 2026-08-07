@@ -1,8 +1,8 @@
 {
-  "active_count": 2344,
+  "active_count": 2347,
   "archived_count": 276,
   "complete_count": 27,
-  "interpreted_brief_count": 33,
+  "interpreted_brief_count": 34,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -18911,6 +18911,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260807-arxiv-the-bitter-lesson-of-tool-calling-1-2caabefc0a.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260807-blogs_podcasts-configure-rate-limits-for-ai-traffic-on-agentcore--0-0a728b4df1.md": {
       "reasons": [
         "interpreted_source_card"
@@ -18919,6 +18925,12 @@
       "warnings": [
         "source_excerpt_truncated"
       ]
+    },
+    "posts/20260807-blogs_podcasts-control-agent-behaviors-and-cost-beyond-a-single-a-0-9dd811c7fa.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
     },
     "posts/20260807-blogs_podcasts-securing-ai-agents-with-temporal-policies-in-amazo-0-93e5dec2f2.md": {
       "reasons": [
@@ -18937,6 +18949,15 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260807-juejin-jina-reranker-v35通过混合-attention-和自蒸馏实现更快的-listwise-0-2319884789.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     }
   },
   "quarantined_count": 0,
@@ -18971,11 +18992,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2284,
-  "source_file_count": 2620,
-  "source_tree_sha256": "a0836263ff28f534fdaa0312dcff17d5d131c914bf265f5eab41109f9b1bbc20",
-  "verified_provenance_count": 2344,
+  "source_brief_count": 2286,
+  "source_file_count": 2623,
+  "source_tree_sha256": "0819e0eb4352e7af1b86bd26f031e1f4ea1157ba0bc1583efcd88b14061f335a",
+  "verified_provenance_count": 2347,
   "warning_counts": {
-    "source_excerpt_truncated": 757
+    "source_excerpt_truncated": 758
   }
 }
