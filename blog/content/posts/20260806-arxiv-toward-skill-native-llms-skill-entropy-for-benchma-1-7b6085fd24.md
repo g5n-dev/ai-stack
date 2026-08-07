@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:e7d30bf68fde3260ae053d0f99dd8d1fea21480de09c7489b
 description: "该内容提出一种量化推理过程中技能切换难度的指标，并在此基础上构建了包含跨技能长时推理任务的评测基准，同时将该指标转化为强化学习训练信号，用于提升模型在复杂推理链中的技能切换能力。"
 external_url: http://arxiv.org/abs/2608.05139v1
 parent_observation_id: null
-last_seen_at: 2026-08-06T09:51:09.395204Z
+last_seen_at: 2026-08-07T00:00:00Z
 ---
 
 ## 基本信息

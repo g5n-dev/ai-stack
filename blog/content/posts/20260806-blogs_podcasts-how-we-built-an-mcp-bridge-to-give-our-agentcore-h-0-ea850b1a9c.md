@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:1d6a2d534e3d1f93f0939047ee52fb6f313cadcd38de4d90
 source_payload_sha256: "sha256:368427593d3d14cc4e827a763c6f632b8952202b1950728d05e789f31b031dcd"
 observation_id: obs_ea850b1a9c912609462a439893945e59b89d629abde9532c3a32b7330d6d6442
 event_id: evt_7e34a8d244c347ecf649f2c734fe194a4fe30dbdd325b4a6870bffc1ca83823f
-revision_id: rev_62cb956e20ff85b7eef2299b3633fe24fb0350f1491d94be65c61876e92a7ca3
+revision_id: rev_ff85932f9599eb15ca5d75c6990b0b248c1895dd1d514f3bb8134475ab633b5e
 source_published_at: 2026-08-05T18:02:23Z
 first_seen_at: 2026-08-06T00:20:36Z
 timestamp_confidence: feed
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:8c44ef58c46b386a05a231c59a743f54c851d38fa1ae68e7d
 description: "这篇文章介绍了一种将云端托管的 AI 代理与本地 MCP 工具连接起来的桥接方案，通过浏览器扩展和本地代理组件转发消息，实现云端客户端对本地工具服务器的调用。"
 external_url: https://aws.amazon.com/blogs/machine-learning/how-we-built-an-mcp-bridge-to-give-our-agentcore-hosted-ai-agent-access-to-local-mcp-tools
 parent_observation_id: null
-last_seen_at: 2026-08-06T00:11:04.616727Z
+last_seen_at: 2026-08-07T00:00:00Z
 ---
 
 ## 基本信息

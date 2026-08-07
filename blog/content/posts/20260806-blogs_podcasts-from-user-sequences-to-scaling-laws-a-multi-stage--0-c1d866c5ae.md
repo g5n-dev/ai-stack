@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:274ee0228bcaa15a4dfef9cf7a224ba8829dfa396aebb70f3
 description: "该内容介绍了一种将离线用户序列建模与在线广告排序分离的多阶段结构，并配合基于稠密标记化与目标感知注意力的学习方式，使模型能够直接从数据中捕获特征交互。"
 external_url: https://engineering.fb.com/2026/08/05/ml-applications/from-user-sequences-to-scaling-laws-a-multi-stage-architecture-for-metas-ads-ranking
 parent_observation_id: null
-last_seen_at: 2026-08-06T00:00:00Z
+last_seen_at: 2026-08-07T00:00:00Z
 ---
 
 ## 基本信息

@@ -15,7 +15,7 @@ observation_id: obs_33a3e040cf98081787ebeb1761caf548aefc32dec83ce4ddbfd8666576bb
 event_id: evt_abac9ffc33a0dd3e8cc060b1f515475f91f5cf0b4c03c9b2275e873c8241c41d
 revision_id: rev_e8c40348b330b0ccc0478bb706311e5a36f0c567f9aa49bd7788fe9667039535
 source_published_at: 2026-08-05T17:56:40Z
-first_seen_at: 2026-08-06T12:19:04.324663Z
+first_seen_at: 2026-08-06T12:29:34Z
 timestamp_confidence: publisher
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:56e35df17b9c28c7ec911b1ff647cdeb491b9579ab56ad8fd
 description: "该研究针对现代希腊语在检索增强生成（RAG）系统中的缺失，提出了一套从语料库挖掘、合成监督、检索模型训练、重排微调到阅读模型调优的完整适配方案，并发布了相应的评估基准。"
 external_url: http://arxiv.org/abs/2608.05138v1
 parent_observation_id: null
-last_seen_at: 2026-08-06T12:19:04.324663Z
+last_seen_at: 2026-08-07T00:00:00Z
 ---
 
 ## 基本信息
