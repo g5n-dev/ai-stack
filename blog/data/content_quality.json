@@ -1,7 +1,7 @@
 {
-  "active_count": 2362,
+  "active_count": 2366,
   "archived_count": 276,
-  "complete_count": 29,
+  "complete_count": 30,
   "interpreted_brief_count": 40,
   "legacy_analysis_count": 0,
   "pages": {
@@ -19039,6 +19039,24 @@
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20260808-arxiv-trajdebug-tracing-error-lifecycle-to-identify-crit-2-5b5cbce254.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260808-blogs_podcasts-how-cohere-health-digitizes-clinical-policies-usin-0-9a05a28afb.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260808-hacker_news-the-ai-billboards-are-killing-sf-12-8dac9b1106.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -19073,10 +19091,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2293,
-  "source_file_count": 2638,
-  "source_tree_sha256": "9dd471e6002644bf29b30375118eb36896e8e1ad39c2542a315c5747205fd6ef",
-  "verified_provenance_count": 2362,
+  "source_brief_count": 2296,
+  "source_file_count": 2642,
+  "source_tree_sha256": "9883f70e242343575806df3fdcc459e121a041c471a111c7ff414b8cdcb9c8be",
+  "verified_provenance_count": 2366,
   "warning_counts": {
     "source_excerpt_truncated": 759
   }
