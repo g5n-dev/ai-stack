@@ -1,8 +1,8 @@
 {
-  "active_count": 2369,
+  "active_count": 2371,
   "archived_count": 276,
   "complete_count": 30,
-  "interpreted_brief_count": 42,
+  "interpreted_brief_count": 44,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19034,6 +19034,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260808-arxiv-benchmarking-the-benchmarks-evaluating-benchmarks--4-781094a37d.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260808-arxiv-rp-opsd-reasoning-pivot-guided-on-policy-self-dist-2-f3bfbad6c6.md": {
       "reasons": [
         "interpreted_source_card"
@@ -19047,6 +19053,12 @@
       "status": "source_brief"
     },
     "posts/20260808-arxiv-tytan-interactive-neurosymbolic-construction-of-an-4-e61f5701e7.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260808-blogs_podcasts-determining-playoff-clinching-scenarios-in-the-nhl-0-a5c2e6f70f.md": {
       "reasons": [
         "interpreted_source_card"
       ],
@@ -19110,9 +19122,9 @@
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2297,
-  "source_file_count": 2645,
-  "source_tree_sha256": "aed9ea4bd0474c6ba67b1ef2504cbec505e5c2f0831992681f3a340d7ffc45c6",
-  "verified_provenance_count": 2369,
+  "source_file_count": 2647,
+  "source_tree_sha256": "5d143f36e0767e5910a5de944900242a86d4cb66db101445539053d92e5ad12a",
+  "verified_provenance_count": 2371,
   "warning_counts": {
     "source_excerpt_truncated": 759
   }
