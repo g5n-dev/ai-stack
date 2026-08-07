@@ -1,5 +1,5 @@
 {
-  "active_count": 2360,
+  "active_count": 2361,
   "archived_count": 276,
   "complete_count": 29,
   "interpreted_brief_count": 39,
@@ -18917,6 +18917,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260807-arxiv-challenges-in-evaluating-explanation-methods-for-s-2-fd84c95119.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260807-arxiv-investigating-artificial-intelligence-digital-sove-1-e9840a4f6f.md": {
       "reasons": [
         "interpreted_source_card"
@@ -19061,10 +19067,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2292,
-  "source_file_count": 2636,
-  "source_tree_sha256": "583e20588dd6873b85720624ee150c1921ae6e29ed7146273b3867ce0f64b22e",
-  "verified_provenance_count": 2360,
+  "source_brief_count": 2293,
+  "source_file_count": 2637,
+  "source_tree_sha256": "50bc45c0db57a39f5fe12fa91537d7b0b98f6feb422cf0c4e381e57d2f01f232",
+  "verified_provenance_count": 2361,
   "warning_counts": {
     "source_excerpt_truncated": 759
   }
