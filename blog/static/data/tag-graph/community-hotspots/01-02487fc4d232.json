@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:掘金",
-  "generated_at": "2026-08-07T21:57:16Z",
+  "generated_at": "2026-08-07T22:58:07Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -58,7 +58,7 @@
       "strength": 1,
       "target": "tag:ArXiv",
       "type": "cooccurrence",
-      "weight": 130
+      "weight": 131
     },
     {
       "id": "edge:cooccurrence:tag:掘金->tag:数据库",
@@ -138,7 +138,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 83
+      "weight": 84
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:大语言模型",
@@ -210,7 +210,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 61
+      "weight": 62
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:RAG",
@@ -263,7 +263,7 @@
   ],
   "nodes": [
     {
-      "article_count": 726,
+      "article_count": 727,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -277,7 +277,7 @@
       "name": "AI Agent",
       "rank": 1,
       "related_count": 61,
-      "weighted_degree": 1925.2
+      "weighted_degree": 1928.2
     },
     {
       "article_count": 605,
@@ -331,7 +331,7 @@
       "weighted_degree": 912
     },
     {
-      "article_count": 244,
+      "article_count": 245,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -345,10 +345,10 @@
       "name": "来源快报",
       "rank": 5,
       "related_count": 89,
-      "weighted_degree": 676
+      "weighted_degree": 679
     },
     {
-      "article_count": 637,
+      "article_count": 638,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -362,7 +362,7 @@
       "name": "ArXiv",
       "rank": 6,
       "related_count": 36,
-      "weighted_degree": 659
+      "weighted_degree": 662
     },
     {
       "article_count": 162,
@@ -654,7 +654,7 @@
       "weighted_degree": 76.2
     },
     {
-      "article_count": 23,
+      "article_count": 24,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -666,9 +666,9 @@
       "legacy_id": "cs.AI",
       "level": 6,
       "name": "cs.AI",
-      "rank": 31,
+      "rank": 30,
       "related_count": 8,
-      "weighted_degree": 69
+      "weighted_degree": 72
     }
   ],
   "stats": {

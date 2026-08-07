@@ -1,5 +1,5 @@
 {
-  "active_count": 2379,
+  "active_count": 2380,
   "archived_count": 276,
   "complete_count": 31,
   "interpreted_brief_count": 46,
@@ -19046,6 +19046,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260808-arxiv-beyond-top-k-replacing-black-box-retrieval-with-in-4-23d83db6b2.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260808-arxiv-does-flair-super-resolution-erase-or-hallucinate-s-4-7611c224c8.md": {
       "reasons": [
         "interpreted_source_card"
@@ -19166,10 +19172,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2302,
-  "source_file_count": 2655,
-  "source_tree_sha256": "1f97dc15f0dfbf5b390fadece171a7d717e83fa6060b6effd21c5fe864e5892a",
-  "verified_provenance_count": 2379,
+  "source_brief_count": 2303,
+  "source_file_count": 2656,
+  "source_tree_sha256": "d4fcdae76bcc827c4ab625d3cfa7ed33ce1d4bc168f53bbfa72cb1d58f65bb18",
+  "verified_provenance_count": 2380,
   "warning_counts": {
     "source_excerpt_truncated": 760
   }
