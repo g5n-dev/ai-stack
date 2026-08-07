@@ -23,11 +23,11 @@
       "focus-shards/000-363fb6a12669.json",
       "focus-shards/001-eef3c54f5b72.json",
       "focus-shards/002-1f6580b97e6b.json",
-      "focus-shards/003-d8c18e7662df.json",
+      "focus-shards/003-7d292471db64.json",
       "focus-shards/004-08a9b1380f4a.json",
       "focus-shards/005-78d92140d3cd.json",
       "focus-shards/006-f41333001807.json",
-      "focus-shards/007-5c6a45875e39.json",
+      "focus-shards/007-22a85a4d74f5.json",
       "focus-shards/008-716f3e4953f4.json",
       "focus-shards/009-8192c91e5b3e.json",
       "focus-shards/010-82102f585f91.json",
@@ -48,7 +48,7 @@
       "focus-shards/025-69266d0d8e25.json",
       "focus-shards/026-3c5cd1aad021.json",
       "focus-shards/027-cd2ecef2a9e7.json",
-      "focus-shards/028-1f9b8f25aadc.json",
+      "focus-shards/028-f3069f3fc298.json",
       "focus-shards/029-2420a24439a6.json",
       "focus-shards/030-0e48b3eecb0f.json",
       "focus-shards/031-98d7281288c7.json",
@@ -92,11 +92,11 @@
       "focus-shards/069-eac25151e0b4.json",
       "focus-shards/070-d5c9ca6d0405.json",
       "focus-shards/071-18b1500e044a.json",
-      "focus-shards/072-3f5052169dac.json",
+      "focus-shards/072-242308ad5633.json",
       "focus-shards/073-0e421fbeb34f.json",
       "focus-shards/074-9d5103f231ff.json",
-      "focus-shards/075-6460f4f5019a.json",
-      "focus-shards/076-f376078d039d.json",
+      "focus-shards/075-aec938f7e259.json",
+      "focus-shards/076-ba6dabf5f221.json",
       "focus-shards/077-99a380081231.json",
       "focus-shards/078-0269085fbd08.json",
       "focus-shards/079-3f9052b8e1f6.json",
@@ -104,7 +104,7 @@
       "focus-shards/081-9567482f5d71.json",
       "focus-shards/082-09b72153e3db.json",
       "focus-shards/083-8be09ecda047.json",
-      "focus-shards/084-45f84cceb5bf.json",
+      "focus-shards/084-64b7f1f36fa5.json",
       "focus-shards/085-bbc865246422.json",
       "focus-shards/086-a75594d75494.json",
       "focus-shards/087-cf30e9190d1e.json",
@@ -118,7 +118,7 @@
       "focus-shards/095-5f5c1e3d5662.json",
       "focus-shards/096-fea1e6b849ab.json",
       "focus-shards/097-fa825349ae70.json",
-      "focus-shards/098-00c4f0ff1a36.json",
+      "focus-shards/098-a2b9a1daadc2.json",
       "focus-shards/099-5e083eae516f.json",
       "focus-shards/100-b84c9aab25ce.json",
       "focus-shards/101-690e1a6fd60e.json",
@@ -153,7 +153,7 @@
     "tag": "tag.json",
     "tagHot": "tag.hot.json"
   },
-  "generated_at": "2026-08-07T11:58:46Z",
+  "generated_at": "2026-08-07T13:41:07Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -193,7 +193,7 @@
   },
   "stats": {
     "links_by_type": {
-      "cooccurrence": 916,
+      "cooccurrence": 917,
       "relation": 71,
       "semantic": 35
     },
@@ -209,7 +209,7 @@
       "archived_article_files_skipped": 276,
       "archived_article_groups_skipped": 276,
       "avg_concepts_per_article": 0,
-      "avg_tags_per_article": 2.381417055579126,
+      "avg_tags_per_article": 2.3826271186440677,
       "canonical_duplicate_files_skipped": 0,
       "incomplete_article_files_skipped": 0,
       "incomplete_article_groups_skipped": 0,
@@ -218,7 +218,7 @@
         [
           "Hacker News",
           {
-            "article_count": 805,
+            "article_count": 806,
             "category": "article_tag",
             "description": "文章标签: Hacker News",
             "id": "Hacker News",
@@ -230,19 +230,19 @@
         [
           "AI Agent",
           {
-            "article_count": 718,
+            "article_count": 720,
             "category": "article_tag",
             "description": "文章标签: AI Agent",
             "id": "AI Agent",
             "layer": "tag",
             "name": "AI Agent",
-            "related_count": 60
+            "related_count": 61
           }
         ],
         [
           "ArXiv",
           {
-            "article_count": 628,
+            "article_count": 629,
             "category": "article_tag",
             "description": "文章标签: ArXiv",
             "id": "ArXiv",
@@ -266,7 +266,7 @@
         [
           "掘金",
           {
-            "article_count": 471,
+            "article_count": 472,
             "category": "article_tag",
             "description": "文章标签: 掘金",
             "id": "掘金",
@@ -278,15 +278,15 @@
       ],
       "synthetic_article_files_skipped": 0,
       "synthetic_article_groups_skipped": 0,
-      "total_articles": 2357,
+      "total_articles": 2360,
       "total_concept_links": 0,
       "total_concepts": 0,
-      "total_tag_links": 916,
+      "total_tag_links": 917,
       "total_tags": 140
     },
-    "total_articles": 2357,
+    "total_articles": 2360,
     "total_communities": 11,
-    "total_links": 1022,
+    "total_links": 1023,
     "total_nodes": 209
   },
   "version": 2
