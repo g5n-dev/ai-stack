@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Gemini Notebook",
-  "generated_at": "2026-08-07T11:09:27Z",
+  "generated_at": "2026-08-07T11:58:46Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -27,7 +27,7 @@
       "legacy_id": "Gemini App",
       "level": 6,
       "name": "Gemini App",
-      "rank": 123,
+      "rank": 124,
       "related_count": 5,
       "weighted_degree": 5
     },
@@ -44,7 +44,7 @@
       "legacy_id": "Gemini Notebook",
       "level": 6,
       "name": "Gemini Notebook",
-      "rank": 124,
+      "rank": 125,
       "related_count": 5,
       "weighted_degree": 5
     }

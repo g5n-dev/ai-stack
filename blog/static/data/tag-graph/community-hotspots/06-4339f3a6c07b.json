@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Codex",
-  "generated_at": "2026-08-07T11:09:27Z",
+  "generated_at": "2026-08-07T11:58:46Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -99,7 +99,7 @@
       "legacy_id": "ACP",
       "level": 6,
       "name": "ACP",
-      "rank": 84,
+      "rank": 85,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -116,7 +116,7 @@
       "legacy_id": "Codex",
       "level": 6,
       "name": "Codex",
-      "rank": 98,
+      "rank": 99,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -133,7 +133,7 @@
       "legacy_id": "Harness",
       "level": 6,
       "name": "Harness",
-      "rank": 103,
+      "rank": 104,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -150,7 +150,7 @@
       "legacy_id": "Kimi K3",
       "level": 6,
       "name": "Kimi K3",
-      "rank": 107,
+      "rank": 108,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -167,7 +167,7 @@
       "legacy_id": "Open Interpreter",
       "level": 6,
       "name": "Open Interpreter",
-      "rank": 110,
+      "rank": 111,
       "related_count": 7,
       "weighted_degree": 7
     }
