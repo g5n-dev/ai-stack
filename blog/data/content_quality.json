@@ -1,7 +1,7 @@
 {
-  "active_count": 2351,
+  "active_count": 2354,
   "archived_count": 276,
-  "complete_count": 27,
+  "complete_count": 28,
   "interpreted_brief_count": 36,
   "legacy_analysis_count": 0,
   "pages": {
@@ -18905,6 +18905,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260807-arxiv-av-aivat-74x-cheaper-agent-evaluation-with-certifi-2-9a329caf0a.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260807-arxiv-investigating-artificial-intelligence-digital-sove-1-e9840a4f6f.md": {
       "reasons": [
         "interpreted_source_card"
@@ -18952,6 +18958,12 @@
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20260807-blogs_podcasts-how-hsp-gruppe-builds-ai-capabilities-for-tax-advi-0-7347f06e7c.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20260807-blogs_podcasts-securing-ai-agents-with-temporal-policies-in-amazo-0-93e5dec2f2.md": {
       "reasons": [
@@ -19019,10 +19031,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2288,
-  "source_file_count": 2627,
-  "source_tree_sha256": "42126feac15b8e2865bd6702db01635bc86ee0044ff5a1ea30011bffa5694c3e",
-  "verified_provenance_count": 2351,
+  "source_brief_count": 2290,
+  "source_file_count": 2630,
+  "source_tree_sha256": "ab33dad240a7a59cbb3d38c42e78d705270572c5faf2c848ffc9b507ad3807dd",
+  "verified_provenance_count": 2354,
   "warning_counts": {
     "source_excerpt_truncated": 759
   }
