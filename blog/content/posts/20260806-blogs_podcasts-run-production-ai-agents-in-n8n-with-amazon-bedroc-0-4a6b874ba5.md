@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:f173904c2aa554a29660ca6e241991f91c09150d2d384f82
 source_payload_sha256: "sha256:cd4fc70738b6782a0b53bd56c5dfdc45be94bc72bf6409adc3543b8bfd4e95d8"
 observation_id: obs_4a6b874ba5509dc494df62125cb5063d7247b899afb73b3adaa49b716ce55fe7
 event_id: evt_64a2465a33d99e01f1f2ed638301debd0fbb7cbe6ea3390b8cc7cbccbac71888
-revision_id: rev_5d74b82b42b9682906223d69656e835e8fb43014bd71536ba6d43d53f30aab39
+revision_id: rev_11f5ee49cfc7129facd4cf37c71b8998111ba02d7850faf4a94f510c372442dd
 source_published_at: 2026-08-05T18:00:57Z
 first_seen_at: 2026-08-06T03:46:00Z
 timestamp_confidence: feed
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:f07fe79e8f701f07995e0e1f55cca057a796c9162b528f137
 description: "该内容介绍如何通过 n8n 的社区节点 ，在可视化编辑器里直接使用 Amazon Bedrock AgentCore harness，快速为工作流添加具备持久记忆、工具调用和模型自由切换的 AI Agent。"
 external_url: https://aws.amazon.com/blogs/machine-learning/run-production-ai-agents-in-n8n-with-amazon-bedrock-agentcore-harness
 parent_observation_id: null
-last_seen_at: 2026-08-06T03:35:50.182586Z
+last_seen_at: 2026-08-07T00:00:00Z
 ---
 
 ## 基本信息

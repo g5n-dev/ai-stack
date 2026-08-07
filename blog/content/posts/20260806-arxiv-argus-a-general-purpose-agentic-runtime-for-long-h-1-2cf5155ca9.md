@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:ccc321d7826e87edbc5611fab18ea8824cefb11e05db4f1e5
 description: "Argus 是一种持续、自我进化的智能体运行时，采用 Manager、Planner、Engineer、Reviewer 四类角色在项目状态上进行有界任务执行。它将用户意图与具体目标、约束及验证条件分离，在模型权重保持不变的前提下通过持久化的运行时状态和控制策略实现自我演化。"
 external_url: http://arxiv.org/abs/2608.05144v1
 parent_observation_id: null
-last_seen_at: 2026-08-06T03:35:38.785275Z
+last_seen_at: 2026-08-07T00:00:00Z
 ---
 
 ## 基本信息
