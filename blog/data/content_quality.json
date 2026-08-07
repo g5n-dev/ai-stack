@@ -1,8 +1,8 @@
 {
-  "active_count": 2357,
+  "active_count": 2360,
   "archived_count": 276,
-  "complete_count": 28,
-  "interpreted_brief_count": 38,
+  "complete_count": 29,
+  "interpreted_brief_count": 39,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -18911,6 +18911,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260807-arxiv-calibforge-adversarial-solver-calibration-for-scal-2-e5f19d16b8.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260807-arxiv-investigating-artificial-intelligence-digital-sove-1-e9840a4f6f.md": {
       "reasons": [
         "interpreted_source_card"
@@ -19001,6 +19007,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260807-hacker_news-kitesurf-agent-first-browser-that-runs-in-v8-isola-14-40f5467ebb.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260807-hacker_news-software-development-with-ai-is-starting-to-feel-l-8-01da3728f6.md": {
       "reasons": [
         "concise_source_card"
@@ -19049,10 +19061,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2291,
-  "source_file_count": 2633,
-  "source_tree_sha256": "9e7ab69bb1478320b45b0221829c92790449b2bd2080ef636792c0f6f02b92d5",
-  "verified_provenance_count": 2357,
+  "source_brief_count": 2292,
+  "source_file_count": 2636,
+  "source_tree_sha256": "583e20588dd6873b85720624ee150c1921ae6e29ed7146273b3867ce0f64b22e",
+  "verified_provenance_count": 2360,
   "warning_counts": {
     "source_excerpt_truncated": 759
   }
