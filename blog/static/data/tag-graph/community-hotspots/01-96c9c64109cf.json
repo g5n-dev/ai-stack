@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:掘金",
-  "generated_at": "2026-08-08T21:47:17Z",
+  "generated_at": "2026-08-08T22:47:56Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -297,7 +297,7 @@
       "weighted_degree": 1580.2
     },
     {
-      "article_count": 478,
+      "article_count": 479,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -311,7 +311,7 @@
       "name": "掘金",
       "rank": 3,
       "related_count": 26,
-      "weighted_degree": 1243
+      "weighted_degree": 1245
     },
     {
       "article_count": 399,
@@ -331,7 +331,7 @@
       "weighted_degree": 916
     },
     {
-      "article_count": 254,
+      "article_count": 255,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -345,7 +345,7 @@
       "name": "来源快报",
       "rank": 5,
       "related_count": 89,
-      "weighted_degree": 700
+      "weighted_degree": 702
     },
     {
       "article_count": 638,
