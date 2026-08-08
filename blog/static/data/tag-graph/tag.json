@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T21:47:17Z",
+  "generated_at": "2026-08-08T22:47:56Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -314,10 +314,10 @@
     {
       "id": "edge:cooccurrence:tag:AI->tag:掘金",
       "source": "tag:AI",
-      "strength": 0.5,
+      "strength": 1,
       "target": "tag:掘金",
       "type": "cooccurrence",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:来源快报",
@@ -325,7 +325,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 50
+      "weight": 51
     },
     {
       "id": "edge:semantic:tag:AI->tech:ai_ml",
@@ -7461,7 +7461,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 18
+      "weight": 19
     },
     {
       "id": "edge:cooccurrence:tag:掘金->tag:来源转写",
@@ -7732,7 +7732,7 @@
       "weighted_degree": 96
     },
     {
-      "article_count": 51,
+      "article_count": 52,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Google Cloud",
@@ -7746,7 +7746,7 @@
       "name": "AI",
       "rank": 19,
       "related_count": 30,
-      "weighted_degree": 141.6
+      "weighted_degree": 143.6
     },
     {
       "article_count": 1,
@@ -9942,7 +9942,7 @@
       "weighted_degree": 69
     },
     {
-      "article_count": 478,
+      "article_count": 479,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -9956,7 +9956,7 @@
       "name": "掘金",
       "rank": 3,
       "related_count": 26,
-      "weighted_degree": 1243
+      "weighted_degree": 1245
     },
     {
       "article_count": 146,
@@ -9993,7 +9993,7 @@
       "weighted_degree": 316
     },
     {
-      "article_count": 254,
+      "article_count": 255,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -10007,7 +10007,7 @@
       "name": "来源快报",
       "rank": 5,
       "related_count": 89,
-      "weighted_degree": 700
+      "weighted_degree": 702
     },
     {
       "article_count": 31,
