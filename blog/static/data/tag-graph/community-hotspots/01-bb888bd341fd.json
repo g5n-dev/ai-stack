@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:掘金",
-  "generated_at": "2026-08-08T16:53:08Z",
+  "generated_at": "2026-08-08T17:46:49Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -146,7 +146,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 83
+      "weight": 84
     },
     {
       "id": "edge:cooccurrence:tag:博客与播客->tag:生成式 AI",
@@ -178,7 +178,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 71
+      "weight": 72
     },
     {
       "id": "edge:cooccurrence:tag:RAG->tag:大语言模型",
@@ -218,7 +218,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 61
+      "weight": 62
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:RAG",
@@ -280,7 +280,7 @@
       "weighted_degree": 1935.2
     },
     {
-      "article_count": 608,
+      "article_count": 609,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -294,7 +294,7 @@
       "name": "大语言模型",
       "rank": 2,
       "related_count": 69,
-      "weighted_degree": 1578.2
+      "weighted_degree": 1580.2
     },
     {
       "article_count": 477,
@@ -331,7 +331,7 @@
       "weighted_degree": 916
     },
     {
-      "article_count": 251,
+      "article_count": 252,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -345,7 +345,7 @@
       "name": "来源快报",
       "rank": 5,
       "related_count": 89,
-      "weighted_degree": 694
+      "weighted_degree": 696
     },
     {
       "article_count": 638,
@@ -450,7 +450,7 @@
       "weighted_degree": 411.2
     },
     {
-      "article_count": 814,
+      "article_count": 815,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -464,7 +464,7 @@
       "name": "Hacker News",
       "rank": 12,
       "related_count": 20,
-      "weighted_degree": 361
+      "weighted_degree": 363
     },
     {
       "article_count": 110,
