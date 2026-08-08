@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Google Cloud",
-  "generated_at": "2026-08-08T14:50:48Z",
+  "generated_at": "2026-08-08T16:53:08Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -247,7 +247,7 @@
   ],
   "nodes": [
     {
-      "article_count": 49,
+      "article_count": 50,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Google Cloud",
@@ -261,7 +261,7 @@
       "name": "AI",
       "rank": 20,
       "related_count": 30,
-      "weighted_degree": 137.6
+      "weighted_degree": 139.6
     },
     {
       "article_count": 2,
