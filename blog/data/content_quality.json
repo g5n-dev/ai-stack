@@ -1,5 +1,5 @@
 {
-  "active_count": 2385,
+  "active_count": 2386,
   "archived_count": 276,
   "complete_count": 32,
   "interpreted_brief_count": 47,
@@ -19124,6 +19124,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260808-hacker_news-now-we-have-a-timeline-of-the-openai-accidental-at-7-2c2b6790f3.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260808-hacker_news-oracle-bans-ai-generated-code-from-openjdk-0-5c970cc4af.md": {
       "reasons": [
         "concise_source_card"
@@ -19199,10 +19205,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2306,
-  "source_file_count": 2661,
-  "source_tree_sha256": "495f9657aa9b956ba75f0e31e30d28d1a753abcbe20b71f2004f06c470ef7489",
-  "verified_provenance_count": 2385,
+  "source_brief_count": 2307,
+  "source_file_count": 2662,
+  "source_tree_sha256": "afb6f47f93aa28bcc41040d56c346873180d7fbd9920fd9ef6e9132630f9e9bd",
+  "verified_provenance_count": 2386,
   "warning_counts": {
     "source_excerpt_truncated": 761
   }
