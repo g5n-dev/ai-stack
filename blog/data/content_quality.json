@@ -1,5 +1,5 @@
 {
-  "active_count": 2388,
+  "active_count": 2389,
   "archived_count": 276,
   "complete_count": 32,
   "interpreted_brief_count": 47,
@@ -19178,6 +19178,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260809-hacker_news-denmark-requires-oral-defenses-for-students-writte-0-b4c9a080cd.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260809-hacker_news-timeline-of-the-openai-accidental-attack-against-h-2-2c2b6790f3.md": {
       "reasons": [
         "concise_source_card"
@@ -19217,10 +19223,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2309,
-  "source_file_count": 2664,
-  "source_tree_sha256": "23e97f0ebbeb40a4da9b8fba8c5b697efe0364e8213052a6fa4563acc67c270a",
-  "verified_provenance_count": 2388,
+  "source_brief_count": 2310,
+  "source_file_count": 2665,
+  "source_tree_sha256": "280f4ef0ebea039c40557388502769f81aec89631d03917a19af84567719445a",
+  "verified_provenance_count": 2389,
   "warning_counts": {
     "source_excerpt_truncated": 761
   }
