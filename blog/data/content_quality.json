@@ -1,5 +1,5 @@
 {
-  "active_count": 2385,
+  "active_count": 2386,
   "archived_count": 276,
   "complete_count": 32,
   "interpreted_brief_count": 47,
@@ -19118,6 +19118,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260808-hacker_news-gentoo-bugzilla-closed-due-ai-bot-scraper-overload-10-d8727a595c.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260808-hacker_news-grindr-ceo-says-ai-is-doing-the-work-of-200-engine-7-8a0d9973bf.md": {
       "reasons": [
         "concise_source_card"
@@ -19199,10 +19205,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2306,
-  "source_file_count": 2661,
-  "source_tree_sha256": "495f9657aa9b956ba75f0e31e30d28d1a753abcbe20b71f2004f06c470ef7489",
-  "verified_provenance_count": 2385,
+  "source_brief_count": 2307,
+  "source_file_count": 2662,
+  "source_tree_sha256": "ee0c6bd3e199efd0574f708d123016d40f9dfd164ea18c3f63ed837110534308",
+  "verified_provenance_count": 2386,
   "warning_counts": {
     "source_excerpt_truncated": 761
   }

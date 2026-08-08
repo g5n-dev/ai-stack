@@ -27,7 +27,7 @@
       "focus-shards/004-08a9b1380f4a.json",
       "focus-shards/005-78d92140d3cd.json",
       "focus-shards/006-f41333001807.json",
-      "focus-shards/007-39556daa4a95.json",
+      "focus-shards/007-9efeaedaf022.json",
       "focus-shards/008-716f3e4953f4.json",
       "focus-shards/009-8192c91e5b3e.json",
       "focus-shards/010-82102f585f91.json",
@@ -41,7 +41,7 @@
       "focus-shards/018-2323690375d1.json",
       "focus-shards/019-87e2fc690971.json",
       "focus-shards/020-75cab59f61b8.json",
-      "focus-shards/021-30ff467d3e1b.json",
+      "focus-shards/021-91e0f28c06db.json",
       "focus-shards/022-f03f00395ef3.json",
       "focus-shards/023-94fea1c15bda.json",
       "focus-shards/024-f9b15d46c361.json",
@@ -92,7 +92,7 @@
       "focus-shards/069-eac25151e0b4.json",
       "focus-shards/070-d5c9ca6d0405.json",
       "focus-shards/071-18b1500e044a.json",
-      "focus-shards/072-864b4fbca197.json",
+      "focus-shards/072-d8ac11ec0566.json",
       "focus-shards/073-0e421fbeb34f.json",
       "focus-shards/074-9d5103f231ff.json",
       "focus-shards/075-9cde3cbc5d91.json",
@@ -153,7 +153,7 @@
     "tag": "tag.json",
     "tagHot": "tag.hot.json"
   },
-  "generated_at": "2026-08-08T13:13:26Z",
+  "generated_at": "2026-08-08T14:50:48Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -209,7 +209,7 @@
       "archived_article_files_skipped": 276,
       "archived_article_groups_skipped": 276,
       "avg_concepts_per_article": 0,
-      "avg_tags_per_article": 2.4016771488469604,
+      "avg_tags_per_article": 2.4019279128248114,
       "canonical_duplicate_files_skipped": 0,
       "incomplete_article_files_skipped": 0,
       "incomplete_article_groups_skipped": 0,
@@ -218,7 +218,7 @@
         [
           "Hacker News",
           {
-            "article_count": 812,
+            "article_count": 813,
             "category": "article_tag",
             "description": "文章标签: Hacker News",
             "id": "Hacker News",
@@ -278,13 +278,13 @@
       ],
       "synthetic_article_files_skipped": 0,
       "synthetic_article_groups_skipped": 0,
-      "total_articles": 2385,
+      "total_articles": 2386,
       "total_concept_links": 0,
       "total_concepts": 0,
       "total_tag_links": 922,
       "total_tags": 141
     },
-    "total_articles": 2385,
+    "total_articles": 2386,
     "total_communities": 11,
     "total_links": 1028,
     "total_nodes": 210
