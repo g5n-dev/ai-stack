@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-08T02:23:38Z",
+  "generated_at": "2026-08-08T04:23:02Z",
   "items": [
     {
       "article_count": 728,
@@ -41,7 +41,7 @@
       "weighted_degree": 1573.2
     },
     {
-      "article_count": 475,
+      "article_count": 476,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 26,
@@ -51,7 +51,7 @@
       "legacy_id": "掘金",
       "name": "掘金",
       "rank": 3,
-      "weighted_degree": 1236
+      "weighted_degree": 1238
     },
     {
       "article_count": 399,
@@ -418,7 +418,7 @@
       "weighted_degree": 72
     },
     {
-      "article_count": 31,
+      "article_count": 32,
       "category": "article_tag",
       "community_id": "community:tag:来源转写",
       "degree": 9,
@@ -428,7 +428,7 @@
       "legacy_id": "工程实践",
       "name": "工程实践",
       "rank": 32,
-      "weighted_degree": 67
+      "weighted_degree": 69
     },
     {
       "article_count": 12,
@@ -444,6 +444,19 @@
       "weighted_degree": 65
     },
     {
+      "article_count": 31,
+      "category": "article_tag",
+      "community_id": "community:tag:来源转写",
+      "degree": 2,
+      "description": "文章标签: 来源转写",
+      "id": "tag:来源转写",
+      "layer": "tag",
+      "legacy_id": "来源转写",
+      "name": "来源转写",
+      "rank": 34,
+      "weighted_degree": 62
+    },
+    {
       "article_count": 43,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
@@ -453,21 +466,8 @@
       "layer": "tag",
       "legacy_id": "GitHub",
       "name": "GitHub",
-      "rank": 34,
-      "weighted_degree": 61
-    },
-    {
-      "article_count": 30,
-      "category": "article_tag",
-      "community_id": "community:tag:来源转写",
-      "degree": 2,
-      "description": "文章标签: 来源转写",
-      "id": "tag:来源转写",
-      "layer": "tag",
-      "legacy_id": "来源转写",
-      "name": "来源转写",
       "rank": 35,
-      "weighted_degree": 60
+      "weighted_degree": 61
     },
     {
       "article_count": 18,
