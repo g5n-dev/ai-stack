@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:7c904fcd56ef5a6aebd26890a4d3f9ca2095ea5ba1c89819c
 description: "该方法通过相对偏好排名来构造奖励，使生成式奖励模型能够在强化学习框架中直接提供学习信号，弥补了以往标量评分方式与比较式奖励建模之间的差距。"
 external_url: http://arxiv.org/abs/2608.06310v1
 parent_observation_id: null
-last_seen_at: 2026-08-07T21:55:24.570672Z
+last_seen_at: 2026-08-08T00:00:00Z
 ---
 
 ## 基本信息

@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:3ea39740046cdc1b14902736784f0652a9469d856f733607
 source_payload_sha256: "sha256:d775e75cb2d8bd7d6382b69ce0a73f0f78e214801ad7d547ed0201b2a40d1ca5"
 observation_id: obs_93e5dec2f2f712e34a34310fc188fb3e02f13f39022d255dcd7fb216a3339f34
 event_id: evt_c2dc659afb52694b746d781eb9e83a933f89b7a389aff43cd8aafa89915d5087
-revision_id: rev_b1b680e08f7255ce9240fcd2e123dd64844a844a06ca10c5fdb41bbe15234bf5
+revision_id: rev_eca5a8b5dee21800f866c7b05d9c48dff9655eed30a313874ec8b2ec9dd38ae8
 source_published_at: 2026-08-06T18:57:55Z
 first_seen_at: 2026-08-07T00:26:56Z
 timestamp_confidence: feed
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:02dccac4e826f849656ff8b1de92d8dc3b570e04ed9eb0e83
 description: "这是一种在网关层对 AI 代理的请求进行基于会话历史的授权检查的机制，通过评估当前请求在轨迹中的上下文来决定是否放行。"
 external_url: https://aws.amazon.com/blogs/machine-learning/securing-ai-agents-with-temporal-policies-in-amazon-bedrock-agentcore
 parent_observation_id: null
-last_seen_at: 2026-08-07T00:15:32.378366Z
+last_seen_at: 2026-08-08T00:00:00Z
 ---
 
 ## 基本信息

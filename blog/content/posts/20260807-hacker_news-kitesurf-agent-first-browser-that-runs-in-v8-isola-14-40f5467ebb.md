@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:cf184b272e158126336b5ea2160aee05c08078e948e914ce
 source_payload_sha256: "sha256:7da3e1307a34f5179e3747838cb649d3a8a76d9506c357f291d707064085980e"
 observation_id: obs_40f5467ebbabf387c83fc8e85a05973faef1d0a503fabb8bebc1020390d3b93e
 event_id: evt_51b06f143c3eb5c3ed74b84bd5982a4b3d9b3140cab81cc73b100023a1e2e466
-revision_id: rev_9010ede6fc08853177ddb2b8f1b1830a2cbcaa70aead0251020c8312f5669d84
+revision_id: rev_cb407ce4c025e644bbeab34af5b7ef2c42dfb3600088dd9e7bff1350de959cb0
 source_published_at: 2026-08-07T10:42:07Z
 first_seen_at: 2026-08-07T13:50:31Z
 timestamp_confidence: platform
@@ -27,7 +27,7 @@ source_title_chars_original: 54
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://blog.cloudflare.com/kitesurf
 parent_observation_id: null
-last_seen_at: 2026-08-07T13:38:28.554455Z
+last_seen_at: 2026-08-08T00:00:00Z
 ---
 
 ## 基本信息

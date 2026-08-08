@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:1d6ba4fbd8850726ea79e019067c931db426faefb86786fac
 description: "TYTAN是一种自动从关系数据库构建分析型语义模式的系统，结合数据库的符号分析和基于LLM的语义推断，并在信息不足以确定时向用户提出自然语言问题以明确角色和命名。"
 external_url: http://arxiv.org/abs/2608.06331v1
 parent_observation_id: null
-last_seen_at: 2026-08-07T18:02:11.331496Z
+last_seen_at: 2026-08-08T00:00:00Z
 ---
 
 ## 基本信息

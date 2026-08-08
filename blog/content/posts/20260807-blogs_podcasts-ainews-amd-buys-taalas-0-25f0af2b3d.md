@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:e0edde51d8264d1156e6effb71b7afe002e81f5b4ab7b5990
 description: "这是一份AI行业近期资讯汇总，涵盖芯片领域的并购动态、头部模型的性能进展以及开发者工具与基础设施的更新。"
 external_url: https://www.latent.space/p/ainews-amd-buys-taalas
 parent_observation_id: null
-last_seen_at: 2026-08-07T06:19:16.996183Z
+last_seen_at: 2026-08-08T00:00:00Z
 ---
 
 ## 基本信息

@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:d19dc314fe64ad756cf36e4d9c6e4da0f13076e5379c37091
 description: "这是一篇关于视频语言模型在计数、频率和状态转换等简单事件上表现的评估研究，提出基于可执行事件轨迹的分析方法，揭示模型在时序信息处理上的阶段性失效。"
 external_url: http://arxiv.org/abs/2608.06361v1
 parent_observation_id: null
-last_seen_at: 2026-08-07T11:06:58.381433Z
+last_seen_at: 2026-08-08T00:00:00Z
 ---
 
 ## 基本信息

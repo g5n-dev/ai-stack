@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:56f12f9a3d7ea81a26524ab6fa1cb960bb81eefcb0be3b8d1
 description: "该模型把对已部署 AI 主体的治理抽象为一种机制设计，利用计算资源的分配实现自我执行的授权，并以硬件签名的计算许可证形式兑现决策。"
 external_url: http://arxiv.org/abs/2608.06353v1
 parent_observation_id: null
-last_seen_at: 2026-08-07T11:56:57.158616Z
+last_seen_at: 2026-08-08T00:00:00Z
 ---
 
 ## 基本信息

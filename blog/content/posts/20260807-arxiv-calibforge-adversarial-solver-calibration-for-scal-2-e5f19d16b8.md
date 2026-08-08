@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:8ff9ab88bc30987ddac5b12af8196b9df3db859dd2946ae0d
 description: "CalibForge 是一种自动化终端任务合成系统，通过验证过的求解器行为对候选任务进行对抗性校准，使任务难度与求解器能力相匹配。"
 external_url: http://arxiv.org/abs/2608.06352v1
 parent_observation_id: null
-last_seen_at: 2026-08-07T13:38:29.396217Z
+last_seen_at: 2026-08-08T00:00:00Z
 ---
 
 ## 基本信息
