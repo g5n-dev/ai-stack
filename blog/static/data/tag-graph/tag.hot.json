@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T11:43:58Z",
+  "generated_at": "2026-08-08T13:13:26Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -5053,7 +5053,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 82
+      "weight": 83
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:数据库",
@@ -5077,7 +5077,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 58
+      "weight": 59
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:深度学习",
@@ -7373,7 +7373,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 70
+      "weight": 71
     },
     {
       "id": "edge:cooccurrence:tag:大语言模型->tag:深度学习",
@@ -9194,7 +9194,7 @@
       "weighted_degree": 11
     },
     {
-      "article_count": 811,
+      "article_count": 812,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -9206,9 +9206,9 @@
       "legacy_id": "Hacker News",
       "level": 6,
       "name": "Hacker News",
-      "rank": 13,
+      "rank": 12,
       "related_count": 20,
-      "weighted_degree": 355
+      "weighted_degree": 357
     },
     {
       "article_count": 1,
@@ -9908,7 +9908,7 @@
       "weighted_degree": 507.6
     },
     {
-      "article_count": 607,
+      "article_count": 608,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -9922,7 +9922,7 @@
       "name": "大语言模型",
       "rank": 2,
       "related_count": 69,
-      "weighted_degree": 1576.2
+      "weighted_degree": 1578.2
     },
     {
       "article_count": 32,
@@ -9993,7 +9993,7 @@
       "weighted_degree": 316
     },
     {
-      "article_count": 248,
+      "article_count": 249,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -10007,7 +10007,7 @@
       "name": "来源快报",
       "rank": 5,
       "related_count": 89,
-      "weighted_degree": 688
+      "weighted_degree": 690
     },
     {
       "article_count": 31,
@@ -10056,7 +10056,7 @@
       "legacy_id": "生成式 AI",
       "level": 6,
       "name": "生成式 AI",
-      "rank": 12,
+      "rank": 13,
       "related_count": 41,
       "weighted_degree": 356
     },
