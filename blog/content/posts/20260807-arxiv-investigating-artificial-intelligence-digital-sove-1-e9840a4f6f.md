@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:b5fa6d72042c1be486e01fe87a353f7896ec394fbdc99a0e3
 description: "本研究通过分析尼日利亚移动购物应用中的AI功能，探讨AI对数字主权的影响，并以平台透明度为衡量用户知情和控制的关键指标。"
 external_url: http://arxiv.org/abs/2608.06364v1
 parent_observation_id: null
-last_seen_at: 2026-08-07T08:21:34.070847Z
+last_seen_at: 2026-08-08T00:00:00Z
 ---
 
 ## 基本信息

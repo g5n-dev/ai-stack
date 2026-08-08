@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:2ca9163ecfd4ac3aac0a782438747f474a24eb3aaa2c52d16
 description: "该研究提出一种无参考框架，利用大型语言模型作为评判者，对面向任务的对话智能体基准测试的一致性、复杂度和策略覆盖进行量化评估，并给出可操作的弱点诊断。"
 external_url: http://arxiv.org/abs/2608.06329v1
 parent_observation_id: null
-last_seen_at: 2026-08-07T19:14:44.058834Z
+last_seen_at: 2026-08-08T00:00:00Z
 ---
 
 ## 基本信息

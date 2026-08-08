@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:4cd0021669405399ac419401bc020d76fe07fa807759a1b62
 description: "该内容报道了Google DeepMind近期高层人事变动——包括Jeff Dean、Sanjay Ghemawat、Oriol Vinyals、Quoc Le等关键人物离职并共同创办面向自动化科研的初创公司Discovery Loop；同时概述了Meta在编程智能体方面推出的Muse Spark 1.2与Muse…"
 external_url: https://www.latent.space/p/ainews-jeff-sanjay-oriol-and-quoc
 parent_observation_id: null
-last_seen_at: 2026-08-07T00:00:00Z
+last_seen_at: 2026-08-08T00:00:00Z
 ---
 
 ## 基本信息

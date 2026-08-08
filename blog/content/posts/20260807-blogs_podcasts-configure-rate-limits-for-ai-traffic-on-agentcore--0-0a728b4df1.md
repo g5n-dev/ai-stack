@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:830e2bb7285ed0c2fb9bc2e413d0f5a5abf64aad795aa125
 source_payload_sha256: "sha256:2eca273a02337f330f03fc5d7c4e746ed957ebd7ea3710424dd91156d4b7f98d"
 observation_id: obs_0a728b4df1ea2e24ba1c82d26b599c97bdb14f7c45ec405936ae9072a6839848
 event_id: evt_1a916f1761e439b7556a7faeb14f00d7b9db3f4ae2cd4d75060208fe4ca9d06a
-revision_id: rev_470c54b030ec2a430949b9d2f57436d7b2ef968327e1388bf878a50d8e45adff
+revision_id: rev_54a9e80414fabfcab8dfa7348e6ecf619d2a9e5227d96730ae5250335dee97bc
 source_published_at: 2026-08-06T17:50:42Z
 first_seen_at: 2026-08-07T03:27:19Z
 timestamp_confidence: feed
@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:a6e5754ce7d25564da2950db5d6bad7a5cd4e552219b00a21
 description: "本文说明在托管 AI 网关上为流量设置速率限制的方案，支持按用户、目标或令牌维度进行细粒度管控。"
 external_url: https://aws.amazon.com/blogs/machine-learning/configure-rate-limits-for-ai-traffic-on-agentcore-gateway
 parent_observation_id: null
-last_seen_at: 2026-08-07T03:16:28.410818Z
+last_seen_at: 2026-08-08T00:00:00Z
 ---
 
 ## 基本信息

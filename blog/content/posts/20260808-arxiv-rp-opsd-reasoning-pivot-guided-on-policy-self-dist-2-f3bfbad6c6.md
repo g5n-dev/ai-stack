@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:6efd7620ac922a509aacd4f750c7d45a59f404055d6a06677
 description: "RP-OPSD 是一种在多语言推理迁移中使用的自蒸馏方法，通过识别推理过程中的关键转折点（推理枢轴）来引导特权蒸馏。它利用教师在有无英文参考答案两种视图之间的分布差异来调节蒸馏信号，并在数学推理基准上取得了对多种语言和难度的性能提升。"
 external_url: http://arxiv.org/abs/2608.06347v1
 parent_observation_id: null
-last_seen_at: 2026-08-07T16:10:15.834999Z
+last_seen_at: 2026-08-08T00:00:00Z
 ---
 
 ## 基本信息
