@@ -1,5 +1,5 @@
 {
-  "active_count": 2383,
+  "active_count": 2384,
   "archived_count": 276,
   "complete_count": 32,
   "interpreted_brief_count": 47,
@@ -19142,6 +19142,15 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260808-juejin-开源项目第180期omnigent-databricks-出品的-ai-agent-元编排层让-cl-0-801b704b2f.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20260808-juejin-漫话火山-milvus为-agentrag-语义搜索而生ai-时代的极致性价比之选-0-2b68a6e5a7.md": {
       "reasons": [
         "concise_source_card"
@@ -19184,11 +19193,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2304,
-  "source_file_count": 2659,
-  "source_tree_sha256": "ea1afe18d19b6fa9b73dbb990fe84dca9dc20920539498bc0aac27db17836d80",
-  "verified_provenance_count": 2383,
+  "source_brief_count": 2305,
+  "source_file_count": 2660,
+  "source_tree_sha256": "87585f489311f9bdb544e921491cb35deb38d007bb9f1bdeedf8f515ffcfcf72",
+  "verified_provenance_count": 2384,
   "warning_counts": {
-    "source_excerpt_truncated": 760
+    "source_excerpt_truncated": 761
   }
 }

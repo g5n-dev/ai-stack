@@ -1,0 +1,180 @@
+{
+  "community_id": "community:tag:Codex",
+  "generated_at": "2026-08-08T11:43:58Z",
+  "hotspot_limit": 24,
+  "link_limit": 32,
+  "links": [
+    {
+      "id": "edge:cooccurrence:tag:ACP->tag:Codex",
+      "source": "tag:ACP",
+      "strength": 0.5,
+      "target": "tag:Codex",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:ACP->tag:Harness",
+      "source": "tag:ACP",
+      "strength": 0.5,
+      "target": "tag:Harness",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:ACP->tag:Kimi K3",
+      "source": "tag:ACP",
+      "strength": 0.5,
+      "target": "tag:Kimi K3",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:ACP->tag:Open Interpreter",
+      "source": "tag:ACP",
+      "strength": 0.5,
+      "target": "tag:Open Interpreter",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Codex->tag:Harness",
+      "source": "tag:Codex",
+      "strength": 0.5,
+      "target": "tag:Harness",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Codex->tag:Kimi K3",
+      "source": "tag:Codex",
+      "strength": 0.5,
+      "target": "tag:Kimi K3",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Codex->tag:Open Interpreter",
+      "source": "tag:Codex",
+      "strength": 0.5,
+      "target": "tag:Open Interpreter",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Harness->tag:Kimi K3",
+      "source": "tag:Harness",
+      "strength": 0.5,
+      "target": "tag:Kimi K3",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Harness->tag:Open Interpreter",
+      "source": "tag:Harness",
+      "strength": 0.5,
+      "target": "tag:Open Interpreter",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Kimi K3->tag:Open Interpreter",
+      "source": "tag:Kimi K3",
+      "strength": 0.5,
+      "target": "tag:Open Interpreter",
+      "type": "cooccurrence",
+      "weight": 1
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Codex",
+      "degree": 7,
+      "description": "文章标签: ACP",
+      "id": "tag:ACP",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "ACP",
+      "level": 6,
+      "name": "ACP",
+      "rank": 86,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Codex",
+      "degree": 7,
+      "description": "文章标签: Codex",
+      "id": "tag:Codex",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Codex",
+      "level": 6,
+      "name": "Codex",
+      "rank": 100,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Codex",
+      "degree": 7,
+      "description": "文章标签: Harness",
+      "id": "tag:Harness",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Harness",
+      "level": 6,
+      "name": "Harness",
+      "rank": 105,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Codex",
+      "degree": 7,
+      "description": "文章标签: Kimi K3",
+      "id": "tag:Kimi K3",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Kimi K3",
+      "level": 6,
+      "name": "Kimi K3",
+      "rank": 109,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Codex",
+      "degree": 7,
+      "description": "文章标签: Open Interpreter",
+      "id": "tag:Open Interpreter",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Open Interpreter",
+      "level": 6,
+      "name": "Open Interpreter",
+      "rank": 112,
+      "related_count": 7,
+      "weighted_degree": 7
+    }
+  ],
+  "stats": {
+    "total_links": 10,
+    "total_nodes": 5
+  },
+  "version": 2
+}
