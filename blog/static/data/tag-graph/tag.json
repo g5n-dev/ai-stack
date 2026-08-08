@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T18:59:10Z",
+  "generated_at": "2026-08-08T21:47:17Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -765,7 +765,7 @@
       "strength": 1,
       "target": "tag:掘金",
       "type": "cooccurrence",
-      "weight": 263
+      "weight": 264
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:数据库",
@@ -789,7 +789,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 64
+      "weight": 65
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:深度学习",
@@ -7461,7 +7461,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 17
+      "weight": 18
     },
     {
       "id": "edge:cooccurrence:tag:掘金->tag:来源转写",
@@ -7783,7 +7783,7 @@
       "weighted_degree": 2.6
     },
     {
-      "article_count": 729,
+      "article_count": 730,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -7797,7 +7797,7 @@
       "name": "AI Agent",
       "rank": 1,
       "related_count": 61,
-      "weighted_degree": 1935.2
+      "weighted_degree": 1937.2
     },
     {
       "article_count": 2,
@@ -9942,7 +9942,7 @@
       "weighted_degree": 69
     },
     {
-      "article_count": 477,
+      "article_count": 478,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -9956,7 +9956,7 @@
       "name": "掘金",
       "rank": 3,
       "related_count": 26,
-      "weighted_degree": 1241
+      "weighted_degree": 1243
     },
     {
       "article_count": 146,
@@ -9993,7 +9993,7 @@
       "weighted_degree": 316
     },
     {
-      "article_count": 253,
+      "article_count": 254,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -10007,7 +10007,7 @@
       "name": "来源快报",
       "rank": 5,
       "related_count": 89,
-      "weighted_degree": 698
+      "weighted_degree": 700
     },
     {
       "article_count": 31,

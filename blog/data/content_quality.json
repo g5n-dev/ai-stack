@@ -1,5 +1,5 @@
 {
-  "active_count": 2389,
+  "active_count": 2390,
   "archived_count": 276,
   "complete_count": 32,
   "interpreted_brief_count": 47,
@@ -19189,6 +19189,15 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260809-juejin-一行代码没写我用ai做了一个可以收费产品-0-2b453f42bb.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     }
   },
   "quarantined_count": 0,
@@ -19223,11 +19232,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2310,
-  "source_file_count": 2665,
-  "source_tree_sha256": "280f4ef0ebea039c40557388502769f81aec89631d03917a19af84567719445a",
-  "verified_provenance_count": 2389,
+  "source_brief_count": 2311,
+  "source_file_count": 2666,
+  "source_tree_sha256": "ddbdb3088226d1580d24062cb7be9ff4b827f1ae3405842230c94b2eec26d883",
+  "verified_provenance_count": 2390,
   "warning_counts": {
-    "source_excerpt_truncated": 761
+    "source_excerpt_truncated": 762
   }
 }
