@@ -1,5 +1,5 @@
 {
-  "active_count": 2384,
+  "active_count": 2385,
   "archived_count": 276,
   "complete_count": 32,
   "interpreted_brief_count": 47,
@@ -19142,6 +19142,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260808-hacker_news-the-cpu-is-back-rethinking-the-cpu-gpu-split-for-l-0-97e38e4fdb.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260808-juejin-开源项目第180期omnigent-databricks-出品的-ai-agent-元编排层让-cl-0-801b704b2f.md": {
       "reasons": [
         "concise_source_card"
@@ -19193,10 +19199,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2305,
-  "source_file_count": 2660,
-  "source_tree_sha256": "87585f489311f9bdb544e921491cb35deb38d007bb9f1bdeedf8f515ffcfcf72",
-  "verified_provenance_count": 2384,
+  "source_brief_count": 2306,
+  "source_file_count": 2661,
+  "source_tree_sha256": "495f9657aa9b956ba75f0e31e30d28d1a753abcbe20b71f2004f06c470ef7489",
+  "verified_provenance_count": 2385,
   "warning_counts": {
     "source_excerpt_truncated": 761
   }
