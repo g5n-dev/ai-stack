@@ -1,5 +1,5 @@
 {
-  "active_count": 2386,
+  "active_count": 2387,
   "archived_count": 276,
   "complete_count": 32,
   "interpreted_brief_count": 47,
@@ -19171,6 +19171,12 @@
       "warnings": [
         "source_excerpt_truncated"
       ]
+    },
+    "posts/20260809-hacker_news-timeline-of-the-openai-accidental-attack-against-h-2-2c2b6790f3.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -19205,10 +19211,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2307,
-  "source_file_count": 2662,
-  "source_tree_sha256": "ee0c6bd3e199efd0574f708d123016d40f9dfd164ea18c3f63ed837110534308",
-  "verified_provenance_count": 2386,
+  "source_brief_count": 2308,
+  "source_file_count": 2663,
+  "source_tree_sha256": "09a8199b0fbae6da73ca7e2ce941573c44d8b56d41d6951b74055182155c8629",
+  "verified_provenance_count": 2387,
   "warning_counts": {
     "source_excerpt_truncated": 761
   }
