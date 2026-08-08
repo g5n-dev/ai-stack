@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T09:00:59Z",
+  "generated_at": "2026-08-08T11:43:58Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -749,7 +749,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 262
+      "weight": 263
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:工程实践",
@@ -765,7 +765,7 @@
       "strength": 1,
       "target": "tag:掘金",
       "type": "cooccurrence",
-      "weight": 262
+      "weight": 263
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:数据库",
@@ -789,7 +789,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 63
+      "weight": 64
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:深度学习",
@@ -7349,7 +7349,7 @@
       "strength": 1,
       "target": "tag:掘金",
       "type": "cooccurrence",
-      "weight": 150
+      "weight": 151
     },
     {
       "id": "edge:cooccurrence:tag:大语言模型->tag:数据库",
@@ -7373,7 +7373,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 69
+      "weight": 70
     },
     {
       "id": "edge:cooccurrence:tag:大语言模型->tag:深度学习",
@@ -7461,7 +7461,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 16
+      "weight": 17
     },
     {
       "id": "edge:cooccurrence:tag:掘金->tag:来源转写",
@@ -7783,7 +7783,7 @@
       "weighted_degree": 2.6
     },
     {
-      "article_count": 728,
+      "article_count": 729,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -7797,7 +7797,7 @@
       "name": "AI Agent",
       "rank": 1,
       "related_count": 61,
-      "weighted_degree": 1932.2
+      "weighted_degree": 1935.2
     },
     {
       "article_count": 2,
@@ -9908,7 +9908,7 @@
       "weighted_degree": 507.6
     },
     {
-      "article_count": 606,
+      "article_count": 607,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -9922,7 +9922,7 @@
       "name": "大语言模型",
       "rank": 2,
       "related_count": 69,
-      "weighted_degree": 1573.2
+      "weighted_degree": 1576.2
     },
     {
       "article_count": 32,
@@ -9942,7 +9942,7 @@
       "weighted_degree": 69
     },
     {
-      "article_count": 476,
+      "article_count": 477,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -9956,7 +9956,7 @@
       "name": "掘金",
       "rank": 3,
       "related_count": 26,
-      "weighted_degree": 1238
+      "weighted_degree": 1241
     },
     {
       "article_count": 146,
@@ -9993,7 +9993,7 @@
       "weighted_degree": 316
     },
     {
-      "article_count": 247,
+      "article_count": 248,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -10007,7 +10007,7 @@
       "name": "来源快报",
       "rank": 5,
       "related_count": 89,
-      "weighted_degree": 685
+      "weighted_degree": 688
     },
     {
       "article_count": 31,
