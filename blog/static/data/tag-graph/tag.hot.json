@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T04:23:02Z",
+  "generated_at": "2026-08-08T09:00:59Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -229,7 +229,7 @@
       "strength": 1,
       "target": "tag:Hacker News",
       "type": "cooccurrence",
-      "weight": 21
+      "weight": 22
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:Health",
@@ -325,7 +325,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 46
+      "weight": 47
     },
     {
       "id": "edge:semantic:tag:AI->tech:ai_ml",
@@ -5077,7 +5077,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 57
+      "weight": 58
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:深度学习",
@@ -7732,7 +7732,7 @@
       "weighted_degree": 96
     },
     {
-      "article_count": 47,
+      "article_count": 48,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Google Cloud",
@@ -7746,7 +7746,7 @@
       "name": "AI",
       "rank": 21,
       "related_count": 30,
-      "weighted_degree": 133.6
+      "weighted_degree": 135.6
     },
     {
       "article_count": 1,
@@ -9194,7 +9194,7 @@
       "weighted_degree": 11
     },
     {
-      "article_count": 810,
+      "article_count": 811,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -9208,7 +9208,7 @@
       "name": "Hacker News",
       "rank": 13,
       "related_count": 20,
-      "weighted_degree": 353
+      "weighted_degree": 355
     },
     {
       "article_count": 1,
@@ -9993,7 +9993,7 @@
       "weighted_degree": 316
     },
     {
-      "article_count": 246,
+      "article_count": 247,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -10007,7 +10007,7 @@
       "name": "来源快报",
       "rank": 5,
       "related_count": 89,
-      "weighted_degree": 683
+      "weighted_degree": 685
     },
     {
       "article_count": 31,

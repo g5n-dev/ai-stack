@@ -1,5 +1,5 @@
 {
-  "active_count": 2382,
+  "active_count": 2383,
   "archived_count": 276,
   "complete_count": 32,
   "interpreted_brief_count": 47,
@@ -19118,6 +19118,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260808-hacker_news-grindr-ceo-says-ai-is-doing-the-work-of-200-engine-7-8a0d9973bf.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260808-hacker_news-oracle-bans-ai-generated-code-from-openjdk-0-5c970cc4af.md": {
       "reasons": [
         "concise_source_card"
@@ -19178,10 +19184,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2303,
-  "source_file_count": 2658,
-  "source_tree_sha256": "fafbe796b511de221882f2dba0bdcd11aa0823cb10d839451038b598d42c9e21",
-  "verified_provenance_count": 2382,
+  "source_brief_count": 2304,
+  "source_file_count": 2659,
+  "source_tree_sha256": "ea1afe18d19b6fa9b73dbb990fe84dca9dc20920539498bc0aac27db17836d80",
+  "verified_provenance_count": 2383,
   "warning_counts": {
     "source_excerpt_truncated": 760
   }

@@ -2,21 +2,21 @@
   "algorithm": "deterministic-weighted-label-propagation",
   "communities": [
     {
-      "article_count": 2377,
+      "article_count": 2378,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-bc32db6e698c.json",
+      "hotspot_file": "community-hotspots/01-a120224d364d.json",
       "id": "community:tag:掘金",
       "leader_id": "tag:Hacker News",
       "name": "Hacker News",
       "node_count": 53,
       "rank": 1,
-      "tag_occurrences": 5358,
-      "weighted_degree": 12455.4
+      "tag_occurrences": 5360,
+      "weighted_degree": 12459.4
     },
     {
       "article_count": 53,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/02-68100935384d.json",
+      "hotspot_file": "community-hotspots/02-17f5d45a96c4.json",
       "id": "community:tag:Technical How-to",
       "leader_id": "tag:Prompt 工程",
       "name": "Prompt 工程",
@@ -28,7 +28,7 @@
     {
       "article_count": 7,
       "hotspot_count": 15,
-      "hotspot_file": "community-hotspots/03-0bd199dd2079.json",
+      "hotspot_file": "community-hotspots/03-0990a654e2fb.json",
       "id": "community:tag:Brain and cognitive sciences",
       "leader_id": "tag:Artificial intelligence",
       "name": "Artificial intelligence",
@@ -38,21 +38,21 @@
       "weighted_degree": 182.6
     },
     {
-      "article_count": 47,
+      "article_count": 48,
       "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/04-f78682a6ff9c.json",
+      "hotspot_file": "community-hotspots/04-446c484fdb6d.json",
       "id": "community:tag:Google Cloud",
       "leader_id": "tag:AI",
       "name": "AI",
       "node_count": 13,
       "rank": 4,
-      "tag_occurrences": 67,
-      "weighted_degree": 236.8
+      "tag_occurrences": 68,
+      "weighted_degree": 238.8
     },
     {
       "article_count": 2,
       "hotspot_count": 6,
-      "hotspot_file": "community-hotspots/05-459e7b074962.json",
+      "hotspot_file": "community-hotspots/05-cf05bcd36edc.json",
       "id": "community:tag:Amazon RDS",
       "leader_id": "tag:Amazon Elastic Kubernetes Service",
       "name": "Amazon Elastic Kubernetes Service",
@@ -64,7 +64,7 @@
     {
       "article_count": 1,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/06-98e6b83cdfbd.json",
+      "hotspot_file": "community-hotspots/06-d221f5a025f6.json",
       "id": "community:tag:Codex",
       "leader_id": "tag:ACP",
       "name": "ACP",
@@ -76,7 +76,7 @@
     {
       "article_count": 3,
       "hotspot_count": 4,
-      "hotspot_file": "community-hotspots/07-5279cea280d2.json",
+      "hotspot_file": "community-hotspots/07-57f8d80cd61d.json",
       "id": "community:tag:ML Applications",
       "leader_id": "tag:Data Infrastructure",
       "name": "Data Infrastructure",
@@ -88,7 +88,7 @@
     {
       "article_count": 2,
       "hotspot_count": 4,
-      "hotspot_file": "community-hotspots/08-70c1436bc1a4.json",
+      "hotspot_file": "community-hotspots/08-9332d16c3e79.json",
       "id": "community:tag:AWS Marketplace",
       "leader_id": "tag:Amazon SageMaker AI",
       "name": "Amazon SageMaker AI",
@@ -100,7 +100,7 @@
     {
       "article_count": 1,
       "hotspot_count": 4,
-      "hotspot_file": "community-hotspots/09-c541a8ae9a85.json",
+      "hotspot_file": "community-hotspots/09-c4b3c83bec1e.json",
       "id": "community:tag:Computer modeling",
       "leader_id": "tag:Design",
       "name": "Design",
@@ -112,7 +112,7 @@
     {
       "article_count": 32,
       "hotspot_count": 2,
-      "hotspot_file": "community-hotspots/10-d4bd502d0e91.json",
+      "hotspot_file": "community-hotspots/10-81eb77cc4fdf.json",
       "id": "community:tag:来源转写",
       "leader_id": "tag:工程实践",
       "name": "工程实践",
@@ -124,7 +124,7 @@
     {
       "article_count": 1,
       "hotspot_count": 2,
-      "hotspot_file": "community-hotspots/11-13f24aa70e01.json",
+      "hotspot_file": "community-hotspots/11-8ee7f345ada0.json",
       "id": "community:tag:Gemini Notebook",
       "leader_id": "tag:Gemini App",
       "name": "Gemini App",
@@ -134,7 +134,7 @@
       "weighted_degree": 10
     }
   ],
-  "generated_at": "2026-08-08T04:23:02Z",
+  "generated_at": "2026-08-08T09:00:59Z",
   "iterations": 7,
   "limit": 11,
   "links": [
@@ -240,7 +240,7 @@
       "strength": 1,
       "target": "community:tag:掘金",
       "type": "community",
-      "weight": 148
+      "weight": 150
     },
     {
       "id": "edge:community:community:tag:ML Applications->community:tag:掘金",

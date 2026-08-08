@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-08T04:23:02Z",
+  "generated_at": "2026-08-08T09:00:59Z",
   "items": [
     {
       "article_count": 728,
@@ -67,7 +67,7 @@
       "weighted_degree": 916
     },
     {
-      "article_count": 246,
+      "article_count": 247,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 89,
@@ -77,7 +77,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 5,
-      "weighted_degree": 683
+      "weighted_degree": 685
     },
     {
       "article_count": 638,
@@ -171,7 +171,7 @@
       "weighted_degree": 356
     },
     {
-      "article_count": 810,
+      "article_count": 811,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 20,
@@ -181,7 +181,7 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 13,
-      "weighted_degree": 353
+      "weighted_degree": 355
     },
     {
       "article_count": 86,
@@ -275,7 +275,7 @@
       "weighted_degree": 136.6
     },
     {
-      "article_count": 47,
+      "article_count": 48,
       "category": "article_tag",
       "community_id": "community:tag:Google Cloud",
       "degree": 31,
@@ -285,7 +285,7 @@
       "legacy_id": "AI",
       "name": "AI",
       "rank": 21,
-      "weighted_degree": 133.6
+      "weighted_degree": 135.6
     },
     {
       "article_count": 20,
@@ -1094,7 +1094,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 785,
+      "article_count": 786,
       "category": "ai",
       "community_id": null,
       "degree": 10,
