@@ -1,7 +1,7 @@
 {
-  "active_count": 2393,
+  "active_count": 2394,
   "archived_count": 276,
-  "complete_count": 34,
+  "complete_count": 35,
   "interpreted_brief_count": 47,
   "legacy_analysis_count": 0,
   "pages": {
@@ -19242,9 +19242,9 @@
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2312,
-  "source_file_count": 2669,
-  "source_tree_sha256": "3b7096379fb88fc9e180a965ea1eac37ab82a10b71092bc840d975309d927a29",
-  "verified_provenance_count": 2393,
+  "source_file_count": 2670,
+  "source_tree_sha256": "ba61262a5f29056945ee989d81d73c8a848ba7fa4fa88b3f21ed12586ef655d9",
+  "verified_provenance_count": 2394,
   "warning_counts": {
     "source_excerpt_truncated": 763
   }
