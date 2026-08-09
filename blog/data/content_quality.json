@@ -1,5 +1,5 @@
 {
-  "active_count": 2402,
+  "active_count": 2403,
   "archived_count": 276,
   "complete_count": 38,
   "interpreted_brief_count": 47,
@@ -19237,6 +19237,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260810-hacker_news-the-tragedy-of-the-commons-ai-edition-5-02086f861e.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -19271,10 +19277,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2317,
-  "source_file_count": 2678,
-  "source_tree_sha256": "e79f2fe8190ba0207ceae596fa2882cd25033229bfb53dc53c706d0ddafd9b9d",
-  "verified_provenance_count": 2402,
+  "source_brief_count": 2318,
+  "source_file_count": 2679,
+  "source_tree_sha256": "34c112a645e7e1cd2b2ff6fb32fb3a98a1bd410e94f5a91221dd5534c51abb60",
+  "verified_provenance_count": 2403,
   "warning_counts": {
     "source_excerpt_truncated": 763
   }
