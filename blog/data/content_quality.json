@@ -1,5 +1,5 @@
 {
-  "active_count": 2394,
+  "active_count": 2395,
   "archived_count": 276,
   "complete_count": 35,
   "interpreted_brief_count": 47,
@@ -19184,6 +19184,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260809-hacker_news-real-time-mcp-interceptor-that-blocks-env-reads-an-19-30fed59787.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260809-hacker_news-timeline-of-the-openai-accidental-attack-against-h-2-2c2b6790f3.md": {
       "reasons": [
         "concise_source_card"
@@ -19241,10 +19247,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2312,
-  "source_file_count": 2670,
-  "source_tree_sha256": "ba61262a5f29056945ee989d81d73c8a848ba7fa4fa88b3f21ed12586ef655d9",
-  "verified_provenance_count": 2394,
+  "source_brief_count": 2313,
+  "source_file_count": 2671,
+  "source_tree_sha256": "ef3ffdc3b4949d0e52ae23bd80f5144ef9b497499c101c18b0c37a46222ff130",
+  "verified_provenance_count": 2395,
   "warning_counts": {
     "source_excerpt_truncated": 763
   }
