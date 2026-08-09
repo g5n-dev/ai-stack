@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:掘金",
-  "generated_at": "2026-08-09T20:52:59Z",
+  "generated_at": "2026-08-09T21:49:07Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -42,7 +42,7 @@
       "strength": 1,
       "target": "tag:掘金",
       "type": "cooccurrence",
-      "weight": 151
+      "weight": 152
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:Hacker News",
@@ -165,18 +165,18 @@
       "weight": 80
     },
     {
-      "id": "edge:cooccurrence:tag:Python->tag:大语言模型",
-      "source": "tag:Python",
-      "strength": 1,
-      "target": "tag:大语言模型",
-      "type": "cooccurrence",
-      "weight": 73
-    },
-    {
       "id": "edge:cooccurrence:tag:大语言模型->tag:来源快报",
       "source": "tag:大语言模型",
       "strength": 1,
       "target": "tag:来源快报",
+      "type": "cooccurrence",
+      "weight": 74
+    },
+    {
+      "id": "edge:cooccurrence:tag:Python->tag:大语言模型",
+      "source": "tag:Python",
+      "strength": 1,
+      "target": "tag:大语言模型",
       "type": "cooccurrence",
       "weight": 73
     },
@@ -280,7 +280,7 @@
       "weighted_degree": 1941.2
     },
     {
-      "article_count": 610,
+      "article_count": 611,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -294,10 +294,10 @@
       "name": "大语言模型",
       "rank": 2,
       "related_count": 69,
-      "weighted_degree": 1582.2
+      "weighted_degree": 1584.2
     },
     {
-      "article_count": 485,
+      "article_count": 486,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -311,7 +311,7 @@
       "name": "掘金",
       "rank": 3,
       "related_count": 26,
-      "weighted_degree": 1257
+      "weighted_degree": 1259
     },
     {
       "article_count": 399,
@@ -331,7 +331,7 @@
       "weighted_degree": 916
     },
     {
-      "article_count": 261,
+      "article_count": 262,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -345,7 +345,7 @@
       "name": "来源快报",
       "rank": 5,
       "related_count": 89,
-      "weighted_degree": 714
+      "weighted_degree": 716
     },
     {
       "article_count": 638,
