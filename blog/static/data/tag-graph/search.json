@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-09T05:59:11Z",
+  "generated_at": "2026-08-09T07:17:51Z",
   "items": [
     {
       "article_count": 731,
@@ -41,7 +41,7 @@
       "weighted_degree": 1580.2
     },
     {
-      "article_count": 482,
+      "article_count": 483,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 26,
@@ -51,7 +51,7 @@
       "legacy_id": "掘金",
       "name": "掘金",
       "rank": 3,
-      "weighted_degree": 1251
+      "weighted_degree": 1253
     },
     {
       "article_count": 399,
@@ -379,6 +379,19 @@
       "weighted_degree": 78
     },
     {
+      "article_count": 36,
+      "category": "article_tag",
+      "community_id": "community:tag:来源转写",
+      "degree": 9,
+      "description": "文章标签: 工程实践",
+      "id": "tag:工程实践",
+      "layer": "tag",
+      "legacy_id": "工程实践",
+      "name": "工程实践",
+      "rank": 29,
+      "weighted_degree": 77
+    },
+    {
       "article_count": 25,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
@@ -388,21 +401,8 @@
       "layer": "tag",
       "legacy_id": "计算机视觉",
       "name": "计算机视觉",
-      "rank": 29,
-      "weighted_degree": 76.2
-    },
-    {
-      "article_count": 35,
-      "category": "article_tag",
-      "community_id": "community:tag:来源转写",
-      "degree": 9,
-      "description": "文章标签: 工程实践",
-      "id": "tag:工程实践",
-      "layer": "tag",
-      "legacy_id": "工程实践",
-      "name": "工程实践",
       "rank": 30,
-      "weighted_degree": 75
+      "weighted_degree": 76.2
     },
     {
       "article_count": 24,
@@ -431,7 +431,7 @@
       "weighted_degree": 72
     },
     {
-      "article_count": 34,
+      "article_count": 35,
       "category": "article_tag",
       "community_id": "community:tag:来源转写",
       "degree": 2,
@@ -441,7 +441,7 @@
       "legacy_id": "来源转写",
       "name": "来源转写",
       "rank": 33,
-      "weighted_degree": 68
+      "weighted_degree": 70
     },
     {
       "article_count": 12,
