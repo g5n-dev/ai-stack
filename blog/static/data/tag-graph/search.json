@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-09T13:16:49Z",
+  "generated_at": "2026-08-09T14:55:24Z",
   "items": [
     {
       "article_count": 731,
@@ -41,7 +41,7 @@
       "weighted_degree": 1580.2
     },
     {
-      "article_count": 483,
+      "article_count": 484,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 26,
@@ -51,7 +51,7 @@
       "legacy_id": "掘金",
       "name": "掘金",
       "rank": 3,
-      "weighted_degree": 1253
+      "weighted_degree": 1255
     },
     {
       "article_count": 399,
@@ -366,6 +366,19 @@
       "weighted_degree": 84.6
     },
     {
+      "article_count": 37,
+      "category": "article_tag",
+      "community_id": "community:tag:来源转写",
+      "degree": 9,
+      "description": "文章标签: 工程实践",
+      "id": "tag:工程实践",
+      "layer": "tag",
+      "legacy_id": "工程实践",
+      "name": "工程实践",
+      "rank": 28,
+      "weighted_degree": 79
+    },
+    {
       "article_count": 12,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
@@ -375,21 +388,8 @@
       "layer": "tag",
       "legacy_id": "Technical How-to",
       "name": "Technical How-to",
-      "rank": 28,
-      "weighted_degree": 78
-    },
-    {
-      "article_count": 36,
-      "category": "article_tag",
-      "community_id": "community:tag:来源转写",
-      "degree": 9,
-      "description": "文章标签: 工程实践",
-      "id": "tag:工程实践",
-      "layer": "tag",
-      "legacy_id": "工程实践",
-      "name": "工程实践",
       "rank": 29,
-      "weighted_degree": 77
+      "weighted_degree": 78
     },
     {
       "article_count": 25,
@@ -405,6 +405,19 @@
       "weighted_degree": 76.2
     },
     {
+      "article_count": 36,
+      "category": "article_tag",
+      "community_id": "community:tag:来源转写",
+      "degree": 2,
+      "description": "文章标签: 来源转写",
+      "id": "tag:来源转写",
+      "layer": "tag",
+      "legacy_id": "来源转写",
+      "name": "来源转写",
+      "rank": 31,
+      "weighted_degree": 72
+    },
+    {
       "article_count": 24,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
@@ -414,7 +427,7 @@
       "layer": "tag",
       "legacy_id": "cs.AI",
       "name": "cs.AI",
-      "rank": 31,
+      "rank": 32,
       "weighted_degree": 72
     },
     {
@@ -427,21 +440,8 @@
       "layer": "tag",
       "legacy_id": "Announcements",
       "name": "Announcements",
-      "rank": 32,
-      "weighted_degree": 72
-    },
-    {
-      "article_count": 35,
-      "category": "article_tag",
-      "community_id": "community:tag:来源转写",
-      "degree": 2,
-      "description": "文章标签: 来源转写",
-      "id": "tag:来源转写",
-      "layer": "tag",
-      "legacy_id": "来源转写",
-      "name": "来源转写",
       "rank": 33,
-      "weighted_degree": 70
+      "weighted_degree": 72
     },
     {
       "article_count": 12,
