@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-09T07:17:51Z",
+  "generated_at": "2026-08-09T13:16:49Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -229,7 +229,7 @@
       "strength": 1,
       "target": "tag:Hacker News",
       "type": "cooccurrence",
-      "weight": 25
+      "weight": 26
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:Health",
@@ -325,7 +325,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 51
+      "weight": 52
     },
     {
       "id": "edge:semantic:tag:AI->tech:ai_ml",
@@ -5077,7 +5077,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 64
+      "weight": 65
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:深度学习",
@@ -7732,7 +7732,7 @@
       "weighted_degree": 96
     },
     {
-      "article_count": 52,
+      "article_count": 53,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Google Cloud",
@@ -7744,9 +7744,9 @@
       "legacy_id": "AI",
       "level": 6,
       "name": "AI",
-      "rank": 19,
+      "rank": 18,
       "related_count": 30,
-      "weighted_degree": 143.6
+      "weighted_degree": 145.6
     },
     {
       "article_count": 1,
@@ -9194,7 +9194,7 @@
       "weighted_degree": 11
     },
     {
-      "article_count": 817,
+      "article_count": 818,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -9208,7 +9208,7 @@
       "name": "Hacker News",
       "rank": 12,
       "related_count": 20,
-      "weighted_degree": 367
+      "weighted_degree": 369
     },
     {
       "article_count": 1,
@@ -9597,7 +9597,7 @@
       "legacy_id": "Prompt 工程",
       "level": 6,
       "name": "Prompt 工程",
-      "rank": 18,
+      "rank": 19,
       "related_count": 25,
       "weighted_degree": 144
     },
@@ -9993,7 +9993,7 @@
       "weighted_degree": 316
     },
     {
-      "article_count": 256,
+      "article_count": 257,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -10007,7 +10007,7 @@
       "name": "来源快报",
       "rank": 5,
       "related_count": 89,
-      "weighted_degree": 704
+      "weighted_degree": 706
     },
     {
       "article_count": 35,
