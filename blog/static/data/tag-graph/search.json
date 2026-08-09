@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-08T23:46:39Z",
+  "generated_at": "2026-08-09T02:30:16Z",
   "items": [
     {
       "article_count": 730,
@@ -41,7 +41,7 @@
       "weighted_degree": 1580.2
     },
     {
-      "article_count": 480,
+      "article_count": 481,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 26,
@@ -51,7 +51,7 @@
       "legacy_id": "掘金",
       "name": "掘金",
       "rank": 3,
-      "weighted_degree": 1247
+      "weighted_degree": 1249
     },
     {
       "article_count": 399,
@@ -392,6 +392,19 @@
       "weighted_degree": 76.2
     },
     {
+      "article_count": 34,
+      "category": "article_tag",
+      "community_id": "community:tag:来源转写",
+      "degree": 9,
+      "description": "文章标签: 工程实践",
+      "id": "tag:工程实践",
+      "layer": "tag",
+      "legacy_id": "工程实践",
+      "name": "工程实践",
+      "rank": 30,
+      "weighted_degree": 73
+    },
+    {
       "article_count": 24,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
@@ -401,7 +414,7 @@
       "layer": "tag",
       "legacy_id": "cs.AI",
       "name": "cs.AI",
-      "rank": 30,
+      "rank": 31,
       "weighted_degree": 72
     },
     {
@@ -414,21 +427,21 @@
       "layer": "tag",
       "legacy_id": "Announcements",
       "name": "Announcements",
-      "rank": 31,
+      "rank": 32,
       "weighted_degree": 72
     },
     {
       "article_count": 33,
       "category": "article_tag",
       "community_id": "community:tag:来源转写",
-      "degree": 9,
-      "description": "文章标签: 工程实践",
-      "id": "tag:工程实践",
+      "degree": 2,
+      "description": "文章标签: 来源转写",
+      "id": "tag:来源转写",
       "layer": "tag",
-      "legacy_id": "工程实践",
-      "name": "工程实践",
-      "rank": 32,
-      "weighted_degree": 71
+      "legacy_id": "来源转写",
+      "name": "来源转写",
+      "rank": 33,
+      "weighted_degree": 66
     },
     {
       "article_count": 12,
@@ -440,21 +453,8 @@
       "layer": "tag",
       "legacy_id": "Intermediate (200)",
       "name": "Intermediate (200)",
-      "rank": 33,
-      "weighted_degree": 65
-    },
-    {
-      "article_count": 32,
-      "category": "article_tag",
-      "community_id": "community:tag:来源转写",
-      "degree": 2,
-      "description": "文章标签: 来源转写",
-      "id": "tag:来源转写",
-      "layer": "tag",
-      "legacy_id": "来源转写",
-      "name": "来源转写",
       "rank": 34,
-      "weighted_degree": 64
+      "weighted_degree": 65
     },
     {
       "article_count": 43,

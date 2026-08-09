@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:掘金",
-  "generated_at": "2026-08-08T23:46:39Z",
+  "generated_at": "2026-08-09T02:30:16Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -297,7 +297,7 @@
       "weighted_degree": 1580.2
     },
     {
-      "article_count": 480,
+      "article_count": 481,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -311,7 +311,7 @@
       "name": "掘金",
       "rank": 3,
       "related_count": 26,
-      "weighted_degree": 1247
+      "weighted_degree": 1249
     },
     {
       "article_count": 399,
@@ -666,7 +666,7 @@
       "legacy_id": "cs.AI",
       "level": 6,
       "name": "cs.AI",
-      "rank": 30,
+      "rank": 31,
       "related_count": 8,
       "weighted_degree": 72
     }
