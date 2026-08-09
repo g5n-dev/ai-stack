@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-09T02:30:16Z",
+  "generated_at": "2026-08-09T04:38:05Z",
   "items": [
     {
       "article_count": 730,
@@ -41,7 +41,7 @@
       "weighted_degree": 1580.2
     },
     {
-      "article_count": 481,
+      "article_count": 482,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 26,
@@ -51,7 +51,7 @@
       "legacy_id": "掘金",
       "name": "掘金",
       "rank": 3,
-      "weighted_degree": 1249
+      "weighted_degree": 1251
     },
     {
       "article_count": 399,
@@ -392,7 +392,7 @@
       "weighted_degree": 76.2
     },
     {
-      "article_count": 34,
+      "article_count": 35,
       "category": "article_tag",
       "community_id": "community:tag:来源转写",
       "degree": 9,
@@ -402,7 +402,7 @@
       "legacy_id": "工程实践",
       "name": "工程实践",
       "rank": 30,
-      "weighted_degree": 73
+      "weighted_degree": 75
     },
     {
       "article_count": 24,
@@ -431,7 +431,7 @@
       "weighted_degree": 72
     },
     {
-      "article_count": 33,
+      "article_count": 34,
       "category": "article_tag",
       "community_id": "community:tag:来源转写",
       "degree": 2,
@@ -441,7 +441,7 @@
       "legacy_id": "来源转写",
       "name": "来源转写",
       "rank": 33,
-      "weighted_degree": 66
+      "weighted_degree": 68
     },
     {
       "article_count": 12,
