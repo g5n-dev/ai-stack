@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:c489b791d535ce42bf12a32f359daff7d7e71180c22034009
 description: "该研究评估在厚层FLAIR影像上使用超分辨率重建是否会导致小量白质高信号区被遗漏或误判，并通过对比不同插值与自监督模型对病灶检测的影响。"
 external_url: http://arxiv.org/abs/2608.06311v1
 parent_observation_id: null
-last_seen_at: 2026-08-08T00:00:00Z
+last_seen_at: 2026-08-09T00:00:00Z
 ---
 
 ## 基本信息

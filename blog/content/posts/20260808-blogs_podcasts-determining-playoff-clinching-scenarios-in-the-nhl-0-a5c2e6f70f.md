@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:ad4daaff3d9ae777c9524d408f1f71ab7671412b6b8431d61
 description: "这篇博客概述了利用约束规划（CP）和自定义树搜索，实现自动推算 NHL 季后赛资格赛的确定方案。"
 external_url: https://aws.amazon.com/blogs/machine-learning/determining-playoff-clinching-scenarios-in-the-nhl-using-constraint-programming
 parent_observation_id: null
-last_seen_at: 2026-08-08T00:00:00Z
+last_seen_at: 2026-08-09T00:00:00Z
 ---
 
 ## 基本信息

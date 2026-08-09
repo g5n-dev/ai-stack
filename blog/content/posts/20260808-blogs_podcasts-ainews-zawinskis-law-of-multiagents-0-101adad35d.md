@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:327dcae7272d8ad44667ac931f9bfc13a6520dcbde14d31dc
 description: "这是一份AI领域近期动态的综合摘要，重点涵盖多智能体协作的安全隐患、模型安全评估的进展以及代理框架、测试工具的产品更新。"
 external_url: https://www.latent.space/p/ainews-zawinskis-law-of-multiagents
 parent_observation_id: null
-last_seen_at: 2026-08-08T02:21:48.414366Z
+last_seen_at: 2026-08-09T00:00:00Z
 ---
 
 ## 基本信息
