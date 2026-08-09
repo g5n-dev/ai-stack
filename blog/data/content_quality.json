@@ -1,5 +1,5 @@
 {
-  "active_count": 2401,
+  "active_count": 2402,
   "archived_count": 276,
   "complete_count": 38,
   "interpreted_brief_count": 47,
@@ -19220,6 +19220,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260810-hacker_news-how-i-use-llms-to-learn-complex-topics-0-b0d302e54b.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260810-hacker_news-human-vs-ai-diff-based-line-level-provenance-for-t-6-c54bc14114.md": {
       "reasons": [
         "concise_source_card"
@@ -19265,10 +19271,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2316,
-  "source_file_count": 2677,
-  "source_tree_sha256": "9f6ff1b79cd1bed997b9ad2239b95546bcd9bea9d9f4f2524c5897cb13bef09f",
-  "verified_provenance_count": 2401,
+  "source_brief_count": 2317,
+  "source_file_count": 2678,
+  "source_tree_sha256": "e79f2fe8190ba0207ceae596fa2882cd25033229bfb53dc53c706d0ddafd9b9d",
+  "verified_provenance_count": 2402,
   "warning_counts": {
     "source_excerpt_truncated": 763
   }
