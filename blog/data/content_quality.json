@@ -1,7 +1,7 @@
 {
-  "active_count": 2399,
+  "active_count": 2401,
   "archived_count": 276,
-  "complete_count": 37,
+  "complete_count": 38,
   "interpreted_brief_count": 47,
   "legacy_analysis_count": 0,
   "pages": {
@@ -19225,6 +19225,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260810-hacker_news-show-hn-a-replayable-a2a-jury-for-tracing-how-agen-11-c71cb36e32.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -19259,10 +19265,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2315,
-  "source_file_count": 2675,
-  "source_tree_sha256": "ad541f57dd8fe03b6a6dd3ced4bd4739590a799e45cbecc156af89e8dc1e8194",
-  "verified_provenance_count": 2399,
+  "source_brief_count": 2316,
+  "source_file_count": 2677,
+  "source_tree_sha256": "9f6ff1b79cd1bed997b9ad2239b95546bcd9bea9d9f4f2524c5897cb13bef09f",
+  "verified_provenance_count": 2401,
   "warning_counts": {
     "source_excerpt_truncated": 763
   }
