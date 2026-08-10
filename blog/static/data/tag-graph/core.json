@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T06:43:45Z",
+  "generated_at": "2026-08-10T08:53:39Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -626,7 +626,7 @@
       "weighted_degree": 2
     },
     {
-      "article_count": 733,
+      "article_count": 734,
       "category": "ai",
       "color": "#7aa6b8",
       "community_id": null,
@@ -643,7 +643,7 @@
       "weighted_degree": 4.4
     },
     {
-      "article_count": 798,
+      "article_count": 800,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
