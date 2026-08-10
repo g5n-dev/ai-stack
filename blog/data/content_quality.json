@@ -1,7 +1,7 @@
 {
-  "active_count": 2413,
+  "active_count": 2415,
   "archived_count": 276,
-  "complete_count": 40,
+  "complete_count": 41,
   "interpreted_brief_count": 50,
   "legacy_analysis_count": 0,
   "pages": {
@@ -19244,6 +19244,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260810-arxiv-skillprox-self-evolving-agent-skills-via-proximal--1-ff08aa5a73.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260810-hacker_news-auto-mode-is-now-the-default-in-claude-code-1-bf86c80d4e.md": {
       "reasons": [
         "concise_source_card"
@@ -19328,10 +19334,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2323,
-  "source_file_count": 2689,
-  "source_tree_sha256": "846dc06826ae6e5629f1563efb27d79936d3367947398d32375d2a9826412d45",
-  "verified_provenance_count": 2413,
+  "source_brief_count": 2324,
+  "source_file_count": 2691,
+  "source_tree_sha256": "e7ce5d5b34384cde023239afa0813a21864fd41b47feac23b629f6f4e69821f6",
+  "verified_provenance_count": 2415,
   "warning_counts": {
     "source_excerpt_truncated": 764
   }
