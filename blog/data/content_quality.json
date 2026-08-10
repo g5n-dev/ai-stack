@@ -1,5 +1,5 @@
 {
-  "active_count": 2430,
+  "active_count": 2432,
   "archived_count": 276,
   "complete_count": 43,
   "interpreted_brief_count": 51,
@@ -19349,6 +19349,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260811-arxiv-post-grokking-collapse-at-the-representation-reado-2-638142a99b.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260811-arxiv-psychoagent-an-affect-sensitive-cognitive-architec-2-7d4801841f.md": {
       "reasons": [
         "concise_source_card"
@@ -19362,6 +19368,12 @@
       "status": "source_brief"
     },
     "posts/20260811-blogs_podcasts-what-building-an-ai-native-finance-function-taught-0-5367cc95a8.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260811-hacker_news-launch-hn-stoa-markets-yc-s26-a-marketplace-for-gp-1-2af89bb54f.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -19412,10 +19424,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2336,
-  "source_file_count": 2706,
-  "source_tree_sha256": "d4e5cb42311f80ce00a9345c272b4c7b1c8082ee4aac84d4971b5a00bdfdc53e",
-  "verified_provenance_count": 2430,
+  "source_brief_count": 2338,
+  "source_file_count": 2708,
+  "source_tree_sha256": "65ff4de48a5b099189df6f9999a82efdf58009032f394134f4daaf4f83931412",
+  "verified_provenance_count": 2432,
   "warning_counts": {
     "source_excerpt_truncated": 764
   }
