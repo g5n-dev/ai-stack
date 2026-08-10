@@ -2,21 +2,21 @@
   "algorithm": "deterministic-weighted-label-propagation",
   "communities": [
     {
-      "article_count": 2410,
+      "article_count": 2411,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-da0a1942e82a.json",
+      "hotspot_file": "community-hotspots/01-ae1cbd22fb71.json",
       "id": "community:tag:掘金",
       "leader_id": "tag:Hacker News",
       "name": "Hacker News",
-      "node_count": 53,
+      "node_count": 54,
       "rank": 1,
-      "tag_occurrences": 5438,
-      "weighted_degree": 12651.4
+      "tag_occurrences": 5443,
+      "weighted_degree": 12671.4
     },
     {
       "article_count": 53,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/02-340a1ce5b256.json",
+      "hotspot_file": "community-hotspots/02-22a8049026b2.json",
       "id": "community:tag:Technical How-to",
       "leader_id": "tag:Prompt 工程",
       "name": "Prompt 工程",
@@ -28,7 +28,7 @@
     {
       "article_count": 7,
       "hotspot_count": 15,
-      "hotspot_file": "community-hotspots/03-0f1d804091bc.json",
+      "hotspot_file": "community-hotspots/03-84c266b5f1d7.json",
       "id": "community:tag:Brain and cognitive sciences",
       "leader_id": "tag:Artificial intelligence",
       "name": "Artificial intelligence",
@@ -40,7 +40,7 @@
     {
       "article_count": 56,
       "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/04-d35cce5626d6.json",
+      "hotspot_file": "community-hotspots/04-95fb4245937b.json",
       "id": "community:tag:Google Cloud",
       "leader_id": "tag:AI",
       "name": "AI",
@@ -52,7 +52,7 @@
     {
       "article_count": 2,
       "hotspot_count": 6,
-      "hotspot_file": "community-hotspots/05-de81e411b892.json",
+      "hotspot_file": "community-hotspots/05-2b8da99ec727.json",
       "id": "community:tag:Amazon RDS",
       "leader_id": "tag:Amazon Elastic Kubernetes Service",
       "name": "Amazon Elastic Kubernetes Service",
@@ -64,7 +64,7 @@
     {
       "article_count": 1,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/06-d7d55ac278c6.json",
+      "hotspot_file": "community-hotspots/06-19b80a1df919.json",
       "id": "community:tag:Codex",
       "leader_id": "tag:ACP",
       "name": "ACP",
@@ -76,7 +76,7 @@
     {
       "article_count": 3,
       "hotspot_count": 4,
-      "hotspot_file": "community-hotspots/07-b5d608df75a4.json",
+      "hotspot_file": "community-hotspots/07-944befac62a0.json",
       "id": "community:tag:ML Applications",
       "leader_id": "tag:Data Infrastructure",
       "name": "Data Infrastructure",
@@ -88,7 +88,7 @@
     {
       "article_count": 2,
       "hotspot_count": 4,
-      "hotspot_file": "community-hotspots/08-975e5bd64b4f.json",
+      "hotspot_file": "community-hotspots/08-740a62af367f.json",
       "id": "community:tag:AWS Marketplace",
       "leader_id": "tag:Amazon SageMaker AI",
       "name": "Amazon SageMaker AI",
@@ -100,7 +100,7 @@
     {
       "article_count": 1,
       "hotspot_count": 4,
-      "hotspot_file": "community-hotspots/09-7c682978fdef.json",
+      "hotspot_file": "community-hotspots/09-5969da94d2e6.json",
       "id": "community:tag:Computer modeling",
       "leader_id": "tag:Design",
       "name": "Design",
@@ -112,7 +112,7 @@
     {
       "article_count": 41,
       "hotspot_count": 2,
-      "hotspot_file": "community-hotspots/10-1c7c1ad83591.json",
+      "hotspot_file": "community-hotspots/10-f7291715c68e.json",
       "id": "community:tag:来源转写",
       "leader_id": "tag:工程实践",
       "name": "工程实践",
@@ -124,7 +124,7 @@
     {
       "article_count": 1,
       "hotspot_count": 2,
-      "hotspot_file": "community-hotspots/11-c2490149c054.json",
+      "hotspot_file": "community-hotspots/11-95ca9d97be26.json",
       "id": "community:tag:Gemini Notebook",
       "leader_id": "tag:Gemini App",
       "name": "Gemini App",
@@ -134,7 +134,7 @@
       "weighted_degree": 10
     }
   ],
-  "generated_at": "2026-08-10T10:39:03Z",
+  "generated_at": "2026-08-10T12:00:42Z",
   "iterations": 7,
   "limit": 11,
   "links": [
@@ -268,7 +268,7 @@
     }
   ],
   "stats": {
-    "assigned_nodes": 141,
+    "assigned_nodes": 142,
     "detected_communities": 11,
     "emitted_communities": 11,
     "total_communities": 11,
