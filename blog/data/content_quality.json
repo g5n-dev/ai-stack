@@ -1,5 +1,5 @@
 {
-  "active_count": 2426,
+  "active_count": 2429,
   "archived_count": 276,
   "complete_count": 42,
   "interpreted_brief_count": 51,
@@ -19343,6 +19343,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260811-arxiv-fisher-r1-training-llm-agents-for-reliable-hypothe-2-0a10d5dde3.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260811-arxiv-psychoagent-an-affect-sensitive-cognitive-architec-2-7d4801841f.md": {
       "reasons": [
         "concise_source_card"
@@ -19350,6 +19356,18 @@
       "status": "source_brief"
     },
     "posts/20260811-blogs_podcasts-evolve-your-marketing-with-new-ai-tools-0-013cf06e85.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260811-blogs_podcasts-what-building-an-ai-native-finance-function-taught-0-5367cc95a8.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260811-hacker_news-kinney-drugs-pulls-back-ai-phone-assistant-after-h-1-278cd7d182.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -19394,10 +19412,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2333,
-  "source_file_count": 2702,
-  "source_tree_sha256": "9374c1ac7c72df356330b4d9e64b0794c96ce7bddfae39271b70cfd195327f0e",
-  "verified_provenance_count": 2426,
+  "source_brief_count": 2336,
+  "source_file_count": 2705,
+  "source_tree_sha256": "c8bacaaf15017c18eb48f279d44481c3250d074336d8f1b5ed71e05c8850a5d2",
+  "verified_provenance_count": 2429,
   "warning_counts": {
     "source_excerpt_truncated": 764
   }
