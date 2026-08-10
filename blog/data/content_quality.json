@@ -1,8 +1,8 @@
 {
-  "active_count": 2437,
+  "active_count": 2439,
   "archived_count": 276,
   "complete_count": 44,
-  "interpreted_brief_count": 53,
+  "interpreted_brief_count": 54,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19373,6 +19373,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260811-arxiv-tepa-revoking-stale-memories-for-conflict-robust-l-3-d7f7f1bf25.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260811-blogs_podcasts-evolve-your-marketing-with-new-ai-tools-0-013cf06e85.md": {
       "reasons": [
         "concise_source_card"
@@ -19380,6 +19386,12 @@
       "status": "source_brief"
     },
     "posts/20260811-blogs_podcasts-what-building-an-ai-native-finance-function-taught-0-5367cc95a8.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260811-hacker_news-humanising-llm-outputs-is-dumb-10-518ffd2b0c.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -19448,10 +19460,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2340,
-  "source_file_count": 2713,
-  "source_tree_sha256": "644f4436b0324abf3d48c8e78594254701dc9d4204310e56013755fecae43303",
-  "verified_provenance_count": 2437,
+  "source_brief_count": 2341,
+  "source_file_count": 2715,
+  "source_tree_sha256": "3cbe5688be7b357d3bd91b2994bef61c36d58ca26c4070f149f735dd779461f9",
+  "verified_provenance_count": 2439,
   "warning_counts": {
     "source_excerpt_truncated": 764
   }
