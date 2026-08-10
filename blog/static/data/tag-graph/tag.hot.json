@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T18:06:28Z",
+  "generated_at": "2026-08-10T19:20:05Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -157,7 +157,7 @@
       "strength": 1,
       "target": "tag:ArXiv",
       "type": "cooccurrence",
-      "weight": 7
+      "weight": 8
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:Company",
@@ -245,7 +245,7 @@
       "strength": 1,
       "target": "tag:Hacker News",
       "type": "cooccurrence",
-      "weight": 31
+      "weight": 32
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:Health",
@@ -301,7 +301,7 @@
       "strength": 1,
       "target": "tag:cs.AI",
       "type": "cooccurrence",
-      "weight": 4
+      "weight": 5
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:cs.CY",
@@ -349,7 +349,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 60
+      "weight": 62
     },
     {
       "id": "edge:semantic:tag:AI->tech:ai_ml",
@@ -3277,7 +3277,7 @@
       "strength": 1,
       "target": "tag:cs.AI",
       "type": "cooccurrence",
-      "weight": 29
+      "weight": 30
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:cs.CL",
@@ -3461,7 +3461,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 94
+      "weight": 95
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:深度学习",
@@ -5157,7 +5157,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 76
+      "weight": 77
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:深度学习",
@@ -7029,7 +7029,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 29
+      "weight": 30
     },
     {
       "id": "edge:cooccurrence:tag:cs.AI->tag:深度学习",
@@ -7900,7 +7900,7 @@
       "weighted_degree": 96
     },
     {
-      "article_count": 61,
+      "article_count": 63,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Google Cloud",
@@ -7914,7 +7914,7 @@
       "name": "AI",
       "rank": 17,
       "related_count": 33,
-      "weighted_degree": 166.6
+      "weighted_degree": 171.6
     },
     {
       "article_count": 1,
@@ -8082,7 +8082,7 @@
       "legacy_id": "Amazon Bedrock AgentCore",
       "level": 6,
       "name": "Amazon Bedrock AgentCore",
-      "rank": 25,
+      "rank": 26,
       "related_count": 24,
       "weighted_degree": 93
     },
@@ -8512,7 +8512,7 @@
       "weighted_degree": 28
     },
     {
-      "article_count": 648,
+      "article_count": 649,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -8526,7 +8526,7 @@
       "name": "ArXiv",
       "rank": 6,
       "related_count": 37,
-      "weighted_degree": 700
+      "weighted_degree": 703
     },
     {
       "article_count": 1,
@@ -8767,7 +8767,7 @@
       "weighted_degree": 14.6
     },
     {
-      "article_count": 29,
+      "article_count": 30,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -8779,9 +8779,9 @@
       "legacy_id": "cs.AI",
       "level": 6,
       "name": "cs.AI",
-      "rank": 26,
+      "rank": 25,
       "related_count": 10,
-      "weighted_degree": 92
+      "weighted_degree": 95
     },
     {
       "article_count": 21,
@@ -9413,7 +9413,7 @@
       "weighted_degree": 11
     },
     {
-      "article_count": 829,
+      "article_count": 830,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -9427,7 +9427,7 @@
       "name": "Hacker News",
       "rank": 12,
       "related_count": 20,
-      "weighted_degree": 391
+      "weighted_degree": 393
     },
     {
       "article_count": 1,
@@ -10246,7 +10246,7 @@
       "weighted_degree": 316
     },
     {
-      "article_count": 283,
+      "article_count": 285,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -10260,7 +10260,7 @@
       "name": "来源快报",
       "rank": 5,
       "related_count": 94,
-      "weighted_degree": 782
+      "weighted_degree": 787
     },
     {
       "article_count": 42,
