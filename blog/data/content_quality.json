@@ -1,5 +1,5 @@
 {
-  "active_count": 2420,
+  "active_count": 2423,
   "archived_count": 276,
   "complete_count": 42,
   "interpreted_brief_count": 51,
@@ -19220,6 +19220,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260810-arxiv-an-exploratory-evaluation-of-llm-assisted-rewritin-2-4bd8d09278.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260810-arxiv-blast-radius-2-35a265c565.md": {
       "reasons": [
         "concise_source_card"
@@ -19262,6 +19268,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260810-blogs_podcasts-how-to-build-an-ai-agent-a-simple-guide-for-anyone-0-a25d7208ea.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260810-blogs_podcasts-model-ml-completes-finance-work-more-efficiently-w-0-95f74aeac9.md": {
       "reasons": [
         "concise_source_card"
@@ -19293,6 +19305,12 @@
       "status": "source_brief"
     },
     "posts/20260810-hacker_news-mistral-patent-for-code-implemented-tool-calls-1-5cd8cebd0b.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260810-hacker_news-over-181000-ai-meeting-recordings-left-wide-open-i-5-15e40711e2.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -19358,10 +19376,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2327,
-  "source_file_count": 2696,
-  "source_tree_sha256": "1b04019bbf062b81763cbe23275b4b2b9e13eefafc781c1d2311e498fa4497d3",
-  "verified_provenance_count": 2420,
+  "source_brief_count": 2330,
+  "source_file_count": 2699,
+  "source_tree_sha256": "ef0b2edc4cf5634dc2f077c769e42088bfff4497a92d443d9d9770ec6aa67bfe",
+  "verified_provenance_count": 2423,
   "warning_counts": {
     "source_excerpt_truncated": 764
   }
