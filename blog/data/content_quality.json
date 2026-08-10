@@ -1,7 +1,7 @@
 {
-  "active_count": 2405,
+  "active_count": 2408,
   "archived_count": 276,
-  "complete_count": 38,
+  "complete_count": 39,
   "interpreted_brief_count": 48,
   "legacy_analysis_count": 0,
   "pages": {
@@ -19220,11 +19220,23 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260810-arxiv-creativeinstruct-scalably-teaching-llms-to-balance-0-ead38ea357.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260810-arxiv-mirrorworld-taming-video-diffusion-models-for-mirr-0-5a1c910723.md": {
       "reasons": [
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20260810-hacker_news-auto-mode-is-now-the-default-in-claude-code-1-bf86c80d4e.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20260810-hacker_news-how-i-use-llms-to-learn-complex-topics-0-b0d302e54b.md": {
       "reasons": [
@@ -19292,10 +19304,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2319,
-  "source_file_count": 2681,
-  "source_tree_sha256": "baea7cda663e1580de993ccbd0c8ec14cc7317ee107b5c306297ea22b47c96b7",
-  "verified_provenance_count": 2405,
+  "source_brief_count": 2321,
+  "source_file_count": 2684,
+  "source_tree_sha256": "57494cc9a2c72aa372ff1cef77db8be31316d776994ca05dfb76a7f28120cff4",
+  "verified_provenance_count": 2408,
   "warning_counts": {
     "source_excerpt_truncated": 764
   }
