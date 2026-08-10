@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:bae3b010cd239bc0c546a4c3849b89f4616e865e8b1ca3bf
 source_payload_sha256: "sha256:fa3a130ae044f76b8759f3c463d9e62755dfb3a24cfac682393b0d93303f4bfb"
 observation_id: obs_02086f861e7992ef28ec9a0ff1ce47ff2fc04cefe4343846a2264657e3ed48f6
 event_id: evt_ff6b8aeaa67ccf35c7decf929cdd83baf790cbcc4d5c54895f45ff9cff8d07ec
-revision_id: rev_fa7fa026baf9f3d49a61767ea97362af1a4c5bd20b3301811ed44ae603491bc4
+revision_id: rev_71945ff28431f30c6fe926e30a49b8ebea72e735213749c7cba2d8eb83d81941
 source_published_at: 2026-08-09T19:43:52Z
 first_seen_at: 2026-08-09T21:01:40Z
 timestamp_confidence: platform
@@ -27,7 +27,7 @@ source_title_chars_original: 38
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://www.economist.com/britain/2026/08/06/the-tragedy-of-the-commons-ai-edition
 parent_observation_id: null
-last_seen_at: 2026-08-09T20:51:11.932230Z
+last_seen_at: 2026-08-10T00:00:00Z
 ---
 
 ## 基本信息

@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:b2c29856fd6f4d01b9b18afadf2c95e2c1d50fcdd01091284
 description: "Amazon Bedrock AgentCore 新增了**时间策略**和**网关速率限制**两项功能。时间策略由开源的 Dogwood 策略语言实现，能够在 agent 的整个执行序列上检查行为是否符合预设规则，而不只是对单次调用做判断。"
 external_url: https://aws.amazon.com/blogs/machine-learning/control-agent-behaviors-and-cost-beyond-a-single-action-new-capabilities-in-amazon-bedrock-agentcore
 parent_observation_id: null
-last_seen_at: 2026-08-09T00:00:00Z
+last_seen_at: 2026-08-10T00:00:00Z
 ---
 
 ## 基本信息

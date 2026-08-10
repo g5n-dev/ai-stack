@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:02dccac4e826f849656ff8b1de92d8dc3b570e04ed9eb0e83
 description: "这是一种在网关层对 AI 代理的请求进行基于会话历史的授权检查的机制，通过评估当前请求在轨迹中的上下文来决定是否放行。"
 external_url: https://aws.amazon.com/blogs/machine-learning/securing-ai-agents-with-temporal-policies-in-amazon-bedrock-agentcore
 parent_observation_id: null
-last_seen_at: 2026-08-09T00:00:00Z
+last_seen_at: 2026-08-10T00:00:00Z
 ---
 
 ## 基本信息

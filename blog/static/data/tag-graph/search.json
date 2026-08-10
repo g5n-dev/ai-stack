@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-09T21:49:07Z",
+  "generated_at": "2026-08-10T02:36:37Z",
   "items": [
     {
       "article_count": 732,
@@ -67,7 +67,7 @@
       "weighted_degree": 916
     },
     {
-      "article_count": 262,
+      "article_count": 263,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 89,
@@ -77,10 +77,10 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 5,
-      "weighted_degree": 716
+      "weighted_degree": 720
     },
     {
-      "article_count": 638,
+      "article_count": 639,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 36,
@@ -90,7 +90,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 662
+      "weighted_degree": 666
     },
     {
       "article_count": 162,
@@ -171,7 +171,7 @@
       "weighted_degree": 377
     },
     {
-      "article_count": 110,
+      "article_count": 111,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 41,
@@ -181,7 +181,7 @@
       "legacy_id": "生成式 AI",
       "name": "生成式 AI",
       "rank": 13,
-      "weighted_degree": 356
+      "weighted_degree": 360
     },
     {
       "article_count": 86,
@@ -379,6 +379,19 @@
       "weighted_degree": 81
     },
     {
+      "article_count": 26,
+      "category": "article_tag",
+      "community_id": "community:tag:掘金",
+      "degree": 19,
+      "description": "文章标签: 计算机视觉",
+      "id": "tag:计算机视觉",
+      "layer": "tag",
+      "legacy_id": "计算机视觉",
+      "name": "计算机视觉",
+      "rank": 29,
+      "weighted_degree": 80.2
+    },
+    {
       "article_count": 12,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
@@ -388,21 +401,8 @@
       "layer": "tag",
       "legacy_id": "Technical How-to",
       "name": "Technical How-to",
-      "rank": 29,
-      "weighted_degree": 78
-    },
-    {
-      "article_count": 25,
-      "category": "article_tag",
-      "community_id": "community:tag:掘金",
-      "degree": 19,
-      "description": "文章标签: 计算机视觉",
-      "id": "tag:计算机视觉",
-      "layer": "tag",
-      "legacy_id": "计算机视觉",
-      "name": "计算机视觉",
       "rank": 30,
-      "weighted_degree": 76.2
+      "weighted_degree": 78
     },
     {
       "article_count": 37,
@@ -509,7 +509,7 @@
       "weighted_degree": 54.6
     },
     {
-      "article_count": 14,
+      "article_count": 15,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 6,
@@ -519,7 +519,7 @@
       "legacy_id": "cs.CV",
       "name": "cs.CV",
       "rank": 39,
-      "weighted_degree": 41
+      "weighted_degree": 45
     },
     {
       "article_count": 11,
@@ -1809,7 +1809,7 @@
       "weighted_degree": 3.6
     },
     {
-      "article_count": 25,
+      "article_count": 26,
       "category": "vision",
       "community_id": null,
       "degree": 4,
@@ -2537,7 +2537,7 @@
       "weighted_degree": 0.6
     },
     {
-      "article_count": 25,
+      "article_count": 26,
       "category": "ai",
       "community_id": null,
       "degree": 1,

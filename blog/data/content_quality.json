@@ -1,8 +1,8 @@
 {
-  "active_count": 2404,
+  "active_count": 2405,
   "archived_count": 276,
   "complete_count": 38,
-  "interpreted_brief_count": 47,
+  "interpreted_brief_count": 48,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19220,6 +19220,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260810-arxiv-mirrorworld-taming-video-diffusion-models-for-mirr-0-5a1c910723.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260810-hacker_news-how-i-use-llms-to-learn-complex-topics-0-b0d302e54b.md": {
       "reasons": [
         "concise_source_card"
@@ -19287,9 +19293,9 @@
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2319,
-  "source_file_count": 2680,
-  "source_tree_sha256": "4aada4eae27aa337e6cb8495f6d219ea27b5848ade6f3a6b318e2bafe96fbb03",
-  "verified_provenance_count": 2404,
+  "source_file_count": 2681,
+  "source_tree_sha256": "baea7cda663e1580de993ccbd0c8ec14cc7317ee107b5c306297ea22b47c96b7",
+  "verified_provenance_count": 2405,
   "warning_counts": {
     "source_excerpt_truncated": 764
   }
