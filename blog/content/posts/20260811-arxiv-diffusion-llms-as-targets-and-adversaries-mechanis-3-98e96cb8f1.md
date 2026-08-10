@@ -1,0 +1,52 @@
+---
+title: "Diffusion LLMs as Targets and Adversaries: Mechanistic Safety Exploits"
+date: 2026-08-11T05:06:23+08:00
+draft: false
+entry_kind: "auto"
+tags: ["大语言模型", "生成式 AI", "Prompt 工程", "cs.LG", "ArXiv", "来源快报"]
+categories: []
+source: "arxiv"
+content_mode: "source_brief"
+publication_tier: "C"
+source_capture_mode: "abstract"
+source_snapshot_sha256: "sha256:f45e45491d837b7fd6d19c773c7a5e2a072b474a5e8af295e218d047465bf316"
+source_payload_sha256: "sha256:3293a4501f309390e22364fbdb6b5abe98f9a38e79604872a95fb41854a73084"
+observation_id: obs_98e96cb8f162f963c62780272afb908451b048d21789b5c467f2f13e28bf0c6d
+event_id: evt_35fd0c5f8223e3dd50d2061ce14486a0d679225c236ededc87c14315af07a01f
+revision_id: rev_85d9a82fd3e20f8ccffdcfae7c71dfef78c596fe2d9a5c0380908f0d7f54aa5e
+source_published_at: 2026-08-07T17:17:18Z
+first_seen_at: 2026-08-10T21:02:06.430465Z
+timestamp_confidence: publisher
+lineage_relation: original
+extractor_version: "source-contract-v1"
+discovery_method: "arxiv_api"
+source_completeness: "abstract_only"
+source_is_truncated: false
+source_support: 1.0
+source_title_chars_original: 70
+description: "当前保存的是来源摘要，不代表论文全文。请以原始来源为准。"
+external_url: http://arxiv.org/abs/2608.07430v1
+parent_observation_id: null
+last_seen_at: 2026-08-10T21:02:06.430465Z
+---
+
+## 基本信息
+
+- **来源**: arxiv
+- **原始来源**: [http://arxiv.org/abs/2608.07430v1](http://arxiv.org/abs/2608.07430v1)
+- **发布域名**: arxiv.org
+- **分类**: cs.LG
+- **作者**: Elena Dumitrescu、Gert Lek、Lydia Y. Chen 等
+
+## 来源摘要/节选
+
+> Diffusion Large Language Models (DLLMs) replace autoregressive next-token prediction with iterative parallel denoising, yet their internal safety mechanisms remain poorly understood. In this work, we investigate DLLMs both as targets and as adversaries, exposing mechanistic vulnerabilities in diffusion-based alignment.
+> We first show that safety alignment in DLLMs remains sparse and transferable across architectures. DLLMs initialized from autoregressive predecessors inherit the same mechanistic safety footprint as their source models, enabling transfer attacks via direct safety neuron mapping and pruning. Self-pruning increases attack success rates (ASR) from 2.6% to 73.8% on LLaDA and from 1.9% to 86.6% on Dream, while transfer pruning from Qwen2.5 increases ASR from 1.9% to 73.2% on Dream and from 7.0% to 86.3% on Fast-dLLM.
+> Building on these findings, we introduce SN-Guided Diffusion, a fully offline black-box jailbreak framework that steers the diffusion process away from safety-triggering regions using a weighted safety neuron loss, which achieves near-perfect prompt separability (AUROC = 1.0 for benign-vs-jailbreak discrimination). Across multiple open and proprietary targets, our method achieves a transfer ASR of up to 77.1% on Llama-3-8B-Instruct, 86.9% on Qwen2.5-7B-Instruct, and 74.3% against Gemini-2.5-Flash-Lite, while requiring only 20 generation episodes per prompt. Compared to prior jailbreaking frameworks, our method achieves competitive transferability with orders-of-magnitude lower generation cost.
+> Our codebase is available at https://github.com/ellyoana/sn-guided-diffusion.
+
+## 来源说明
+
+当前保存的是来源摘要，不代表论文全文。请以原始来源为准。
+
+> 本页只呈现已保存的来源证据，不包含基于缺失正文的扩展推断。
