@@ -1,8 +1,8 @@
 {
-  "active_count": 2408,
+  "active_count": 2411,
   "archived_count": 276,
-  "complete_count": 39,
-  "interpreted_brief_count": 48,
+  "complete_count": 40,
+  "interpreted_brief_count": 49,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19220,6 +19220,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260810-arxiv-coinrag-contextualized-information-nugget-kv-cache-0-0155edc6e3.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260810-arxiv-creativeinstruct-scalably-teaching-llms-to-balance-0-ead38ea357.md": {
       "reasons": [
         "concise_source_card"
@@ -19233,6 +19239,12 @@
       "status": "interpreted_brief"
     },
     "posts/20260810-hacker_news-auto-mode-is-now-the-default-in-claude-code-1-bf86c80d4e.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260810-hacker_news-docker-sandboxes-disposable-isolated-sandboxes-for-0-ec8d2915e9.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -19304,10 +19316,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2321,
-  "source_file_count": 2684,
-  "source_tree_sha256": "57494cc9a2c72aa372ff1cef77db8be31316d776994ca05dfb76a7f28120cff4",
-  "verified_provenance_count": 2408,
+  "source_brief_count": 2322,
+  "source_file_count": 2687,
+  "source_tree_sha256": "ec9ee3e4375f1486e5150a135cb2bc4ee623b7dc333096c253f223210219fe7f",
+  "verified_provenance_count": 2411,
   "warning_counts": {
     "source_excerpt_truncated": 764
   }
