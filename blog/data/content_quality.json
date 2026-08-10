@@ -1,5 +1,5 @@
 {
-  "active_count": 2439,
+  "active_count": 2441,
   "archived_count": 276,
   "complete_count": 44,
   "interpreted_brief_count": 54,
@@ -19343,6 +19343,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260811-arxiv-a-picture-is-worth-a-thousand-tokens-how-vision-la-3-8d11e6899a.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260811-arxiv-diffusion-llms-as-targets-and-adversaries-mechanis-3-98e96cb8f1.md": {
       "reasons": [
         "interpreted_source_card"
@@ -19426,6 +19432,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260811-hacker_news-whats-the-best-programming-language-for-coding-age-12-df3fca194c.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -19460,10 +19472,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2341,
-  "source_file_count": 2715,
-  "source_tree_sha256": "3cbe5688be7b357d3bd91b2994bef61c36d58ca26c4070f149f735dd779461f9",
-  "verified_provenance_count": 2439,
+  "source_brief_count": 2343,
+  "source_file_count": 2717,
+  "source_tree_sha256": "b9106aa4fd5d88f4209648788aa195a987f8355f151d808407ed012f4d34c1e8",
+  "verified_provenance_count": 2441,
   "warning_counts": {
     "source_excerpt_truncated": 764
   }
