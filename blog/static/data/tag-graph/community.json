@@ -2,33 +2,33 @@
   "algorithm": "deterministic-weighted-label-propagation",
   "communities": [
     {
-      "article_count": 2430,
+      "article_count": 2432,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-11a68bdad9be.json",
+      "hotspot_file": "community-hotspots/01-dc43c6dc9149.json",
       "id": "community:tag:掘金",
       "leader_id": "tag:Hacker News",
       "name": "Hacker News",
       "node_count": 56,
       "rank": 1,
-      "tag_occurrences": 5498,
-      "weighted_degree": 12852.4
+      "tag_occurrences": 5506,
+      "weighted_degree": 12883.4
     },
     {
-      "article_count": 56,
+      "article_count": 57,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/02-ef1d38c1f03d.json",
+      "hotspot_file": "community-hotspots/02-5f25d41bec6d.json",
       "id": "community:tag:Technical How-to",
       "leader_id": "tag:Prompt 工程",
       "name": "Prompt 工程",
       "node_count": 33,
       "rank": 2,
-      "tag_occurrences": 175,
-      "weighted_degree": 1041.6
+      "tag_occurrences": 176,
+      "weighted_degree": 1046.6
     },
     {
       "article_count": 7,
       "hotspot_count": 15,
-      "hotspot_file": "community-hotspots/03-dbdc52cb3fbe.json",
+      "hotspot_file": "community-hotspots/03-0c477deb32d5.json",
       "id": "community:tag:Brain and cognitive sciences",
       "leader_id": "tag:Artificial intelligence",
       "name": "Artificial intelligence",
@@ -40,7 +40,7 @@
     {
       "article_count": 64,
       "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/04-1825d718a8f4.json",
+      "hotspot_file": "community-hotspots/04-103bcd35863e.json",
       "id": "community:tag:Google Cloud",
       "leader_id": "tag:AI",
       "name": "AI",
@@ -52,7 +52,7 @@
     {
       "article_count": 2,
       "hotspot_count": 6,
-      "hotspot_file": "community-hotspots/05-8250bbab00ed.json",
+      "hotspot_file": "community-hotspots/05-6e53d43833a6.json",
       "id": "community:tag:Amazon RDS",
       "leader_id": "tag:Amazon Elastic Kubernetes Service",
       "name": "Amazon Elastic Kubernetes Service",
@@ -64,7 +64,7 @@
     {
       "article_count": 1,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/06-20210c3a3485.json",
+      "hotspot_file": "community-hotspots/06-dd5b6a818b7d.json",
       "id": "community:tag:Codex",
       "leader_id": "tag:ACP",
       "name": "ACP",
@@ -76,7 +76,7 @@
     {
       "article_count": 3,
       "hotspot_count": 4,
-      "hotspot_file": "community-hotspots/07-2b57a287ebe6.json",
+      "hotspot_file": "community-hotspots/07-1a66afa6f672.json",
       "id": "community:tag:ML Applications",
       "leader_id": "tag:Data Infrastructure",
       "name": "Data Infrastructure",
@@ -88,7 +88,7 @@
     {
       "article_count": 2,
       "hotspot_count": 4,
-      "hotspot_file": "community-hotspots/08-5e0437e544d7.json",
+      "hotspot_file": "community-hotspots/08-6e6e84f320b6.json",
       "id": "community:tag:AWS Marketplace",
       "leader_id": "tag:Amazon SageMaker AI",
       "name": "Amazon SageMaker AI",
@@ -100,7 +100,7 @@
     {
       "article_count": 1,
       "hotspot_count": 4,
-      "hotspot_file": "community-hotspots/09-57388844b3b3.json",
+      "hotspot_file": "community-hotspots/09-614945fc293a.json",
       "id": "community:tag:Computer modeling",
       "leader_id": "tag:Design",
       "name": "Design",
@@ -112,7 +112,7 @@
     {
       "article_count": 44,
       "hotspot_count": 2,
-      "hotspot_file": "community-hotspots/10-7185610af7d1.json",
+      "hotspot_file": "community-hotspots/10-fc6602b3ccc7.json",
       "id": "community:tag:来源转写",
       "leader_id": "tag:工程实践",
       "name": "工程实践",
@@ -124,7 +124,7 @@
     {
       "article_count": 1,
       "hotspot_count": 2,
-      "hotspot_file": "community-hotspots/11-1347e9002edf.json",
+      "hotspot_file": "community-hotspots/11-79bcf7529973.json",
       "id": "community:tag:Gemini Notebook",
       "leader_id": "tag:Gemini App",
       "name": "Gemini App",
@@ -145,7 +145,7 @@
       "weighted_degree": 8
     }
   ],
-  "generated_at": "2026-08-10T20:07:33Z",
+  "generated_at": "2026-08-10T22:00:12Z",
   "iterations": 7,
   "limit": 11,
   "links": [
@@ -283,7 +283,7 @@
       "strength": 1,
       "target": "community:tag:掘金",
       "type": "community",
-      "weight": 477
+      "weight": 482
     },
     {
       "id": "edge:community:community:tag:掘金->community:tag:来源转写",
