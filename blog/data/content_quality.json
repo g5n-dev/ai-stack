@@ -1,8 +1,8 @@
 {
-  "active_count": 2411,
+  "active_count": 2413,
   "archived_count": 276,
   "complete_count": 40,
-  "interpreted_brief_count": 49,
+  "interpreted_brief_count": 50,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19232,6 +19232,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260810-arxiv-interaction-creates-dynamical-ai-behavior-absent-i-0-8267fc136e.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260810-arxiv-mirrorworld-taming-video-diffusion-models-for-mirr-0-5a1c910723.md": {
       "reasons": [
         "interpreted_source_card"
@@ -19263,6 +19269,12 @@
       "status": "source_brief"
     },
     "posts/20260810-hacker_news-show-hn-a-replayable-a2a-jury-for-tracing-how-agen-11-c71cb36e32.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260810-hacker_news-show-hn-voice-driven-murder-mystery-interview-ai-s-2-976132a63d.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -19316,10 +19328,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2322,
-  "source_file_count": 2687,
-  "source_tree_sha256": "ec9ee3e4375f1486e5150a135cb2bc4ee623b7dc333096c253f223210219fe7f",
-  "verified_provenance_count": 2411,
+  "source_brief_count": 2323,
+  "source_file_count": 2689,
+  "source_tree_sha256": "846dc06826ae6e5629f1563efb27d79936d3367947398d32375d2a9826412d45",
+  "verified_provenance_count": 2413,
   "warning_counts": {
     "source_excerpt_truncated": 764
   }
