@@ -1,8 +1,8 @@
 {
-  "active_count": 2432,
+  "active_count": 2435,
   "archived_count": 276,
-  "complete_count": 43,
-  "interpreted_brief_count": 51,
+  "complete_count": 44,
+  "interpreted_brief_count": 52,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19361,6 +19361,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260811-arxiv-sabre-scalable-and-automated-benchmarking-of-vlms--2-175de40b92.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260811-blogs_podcasts-evolve-your-marketing-with-new-ai-tools-0-013cf06e85.md": {
       "reasons": [
         "concise_source_card"
@@ -19374,6 +19380,12 @@
       "status": "source_brief"
     },
     "posts/20260811-hacker_news-launch-hn-stoa-markets-yc-s26-a-marketplace-for-gp-1-2af89bb54f.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260811-hacker_news-mark-zuckerberg-attacks-closed-ai-rivals-as-meta-r-1-b4c0bfda42.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -19424,10 +19436,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2338,
-  "source_file_count": 2708,
-  "source_tree_sha256": "65ff4de48a5b099189df6f9999a82efdf58009032f394134f4daaf4f83931412",
-  "verified_provenance_count": 2432,
+  "source_brief_count": 2339,
+  "source_file_count": 2711,
+  "source_tree_sha256": "96e83fbcae86551606e2273b671ad365fc71dd0bc50a3f9bdcf6b4444308990a",
+  "verified_provenance_count": 2435,
   "warning_counts": {
     "source_excerpt_truncated": 764
   }
