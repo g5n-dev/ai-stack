@@ -1,5 +1,5 @@
 {
-  "active_count": 2423,
+  "active_count": 2426,
   "archived_count": 276,
   "complete_count": 42,
   "interpreted_brief_count": 51,
@@ -19342,6 +19342,24 @@
       "warnings": [
         "source_excerpt_truncated"
       ]
+    },
+    "posts/20260811-arxiv-psychoagent-an-affect-sensitive-cognitive-architec-2-7d4801841f.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260811-blogs_podcasts-evolve-your-marketing-with-new-ai-tools-0-013cf06e85.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260811-hacker_news-openais-new-device-will-be-hockey-puck-sized-and-c-8-c0c238bd5c.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -19376,10 +19394,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2330,
-  "source_file_count": 2699,
-  "source_tree_sha256": "ef0b2edc4cf5634dc2f077c769e42088bfff4497a92d443d9d9770ec6aa67bfe",
-  "verified_provenance_count": 2423,
+  "source_brief_count": 2333,
+  "source_file_count": 2702,
+  "source_tree_sha256": "9374c1ac7c72df356330b4d9e64b0794c96ce7bddfae39271b70cfd195327f0e",
+  "verified_provenance_count": 2426,
   "warning_counts": {
     "source_excerpt_truncated": 764
   }
