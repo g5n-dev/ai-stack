@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:掘金",
-  "generated_at": "2026-08-09T21:49:07Z",
+  "generated_at": "2026-08-10T02:36:37Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -133,20 +133,20 @@
       "weight": 86
     },
     {
+      "id": "edge:cooccurrence:tag:ArXiv->tag:来源快报",
+      "source": "tag:ArXiv",
+      "strength": 1,
+      "target": "tag:来源快报",
+      "type": "cooccurrence",
+      "weight": 85
+    },
+    {
       "id": "edge:cooccurrence:tag:Hacker News->tag:大语言模型",
       "source": "tag:Hacker News",
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
       "weight": 85
-    },
-    {
-      "id": "edge:cooccurrence:tag:ArXiv->tag:来源快报",
-      "source": "tag:ArXiv",
-      "strength": 1,
-      "target": "tag:来源快报",
-      "type": "cooccurrence",
-      "weight": 84
     },
     {
       "id": "edge:cooccurrence:tag:博客与播客->tag:生成式 AI",
@@ -331,7 +331,7 @@
       "weighted_degree": 916
     },
     {
-      "article_count": 262,
+      "article_count": 263,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -345,10 +345,10 @@
       "name": "来源快报",
       "rank": 5,
       "related_count": 89,
-      "weighted_degree": 716
+      "weighted_degree": 720
     },
     {
-      "article_count": 638,
+      "article_count": 639,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -362,7 +362,7 @@
       "name": "ArXiv",
       "rank": 6,
       "related_count": 36,
-      "weighted_degree": 662
+      "weighted_degree": 666
     },
     {
       "article_count": 162,
@@ -467,7 +467,7 @@
       "weighted_degree": 377
     },
     {
-      "article_count": 110,
+      "article_count": 111,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -481,7 +481,7 @@
       "name": "生成式 AI",
       "rank": 13,
       "related_count": 41,
-      "weighted_degree": 356
+      "weighted_degree": 360
     },
     {
       "article_count": 86,
@@ -637,7 +637,7 @@
       "weighted_degree": 84.6
     },
     {
-      "article_count": 25,
+      "article_count": 26,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -649,9 +649,9 @@
       "legacy_id": "计算机视觉",
       "level": 6,
       "name": "计算机视觉",
-      "rank": 30,
+      "rank": 29,
       "related_count": 17,
-      "weighted_degree": 76.2
+      "weighted_degree": 80.2
     },
     {
       "article_count": 24,

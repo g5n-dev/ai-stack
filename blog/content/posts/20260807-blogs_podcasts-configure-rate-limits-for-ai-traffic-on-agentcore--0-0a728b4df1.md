@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:a6e5754ce7d25564da2950db5d6bad7a5cd4e552219b00a21
 description: "本文说明在托管 AI 网关上为流量设置速率限制的方案，支持按用户、目标或令牌维度进行细粒度管控。"
 external_url: https://aws.amazon.com/blogs/machine-learning/configure-rate-limits-for-ai-traffic-on-agentcore-gateway
 parent_observation_id: null
-last_seen_at: 2026-08-09T00:00:00Z
+last_seen_at: 2026-08-10T00:00:00Z
 ---
 
 ## 基本信息
