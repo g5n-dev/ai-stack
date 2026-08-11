@@ -1,8 +1,8 @@
 {
-  "active_count": 2452,
+  "active_count": 2454,
   "archived_count": 276,
-  "complete_count": 44,
-  "interpreted_brief_count": 56,
+  "complete_count": 45,
+  "interpreted_brief_count": 57,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19373,6 +19373,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260811-arxiv-genco-a-unified-neural-solver-embedded-in-a-develo-0-74d490aee1.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260811-arxiv-kgcare-explainable-complex-conditional-question-an-0-3bacb09b1e.md": {
       "reasons": [
         "concise_source_card"
@@ -19545,9 +19551,9 @@
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2352,
-  "source_file_count": 2728,
-  "source_tree_sha256": "88d8c45f68906a5f6e6b8fab4b38f2e592f6920658c5eb172f3ad59087e2a60b",
-  "verified_provenance_count": 2452,
+  "source_file_count": 2730,
+  "source_tree_sha256": "6b946896d88263c41e1e04d6ac7852c15e0324eff74cef09cf74361ef2294113",
+  "verified_provenance_count": 2454,
   "warning_counts": {
     "source_excerpt_truncated": 766
   }
