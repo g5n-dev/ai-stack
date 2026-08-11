@@ -1,5 +1,5 @@
 {
-  "active_count": 2441,
+  "active_count": 2442,
   "archived_count": 276,
   "complete_count": 44,
   "interpreted_brief_count": 54,
@@ -19361,6 +19361,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260811-arxiv-kgcare-explainable-complex-conditional-question-an-0-3bacb09b1e.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260811-arxiv-post-grokking-collapse-at-the-representation-reado-2-638142a99b.md": {
       "reasons": [
         "concise_source_card"
@@ -19472,10 +19478,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2343,
-  "source_file_count": 2717,
-  "source_tree_sha256": "b9106aa4fd5d88f4209648788aa195a987f8355f151d808407ed012f4d34c1e8",
-  "verified_provenance_count": 2441,
+  "source_brief_count": 2344,
+  "source_file_count": 2718,
+  "source_tree_sha256": "032c555d54c50fde690b54f175815366112a63c2365fbd9551566c5280a1b864",
+  "verified_provenance_count": 2442,
   "warning_counts": {
     "source_excerpt_truncated": 764
   }

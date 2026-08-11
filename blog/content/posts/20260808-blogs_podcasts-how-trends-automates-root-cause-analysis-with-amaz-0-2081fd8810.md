@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:aad496097fabb4f0026f78c13ac4697253a1504d07dd6d669
 description: "这篇内容介绍了一个基于云端日志和AI模型的自动化故障调查方案。它通过在日志系统中捕获错误事件，由AI代理自动获取相关源代码并分析执行路径，从而将传统的耗时人工排查转变为结构化的自动分析。"
 external_url: https://aws.amazon.com/blogs/machine-learning/how-trends-automates-root-cause-analysis-with-amazon-bedrock
 parent_observation_id: null
-last_seen_at: 2026-08-10T00:00:00Z
+last_seen_at: 2026-08-11T00:00:00Z
 ---
 
 ## 基本信息
