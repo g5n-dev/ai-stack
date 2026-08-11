@@ -1,8 +1,8 @@
 {
-  "active_count": 2442,
+  "active_count": 2444,
   "archived_count": 276,
   "complete_count": 44,
-  "interpreted_brief_count": 54,
+  "interpreted_brief_count": 55,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19349,6 +19349,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260811-arxiv-beyond-naturalness-probing-automated-text-to-speec-0-b0ad995bc1.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260811-arxiv-diffusion-llms-as-targets-and-adversaries-mechanis-3-98e96cb8f1.md": {
       "reasons": [
         "interpreted_source_card"
@@ -19444,6 +19450,15 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260811-juejin-光本位联合文心快码打造面向光电芯片研发的全栈ai-agent-lightmate-0-58a8a1e9d7.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     }
   },
   "quarantined_count": 0,
@@ -19478,11 +19493,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2344,
-  "source_file_count": 2718,
-  "source_tree_sha256": "032c555d54c50fde690b54f175815366112a63c2365fbd9551566c5280a1b864",
-  "verified_provenance_count": 2442,
+  "source_brief_count": 2345,
+  "source_file_count": 2720,
+  "source_tree_sha256": "7c1420bb863754edf10fe97abbd4f60e0fab5ed5cd447189b87d2b597bc90485",
+  "verified_provenance_count": 2444,
   "warning_counts": {
-    "source_excerpt_truncated": 764
+    "source_excerpt_truncated": 765
   }
 }
