@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-11T09:16:30Z",
+  "generated_at": "2026-08-11T10:14:08Z",
   "items": [
     {
       "article_count": 744,
@@ -28,7 +28,7 @@
       "weighted_degree": 1979.2
     },
     {
-      "article_count": 628,
+      "article_count": 629,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 73,
@@ -38,7 +38,7 @@
       "legacy_id": "大语言模型",
       "name": "大语言模型",
       "rank": 2,
-      "weighted_degree": 1642.2
+      "weighted_degree": 1645.2
     },
     {
       "article_count": 494,
@@ -67,7 +67,7 @@
       "weighted_degree": 933
     },
     {
-      "article_count": 302,
+      "article_count": 304,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 94,
@@ -77,10 +77,10 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 5,
-      "weighted_degree": 835
+      "weighted_degree": 840
     },
     {
-      "article_count": 656,
+      "article_count": 657,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 37,
@@ -90,7 +90,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 730
+      "weighted_degree": 733
     },
     {
       "article_count": 162,
@@ -158,7 +158,7 @@
       "weighted_degree": 425.2
     },
     {
-      "article_count": 837,
+      "article_count": 838,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 20,
@@ -168,7 +168,7 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 12,
-      "weighted_degree": 407
+      "weighted_degree": 409
     },
     {
       "article_count": 113,
@@ -223,7 +223,7 @@
       "weighted_degree": 289.6
     },
     {
-      "article_count": 66,
+      "article_count": 67,
       "category": "article_tag",
       "community_id": "community:tag:Google Cloud",
       "degree": 34,
@@ -233,7 +233,7 @@
       "legacy_id": "AI",
       "name": "AI",
       "rank": 17,
-      "weighted_degree": 177.6
+      "weighted_degree": 179.6
     },
     {
       "article_count": 31,
@@ -431,7 +431,7 @@
       "weighted_degree": 78
     },
     {
-      "article_count": 22,
+      "article_count": 23,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 7,
@@ -441,7 +441,7 @@
       "legacy_id": "cs.CL",
       "name": "cs.CL",
       "rank": 33,
-      "weighted_degree": 74
+      "weighted_degree": 77
     },
     {
       "article_count": 13,
@@ -1016,7 +1016,7 @@
       "weighted_degree": 8.6
     },
     {
-      "article_count": 628,
+      "article_count": 629,
       "category": "nlp",
       "community_id": null,
       "degree": 8,
@@ -1094,7 +1094,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 819,
+      "article_count": 820,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -2095,7 +2095,7 @@
       "weighted_degree": 2.8
     },
     {
-      "article_count": 628,
+      "article_count": 629,
       "category": "ai",
       "community_id": null,
       "degree": 3,

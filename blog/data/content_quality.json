@@ -1,5 +1,5 @@
 {
-  "active_count": 2450,
+  "active_count": 2452,
   "archived_count": 276,
   "complete_count": 44,
   "interpreted_brief_count": 56,
@@ -19367,6 +19367,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260811-arxiv-from-values-to-benchmarks-evaluating-large-languag-0-8b89f3662a.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260811-arxiv-kgcare-explainable-complex-conditional-question-an-0-3bacb09b1e.md": {
       "reasons": [
         "concise_source_card"
@@ -19475,6 +19481,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260811-hacker_news-the-water-footprint-of-ai-16-9a0394c409.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260811-hacker_news-whats-the-best-programming-language-for-coding-age-12-df3fca194c.md": {
       "reasons": [
         "concise_source_card"
@@ -19532,10 +19544,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2350,
-  "source_file_count": 2726,
-  "source_tree_sha256": "0c07b6011a7b40731c27cb91fd4c2a870f1a1f593656f16036f9f9a2cb035920",
-  "verified_provenance_count": 2450,
+  "source_brief_count": 2352,
+  "source_file_count": 2728,
+  "source_tree_sha256": "88d8c45f68906a5f6e6b8fab4b38f2e592f6920658c5eb172f3ad59087e2a60b",
+  "verified_provenance_count": 2452,
   "warning_counts": {
     "source_excerpt_truncated": 766
   }
