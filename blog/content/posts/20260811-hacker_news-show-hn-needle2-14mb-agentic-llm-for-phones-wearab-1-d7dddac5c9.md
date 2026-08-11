@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:f473f3c812d14401a8f98ddbdd7b314e28df397b3399911a
 source_payload_sha256: "sha256:12652e74361868350a7bc16174712514920aad7444955c6b7a9f72f67d5af139"
 observation_id: obs_d7dddac5c9c6043e7c069229478b43302339e3f52166dba9a681e74708c0c1d2
 event_id: evt_db5ba6868b52ac529fd8e6ae23598a1bffa7ea4430d09267faf0259f6f11506f
-revision_id: rev_f66820de6c57adee2fd2e7d6ef2630d56dfd3fd825b79a361c3d4a293dcee497
+revision_id: rev_05080a1093193bb4408f8806f51c22545cbce2d0fdff482277f016d59dc26b5c
 source_published_at: 2026-08-10T17:22:07Z
 first_seen_at: 2026-08-10T22:09:14Z
 timestamp_confidence: platform
@@ -27,7 +27,7 @@ source_title_chars_original: 79
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://cactuscompute.com/needle
 parent_observation_id: null
-last_seen_at: 2026-08-10T21:57:56.455942Z
+last_seen_at: 2026-08-11T00:00:00Z
 ---
 
 ## 基本信息

@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:6d95ae37a60358130ea8606b24a398ae5edc0d5946149ebc
 source_payload_sha256: "sha256:f655e87ede78aa6c3d2100afa18d304ce1c552d3583308166a72ca7af0a1abb8"
 observation_id: obs_2af89bb54fec5396270291ae5cd3050f3de6a76fdd4765a5f874c77947010cc5
 event_id: evt_55b78966ecabe032869d5d9585eec242821aa852bf622fb262a4ec99944f17cd
-revision_id: rev_09b3cd5f01949ed4ecb34bc7819b5519c75ac255bb742df0ccac5b11f0623739
+revision_id: rev_80b40d96cc135b40745fc428e0a92e2a5eadefe399a9526a69b962d400fec1c0
 source_published_at: 2026-08-10T16:35:27Z
 first_seen_at: 2026-08-10T19:29:09Z
 timestamp_confidence: platform
@@ -27,7 +27,7 @@ source_title_chars_original: 72
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://www.stoaexchange.com
 parent_observation_id: null
-last_seen_at: 2026-08-10T19:16:29.465695Z
+last_seen_at: 2026-08-11T00:00:00Z
 ---
 
 ## 基本信息

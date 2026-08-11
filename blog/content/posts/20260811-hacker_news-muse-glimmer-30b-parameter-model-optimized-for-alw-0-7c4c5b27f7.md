@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:0e2d25c5ac20af2d60d4e94c5b9f0ca9b154984deda16b9e
 source_payload_sha256: "sha256:a360897d907d43c7ce095fbeb2a8abf2a656b5858525cd6fc9246d8a46411636"
 observation_id: obs_7c4c5b27f76a03627b7f0a4db4744223f304f829fbbe49c569f14938228ab144
 event_id: evt_2dace629a0d8321e5e195374b86fd6e20ab8026918d289c58f15700f3a59bd77
-revision_id: rev_2bfdee30cbde700c5d5e91c5aa74e37308888edd44a18e27e9bda11b5f41697f
+revision_id: rev_904dbff40e7a024a8be0f9b82f9605c0303d1ec70d38e3747f47208c1f0e204f
 source_published_at: 2026-08-10T10:10:02Z
 first_seen_at: 2026-08-10T18:16:39Z
 timestamp_confidence: platform
@@ -27,7 +27,7 @@ source_title_chars_original: 79
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model
 parent_observation_id: null
-last_seen_at: 2026-08-10T18:03:21.174885Z
+last_seen_at: 2026-08-11T00:00:00Z
 ---
 
 ## 基本信息

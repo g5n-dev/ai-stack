@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:b708940a36499f8f7c63a970598fedf95109d613891886b2
 source_payload_sha256: "sha256:a0c4acca9504237f4722a4843b9375eb57dd394ae46c3e5b189a03aba1687bba"
 observation_id: obs_b4c0bfda42fcfc7c702f661a329246fde7642cd9d6c5e4e8ac4d4abffbdf9ed9
 event_id: evt_e9d8fa070375d990a5b16367f071536dd3812f3e31e314eaff2dacd778015a3f
-revision_id: rev_0f714281b693d56e3e5ae1de08b3bea3869980420fdc7fbd0ac0b525ba5c206b
+revision_id: rev_55bc5697078cdf75c79b2b9c989d857b08028fff636e6ff00ad47b0bbf9e3825
 source_published_at: 2026-08-10T14:06:22Z
 first_seen_at: 2026-08-10T20:16:19Z
 timestamp_confidence: platform
@@ -27,7 +27,7 @@ source_title_chars_original: 73
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://www.ft.com/content/4e3957f8-ea7c-4c46-a3de-cdce8e526878
 parent_observation_id: null
-last_seen_at: 2026-08-10T20:03:43.843666Z
+last_seen_at: 2026-08-11T00:00:00Z
 ---
 
 ## 基本信息
