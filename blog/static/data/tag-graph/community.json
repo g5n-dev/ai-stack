@@ -2,21 +2,21 @@
   "algorithm": "deterministic-weighted-label-propagation",
   "communities": [
     {
-      "article_count": 2444,
+      "article_count": 2445,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-38ea3a6e00fc.json",
+      "hotspot_file": "community-hotspots/01-f96cc2aef0e8.json",
       "id": "community:tag:掘金",
       "leader_id": "tag:Hacker News",
       "name": "Hacker News",
       "node_count": 56,
       "rank": 1,
-      "tag_occurrences": 5547,
-      "weighted_degree": 13008.4
+      "tag_occurrences": 5550,
+      "weighted_degree": 13014.4
     },
     {
       "article_count": 60,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/02-5f9ec6082bb2.json",
+      "hotspot_file": "community-hotspots/02-d217cda224c3.json",
       "id": "community:tag:Technical How-to",
       "leader_id": "tag:Prompt 工程",
       "name": "Prompt 工程",
@@ -28,7 +28,7 @@
     {
       "article_count": 7,
       "hotspot_count": 15,
-      "hotspot_file": "community-hotspots/03-3955328af215.json",
+      "hotspot_file": "community-hotspots/03-1351278a59c8.json",
       "id": "community:tag:Brain and cognitive sciences",
       "leader_id": "tag:Artificial intelligence",
       "name": "Artificial intelligence",
@@ -40,7 +40,7 @@
     {
       "article_count": 66,
       "hotspot_count": 13,
-      "hotspot_file": "community-hotspots/04-953503fff732.json",
+      "hotspot_file": "community-hotspots/04-94d498d50d5d.json",
       "id": "community:tag:Google Cloud",
       "leader_id": "tag:AI",
       "name": "AI",
@@ -52,7 +52,7 @@
     {
       "article_count": 2,
       "hotspot_count": 6,
-      "hotspot_file": "community-hotspots/05-3dde97c7a4e4.json",
+      "hotspot_file": "community-hotspots/05-fcc4a4f6dc82.json",
       "id": "community:tag:Amazon RDS",
       "leader_id": "tag:Amazon Elastic Kubernetes Service",
       "name": "Amazon Elastic Kubernetes Service",
@@ -64,7 +64,7 @@
     {
       "article_count": 1,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/06-2db61ead1493.json",
+      "hotspot_file": "community-hotspots/06-bac03a8466e3.json",
       "id": "community:tag:Codex",
       "leader_id": "tag:ACP",
       "name": "ACP",
@@ -76,7 +76,7 @@
     {
       "article_count": 3,
       "hotspot_count": 4,
-      "hotspot_file": "community-hotspots/07-a3aba2cd8a07.json",
+      "hotspot_file": "community-hotspots/07-0b01422d8884.json",
       "id": "community:tag:ML Applications",
       "leader_id": "tag:Data Infrastructure",
       "name": "Data Infrastructure",
@@ -88,7 +88,7 @@
     {
       "article_count": 2,
       "hotspot_count": 4,
-      "hotspot_file": "community-hotspots/08-129f15fb9272.json",
+      "hotspot_file": "community-hotspots/08-5af4d119ee5b.json",
       "id": "community:tag:AWS Marketplace",
       "leader_id": "tag:Amazon SageMaker AI",
       "name": "Amazon SageMaker AI",
@@ -100,7 +100,7 @@
     {
       "article_count": 1,
       "hotspot_count": 4,
-      "hotspot_file": "community-hotspots/09-e2277a5e43e5.json",
+      "hotspot_file": "community-hotspots/09-7a73467aa1a9.json",
       "id": "community:tag:Computer modeling",
       "leader_id": "tag:Design",
       "name": "Design",
@@ -112,7 +112,7 @@
     {
       "article_count": 44,
       "hotspot_count": 2,
-      "hotspot_file": "community-hotspots/10-12e88f1d88a3.json",
+      "hotspot_file": "community-hotspots/10-6cd7397622ad.json",
       "id": "community:tag:来源转写",
       "leader_id": "tag:工程实践",
       "name": "工程实践",
@@ -124,7 +124,7 @@
     {
       "article_count": 1,
       "hotspot_count": 2,
-      "hotspot_file": "community-hotspots/11-43e78aca0552.json",
+      "hotspot_file": "community-hotspots/11-aaf6b77a96df.json",
       "id": "community:tag:Gemini Notebook",
       "leader_id": "tag:Gemini App",
       "name": "Gemini App",
@@ -145,7 +145,7 @@
       "weighted_degree": 8
     }
   ],
-  "generated_at": "2026-08-11T07:39:40Z",
+  "generated_at": "2026-08-11T09:16:30Z",
   "iterations": 7,
   "limit": 11,
   "links": [

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-11T07:39:40Z",
+  "generated_at": "2026-08-11T09:16:30Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -5133,7 +5133,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 89
+      "weight": 90
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:数据库",
@@ -5157,7 +5157,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 83
+      "weight": 84
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:深度学习",
@@ -7549,7 +7549,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 90
+      "weight": 91
     },
     {
       "id": "edge:cooccurrence:tag:大语言模型->tag:深度学习",
@@ -9421,7 +9421,7 @@
       "weighted_degree": 11
     },
     {
-      "article_count": 836,
+      "article_count": 837,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -9435,7 +9435,7 @@
       "name": "Hacker News",
       "rank": 12,
       "related_count": 20,
-      "weighted_degree": 405
+      "weighted_degree": 407
     },
     {
       "article_count": 1,
@@ -10169,7 +10169,7 @@
       "weighted_degree": 507.6
     },
     {
-      "article_count": 627,
+      "article_count": 628,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -10183,7 +10183,7 @@
       "name": "大语言模型",
       "rank": 2,
       "related_count": 71,
-      "weighted_degree": 1640.2
+      "weighted_degree": 1642.2
     },
     {
       "article_count": 44,
@@ -10254,7 +10254,7 @@
       "weighted_degree": 316
     },
     {
-      "article_count": 301,
+      "article_count": 302,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -10268,7 +10268,7 @@
       "name": "来源快报",
       "rank": 5,
       "related_count": 94,
-      "weighted_degree": 833
+      "weighted_degree": 835
     },
     {
       "article_count": 43,
