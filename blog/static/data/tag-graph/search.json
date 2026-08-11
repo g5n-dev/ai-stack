@@ -12,10 +12,10 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-11T11:08:50Z",
+  "generated_at": "2026-08-11T11:59:32Z",
   "items": [
     {
-      "article_count": 744,
+      "article_count": 745,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 64,
@@ -25,7 +25,7 @@
       "legacy_id": "AI Agent",
       "name": "AI Agent",
       "rank": 1,
-      "weighted_degree": 1979.2
+      "weighted_degree": 1982.2
     },
     {
       "article_count": 629,
@@ -67,7 +67,7 @@
       "weighted_degree": 933
     },
     {
-      "article_count": 305,
+      "article_count": 306,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 94,
@@ -77,10 +77,10 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 5,
-      "weighted_degree": 843
+      "weighted_degree": 846
     },
     {
-      "article_count": 658,
+      "article_count": 659,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 37,
@@ -90,7 +90,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 736
+      "weighted_degree": 739
     },
     {
       "article_count": 162,
@@ -304,27 +304,27 @@
       "article_count": 34,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
-      "degree": 24,
-      "description": "文章标签: 深度学习",
-      "id": "tag:深度学习",
-      "layer": "tag",
-      "legacy_id": "深度学习",
-      "name": "深度学习",
-      "rank": 23,
-      "weighted_degree": 106
-    },
-    {
-      "article_count": 33,
-      "category": "article_tag",
-      "community_id": "community:tag:掘金",
       "degree": 10,
       "description": "文章标签: cs.AI",
       "id": "tag:cs.AI",
       "layer": "tag",
       "legacy_id": "cs.AI",
       "name": "cs.AI",
+      "rank": 23,
+      "weighted_degree": 108
+    },
+    {
+      "article_count": 34,
+      "category": "article_tag",
+      "community_id": "community:tag:掘金",
+      "degree": 24,
+      "description": "文章标签: 深度学习",
+      "id": "tag:深度学习",
+      "layer": "tag",
+      "legacy_id": "深度学习",
+      "name": "深度学习",
       "rank": 24,
-      "weighted_degree": 105
+      "weighted_degree": 106
     },
     {
       "article_count": 15,
@@ -1094,7 +1094,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 821,
+      "article_count": 822,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -1666,7 +1666,7 @@
       "weighted_degree": 5
     },
     {
-      "article_count": 744,
+      "article_count": 745,
       "category": "ai",
       "community_id": null,
       "degree": 5,

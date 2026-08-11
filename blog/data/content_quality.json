@@ -1,5 +1,5 @@
 {
-  "active_count": 2454,
+  "active_count": 2455,
   "archived_count": 276,
   "complete_count": 45,
   "interpreted_brief_count": 57,
@@ -19361,6 +19361,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260811-arxiv-dsle-a-learning-environment-for-dark-souls-boss-en-0-3a5d2e47a2.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260811-arxiv-fisher-r1-training-llm-agents-for-reliable-hypothe-2-0a10d5dde3.md": {
       "reasons": [
         "concise_source_card"
@@ -19550,10 +19556,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2352,
-  "source_file_count": 2730,
-  "source_tree_sha256": "6b946896d88263c41e1e04d6ac7852c15e0324eff74cef09cf74361ef2294113",
-  "verified_provenance_count": 2454,
+  "source_brief_count": 2353,
+  "source_file_count": 2731,
+  "source_tree_sha256": "8114aa3033eff1bdba998cc429667f37ca7ad6cd000e5117af32b4e0a885d178",
+  "verified_provenance_count": 2455,
   "warning_counts": {
     "source_excerpt_truncated": 766
   }

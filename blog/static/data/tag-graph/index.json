@@ -23,11 +23,11 @@
       "focus-shards/000-363fb6a12669.json",
       "focus-shards/001-eef3c54f5b72.json",
       "focus-shards/002-1f6580b97e6b.json",
-      "focus-shards/003-b9af60433abb.json",
+      "focus-shards/003-46596d7eecc3.json",
       "focus-shards/004-08a9b1380f4a.json",
       "focus-shards/005-78d92140d3cd.json",
       "focus-shards/006-f41333001807.json",
-      "focus-shards/007-ad0558c74830.json",
+      "focus-shards/007-fa935483fe9b.json",
       "focus-shards/008-716f3e4953f4.json",
       "focus-shards/009-8192c91e5b3e.json",
       "focus-shards/010-82102f585f91.json",
@@ -75,7 +75,7 @@
       "focus-shards/052-0333a902a44e.json",
       "focus-shards/053-956052472db0.json",
       "focus-shards/054-b57c28532b70.json",
-      "focus-shards/055-1ef380991bf7.json",
+      "focus-shards/055-1a04b6d9b305.json",
       "focus-shards/056-24c3cf7ce469.json",
       "focus-shards/057-6fb23ad7ec16.json",
       "focus-shards/058-5b5f9ec28a7b.json",
@@ -104,7 +104,7 @@
       "focus-shards/081-9567482f5d71.json",
       "focus-shards/082-09b72153e3db.json",
       "focus-shards/083-8be09ecda047.json",
-      "focus-shards/084-177025384ae9.json",
+      "focus-shards/084-ef73ffa0d5e0.json",
       "focus-shards/085-bbc865246422.json",
       "focus-shards/086-a75594d75494.json",
       "focus-shards/087-cf30e9190d1e.json",
@@ -153,7 +153,7 @@
     "tag": "tag.json",
     "tagHot": "tag.hot.json"
   },
-  "generated_at": "2026-08-11T11:08:50Z",
+  "generated_at": "2026-08-11T11:59:32Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -209,7 +209,7 @@
       "archived_article_files_skipped": 276,
       "archived_article_groups_skipped": 276,
       "avg_concepts_per_article": 0,
-      "avg_tags_per_article": 2.43520782396088,
+      "avg_tags_per_article": 2.435845213849287,
       "canonical_duplicate_files_skipped": 0,
       "incomplete_article_files_skipped": 0,
       "incomplete_article_groups_skipped": 0,
@@ -230,7 +230,7 @@
         [
           "AI Agent",
           {
-            "article_count": 744,
+            "article_count": 745,
             "category": "article_tag",
             "description": "文章标签: AI Agent",
             "id": "AI Agent",
@@ -242,7 +242,7 @@
         [
           "ArXiv",
           {
-            "article_count": 658,
+            "article_count": 659,
             "category": "article_tag",
             "description": "文章标签: ArXiv",
             "id": "ArXiv",
@@ -278,13 +278,13 @@
       ],
       "synthetic_article_files_skipped": 0,
       "synthetic_article_groups_skipped": 0,
-      "total_articles": 2454,
+      "total_articles": 2455,
       "total_concept_links": 0,
       "total_concepts": 0,
       "total_tag_links": 944,
       "total_tags": 146
     },
-    "total_articles": 2454,
+    "total_articles": 2455,
     "total_communities": 12,
     "total_links": 1050,
     "total_nodes": 215
