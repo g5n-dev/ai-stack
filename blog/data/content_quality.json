@@ -1,8 +1,8 @@
 {
-  "active_count": 2455,
+  "active_count": 2458,
   "archived_count": 276,
   "complete_count": 45,
-  "interpreted_brief_count": 57,
+  "interpreted_brief_count": 58,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19355,6 +19355,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260811-arxiv-decoding-level-taboo-a-diagnostic-stress-test-for--0-b6ecd37137.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260811-arxiv-diffusion-llms-as-targets-and-adversaries-mechanis-3-98e96cb8f1.md": {
       "reasons": [
         "interpreted_source_card"
@@ -19457,6 +19463,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260811-hacker_news-how-to-organize-claude-code-for-product-work-6-df96a9b4a0.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260811-hacker_news-humanising-llm-outputs-is-dumb-10-518ffd2b0c.md": {
       "reasons": [
         "concise_source_card"
@@ -19504,6 +19516,15 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260811-juejin-从即兴创作到规格先行华为云码道codearts代码智能体持续深耕企业级规范驱动开发能力-1-605f67f228.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     },
     "posts/20260811-juejin-光本位联合文心快码打造面向光电芯片研发的全栈ai-agent-lightmate-0-58a8a1e9d7.md": {
       "reasons": [
@@ -19556,11 +19577,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2353,
-  "source_file_count": 2731,
-  "source_tree_sha256": "8114aa3033eff1bdba998cc429667f37ca7ad6cd000e5117af32b4e0a885d178",
-  "verified_provenance_count": 2455,
+  "source_brief_count": 2355,
+  "source_file_count": 2734,
+  "source_tree_sha256": "0414ade5048741deb8b5043fd686b7ca76ce63814088f5f73574ad1dd4454187",
+  "verified_provenance_count": 2458,
   "warning_counts": {
-    "source_excerpt_truncated": 766
+    "source_excerpt_truncated": 767
   }
 }
