@@ -1,8 +1,8 @@
 {
-  "active_count": 2473,
+  "active_count": 2475,
   "archived_count": 276,
   "complete_count": 45,
-  "interpreted_brief_count": 64,
+  "interpreted_brief_count": 66,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19556,6 +19556,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260812-arxiv-archagent-v2-a-case-study-with-the-data-prefetchin-3-9f17098270.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260812-arxiv-energy-structured-latent-world-models-with-neural--3-78bbdc6c6f.md": {
       "reasons": [
         "concise_source_card"
@@ -19585,6 +19591,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260812-blogs_podcasts-deploying-anthropic-claude-apps-gateway-for-aws-fo-0-c0e112286f.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
     },
     "posts/20260812-blogs_podcasts-first-orion-accelerates-qa-automation-using-amazon-0-5c3907356d.md": {
       "reasons": [
@@ -19671,9 +19683,9 @@
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2364,
-  "source_file_count": 2749,
-  "source_tree_sha256": "9db2652a6db129650025df4b0e5618d546b913009afe8d870caf4ff5279915ba",
-  "verified_provenance_count": 2473,
+  "source_file_count": 2751,
+  "source_tree_sha256": "0e7094060da6307ca5cd583b196684b63e2b65b5723be0329d837bc72ad25105",
+  "verified_provenance_count": 2475,
   "warning_counts": {
     "source_excerpt_truncated": 768
   }
