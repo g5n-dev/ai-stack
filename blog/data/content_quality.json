@@ -1,8 +1,8 @@
 {
-  "active_count": 2476,
+  "active_count": 2479,
   "archived_count": 276,
   "complete_count": 45,
-  "interpreted_brief_count": 67,
+  "interpreted_brief_count": 68,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19574,6 +19574,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260812-arxiv-sci-vbench-evaluating-knowledge-and-reasoning-inte-3-890f1cf12d.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260812-arxiv-she-trajectory-driven-safety-harness-evolution-for-3-b3f38990d9.md": {
       "reasons": [
         "interpreted_source_card"
@@ -19622,6 +19628,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260812-blogs_podcasts-the-bioai-phase-shift-matthew-mcpartlon-neil-patil-0-05a48f17b2.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260812-hacker_news-openais-head-of-ethics-leaves-less-than-a-year-aft-10-3641f6219d.md": {
       "reasons": [
         "concise_source_card"
@@ -19629,6 +19641,12 @@
       "status": "source_brief"
     },
     "posts/20260812-hacker_news-stealing-reasoning-traces-from-proprietary-llm-api-2-1a0a5201bc.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260812-hacker_news-suzanne-ai-tool-for-designing-and-manufacturing-ph-6-20366f1d27.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -19688,10 +19706,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2364,
-  "source_file_count": 2752,
-  "source_tree_sha256": "f44a418f1abd6d25bac1df8c6782e6377d9c5c460346bcc3ee9ef26f9ecf574c",
-  "verified_provenance_count": 2476,
+  "source_brief_count": 2366,
+  "source_file_count": 2755,
+  "source_tree_sha256": "bfc70b3e874c9a0d07547975de73df8e34af8d682b1609fc837124c849def43d",
+  "verified_provenance_count": 2479,
   "warning_counts": {
     "source_excerpt_truncated": 768
   }
