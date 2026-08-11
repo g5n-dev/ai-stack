@@ -1,8 +1,8 @@
 {
-  "active_count": 2444,
+  "active_count": 2447,
   "archived_count": 276,
   "complete_count": 44,
-  "interpreted_brief_count": 55,
+  "interpreted_brief_count": 56,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19397,6 +19397,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260811-blogs_podcasts-ainews-muse-glimmer-and-spark-open-weights-return--0-e637baf274.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260811-blogs_podcasts-evolve-your-marketing-with-new-ai-tools-0-013cf06e85.md": {
       "reasons": [
         "concise_source_card"
@@ -19404,6 +19410,12 @@
       "status": "source_brief"
     },
     "posts/20260811-blogs_podcasts-what-building-an-ai-native-finance-function-taught-0-5367cc95a8.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260811-hacker_news-deepseek-reverse-engineering-an-ai-assistant-by-in-6-e12596e99d.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -19459,6 +19471,15 @@
       "warnings": [
         "source_excerpt_truncated"
       ]
+    },
+    "posts/20260811-juejin-让不同大模型共享一个-agentpi-如何统一-provider-与-context-handoff-0-746ebde5d4.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     }
   },
   "quarantined_count": 0,
@@ -19493,11 +19514,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2345,
-  "source_file_count": 2720,
-  "source_tree_sha256": "7c1420bb863754edf10fe97abbd4f60e0fab5ed5cd447189b87d2b597bc90485",
-  "verified_provenance_count": 2444,
+  "source_brief_count": 2347,
+  "source_file_count": 2723,
+  "source_tree_sha256": "03427c585d3ce0338120f24ff7c80655bf6fd6e35d875ed493ebeed4610e6770",
+  "verified_provenance_count": 2447,
   "warning_counts": {
-    "source_excerpt_truncated": 765
+    "source_excerpt_truncated": 766
   }
 }
