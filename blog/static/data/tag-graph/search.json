@@ -12,10 +12,10 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-11T21:07:10Z",
+  "generated_at": "2026-08-11T22:05:52Z",
   "items": [
     {
-      "article_count": 752,
+      "article_count": 753,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 68,
@@ -25,10 +25,10 @@
       "legacy_id": "AI Agent",
       "name": "AI Agent",
       "rank": 1,
-      "weighted_degree": 2018.2
+      "weighted_degree": 2024.2
     },
     {
-      "article_count": 638,
+      "article_count": 639,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 76,
@@ -38,7 +38,7 @@
       "legacy_id": "大语言模型",
       "name": "大语言模型",
       "rank": 2,
-      "weighted_degree": 1684.2
+      "weighted_degree": 1690.2
     },
     {
       "article_count": 497,
@@ -54,7 +54,7 @@
       "weighted_degree": 1281
     },
     {
-      "article_count": 408,
+      "article_count": 409,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 91,
@@ -64,10 +64,10 @@
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 4,
-      "weighted_degree": 957
+      "weighted_degree": 963
     },
     {
-      "article_count": 324,
+      "article_count": 325,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 97,
@@ -77,7 +77,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 5,
-      "weighted_degree": 903
+      "weighted_degree": 909
     },
     {
       "article_count": 666,
@@ -275,6 +275,19 @@
       "weighted_degree": 140.6
     },
     {
+      "article_count": 23,
+      "category": "article_tag",
+      "community_id": "community:tag:Amazon EventBridge",
+      "degree": 33,
+      "description": "文章标签: Amazon Bedrock",
+      "id": "tag:Amazon Bedrock",
+      "layer": "tag",
+      "legacy_id": "Amazon Bedrock",
+      "name": "Amazon Bedrock",
+      "rank": 21,
+      "weighted_degree": 138
+    },
+    {
       "article_count": 37,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
@@ -284,21 +297,8 @@
       "layer": "tag",
       "legacy_id": "JavaScript",
       "name": "JavaScript",
-      "rank": 21,
-      "weighted_degree": 136.6
-    },
-    {
-      "article_count": 22,
-      "category": "article_tag",
-      "community_id": "community:tag:Amazon EventBridge",
-      "degree": 32,
-      "description": "文章标签: Amazon Bedrock",
-      "id": "tag:Amazon Bedrock",
-      "layer": "tag",
-      "legacy_id": "Amazon Bedrock",
-      "name": "Amazon Bedrock",
       "rank": 22,
-      "weighted_degree": 132
+      "weighted_degree": 136.6
     },
     {
       "article_count": 36,
@@ -431,6 +431,19 @@
       "weighted_degree": 84
     },
     {
+      "article_count": 14,
+      "category": "article_tag",
+      "community_id": "community:tag:Amazon EventBridge",
+      "degree": 21,
+      "description": "文章标签: Announcements",
+      "id": "tag:Announcements",
+      "layer": "tag",
+      "legacy_id": "Announcements",
+      "name": "Announcements",
+      "rank": 33,
+      "weighted_degree": 78
+    },
+    {
       "article_count": 12,
       "category": "article_tag",
       "community_id": "community:tag:Amazon EventBridge",
@@ -440,7 +453,7 @@
       "layer": "tag",
       "legacy_id": "Technical How-to",
       "name": "Technical How-to",
-      "rank": 33,
+      "rank": 34,
       "weighted_degree": 78
     },
     {
@@ -453,21 +466,8 @@
       "layer": "tag",
       "legacy_id": "Customer Solutions",
       "name": "Customer Solutions",
-      "rank": 34,
-      "weighted_degree": 75
-    },
-    {
-      "article_count": 13,
-      "category": "article_tag",
-      "community_id": "community:tag:Amazon EventBridge",
-      "degree": 21,
-      "description": "文章标签: Announcements",
-      "id": "tag:Announcements",
-      "layer": "tag",
-      "legacy_id": "Announcements",
-      "name": "Announcements",
       "rank": 35,
-      "weighted_degree": 72
+      "weighted_degree": 75
     },
     {
       "article_count": 12,
@@ -561,6 +561,19 @@
       "weighted_degree": 28.6
     },
     {
+      "article_count": 5,
+      "category": "article_tag",
+      "community_id": "community:tag:Amazon EventBridge",
+      "degree": 12,
+      "description": "文章标签: Foundational (100)",
+      "id": "tag:Foundational (100)",
+      "layer": "tag",
+      "legacy_id": "Foundational (100)",
+      "name": "Foundational (100)",
+      "rank": 43,
+      "weighted_degree": 28
+    },
+    {
       "article_count": 4,
       "category": "article_tag",
       "community_id": "community:tag:Amazon EventBridge",
@@ -570,7 +583,7 @@
       "layer": "tag",
       "legacy_id": "AWS Lambda",
       "name": "AWS Lambda",
-      "rank": 43,
+      "rank": 44,
       "weighted_degree": 28
     },
     {
@@ -583,7 +596,7 @@
       "layer": "tag",
       "legacy_id": "Artificial intelligence",
       "name": "Artificial intelligence",
-      "rank": 44,
+      "rank": 45,
       "weighted_degree": 28
     },
     {
@@ -596,7 +609,7 @@
       "layer": "tag",
       "legacy_id": "Machine learning",
       "name": "Machine learning",
-      "rank": 45,
+      "rank": 46,
       "weighted_degree": 28
     },
     {
@@ -609,7 +622,7 @@
       "layer": "tag",
       "legacy_id": "Kotlin",
       "name": "Kotlin",
-      "rank": 46,
+      "rank": 47,
       "weighted_degree": 27
     },
     {
@@ -622,7 +635,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Quick Suite",
       "name": "Amazon Quick Suite",
-      "rank": 47,
+      "rank": 48,
       "weighted_degree": 25
     },
     {
@@ -635,7 +648,7 @@
       "layer": "tag",
       "legacy_id": "Research",
       "name": "Research",
-      "rank": 48,
+      "rank": 49,
       "weighted_degree": 24
     },
     {
@@ -648,21 +661,8 @@
       "layer": "tag",
       "legacy_id": "Artificial Intelligence",
       "name": "Artificial Intelligence",
-      "rank": 49,
-      "weighted_degree": 24
-    },
-    {
-      "article_count": 4,
-      "category": "article_tag",
-      "community_id": "community:tag:Amazon EventBridge",
-      "degree": 11,
-      "description": "文章标签: Foundational (100)",
-      "id": "tag:Foundational (100)",
-      "layer": "tag",
-      "legacy_id": "Foundational (100)",
-      "name": "Foundational (100)",
       "rank": 50,
-      "weighted_degree": 22
+      "weighted_degree": 24
     },
     {
       "article_count": 4,
@@ -1029,7 +1029,7 @@
       "weighted_degree": 8.6
     },
     {
-      "article_count": 638,
+      "article_count": 639,
       "category": "nlp",
       "community_id": null,
       "degree": 8,
@@ -1107,7 +1107,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 835,
+      "article_count": 836,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -1731,7 +1731,7 @@
       "weighted_degree": 5
     },
     {
-      "article_count": 752,
+      "article_count": 753,
       "category": "ai",
       "community_id": null,
       "degree": 5,
@@ -2147,7 +2147,7 @@
       "weighted_degree": 2.8
     },
     {
-      "article_count": 638,
+      "article_count": 639,
       "category": "ai",
       "community_id": null,
       "degree": 3,
