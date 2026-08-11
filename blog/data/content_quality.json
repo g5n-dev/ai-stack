@@ -1,8 +1,8 @@
 {
-  "active_count": 2460,
+  "active_count": 2464,
   "archived_count": 276,
   "complete_count": 45,
-  "interpreted_brief_count": 59,
+  "interpreted_brief_count": 60,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19555,6 +19555,33 @@
       "warnings": [
         "source_excerpt_truncated"
       ]
+    },
+    "posts/20260812-arxiv-space-creating-versus-dead-possession-an-off-ball--3-c8ce003dab.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260812-blogs_podcasts-how-pixieset-achieved-35-ai-feature-adoption-by-so-0-03907da2ff.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260812-hacker_news-stealing-reasoning-traces-from-proprietary-llm-api-2-1a0a5201bc.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260812-juejin-番外篇二不到十行代码我用reactagen搭了个会自己调工具的-agent-0-39483b5127.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     }
   },
   "quarantined_count": 0,
@@ -19589,11 +19616,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2356,
-  "source_file_count": 2736,
-  "source_tree_sha256": "c83a728df934570ed7da048d4b0d827287d2a523cef4f09f7525eaa15a1a7477",
-  "verified_provenance_count": 2460,
+  "source_brief_count": 2359,
+  "source_file_count": 2740,
+  "source_tree_sha256": "c7715996052594e99a7b46065c9558260beb233b8a44e09595ee2c3a0d071c6c",
+  "verified_provenance_count": 2464,
   "warning_counts": {
-    "source_excerpt_truncated": 767
+    "source_excerpt_truncated": 768
   }
 }
