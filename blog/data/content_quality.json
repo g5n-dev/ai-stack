@@ -1,5 +1,5 @@
 {
-  "active_count": 2447,
+  "active_count": 2449,
   "archived_count": 276,
   "complete_count": 44,
   "interpreted_brief_count": 56,
@@ -19373,6 +19373,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260811-arxiv-multimodal-model-diffing-for-feature-discovery-and-0-ff47fe395e.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260811-arxiv-post-grokking-collapse-at-the-representation-reado-2-638142a99b.md": {
       "reasons": [
         "concise_source_card"
@@ -19410,6 +19416,12 @@
       "status": "source_brief"
     },
     "posts/20260811-blogs_podcasts-what-building-an-ai-native-finance-function-taught-0-5367cc95a8.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260811-hacker_news-as-ai-eats-the-web-the-internets-collective-memory-3-8d0d80c2fa.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -19514,10 +19526,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2347,
-  "source_file_count": 2723,
-  "source_tree_sha256": "03427c585d3ce0338120f24ff7c80655bf6fd6e35d875ed493ebeed4610e6770",
-  "verified_provenance_count": 2447,
+  "source_brief_count": 2349,
+  "source_file_count": 2725,
+  "source_tree_sha256": "2bbe39b47ae17113c02f4e9c6550019c60ef4b6b6a02329757b628a0e2955ee1",
+  "verified_provenance_count": 2449,
   "warning_counts": {
     "source_excerpt_truncated": 766
   }

@@ -23,11 +23,11 @@
       "focus-shards/000-363fb6a12669.json",
       "focus-shards/001-eef3c54f5b72.json",
       "focus-shards/002-1f6580b97e6b.json",
-      "focus-shards/003-76dcbe98b672.json",
+      "focus-shards/003-6b1468b69935.json",
       "focus-shards/004-08a9b1380f4a.json",
       "focus-shards/005-78d92140d3cd.json",
       "focus-shards/006-f41333001807.json",
-      "focus-shards/007-08a41173be98.json",
+      "focus-shards/007-8465fd919242.json",
       "focus-shards/008-716f3e4953f4.json",
       "focus-shards/009-8192c91e5b3e.json",
       "focus-shards/010-82102f585f91.json",
@@ -41,7 +41,7 @@
       "focus-shards/018-b67e628acd32.json",
       "focus-shards/019-87e2fc690971.json",
       "focus-shards/020-75cab59f61b8.json",
-      "focus-shards/021-32fdf28d39db.json",
+      "focus-shards/021-38a2c800450d.json",
       "focus-shards/022-f03f00395ef3.json",
       "focus-shards/023-94fea1c15bda.json",
       "focus-shards/024-f9b15d46c361.json",
@@ -72,7 +72,7 @@
       "focus-shards/049-d4c48dcf0c45.json",
       "focus-shards/050-ca2ca6e9eb9c.json",
       "focus-shards/051-974b286e9348.json",
-      "focus-shards/052-509f2d7917fa.json",
+      "focus-shards/052-0333a902a44e.json",
       "focus-shards/053-956052472db0.json",
       "focus-shards/054-b57c28532b70.json",
       "focus-shards/055-505d473e9e8c.json",
@@ -92,7 +92,7 @@
       "focus-shards/069-eac25151e0b4.json",
       "focus-shards/070-d5c9ca6d0405.json",
       "focus-shards/071-18b1500e044a.json",
-      "focus-shards/072-3425a4a071e9.json",
+      "focus-shards/072-7aac6fb715d2.json",
       "focus-shards/073-0e421fbeb34f.json",
       "focus-shards/074-9d5103f231ff.json",
       "focus-shards/075-102c95f17b4b.json",
@@ -153,7 +153,7 @@
     "tag": "tag.json",
     "tagHot": "tag.hot.json"
   },
-  "generated_at": "2026-08-11T06:06:02Z",
+  "generated_at": "2026-08-11T07:39:40Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -209,7 +209,7 @@
       "archived_article_files_skipped": 276,
       "archived_article_groups_skipped": 276,
       "avg_concepts_per_article": 0,
-      "avg_tags_per_article": 2.4323661626481408,
+      "avg_tags_per_article": 2.4332380563495306,
       "canonical_duplicate_files_skipped": 0,
       "incomplete_article_files_skipped": 0,
       "incomplete_article_groups_skipped": 0,
@@ -218,7 +218,7 @@
         [
           "Hacker News",
           {
-            "article_count": 835,
+            "article_count": 836,
             "category": "article_tag",
             "description": "文章标签: Hacker News",
             "id": "Hacker News",
@@ -242,7 +242,7 @@
         [
           "ArXiv",
           {
-            "article_count": 655,
+            "article_count": 656,
             "category": "article_tag",
             "description": "文章标签: ArXiv",
             "id": "ArXiv",
@@ -278,13 +278,13 @@
       ],
       "synthetic_article_files_skipped": 0,
       "synthetic_article_groups_skipped": 0,
-      "total_articles": 2447,
+      "total_articles": 2449,
       "total_concept_links": 0,
       "total_concepts": 0,
       "total_tag_links": 944,
       "total_tags": 146
     },
-    "total_articles": 2447,
+    "total_articles": 2449,
     "total_communities": 12,
     "total_links": 1050,
     "total_nodes": 215
