@@ -1,8 +1,8 @@
 {
-  "active_count": 2470,
+  "active_count": 2473,
   "archived_count": 276,
   "complete_count": 45,
-  "interpreted_brief_count": 63,
+  "interpreted_brief_count": 64,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19556,6 +19556,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260812-arxiv-energy-structured-latent-world-models-with-neural--3-78bbdc6c6f.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260812-arxiv-financial-numerical-prediction-and-allocation-as-t-3-fe7cfdf303.md": {
       "reasons": [
         "interpreted_source_card"
@@ -19580,6 +19586,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260812-blogs_podcasts-first-orion-accelerates-qa-automation-using-amazon-0-5c3907356d.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260812-blogs_podcasts-how-onestruction-built-the-ishigaki-ids-foundation-0-6aa592d3dc.md": {
       "reasons": [
         "interpreted_source_card"
@@ -19587,6 +19599,12 @@
       "status": "interpreted_brief"
     },
     "posts/20260812-blogs_podcasts-how-pixieset-achieved-35-ai-feature-adoption-by-so-0-03907da2ff.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260812-hacker_news-openais-head-of-ethics-leaves-less-than-a-year-aft-10-3641f6219d.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -19652,10 +19670,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2362,
-  "source_file_count": 2746,
-  "source_tree_sha256": "a2ca102861bef3541b2534f07c3036c70ef0cc1faf02bf61f373eb1dd6861846",
-  "verified_provenance_count": 2470,
+  "source_brief_count": 2364,
+  "source_file_count": 2749,
+  "source_tree_sha256": "9db2652a6db129650025df4b0e5618d546b913009afe8d870caf4ff5279915ba",
+  "verified_provenance_count": 2473,
   "warning_counts": {
     "source_excerpt_truncated": 768
   }
