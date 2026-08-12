@@ -13,11 +13,11 @@ source_snapshot_sha256: "sha256:e3c18d93fa8a042f219e531f4e4d7f7c86bad2fa200ffb9d
 source_payload_sha256: "sha256:34914ab2e100aff83c63c18944420397df67a778f78bfe387adc9da20d53c6f1"
 observation_id: obs_1a0a5201bcbbae8e855a08881657c535c07b2f57cec258d02a57e1f0bfdcd09b
 event_id: evt_54265fbb1b44cdb88ac3e5e3f444c187c4da5ba02abfad6beeafd784ddffdf0c
-revision_id: rev_aa497357e98d923fb872b5877fea4299e1657756fea5f6738fbc5b197f652860
+revision_id: rev_b40aee954b5d4775cf367623ad615ca26885faa661e45a6b848e15c791edc2c6
 source_published_at: 2026-08-11T13:22:00Z
 first_seen_at: 2026-08-11T16:25:53Z
 timestamp_confidence: platform
-lineage_relation: same_event
+lineage_relation: original
 extractor_version: "source-contract-v1"
 discovery_method: "api_metadata"
 source_completeness: "metadata_only"
@@ -26,7 +26,7 @@ source_support: 1.0
 source_title_chars_original: 51
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://stolen-thoughts.com
-parent_observation_id: obs_a3f66794ccd26d9a54ab9cdcff437c26b51d66c14cf843c80567cf318c10e06c
+parent_observation_id: null
 last_seen_at: 2026-08-12T00:00:00Z
 ---
 

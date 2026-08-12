@@ -23,11 +23,11 @@
       "focus-shards/000-363fb6a12669.json",
       "focus-shards/001-eef3c54f5b72.json",
       "focus-shards/002-1f6580b97e6b.json",
-      "focus-shards/003-ccd219e9c7d7.json",
+      "focus-shards/003-9755e09b9c65.json",
       "focus-shards/004-08a9b1380f4a.json",
       "focus-shards/005-78d92140d3cd.json",
       "focus-shards/006-d8e17ef19e86.json",
-      "focus-shards/007-a53f65caa329.json",
+      "focus-shards/007-7e4f167650e6.json",
       "focus-shards/008-716f3e4953f4.json",
       "focus-shards/009-8192c91e5b3e.json",
       "focus-shards/010-82102f585f91.json",
@@ -41,7 +41,7 @@
       "focus-shards/018-598466f8433b.json",
       "focus-shards/019-87e2fc690971.json",
       "focus-shards/020-75cab59f61b8.json",
-      "focus-shards/021-abde8c1a1cb8.json",
+      "focus-shards/021-43deac07d414.json",
       "focus-shards/022-f03f00395ef3.json",
       "focus-shards/023-94fea1c15bda.json",
       "focus-shards/024-f9b15d46c361.json",
@@ -80,7 +80,7 @@
       "focus-shards/057-6fb23ad7ec16.json",
       "focus-shards/058-5b5f9ec28a7b.json",
       "focus-shards/059-7621eb5f1505.json",
-      "focus-shards/060-909ac5aa4a45.json",
+      "focus-shards/060-e2544879aedb.json",
       "focus-shards/061-989b436c1bbb.json",
       "focus-shards/062-4baa59bd7014.json",
       "focus-shards/063-260e120295e6.json",
@@ -92,10 +92,10 @@
       "focus-shards/069-eac25151e0b4.json",
       "focus-shards/070-d5c9ca6d0405.json",
       "focus-shards/071-18b1500e044a.json",
-      "focus-shards/072-56b9e9e5a7f1.json",
+      "focus-shards/072-b1a600fff555.json",
       "focus-shards/073-f5b4c12b1103.json",
       "focus-shards/074-9d5103f231ff.json",
-      "focus-shards/075-0bbc720247ba.json",
+      "focus-shards/075-ef72e43ed7e8.json",
       "focus-shards/076-877ca78b58b3.json",
       "focus-shards/077-14db91dafc8d.json",
       "focus-shards/078-0269085fbd08.json",
@@ -153,7 +153,7 @@
     "tag": "tag.json",
     "tagHot": "tag.hot.json"
   },
-  "generated_at": "2026-08-12T13:48:28Z",
+  "generated_at": "2026-08-12T15:15:56Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -193,7 +193,7 @@
   },
   "stats": {
     "links_by_type": {
-      "cooccurrence": 982,
+      "cooccurrence": 985,
       "relation": 71,
       "semantic": 35
     },
@@ -203,13 +203,13 @@
       "language": 8,
       "model": 6,
       "scenario": 31,
-      "tag": 150
+      "tag": 151
     },
     "tag_stats": {
       "archived_article_files_skipped": 276,
       "archived_article_groups_skipped": 276,
       "avg_concepts_per_article": 0,
-      "avg_tags_per_article": 2.4655172413793105,
+      "avg_tags_per_article": 2.4665598718462154,
       "canonical_duplicate_files_skipped": 0,
       "incomplete_article_files_skipped": 0,
       "incomplete_article_groups_skipped": 0,
@@ -218,7 +218,7 @@
         [
           "Hacker News",
           {
-            "article_count": 849,
+            "article_count": 850,
             "category": "article_tag",
             "description": "文章标签: Hacker News",
             "id": "Hacker News",
@@ -242,13 +242,13 @@
         [
           "ArXiv",
           {
-            "article_count": 672,
+            "article_count": 673,
             "category": "article_tag",
             "description": "文章标签: ArXiv",
             "id": "ArXiv",
             "layer": "tag",
             "name": "ArXiv",
-            "related_count": 37
+            "related_count": 38
           }
         ],
         [
@@ -278,16 +278,16 @@
       ],
       "synthetic_article_files_skipped": 0,
       "synthetic_article_groups_skipped": 0,
-      "total_articles": 2494,
+      "total_articles": 2497,
       "total_concept_links": 0,
       "total_concepts": 0,
-      "total_tag_links": 982,
-      "total_tags": 150
+      "total_tag_links": 985,
+      "total_tags": 151
     },
-    "total_articles": 2494,
+    "total_articles": 2497,
     "total_communities": 12,
-    "total_links": 1088,
-    "total_nodes": 219
+    "total_links": 1091,
+    "total_nodes": 220
   },
   "version": 2
 }

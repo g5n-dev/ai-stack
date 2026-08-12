@@ -1,0 +1,57 @@
+{
+  "community_id": "community:tag:AWS ParallelCluster",
+  "generated_at": "2026-08-12T15:15:56Z",
+  "hotspot_limit": 24,
+  "link_limit": 32,
+  "links": [
+    {
+      "id": "edge:cooccurrence:tag:Amazon EC2->tag:AWS ParallelCluster",
+      "source": "tag:Amazon EC2",
+      "strength": 0.5,
+      "target": "tag:AWS ParallelCluster",
+      "type": "cooccurrence",
+      "weight": 1
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:AWS ParallelCluster",
+      "degree": 7,
+      "description": "文章标签: Amazon EC2",
+      "id": "tag:Amazon EC2",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon EC2",
+      "level": 6,
+      "name": "Amazon EC2",
+      "rank": 93,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:AWS ParallelCluster",
+      "degree": 7,
+      "description": "文章标签: AWS ParallelCluster",
+      "id": "tag:AWS ParallelCluster",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "AWS ParallelCluster",
+      "level": 6,
+      "name": "AWS ParallelCluster",
+      "rank": 102,
+      "related_count": 7,
+      "weighted_degree": 7
+    }
+  ],
+  "stats": {
+    "total_links": 1,
+    "total_nodes": 2
+  },
+  "version": 2
+}
