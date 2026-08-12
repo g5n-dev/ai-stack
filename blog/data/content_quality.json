@@ -1,8 +1,8 @@
 {
-  "active_count": 2501,
+  "active_count": 2504,
   "archived_count": 276,
   "complete_count": 46,
-  "interpreted_brief_count": 76,
+  "interpreted_brief_count": 78,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19799,13 +19799,34 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260813-arxiv-multimodal-code-switching-interleaving-visual-obje-2-ed0e54d5dd.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260813-blogs_podcasts-how-oneadvanced-deployed-over-50-ai-agents-on-uk-s-0-aec50bce13.md": {
       "reasons": [
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260813-blogs_podcasts-tiered-kv-cache-for-large-llms-on-amazon-sagemaker-0-c2ed76bfcf.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20260813-hacker_news-ai-is-removing-the-middle-class-of-software-engine-5-d10ea54f06.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260813-hacker_news-hax-a-minimalist-terminal-native-coding-agent-writ-14-7fbaaa8c6b.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -19844,11 +19865,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2379,
-  "source_file_count": 2777,
-  "source_tree_sha256": "d2935085d0627f6772b5a45ed256f5e0d7d92ef13b45f1c7aed27c9f366bac4d",
-  "verified_provenance_count": 2501,
+  "source_brief_count": 2380,
+  "source_file_count": 2780,
+  "source_tree_sha256": "d43623128cd2ca7bf548b31126aafe527e2af56e470d992216c1f2f7f20c842c",
+  "verified_provenance_count": 2504,
   "warning_counts": {
-    "source_excerpt_truncated": 772
+    "source_excerpt_truncated": 773
   }
 }
