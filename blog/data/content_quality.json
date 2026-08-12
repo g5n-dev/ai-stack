@@ -1,5 +1,5 @@
 {
-  "active_count": 2505,
+  "active_count": 2507,
   "archived_count": 276,
   "complete_count": 46,
   "interpreted_brief_count": 79,
@@ -19811,6 +19811,18 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260813-arxiv-the-illusion-of-cross-lingual-safety-in-low-resour-5-6686935438.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260813-blogs_podcasts-500-khabib-nurmagomedov-dagestan-mma-ufc-islam-con-0-9ca509495f.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260813-blogs_podcasts-how-oneadvanced-deployed-over-50-ai-agents-on-uk-s-0-aec50bce13.md": {
       "reasons": [
         "interpreted_source_card"
@@ -19871,10 +19883,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2380,
-  "source_file_count": 2781,
-  "source_tree_sha256": "5246a14f359256ebe30f184ec0ff95c99e3e23e8e2d3a1a7e64ed9930bcfe057",
-  "verified_provenance_count": 2505,
+  "source_brief_count": 2382,
+  "source_file_count": 2783,
+  "source_tree_sha256": "a9f4978eb2924339caf8b008233c0fa342d2cc79cc2a4cfe2d4abe1b3616f31d",
+  "verified_provenance_count": 2507,
   "warning_counts": {
     "source_excerpt_truncated": 773
   }

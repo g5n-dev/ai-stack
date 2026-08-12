@@ -2,21 +2,21 @@
   "algorithm": "deterministic-weighted-label-propagation",
   "communities": [
     {
-      "article_count": 2500,
+      "article_count": 2502,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-1b5ad7dbfa94.json",
+      "hotspot_file": "community-hotspots/01-a2e95fcec60d.json",
       "id": "community:tag:掘金",
       "leader_id": "tag:Hacker News",
       "name": "Hacker News",
       "node_count": 63,
       "rank": 1,
-      "tag_occurrences": 5820,
-      "weighted_degree": 13924.6
+      "tag_occurrences": 5828,
+      "weighted_degree": 13948.6
     },
     {
       "article_count": 74,
       "hotspot_count": 21,
-      "hotspot_file": "community-hotspots/02-663c4df09093.json",
+      "hotspot_file": "community-hotspots/02-c93d734db54e.json",
       "id": "community:tag:Technical How-to",
       "leader_id": "tag:Prompt 工程",
       "name": "Prompt 工程",
@@ -28,7 +28,7 @@
     {
       "article_count": 7,
       "hotspot_count": 15,
-      "hotspot_file": "community-hotspots/03-d1c8ca6eb8cb.json",
+      "hotspot_file": "community-hotspots/03-4faefc3499e7.json",
       "id": "community:tag:Brain and cognitive sciences",
       "leader_id": "tag:Artificial intelligence",
       "name": "Artificial intelligence",
@@ -40,7 +40,7 @@
     {
       "article_count": 8,
       "hotspot_count": 8,
-      "hotspot_file": "community-hotspots/04-db80879cd549.json",
+      "hotspot_file": "community-hotspots/04-feb507e55e7f.json",
       "id": "community:tag:Google Cloud",
       "leader_id": "tag:Search",
       "name": "Search",
@@ -52,7 +52,7 @@
     {
       "article_count": 2,
       "hotspot_count": 6,
-      "hotspot_file": "community-hotspots/05-f6350a1be645.json",
+      "hotspot_file": "community-hotspots/05-5cfc5ae2a1f2.json",
       "id": "community:tag:Amazon RDS",
       "leader_id": "tag:Amazon Elastic Kubernetes Service",
       "name": "Amazon Elastic Kubernetes Service",
@@ -64,7 +64,7 @@
     {
       "article_count": 9,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/06-b62e243faf8d.json",
+      "hotspot_file": "community-hotspots/06-ddaa92b0797e.json",
       "id": "community:tag:Foundational (100)",
       "leader_id": "tag:Foundational (100)",
       "name": "Foundational (100)",
@@ -76,7 +76,7 @@
     {
       "article_count": 5,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/07-c484d683981f.json",
+      "hotspot_file": "community-hotspots/07-873203a49a34.json",
       "id": "community:tag:Amazon EventBridge",
       "leader_id": "tag:AWS Lambda",
       "name": "AWS Lambda",
@@ -88,7 +88,7 @@
     {
       "article_count": 1,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/08-185d7eb308bb.json",
+      "hotspot_file": "community-hotspots/08-a24997452496.json",
       "id": "community:tag:Codex",
       "leader_id": "tag:ACP",
       "name": "ACP",
@@ -100,7 +100,7 @@
     {
       "article_count": 4,
       "hotspot_count": 4,
-      "hotspot_file": "community-hotspots/09-523af28405c7.json",
+      "hotspot_file": "community-hotspots/09-bf2673047830.json",
       "id": "community:tag:Elastic Load Balancing",
       "leader_id": "tag:Expert (400)",
       "name": "Expert (400)",
@@ -112,7 +112,7 @@
     {
       "article_count": 3,
       "hotspot_count": 4,
-      "hotspot_file": "community-hotspots/10-5966968c94bd.json",
+      "hotspot_file": "community-hotspots/10-91f5e0c7f513.json",
       "id": "community:tag:AWS Marketplace",
       "leader_id": "tag:Amazon SageMaker AI",
       "name": "Amazon SageMaker AI",
@@ -124,7 +124,7 @@
     {
       "article_count": 3,
       "hotspot_count": 4,
-      "hotspot_file": "community-hotspots/11-b13d5edc31c1.json",
+      "hotspot_file": "community-hotspots/11-767d35330625.json",
       "id": "community:tag:ML Applications",
       "leader_id": "tag:Data Infrastructure",
       "name": "Data Infrastructure",
@@ -145,7 +145,7 @@
       "weighted_degree": 258.2
     }
   ],
-  "generated_at": "2026-08-12T19:23:51Z",
+  "generated_at": "2026-08-12T21:07:52Z",
   "iterations": 5,
   "limit": 11,
   "links": [
