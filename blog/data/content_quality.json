@@ -1,8 +1,8 @@
 {
-  "active_count": 2497,
+  "active_count": 2501,
   "archived_count": 276,
-  "complete_count": 45,
-  "interpreted_brief_count": 75,
+  "complete_count": 46,
+  "interpreted_brief_count": 76,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19792,6 +19792,24 @@
       "warnings": [
         "source_excerpt_truncated"
       ]
+    },
+    "posts/20260813-arxiv-a-quantum-roadmap-for-softmax-attention-exact-born-1-89dbc70eb3.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260813-blogs_podcasts-how-oneadvanced-deployed-over-50-ai-agents-on-uk-s-0-aec50bce13.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260813-hacker_news-ai-is-removing-the-middle-class-of-software-engine-5-d10ea54f06.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -19826,10 +19844,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2377,
-  "source_file_count": 2773,
-  "source_tree_sha256": "74fef8793578110b407d8e7015c6c5edf203529d6f9aef0a8114b5d1a097598b",
-  "verified_provenance_count": 2497,
+  "source_brief_count": 2379,
+  "source_file_count": 2777,
+  "source_tree_sha256": "d2935085d0627f6772b5a45ed256f5e0d7d92ef13b45f1c7aed27c9f366bac4d",
+  "verified_provenance_count": 2501,
   "warning_counts": {
     "source_excerpt_truncated": 772
   }
