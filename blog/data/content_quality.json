@@ -1,8 +1,8 @@
 {
-  "active_count": 2486,
+  "active_count": 2488,
   "archived_count": 276,
   "complete_count": 45,
-  "interpreted_brief_count": 70,
+  "interpreted_brief_count": 71,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19616,6 +19616,15 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260812-blogs_podcasts-ainews-how-to-steal-a-reasoning-trace-0-68b415c71f.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20260812-blogs_podcasts-amie-our-research-medical-ai-system-demonstrates-r-0-89df3427e5.md": {
       "reasons": [
         "concise_source_card"
@@ -19700,6 +19709,15 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260812-juejin-workbuddy帮我写了一篇言情叙事小说-0-4e59374abc.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20260812-juejin-从零开发一个-coding-agent七实现纯文本-agent-loop-0-3800bc9926.md": {
       "reasons": [
         "concise_source_card"
@@ -19751,11 +19769,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2371,
-  "source_file_count": 2762,
-  "source_tree_sha256": "261c9cd05100fcf3ba00734d8b7fd9d3a87c14184ebfda53ab6e5868794dbb2e",
-  "verified_provenance_count": 2486,
+  "source_brief_count": 2372,
+  "source_file_count": 2764,
+  "source_tree_sha256": "e3b2d81bc12053ef2f78199f8fa748dfe2a19ce2509050f880961a20acf10784",
+  "verified_provenance_count": 2488,
   "warning_counts": {
-    "source_excerpt_truncated": 769
+    "source_excerpt_truncated": 771
   }
 }
