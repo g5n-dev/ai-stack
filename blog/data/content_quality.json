@@ -1,8 +1,8 @@
 {
-  "active_count": 2492,
+  "active_count": 2494,
   "archived_count": 276,
   "complete_count": 45,
-  "interpreted_brief_count": 72,
+  "interpreted_brief_count": 74,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19616,6 +19616,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260812-arxiv-test-time-self-evolving-gui-visual-grounding-via-r-1-15e853443a.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260812-blogs_podcasts-accelerate-cyber-defense-with-openai-and-aws-daybr-0-d8a71eb732.md": {
       "reasons": [
         "interpreted_source_card"
@@ -19666,6 +19672,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260812-blogs_podcasts-pay-with-confidence-how-solv-labs-built-verifiable-0-a2903b1976.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
     },
     "posts/20260812-blogs_podcasts-the-bioai-phase-shift-matthew-mcpartlon-neil-patil-0-05a48f17b2.md": {
       "reasons": [
@@ -19797,9 +19809,9 @@
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2375,
-  "source_file_count": 2768,
-  "source_tree_sha256": "82c003c69994224829248c05edb3cb0d2e116f52ad16eefaf2582202e825f829",
-  "verified_provenance_count": 2492,
+  "source_file_count": 2770,
+  "source_tree_sha256": "98ce85692477ca7e88ab175951472af22fee12d9a002586183266631b9e96c3d",
+  "verified_provenance_count": 2494,
   "warning_counts": {
     "source_excerpt_truncated": 772
   }
