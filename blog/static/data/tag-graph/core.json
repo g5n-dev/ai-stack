@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T15:15:56Z",
+  "generated_at": "2026-08-12T16:13:38Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -626,7 +626,7 @@
       "weighted_degree": 2
     },
     {
-      "article_count": 760,
+      "article_count": 761,
       "category": "ai",
       "color": "#7aa6b8",
       "community_id": null,
@@ -639,11 +639,11 @@
       "legacy_id": "agent",
       "level": 4,
       "name": "AI Agent",
-      "rank": 135,
+      "rank": 136,
       "weighted_degree": 4.4
     },
     {
-      "article_count": 850,
+      "article_count": 853,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
@@ -792,7 +792,7 @@
       "legacy_id": "chatbot",
       "level": 4,
       "name": "聊天机器人",
-      "rank": 144,
+      "rank": 145,
       "weighted_degree": 4
     },
     {
@@ -860,7 +860,7 @@
       "legacy_id": "cv",
       "level": 3,
       "name": "计算机视觉",
-      "rank": 150,
+      "rank": 151,
       "weighted_degree": 3.1
     },
     {
@@ -1306,7 +1306,7 @@
       "weighted_degree": 3
     },
     {
-      "article_count": 646,
+      "article_count": 647,
       "category": "nlp",
       "color": "#d97706",
       "community_id": null,
@@ -1323,7 +1323,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 646,
+      "article_count": 647,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
@@ -1438,7 +1438,7 @@
       "legacy_id": "nlp",
       "level": 3,
       "name": "自然语言处理",
-      "rank": 126,
+      "rank": 127,
       "weighted_degree": 5.6
     },
     {
@@ -1527,7 +1527,7 @@
       "weighted_degree": 7
     },
     {
-      "article_count": 107,
+      "article_count": 108,
       "category": "ai",
       "color": "#7aa6b8",
       "community_id": null,
@@ -1544,7 +1544,7 @@
       "weighted_degree": 6.6
     },
     {
-      "article_count": 107,
+      "article_count": 108,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
@@ -1659,7 +1659,7 @@
       "legacy_id": "tensorflow",
       "level": 2,
       "name": "TensorFlow",
-      "rank": 145,
+      "rank": 146,
       "weighted_degree": 4
     },
     {
@@ -1693,7 +1693,7 @@
       "legacy_id": "transformers",
       "level": 2,
       "name": "Transformers",
-      "rank": 146,
+      "rank": 147,
       "weighted_degree": 4
     },
     {
@@ -1710,7 +1710,7 @@
       "legacy_id": "typescript",
       "level": 1,
       "name": "TypeScript",
-      "rank": 147,
+      "rank": 148,
       "weighted_degree": 3.6
     },
     {
