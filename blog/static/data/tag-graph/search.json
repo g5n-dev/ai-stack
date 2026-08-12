@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-12T05:04:56Z",
+  "generated_at": "2026-08-12T06:44:11Z",
   "items": [
     {
       "article_count": 754,
@@ -28,7 +28,7 @@
       "weighted_degree": 2026.2
     },
     {
-      "article_count": 642,
+      "article_count": 644,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 77,
@@ -38,7 +38,7 @@
       "legacy_id": "大语言模型",
       "name": "大语言模型",
       "rank": 2,
-      "weighted_degree": 1699.2
+      "weighted_degree": 1704.2
     },
     {
       "article_count": 498,
@@ -67,7 +67,7 @@
       "weighted_degree": 968
     },
     {
-      "article_count": 333,
+      "article_count": 335,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 97,
@@ -77,10 +77,10 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 5,
-      "weighted_degree": 931
+      "weighted_degree": 936
     },
     {
-      "article_count": 669,
+      "article_count": 670,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 37,
@@ -90,7 +90,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 774
+      "weighted_degree": 777
     },
     {
       "article_count": 162,
@@ -145,6 +145,19 @@
       "weighted_degree": 470
     },
     {
+      "article_count": 847,
+      "category": "article_tag",
+      "community_id": "community:tag:掘金",
+      "degree": 20,
+      "description": "文章标签: Hacker News",
+      "id": "tag:Hacker News",
+      "layer": "tag",
+      "legacy_id": "Hacker News",
+      "name": "Hacker News",
+      "rank": 11,
+      "weighted_degree": 427
+    },
+    {
       "article_count": 106,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
@@ -154,21 +167,8 @@
       "layer": "tag",
       "legacy_id": "RAG",
       "name": "RAG",
-      "rank": 11,
-      "weighted_degree": 425.2
-    },
-    {
-      "article_count": 846,
-      "category": "article_tag",
-      "community_id": "community:tag:掘金",
-      "degree": 20,
-      "description": "文章标签: Hacker News",
-      "id": "tag:Hacker News",
-      "layer": "tag",
-      "legacy_id": "Hacker News",
-      "name": "Hacker News",
       "rank": 12,
-      "weighted_degree": 425
+      "weighted_degree": 425.2
     },
     {
       "article_count": 117,
@@ -522,7 +522,7 @@
       "weighted_degree": 54.6
     },
     {
-      "article_count": 12,
+      "article_count": 13,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 8,
@@ -532,7 +532,7 @@
       "legacy_id": "cs.LG",
       "name": "cs.LG",
       "rank": 40,
-      "weighted_degree": 39
+      "weighted_degree": 42
     },
     {
       "article_count": 7,
@@ -1042,7 +1042,7 @@
       "weighted_degree": 8
     },
     {
-      "article_count": 642,
+      "article_count": 644,
       "category": "nlp",
       "community_id": null,
       "degree": 8,
@@ -2160,7 +2160,7 @@
       "weighted_degree": 2.8
     },
     {
-      "article_count": 642,
+      "article_count": 644,
       "category": "ai",
       "community_id": null,
       "degree": 3,

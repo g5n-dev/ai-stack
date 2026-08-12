@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T05:04:56Z",
+  "generated_at": "2026-08-12T06:44:11Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -3509,7 +3509,7 @@
       "strength": 1,
       "target": "tag:cs.LG",
       "type": "cooccurrence",
-      "weight": 12
+      "weight": 13
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:cs.PL",
@@ -3605,7 +3605,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 269
+      "weight": 270
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:数据库",
@@ -3629,7 +3629,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 115
+      "weight": 116
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:深度学习",
@@ -5405,7 +5405,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 93
+      "weight": 94
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:数据库",
@@ -5429,7 +5429,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 93
+      "weight": 94
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:深度学习",
@@ -7509,7 +7509,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 6
+      "weight": 7
     },
     {
       "id": "edge:cooccurrence:tag:cs.LG->tag:机器学习",
@@ -7525,7 +7525,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 12
+      "weight": 13
     },
     {
       "id": "edge:cooccurrence:tag:cs.LG->tag:生成式 AI",
@@ -7853,7 +7853,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 103
+      "weight": 105
     },
     {
       "id": "edge:cooccurrence:tag:大语言模型->tag:深度学习",
@@ -8841,7 +8841,7 @@
       "weighted_degree": 28
     },
     {
-      "article_count": 669,
+      "article_count": 670,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -8855,7 +8855,7 @@
       "name": "ArXiv",
       "rank": 6,
       "related_count": 37,
-      "weighted_degree": 774
+      "weighted_degree": 777
     },
     {
       "article_count": 1,
@@ -9249,7 +9249,7 @@
       "weighted_degree": 7
     },
     {
-      "article_count": 12,
+      "article_count": 13,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -9263,7 +9263,7 @@
       "name": "cs.LG",
       "rank": 40,
       "related_count": 8,
-      "weighted_degree": 39
+      "weighted_degree": 42
     },
     {
       "article_count": 1,
@@ -9793,7 +9793,7 @@
       "weighted_degree": 11
     },
     {
-      "article_count": 846,
+      "article_count": 847,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -9805,9 +9805,9 @@
       "legacy_id": "Hacker News",
       "level": 6,
       "name": "Hacker News",
-      "rank": 12,
+      "rank": 11,
       "related_count": 20,
-      "weighted_degree": 425
+      "weighted_degree": 427
     },
     {
       "article_count": 1,
@@ -10281,7 +10281,7 @@
       "legacy_id": "RAG",
       "level": 6,
       "name": "RAG",
-      "rank": 11,
+      "rank": 12,
       "related_count": 33,
       "weighted_degree": 425.2
     },
@@ -10541,7 +10541,7 @@
       "weighted_degree": 507.6
     },
     {
-      "article_count": 642,
+      "article_count": 644,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -10555,7 +10555,7 @@
       "name": "大语言模型",
       "rank": 2,
       "related_count": 75,
-      "weighted_degree": 1699.2
+      "weighted_degree": 1704.2
     },
     {
       "article_count": 45,
@@ -10626,7 +10626,7 @@
       "weighted_degree": 323
     },
     {
-      "article_count": 333,
+      "article_count": 335,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -10640,7 +10640,7 @@
       "name": "来源快报",
       "rank": 5,
       "related_count": 97,
-      "weighted_degree": 931
+      "weighted_degree": 936
     },
     {
       "article_count": 44,
