@@ -15,7 +15,7 @@ observation_id: obs_a25d7208ea9ecae490816c4301363cc3b2eda941a46917c3bbbe1aa9fb89
 event_id: evt_5bc75c9bbd637d6c33d45c6671443ec94b3d2943ce6a96feb18e6c606e9f1e3f
 revision_id: rev_5f30655d7d5d868cc64b45050de2685d063eeaaf925d9f1a11542f5d9094c21e
 source_published_at: 2026-08-10T15:07:06Z
-first_seen_at: 2026-08-10T15:28:31Z
+first_seen_at: 2026-08-12T02:44:05.524547Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 51
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://news.microsoft.com/signal/articles/how-to-build-an-ai-agent-guide
 parent_observation_id: null
-last_seen_at: 2026-08-11T00:00:00Z
+last_seen_at: 2026-08-12T00:00:00Z
 ---
 
 ## 基本信息

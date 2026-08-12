@@ -15,7 +15,7 @@ observation_id: obs_e637baf27472b99cac5abfa840f8208c0479525e8468c804b9b926c03396
 event_id: evt_0652030ef39e79a02679151ab83c64580f05515d351c4393b87839fb7d2f9037
 revision_id: rev_91148b86ff100144ef1b73801383da1f5056ae2cbbb2d9573ecfc48ed9dff404
 source_published_at: 2026-08-11T05:16:41Z
-first_seen_at: 2026-08-11T06:15:05Z
+first_seen_at: 2026-08-12T02:43:59.216018Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:f759857227d2778c2057e463baf9548e7c7ec76c52672edab
 description: "Meta 发布了首款面向个人的开源小模型 Muse Glimmer（30B 多模态），并预告即将开放 Spark 1.2 的权重。同期伴随扎克伯格的“个人超级智能”续篇，系统阐述了其对个人 AI 助理、创作工具、教育、经济等方面的设想以及 AI 安全、主权与国际竞争等风险。"
 external_url: https://www.latent.space/p/ainews-muse-glimmer-and-spark-open
 parent_observation_id: null
-last_seen_at: 2026-08-11T06:04:11.986244Z
+last_seen_at: 2026-08-12T00:00:00Z
 ---
 
 ## 基本信息

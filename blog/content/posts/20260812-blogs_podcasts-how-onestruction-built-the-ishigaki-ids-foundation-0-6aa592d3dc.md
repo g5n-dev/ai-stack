@@ -15,7 +15,7 @@ observation_id: obs_6aa592d3dc7a40084fc26ef49c0a2a4849efce3311e7000757ceedd84f35
 event_id: evt_941bb1a077c2a0e05699bd13e9e9b65fc8aac6eea350685737f8f9fdf1bd0670
 revision_id: rev_6d39aaca0b01dd76153863c688c033631d2e73f9b4f2d63de5f5d1bf46beafaf
 source_published_at: 2026-08-11T16:14:33Z
-first_seen_at: 2026-08-11T18:20:19Z
+first_seen_at: 2026-08-12T02:44:05.213163Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:14d0dd8d0dbbd2f764273113d155ecfd3d0911f63edfe4735
 description: "本文描述了一家建筑科技初创公司如何在数据稀缺的 BIM 领域，利用合成数据和三阶段训练（持续预训练、监督微调、强化学习）构建面向信息交付规范（IDS）的领域专用基础模型，并借助可验证奖励提升输出质量。"
 external_url: https://aws.amazon.com/blogs/machine-learning/how-onestruction-built-the-ishigaki-ids-foundation-model-with-aws-genaiic
 parent_observation_id: null
-last_seen_at: 2026-08-11T18:06:37.323551Z
+last_seen_at: 2026-08-12T00:00:00Z
 ---
 
 ## 基本信息

@@ -15,7 +15,7 @@ observation_id: obs_d8a71eb7325669ff71f036f17a2104d7d6ed908ffc98b61d89e7f22fa21e
 event_id: evt_a35f33d3f46811f24bd467f35f0046dc863bc0c97415e37d2843dce36a3f30c0
 revision_id: rev_ce67b7f3bda599338fd8c78025aa463b99a4c847849f1598408bf6d87fb80a32
 source_published_at: 2026-08-11T21:38:06Z
-first_seen_at: 2026-08-11T22:15:13Z
+first_seen_at: 2026-08-12T02:44:05.205876Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:1c172dce43d929e31ddf52b906cc8713d0cf7fa0640db0290
 description: "这是 AWS 与 OpenAI 在 Amazon Bedrock 上线专门用于网络防御的 AI 模型。Daybreak Red 提供攻击性安全研究能力，Daybreak Blue 侧重防御性安全任务，两者都旨在帮助安全团队更快完成漏洞发现、验证和修复流程。"
 external_url: https://aws.amazon.com/blogs/machine-learning/accelerate-cyber-defense-with-openai-and-aws-daybreak-red-daybreak-blue-now-available-to-eligible-customers-on-amazon-bedrock
 parent_observation_id: null
-last_seen_at: 2026-08-11T22:04:20.232839Z
+last_seen_at: 2026-08-12T00:00:00Z
 ---
 
 ## 基本信息

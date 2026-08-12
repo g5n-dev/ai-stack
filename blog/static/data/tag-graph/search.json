@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-12T00:01:44Z",
+  "generated_at": "2026-08-12T02:46:52Z",
   "items": [
     {
       "article_count": 753,
@@ -28,7 +28,7 @@
       "weighted_degree": 2024.2
     },
     {
-      "article_count": 641,
+      "article_count": 642,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 77,
@@ -38,7 +38,7 @@
       "legacy_id": "大语言模型",
       "name": "大语言模型",
       "rank": 2,
-      "weighted_degree": 1696.2
+      "weighted_degree": 1699.2
     },
     {
       "article_count": 497,
@@ -67,7 +67,7 @@
       "weighted_degree": 968
     },
     {
-      "article_count": 330,
+      "article_count": 331,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 97,
@@ -77,10 +77,10 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 5,
-      "weighted_degree": 924
+      "weighted_degree": 927
     },
     {
-      "article_count": 668,
+      "article_count": 669,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 37,
@@ -90,7 +90,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 771
+      "weighted_degree": 774
     },
     {
       "article_count": 162,
@@ -405,6 +405,19 @@
       "weighted_degree": 88
     },
     {
+      "article_count": 26,
+      "category": "article_tag",
+      "community_id": "community:tag:掘金",
+      "degree": 7,
+      "description": "文章标签: cs.CL",
+      "id": "tag:cs.CL",
+      "layer": "tag",
+      "legacy_id": "cs.CL",
+      "name": "cs.CL",
+      "rank": 31,
+      "weighted_degree": 87
+    },
+    {
       "article_count": 18,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
@@ -414,21 +427,8 @@
       "layer": "tag",
       "legacy_id": "Kubernetes",
       "name": "Kubernetes",
-      "rank": 31,
-      "weighted_degree": 84.6
-    },
-    {
-      "article_count": 25,
-      "category": "article_tag",
-      "community_id": "community:tag:掘金",
-      "degree": 7,
-      "description": "文章标签: cs.CL",
-      "id": "tag:cs.CL",
-      "layer": "tag",
-      "legacy_id": "cs.CL",
-      "name": "cs.CL",
       "rank": 32,
-      "weighted_degree": 84
+      "weighted_degree": 84.6
     },
     {
       "article_count": 14,
@@ -1042,7 +1042,7 @@
       "weighted_degree": 8
     },
     {
-      "article_count": 641,
+      "article_count": 642,
       "category": "nlp",
       "community_id": null,
       "degree": 8,
@@ -2160,7 +2160,7 @@
       "weighted_degree": 2.8
     },
     {
-      "article_count": 641,
+      "article_count": 642,
       "category": "ai",
       "community_id": null,
       "degree": 3,

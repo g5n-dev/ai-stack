@@ -15,7 +15,7 @@ observation_id: obs_5367cc95a8fd98172eb15540985f3472c41b6f393d6d65c9bf889b4f9238
 event_id: evt_d2aa48fff70aa2f83cf185a652753ab4c6019622c591054ea4ae5584c8a74824
 revision_id: rev_da521a462a814926bc6523aa7593beb5017af720ebc9842567fd922904d6848f
 source_published_at: 2026-08-10T17:00:00Z
-first_seen_at: 2026-08-10T18:16:39Z
+first_seen_at: 2026-08-12T02:43:58.507548Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 53
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://openai.com/index/building-an-ai-native-finance-function
 parent_observation_id: null
-last_seen_at: 2026-08-11T00:00:00Z
+last_seen_at: 2026-08-12T00:00:00Z
 ---
 
 ## 基本信息

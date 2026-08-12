@@ -15,7 +15,7 @@ observation_id: obs_5d3aff0aba5d0b8a3f2e93df1ad39730fb85c89988a96a7dff89f13df3bf
 event_id: evt_6446f66a786201bfb1aabd10b13a5d34a8bf67cfb0c6a02c95505ede917c4306
 revision_id: rev_2ae38dcfba74d0fc6d0c31aa9fd922dcc1bb49d1f5d8a1bc2d69612cd44640b3
 source_published_at: 2026-08-11T10:00:00Z
-first_seen_at: 2026-08-11T23:59:42.719693Z
+first_seen_at: 2026-08-12T02:43:58.507010Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 40
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://openai.com/index/daybreak-models-are-now-available-on-aws
 parent_observation_id: null
-last_seen_at: 2026-08-11T23:59:42.719693Z
+last_seen_at: 2026-08-12T00:00:00Z
 ---
 
 ## 基本信息

@@ -15,7 +15,7 @@ observation_id: obs_05a48f17b2b87f756af271de1721b7df45e769c842282ec4f681dba5e9d1
 event_id: evt_190dbef43f632af4d705ca15470885dfdf68bdaaa462d4fdc3b9b3fa517544fa
 revision_id: rev_7600b8ef666b38440d9206ab9c518a5eaff986ee3ef7b7aef72877898ce0c768
 source_published_at: 2026-08-11T21:03:50Z
-first_seen_at: 2026-08-11T23:14:15Z
+first_seen_at: 2026-08-12T02:43:59.202401Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:57a36d1057884107bce0c6a5b8b68d77bbf5df7504c67cf81
 description: "这是一段播客摘要，介绍了 Chai Discovery 如何在 AI 制药工具领域获得关注，解释了为何制药行业现在开始愿意付费使用 AI 设计工具而非自己研发药物。"
 external_url: https://www.latent.space/p/chai-discovery
 parent_observation_id: null
-last_seen_at: 2026-08-11T23:02:51.255019Z
+last_seen_at: 2026-08-12T00:00:00Z
 ---
 
 ## 基本信息

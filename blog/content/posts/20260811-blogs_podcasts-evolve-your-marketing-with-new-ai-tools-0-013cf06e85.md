@@ -15,7 +15,7 @@ observation_id: obs_013cf06e857ce80e8c35cee5cc798d8411a0b5b9696bdfe840b80c5705f5
 event_id: evt_903256568f4f6e70f89b759efbddb53511cc56529170b1c0e7019d2a9dadd725
 revision_id: rev_63a4a806f9d3d0d58f63bb23bcda1784c6a7dc0c9ca20518f61b65035496d151
 source_published_at: 2026-08-10T14:30:00Z
-first_seen_at: 2026-08-10T16:24:19Z
+first_seen_at: 2026-08-12T02:44:03.569813Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 39
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://blog.google/products/ads-commerce/google-ads-analytics-ai-updates
 parent_observation_id: null
-last_seen_at: 2026-08-11T00:00:00Z
+last_seen_at: 2026-08-12T00:00:00Z
 ---
 
 ## 基本信息
