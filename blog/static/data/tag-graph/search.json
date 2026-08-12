@@ -12,10 +12,10 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-12T10:22:49Z",
+  "generated_at": "2026-08-12T12:01:14Z",
   "items": [
     {
-      "article_count": 756,
+      "article_count": 758,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 68,
@@ -25,7 +25,7 @@
       "legacy_id": "AI Agent",
       "name": "AI Agent",
       "rank": 1,
-      "weighted_degree": 2034.2
+      "weighted_degree": 2039.2
     },
     {
       "article_count": 646,
@@ -67,7 +67,7 @@
       "weighted_degree": 974
     },
     {
-      "article_count": 339,
+      "article_count": 341,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 97,
@@ -77,10 +77,10 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 5,
-      "weighted_degree": 948
+      "weighted_degree": 953
     },
     {
-      "article_count": 670,
+      "article_count": 671,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 37,
@@ -90,7 +90,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 777
+      "weighted_degree": 780
     },
     {
       "article_count": 162,
@@ -158,7 +158,7 @@
       "weighted_degree": 431.2
     },
     {
-      "article_count": 848,
+      "article_count": 849,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 20,
@@ -168,7 +168,7 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 12,
-      "weighted_degree": 429
+      "weighted_degree": 431
     },
     {
       "article_count": 118,
@@ -301,7 +301,7 @@
       "weighted_degree": 136.6
     },
     {
-      "article_count": 36,
+      "article_count": 37,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 10,
@@ -311,7 +311,7 @@
       "legacy_id": "cs.AI",
       "name": "cs.AI",
       "rank": 23,
-      "weighted_degree": 116
+      "weighted_degree": 119
     },
     {
       "article_count": 35,
@@ -1120,7 +1120,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 843,
+      "article_count": 845,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -1757,7 +1757,7 @@
       "weighted_degree": 5
     },
     {
-      "article_count": 756,
+      "article_count": 758,
       "category": "ai",
       "community_id": null,
       "degree": 5,
