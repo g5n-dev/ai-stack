@@ -1,5 +1,5 @@
 {
-  "active_count": 2488,
+  "active_count": 2490,
   "archived_count": 276,
   "complete_count": 45,
   "interpreted_brief_count": 71,
@@ -19697,6 +19697,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260812-hacker_news-tim-gowers-what-sort-of-maths-are-llms-good-at-2-8a514fdb63.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260812-hacker_news-what-i-learned-by-putting-github-copilot-behind-a--9-14e871653a.md": {
       "reasons": [
         "concise_source_card"
@@ -19708,6 +19714,15 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260812-juejin-ai-agent-的自述不可信如何构建可取证可评估可进化的-agent-生产流水线-0-1fbfd2363f.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     },
     "posts/20260812-juejin-workbuddy帮我写了一篇言情叙事小说-0-4e59374abc.md": {
       "reasons": [
@@ -19769,11 +19784,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2372,
-  "source_file_count": 2764,
-  "source_tree_sha256": "e3b2d81bc12053ef2f78199f8fa748dfe2a19ce2509050f880961a20acf10784",
-  "verified_provenance_count": 2488,
+  "source_brief_count": 2374,
+  "source_file_count": 2766,
+  "source_tree_sha256": "1f921236fce39b56128721c1256acce792ecc91aae1b30001bdb1b4f8be5d1ea",
+  "verified_provenance_count": 2490,
   "warning_counts": {
-    "source_excerpt_truncated": 771
+    "source_excerpt_truncated": 772
   }
 }
