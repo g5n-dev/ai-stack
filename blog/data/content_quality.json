@@ -1,8 +1,8 @@
 {
-  "active_count": 2509,
+  "active_count": 2511,
   "archived_count": 276,
   "complete_count": 46,
-  "interpreted_brief_count": 81,
+  "interpreted_brief_count": 82,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19799,6 +19799,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260813-arxiv-albumentationsx-one-augmentation-pipeline-for-imag-7-3e5df1144e.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260813-arxiv-multimodal-code-switching-interleaving-visual-obje-2-ed0e54d5dd.md": {
       "reasons": [
         "interpreted_source_card"
@@ -19824,6 +19830,12 @@
       "status": "source_brief"
     },
     "posts/20260813-blogs_podcasts-500-khabib-nurmagomedov-dagestan-mma-ufc-islam-con-0-9ca509495f.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260813-blogs_podcasts-from-assistance-to-execution-how-enterprises-put-a-0-e063daae62.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -19898,10 +19910,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2382,
-  "source_file_count": 2785,
-  "source_tree_sha256": "f1cd80ef57b92d207e5ad98676a2c575fa6ade9728da7a048ba62eace827fc5b",
-  "verified_provenance_count": 2509,
+  "source_brief_count": 2383,
+  "source_file_count": 2787,
+  "source_tree_sha256": "6f2b451f42af842116d230af7b206077114f27f2ec6c1b861de20297a397f0b5",
+  "verified_provenance_count": 2511,
   "warning_counts": {
     "source_excerpt_truncated": 774
   }
