@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:f759857227d2778c2057e463baf9548e7c7ec76c52672edab
 description: "Meta 发布了首款面向个人的开源小模型 Muse Glimmer（30B 多模态），并预告即将开放 Spark 1.2 的权重。同期伴随扎克伯格的“个人超级智能”续篇，系统阐述了其对个人 AI 助理、创作工具、教育、经济等方面的设想以及 AI 安全、主权与国际竞争等风险。"
 external_url: https://www.latent.space/p/ainews-muse-glimmer-and-spark-open
 parent_observation_id: null
-last_seen_at: 2026-08-11T06:04:11.986244Z
+last_seen_at: 2026-08-12T00:00:00Z
 ---
 
 ## 基本信息

@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:1c172dce43d929e31ddf52b906cc8713d0cf7fa0640db0290
 description: "这是 AWS 与 OpenAI 在 Amazon Bedrock 上线专门用于网络防御的 AI 模型。Daybreak Red 提供攻击性安全研究能力，Daybreak Blue 侧重防御性安全任务，两者都旨在帮助安全团队更快完成漏洞发现、验证和修复流程。"
 external_url: https://aws.amazon.com/blogs/machine-learning/accelerate-cyber-defense-with-openai-and-aws-daybreak-red-daybreak-blue-now-available-to-eligible-customers-on-amazon-bedrock
 parent_observation_id: null
-last_seen_at: 2026-08-11T22:04:20.232839Z
+last_seen_at: 2026-08-12T00:00:00Z
 ---
 
 ## 基本信息
