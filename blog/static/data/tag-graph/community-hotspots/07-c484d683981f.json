@@ -1,0 +1,180 @@
+{
+  "community_id": "community:tag:Amazon EventBridge",
+  "generated_at": "2026-08-12T19:23:51Z",
+  "hotspot_limit": 24,
+  "link_limit": 32,
+  "links": [
+    {
+      "id": "edge:cooccurrence:tag:Amazon DynamoDB->tag:AWS Lambda",
+      "source": "tag:Amazon DynamoDB",
+      "strength": 1,
+      "target": "tag:AWS Lambda",
+      "type": "cooccurrence",
+      "weight": 3
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon CloudWatch->tag:AWS Lambda",
+      "source": "tag:Amazon CloudWatch",
+      "strength": 0.5,
+      "target": "tag:AWS Lambda",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon CloudWatch->tag:Amazon DynamoDB",
+      "source": "tag:Amazon CloudWatch",
+      "strength": 0.5,
+      "target": "tag:Amazon DynamoDB",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon CloudWatch->tag:Amazon EventBridge",
+      "source": "tag:Amazon CloudWatch",
+      "strength": 0.5,
+      "target": "tag:Amazon EventBridge",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon CloudWatch->tag:Amazon SageMaker",
+      "source": "tag:Amazon CloudWatch",
+      "strength": 0.5,
+      "target": "tag:Amazon SageMaker",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon DynamoDB->tag:Amazon EventBridge",
+      "source": "tag:Amazon DynamoDB",
+      "strength": 0.5,
+      "target": "tag:Amazon EventBridge",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon DynamoDB->tag:Amazon SageMaker",
+      "source": "tag:Amazon DynamoDB",
+      "strength": 0.5,
+      "target": "tag:Amazon SageMaker",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon EventBridge->tag:AWS Lambda",
+      "source": "tag:Amazon EventBridge",
+      "strength": 0.5,
+      "target": "tag:AWS Lambda",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon EventBridge->tag:Amazon SageMaker",
+      "source": "tag:Amazon EventBridge",
+      "strength": 0.5,
+      "target": "tag:Amazon SageMaker",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon SageMaker->tag:AWS Lambda",
+      "source": "tag:Amazon SageMaker",
+      "strength": 0.5,
+      "target": "tag:AWS Lambda",
+      "type": "cooccurrence",
+      "weight": 1
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 4,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon EventBridge",
+      "degree": 21,
+      "description": "文章标签: AWS Lambda",
+      "id": "tag:AWS Lambda",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "AWS Lambda",
+      "level": 6,
+      "name": "AWS Lambda",
+      "rank": 44,
+      "related_count": 21,
+      "weighted_degree": 28
+    },
+    {
+      "article_count": 3,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon EventBridge",
+      "degree": 16,
+      "description": "文章标签: Amazon DynamoDB",
+      "id": "tag:Amazon DynamoDB",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon DynamoDB",
+      "level": 6,
+      "name": "Amazon DynamoDB",
+      "rank": 52,
+      "related_count": 16,
+      "weighted_degree": 21
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon EventBridge",
+      "degree": 9,
+      "description": "文章标签: Amazon SageMaker",
+      "id": "tag:Amazon SageMaker",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon SageMaker",
+      "level": 6,
+      "name": "Amazon SageMaker",
+      "rank": 71,
+      "related_count": 9,
+      "weighted_degree": 11
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon EventBridge",
+      "degree": 7,
+      "description": "文章标签: Amazon CloudWatch",
+      "id": "tag:Amazon CloudWatch",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon CloudWatch",
+      "level": 6,
+      "name": "Amazon CloudWatch",
+      "rank": 93,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon EventBridge",
+      "degree": 7,
+      "description": "文章标签: Amazon EventBridge",
+      "id": "tag:Amazon EventBridge",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon EventBridge",
+      "level": 6,
+      "name": "Amazon EventBridge",
+      "rank": 96,
+      "related_count": 7,
+      "weighted_degree": 7
+    }
+  ],
+  "stats": {
+    "total_links": 10,
+    "total_nodes": 5
+  },
+  "version": 2
+}
