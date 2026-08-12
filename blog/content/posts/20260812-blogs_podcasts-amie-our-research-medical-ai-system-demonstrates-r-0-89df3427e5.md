@@ -27,7 +27,7 @@ source_title_chars_original: 131
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://blog.google/innovation-and-ai/models-and-research/google-research/amie-video-consultations
 parent_observation_id: null
-last_seen_at: 2026-08-11T17:12:23.830307Z
+last_seen_at: 2026-08-12T00:00:00Z
 ---
 
 ## 基本信息

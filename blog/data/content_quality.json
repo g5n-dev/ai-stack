@@ -1,8 +1,8 @@
 {
-  "active_count": 2481,
+  "active_count": 2484,
   "archived_count": 276,
   "complete_count": 45,
-  "interpreted_brief_count": 68,
+  "interpreted_brief_count": 69,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19562,6 +19562,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260812-arxiv-convawg-a-retrieval-grounded-framework-for-control-1-dc3d097dfa.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260812-arxiv-energy-structured-latent-world-models-with-neural--3-78bbdc6c6f.md": {
       "reasons": [
         "concise_source_card"
@@ -19646,6 +19652,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260812-hacker_news-company-offering-100-human-written-never-ai-medica-7-76f086bc63.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260812-hacker_news-openais-head-of-ethics-leaves-less-than-a-year-aft-10-3641f6219d.md": {
       "reasons": [
         "concise_source_card"
@@ -19675,6 +19687,15 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260812-juejin-从零开发一个-coding-agent七实现纯文本-agent-loop-0-3800bc9926.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     },
     "posts/20260812-juejin-番外篇二不到十行代码我用reactagen搭了个会自己调工具的-agent-0-39483b5127.md": {
       "reasons": [
@@ -19718,11 +19739,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2368,
-  "source_file_count": 2757,
-  "source_tree_sha256": "d5155772376ccb119e2fc274a6fc41eacb3e35378f299d66745afe6309b00d99",
-  "verified_provenance_count": 2481,
+  "source_brief_count": 2370,
+  "source_file_count": 2760,
+  "source_tree_sha256": "fe54598cc9bb4f702bde658edf57c404fb1764b4c3263658837970da937523f5",
+  "verified_provenance_count": 2484,
   "warning_counts": {
-    "source_excerpt_truncated": 768
+    "source_excerpt_truncated": 769
   }
 }

@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:7178388c874182540fb6779185aa114811f79697518c2fc8
 source_payload_sha256: "sha256:86133dbc01cbbf47a8fca3de623fe3c828b89701d167c9d69d3b3b20b579dd7a"
 observation_id: obs_c0e112286f70a5c900178ec3c9c86945e027ac1763339ad2d27f8af99a6af7a7
 event_id: evt_39a1999c5be0e8edeb0db4087d9a4861e8ac3282cc7f2a12cae36dce8b5536b3
-revision_id: rev_a618d9f89a0c1027d5cebde59447f88ea1dc0a79603e14878c48249b7a4aff10
+revision_id: rev_c079d38e551865262af7706c5079196bc6dbdc55321459887df07d35dad859b1
 source_published_at: 2026-08-11T15:59:22Z
 first_seen_at: 2026-08-11T21:17:20Z
 timestamp_confidence: feed
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:18907968f092926f8ad72d828845cc5ca8276268215bb533b
 description: "该内容介绍了在AWS上部署Claude应用网关的参考架构，包括请求流向、认证与策略控制方式以及在Fargate上的容器化运行方式。"
 external_url: https://aws.amazon.com/blogs/machine-learning/deploying-anthropic-claude-apps-gateway-for-aws-for-enterprise-workloads
 parent_observation_id: null
-last_seen_at: 2026-08-11T21:03:50.587306Z
+last_seen_at: 2026-08-12T00:00:00Z
 ---
 
 ## 基本信息
