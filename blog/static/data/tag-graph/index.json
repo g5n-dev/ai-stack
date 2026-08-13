@@ -23,11 +23,11 @@
       "focus-shards/000-363fb6a12669.json",
       "focus-shards/001-eef3c54f5b72.json",
       "focus-shards/002-1f6580b97e6b.json",
-      "focus-shards/003-a5d1fbd12bc0.json",
+      "focus-shards/003-3cb4eeb5d53f.json",
       "focus-shards/004-08a9b1380f4a.json",
       "focus-shards/005-78d92140d3cd.json",
       "focus-shards/006-d8e17ef19e86.json",
-      "focus-shards/007-275e0a58b8d1.json",
+      "focus-shards/007-246520822834.json",
       "focus-shards/008-716f3e4953f4.json",
       "focus-shards/009-8192c91e5b3e.json",
       "focus-shards/010-82102f585f91.json",
@@ -131,12 +131,12 @@
       "focus-shards/108-300f5c79f99c.json",
       "focus-shards/109-a7f6cd8ee157.json",
       "focus-shards/110-5e5e2966d6e1.json",
-      "focus-shards/111-714d019fef69.json",
+      "focus-shards/111-4ac2de0d2ad0.json",
       "focus-shards/112-0d987d25b9bb.json",
       "focus-shards/113-1c9c90991b51.json",
       "focus-shards/114-f17f81002c0a.json",
       "focus-shards/115-341c8be0e756.json",
-      "focus-shards/116-836df21767ca.json",
+      "focus-shards/116-8591962b5810.json",
       "focus-shards/117-d614c465093e.json",
       "focus-shards/118-75942cce59a7.json",
       "focus-shards/119-ffe1a3860164.json",
@@ -153,7 +153,7 @@
     "tag": "tag.json",
     "tagHot": "tag.hot.json"
   },
-  "generated_at": "2026-08-13T10:23:55Z",
+  "generated_at": "2026-08-13T12:02:18Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -193,7 +193,7 @@
   },
   "stats": {
     "links_by_type": {
-      "cooccurrence": 1016,
+      "cooccurrence": 1019,
       "relation": 71,
       "semantic": 36
     },
@@ -203,13 +203,13 @@
       "language": 8,
       "model": 6,
       "scenario": 31,
-      "tag": 156
+      "tag": 157
     },
     "tag_stats": {
       "archived_article_files_skipped": 276,
       "archived_article_groups_skipped": 276,
       "avg_concepts_per_article": 0,
-      "avg_tags_per_article": 2.4865079365079366,
+      "avg_tags_per_article": 2.487108290360968,
       "canonical_duplicate_files_skipped": 0,
       "incomplete_article_files_skipped": 0,
       "incomplete_article_groups_skipped": 0,
@@ -242,25 +242,25 @@
         [
           "ArXiv",
           {
-            "article_count": 685,
+            "article_count": 686,
             "category": "article_tag",
             "description": "文章标签: ArXiv",
             "id": "ArXiv",
             "layer": "tag",
             "name": "ArXiv",
-            "related_count": 39
+            "related_count": 40
           }
         ],
         [
           "大语言模型",
           {
-            "article_count": 653,
+            "article_count": 654,
             "category": "article_tag",
             "description": "文章标签: 大语言模型",
             "id": "大语言模型",
             "layer": "tag",
             "name": "大语言模型",
-            "related_count": 79
+            "related_count": 80
           }
         ],
         [
@@ -278,16 +278,16 @@
       ],
       "synthetic_article_files_skipped": 0,
       "synthetic_article_groups_skipped": 0,
-      "total_articles": 2520,
+      "total_articles": 2521,
       "total_concept_links": 0,
       "total_concepts": 0,
-      "total_tag_links": 1016,
-      "total_tags": 156
+      "total_tag_links": 1019,
+      "total_tags": 157
     },
-    "total_articles": 2520,
+    "total_articles": 2521,
     "total_communities": 12,
-    "total_links": 1123,
-    "total_nodes": 225
+    "total_links": 1126,
+    "total_nodes": 226
   },
   "version": 2
 }

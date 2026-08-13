@@ -1,5 +1,5 @@
 {
-  "active_count": 2520,
+  "active_count": 2521,
   "archived_count": 276,
   "complete_count": 46,
   "interpreted_brief_count": 87,
@@ -19835,6 +19835,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260813-arxiv-large-language-model-driven-small-capitalization-t-3-f60b8c7e00.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260813-arxiv-multimodal-code-switching-interleaving-visual-obje-2-ed0e54d5dd.md": {
       "reasons": [
         "interpreted_source_card"
@@ -19964,10 +19970,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2387,
-  "source_file_count": 2796,
-  "source_tree_sha256": "4522ec88176b30c366a6c4eea9094f7259ba1e785b48e895686a8c16279ef02b",
-  "verified_provenance_count": 2520,
+  "source_brief_count": 2388,
+  "source_file_count": 2797,
+  "source_tree_sha256": "f4727a13bf80459749ec2abaa8613fe138df30fb5e4de9906674f4ad57f22695",
+  "verified_provenance_count": 2521,
   "warning_counts": {
     "source_excerpt_truncated": 774
   }

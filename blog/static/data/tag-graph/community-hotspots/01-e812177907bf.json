@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:掘金",
-  "generated_at": "2026-08-13T10:23:55Z",
+  "generated_at": "2026-08-13T12:02:18Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -18,7 +18,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 272
+      "weight": 273
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:掘金",
@@ -66,7 +66,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 131
+      "weight": 132
     },
     {
       "id": "edge:cooccurrence:tag:掘金->tag:数据库",
@@ -90,7 +90,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 112
+      "weight": 113
     },
     {
       "id": "edge:cooccurrence:tag:博客与播客->tag:来源快报",
@@ -280,11 +280,11 @@
       "weighted_degree": 2077.2
     },
     {
-      "article_count": 653,
+      "article_count": 654,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
-      "degree": 81,
+      "degree": 82,
       "description": "文章标签: 大语言模型",
       "id": "tag:大语言模型",
       "layer": "tag",
@@ -293,8 +293,8 @@
       "level": 6,
       "name": "大语言模型",
       "rank": 2,
-      "related_count": 79,
-      "weighted_degree": 1745.2
+      "related_count": 80,
+      "weighted_degree": 1748.2
     },
     {
       "article_count": 501,
@@ -314,11 +314,11 @@
       "weighted_degree": 1289
     },
     {
-      "article_count": 366,
+      "article_count": 367,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
-      "degree": 102,
+      "degree": 103,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
@@ -327,8 +327,8 @@
       "level": 6,
       "name": "来源快报",
       "rank": 4,
-      "related_count": 102,
-      "weighted_degree": 1037
+      "related_count": 103,
+      "weighted_degree": 1040
     },
     {
       "article_count": 420,
@@ -348,11 +348,11 @@
       "weighted_degree": 1004
     },
     {
-      "article_count": 685,
+      "article_count": 686,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
-      "degree": 39,
+      "degree": 40,
       "description": "文章标签: ArXiv",
       "id": "tag:ArXiv",
       "layer": "tag",
@@ -361,8 +361,8 @@
       "level": 6,
       "name": "ArXiv",
       "rank": 6,
-      "related_count": 39,
-      "weighted_degree": 828
+      "related_count": 40,
+      "weighted_degree": 831
     },
     {
       "article_count": 162,
