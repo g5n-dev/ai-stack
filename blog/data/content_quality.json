@@ -1,8 +1,8 @@
 {
-  "active_count": 2517,
+  "active_count": 2518,
   "archived_count": 276,
   "complete_count": 46,
-  "interpreted_brief_count": 85,
+  "interpreted_brief_count": 86,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19811,6 +19811,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260813-arxiv-class-activation-mapping-in-explainable-computer-v-3-c88a393dc6.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260813-arxiv-constructing-dynamic-master-logic-models-as-knowle-2-31ac698c56.md": {
       "reasons": [
         "interpreted_source_card"
@@ -19947,9 +19953,9 @@
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2386,
-  "source_file_count": 2793,
-  "source_tree_sha256": "cb41c099d64b7d483915776423c470e71cb599bb21802587adb595c0f2d83fff",
-  "verified_provenance_count": 2517,
+  "source_file_count": 2794,
+  "source_tree_sha256": "d908b9b55c37172317000a12af3d4cef87903201900a1c6a96099a87be05181b",
+  "verified_provenance_count": 2518,
   "warning_counts": {
     "source_excerpt_truncated": 774
   }

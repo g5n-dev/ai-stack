@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:掘金",
-  "generated_at": "2026-08-13T06:47:22Z",
+  "generated_at": "2026-08-13T08:45:56Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -66,7 +66,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 129
+      "weight": 130
     },
     {
       "id": "edge:cooccurrence:tag:掘金->tag:数据库",
@@ -314,7 +314,7 @@
       "weighted_degree": 1289
     },
     {
-      "article_count": 363,
+      "article_count": 364,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -328,7 +328,7 @@
       "name": "来源快报",
       "rank": 4,
       "related_count": 102,
-      "weighted_degree": 1028
+      "weighted_degree": 1031
     },
     {
       "article_count": 420,
@@ -348,7 +348,7 @@
       "weighted_degree": 1004
     },
     {
-      "article_count": 683,
+      "article_count": 684,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -362,7 +362,7 @@
       "name": "ArXiv",
       "rank": 6,
       "related_count": 39,
-      "weighted_degree": 821
+      "weighted_degree": 824
     },
     {
       "article_count": 162,
@@ -637,7 +637,7 @@
       "weighted_degree": 120
     },
     {
-      "article_count": 36,
+      "article_count": 37,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -651,7 +651,7 @@
       "name": "计算机视觉",
       "rank": 25,
       "related_count": 18,
-      "weighted_degree": 116.2
+      "weighted_degree": 119.2
     },
     {
       "article_count": 27,
