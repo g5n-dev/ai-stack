@@ -1,8 +1,8 @@
 {
-  "active_count": 2518,
+  "active_count": 2520,
   "archived_count": 276,
   "complete_count": 46,
-  "interpreted_brief_count": 86,
+  "interpreted_brief_count": 87,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19811,6 +19811,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260813-arxiv-beyond-trial-and-error-agentic-optimization-for-im-3-8c784fc460.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260813-arxiv-class-activation-mapping-in-explainable-computer-v-3-c88a393dc6.md": {
       "reasons": [
         "interpreted_source_card"
@@ -19918,6 +19924,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260813-hacker_news-if-i-own-claudes-outputs-why-cant-i-train-my-own-m-0-4a7108e3bc.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -19952,10 +19964,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2386,
-  "source_file_count": 2794,
-  "source_tree_sha256": "d908b9b55c37172317000a12af3d4cef87903201900a1c6a96099a87be05181b",
-  "verified_provenance_count": 2518,
+  "source_brief_count": 2387,
+  "source_file_count": 2796,
+  "source_tree_sha256": "4522ec88176b30c366a6c4eea9094f7259ba1e785b48e895686a8c16279ef02b",
+  "verified_provenance_count": 2520,
   "warning_counts": {
     "source_excerpt_truncated": 774
   }
