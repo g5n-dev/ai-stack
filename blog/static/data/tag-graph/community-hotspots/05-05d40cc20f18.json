@@ -1,0 +1,247 @@
+{
+  "community_id": "community:tag:Foundational (100)",
+  "generated_at": "2026-08-13T10:23:55Z",
+  "hotspot_limit": 24,
+  "link_limit": 32,
+  "links": [
+    {
+      "id": "edge:cooccurrence:tag:Announcements->tag:Foundational (100)",
+      "source": "tag:Announcements",
+      "strength": 1,
+      "target": "tag:Foundational (100)",
+      "type": "cooccurrence",
+      "weight": 4
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Quick Sight->tag:Announcements",
+      "source": "tag:Amazon Quick Sight",
+      "strength": 1,
+      "target": "tag:Announcements",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Quick Sight->tag:Foundational (100)",
+      "source": "tag:Amazon Quick Sight",
+      "strength": 1,
+      "target": "tag:Foundational (100)",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Quick Suite->tag:Announcements",
+      "source": "tag:Amazon Quick Suite",
+      "strength": 1,
+      "target": "tag:Announcements",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Quick Suite->tag:Foundational (100)",
+      "source": "tag:Amazon Quick Suite",
+      "strength": 1,
+      "target": "tag:Foundational (100)",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Bedrock Knowledge Bases->tag:Announcements",
+      "source": "tag:Amazon Bedrock Knowledge Bases",
+      "strength": 0.5,
+      "target": "tag:Announcements",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Quick Sight->tag:Amazon Quick Suite",
+      "source": "tag:Amazon Quick Sight",
+      "strength": 0.5,
+      "target": "tag:Amazon Quick Suite",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Quick Sight->tag:Amazon Simple Storage Service (S3)",
+      "source": "tag:Amazon Quick Sight",
+      "strength": 0.5,
+      "target": "tag:Amazon Simple Storage Service (S3)",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Quick Suite->tag:Amazon Simple Storage Service (S3)",
+      "source": "tag:Amazon Quick Suite",
+      "strength": 0.5,
+      "target": "tag:Amazon Simple Storage Service (S3)",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Quick Suite->tag:How-To",
+      "source": "tag:Amazon Quick Suite",
+      "strength": 0.5,
+      "target": "tag:How-To",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Simple Storage Service (S3)->tag:How-To",
+      "source": "tag:Amazon Simple Storage Service (S3)",
+      "strength": 0.5,
+      "target": "tag:How-To",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Announcements->tag:AWS DeepRacer",
+      "source": "tag:Announcements",
+      "strength": 0.5,
+      "target": "tag:AWS DeepRacer",
+      "type": "cooccurrence",
+      "weight": 1
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 14,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Foundational (100)",
+      "degree": 21,
+      "description": "文章标签: Announcements",
+      "id": "tag:Announcements",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Announcements",
+      "level": 6,
+      "name": "Announcements",
+      "rank": 35,
+      "related_count": 21,
+      "weighted_degree": 78
+    },
+    {
+      "article_count": 5,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Foundational (100)",
+      "degree": 12,
+      "description": "文章标签: Foundational (100)",
+      "id": "tag:Foundational (100)",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Foundational (100)",
+      "level": 6,
+      "name": "Foundational (100)",
+      "rank": 43,
+      "related_count": 12,
+      "weighted_degree": 28
+    },
+    {
+      "article_count": 5,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Foundational (100)",
+      "degree": 14,
+      "description": "文章标签: Amazon Quick Suite",
+      "id": "tag:Amazon Quick Suite",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon Quick Suite",
+      "level": 6,
+      "name": "Amazon Quick Suite",
+      "rank": 48,
+      "related_count": 14,
+      "weighted_degree": 25
+    },
+    {
+      "article_count": 3,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Foundational (100)",
+      "degree": 12,
+      "description": "文章标签: Amazon Quick Sight",
+      "id": "tag:Amazon Quick Sight",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon Quick Sight",
+      "level": 6,
+      "name": "Amazon Quick Sight",
+      "rank": 57,
+      "related_count": 12,
+      "weighted_degree": 16
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Foundational (100)",
+      "degree": 13,
+      "description": "文章标签: Amazon Simple Storage Service (S3)",
+      "id": "tag:Amazon Simple Storage Service (S3)",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon Simple Storage Service (S3)",
+      "level": 6,
+      "name": "Amazon Simple Storage Service (S3)",
+      "rank": 60,
+      "related_count": 13,
+      "weighted_degree": 14
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Foundational (100)",
+      "degree": 7,
+      "description": "文章标签: How-To",
+      "id": "tag:How-To",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "How-To",
+      "level": 6,
+      "name": "How-To",
+      "rank": 111,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Foundational (100)",
+      "degree": 4,
+      "description": "文章标签: Amazon Bedrock Knowledge Bases",
+      "id": "tag:Amazon Bedrock Knowledge Bases",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon Bedrock Knowledge Bases",
+      "level": 6,
+      "name": "Amazon Bedrock Knowledge Bases",
+      "rank": 141,
+      "related_count": 4,
+      "weighted_degree": 4
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Foundational (100)",
+      "degree": 4,
+      "description": "文章标签: AWS DeepRacer",
+      "id": "tag:AWS DeepRacer",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "AWS DeepRacer",
+      "level": 6,
+      "name": "AWS DeepRacer",
+      "rank": 144,
+      "related_count": 4,
+      "weighted_degree": 4
+    }
+  ],
+  "stats": {
+    "total_links": 12,
+    "total_nodes": 8
+  },
+  "version": 2
+}
