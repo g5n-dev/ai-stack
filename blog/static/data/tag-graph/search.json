@@ -12,10 +12,10 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-13T21:05:58Z",
+  "generated_at": "2026-08-13T22:06:12Z",
   "items": [
     {
-      "article_count": 772,
+      "article_count": 773,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 71,
@@ -25,20 +25,20 @@
       "legacy_id": "AI Agent",
       "name": "AI Agent",
       "rank": 1,
-      "weighted_degree": 2108.2
+      "weighted_degree": 2115.2
     },
     {
-      "article_count": 660,
+      "article_count": 662,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
-      "degree": 82,
+      "degree": 83,
       "description": "文章标签: 大语言模型",
       "id": "tag:大语言模型",
       "layer": "tag",
       "legacy_id": "大语言模型",
       "name": "大语言模型",
       "rank": 2,
-      "weighted_degree": 1772.2
+      "weighted_degree": 1783.2
     },
     {
       "article_count": 503,
@@ -54,22 +54,22 @@
       "weighted_degree": 1293
     },
     {
-      "article_count": 380,
+      "article_count": 382,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
-      "degree": 103,
+      "degree": 104,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 4,
-      "weighted_degree": 1079
+      "weighted_degree": 1085
     },
     {
-      "article_count": 423,
+      "article_count": 424,
       "category": "article_tag",
-      "community_id": "community:tag:掘金",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 94,
       "description": "文章标签: 博客与播客",
       "id": "tag:博客与播客",
@@ -77,10 +77,10 @@
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 5,
-      "weighted_degree": 1022
+      "weighted_degree": 1029
     },
     {
-      "article_count": 691,
+      "article_count": 692,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 40,
@@ -90,7 +90,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 847
+      "weighted_degree": 851
     },
     {
       "article_count": 162,
@@ -158,7 +158,7 @@
       "weighted_degree": 463.2
     },
     {
-      "article_count": 858,
+      "article_count": 859,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 21,
@@ -168,12 +168,12 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 12,
-      "weighted_degree": 449
+      "weighted_degree": 451
     },
     {
-      "article_count": 124,
+      "article_count": 125,
       "category": "article_tag",
-      "community_id": "community:tag:掘金",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 48,
       "description": "文章标签: 生成式 AI",
       "id": "tag:生成式 AI",
@@ -181,12 +181,12 @@
       "legacy_id": "生成式 AI",
       "name": "生成式 AI",
       "rank": 13,
-      "weighted_degree": 437
+      "weighted_degree": 444
     },
     {
       "article_count": 115,
       "category": "article_tag",
-      "community_id": "community:tag:掘金",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 52,
       "description": "文章标签: 机器学习",
       "id": "tag:机器学习",
@@ -223,7 +223,7 @@
       "weighted_degree": 289.6
     },
     {
-      "article_count": 48,
+      "article_count": 49,
       "category": "article_tag",
       "community_id": "community:tag:Amazon EventBridge",
       "degree": 38,
@@ -233,10 +233,10 @@
       "legacy_id": "Prompt 工程",
       "name": "Prompt 工程",
       "rank": 17,
-      "weighted_degree": 266
+      "weighted_degree": 273
     },
     {
-      "article_count": 91,
+      "article_count": 92,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 43,
@@ -246,7 +246,7 @@
       "legacy_id": "AI",
       "name": "AI",
       "rank": 18,
-      "weighted_degree": 244.6
+      "weighted_degree": 246.6
     },
     {
       "article_count": 42,
@@ -301,6 +301,19 @@
       "weighted_degree": 136.6
     },
     {
+      "article_count": 20,
+      "category": "article_tag",
+      "community_id": "community:tag:Amazon EventBridge",
+      "degree": 32,
+      "description": "文章标签: Advanced (300)",
+      "id": "tag:Advanced (300)",
+      "layer": "tag",
+      "legacy_id": "Advanced (300)",
+      "name": "Advanced (300)",
+      "rank": 23,
+      "weighted_degree": 129
+    },
+    {
       "article_count": 40,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
@@ -310,7 +323,7 @@
       "layer": "tag",
       "legacy_id": "cs.AI",
       "name": "cs.AI",
-      "rank": 23,
+      "rank": 24,
       "weighted_degree": 128
     },
     {
@@ -323,21 +336,8 @@
       "layer": "tag",
       "legacy_id": "计算机视觉",
       "name": "计算机视觉",
-      "rank": 24,
-      "weighted_degree": 126.2
-    },
-    {
-      "article_count": 19,
-      "category": "article_tag",
-      "community_id": "community:tag:Amazon EventBridge",
-      "degree": 32,
-      "description": "文章标签: Advanced (300)",
-      "id": "tag:Advanced (300)",
-      "layer": "tag",
-      "legacy_id": "Advanced (300)",
-      "name": "Advanced (300)",
       "rank": 25,
-      "weighted_degree": 122
+      "weighted_degree": 126.2
     },
     {
       "article_count": 36,
@@ -392,6 +392,19 @@
       "weighted_degree": 98
     },
     {
+      "article_count": 29,
+      "category": "article_tag",
+      "community_id": "community:tag:来源快报",
+      "degree": 9,
+      "description": "文章标签: cs.CL",
+      "id": "tag:cs.CL",
+      "layer": "tag",
+      "legacy_id": "cs.CL",
+      "name": "cs.CL",
+      "rank": 30,
+      "weighted_degree": 97
+    },
+    {
       "article_count": 47,
       "category": "article_tag",
       "community_id": "community:tag:来源转写",
@@ -401,21 +414,21 @@
       "layer": "tag",
       "legacy_id": "来源转写",
       "name": "来源转写",
-      "rank": 30,
+      "rank": 31,
       "weighted_degree": 94
     },
     {
       "article_count": 28,
       "category": "article_tag",
-      "community_id": "community:tag:来源快报",
-      "degree": 8,
-      "description": "文章标签: cs.CL",
-      "id": "tag:cs.CL",
+      "community_id": "community:tag:掘金",
+      "degree": 25,
+      "description": "文章标签: 自然语言处理",
+      "id": "tag:自然语言处理",
       "layer": "tag",
-      "legacy_id": "cs.CL",
-      "name": "cs.CL",
-      "rank": 31,
-      "weighted_degree": 93
+      "legacy_id": "自然语言处理",
+      "name": "自然语言处理",
+      "rank": 32,
+      "weighted_degree": 92.2
     },
     {
       "article_count": 28,
@@ -427,21 +440,21 @@
       "layer": "tag",
       "legacy_id": "cs.CV",
       "name": "cs.CV",
-      "rank": 32,
+      "rank": 33,
       "weighted_degree": 91
     },
     {
-      "article_count": 27,
+      "article_count": 15,
       "category": "article_tag",
-      "community_id": "community:tag:掘金",
-      "degree": 23,
-      "description": "文章标签: 自然语言处理",
-      "id": "tag:自然语言处理",
+      "community_id": "community:tag:Amazon EventBridge",
+      "degree": 21,
+      "description": "文章标签: Announcements",
+      "id": "tag:Announcements",
       "layer": "tag",
-      "legacy_id": "自然语言处理",
-      "name": "自然语言处理",
-      "rank": 33,
-      "weighted_degree": 88.2
+      "legacy_id": "Announcements",
+      "name": "Announcements",
+      "rank": 34,
+      "weighted_degree": 85
     },
     {
       "article_count": 18,
@@ -453,7 +466,7 @@
       "layer": "tag",
       "legacy_id": "Kubernetes",
       "name": "Kubernetes",
-      "rank": 34,
+      "rank": 35,
       "weighted_degree": 84.6
     },
     {
@@ -466,7 +479,7 @@
       "layer": "tag",
       "legacy_id": "Intermediate (200)",
       "name": "Intermediate (200)",
-      "rank": 35,
+      "rank": 36,
       "weighted_degree": 84
     },
     {
@@ -479,21 +492,8 @@
       "layer": "tag",
       "legacy_id": "Customer Solutions",
       "name": "Customer Solutions",
-      "rank": 36,
-      "weighted_degree": 80
-    },
-    {
-      "article_count": 14,
-      "category": "article_tag",
-      "community_id": "community:tag:Amazon EventBridge",
-      "degree": 21,
-      "description": "文章标签: Announcements",
-      "id": "tag:Announcements",
-      "layer": "tag",
-      "legacy_id": "Announcements",
-      "name": "Announcements",
       "rank": 37,
-      "weighted_degree": 78
+      "weighted_degree": 80
     },
     {
       "article_count": 43,
@@ -535,6 +535,19 @@
       "weighted_degree": 48
     },
     {
+      "article_count": 6,
+      "category": "article_tag",
+      "community_id": "community:tag:Amazon EventBridge",
+      "degree": 15,
+      "description": "文章标签: Amazon Quick Suite",
+      "id": "tag:Amazon Quick Suite",
+      "layer": "tag",
+      "legacy_id": "Amazon Quick Suite",
+      "name": "Amazon Quick Suite",
+      "rank": 41,
+      "weighted_degree": 32
+    },
+    {
       "article_count": 7,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
@@ -544,7 +557,7 @@
       "layer": "tag",
       "legacy_id": "Go",
       "name": "Go",
-      "rank": 41,
+      "rank": 42,
       "weighted_degree": 29.6
     },
     {
@@ -557,7 +570,7 @@
       "layer": "tag",
       "legacy_id": "Swift",
       "name": "Swift",
-      "rank": 42,
+      "rank": 43,
       "weighted_degree": 28.6
     },
     {
@@ -570,7 +583,7 @@
       "layer": "tag",
       "legacy_id": "Foundational (100)",
       "name": "Foundational (100)",
-      "rank": 43,
+      "rank": 44,
       "weighted_degree": 28
     },
     {
@@ -583,7 +596,7 @@
       "layer": "tag",
       "legacy_id": "AWS Lambda",
       "name": "AWS Lambda",
-      "rank": 44,
+      "rank": 45,
       "weighted_degree": 28
     },
     {
@@ -596,7 +609,7 @@
       "layer": "tag",
       "legacy_id": "Artificial intelligence",
       "name": "Artificial intelligence",
-      "rank": 45,
+      "rank": 46,
       "weighted_degree": 28
     },
     {
@@ -609,7 +622,7 @@
       "layer": "tag",
       "legacy_id": "Machine learning",
       "name": "Machine learning",
-      "rank": 46,
+      "rank": 47,
       "weighted_degree": 28
     },
     {
@@ -622,21 +635,8 @@
       "layer": "tag",
       "legacy_id": "Kotlin",
       "name": "Kotlin",
-      "rank": 47,
-      "weighted_degree": 27
-    },
-    {
-      "article_count": 5,
-      "category": "article_tag",
-      "community_id": "community:tag:Amazon EventBridge",
-      "degree": 14,
-      "description": "文章标签: Amazon Quick Suite",
-      "id": "tag:Amazon Quick Suite",
-      "layer": "tag",
-      "legacy_id": "Amazon Quick Suite",
-      "name": "Amazon Quick Suite",
       "rank": 48,
-      "weighted_degree": 25
+      "weighted_degree": 27
     },
     {
       "article_count": 4,
@@ -1055,7 +1055,7 @@
       "weighted_degree": 8.6
     },
     {
-      "article_count": 660,
+      "article_count": 662,
       "category": "nlp",
       "community_id": null,
       "degree": 8,
@@ -1133,7 +1133,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 872,
+      "article_count": 874,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -1705,7 +1705,7 @@
       "weighted_degree": 6
     },
     {
-      "article_count": 27,
+      "article_count": 28,
       "category": "nlp",
       "community_id": null,
       "degree": 6,
@@ -1835,7 +1835,7 @@
       "weighted_degree": 4.6
     },
     {
-      "article_count": 772,
+      "article_count": 773,
       "category": "ai",
       "community_id": null,
       "degree": 5,
@@ -1902,7 +1902,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:掘金",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 4,
       "description": "文章标签: cs.SE",
       "id": "tag:cs.SE",
@@ -2123,7 +2123,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:掘金",
+      "community_id": "community:tag:来源快报",
       "degree": 3,
       "description": "文章标签: Engineering",
       "id": "tag:Engineering",
@@ -2162,7 +2162,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:掘金",
+      "community_id": "community:tag:来源快报",
       "degree": 3,
       "description": "文章标签: Startup",
       "id": "tag:Startup",
@@ -2251,7 +2251,7 @@
       "weighted_degree": 2.8
     },
     {
-      "article_count": 660,
+      "article_count": 662,
       "category": "ai",
       "community_id": null,
       "degree": 3,
@@ -2550,7 +2550,7 @@
       "weighted_degree": 1.6
     },
     {
-      "article_count": 27,
+      "article_count": 28,
       "category": "ai",
       "community_id": null,
       "degree": 2,
