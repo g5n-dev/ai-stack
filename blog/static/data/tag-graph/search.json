@@ -12,10 +12,10 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-13T12:02:18Z",
+  "generated_at": "2026-08-13T13:48:18Z",
   "items": [
     {
-      "article_count": 765,
+      "article_count": 766,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 70,
@@ -25,7 +25,7 @@
       "legacy_id": "AI Agent",
       "name": "AI Agent",
       "rank": 1,
-      "weighted_degree": 2077.2
+      "weighted_degree": 2080.2
     },
     {
       "article_count": 654,
@@ -54,7 +54,7 @@
       "weighted_degree": 1289
     },
     {
-      "article_count": 367,
+      "article_count": 369,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 103,
@@ -64,7 +64,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 4,
-      "weighted_degree": 1040
+      "weighted_degree": 1045
     },
     {
       "article_count": 420,
@@ -80,7 +80,7 @@
       "weighted_degree": 1004
     },
     {
-      "article_count": 686,
+      "article_count": 687,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 40,
@@ -90,7 +90,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 831
+      "weighted_degree": 834
     },
     {
       "article_count": 162,
@@ -158,17 +158,17 @@
       "weighted_degree": 449.2
     },
     {
-      "article_count": 852,
+      "article_count": 853,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
-      "degree": 20,
+      "degree": 21,
       "description": "文章标签: Hacker News",
       "id": "tag:Hacker News",
       "layer": "tag",
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 12,
-      "weighted_degree": 437
+      "weighted_degree": 439
     },
     {
       "article_count": 122,
@@ -223,17 +223,17 @@
       "weighted_degree": 289.6
     },
     {
-      "article_count": 44,
+      "article_count": 45,
       "category": "article_tag",
-      "community_id": "community:tag:掘金",
-      "degree": 34,
+      "community_id": "community:tag:Amazon EventBridge",
+      "degree": 35,
       "description": "文章标签: Prompt 工程",
       "id": "tag:Prompt 工程",
       "layer": "tag",
       "legacy_id": "Prompt 工程",
       "name": "Prompt 工程",
       "rank": 17,
-      "weighted_degree": 246
+      "weighted_degree": 248
     },
     {
       "article_count": 88,
@@ -264,7 +264,7 @@
     {
       "article_count": 24,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 34,
       "description": "文章标签: Amazon Bedrock",
       "id": "tag:Amazon Bedrock",
@@ -301,7 +301,7 @@
       "weighted_degree": 136.6
     },
     {
-      "article_count": 39,
+      "article_count": 40,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 10,
@@ -311,7 +311,7 @@
       "legacy_id": "cs.AI",
       "name": "cs.AI",
       "rank": 23,
-      "weighted_degree": 125
+      "weighted_degree": 128
     },
     {
       "article_count": 38,
@@ -355,7 +355,7 @@
     {
       "article_count": 15,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 24,
       "description": "文章标签: Amazon Bedrock AgentCore",
       "id": "tag:Amazon Bedrock AgentCore",
@@ -368,7 +368,7 @@
     {
       "article_count": 46,
       "category": "article_tag",
-      "community_id": "community:other",
+      "community_id": "community:tag:来源转写",
       "degree": 9,
       "description": "文章标签: 工程实践",
       "id": "tag:工程实践",
@@ -381,7 +381,7 @@
     {
       "article_count": 45,
       "category": "article_tag",
-      "community_id": "community:other",
+      "community_id": "community:tag:来源转写",
       "degree": 2,
       "description": "文章标签: 来源转写",
       "id": "tag:来源转写",
@@ -446,7 +446,7 @@
     {
       "article_count": 14,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 31,
       "description": "文章标签: Customer Solutions",
       "id": "tag:Customer Solutions",
@@ -459,7 +459,7 @@
     {
       "article_count": 14,
       "category": "article_tag",
-      "community_id": "community:tag:Foundational (100)",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 21,
       "description": "文章标签: Announcements",
       "id": "tag:Announcements",
@@ -485,7 +485,7 @@
     {
       "article_count": 14,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 22,
       "description": "文章标签: Intermediate (200)",
       "id": "tag:Intermediate (200)",
@@ -563,7 +563,7 @@
     {
       "article_count": 5,
       "category": "article_tag",
-      "community_id": "community:tag:Foundational (100)",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 12,
       "description": "文章标签: Foundational (100)",
       "id": "tag:Foundational (100)",
@@ -628,7 +628,7 @@
     {
       "article_count": 5,
       "category": "article_tag",
-      "community_id": "community:tag:Foundational (100)",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 14,
       "description": "文章标签: Amazon Quick Suite",
       "id": "tag:Amazon Quick Suite",
@@ -654,7 +654,7 @@
     {
       "article_count": 4,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 16,
       "description": "文章标签: Artificial Intelligence",
       "id": "tag:Artificial Intelligence",
@@ -719,7 +719,7 @@
     {
       "article_count": 3,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 15,
       "description": "文章标签: Amazon Nova",
       "id": "tag:Amazon Nova",
@@ -732,7 +732,7 @@
     {
       "article_count": 3,
       "category": "article_tag",
-      "community_id": "community:tag:Elastic Load Balancing",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 14,
       "description": "文章标签: Expert (400)",
       "id": "tag:Expert (400)",
@@ -745,7 +745,7 @@
     {
       "article_count": 3,
       "category": "article_tag",
-      "community_id": "community:tag:Foundational (100)",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 12,
       "description": "文章标签: Amazon Quick Sight",
       "id": "tag:Amazon Quick Sight",
@@ -784,7 +784,7 @@
     {
       "article_count": 2,
       "category": "article_tag",
-      "community_id": "community:tag:Foundational (100)",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 13,
       "description": "文章标签: Amazon Simple Storage Service (S3)",
       "id": "tag:Amazon Simple Storage Service (S3)",
@@ -836,7 +836,7 @@
     {
       "article_count": 2,
       "category": "article_tag",
-      "community_id": "community:tag:Elastic Load Balancing",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 13,
       "description": "文章标签: AWS Fargate",
       "id": "tag:AWS Fargate",
@@ -979,7 +979,7 @@
     {
       "article_count": 2,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 8,
       "description": "文章标签: Amazon Bedrock Guardrails",
       "id": "tag:Amazon Bedrock Guardrails",
@@ -992,7 +992,7 @@
     {
       "article_count": 2,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 8,
       "description": "文章标签: Partner solutions",
       "id": "tag:Partner solutions",
@@ -1083,7 +1083,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Elastic Load Balancing",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 8,
       "description": "文章标签: Amazon API Gateway",
       "id": "tag:Amazon API Gateway",
@@ -1096,7 +1096,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:other",
+      "community_id": "community:tag:Computer modeling",
       "degree": 8,
       "description": "文章标签: Design",
       "id": "tag:Design",
@@ -1109,7 +1109,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:other",
+      "community_id": "community:tag:Computer modeling",
       "degree": 8,
       "description": "文章标签: Systems design",
       "id": "tag:Systems design",
@@ -1120,7 +1120,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 862,
+      "article_count": 863,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -1174,7 +1174,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:other",
+      "community_id": "community:tag:Computer modeling",
       "degree": 7,
       "description": "文章标签: Algorithms",
       "id": "tag:Algorithms",
@@ -1200,7 +1200,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 7,
       "description": "文章标签: Amazon Athena",
       "id": "tag:Amazon Athena",
@@ -1226,7 +1226,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:other",
+      "community_id": "community:tag:AWS ParallelCluster",
       "degree": 7,
       "description": "文章标签: Amazon EC2",
       "id": "tag:Amazon EC2",
@@ -1278,7 +1278,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 7,
       "description": "文章标签: Amazon SageMaker Unified Studio",
       "id": "tag:Amazon SageMaker Unified Studio",
@@ -1343,7 +1343,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:other",
+      "community_id": "community:tag:AWS ParallelCluster",
       "degree": 7,
       "description": "文章标签: AWS ParallelCluster",
       "id": "tag:AWS ParallelCluster",
@@ -1356,7 +1356,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 7,
       "description": "文章标签: AWS Secrets Manager",
       "id": "tag:AWS Secrets Manager",
@@ -1395,7 +1395,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:other",
+      "community_id": "community:tag:Computer modeling",
       "degree": 7,
       "description": "文章标签: Computer modeling",
       "id": "tag:Computer modeling",
@@ -1408,7 +1408,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Elastic Load Balancing",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 7,
       "description": "文章标签: Elastic Load Balancing",
       "id": "tag:Elastic Load Balancing",
@@ -1447,7 +1447,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Foundational (100)",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 7,
       "description": "文章标签: How-To",
       "id": "tag:How-To",
@@ -1668,7 +1668,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 6,
       "description": "文章标签: Amazon Bedrock Agents",
       "id": "tag:Amazon Bedrock Agents",
@@ -1681,7 +1681,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:掘金",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 6,
       "description": "文章标签: Amazon SageMaker HyperPod",
       "id": "tag:Amazon SageMaker HyperPod",
@@ -1822,7 +1822,7 @@
       "weighted_degree": 4.6
     },
     {
-      "article_count": 765,
+      "article_count": 766,
       "category": "ai",
       "community_id": null,
       "degree": 5,
@@ -1837,7 +1837,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Foundational (100)",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 4,
       "description": "文章标签: Amazon Bedrock Knowledge Bases",
       "id": "tag:Amazon Bedrock Knowledge Bases",
@@ -1850,7 +1850,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 4,
       "description": "文章标签: Amazon Rekognition",
       "id": "tag:Amazon Rekognition",
@@ -1876,7 +1876,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Foundational (100)",
+      "community_id": "community:tag:Amazon EventBridge",
       "degree": 4,
       "description": "文章标签: AWS DeepRacer",
       "id": "tag:AWS DeepRacer",

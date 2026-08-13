@@ -1,8 +1,8 @@
 {
-  "active_count": 2521,
+  "active_count": 2523,
   "archived_count": 276,
   "complete_count": 46,
-  "interpreted_brief_count": 87,
+  "interpreted_brief_count": 88,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19871,6 +19871,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260813-arxiv-vakra-evaluating-multi-hop-reasoning-across-apis-a-3-fdd6121b1c.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260813-blogs_podcasts-500-khabib-nurmagomedov-dagestan-mma-ufc-islam-con-0-9ca509495f.md": {
       "reasons": [
         "concise_source_card"
@@ -19931,6 +19937,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260813-hacker_news-choosing-an-ai-model-one-prompt-11-models-differen-1-59b40633ec.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260813-hacker_news-if-i-own-claudes-outputs-why-cant-i-train-my-own-m-0-4a7108e3bc.md": {
       "reasons": [
         "concise_source_card"
@@ -19970,10 +19982,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2388,
-  "source_file_count": 2797,
-  "source_tree_sha256": "f4727a13bf80459749ec2abaa8613fe138df30fb5e4de9906674f4ad57f22695",
-  "verified_provenance_count": 2521,
+  "source_brief_count": 2389,
+  "source_file_count": 2799,
+  "source_tree_sha256": "bbfe2d35b78441c58751e16763d0fb1560100d81712fa4e77faf9fa9712034fa",
+  "verified_provenance_count": 2523,
   "warning_counts": {
     "source_excerpt_truncated": 774
   }
