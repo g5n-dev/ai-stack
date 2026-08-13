@@ -12,10 +12,10 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-13T02:48:37Z",
+  "generated_at": "2026-08-13T05:04:46Z",
   "items": [
     {
-      "article_count": 764,
+      "article_count": 765,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 70,
@@ -25,7 +25,7 @@
       "legacy_id": "AI Agent",
       "name": "AI Agent",
       "rank": 1,
-      "weighted_degree": 2072.2
+      "weighted_degree": 2077.2
     },
     {
       "article_count": 652,
@@ -54,7 +54,7 @@
       "weighted_degree": 1289
     },
     {
-      "article_count": 361,
+      "article_count": 362,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 102,
@@ -64,7 +64,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 4,
-      "weighted_degree": 1020
+      "weighted_degree": 1025
     },
     {
       "article_count": 420,
@@ -80,7 +80,7 @@
       "weighted_degree": 1004
     },
     {
-      "article_count": 681,
+      "article_count": 682,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 39,
@@ -90,7 +90,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 813
+      "weighted_degree": 818
     },
     {
       "article_count": 162,
@@ -171,7 +171,7 @@
       "weighted_degree": 435
     },
     {
-      "article_count": 121,
+      "article_count": 122,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 48,
@@ -181,7 +181,7 @@
       "legacy_id": "生成式 AI",
       "name": "生成式 AI",
       "rank": 13,
-      "weighted_degree": 418
+      "weighted_degree": 423
     },
     {
       "article_count": 115,
@@ -327,7 +327,7 @@
       "weighted_degree": 120
     },
     {
-      "article_count": 35,
+      "article_count": 36,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 20,
@@ -337,7 +337,7 @@
       "legacy_id": "计算机视觉",
       "name": "计算机视觉",
       "rank": 25,
-      "weighted_degree": 111.2
+      "weighted_degree": 116.2
     },
     {
       "article_count": 17,
@@ -431,6 +431,19 @@
       "weighted_degree": 84.6
     },
     {
+      "article_count": 25,
+      "category": "article_tag",
+      "community_id": "community:tag:掘金",
+      "degree": 7,
+      "description": "文章标签: cs.CV",
+      "id": "tag:cs.CV",
+      "layer": "tag",
+      "legacy_id": "cs.CV",
+      "name": "cs.CV",
+      "rank": 33,
+      "weighted_degree": 81
+    },
+    {
       "article_count": 14,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
@@ -440,7 +453,7 @@
       "layer": "tag",
       "legacy_id": "Customer Solutions",
       "name": "Customer Solutions",
-      "rank": 33,
+      "rank": 34,
       "weighted_degree": 80
     },
     {
@@ -453,7 +466,7 @@
       "layer": "tag",
       "legacy_id": "Announcements",
       "name": "Announcements",
-      "rank": 34,
+      "rank": 35,
       "weighted_degree": 78
     },
     {
@@ -466,7 +479,7 @@
       "layer": "tag",
       "legacy_id": "Technical How-to",
       "name": "Technical How-to",
-      "rank": 35,
+      "rank": 36,
       "weighted_degree": 78
     },
     {
@@ -479,21 +492,8 @@
       "layer": "tag",
       "legacy_id": "Intermediate (200)",
       "name": "Intermediate (200)",
-      "rank": 36,
-      "weighted_degree": 77
-    },
-    {
-      "article_count": 24,
-      "category": "article_tag",
-      "community_id": "community:tag:掘金",
-      "degree": 7,
-      "description": "文章标签: cs.CV",
-      "id": "tag:cs.CV",
-      "layer": "tag",
-      "legacy_id": "cs.CV",
-      "name": "cs.CV",
       "rank": 37,
-      "weighted_degree": 76
+      "weighted_degree": 77
     },
     {
       "article_count": 43,
@@ -1120,7 +1120,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 860,
+      "article_count": 861,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -1822,7 +1822,7 @@
       "weighted_degree": 4.6
     },
     {
-      "article_count": 764,
+      "article_count": 765,
       "category": "ai",
       "community_id": null,
       "degree": 5,
@@ -2017,7 +2017,7 @@
       "weighted_degree": 3.6
     },
     {
-      "article_count": 35,
+      "article_count": 36,
       "category": "vision",
       "community_id": null,
       "degree": 4,
@@ -2745,7 +2745,7 @@
       "weighted_degree": 0.6
     },
     {
-      "article_count": 35,
+      "article_count": 36,
       "category": "ai",
       "community_id": null,
       "degree": 1,
