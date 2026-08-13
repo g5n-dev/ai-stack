@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Technical How-to",
-  "generated_at": "2026-08-13T02:48:37Z",
+  "generated_at": "2026-08-13T05:04:46Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -343,7 +343,7 @@
       "legacy_id": "Customer Solutions",
       "level": 6,
       "name": "Customer Solutions",
-      "rank": 33,
+      "rank": 34,
       "related_count": 31,
       "weighted_degree": 80
     },
@@ -360,7 +360,7 @@
       "legacy_id": "Announcements",
       "level": 6,
       "name": "Announcements",
-      "rank": 34,
+      "rank": 35,
       "related_count": 21,
       "weighted_degree": 78
     },
@@ -377,7 +377,7 @@
       "legacy_id": "Technical How-to",
       "level": 6,
       "name": "Technical How-to",
-      "rank": 35,
+      "rank": 36,
       "related_count": 27,
       "weighted_degree": 78
     },
@@ -394,7 +394,7 @@
       "legacy_id": "Intermediate (200)",
       "level": 6,
       "name": "Intermediate (200)",
-      "rank": 36,
+      "rank": 37,
       "related_count": 22,
       "weighted_degree": 77
     },

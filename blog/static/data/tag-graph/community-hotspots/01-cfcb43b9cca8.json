@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:掘金",
-  "generated_at": "2026-08-13T02:48:37Z",
+  "generated_at": "2026-08-13T05:04:46Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -58,7 +58,7 @@
       "strength": 1,
       "target": "tag:ArXiv",
       "type": "cooccurrence",
-      "weight": 142
+      "weight": 143
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:来源快报",
@@ -66,7 +66,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 127
+      "weight": 128
     },
     {
       "id": "edge:cooccurrence:tag:掘金->tag:数据库",
@@ -146,7 +146,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 95
+      "weight": 96
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:大语言模型",
@@ -242,7 +242,7 @@
       "strength": 1,
       "target": "tag:生成式 AI",
       "type": "cooccurrence",
-      "weight": 61
+      "weight": 62
     },
     {
       "id": "edge:cooccurrence:tag:博客与播客->tag:机器学习",
@@ -263,7 +263,7 @@
   ],
   "nodes": [
     {
-      "article_count": 764,
+      "article_count": 765,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -277,7 +277,7 @@
       "name": "AI Agent",
       "rank": 1,
       "related_count": 68,
-      "weighted_degree": 2072.2
+      "weighted_degree": 2077.2
     },
     {
       "article_count": 652,
@@ -314,7 +314,7 @@
       "weighted_degree": 1289
     },
     {
-      "article_count": 361,
+      "article_count": 362,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -328,7 +328,7 @@
       "name": "来源快报",
       "rank": 4,
       "related_count": 102,
-      "weighted_degree": 1020
+      "weighted_degree": 1025
     },
     {
       "article_count": 420,
@@ -348,7 +348,7 @@
       "weighted_degree": 1004
     },
     {
-      "article_count": 681,
+      "article_count": 682,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -362,7 +362,7 @@
       "name": "ArXiv",
       "rank": 6,
       "related_count": 39,
-      "weighted_degree": 813
+      "weighted_degree": 818
     },
     {
       "article_count": 162,
@@ -467,7 +467,7 @@
       "weighted_degree": 435
     },
     {
-      "article_count": 121,
+      "article_count": 122,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -481,7 +481,7 @@
       "name": "生成式 AI",
       "rank": 13,
       "related_count": 48,
-      "weighted_degree": 418
+      "weighted_degree": 423
     },
     {
       "article_count": 115,
@@ -637,7 +637,7 @@
       "weighted_degree": 120
     },
     {
-      "article_count": 35,
+      "article_count": 36,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -651,7 +651,7 @@
       "name": "计算机视觉",
       "rank": 25,
       "related_count": 18,
-      "weighted_degree": 111.2
+      "weighted_degree": 116.2
     },
     {
       "article_count": 27,
