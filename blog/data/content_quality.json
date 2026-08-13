@@ -1,8 +1,8 @@
 {
-  "active_count": 2513,
+  "active_count": 2515,
   "archived_count": 276,
   "complete_count": 46,
-  "interpreted_brief_count": 83,
+  "interpreted_brief_count": 84,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19805,6 +19805,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260813-arxiv-ava-encoder-towards-agent-native-video-representat-0-be22f6b569.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260813-arxiv-multimodal-code-switching-interleaving-visual-obje-2-ed0e54d5dd.md": {
       "reasons": [
         "interpreted_source_card"
@@ -19840,6 +19846,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260813-blogs_podcasts-ainews-spacexai-grok-46-and-grok-bot-0-4f97ae5272.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
     },
     "posts/20260813-blogs_podcasts-from-assistance-to-execution-how-enterprises-put-a-0-e063daae62.md": {
       "reasons": [
@@ -19922,10 +19934,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2384,
-  "source_file_count": 2789,
-  "source_tree_sha256": "4ffdefe059b3958fcc1cc54d3dde67a590543748b40050ae885108fa378a38ce",
-  "verified_provenance_count": 2513,
+  "source_brief_count": 2385,
+  "source_file_count": 2791,
+  "source_tree_sha256": "f0ea4fabbef3f1c4b128f9f55ab6c4e593df4a637092b21febf3c0146bb8f539",
+  "verified_provenance_count": 2515,
   "warning_counts": {
     "source_excerpt_truncated": 774
   }

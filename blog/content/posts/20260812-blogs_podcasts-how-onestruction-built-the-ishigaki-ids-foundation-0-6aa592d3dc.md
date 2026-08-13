@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:14d0dd8d0dbbd2f764273113d155ecfd3d0911f63edfe4735
 description: "本文描述了一家建筑科技初创公司如何在数据稀缺的 BIM 领域，利用合成数据和三阶段训练（持续预训练、监督微调、强化学习）构建面向信息交付规范（IDS）的领域专用基础模型，并借助可验证奖励提升输出质量。"
 external_url: https://aws.amazon.com/blogs/machine-learning/how-onestruction-built-the-ishigaki-ids-foundation-model-with-aws-genaiic
 parent_observation_id: null
-last_seen_at: 2026-08-12T00:00:00Z
+last_seen_at: 2026-08-13T00:00:00Z
 ---
 
 ## 基本信息

@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:341a3c5f4c9dc67bf5354ab2708c49801727e5ec19bd46312
 description: "这是一篇介绍如何在 AI 代理执行支付时实现全程可验证、可追责的技术方案，涵盖了政策校验、硬件可信执行环境签名以及交易级审计记录的构建思路。"
 external_url: https://aws.amazon.com/blogs/machine-learning/pay-with-confidence-how-solv-labs-built-verifiable-auditable-agent-payments-on-amazon-bedrock-agentcore-payments
 parent_observation_id: null
-last_seen_at: 2026-08-12T13:46:23.346883Z
+last_seen_at: 2026-08-13T00:00:00Z
 ---
 
 ## 基本信息

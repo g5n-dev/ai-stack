@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:57a36d1057884107bce0c6a5b8b68d77bbf5df7504c67cf81
 description: "这是一段播客摘要，介绍了 Chai Discovery 如何在 AI 制药工具领域获得关注，解释了为何制药行业现在开始愿意付费使用 AI 设计工具而非自己研发药物。"
 external_url: https://www.latent.space/p/chai-discovery
 parent_observation_id: null
-last_seen_at: 2026-08-12T00:00:00Z
+last_seen_at: 2026-08-13T00:00:00Z
 ---
 
 ## 基本信息

@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:e83626d05158a2bab2bfb648f81c94dab8ebaf47bb1e115b6
 description: "First Orion 采用能够用自然语言描述测试意图的 AI 代理，实现了 UI 自动化测试的快速编写和维护，以解决传统脚本因页面结构变化而失效的问题。"
 external_url: https://aws.amazon.com/blogs/machine-learning/first-orion-accelerates-qa-automation-using-amazon-nova-act
 parent_observation_id: null
-last_seen_at: 2026-08-12T00:00:00Z
+last_seen_at: 2026-08-13T00:00:00Z
 ---
 
 ## 基本信息
