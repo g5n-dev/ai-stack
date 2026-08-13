@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:18907968f092926f8ad72d828845cc5ca8276268215bb533b
 description: "该内容介绍了在AWS上部署Claude应用网关的参考架构，包括请求流向、认证与策略控制方式以及在Fargate上的容器化运行方式。"
 external_url: https://aws.amazon.com/blogs/machine-learning/deploying-anthropic-claude-apps-gateway-for-aws-for-enterprise-workloads
 parent_observation_id: null
-last_seen_at: 2026-08-12T00:00:00Z
+last_seen_at: 2026-08-13T00:00:00Z
 ---
 
 ## 基本信息

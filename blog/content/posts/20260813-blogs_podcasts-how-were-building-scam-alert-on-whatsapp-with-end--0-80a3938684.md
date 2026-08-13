@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:9146edf54f371f83d473f3c88d1820b54fcf9a9e9c4d4d5ad
 description: "WhatsApp推出可选的Scam Alert功能，在用户设备上运行轻量机器学习模型，对来自非联系人的消息进行本地诈骗概率评估，并在聊天界面显示警告，用户可自行决定是否阻止或上报。"
 external_url: https://engineering.fb.com/2026/08/12/security/how-were-building-scam-alert-whatsapp
 parent_observation_id: null
-last_seen_at: 2026-08-12T22:02:41.295206Z
+last_seen_at: 2026-08-13T00:00:00Z
 ---
 
 ## 基本信息

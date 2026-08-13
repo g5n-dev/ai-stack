@@ -15,7 +15,7 @@ observation_id: obs_9bafa93fe08b847d5d92140912eaaad9a7a6da1c55940aa1439e6fdd8c2d
 event_id: evt_ac98113ef5b9989b5a2a23777d7e0570bc69d13df30e36c1541ae8053504bbb7
 revision_id: rev_425a17b7c6dc1164e68f12d71521c7fcb5e807c63db7439c2df0ee6bf7e2fb51
 source_published_at: 2026-08-12T00:00:00Z
-first_seen_at: 2026-08-12T23:57:32.643654Z
+first_seen_at: 2026-08-13T00:08:22Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 61
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://openai.com/index/ringcentral
 parent_observation_id: null
-last_seen_at: 2026-08-12T23:57:32.643654Z
+last_seen_at: 2026-08-13T00:00:00Z
 ---
 
 ## 基本信息

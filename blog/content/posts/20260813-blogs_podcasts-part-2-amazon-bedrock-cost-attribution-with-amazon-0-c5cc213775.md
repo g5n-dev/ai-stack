@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:eb907cc3e21a939bcef3daec6438eb11965584826c5fba5f
 source_payload_sha256: "sha256:889ff496df08f98d830329e7ed8ff19a0a379ed397bf876700bb6dfe448c4885"
 observation_id: obs_c5cc2137750496da11923242447637e42cccdf5767caa0a4839bc039c033297b
 event_id: evt_8d51f683b8a8039cfcaeb33ef1cee11acc566e7e1f86ae1bbda1bd2520653fcc
-revision_id: rev_36df22f211177783317cdf292d1133c7e6eecaec5a3fa96fe55fe3c436cf5864
+revision_id: rev_2688e849300015fa1c694ebfe55e0b7d7c9bc873d24a201aa875c392116ebe3a
 source_published_at: 2026-08-12T17:45:20Z
 first_seen_at: 2026-08-12T18:19:10Z
 timestamp_confidence: feed
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:04dfc7b07a928afaa1603789c35eb97c2121ed7c0e0375b23
 description: "该内容说明如何通过配置 Cost and Usage Report 2.0 并在 Amazon Athena 中查询，结合 CUDOS 可视化仪表板，实现对 Amazon Bedrock 调用费用的逐 IAM 主体追踪与成本归因。"
 external_url: https://aws.amazon.com/blogs/machine-learning/part-2-amazon-bedrock-cost-attribution-with-amazon-athena-and-cudos
 parent_observation_id: null
-last_seen_at: 2026-08-12T18:07:17.376771Z
+last_seen_at: 2026-08-13T00:00:00Z
 ---
 
 ## 基本信息

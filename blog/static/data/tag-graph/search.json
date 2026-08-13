@@ -12,10 +12,10 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-12T23:58:59Z",
+  "generated_at": "2026-08-13T02:48:37Z",
   "items": [
     {
-      "article_count": 762,
+      "article_count": 764,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 70,
@@ -25,10 +25,10 @@
       "legacy_id": "AI Agent",
       "name": "AI Agent",
       "rank": 1,
-      "weighted_degree": 2062.2
+      "weighted_degree": 2072.2
     },
     {
-      "article_count": 651,
+      "article_count": 652,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 81,
@@ -38,7 +38,7 @@
       "legacy_id": "大语言模型",
       "name": "大语言模型",
       "rank": 2,
-      "weighted_degree": 1738.2
+      "weighted_degree": 1743.2
     },
     {
       "article_count": 501,
@@ -54,7 +54,7 @@
       "weighted_degree": 1289
     },
     {
-      "article_count": 359,
+      "article_count": 361,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 102,
@@ -64,10 +64,10 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 4,
-      "weighted_degree": 1010
+      "weighted_degree": 1020
     },
     {
-      "article_count": 419,
+      "article_count": 420,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 94,
@@ -77,10 +77,10 @@
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 5,
-      "weighted_degree": 999
+      "weighted_degree": 1004
     },
     {
-      "article_count": 680,
+      "article_count": 681,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 39,
@@ -90,7 +90,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 808
+      "weighted_degree": 813
     },
     {
       "article_count": 162,
@@ -145,7 +145,7 @@
       "weighted_degree": 470
     },
     {
-      "article_count": 109,
+      "article_count": 110,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 37,
@@ -155,7 +155,7 @@
       "legacy_id": "RAG",
       "name": "RAG",
       "rank": 11,
-      "weighted_degree": 444.2
+      "weighted_degree": 449.2
     },
     {
       "article_count": 851,
@@ -223,7 +223,7 @@
       "weighted_degree": 289.6
     },
     {
-      "article_count": 41,
+      "article_count": 43,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 34,
@@ -233,7 +233,7 @@
       "legacy_id": "Prompt 工程",
       "name": "Prompt 工程",
       "rank": 17,
-      "weighted_degree": 232
+      "weighted_degree": 242
     },
     {
       "article_count": 87,
@@ -327,6 +327,19 @@
       "weighted_degree": 120
     },
     {
+      "article_count": 35,
+      "category": "article_tag",
+      "community_id": "community:tag:掘金",
+      "degree": 20,
+      "description": "文章标签: 计算机视觉",
+      "id": "tag:计算机视觉",
+      "layer": "tag",
+      "legacy_id": "计算机视觉",
+      "name": "计算机视觉",
+      "rank": 25,
+      "weighted_degree": 111.2
+    },
+    {
       "article_count": 17,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
@@ -336,21 +349,8 @@
       "layer": "tag",
       "legacy_id": "Advanced (300)",
       "name": "Advanced (300)",
-      "rank": 25,
-      "weighted_degree": 109
-    },
-    {
-      "article_count": 34,
-      "category": "article_tag",
-      "community_id": "community:tag:掘金",
-      "degree": 20,
-      "description": "文章标签: 计算机视觉",
-      "id": "tag:计算机视觉",
-      "layer": "tag",
-      "legacy_id": "计算机视觉",
-      "name": "计算机视觉",
       "rank": 26,
-      "weighted_degree": 106.2
+      "weighted_degree": 109
     },
     {
       "article_count": 15,
@@ -483,7 +483,7 @@
       "weighted_degree": 77
     },
     {
-      "article_count": 23,
+      "article_count": 24,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 7,
@@ -493,7 +493,7 @@
       "legacy_id": "cs.CV",
       "name": "cs.CV",
       "rank": 37,
-      "weighted_degree": 71
+      "weighted_degree": 76
     },
     {
       "article_count": 43,
@@ -1042,7 +1042,7 @@
       "weighted_degree": 8
     },
     {
-      "article_count": 651,
+      "article_count": 652,
       "category": "nlp",
       "community_id": null,
       "degree": 8,
@@ -1120,7 +1120,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 858,
+      "article_count": 860,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -1575,7 +1575,7 @@
       "weighted_degree": 7
     },
     {
-      "article_count": 109,
+      "article_count": 110,
       "category": "ai",
       "community_id": null,
       "degree": 7,
@@ -1822,7 +1822,7 @@
       "weighted_degree": 4.6
     },
     {
-      "article_count": 762,
+      "article_count": 764,
       "category": "ai",
       "community_id": null,
       "degree": 5,
@@ -2017,7 +2017,7 @@
       "weighted_degree": 3.6
     },
     {
-      "article_count": 34,
+      "article_count": 35,
       "category": "vision",
       "community_id": null,
       "degree": 4,
@@ -2238,7 +2238,7 @@
       "weighted_degree": 2.8
     },
     {
-      "article_count": 651,
+      "article_count": 652,
       "category": "ai",
       "community_id": null,
       "degree": 3,
@@ -2524,7 +2524,7 @@
       "weighted_degree": 2
     },
     {
-      "article_count": 109,
+      "article_count": 110,
       "category": "ai",
       "community_id": null,
       "degree": 2,
@@ -2745,7 +2745,7 @@
       "weighted_degree": 0.6
     },
     {
-      "article_count": 34,
+      "article_count": 35,
       "category": "ai",
       "community_id": null,
       "degree": 1,
