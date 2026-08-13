@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-13T05:04:46Z",
+  "generated_at": "2026-08-13T06:47:22Z",
   "items": [
     {
       "article_count": 765,
@@ -54,7 +54,7 @@
       "weighted_degree": 1289
     },
     {
-      "article_count": 362,
+      "article_count": 363,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 102,
@@ -64,7 +64,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 4,
-      "weighted_degree": 1025
+      "weighted_degree": 1028
     },
     {
       "article_count": 420,
@@ -80,7 +80,7 @@
       "weighted_degree": 1004
     },
     {
-      "article_count": 682,
+      "article_count": 683,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 39,
@@ -90,7 +90,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 818
+      "weighted_degree": 821
     },
     {
       "article_count": 162,
@@ -236,7 +236,7 @@
       "weighted_degree": 242
     },
     {
-      "article_count": 87,
+      "article_count": 88,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 40,
@@ -246,7 +246,7 @@
       "legacy_id": "AI",
       "name": "AI",
       "rank": 18,
-      "weighted_degree": 230.6
+      "weighted_degree": 233.6
     },
     {
       "article_count": 42,
@@ -301,7 +301,7 @@
       "weighted_degree": 136.6
     },
     {
-      "article_count": 38,
+      "article_count": 39,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 10,
@@ -311,7 +311,7 @@
       "legacy_id": "cs.AI",
       "name": "cs.AI",
       "rank": 23,
-      "weighted_degree": 122
+      "weighted_degree": 125
     },
     {
       "article_count": 36,
@@ -1120,7 +1120,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 861,
+      "article_count": 862,
       "category": "ai",
       "community_id": null,
       "degree": 10,
