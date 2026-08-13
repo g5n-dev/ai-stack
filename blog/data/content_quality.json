@@ -1,8 +1,8 @@
 {
-  "active_count": 2538,
+  "active_count": 2541,
   "archived_count": 276,
   "complete_count": 48,
-  "interpreted_brief_count": 92,
+  "interpreted_brief_count": 94,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19961,6 +19961,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260814-arxiv-a-cascaded-unsupervised-supervised-nlp-pipeline-fo-3-628431c73f.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260814-arxiv-a-neighborhood-attention-transformer-network-for-e-3-3c266692be.md": {
       "reasons": [
         "interpreted_source_card"
@@ -19980,6 +19986,12 @@
       "status": "source_brief"
     },
     "posts/20260814-blogs_podcasts-accelerating-ma-due-diligence-with-amazon-bedrock--0-10a29b4804.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260814-blogs_podcasts-amazon-quick-for-microsoft-365-agentic-ai-where-yo-0-05f14b4e1e.md": {
       "reasons": [
         "interpreted_source_card"
       ],
@@ -20010,6 +20022,12 @@
       "status": "source_brief"
     },
     "posts/20260814-hacker_news-gemini-37-flash-0-48a389c50c.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260814-hacker_news-how-organizations-use-ai-evidence-from-chatgpt-pdf-6-51164b112e.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -20060,10 +20078,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2398,
-  "source_file_count": 2814,
-  "source_tree_sha256": "481e345d4ee568e55a1a3a329ffde1c6e56af9bfe1cfcbb85af707e62b2e77d8",
-  "verified_provenance_count": 2538,
+  "source_brief_count": 2399,
+  "source_file_count": 2817,
+  "source_tree_sha256": "54bb8edcf8d6c1806afe80150513701056a21b33e89010f87a18f3915a895531",
+  "verified_provenance_count": 2541,
   "warning_counts": {
     "source_excerpt_truncated": 774
   }
