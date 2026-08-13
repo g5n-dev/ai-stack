@@ -1,5 +1,5 @@
 {
-  "active_count": 2541,
+  "active_count": 2544,
   "archived_count": 276,
   "complete_count": 48,
   "interpreted_brief_count": 94,
@@ -19979,6 +19979,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260814-arxiv-diagram-mmu-a-multi-modal-benchmark-for-scientific-3-e379f6911a.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260814-arxiv-earth-observation-embeddings-are-effective-sub-gri-3-4aea808a41.md": {
       "reasons": [
         "concise_source_card"
@@ -20015,7 +20021,19 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260814-blogs_podcasts-the-builders-guide-to-gpt56-0-6f8368ac76.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260814-hacker_news-accelerating-gpt-56-sol-ultrafast-0-3868a8d41a.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260814-hacker_news-ai-at-home-part-1-a-box-of-scraps-15-b751336a14.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -20078,10 +20096,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2399,
-  "source_file_count": 2817,
-  "source_tree_sha256": "54bb8edcf8d6c1806afe80150513701056a21b33e89010f87a18f3915a895531",
-  "verified_provenance_count": 2541,
+  "source_brief_count": 2402,
+  "source_file_count": 2820,
+  "source_tree_sha256": "cba433de6c7993286aede9bd790b22bb58b6a48607d6acf32a9af248c97f26c0",
+  "verified_provenance_count": 2544,
   "warning_counts": {
     "source_excerpt_truncated": 774
   }
