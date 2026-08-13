@@ -1,5 +1,5 @@
 {
-  "active_count": 2526,
+  "active_count": 2528,
   "archived_count": 276,
   "complete_count": 47,
   "interpreted_brief_count": 89,
@@ -19960,6 +19960,18 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260814-blogs_podcasts-monitor-on-premises-and-multi-cloud-ai-agents-with-0-5e7836db2c.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260814-hacker_news-show-hn-mcp-memory-fast-agent-memory-using-googles-6-f7e973b8e3.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -19994,10 +20006,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2390,
-  "source_file_count": 2802,
-  "source_tree_sha256": "0b0877a0ab43fe74253d51210419e0df364f6edf079a6bee0c1d85ad89979e9c",
-  "verified_provenance_count": 2526,
+  "source_brief_count": 2392,
+  "source_file_count": 2804,
+  "source_tree_sha256": "227c2a27a16c054fbf84faa14558abe2e5ecc56daf44bbf5f602ce6334b09487",
+  "verified_provenance_count": 2528,
   "warning_counts": {
     "source_excerpt_truncated": 774
   }
