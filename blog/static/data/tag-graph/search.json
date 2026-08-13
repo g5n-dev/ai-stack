@@ -12,23 +12,23 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-13T18:08:52Z",
+  "generated_at": "2026-08-13T19:22:33Z",
   "items": [
     {
-      "article_count": 769,
+      "article_count": 771,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
-      "degree": 70,
+      "degree": 71,
       "description": "文章标签: AI Agent",
       "id": "tag:AI Agent",
       "layer": "tag",
       "legacy_id": "AI Agent",
       "name": "AI Agent",
       "rank": 1,
-      "weighted_degree": 2091.2
+      "weighted_degree": 2101.2
     },
     {
-      "article_count": 656,
+      "article_count": 658,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 82,
@@ -38,7 +38,7 @@
       "legacy_id": "大语言模型",
       "name": "大语言模型",
       "rank": 2,
-      "weighted_degree": 1757.2
+      "weighted_degree": 1763.2
     },
     {
       "article_count": 503,
@@ -54,7 +54,7 @@
       "weighted_degree": 1293
     },
     {
-      "article_count": 375,
+      "article_count": 378,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 103,
@@ -64,10 +64,10 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 4,
-      "weighted_degree": 1062
+      "weighted_degree": 1074
     },
     {
-      "article_count": 421,
+      "article_count": 422,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 94,
@@ -77,10 +77,10 @@
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 5,
-      "weighted_degree": 1009
+      "weighted_degree": 1015
     },
     {
-      "article_count": 689,
+      "article_count": 690,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 40,
@@ -90,7 +90,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 840
+      "weighted_degree": 844
     },
     {
       "article_count": 162,
@@ -158,7 +158,7 @@
       "weighted_degree": 456.2
     },
     {
-      "article_count": 856,
+      "article_count": 857,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 21,
@@ -168,7 +168,7 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 12,
-      "weighted_degree": 445
+      "weighted_degree": 447
     },
     {
       "article_count": 123,
@@ -223,7 +223,7 @@
       "weighted_degree": 289.6
     },
     {
-      "article_count": 47,
+      "article_count": 48,
       "category": "article_tag",
       "community_id": "community:tag:Amazon EventBridge",
       "degree": 38,
@@ -233,7 +233,7 @@
       "legacy_id": "Prompt 工程",
       "name": "Prompt 工程",
       "rank": 17,
-      "weighted_degree": 260
+      "weighted_degree": 266
     },
     {
       "article_count": 90,
@@ -327,6 +327,19 @@
       "weighted_degree": 126.2
     },
     {
+      "article_count": 19,
+      "category": "article_tag",
+      "community_id": "community:tag:Amazon EventBridge",
+      "degree": 32,
+      "description": "文章标签: Advanced (300)",
+      "id": "tag:Advanced (300)",
+      "layer": "tag",
+      "legacy_id": "Advanced (300)",
+      "name": "Advanced (300)",
+      "rank": 25,
+      "weighted_degree": 122
+    },
+    {
       "article_count": 36,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
@@ -336,24 +349,11 @@
       "layer": "tag",
       "legacy_id": "深度学习",
       "name": "深度学习",
-      "rank": 25,
+      "rank": 26,
       "weighted_degree": 120
     },
     {
-      "article_count": 18,
-      "category": "article_tag",
-      "community_id": "community:tag:Amazon EventBridge",
-      "degree": 32,
-      "description": "文章标签: Advanced (300)",
-      "id": "tag:Advanced (300)",
-      "layer": "tag",
-      "legacy_id": "Advanced (300)",
-      "name": "Advanced (300)",
-      "rank": 26,
-      "weighted_degree": 116
-    },
-    {
-      "article_count": 16,
+      "article_count": 17,
       "category": "article_tag",
       "community_id": "community:tag:Amazon EventBridge",
       "degree": 25,
@@ -363,7 +363,7 @@
       "legacy_id": "Amazon Bedrock AgentCore",
       "name": "Amazon Bedrock AgentCore",
       "rank": 27,
-      "weighted_degree": 105
+      "weighted_degree": 111
     },
     {
       "article_count": 48,
@@ -418,6 +418,19 @@
       "weighted_degree": 91
     },
     {
+      "article_count": 14,
+      "category": "article_tag",
+      "community_id": "community:tag:Amazon EventBridge",
+      "degree": 27,
+      "description": "文章标签: Technical How-to",
+      "id": "tag:Technical How-to",
+      "layer": "tag",
+      "legacy_id": "Technical How-to",
+      "name": "Technical How-to",
+      "rank": 32,
+      "weighted_degree": 91
+    },
+    {
       "article_count": 27,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
@@ -427,21 +440,8 @@
       "layer": "tag",
       "legacy_id": "自然语言处理",
       "name": "自然语言处理",
-      "rank": 32,
-      "weighted_degree": 88.2
-    },
-    {
-      "article_count": 13,
-      "category": "article_tag",
-      "community_id": "community:tag:Amazon EventBridge",
-      "degree": 27,
-      "description": "文章标签: Technical How-to",
-      "id": "tag:Technical How-to",
-      "layer": "tag",
-      "legacy_id": "Technical How-to",
-      "name": "Technical How-to",
       "rank": 33,
-      "weighted_degree": 85
+      "weighted_degree": 88.2
     },
     {
       "article_count": 18,
@@ -873,6 +873,19 @@
       "weighted_degree": 12.6
     },
     {
+      "article_count": 4,
+      "category": "article_tag",
+      "community_id": "community:tag:掘金",
+      "degree": 5,
+      "description": "文章标签: cs.CR",
+      "id": "tag:cs.CR",
+      "layer": "tag",
+      "legacy_id": "cs.CR",
+      "name": "cs.CR",
+      "rank": 67,
+      "weighted_degree": 12
+    },
+    {
       "article_count": 2,
       "category": "article_tag",
       "community_id": "community:tag:Google Cloud",
@@ -882,7 +895,7 @@
       "layer": "tag",
       "legacy_id": "Android",
       "name": "Android",
-      "rank": 67,
+      "rank": 68,
       "weighted_degree": 12
     },
     {
@@ -895,7 +908,7 @@
       "layer": "tag",
       "legacy_id": "Google DeepMind",
       "name": "Google DeepMind",
-      "rank": 68,
+      "rank": 69,
       "weighted_degree": 12
     },
     {
@@ -908,7 +921,7 @@
       "layer": "tag",
       "legacy_id": "Developer tools",
       "name": "Developer tools",
-      "rank": 69,
+      "rank": 70,
       "weighted_degree": 12
     },
     {
@@ -921,7 +934,7 @@
       "layer": "tag",
       "legacy_id": "Safety",
       "name": "Safety",
-      "rank": 70,
+      "rank": 71,
       "weighted_degree": 11
     },
     {
@@ -934,7 +947,7 @@
       "layer": "tag",
       "legacy_id": "Amazon SageMaker",
       "name": "Amazon SageMaker",
-      "rank": 71,
+      "rank": 72,
       "weighted_degree": 11
     },
     {
@@ -947,7 +960,7 @@
       "layer": "application",
       "legacy_id": "webapp",
       "name": "Web应用",
-      "rank": 72,
+      "rank": 73,
       "weighted_degree": 11
     },
     {
@@ -960,7 +973,7 @@
       "layer": "tag",
       "legacy_id": "Data Infrastructure",
       "name": "Data Infrastructure",
-      "rank": 73,
+      "rank": 74,
       "weighted_degree": 10.6
     },
     {
@@ -973,7 +986,7 @@
       "layer": "tag",
       "legacy_id": "ML Applications",
       "name": "ML Applications",
-      "rank": 74,
+      "rank": 75,
       "weighted_degree": 10.6
     },
     {
@@ -986,7 +999,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Bedrock Guardrails",
       "name": "Amazon Bedrock Guardrails",
-      "rank": 75,
+      "rank": 76,
       "weighted_degree": 10
     },
     {
@@ -999,7 +1012,7 @@
       "layer": "tag",
       "legacy_id": "Partner solutions",
       "name": "Partner solutions",
-      "rank": 76,
+      "rank": 77,
       "weighted_degree": 10
     },
     {
@@ -1012,7 +1025,7 @@
       "layer": "application",
       "legacy_id": "api",
       "name": "API服务",
-      "rank": 77,
+      "rank": 78,
       "weighted_degree": 9.6
     },
     {
@@ -1025,7 +1038,7 @@
       "layer": "tag",
       "legacy_id": "Google One",
       "name": "Google One",
-      "rank": 78,
+      "rank": 79,
       "weighted_degree": 9
     },
     {
@@ -1038,24 +1051,11 @@
       "layer": "tag",
       "legacy_id": "Security",
       "name": "Security",
-      "rank": 79,
+      "rank": 80,
       "weighted_degree": 8.6
     },
     {
-      "article_count": 3,
-      "category": "article_tag",
-      "community_id": "community:tag:掘金",
-      "degree": 4,
-      "description": "文章标签: cs.CR",
-      "id": "tag:cs.CR",
-      "layer": "tag",
-      "legacy_id": "cs.CR",
-      "name": "cs.CR",
-      "rank": 80,
-      "weighted_degree": 8
-    },
-    {
-      "article_count": 656,
+      "article_count": 658,
       "category": "nlp",
       "community_id": null,
       "degree": 8,
@@ -1133,7 +1133,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 868,
+      "article_count": 870,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -1835,7 +1835,7 @@
       "weighted_degree": 4.6
     },
     {
-      "article_count": 769,
+      "article_count": 771,
       "category": "ai",
       "community_id": null,
       "degree": 5,
@@ -2251,7 +2251,7 @@
       "weighted_degree": 2.8
     },
     {
-      "article_count": 656,
+      "article_count": 658,
       "category": "ai",
       "community_id": null,
       "degree": 3,

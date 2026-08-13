@@ -1,8 +1,8 @@
 {
-  "active_count": 2532,
+  "active_count": 2535,
   "archived_count": 276,
   "complete_count": 48,
-  "interpreted_brief_count": 90,
+  "interpreted_brief_count": 91,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19967,6 +19967,18 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260814-arxiv-convergent-detour-hijacking-task-preserving-resour-3-c4056a922c.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260814-blogs_podcasts-automate-legacy-web-applications-with-amazon-bedro-0-0b3298a080.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260814-blogs_podcasts-bring-your-spreadsheet-data-to-life-with-sheets-ca-0-e546c9507c.md": {
       "reasons": [
         "concise_source_card"
@@ -19974,6 +19986,12 @@
       "status": "source_brief"
     },
     "posts/20260814-blogs_podcasts-monitor-on-premises-and-multi-cloud-ai-agents-with-0-5e7836db2c.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260814-hacker_news-accelerating-gpt-56-sol-ultrafast-0-3868a8d41a.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -20024,10 +20042,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2394,
-  "source_file_count": 2808,
-  "source_tree_sha256": "eaa7d98f3b93e1025e96034f36306f74ee2f147c4adc8fd444395c013c5ff92a",
-  "verified_provenance_count": 2532,
+  "source_brief_count": 2396,
+  "source_file_count": 2811,
+  "source_tree_sha256": "16d452687fcf36671f9a3a190734715c09e31b145438b19c0b330ed219890881",
+  "verified_provenance_count": 2535,
   "warning_counts": {
     "source_excerpt_truncated": 774
   }
