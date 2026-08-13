@@ -78,9 +78,9 @@ event_id: evt_a9163875e890921ea00e196ff0e0d53eee5e3d9c948ec001912d6834e62ce1f9
 lineage_relation: original
 parent_observation_id: null
 source_published_at: null
-first_seen_at: 2026-01-31T15:07:00Z
+first_seen_at: 2026-08-13T17:11:58.354352Z
 last_seen_at: 2026-08-13T00:00:00Z
-timestamp_confidence: git
+timestamp_confidence: unknown
 ---
 
 ## 基本信息
