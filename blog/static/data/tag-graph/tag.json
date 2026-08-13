@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T05:04:46Z",
+  "generated_at": "2026-08-13T06:47:22Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -157,7 +157,7 @@
       "strength": 1,
       "target": "tag:ArXiv",
       "type": "cooccurrence",
-      "weight": 13
+      "weight": 14
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:Company",
@@ -325,7 +325,7 @@
       "strength": 1,
       "target": "tag:cs.AI",
       "type": "cooccurrence",
-      "weight": 7
+      "weight": 8
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:cs.CC",
@@ -397,7 +397,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 86
+      "weight": 87
     },
     {
       "id": "edge:semantic:tag:AI->tech:ai_ml",
@@ -3621,7 +3621,7 @@
       "strength": 1,
       "target": "tag:cs.AI",
       "type": "cooccurrence",
-      "weight": 38
+      "weight": 39
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:cs.CC",
@@ -3821,7 +3821,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 128
+      "weight": 129
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:深度学习",
@@ -7565,7 +7565,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 38
+      "weight": 39
     },
     {
       "id": "edge:cooccurrence:tag:cs.AI->tag:深度学习",
@@ -8492,7 +8492,7 @@
       "weighted_degree": 109
     },
     {
-      "article_count": 87,
+      "article_count": 88,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -8506,7 +8506,7 @@
       "name": "AI",
       "rank": 18,
       "related_count": 39,
-      "weighted_degree": 230.6
+      "weighted_degree": 233.6
     },
     {
       "article_count": 2,
@@ -9155,7 +9155,7 @@
       "weighted_degree": 28
     },
     {
-      "article_count": 682,
+      "article_count": 683,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -9169,7 +9169,7 @@
       "name": "ArXiv",
       "rank": 6,
       "related_count": 39,
-      "weighted_degree": 818
+      "weighted_degree": 821
     },
     {
       "article_count": 1,
@@ -9427,7 +9427,7 @@
       "weighted_degree": 14.6
     },
     {
-      "article_count": 38,
+      "article_count": 39,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -9441,7 +9441,7 @@
       "name": "cs.AI",
       "rank": 23,
       "related_count": 10,
-      "weighted_degree": 122
+      "weighted_degree": 125
     },
     {
       "article_count": 1,
@@ -11008,7 +11008,7 @@
       "weighted_degree": 341
     },
     {
-      "article_count": 362,
+      "article_count": 363,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -11022,7 +11022,7 @@
       "name": "来源快报",
       "rank": 4,
       "related_count": 102,
-      "weighted_degree": 1025
+      "weighted_degree": 1028
     },
     {
       "article_count": 45,
