@@ -12,10 +12,10 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-14T02:47:35Z",
+  "generated_at": "2026-08-14T05:04:03Z",
   "items": [
     {
-      "article_count": 776,
+      "article_count": 777,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 72,
@@ -25,7 +25,7 @@
       "legacy_id": "AI Agent",
       "name": "AI Agent",
       "rank": 1,
-      "weighted_degree": 2128.2
+      "weighted_degree": 2131.2
     },
     {
       "article_count": 667,
@@ -54,7 +54,7 @@
       "weighted_degree": 1293
     },
     {
-      "article_count": 389,
+      "article_count": 390,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 105,
@@ -64,7 +64,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 4,
-      "weighted_degree": 1110
+      "weighted_degree": 1113
     },
     {
       "article_count": 427,
@@ -80,7 +80,7 @@
       "weighted_degree": 1039
     },
     {
-      "article_count": 695,
+      "article_count": 696,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 40,
@@ -90,7 +90,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 864
+      "weighted_degree": 867
     },
     {
       "article_count": 162,
@@ -314,6 +314,19 @@
       "weighted_degree": 135.2
     },
     {
+      "article_count": 41,
+      "category": "article_tag",
+      "community_id": "community:tag:来源快报",
+      "degree": 10,
+      "description": "文章标签: cs.AI",
+      "id": "tag:cs.AI",
+      "layer": "tag",
+      "legacy_id": "cs.AI",
+      "name": "cs.AI",
+      "rank": 24,
+      "weighted_degree": 131
+    },
+    {
       "article_count": 20,
       "category": "article_tag",
       "community_id": "community:tag:Amazon EventBridge",
@@ -323,21 +336,8 @@
       "layer": "tag",
       "legacy_id": "Advanced (300)",
       "name": "Advanced (300)",
-      "rank": 24,
-      "weighted_degree": 129
-    },
-    {
-      "article_count": 40,
-      "category": "article_tag",
-      "community_id": "community:tag:来源快报",
-      "degree": 10,
-      "description": "文章标签: cs.AI",
-      "id": "tag:cs.AI",
-      "layer": "tag",
-      "legacy_id": "cs.AI",
-      "name": "cs.AI",
       "rank": 25,
-      "weighted_degree": 128
+      "weighted_degree": 129
     },
     {
       "article_count": 36,
@@ -1146,7 +1146,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 879,
+      "article_count": 880,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -1835,7 +1835,7 @@
       "weighted_degree": 4.6
     },
     {
-      "article_count": 776,
+      "article_count": 777,
       "category": "ai",
       "community_id": null,
       "degree": 5,

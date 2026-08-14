@@ -1,8 +1,8 @@
 {
-  "active_count": 2548,
+  "active_count": 2549,
   "archived_count": 276,
   "complete_count": 48,
-  "interpreted_brief_count": 96,
+  "interpreted_brief_count": 97,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19997,6 +19997,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260814-arxiv-omniscientist-an-omni-modal-omni-discipline-ai-sci-0-753bafc3b7.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260814-arxiv-one-frozen-simulator-is-not-enough-simulator-colla-4-d97729e3c0.md": {
       "reasons": [
         "interpreted_source_card"
@@ -20121,9 +20127,9 @@
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2404,
-  "source_file_count": 2824,
-  "source_tree_sha256": "1b7dead113501a5806b528dc2bd745615e414c64fec93bff014c1308849bf76c",
-  "verified_provenance_count": 2548,
+  "source_file_count": 2825,
+  "source_tree_sha256": "bbfb7e6d25a413de891fc736b2e32814aa8468d687c6c4158010a0d8fab62aae",
+  "verified_provenance_count": 2549,
   "warning_counts": {
     "source_excerpt_truncated": 774
   }
