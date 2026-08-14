@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:f0e8af472a86f4ac592acfa07a7f49c09d150ff621ff35400
 description: "这是一种在大型语言模型推理时将 KV 缓存分层管理的方案，分别使用 GPU 显存、主机内存和共享的 NVMe 池，实现跨副本的缓存复用。"
 external_url: https://aws.amazon.com/blogs/machine-learning/tiered-kv-cache-for-large-llms-on-amazon-sagemaker-hyperpod-with-curvine
 parent_observation_id: null
-last_seen_at: 2026-08-13T00:00:00Z
+last_seen_at: 2026-08-14T00:00:00Z
 ---
 
 ## 基本信息

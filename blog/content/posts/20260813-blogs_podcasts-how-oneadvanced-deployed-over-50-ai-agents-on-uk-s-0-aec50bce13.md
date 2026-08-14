@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:fa0099e5958d4430c2ff957c6b40efdaafafdd99321349674
 description: "该文描述了一家英国企业在亚马逊云上自行部署开源大模型，构建检索增强生成流水线并运行超过 50 个专用 AI 代理，以实现数据全程留在英国本土的解决方案。"
 external_url: https://aws.amazon.com/blogs/machine-learning/how-oneadvanced-deployed-over-50-ai-agents-on-uk-sovereign-aws
 parent_observation_id: null
-last_seen_at: 2026-08-13T00:00:00Z
+last_seen_at: 2026-08-14T00:00:00Z
 ---
 
 ## 基本信息

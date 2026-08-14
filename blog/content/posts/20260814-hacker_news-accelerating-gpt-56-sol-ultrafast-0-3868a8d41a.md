@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:f8e742485e69478be34f5e823eee3aaa5d771f1eff32f8a9
 source_payload_sha256: "sha256:e3dec2a37081f04a7f2343349d1476efa8098098dfc4b1120cb73f988585bf69"
 observation_id: obs_3868a8d41a043ac91dadf3b6aa442a14e3e10500e803ab4b9d3ac4ce578c9b51
 event_id: evt_a6955245953718e6eb25bc13f56dc72a6ded608da8beb698339a657d64bc67eb
-revision_id: rev_9ddc8f2553f2b51da737ebcb2172d4507c2666f38c8679bf612fee7d72d85b17
+revision_id: rev_6c5a66a658d506dfda791159b959bc19df7f9ead68c261aac29dfcfde8e74f23
 source_published_at: 2026-08-13T18:10:02Z
 first_seen_at: 2026-08-13T19:32:16Z
 timestamp_confidence: platform
@@ -27,7 +27,7 @@ source_title_chars_original: 34
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://www.cerebras.ai/blog/accelerating-gpt-5-6-sol-ultrafast-with-openai
 parent_observation_id: null
-last_seen_at: 2026-08-13T19:19:19.684854Z
+last_seen_at: 2026-08-14T00:00:00Z
 ---
 
 ## 基本信息

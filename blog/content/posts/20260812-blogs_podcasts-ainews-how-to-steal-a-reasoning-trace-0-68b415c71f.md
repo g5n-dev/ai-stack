@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:9f64eb2ca021cd496e53ec0de6e0415c847eaf4804b9bff8
 source_payload_sha256: "sha256:3df271f684de46be68eeff7cb09bd9cfbb44740a58793e252ba71492ef645479"
 observation_id: obs_68b415c71f0bdd5538df2f099ae31954adb9c5ef4dd90e52154d7576dd64a683
 event_id: evt_679315967b54976a3264e45790365a743a7382867752388b19a48857f87f32e9
-revision_id: rev_909c62078aa6015ad4e1820c1616bbbe4f28c7591c7dc6f185e024cde3228d79
+revision_id: rev_33444cbdf4a192467be1dc38158f1fd639d99a97630904a6d5559e2bd2114c88
 source_published_at: 2026-08-12T07:11:08Z
 first_seen_at: 2026-08-12T08:50:45Z
 timestamp_confidence: feed
@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:e46d8b7b2988d82673685eba9a7f5269206e3d3e9f4374104
 description: "这是一篇关于前沿模型加密推理痕迹可被解码的技术分析，揭示了共享会话时可能泄露个人敏感信息的隐私与安全隐患。"
 external_url: https://www.latent.space/p/ainews-how-to-steal-a-reasoning-trace
 parent_observation_id: null
-last_seen_at: 2026-08-13T00:00:00Z
+last_seen_at: 2026-08-14T00:00:00Z
 ---
 
 ## 基本信息

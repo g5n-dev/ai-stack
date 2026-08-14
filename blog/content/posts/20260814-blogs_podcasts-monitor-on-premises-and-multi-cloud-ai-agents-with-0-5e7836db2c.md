@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:d4cb55046c67762db51c0ff2455a918db4d99759f9397e8b
 source_payload_sha256: "sha256:5aba323a129229eda8b48b941d46bfa34c2ede5b3ee849b2483c92458cb148ac"
 observation_id: obs_5e7836db2c1590662c40c19382d6bdf91af2a53f42f19fbd97ff6c18495188d4
 event_id: evt_fb4a80be93594f40fbffe55ae9c1cb72d04eada7031d88f7f68d590ff5acdba4
-revision_id: rev_fc311bf8374ed9666ebc4c198cf2f3e2d925273bec7070f8f82825c2fd6ff4ee
+revision_id: rev_4258235690bb58efcf075e2b891c0ed7f9d65cfff9ca46a2b61a764033c6a285
 source_published_at: 2026-08-13T16:02:10Z
 first_seen_at: 2026-08-13T16:22:37Z
 timestamp_confidence: feed
@@ -27,7 +27,7 @@ source_title_chars_original: 74
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/monitor-on-premises-and-multi-cloud-ai-agents-with-agentcore-observability
 parent_observation_id: null
-last_seen_at: 2026-08-13T16:11:14.946161Z
+last_seen_at: 2026-08-14T00:00:00Z
 ---
 
 ## 基本信息

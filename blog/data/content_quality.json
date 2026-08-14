@@ -1,8 +1,8 @@
 {
-  "active_count": 2546,
+  "active_count": 2548,
   "archived_count": 276,
   "complete_count": 48,
-  "interpreted_brief_count": 95,
+  "interpreted_brief_count": 96,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -19973,6 +19973,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260814-arxiv-autodesign-meta-harness-optimization-for-long-hori-0-d1aaa5799c.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260814-arxiv-convergent-detour-hijacking-task-preserving-resour-3-c4056a922c.md": {
       "reasons": [
         "concise_source_card"
@@ -20022,6 +20028,12 @@
       "status": "source_brief"
     },
     "posts/20260814-blogs_podcasts-monitor-on-premises-and-multi-cloud-ai-agents-with-0-5e7836db2c.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260814-blogs_podcasts-openai-appoints-dali-rajic-as-chief-revenue-office-0-6eaab463a5.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -20108,10 +20120,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2403,
-  "source_file_count": 2822,
-  "source_tree_sha256": "b78d0a3d7ede6ed26d64c5a8eddb6832d482bf9303e3bb98b39d80f71ef82ec9",
-  "verified_provenance_count": 2546,
+  "source_brief_count": 2404,
+  "source_file_count": 2824,
+  "source_tree_sha256": "1b7dead113501a5806b528dc2bd745615e414c64fec93bff014c1308849bf76c",
+  "verified_provenance_count": 2548,
   "warning_counts": {
     "source_excerpt_truncated": 774
   }
