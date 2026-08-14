@@ -1,8 +1,8 @@
 {
-  "active_count": 2549,
+  "active_count": 2552,
   "archived_count": 276,
   "complete_count": 48,
-  "interpreted_brief_count": 97,
+  "interpreted_brief_count": 98,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20009,11 +20009,23 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260814-arxiv-quotebench-how-matched-scores-can-hide-command-pat-3-dd127adf7f.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260814-blogs_podcasts-accelerating-ma-due-diligence-with-amazon-bedrock--0-10a29b4804.md": {
       "reasons": [
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20260814-blogs_podcasts-ainews-gemini-37-flash-brings-gdm-back-to-the-fore-0-c36b5c9ed4.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20260814-blogs_podcasts-amazon-quick-for-microsoft-365-agentic-ai-where-yo-0-05f14b4e1e.md": {
       "reasons": [
@@ -20064,6 +20076,12 @@
       "status": "source_brief"
     },
     "posts/20260814-hacker_news-ai-at-home-part-1-a-box-of-scraps-15-b751336a14.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260814-hacker_news-everyone-talks-about-ai-agents-this-is-what-one-lo-5-b90e8e5280.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -20126,10 +20144,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2404,
-  "source_file_count": 2825,
-  "source_tree_sha256": "bbfb7e6d25a413de891fc736b2e32814aa8468d687c6c4158010a0d8fab62aae",
-  "verified_provenance_count": 2549,
+  "source_brief_count": 2406,
+  "source_file_count": 2828,
+  "source_tree_sha256": "00494b0b837f8ef5b0bf470a235fdd7f86110fbaa1f3b13751d278715d0561a5",
+  "verified_provenance_count": 2552,
   "warning_counts": {
     "source_excerpt_truncated": 774
   }
