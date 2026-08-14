@@ -1,0 +1,123 @@
+{
+  "community_id": "community:tag:ML Applications",
+  "generated_at": "2026-08-14T21:41:27Z",
+  "hotspot_limit": 24,
+  "link_limit": 32,
+  "links": [
+    {
+      "id": "edge:cooccurrence:tag:Data Infrastructure->tag:ML Applications",
+      "source": "tag:Data Infrastructure",
+      "strength": 1,
+      "target": "tag:ML Applications",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI Research->tag:Data Infrastructure",
+      "source": "tag:AI Research",
+      "strength": 0.5,
+      "target": "tag:Data Infrastructure",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:AI Research->tag:ML Applications",
+      "source": "tag:AI Research",
+      "strength": 0.5,
+      "target": "tag:ML Applications",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Data Infrastructure->tag:Production Engineering",
+      "source": "tag:Data Infrastructure",
+      "strength": 0.5,
+      "target": "tag:Production Engineering",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:ML Applications->tag:Production Engineering",
+      "source": "tag:ML Applications",
+      "strength": 0.5,
+      "target": "tag:Production Engineering",
+      "type": "cooccurrence",
+      "weight": 1
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:ML Applications",
+      "degree": 7,
+      "description": "文章标签: Data Infrastructure",
+      "id": "tag:Data Infrastructure",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Data Infrastructure",
+      "level": 6,
+      "name": "Data Infrastructure",
+      "rank": 75,
+      "related_count": 6,
+      "weighted_degree": 10.6
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:ML Applications",
+      "degree": 7,
+      "description": "文章标签: ML Applications",
+      "id": "tag:ML Applications",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "ML Applications",
+      "level": 6,
+      "name": "ML Applications",
+      "rank": 76,
+      "related_count": 6,
+      "weighted_degree": 10.6
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:ML Applications",
+      "degree": 6,
+      "description": "文章标签: AI Research",
+      "id": "tag:AI Research",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "AI Research",
+      "level": 6,
+      "name": "AI Research",
+      "rank": 85,
+      "related_count": 5,
+      "weighted_degree": 7.6
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:ML Applications",
+      "degree": 5,
+      "description": "文章标签: Production Engineering",
+      "id": "tag:Production Engineering",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Production Engineering",
+      "level": 6,
+      "name": "Production Engineering",
+      "rank": 139,
+      "related_count": 5,
+      "weighted_degree": 5
+    }
+  ],
+  "stats": {
+    "total_links": 5,
+    "total_nodes": 4
+  },
+  "version": 2
+}
