@@ -1,0 +1,115 @@
+{
+  "community_id": "community:tag:AWS Marketplace",
+  "generated_at": "2026-08-14T19:15:27Z",
+  "hotspot_limit": 24,
+  "link_limit": 32,
+  "links": [
+    {
+      "id": "edge:cooccurrence:tag:AWS Identity and Access Management (IAM)->tag:AWS Marketplace",
+      "source": "tag:AWS Identity and Access Management (IAM)",
+      "strength": 0.5,
+      "target": "tag:AWS Marketplace",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon SageMaker AI->tag:AWS Glue",
+      "source": "tag:Amazon SageMaker AI",
+      "strength": 0.5,
+      "target": "tag:AWS Glue",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon SageMaker AI->tag:AWS Identity and Access Management (IAM)",
+      "source": "tag:Amazon SageMaker AI",
+      "strength": 0.5,
+      "target": "tag:AWS Identity and Access Management (IAM)",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon SageMaker AI->tag:AWS Marketplace",
+      "source": "tag:Amazon SageMaker AI",
+      "strength": 0.5,
+      "target": "tag:AWS Marketplace",
+      "type": "cooccurrence",
+      "weight": 1
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 3,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:AWS Marketplace",
+      "degree": 16,
+      "description": "文章标签: Amazon SageMaker AI",
+      "id": "tag:Amazon SageMaker AI",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon SageMaker AI",
+      "level": 6,
+      "name": "Amazon SageMaker AI",
+      "rank": 56,
+      "related_count": 16,
+      "weighted_degree": 19
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:AWS Marketplace",
+      "degree": 7,
+      "description": "文章标签: AWS Identity and Access Management (IAM)",
+      "id": "tag:AWS Identity and Access Management (IAM)",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "AWS Identity and Access Management (IAM)",
+      "level": 6,
+      "name": "AWS Identity and Access Management (IAM)",
+      "rank": 104,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:AWS Marketplace",
+      "degree": 7,
+      "description": "文章标签: AWS Marketplace",
+      "id": "tag:AWS Marketplace",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "AWS Marketplace",
+      "level": 6,
+      "name": "AWS Marketplace",
+      "rank": 105,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:AWS Marketplace",
+      "degree": 5,
+      "description": "文章标签: AWS Glue",
+      "id": "tag:AWS Glue",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "AWS Glue",
+      "level": 6,
+      "name": "AWS Glue",
+      "rank": 134,
+      "related_count": 5,
+      "weighted_degree": 5
+    }
+  ],
+  "stats": {
+    "total_links": 4,
+    "total_nodes": 4
+  },
+  "version": 2
+}
