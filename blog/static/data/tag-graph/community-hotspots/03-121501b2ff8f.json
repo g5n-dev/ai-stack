@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:来源快报",
-  "generated_at": "2026-08-14T02:47:35Z",
+  "generated_at": "2026-08-14T05:04:03Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -10,7 +10,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 141
+      "weight": 142
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:来源快报",
@@ -26,7 +26,7 @@
       "strength": 1,
       "target": "tag:cs.AI",
       "type": "cooccurrence",
-      "weight": 40
+      "weight": 41
     },
     {
       "id": "edge:cooccurrence:tag:cs.AI->tag:来源快报",
@@ -34,7 +34,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 40
+      "weight": 41
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:cs.CL",
@@ -263,7 +263,7 @@
   ],
   "nodes": [
     {
-      "article_count": 389,
+      "article_count": 390,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -277,10 +277,10 @@
       "name": "来源快报",
       "rank": 4,
       "related_count": 105,
-      "weighted_degree": 1110
+      "weighted_degree": 1113
     },
     {
-      "article_count": 695,
+      "article_count": 696,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -294,7 +294,7 @@
       "name": "ArXiv",
       "rank": 6,
       "related_count": 40,
-      "weighted_degree": 864
+      "weighted_degree": 867
     },
     {
       "article_count": 94,
@@ -314,7 +314,7 @@
       "weighted_degree": 251.6
     },
     {
-      "article_count": 40,
+      "article_count": 41,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -326,9 +326,9 @@
       "legacy_id": "cs.AI",
       "level": 6,
       "name": "cs.AI",
-      "rank": 25,
+      "rank": 24,
       "related_count": 10,
-      "weighted_degree": 128
+      "weighted_degree": 131
     },
     {
       "article_count": 30,

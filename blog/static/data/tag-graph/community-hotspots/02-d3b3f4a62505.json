@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:掘金",
-  "generated_at": "2026-08-14T02:47:35Z",
+  "generated_at": "2026-08-14T05:04:03Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -263,7 +263,7 @@
   ],
   "nodes": [
     {
-      "article_count": 776,
+      "article_count": 777,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -277,7 +277,7 @@
       "name": "AI Agent",
       "rank": 1,
       "related_count": 70,
-      "weighted_degree": 2128.2
+      "weighted_degree": 2131.2
     },
     {
       "article_count": 667,
