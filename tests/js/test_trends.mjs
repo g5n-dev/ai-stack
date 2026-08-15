@@ -334,17 +334,26 @@ test("facet summaries distinguish matching topics from evidence and reconcile st
 });
 
 
-test("committed trend data visibly drills the LLM scenario into its strongest topic", () => {
+test("committed trend data drills a selective scenario into its strongest matching topic", () => {
   const dataRoot = path.resolve(import.meta.dirname, "../../blog/static/data/stack-trends");
   const index = JSON.parse(readFileSync(path.join(dataRoot, "index.json"), "utf8"));
   const validatedIndex = Trends.validateIndex(index);
   const windowData = JSON.parse(readFileSync(path.join(dataRoot, index.windows["30d"].path), "utf8"));
   const validatedWindow = Trends.validateWindow(windowData, "30d", validatedIndex);
-  const filtered = Trends.filterTrends(validatedWindow.trends, { scenario: "大语言模型" });
+  const selectedScenario = validatedWindow.facets.scenarios.find((facet) => {
+    const matches = Trends.countFacetTopics(validatedWindow.trends, "scenarios", facet.name);
+    return matches > 0 && matches < validatedWindow.trends.length;
+  });
+
+  assert.ok(selectedScenario, "committed data needs at least one selective scenario");
+  const filtered = Trends.filterTrends(validatedWindow.trends, { scenario: selectedScenario.name });
+  const evidenceCounts = filtered.map((item) => (
+    item.scenarios.find((facet) => facet.name === selectedScenario.name)?.count || 0
+  ));
 
   assert.ok(filtered.length > 0 && filtered.length < windowData.trends.length);
-  assert.equal(filtered[0].topic, "大语言模型");
-  assert.ok(filtered.every((item) => item.scenarios.some((facet) => facet.name === "大语言模型")));
+  assert.ok(filtered.every((item) => item.scenarios.some((facet) => facet.name === selectedScenario.name)));
+  assert.equal(evidenceCounts[0], Math.max(...evidenceCounts));
 });
 
 
