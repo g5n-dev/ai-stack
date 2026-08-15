@@ -1,5 +1,5 @@
 {
-  "active_count": 2549,
+  "active_count": 2551,
   "archived_count": 276,
   "complete_count": 48,
   "interpreted_brief_count": 97,
@@ -20092,6 +20092,18 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260815-blogs_podcasts-custom-reward-functions-for-multi-turn-reinforceme-0-d551d17586.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260815-hacker_news-google-is-making-private-ai-practical-with-homomor-5-8ad8cdf206.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -20126,10 +20138,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2404,
-  "source_file_count": 2825,
-  "source_tree_sha256": "bbfb7e6d25a413de891fc736b2e32814aa8468d687c6c4158010a0d8fab62aae",
-  "verified_provenance_count": 2549,
+  "source_brief_count": 2406,
+  "source_file_count": 2827,
+  "source_tree_sha256": "1ea84652360182d383f37431ddb44b178f9a4bbe84e6f7018a5883cc0247ca68",
+  "verified_provenance_count": 2551,
   "warning_counts": {
     "source_excerpt_truncated": 774
   }
