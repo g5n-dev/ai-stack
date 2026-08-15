@@ -121,7 +121,7 @@ cd ai-stack/blog
 hugo server -D
 ```
 
-打开 [http://localhost:1313](http://localhost:1313)，或直接访问 [ai-stack.site](https://ai-stack.site/)。
+启动后可选择 [本地预览](http://localhost:1313) 或 [线上站点](https://ai-stack.site/)。
 
 ### 路径 B：运行完整情报流水线
 
@@ -145,7 +145,7 @@ bash scripts/run_local.sh --serve
 
 | 能力 | 说明 |
 | --- | --- |
-| 多源采集 | 生产任务持续采集 GitHub Trending、Hacker News、arXiv、掘金与博客/播客 RSS；Reddit、X/Twitter 与 SearXNG 可在本地按需启用。 |
+| 多源采集 | 生产任务持续采集 GitHub Trending、Hacker News、arXiv、掘金与博客/播客 RSS，并轻量跟踪 X/Twitter 高优先级人物；Reddit、完整 X 账号列表与 SearXNG 可在本地按需启用。 |
 | 事件去重与溯源 | 先按规范 URL 去重，再以有限来源证据建立跨 URL 谱系；区分本站最早观测、疑似源头、转载、衍生、同事件与仅相关，不把相似自动宣称为原创。 |
 | AI 内容管线 | 自动完成相关性筛选、摘要、翻译、评论、标签与场景分析，并保留原始来源链接。 |
 | 模型兼容层 | 基于 Anthropic SDK 与 Messages 请求结构，模型和 `base_url` 可配置。 |
@@ -202,7 +202,10 @@ ai-stack/
 
 </details>
 
-生产地址为 [https://ai-stack.site/](https://ai-stack.site/)，趋势入口为 [https://ai-stack.site/trends/](https://ai-stack.site/trends/)，图谱入口为 [https://ai-stack.site/scenarios/](https://ai-stack.site/scenarios/)。域名、Secrets 与 Pages 设置见 [部署指南](./DEPLOYMENT.md)。
+- [打开生产站点](https://ai-stack.site/)：浏览情报归档、搜索与文章
+- [查看趋势洞察](https://ai-stack.site/trends/)：下钻技术信号与证据
+- [探索场景知识图谱](https://ai-stack.site/scenarios/)：查看标签社区与节点关系
+- [阅读部署指南](./DEPLOYMENT.md)：配置域名、Secrets 与 GitHub Pages
 
 ## 📚 文档
 
@@ -228,10 +231,10 @@ python3 -m unittest tests.test_tag_graph_runtime tests.test_generate_content_gua
 python3 -m pytest -q tests/test_graph_deploy_contract.py tests/test_site_header_contract.py
 ```
 
-- 贡献约定与本地验证：[CONTRIBUTING.md](./CONTRIBUTING.md)
-- Bug 与功能建议：[GitHub Issues](https://github.com/g5n-dev/ai-stack/issues)
-- 方案讨论与经验分享：[GitHub Discussions](https://github.com/g5n-dev/ai-stack/discussions)
-- PR 检查规则：[`.github/workflows/ci.yml`](./.github/workflows/ci.yml)
+- [贡献约定与本地验证](./CONTRIBUTING.md)：了解分支、测试与提交要求
+- [提交 Bug 或功能建议](https://github.com/g5n-dev/ai-stack/issues)：追踪可复现问题与改进建议
+- [参与方案讨论与经验分享](https://github.com/g5n-dev/ai-stack/discussions)：沉淀设计方案与实践经验
+- [查看 PR 检查规则](./.github/workflows/ci.yml)：确认 CI 入口与必需检查
 
 <div align="center">
 <h3>把一次性信息流，变成会持续生长的技术档案。</h3>

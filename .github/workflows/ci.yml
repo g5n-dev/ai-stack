@@ -136,6 +136,8 @@ jobs:
             tests/test_crawler_dedupe_quality.py \
             tests/test_blogs_podcasts_crawler.py \
             tests/test_source_contract.py \
+            tests/test_reset_signals.py \
+            tests/test_twitter_monitoring.py \
             tests/test_juejin_full_article.py \
             tests/test_evidence_pipeline.py \
             tests/test_pipeline_cli.py \

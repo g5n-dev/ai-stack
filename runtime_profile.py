@@ -49,7 +49,25 @@ def apply_sources_runtime_profile(config: Dict[str, Any] | None, profile: str | 
     reddit["enabled"] = False
 
     twitter = sources.setdefault("twitter", {})
-    twitter["enabled"] = False
+    raw_priority_accounts = twitter.get("priority_accounts")
+    priority_accounts = (
+        [
+            str(account).strip()
+            for account in raw_priority_accounts
+            if str(account).strip()
+        ]
+        if isinstance(raw_priority_accounts, list)
+        else []
+    )
+    twitter["enabled"] = bool(priority_accounts)
+    if priority_accounts:
+        twitter["accounts"] = priority_accounts
+        twitter["tweets_per_account"] = min(
+            max(1, int(twitter.get("tweets_per_account", 8) or 8)),
+            8,
+        )
+        twitter["headless"] = True
+        twitter["save_screenshots"] = False
 
     return result
 

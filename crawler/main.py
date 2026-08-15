@@ -134,6 +134,7 @@ class CrawlerOrchestrator:
                 lookback_minutes=config.get('lookback_minutes', 90),
                 timeout=config.get('timeout', 30000),
                 save_screenshots=config.get('save_screenshots', True),
+                account_profiles=config.get('account_profiles'),
             )
             logger.info("Initialized Twitter/X crawler")
 

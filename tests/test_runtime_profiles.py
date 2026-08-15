@@ -19,7 +19,13 @@ class RuntimeProfileTest(unittest.TestCase):
                 "juejin": {"enabled": True, "limit": 5},
                 "blogs_podcasts": {"enabled": True, "limit": 15, "timeout": 30},
                 "reddit": {"enabled": True, "limit_per_subreddit": 10, "timeout": 15},
-                "twitter": {"enabled": True, "tweets_per_account": 30, "accounts": ["a", "b"]},
+                "twitter": {
+                    "enabled": True,
+                    "tweets_per_account": 30,
+                    "accounts": ["a", "b", "thsottiaux"],
+                    "priority_accounts": ["thsottiaux"],
+                    "save_screenshots": True,
+                },
             },
         }
 
@@ -45,6 +51,23 @@ class RuntimeProfileTest(unittest.TestCase):
         self.assertEqual(profiled["sources"]["blogs_podcasts"]["limit"], 20)
         self.assertEqual(profiled["sources"]["blogs_podcasts"]["timeout"], 10)
         self.assertFalse(profiled["sources"]["reddit"]["enabled"])
+        self.assertTrue(profiled["sources"]["twitter"]["enabled"])
+        self.assertEqual(profiled["sources"]["twitter"]["accounts"], ["thsottiaux"])
+        self.assertEqual(profiled["sources"]["twitter"]["tweets_per_account"], 8)
+        self.assertFalse(profiled["sources"]["twitter"]["save_screenshots"])
+
+    def test_apply_sources_runtime_profile_ci_disables_twitter_without_priority_accounts(self):
+        config = {
+            "sources": {
+                "twitter": {
+                    "enabled": True,
+                    "accounts": ["a", "b"],
+                }
+            }
+        }
+
+        profiled = apply_sources_runtime_profile(config, "ci")
+
         self.assertFalse(profiled["sources"]["twitter"]["enabled"])
 
     def test_apply_sources_runtime_profile_default_keeps_config(self):

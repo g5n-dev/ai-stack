@@ -283,6 +283,34 @@ def _evidence_fields(source: str, item: Mapping[str, Any], source_text: str) -> 
                 if isinstance(raw_topics, (list, tuple))
                 else []
             )
+    elif source == "twitter":
+        common.update(
+            {
+                "account": _text(item.get("account")),
+                "source_verification": _text(item.get("source_verification")),
+                "fallback_source": _text(item.get("fallback_source")),
+                "fallback_provider": _text(item.get("fallback_provider")),
+                "reset_verification_status": _text(
+                    item.get("reset_verification_status")
+                ),
+            }
+        )
+        raw_assessment = item.get("signal_assessment")
+        if isinstance(raw_assessment, Mapping):
+            common["signal_assessment"] = {
+                key: raw_assessment.get(key)
+                for key in (
+                    "kind",
+                    "status",
+                    "reported_status",
+                    "horizon",
+                    "confidence",
+                    "reason",
+                    "notify",
+                    "source_verification",
+                )
+                if raw_assessment.get(key) not in {None, ""}
+            }
     return common
 
 
@@ -354,7 +382,7 @@ def _source_publication_time(
         if explicit not in _TIMESTAMP_CONFIDENCE:
             raise SourceContractError("source timestamp confidence is invalid")
         return published_at, explicit
-    if discovery_method.casefold() == "search_fallback":
+    if discovery_method.casefold() in {"search_fallback", "structured_fallback"}:
         return published_at, "unknown"
     if source == "arxiv":
         return published_at, "publisher"
@@ -721,7 +749,9 @@ def promote_juejin_full_article(
 
     verify_source_contract(item)
     evidence = item.get("evidence")
-    fields = evidence.get("fields") if isinstance(evidence, Mapping) else None
+    if not isinstance(evidence, Mapping):
+        raise SourceContractError("source evidence is invalid")
+    fields = evidence.get("fields")
     if not isinstance(fields, Mapping):
         raise SourceContractError("source evidence fields are invalid")
     if _text(item.get("source")).casefold() != "juejin":

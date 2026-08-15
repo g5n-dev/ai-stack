@@ -1068,6 +1068,41 @@ class GenerateContentGuardsTest(unittest.TestCase):
         self.assertNotIn("Autonomous E\"", document)
         self.assertEqual(generator._source_brief_publication_payload(item)["title"], title)
 
+    def test_structured_twitter_fallback_discloses_independent_mirror(self):
+        generator = self.module.SuperEnhancedContentGenerator.__new__(
+            self.module.SuperEnhancedContentGenerator
+        )
+        item = self._contract(
+            {
+                "title": "[独立镜像待核验] Reset signal",
+                "source": "twitter",
+                "url": "https://x.com/thsottiaux/status/2089000000000000001",
+                "text": "I'll reset Codex usage limits tomorrow.",
+                "feed_url": "https://codex-reset.com/api/feed",
+                "discovery_method": "structured_fallback",
+                "fetch_status": "captured",
+                "timestamp": "2026-08-15T07:55:00Z",
+                "published_at": "2026-08-15T07:55:00Z",
+                "timestamp_confidence": "unknown",
+                "crawled_at": "2026-08-15T08:00:00Z",
+                "account": "thsottiaux",
+                "source_verification": "independent_mirror",
+                "fallback_source": "independent_community_mirror",
+                "fallback_provider": "x-api",
+                "reset_verification_status": "confirmed",
+            }
+        )
+
+        rendered = "\n".join(generator._format_source_brief(item))
+
+        self.assertIn("独立社区镜像（非 X 直接核验）", rendered)
+        self.assertIn(
+            "[镜像采集入口](https://codex-reset.com/api/feed)",
+            rendered,
+        )
+        self.assertIn("外部核验状态", rendered)
+        self.assertIn("待核验", rendered)
+
     def test_source_brief_publishes_the_complete_stored_rss_capture(self):
         generator = self.module.SuperEnhancedContentGenerator.__new__(
             self.module.SuperEnhancedContentGenerator

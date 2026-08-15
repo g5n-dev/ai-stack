@@ -4,16 +4,19 @@ Twitter/X爬虫 - 使用Playwright模拟浏览器，不需要API
 """
 
 import asyncio
-import logging
-from typing import List, Dict, Optional, TYPE_CHECKING, Any
-from datetime import datetime, timedelta, timezone
-import json
-from pathlib import Path
-import re
 import hashlib
+import logging
+import re
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+from typing import Any, Dict, List, Optional
 
-if TYPE_CHECKING:
-    from playwright.async_api import Page
+from ai_stack.reset_signals import classify_reset_signal, signal_title_prefix
+from ai_stack.twitter_fallback import (
+    download_fallback_payload,
+    parse_fallback_feed,
+    validated_fallback_url,
+)
 
 try:
     from playwright.async_api import async_playwright
@@ -36,6 +39,7 @@ class TwitterCrawler:
         timeout: int = 30000,
         save_screenshots: bool = True,
         screenshots_dir: Optional[str] = None,
+        account_profiles: Optional[Dict[str, Dict[str, Any]]] = None,
     ):
         """
         初始化Twitter爬虫
@@ -48,7 +52,8 @@ class TwitterCrawler:
         """
         if not PLAYWRIGHT_AVAILABLE:
             raise ImportError(
-                "Playwright not installed. Install it with: pip install playwright && playwright install"
+                "Playwright not installed. Install it with: "
+                "pip install playwright && playwright install"
             )
 
         self.accounts = accounts or [
@@ -65,12 +70,205 @@ class TwitterCrawler:
         self.timeout = timeout
         self.base_url = "https://twitter.com"
         self.save_screenshots = save_screenshots
+        raw_profiles = account_profiles if isinstance(account_profiles, dict) else {}
+        self.account_profiles = {
+            str(handle).strip().casefold(): dict(profile)
+            for handle, profile in raw_profiles.items()
+            if str(handle).strip() and isinstance(profile, dict)
+        }
 
         project_root = Path(__file__).resolve().parents[1]
         default_dir = project_root / "blog" / "static" / "images" / "twitter"
         self.screenshots_dir = Path(screenshots_dir) if screenshots_dir else default_dir
         if self.save_screenshots:
             self.screenshots_dir.mkdir(parents=True, exist_ok=True)
+
+    def _account_profile(self, account: str) -> Dict[str, Any]:
+        profile = self.account_profiles.get(str(account or "").strip().casefold(), {})
+        return dict(profile) if isinstance(profile, dict) else {}
+
+    def _account_crawl_url(self, account: str) -> str:
+        profile = self._account_profile(account)
+        suffix = "/with_replies" if profile.get("include_replies") is True else ""
+        return f"{self.base_url}/{account}{suffix}"
+
+    @staticmethod
+    def _validated_fallback_url(value: object) -> str:
+        return validated_fallback_url(value)
+
+    @classmethod
+    def _download_fallback_payload(cls, feed_url: str, timeout_seconds: float) -> Dict:
+        return download_fallback_payload(feed_url, timeout_seconds)
+
+    def _fallback_items_from_payload(
+        self,
+        payload: object,
+        *,
+        account: str,
+        feed_url: str,
+        now: Optional[datetime] = None,
+        max_age_minutes: int = 90,
+    ) -> List[Dict]:
+        items = parse_fallback_feed(
+            payload,
+            account=account,
+            feed_url=feed_url,
+            now=now,
+            max_age_minutes=max_age_minutes,
+        )
+        return [self._enrich_monitored_tweet(item, account=account) for item in items]
+
+    async def _crawl_account_fallback(self, account: str) -> List[Dict]:
+        profile = self._account_profile(account)
+        feed_url = self._validated_fallback_url(profile.get("fallback_feed_url"))
+        if not feed_url:
+            return []
+        try:
+            max_age_minutes = max(1, int(profile.get("fallback_max_age_minutes", 90)))
+        except (TypeError, ValueError):
+            return []
+        timeout_seconds = max(1.0, min(float(self.timeout) / 1000.0, 15.0))
+        payload = await asyncio.to_thread(
+            self._download_fallback_payload,
+            feed_url,
+            timeout_seconds,
+        )
+        items = self._fallback_items_from_payload(
+            payload,
+            account=account,
+            feed_url=feed_url,
+            max_age_minutes=max_age_minutes,
+        )
+        return self._prioritize_monitored_tweets(items, account=account)[
+            : self.tweets_per_account
+        ]
+
+    def _enrich_monitored_tweet(self, tweet: Dict, *, account: str) -> Dict:
+        enriched = dict(tweet)
+        profile = self._account_profile(account)
+        if profile.get("monitor") != "codex_usage_reset":
+            return enriched
+
+        assessment = dict(
+            classify_reset_signal(
+                enriched.get("text", ""),
+                context=enriched.get("context_text")
+                or enriched.get("quoted_text")
+                or "",
+            )
+        )
+        mirrored = enriched.get("discovery_method") == "structured_fallback"
+        if mirrored:
+            assessment["source_verification"] = "independent_mirror"
+            if assessment.get("status") in {"confirmed", "promised"}:
+                assessment["reported_status"] = assessment["status"]
+                assessment["status"] = "watch"
+                assessment["notify"] = False
+                assessment["confidence"] = min(
+                    float(assessment.get("confidence") or 0.0),
+                    0.7,
+                )
+                verification_status = str(
+                    enriched.get("reset_verification_status") or ""
+                )
+                assessment["reason"] = (
+                    f"独立社区镜像报告该信号（外部核验状态："
+                    f"{verification_status or 'unknown'}），尚未由 X 直接核验"
+                )
+        enriched["signal_assessment"] = assessment
+        enriched["monitor"] = "codex_usage_reset"
+
+        tags: List[str] = []
+        raw_tags = enriched.get("tags")
+        if isinstance(raw_tags, list):
+            tags.extend(str(tag).strip() for tag in raw_tags if str(tag).strip())
+        profile_tags = profile.get("tags")
+        if (
+            assessment.get("status") != "insufficient_evidence"
+            and isinstance(profile_tags, list)
+        ):
+            tags.extend(str(tag).strip() for tag in profile_tags if str(tag).strip())
+        state_tags = {
+            ("hard_reset", "confirmed"): "重置确认",
+            ("hard_reset", "promised"): "重置预告",
+            ("hard_reset", "watch"): "重置观察",
+            ("hard_reset", "negated"): "重置否定",
+            ("banked_reset", "confirmed"): "重置卡",
+            ("banked_reset", "promised"): "重置卡预告",
+            ("temp_boost", "confirmed"): "临时额度提升",
+            ("policy_change", "confirmed"): "额度政策",
+            ("forecast_signal", "watch"): "重置观察",
+        }
+        state_tag = state_tags.get(
+            (str(assessment.get("kind") or ""), str(assessment.get("status") or ""))
+        )
+        if state_tag:
+            tags.append(state_tag)
+        enriched["tags"] = list(dict.fromkeys(tags))
+
+        prefix = signal_title_prefix(assessment)
+        if mirrored and assessment.get("status") != "insufficient_evidence":
+            prefix = "[独立镜像待核验]"
+        title = str(enriched.get("title") or "").strip()
+        if prefix and not title.startswith(prefix):
+            enriched["source_title_unclassified"] = title
+            enriched["title"] = f"{prefix} {title}".strip()
+        return enriched
+
+    def _prioritize_monitored_tweets(
+        self,
+        tweets: List[Dict],
+        *,
+        account: str,
+    ) -> List[Dict]:
+        if self._account_profile(account).get("monitor") != "codex_usage_reset":
+            return list(tweets)
+
+        tier_map = {
+            ("hard_reset", "confirmed"): 0,
+            ("hard_reset", "promised"): 0,
+            ("hard_reset", "negated"): 0,
+            ("banked_reset", "confirmed"): 1,
+            ("banked_reset", "promised"): 1,
+            ("temp_boost", "confirmed"): 1,
+            ("policy_change", "confirmed"): 1,
+            ("forecast_signal", "watch"): 2,
+            ("hard_reset", "watch"): 2,
+        }
+
+        def key(item: Dict) -> tuple[int, float, str]:
+            raw_signal = item.get("signal_assessment")
+            signal = raw_signal if isinstance(raw_signal, dict) else {}
+            status = str(signal.get("reported_status") or signal.get("status") or "")
+            tier = tier_map.get((str(signal.get("kind") or ""), status), 3)
+            timestamp = str(item.get("timestamp") or "")
+            try:
+                parsed = datetime.fromisoformat(timestamp.replace("Z", "+00:00"))
+                epoch = parsed.timestamp() if parsed.tzinfo is not None else 0.0
+            except (TypeError, ValueError, OverflowError):
+                epoch = 0.0
+            stable_id = str(item.get("tweet_id") or item.get("url") or "")
+            return tier, -epoch, stable_id
+
+        return sorted(tweets, key=key)
+
+    @staticmethod
+    def _merge_tweet_sources(
+        primary: List[Dict],
+        secondary: List[Dict],
+    ) -> List[Dict]:
+        """Merge account feeds while preferring direct X records on duplicates."""
+
+        merged: List[Dict] = []
+        seen: set[str] = set()
+        for item in [*primary, *secondary]:
+            identity = str(item.get("tweet_id") or item.get("url") or "").strip()
+            if identity and identity in seen:
+                continue
+            if identity:
+                seen.add(identity)
+            merged.append(item)
+        return merged
 
     async def _scroll_to_load_tweets(self, page: Any, max_tweets: int):
         """滚动页面加载更多推文"""
@@ -94,7 +292,13 @@ class TwitterCrawler:
 
         return tweets_collected
 
-    def _build_screenshot_filename(self, account: str, tweet_url: str, tweet_timestamp: str, tweet_text: str) -> str:
+    def _build_screenshot_filename(
+        self,
+        account: str,
+        tweet_url: str,
+        tweet_timestamp: str,
+        tweet_text: str,
+    ) -> str:
         tweet_id = ""
         if tweet_url:
             m = re.search(r"/status/(\d+)", tweet_url)
@@ -111,7 +315,15 @@ class TwitterCrawler:
         ts = re.sub(r"[^0-9A-Za-z_+.-]+", "-", ts).strip("-")[:40] or "unknown"
         return f"{account}-{ts}-{digest}.png"
 
-    async def _capture_tweet_screenshot(self, tweet_element, *, account: str, tweet_url: str, tweet_timestamp: str, tweet_text: str) -> Optional[str]:
+    async def _capture_tweet_screenshot(
+        self,
+        tweet_element,
+        *,
+        account: str,
+        tweet_url: str,
+        tweet_timestamp: str,
+        tweet_text: str,
+    ) -> Optional[str]:
         if not self.save_screenshots:
             return None
 
@@ -210,7 +422,7 @@ class TwitterCrawler:
                 )
                 page = await context.new_page()
 
-                url = f"{self.base_url}/{account}"
+                url = self._account_crawl_url(account)
                 await page.goto(url, timeout=self.timeout)
 
                 await asyncio.sleep(3)
@@ -224,18 +436,30 @@ class TwitterCrawler:
                 for i, tweet_element in enumerate(tweet_elements[:self.tweets_per_account]):
                     tweet_data = await self._extract_tweet_data(tweet_element, account=account)
                     if tweet_data:
+                        tweet_data = self._enrich_monitored_tweet(tweet_data, account=account)
                         tweet_data['account'] = account
-                        tweet_data['account_url'] = url
+                        tweet_data['account_url'] = f"{self.base_url}/{account}"
                         tweet_data['source'] = 'twitter'
                         tweets.append(tweet_data)
                         logger.info(f"提取第 {i+1} 条推文成功")
 
                 await browser.close()
 
+            tweets = self._prioritize_monitored_tweets(tweets, account=account)
             logger.info(f"账号 @{account} 爬取完成，共 {len(tweets)} 条推文")
 
         except Exception as e:
             logger.error(f"爬取账号 @{account} 失败: {e}")
+
+        if not tweets:
+            fallback_tweets = await self._crawl_account_fallback(account)
+            if fallback_tweets:
+                logger.info(
+                    "账号 @%s 使用结构化回退源，共 %s 条",
+                    account,
+                    len(fallback_tweets),
+                )
+                tweets = fallback_tweets
 
         return tweets
 
@@ -268,7 +492,7 @@ class TwitterCrawler:
                     pass
 
         flattened_tweets = []
-        for account, tweets in all_tweets.items():
+        for _account, tweets in all_tweets.items():
             flattened_tweets.extend(tweets)
 
         return flattened_tweets
@@ -287,6 +511,7 @@ class TwitterRecentCrawler(TwitterCrawler):
         timeout: int = 30000,
         save_screenshots: bool = True,
         screenshots_dir: Optional[str] = None,
+        account_profiles: Optional[Dict[str, Dict[str, Any]]] = None,
     ):
         super().__init__(
             accounts=accounts,
@@ -295,17 +520,34 @@ class TwitterRecentCrawler(TwitterCrawler):
             timeout=timeout,
             save_screenshots=save_screenshots,
             screenshots_dir=screenshots_dir,
+            account_profiles=account_profiles,
         )
         self.lookback_minutes = max(1, int(lookback_minutes))
 
-    async def crawl_account(self, account: str) -> List[Dict]:
-        """爬取单个账号的最近推文"""
-        all_tweets = await super().crawl_account(account)
+    def _account_lookback_minutes(self, account: str) -> int:
+        raw = self._account_profile(account).get(
+            "lookback_minutes",
+            self.lookback_minutes,
+        )
+        try:
+            return max(1, min(int(raw), 24 * 60))
+        except (TypeError, ValueError):
+            return self.lookback_minutes
 
-        threshold = datetime.now(timezone.utc) - timedelta(minutes=self.lookback_minutes)
+    def _filter_recent(
+        self,
+        tweets: List[Dict],
+        *,
+        account: str,
+        now: Optional[datetime] = None,
+    ) -> List[Dict]:
+        observed_now = now or datetime.now(timezone.utc)
+        threshold = observed_now - timedelta(
+            minutes=self._account_lookback_minutes(account)
+        )
         recent_tweets = []
 
-        for tweet in all_tweets:
+        for tweet in tweets:
             try:
                 if 'timestamp' in tweet:
                     timestamp_str = tweet['timestamp']
@@ -313,12 +555,53 @@ class TwitterRecentCrawler(TwitterCrawler):
                         timestamp_str = timestamp_str[:-1] + '+00:00'
                     tweet_time = datetime.fromisoformat(timestamp_str)
                     if tweet_time.tzinfo is None:
-                        tweet_time = tweet_time.replace(tzinfo=timezone.utc)
-                    if tweet_time > threshold:
+                        continue
+                    tweet_time = tweet_time.astimezone(timezone.utc)
+                    if threshold <= tweet_time <= observed_now + timedelta(minutes=5):
                         recent_tweets.append(tweet)
             except Exception as e:
                 logger.warning(f"解析推文时间失败: {e}")
 
-        logger.info(f"账号 @{account} 最近{self.lookback_minutes}分钟内有 {len(recent_tweets)} 条新推文")
-
         return recent_tweets
+
+    async def crawl_account(self, account: str) -> List[Dict]:
+        """爬取单个账号的最近推文"""
+        all_tweets = await super().crawl_account(account)
+        observed_now = datetime.now(timezone.utc)
+        came_from_fallback = any(
+            isinstance(tweet, dict)
+            and tweet.get("discovery_method") == "structured_fallback"
+            for tweet in all_tweets
+        )
+        fallback_attempted = came_from_fallback
+        monitored = self._account_profile(account).get("monitor") == (
+            "codex_usage_reset"
+        )
+        if monitored and all_tweets and not came_from_fallback:
+            fallback_tweets = await self._crawl_account_fallback(account)
+            fallback_attempted = True
+            all_tweets = self._merge_tweet_sources(all_tweets, fallback_tweets)
+
+        recent_tweets = self._filter_recent(
+            all_tweets,
+            account=account,
+            now=observed_now,
+        )
+        if not recent_tweets and all_tweets and not fallback_attempted:
+            fallback_tweets = await self._crawl_account_fallback(account)
+            recent_tweets = self._filter_recent(
+                self._merge_tweet_sources(all_tweets, fallback_tweets),
+                account=account,
+                now=observed_now,
+            )
+
+        recent_tweets = self._prioritize_monitored_tweets(
+            recent_tweets,
+            account=account,
+        )
+        lookback = self._account_lookback_minutes(account)
+        logger.info(
+            f"账号 @{account} 最近{lookback}分钟内有 {len(recent_tweets)} 条新推文"
+        )
+
+        return recent_tweets[: self.tweets_per_account]

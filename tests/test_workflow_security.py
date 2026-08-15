@@ -61,6 +61,8 @@ def test_pr_ci_runs_only_as_a_trusted_main_dispatch_for_one_exact_target() -> No
     assert "tests/test_content_freshness.py" in text
     assert "tests/test_workflow_security.py" in text
     assert "tests/test_protected_branch_merge.py" in text
+    assert "tests/test_reset_signals.py" in text
+    assert "tests/test_twitter_monitoring.py" in text
     assert "ref: ${{ inputs.target_sha }}" in text
     assert "persist-credentials: false" in text
     assert '[[ "$TARGET_SHA" =~ ^[0-9a-f]{40}$ ]]' in text

@@ -1973,6 +1973,7 @@ class SuperEnhancedContentGenerator:
         source = str(evidence.get("source") or "unknown").strip()
         url = canonicalize_content_url(evidence.get("external_url"))
         capture_mode = str(evidence.get("capture_mode") or "metadata_only")
+        discovery_method = str(evidence.get("discovery_method") or "").strip()
         note = self._source_brief_note(capture_mode, source)
 
         def safe(value: object) -> str:
@@ -1991,6 +1992,19 @@ class SuperEnhancedContentGenerator:
         host = urllib.parse.urlsplit(url).hostname or ""
         if host:
             lines.append(f"- **发布域名**: {safe(host)}")
+        if discovery_method == "structured_fallback":
+            mirror_url = canonicalize_content_url(evidence.get("origin_url"))
+            lines.append("- **采集路径**: 独立社区镜像（非 X 直接核验）")
+            if mirror_url:
+                lines.append(f"- **镜像证据**: [镜像采集入口]({mirror_url})")
+            verification_status = safe(fields.get("reset_verification_status"))
+            if verification_status:
+                lines.append(f"- **外部核验状态**: {verification_status}")
+            lines.append("- **本站结论**: 待核验；不会仅凭镜像触发已重置通知")
+            note = (
+                "当前社交内容由独立社区镜像捕获，并非本站直接读取 X；"
+                "原帖文字、发布时间和外部核验状态均应以 X 或 OpenAI 官方信息复核。"
+            )
         if source == "github_trending":
             for label, key in (
                 ("主要语言", "language"),

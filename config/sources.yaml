@@ -137,6 +137,22 @@ sources:
     lookback_minutes: 90
     timeout: 30000
     save_screenshots: true
+    # CI 每小时只抓高优先级人物，避免顺序启动浏览器抓取全部账号。
+    priority_accounts:
+      - "thsottiaux"
+    account_profiles:
+      thsottiaux:
+        include_replies: true
+        monitor: "codex_usage_reset"
+        tags:
+          - "Codex"
+          - "ChatGPT Work"
+          - "额度重置"
+        # X 匿名页不可见时使用独立社区镜像；仍保留原帖 URL 与回退溯源。
+        fallback_feed_url: "https://codex-reset.com/api/feed"
+        fallback_max_age_minutes: 90
+        # 人物级窗口承受数轮 CI 延迟；镜像快照仍必须在 90 分钟内更新。
+        lookback_minutes: 360
     accounts:
       - "elonmusk"
       - "sama"
@@ -146,3 +162,4 @@ sources:
       - "fchollet"
       - "karpathy"
       - "OpenAI"
+      - "thsottiaux"

@@ -106,8 +106,9 @@ flowchart LR
 - arXiv
 - 掘金
 - 博客/播客 RSS
+- X/Twitter 高优先级人物（CI 仅抓 `priority_accounts`）
 
-Reddit、X/Twitter 与 SearXNG 可以在本地按配置启用。增加来源时必须同时实现规范 URL、超时、内容完整性、事件谱系和去重测试。
+Reddit、完整 X/Twitter 账号列表与 SearXNG 可以在本地按配置启用。生产档只读取 `sources.twitter.priority_accounts`，并关闭截图以控制浏览器成本。人物配置可声明 HTTPS/主机白名单内的结构化回退源；回退记录必须保留原帖 URL、镜像入口和独立第三方标记，不能冒充官方来源。增加来源时必须同时实现规范 URL、超时、内容完整性、事件谱系和去重测试。
 
 ### 模型
 

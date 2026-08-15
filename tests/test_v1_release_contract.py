@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from pathlib import Path
 
 import yaml
@@ -89,6 +90,37 @@ def test_readme_secondary_capability_headings_are_centered() -> None:
         assert (
             f'<div align="center"><strong>{heading}</strong></div>' in readme
         ), f"{heading} must be explicitly centered inside its table cell"
+
+
+def test_readme_reader_facing_links_use_semantic_unbroken_labels() -> None:
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    link_labels = re.findall(r"\[([^\]\n]+)\]\((?:https?://|\.{1,2}/)[^)]+\)", readme)
+    exposed_addresses = [
+        label
+        for label in link_labels
+        if label.startswith(("http://", "https://")) or label == "ai-stack.site"
+    ]
+
+    assert exposed_addresses == [], (
+        "reader-facing links must use semantic labels instead of wrap-prone addresses: "
+        f"{exposed_addresses}"
+    )
+
+    for orphaned_link_prefix in (
+        "贡献约定与本地验证：[",
+        "Bug 与功能建议：[",
+        "方案讨论与经验分享：[",
+        "PR 检查规则：[",
+    ):
+        assert orphaned_link_prefix not in readme
+
+    for complete_navigation_item in (
+        "- [打开生产站点](https://ai-stack.site/)：浏览情报归档、搜索与文章",
+        "- [查看趋势洞察](https://ai-stack.site/trends/)：下钻技术信号与证据",
+        "- [探索场景知识图谱](https://ai-stack.site/scenarios/)：查看标签社区与节点关系",
+        "- [阅读部署指南](./DEPLOYMENT.md)：配置域名、Secrets 与 GitHub Pages",
+    ):
+        assert complete_navigation_item in readme
 
 
 def test_issue_forms_are_safe_and_route_work_to_the_v1_milestone() -> None:
