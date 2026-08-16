@@ -27,7 +27,7 @@ source_title_chars_original: 54
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://blog.google/products-and-platforms/products/workspace/sheets-canvas-for-google-sheets-spreadsheets
 parent_observation_id: null
-last_seen_at: 2026-08-14T00:00:00Z
+last_seen_at: 2026-08-16T00:00:00Z
 ---
 
 ## 基本信息
