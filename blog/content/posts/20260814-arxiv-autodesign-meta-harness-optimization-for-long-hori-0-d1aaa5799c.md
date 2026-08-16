@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:c02264b4d0b367a4721e3dfed4d490741d1c58937bf48a3da
 description: "AutoDesign 是一个让元‑框架优化器指导代码代理依据 rollout 反馈递归改进系统结构的框架，聚焦于从学术论文自动生成海报的任务，并配套提供 PosterBench 评测集。"
 external_url: http://arxiv.org/abs/2608.13560v1
 parent_observation_id: null
-last_seen_at: 2026-08-14T02:45:47.373002Z
+last_seen_at: 2026-08-16T00:00:00Z
 ---
 
 ## 基本信息
