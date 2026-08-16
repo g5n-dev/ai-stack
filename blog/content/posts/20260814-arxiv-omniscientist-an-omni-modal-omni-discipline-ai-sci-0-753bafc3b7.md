@@ -15,7 +15,7 @@ observation_id: obs_753bafc3b7c8c6251088583ebe14c97b14bdb8c193982514711a20ac663a
 event_id: evt_e868b3418709031f80d30fe3b2b09f808ff45ca802d27af23bf6622fe6bd2382
 revision_id: rev_a6c5fadb69cc8c3a84b55416c8eb95dda1072b6edb565530d3501560244257ec
 source_published_at: 2026-08-13T17:59:52Z
-first_seen_at: 2026-08-14T05:02:01.039695Z
+first_seen_at: 2026-08-14T05:13:34Z
 timestamp_confidence: publisher
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:9499400e4aae81ad612922ee60201e3fd79f3ef989f273c4a
 description: "OmniScientist是一种端到端的多模态AI科学家系统，能够直接利用图像、音频、视频、3‑D结构等多种原始证据开展跨学科研究，并通过感知层与三个自主代理在确定性流水线中完成创意生成、实验执行和文稿撰写，同时在代码层面实现创新性筛选、统计有效性检查和数值追溯。"
 external_url: http://arxiv.org/abs/2608.13558v1
 parent_observation_id: null
-last_seen_at: 2026-08-14T05:02:01.039695Z
+last_seen_at: 2026-08-16T00:00:00Z
 ---
 
 ## 基本信息

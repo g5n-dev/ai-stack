@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:04dfc7b07a928afaa1603789c35eb97c2121ed7c0e0375b23
 description: "该内容说明如何通过配置 Cost and Usage Report 2.0 并在 Amazon Athena 中查询，结合 CUDOS 可视化仪表板，实现对 Amazon Bedrock 调用费用的逐 IAM 主体追踪与成本归因。"
 external_url: https://aws.amazon.com/blogs/machine-learning/part-2-amazon-bedrock-cost-attribution-with-amazon-athena-and-cudos
 parent_observation_id: null
-last_seen_at: 2026-08-14T00:00:00Z
+last_seen_at: 2026-08-16T00:00:00Z
 ---
 
 ## 基本信息
