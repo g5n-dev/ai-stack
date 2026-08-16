@@ -1,8 +1,8 @@
 {
-  "active_count": 2549,
+  "active_count": 2553,
   "archived_count": 276,
   "complete_count": 48,
-  "interpreted_brief_count": 97,
+  "interpreted_brief_count": 98,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20092,6 +20092,30 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260817-arxiv-quotebench-how-matched-scores-can-hide-command-pat-3-dd127adf7f.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260817-blogs_podcasts-react-for-agents-astro-creator-brings-hooks-to-his-0-8a940043da.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260817-github_trending-raywangqvq-bilibilitoolpro-5-33e65eca4b.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260817-hacker_news-claude-system-prompts-1-eb4edca3b5.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -20126,10 +20150,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2404,
-  "source_file_count": 2825,
-  "source_tree_sha256": "bbfb7e6d25a413de891fc736b2e32814aa8468d687c6c4158010a0d8fab62aae",
-  "verified_provenance_count": 2549,
+  "source_brief_count": 2407,
+  "source_file_count": 2829,
+  "source_tree_sha256": "6ba36aa76fb8eaef21d02b956efb56c5b9cb76a28c1c378d178c5f37661afaf2",
+  "verified_provenance_count": 2553,
   "warning_counts": {
     "source_excerpt_truncated": 774
   }
