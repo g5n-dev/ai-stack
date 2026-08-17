@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:36449fe7c1f00d6def1850a7025fa35c57268965826f5e455
 description: "这是一篇介绍如何在云端实现 AI agent 控制浏览器来自动化操作遗留 Web 应用的方案。通过托管的 Chromium 实例和 WebSocket 协议，AI 可以模拟人工操作这类没有现代 API 的系统，并结合模型编排能力实现复杂工作流的自动化。"
 external_url: https://aws.amazon.com/blogs/machine-learning/automate-legacy-web-applications-with-amazon-bedrock-agentcore-browser-tool
 parent_observation_id: null
-last_seen_at: 2026-08-14T00:00:00Z
+last_seen_at: 2026-08-17T00:00:00Z
 ---
 
 ## 基本信息
