@@ -15,7 +15,7 @@ observation_id: obs_10a29b4804e0e8482f58543b09461165ed139ffe5c09dda6219b0ee18fde
 event_id: evt_dee7c001a56fdf8ba683bd91f9df25393632e33ed2120b3e84e1a6010623f56f
 revision_id: rev_de23b845486ced1f4ebb263a67935233426b478283600b5eef0195fc00b239f0
 source_published_at: 2026-08-13T15:52:44Z
-first_seen_at: 2026-08-13T21:15:11Z
+first_seen_at: 2026-08-17T17:44:54.982239Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:8888e6505d4e7fff2b54bd696ac983076114f0b148998e7bb
 description: "使用 Amazon Bedrock AgentCore 构建多代理尽职调查方案，通过自主查询财务、市场和法规数据源，并结合检索增强生成与治理控制，实现并购目标的快速评估与审计追踪。"
 external_url: https://aws.amazon.com/blogs/machine-learning/accelerating-ma-due-diligence-with-amazon-bedrock-agentcore
 parent_observation_id: null
-last_seen_at: 2026-08-14T00:00:00Z
+last_seen_at: 2026-08-17T00:00:00Z
 ---
 
 ## 基本信息

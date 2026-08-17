@@ -15,7 +15,7 @@ observation_id: obs_0b3298a080c8194d1f16addde55334222afe83ec147132a41c06a9f76007
 event_id: evt_08e94099866566b7cc52eaab6338e874274c1d8e9e912286b392f96155d6a4e5
 revision_id: rev_48a51e269fe50468dd95708db334bed2477ebcb6e1ce14d4faa011af9e96ea80
 source_published_at: 2026-08-13T15:56:07Z
-first_seen_at: 2026-08-13T19:32:16Z
+first_seen_at: 2026-08-17T17:44:54.971408Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:36449fe7c1f00d6def1850a7025fa35c57268965826f5e455
 description: "这是一篇介绍如何在云端实现 AI agent 控制浏览器来自动化操作遗留 Web 应用的方案。通过托管的 Chromium 实例和 WebSocket 协议，AI 可以模拟人工操作这类没有现代 API 的系统，并结合模型编排能力实现复杂工作流的自动化。"
 external_url: https://aws.amazon.com/blogs/machine-learning/automate-legacy-web-applications-with-amazon-bedrock-agentcore-browser-tool
 parent_observation_id: null
-last_seen_at: 2026-08-14T00:00:00Z
+last_seen_at: 2026-08-17T00:00:00Z
 ---
 
 ## 基本信息

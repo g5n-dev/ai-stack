@@ -15,7 +15,7 @@ observation_id: obs_e546c9507c4bdece8e78a9938c5519585e0b65f749ccceed110f32b1026f
 event_id: evt_7ef82645a5e8cd3b25c929ed65ac1798508b17767c0897e2a86dd867498b281d
 revision_id: rev_2e9f4501d55a5a703b4e4b70cbc0f343a6c041c6e48687b21a2c78845a3ba9b0
 source_published_at: 2026-08-13T16:45:00Z
-first_seen_at: 2026-08-13T18:19:15Z
+first_seen_at: 2026-08-17T17:44:52.810605Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 54
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://blog.google/products-and-platforms/products/workspace/sheets-canvas-for-google-sheets-spreadsheets
 parent_observation_id: null
-last_seen_at: 2026-08-14T00:00:00Z
+last_seen_at: 2026-08-17T00:00:00Z
 ---
 
 ## 基本信息

@@ -15,7 +15,7 @@ observation_id: obs_5e7836db2c1590662c40c19382d6bdf91af2a53f42f19fbd97ff6c184951
 event_id: evt_fb4a80be93594f40fbffe55ae9c1cb72d04eada7031d88f7f68d590ff5acdba4
 revision_id: rev_4258235690bb58efcf075e2b891c0ed7f9d65cfff9ca46a2b61a764033c6a285
 source_published_at: 2026-08-13T16:02:10Z
-first_seen_at: 2026-08-13T16:22:37Z
+first_seen_at: 2026-08-17T17:44:54.963687Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 74
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/monitor-on-premises-and-multi-cloud-ai-agents-with-agentcore-observability
 parent_observation_id: null
-last_seen_at: 2026-08-14T00:00:00Z
+last_seen_at: 2026-08-17T00:00:00Z
 ---
 
 ## 基本信息

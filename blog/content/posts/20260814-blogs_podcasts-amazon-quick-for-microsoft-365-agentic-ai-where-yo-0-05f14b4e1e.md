@@ -15,7 +15,7 @@ observation_id: obs_05f14b4e1e89cd91f110a5189c0427a8a5a082c150bca048d34aaf051ae9
 event_id: evt_5406f1f19e0b617d0426c8225851fa0d1ec1e8c59ebb7a4142f3f2f110671abf
 revision_id: rev_abb6b03a2402541f92e098cac1b3e126a31363c55fface3c940861531cb6fbf3
 source_published_at: 2026-08-13T15:48:15Z
-first_seen_at: 2026-08-13T22:15:17Z
+first_seen_at: 2026-08-17T17:44:54.988239Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:6ebdc99da62cebb0514a4b691962e0843204934f8ff534f0b
 description: "Amazon Quick 在微软 Office 套件中推出 AI 助手，能够直接在 Word、Excel、PowerPoint、Outlook 中执行文档编辑、数据检索等操作，基于已有数据源和第三方集成完成任务。"
 external_url: https://aws.amazon.com/blogs/machine-learning/amazon-quick-for-microsoft-365-agentic-ai-where-you-work
 parent_observation_id: null
-last_seen_at: 2026-08-14T00:00:00Z
+last_seen_at: 2026-08-17T00:00:00Z
 ---
 
 ## 基本信息
