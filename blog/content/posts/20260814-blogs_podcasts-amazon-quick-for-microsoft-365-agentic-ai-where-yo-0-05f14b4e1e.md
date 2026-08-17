@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:6ebdc99da62cebb0514a4b691962e0843204934f8ff534f0b
 description: "Amazon Quick 在微软 Office 套件中推出 AI 助手，能够直接在 Word、Excel、PowerPoint、Outlook 中执行文档编辑、数据检索等操作，基于已有数据源和第三方集成完成任务。"
 external_url: https://aws.amazon.com/blogs/machine-learning/amazon-quick-for-microsoft-365-agentic-ai-where-you-work
 parent_observation_id: null
-last_seen_at: 2026-08-14T00:00:00Z
+last_seen_at: 2026-08-17T00:00:00Z
 ---
 
 ## 基本信息
