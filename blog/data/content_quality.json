@@ -1,5 +1,5 @@
 {
-  "active_count": 2549,
+  "active_count": 2552,
   "archived_count": 276,
   "complete_count": 48,
   "interpreted_brief_count": 97,
@@ -20092,6 +20092,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260817-arxiv-decoding-the-past-an-uncertainty-aware-deep-learni-0-031454cab0.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260817-blogs_podcasts-get-closer-to-the-game-with-gemini-and-pixel-0-3aca82d56d.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260817-hacker_news-gpt-56-sol-is-the-best-vision-model-openai-ever-re-1-b847787c0b.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -20126,10 +20144,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2404,
-  "source_file_count": 2825,
-  "source_tree_sha256": "bbfb7e6d25a413de891fc736b2e32814aa8468d687c6c4158010a0d8fab62aae",
-  "verified_provenance_count": 2549,
+  "source_brief_count": 2407,
+  "source_file_count": 2828,
+  "source_tree_sha256": "67c3f0a0da11f2df5ba5ddfcf6c6d1feb7729dc4053d22dde7b9dac56ebe578b",
+  "verified_provenance_count": 2552,
   "warning_counts": {
     "source_excerpt_truncated": 774
   }
