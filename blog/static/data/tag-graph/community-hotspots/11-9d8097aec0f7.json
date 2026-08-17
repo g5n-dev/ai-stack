@@ -1,0 +1,90 @@
+{
+  "community_id": "community:tag:Google in Europe",
+  "generated_at": "2026-08-17T09:02:12Z",
+  "hotspot_limit": 24,
+  "link_limit": 32,
+  "links": [
+    {
+      "id": "edge:cooccurrence:tag:Gemini->tag:Google in Europe",
+      "source": "tag:Gemini",
+      "strength": 0.5,
+      "target": "tag:Google in Europe",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Gemini->tag:Pixel",
+      "source": "tag:Gemini",
+      "strength": 0.5,
+      "target": "tag:Pixel",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Google in Europe->tag:Pixel",
+      "source": "tag:Google in Europe",
+      "strength": 0.5,
+      "target": "tag:Pixel",
+      "type": "cooccurrence",
+      "weight": 1
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Google in Europe",
+      "degree": 6,
+      "description": "文章标签: Gemini",
+      "id": "tag:Gemini",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Gemini",
+      "level": 6,
+      "name": "Gemini",
+      "rank": 132,
+      "related_count": 6,
+      "weighted_degree": 6
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Google in Europe",
+      "degree": 6,
+      "description": "文章标签: Google in Europe",
+      "id": "tag:Google in Europe",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Google in Europe",
+      "level": 6,
+      "name": "Google in Europe",
+      "rank": 133,
+      "related_count": 6,
+      "weighted_degree": 6
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Google in Europe",
+      "degree": 6,
+      "description": "文章标签: Pixel",
+      "id": "tag:Pixel",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Pixel",
+      "level": 6,
+      "name": "Pixel",
+      "rank": 134,
+      "related_count": 6,
+      "weighted_degree": 6
+    }
+  ],
+  "stats": {
+    "total_links": 3,
+    "total_nodes": 3
+  },
+  "version": 2
+}
