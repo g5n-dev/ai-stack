@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:dc020c537e12009e1fad7ae44b2e72433e9188766a664c421
 description: "这是一份AI行业资讯，报道了xAI发布Grok 4.6模型以及近期多个大模型更新动态，重点介绍该模型在编码代理任务上的表现和价格优势。"
 external_url: https://www.latent.space/p/ainews-spacexai-grok-46-and-grok
 parent_observation_id: null
-last_seen_at: 2026-08-14T00:00:00Z
+last_seen_at: 2026-08-17T00:00:00Z
 ---
 
 ## 基本信息

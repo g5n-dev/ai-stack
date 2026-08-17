@@ -1,5 +1,5 @@
 {
-  "active_count": 2549,
+  "active_count": 2553,
   "archived_count": 276,
   "complete_count": 48,
   "interpreted_brief_count": 97,
@@ -20092,6 +20092,30 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260817-arxiv-decoding-the-past-an-uncertainty-aware-deep-learni-0-031454cab0.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260817-blogs_podcasts-react-for-agents-astro-creator-brings-hooks-to-his-0-8a940043da.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260817-github_trending-raywangqvq-bilibilitoolpro-5-33e65eca4b.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260817-hacker_news-claude-system-prompts-4-eb4edca3b5.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -20126,10 +20150,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2404,
-  "source_file_count": 2825,
-  "source_tree_sha256": "bbfb7e6d25a413de891fc736b2e32814aa8468d687c6c4158010a0d8fab62aae",
-  "verified_provenance_count": 2549,
+  "source_brief_count": 2408,
+  "source_file_count": 2829,
+  "source_tree_sha256": "4f1654b49cf57bce4e3f43b502d1face5270ae56669a54a457f59b9b489990de",
+  "verified_provenance_count": 2553,
   "warning_counts": {
     "source_excerpt_truncated": 774
   }
