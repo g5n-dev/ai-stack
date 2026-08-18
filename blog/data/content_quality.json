@@ -1,8 +1,8 @@
 {
-  "active_count": 2549,
+  "active_count": 2552,
   "archived_count": 276,
   "complete_count": 48,
-  "interpreted_brief_count": 97,
+  "interpreted_brief_count": 98,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20092,6 +20092,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260819-arxiv-dont-drop-the-baton-long-horizon-robot-manipulatio-0-4e48d42ef4.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260819-github_trending-jeecgboot-jimureport-4-913beba9b1.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260819-hacker_news-claude-code-weekly-limits-reduce-by-a-third-tomorr-0-684bacf734.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -20126,10 +20144,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2404,
-  "source_file_count": 2825,
-  "source_tree_sha256": "bbfb7e6d25a413de891fc736b2e32814aa8468d687c6c4158010a0d8fab62aae",
-  "verified_provenance_count": 2549,
+  "source_brief_count": 2406,
+  "source_file_count": 2828,
+  "source_tree_sha256": "b20ae649b2771e3c563fa542611fbd2a06c60b32788bae70e4715c1ca4839614",
+  "verified_provenance_count": 2552,
   "warning_counts": {
     "source_excerpt_truncated": 774
   }
