@@ -1,8 +1,8 @@
 {
-  "active_count": 2549,
+  "active_count": 2553,
   "archived_count": 276,
   "complete_count": 48,
-  "interpreted_brief_count": 97,
+  "interpreted_brief_count": 99,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20092,6 +20092,30 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260819-arxiv-dont-drop-the-baton-long-horizon-robot-manipulatio-0-4e48d42ef4.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260819-blogs_podcasts-amazon-bedrock-agentcore-payments-is-now-generally-0-9461bc7530.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260819-github_trending-jeecgboot-jimureport-4-913beba9b1.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260819-hacker_news-norway-should-buy-openai-0-1552027d48.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -20126,10 +20150,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2404,
-  "source_file_count": 2825,
-  "source_tree_sha256": "bbfb7e6d25a413de891fc736b2e32814aa8468d687c6c4158010a0d8fab62aae",
-  "verified_provenance_count": 2549,
+  "source_brief_count": 2406,
+  "source_file_count": 2829,
+  "source_tree_sha256": "a6bf309a1fa1782b29eda3c03f6d7e8b9a3d8d43e56d73e2ada78078797851f7",
+  "verified_provenance_count": 2553,
   "warning_counts": {
     "source_excerpt_truncated": 774
   }
