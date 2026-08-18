@@ -1,8 +1,8 @@
 {
-  "active_count": 2549,
+  "active_count": 2553,
   "archived_count": 276,
   "complete_count": 48,
-  "interpreted_brief_count": 97,
+  "interpreted_brief_count": 98,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20092,6 +20092,30 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260819-arxiv-dont-drop-the-baton-long-horizon-robot-manipulatio-0-4e48d42ef4.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260819-blogs_podcasts-strengthening-democratic-oversight-in-national-sec-0-f0aa91974e.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260819-github_trending-jeecgboot-jimureport-4-913beba9b1.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260819-hacker_news-claude-code-teaching-macos-to-natively-print-to-th-1-2335b295c0.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -20126,10 +20150,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2404,
-  "source_file_count": 2825,
-  "source_tree_sha256": "bbfb7e6d25a413de891fc736b2e32814aa8468d687c6c4158010a0d8fab62aae",
-  "verified_provenance_count": 2549,
+  "source_brief_count": 2407,
+  "source_file_count": 2829,
+  "source_tree_sha256": "436d6685cb46d00462440d4925baaae333377472563983284cba7eb062c20d5c",
+  "verified_provenance_count": 2553,
   "warning_counts": {
     "source_excerpt_truncated": 774
   }
