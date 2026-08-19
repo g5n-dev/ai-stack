@@ -1,8 +1,8 @@
 {
-  "active_count": 2549,
+  "active_count": 2551,
   "archived_count": 276,
   "complete_count": 48,
-  "interpreted_brief_count": 97,
+  "interpreted_brief_count": 98,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20092,6 +20092,18 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260819-blogs_podcasts-ainews-memory-prices-up-500-in-12-months-0-5ce0d6f8cf.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260819-github_trending-jeecgboot-jimureport-4-913beba9b1.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -20126,10 +20138,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2404,
-  "source_file_count": 2825,
-  "source_tree_sha256": "bbfb7e6d25a413de891fc736b2e32814aa8468d687c6c4158010a0d8fab62aae",
-  "verified_provenance_count": 2549,
+  "source_brief_count": 2405,
+  "source_file_count": 2827,
+  "source_tree_sha256": "4bad5cb41d6cacc2b9ac279e8c4ae4ee70dce7e17674c6a320b4de2e04d695f5",
+  "verified_provenance_count": 2551,
   "warning_counts": {
     "source_excerpt_truncated": 774
   }
