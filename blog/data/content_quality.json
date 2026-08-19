@@ -1,8 +1,8 @@
 {
-  "active_count": 2549,
+  "active_count": 2552,
   "archived_count": 276,
   "complete_count": 48,
-  "interpreted_brief_count": 97,
+  "interpreted_brief_count": 98,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20092,6 +20092,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260820-arxiv-from-corpora-to-co-evolving-capabilities-capabilit-0-650e7d0130.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260820-blogs_podcasts-how-fanatics-betting-and-gaming-built-a-multi-agen-0-b26ec23879.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260820-hacker_news-mathematics-in-the-age-of-ai-14-3033c57db9.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -20126,10 +20144,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2404,
-  "source_file_count": 2825,
-  "source_tree_sha256": "bbfb7e6d25a413de891fc736b2e32814aa8468d687c6c4158010a0d8fab62aae",
-  "verified_provenance_count": 2549,
+  "source_brief_count": 2406,
+  "source_file_count": 2828,
+  "source_tree_sha256": "680bb74e1ae9cc7f4c8c9f780558ef3c365dc1c5c061312a091e8faa0efb1ff0",
+  "verified_provenance_count": 2552,
   "warning_counts": {
     "source_excerpt_truncated": 774
   }
