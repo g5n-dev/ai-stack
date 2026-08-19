@@ -1,8 +1,8 @@
 {
-  "active_count": 2549,
+  "active_count": 2552,
   "archived_count": 276,
   "complete_count": 48,
-  "interpreted_brief_count": 97,
+  "interpreted_brief_count": 98,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20092,6 +20092,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260820-arxiv-from-corpora-to-co-evolving-capabilities-capabilit-0-650e7d0130.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260820-blogs_podcasts-domain-and-publish-date-filters-for-web-search-on--0-f1b19f2f1e.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260820-hacker_news-feature-request-support-agentsmd-8-3c042057ca.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -20126,10 +20144,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2404,
-  "source_file_count": 2825,
-  "source_tree_sha256": "bbfb7e6d25a413de891fc736b2e32814aa8468d687c6c4158010a0d8fab62aae",
-  "verified_provenance_count": 2549,
+  "source_brief_count": 2406,
+  "source_file_count": 2828,
+  "source_tree_sha256": "e99b636eb8e9fb113b358b5c833dbb2a5dadf8c26f8391e1acda57f8858d65de",
+  "verified_provenance_count": 2552,
   "warning_counts": {
     "source_excerpt_truncated": 774
   }
