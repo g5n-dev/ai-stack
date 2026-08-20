@@ -1,0 +1,180 @@
+{
+  "community_id": "community:tag:Cleaner industry",
+  "generated_at": "2026-08-20T19:01:20Z",
+  "hotspot_limit": 24,
+  "link_limit": 32,
+  "links": [
+    {
+      "id": "edge:cooccurrence:tag:Agriculture->tag:Cleaner industry",
+      "source": "tag:Agriculture",
+      "strength": 0.5,
+      "target": "tag:Cleaner industry",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Agriculture->tag:Emissions",
+      "source": "tag:Agriculture",
+      "strength": 0.5,
+      "target": "tag:Emissions",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Agriculture->tag:Materials science and engineering",
+      "source": "tag:Agriculture",
+      "strength": 0.5,
+      "target": "tag:Materials science and engineering",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Agriculture->tag:Sustainability",
+      "source": "tag:Agriculture",
+      "strength": 0.5,
+      "target": "tag:Sustainability",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Cleaner industry->tag:Emissions",
+      "source": "tag:Cleaner industry",
+      "strength": 0.5,
+      "target": "tag:Emissions",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Cleaner industry->tag:Materials science and engineering",
+      "source": "tag:Cleaner industry",
+      "strength": 0.5,
+      "target": "tag:Materials science and engineering",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Cleaner industry->tag:Sustainability",
+      "source": "tag:Cleaner industry",
+      "strength": 0.5,
+      "target": "tag:Sustainability",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Emissions->tag:Materials science and engineering",
+      "source": "tag:Emissions",
+      "strength": 0.5,
+      "target": "tag:Materials science and engineering",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Emissions->tag:Sustainability",
+      "source": "tag:Emissions",
+      "strength": 0.5,
+      "target": "tag:Sustainability",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Materials science and engineering->tag:Sustainability",
+      "source": "tag:Materials science and engineering",
+      "strength": 0.5,
+      "target": "tag:Sustainability",
+      "type": "cooccurrence",
+      "weight": 1
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Cleaner industry",
+      "degree": 8,
+      "description": "文章标签: Materials science and engineering",
+      "id": "tag:Materials science and engineering",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Materials science and engineering",
+      "level": 6,
+      "name": "Materials science and engineering",
+      "rank": 87,
+      "related_count": 7,
+      "weighted_degree": 7.6
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Cleaner industry",
+      "degree": 7,
+      "description": "文章标签: Agriculture",
+      "id": "tag:Agriculture",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Agriculture",
+      "level": 6,
+      "name": "Agriculture",
+      "rank": 93,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Cleaner industry",
+      "degree": 7,
+      "description": "文章标签: Cleaner industry",
+      "id": "tag:Cleaner industry",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Cleaner industry",
+      "level": 6,
+      "name": "Cleaner industry",
+      "rank": 110,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Cleaner industry",
+      "degree": 7,
+      "description": "文章标签: Emissions",
+      "id": "tag:Emissions",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Emissions",
+      "level": 6,
+      "name": "Emissions",
+      "rank": 114,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Cleaner industry",
+      "degree": 7,
+      "description": "文章标签: Sustainability",
+      "id": "tag:Sustainability",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Sustainability",
+      "level": 6,
+      "name": "Sustainability",
+      "rank": 125,
+      "related_count": 7,
+      "weighted_degree": 7
+    }
+  ],
+  "stats": {
+    "total_links": 10,
+    "total_nodes": 5
+  },
+  "version": 2
+}
