@@ -1,8 +1,8 @@
 {
-  "active_count": 2549,
+  "active_count": 2552,
   "archived_count": 276,
   "complete_count": 48,
-  "interpreted_brief_count": 97,
+  "interpreted_brief_count": 98,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20092,6 +20092,27 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260820-blogs_podcasts-domain-and-publish-date-filters-for-web-search-on--0-f1b19f2f1e.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260820-hacker_news-mathematics-in-the-age-of-ai-14-3033c57db9.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260820-juejin-铁轨迷宫与护栏ai-数据工程的确定性骨架-3-f46a698f5e.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     }
   },
   "quarantined_count": 0,
@@ -20126,11 +20147,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2404,
-  "source_file_count": 2825,
-  "source_tree_sha256": "bbfb7e6d25a413de891fc736b2e32814aa8468d687c6c4158010a0d8fab62aae",
-  "verified_provenance_count": 2549,
+  "source_brief_count": 2406,
+  "source_file_count": 2828,
+  "source_tree_sha256": "2882459b841857ed503f105332d7725f1b0e4f31703c97985039de3b61fb28fa",
+  "verified_provenance_count": 2552,
   "warning_counts": {
-    "source_excerpt_truncated": 774
+    "source_excerpt_truncated": 775
   }
 }
