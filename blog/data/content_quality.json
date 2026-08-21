@@ -1,8 +1,8 @@
 {
-  "active_count": 2549,
+  "active_count": 2554,
   "archived_count": 276,
   "complete_count": 48,
-  "interpreted_brief_count": 97,
+  "interpreted_brief_count": 99,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20092,6 +20092,39 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260822-arxiv-conceptguard-benchmarking-context-sensitive-unlear-1-f8fcbd01e4.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260822-blogs_podcasts-agentic-data-operations-platform-adop-data-enginee-0-85c0e5fdf1.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260822-github_trending-jeecgboot-jimureport-6-913beba9b1.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260822-hacker_news-ai-boosted-homework-scores-then-exam-scores-droppe-5-446fb3e584.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260822-juejin-让大模型思考让小模型执行在-elastic-workflows-中拆分-llm-成本-0-2e142b23c0.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     }
   },
   "quarantined_count": 0,
@@ -20126,11 +20159,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2404,
-  "source_file_count": 2825,
-  "source_tree_sha256": "bbfb7e6d25a413de891fc736b2e32814aa8468d687c6c4158010a0d8fab62aae",
-  "verified_provenance_count": 2549,
+  "source_brief_count": 2407,
+  "source_file_count": 2830,
+  "source_tree_sha256": "d47cf0323b3acac119a0d5d0359f7338d1c6c1277b97d0ec38ed7193db7c2807",
+  "verified_provenance_count": 2554,
   "warning_counts": {
-    "source_excerpt_truncated": 774
+    "source_excerpt_truncated": 775
   }
 }
