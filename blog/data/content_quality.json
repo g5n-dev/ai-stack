@@ -1,8 +1,8 @@
 {
-  "active_count": 2549,
+  "active_count": 2554,
   "archived_count": 276,
-  "complete_count": 48,
-  "interpreted_brief_count": 97,
+  "complete_count": 49,
+  "interpreted_brief_count": 99,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20092,6 +20092,33 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260821-arxiv-conceptguard-benchmarking-context-sensitive-unlear-1-f8fcbd01e4.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260821-blogs_podcasts-introducing-cross-region-inference-for-openai-gpt--0-5abe1b1681.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
+    "posts/20260821-github_trending-jeecgboot-jimureport-5-913beba9b1.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260821-hacker_news-ai-companies-destroy-physical-books-lets-scan-rare-0-8e75bf392f.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -20126,11 +20153,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2404,
-  "source_file_count": 2825,
-  "source_tree_sha256": "bbfb7e6d25a413de891fc736b2e32814aa8468d687c6c4158010a0d8fab62aae",
-  "verified_provenance_count": 2549,
+  "source_brief_count": 2406,
+  "source_file_count": 2830,
+  "source_tree_sha256": "48b1858603d82ebfcf6b58adffb6b6ad759da5f146caa0e203f8554f982d3cfd",
+  "verified_provenance_count": 2554,
   "warning_counts": {
-    "source_excerpt_truncated": 774
+    "source_excerpt_truncated": 775
   }
 }
