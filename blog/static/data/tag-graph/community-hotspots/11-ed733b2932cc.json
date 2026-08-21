@@ -1,0 +1,57 @@
+{
+  "community_id": "community:tag:来源转写",
+  "generated_at": "2026-08-21T10:50:10Z",
+  "hotspot_limit": 24,
+  "link_limit": 32,
+  "links": [
+    {
+      "id": "edge:cooccurrence:tag:工程实践->tag:来源转写",
+      "source": "tag:工程实践",
+      "strength": 1,
+      "target": "tag:来源转写",
+      "type": "cooccurrence",
+      "weight": 47
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 48,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:来源转写",
+      "degree": 9,
+      "description": "文章标签: 工程实践",
+      "id": "tag:工程实践",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "工程实践",
+      "level": 6,
+      "name": "工程实践",
+      "rank": 29,
+      "related_count": 9,
+      "weighted_degree": 101
+    },
+    {
+      "article_count": 47,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:来源转写",
+      "degree": 2,
+      "description": "文章标签: 来源转写",
+      "id": "tag:来源转写",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "来源转写",
+      "level": 6,
+      "name": "来源转写",
+      "rank": 32,
+      "related_count": 2,
+      "weighted_degree": 94
+    }
+  ],
+  "stats": {
+    "total_links": 1,
+    "total_nodes": 2
+  },
+  "version": 2
+}
