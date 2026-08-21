@@ -1,8 +1,8 @@
 {
-  "active_count": 2549,
+  "active_count": 2553,
   "archived_count": 276,
   "complete_count": 48,
-  "interpreted_brief_count": 97,
+  "interpreted_brief_count": 98,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20092,6 +20092,30 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260822-arxiv-conceptguard-benchmarking-context-sensitive-unlear-1-f8fcbd01e4.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260822-blogs_podcasts-from-atari-to-eve-online-building-on-15-years-of-a-0-76900827bd.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260822-github_trending-jeecgboot-jimureport-5-913beba9b1.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260822-hacker_news-ai-companies-destroy-physical-books-lets-scan-rare-2-b3b7f51fd1.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -20126,10 +20150,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2404,
-  "source_file_count": 2825,
-  "source_tree_sha256": "bbfb7e6d25a413de891fc736b2e32814aa8468d687c6c4158010a0d8fab62aae",
-  "verified_provenance_count": 2549,
+  "source_brief_count": 2407,
+  "source_file_count": 2829,
+  "source_tree_sha256": "21e4d3c44e251b9d4f11be6e80237b872e54b0a82165cab7dd90dafe197a9059",
+  "verified_provenance_count": 2553,
   "warning_counts": {
     "source_excerpt_truncated": 774
   }
