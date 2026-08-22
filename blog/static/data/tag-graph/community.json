@@ -4,7 +4,7 @@
     {
       "article_count": 83,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-50b66590b186.json",
+      "hotspot_file": "community-hotspots/01-2ad474d7720f.json",
       "id": "community:tag:Amazon EventBridge",
       "leader_id": "tag:Prompt 工程",
       "name": "Prompt 工程",
@@ -14,33 +14,33 @@
       "weighted_degree": 1356.6
     },
     {
-      "article_count": 2267,
+      "article_count": 2271,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/02-d3b3f4a62505.json",
+      "hotspot_file": "community-hotspots/02-5a0a0ed97f53.json",
       "id": "community:tag:掘金",
       "leader_id": "tag:Hacker News",
       "name": "Hacker News",
       "node_count": 34,
       "rank": 2,
-      "tag_occurrences": 4674,
-      "weighted_degree": 11892.2
+      "tag_occurrences": 4682,
+      "weighted_degree": 11914.2
     },
     {
-      "article_count": 945,
+      "article_count": 949,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/03-121501b2ff8f.json",
+      "hotspot_file": "community-hotspots/03-f55d2b3c9e29.json",
       "id": "community:tag:来源快报",
       "leader_id": "tag:ArXiv",
       "name": "ArXiv",
       "node_count": 31,
       "rank": 3,
-      "tag_occurrences": 1314,
-      "weighted_degree": 2648.4
+      "tag_occurrences": 1321,
+      "weighted_degree": 2668.4
     },
     {
       "article_count": 7,
       "hotspot_count": 15,
-      "hotspot_file": "community-hotspots/04-14bc639a84a6.json",
+      "hotspot_file": "community-hotspots/04-d9f304757135.json",
       "id": "community:tag:Brain and cognitive sciences",
       "leader_id": "tag:Artificial intelligence",
       "name": "Artificial intelligence",
@@ -52,7 +52,7 @@
     {
       "article_count": 9,
       "hotspot_count": 8,
-      "hotspot_file": "community-hotspots/05-e289375dd0d6.json",
+      "hotspot_file": "community-hotspots/05-20d20212fbda.json",
       "id": "community:tag:Google Cloud",
       "leader_id": "tag:Google Workspace",
       "name": "Google Workspace",
@@ -64,7 +64,7 @@
     {
       "article_count": 2,
       "hotspot_count": 6,
-      "hotspot_file": "community-hotspots/06-5ba3be7a147c.json",
+      "hotspot_file": "community-hotspots/06-c2b28bb6e032.json",
       "id": "community:tag:Amazon RDS",
       "leader_id": "tag:Amazon Elastic Kubernetes Service",
       "name": "Amazon Elastic Kubernetes Service",
@@ -76,7 +76,7 @@
     {
       "article_count": 1,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/07-a8f020c9b3ba.json",
+      "hotspot_file": "community-hotspots/07-4d3894fe0062.json",
       "id": "community:tag:Codex",
       "leader_id": "tag:ACP",
       "name": "ACP",
@@ -88,7 +88,7 @@
     {
       "article_count": 3,
       "hotspot_count": 4,
-      "hotspot_file": "community-hotspots/08-3997b7cc79bb.json",
+      "hotspot_file": "community-hotspots/08-6c588542bc9f.json",
       "id": "community:tag:AWS Marketplace",
       "leader_id": "tag:Amazon SageMaker AI",
       "name": "Amazon SageMaker AI",
@@ -100,7 +100,7 @@
     {
       "article_count": 3,
       "hotspot_count": 4,
-      "hotspot_file": "community-hotspots/09-4bfc7060317b.json",
+      "hotspot_file": "community-hotspots/09-a0c6c42bbd49.json",
       "id": "community:tag:ML Applications",
       "leader_id": "tag:Data Infrastructure",
       "name": "Data Infrastructure",
@@ -112,7 +112,7 @@
     {
       "article_count": 1,
       "hotspot_count": 4,
-      "hotspot_file": "community-hotspots/10-1b2d7a61296c.json",
+      "hotspot_file": "community-hotspots/10-cdd9238a1932.json",
       "id": "community:tag:Computer modeling",
       "leader_id": "tag:Design",
       "name": "Design",
@@ -124,7 +124,7 @@
     {
       "article_count": 48,
       "hotspot_count": 2,
-      "hotspot_file": "community-hotspots/11-a3365161ba23.json",
+      "hotspot_file": "community-hotspots/11-49c67c67fd68.json",
       "id": "community:tag:来源转写",
       "leader_id": "tag:工程实践",
       "name": "工程实践",
@@ -145,7 +145,7 @@
       "weighted_degree": 50.6
     }
   ],
-  "generated_at": "2026-08-14T05:04:03Z",
+  "generated_at": "2026-08-22T22:39:44Z",
   "iterations": 6,
   "limit": 11,
   "links": [
@@ -331,7 +331,7 @@
       "strength": 1,
       "target": "community:tag:来源快报",
       "type": "community",
-      "weight": 1373
+      "weight": 1385
     },
     {
       "id": "edge:community:community:tag:掘金->community:tag:来源转写",
