@@ -1,0 +1,1 @@
+{"data_as_of":"2026-08-23T10:03:03Z","facets":{"scenarios":[],"sources":[]},"formula":"100 × (0.25×quantity + 0.25×growth + 0.15×acceleration + 0.15×source_diversity + 0.10×novelty + 0.10×source_weight) × (1 − 0.5×duplicate_rate)","minimum_unique_events":3,"sample_notice":"样本量较小，建议结合更长时间窗口判断。","schema_version":"stack_trends_window_v2","trends":[],"window":"24h"}
