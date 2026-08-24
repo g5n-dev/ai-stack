@@ -1,8 +1,8 @@
 {
-  "active_count": 2549,
+  "active_count": 2553,
   "archived_count": 276,
-  "complete_count": 48,
-  "interpreted_brief_count": 97,
+  "complete_count": 49,
+  "interpreted_brief_count": 98,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20092,6 +20092,27 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260824-arxiv-vials-a-benchmark-for-visual-interpretation-of-art-1-d2870996e7.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260824-blogs_podcasts-ai-powered-metadata-correction-and-harmonization-0-9c61a4b870.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
+    "posts/20260824-hacker_news-openai-gpt-56-sol-price-reduction-until-at-least-n-1-00eaf917ab.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -20126,11 +20147,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2404,
-  "source_file_count": 2825,
-  "source_tree_sha256": "bbfb7e6d25a413de891fc736b2e32814aa8468d687c6c4158010a0d8fab62aae",
-  "verified_provenance_count": 2549,
+  "source_brief_count": 2406,
+  "source_file_count": 2829,
+  "source_tree_sha256": "873236ce2d86c6808fc458c3ce8458b5b3c96e95c3d0c819a8bfd9b3cedc2a28",
+  "verified_provenance_count": 2553,
   "warning_counts": {
-    "source_excerpt_truncated": 774
+    "source_excerpt_truncated": 775
   }
 }
