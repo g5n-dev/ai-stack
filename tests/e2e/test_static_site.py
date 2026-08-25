@@ -243,6 +243,13 @@ def test_trends_initializes_and_all_primary_controls_change_real_state(
     expect(page.locator("#trend-filter-summary")).to_contain_text("当前未启用附加筛选")
     assert "source=" not in page.url and "scenario=" not in page.url
 
+    # The shorter window may legitimately have no repeated evidence. Return to the
+    # non-empty window established at the start before exercising topic details.
+    page.locator('[data-trend-window="30d"]').click()
+    expect(workbench).to_have_attribute("data-load-state", "ready", timeout=15_000)
+    expect(status).to_contain_text("已发现", timeout=15_000)
+    expect(page.locator("#trend-stat-window")).to_have_text("30 天")
+
     page.locator('[data-trend-view="list"]').click()
     first_topic = page.locator("#trend-list .trend-card__button").first
     first_topic.click()
@@ -541,8 +548,14 @@ def test_trends_fails_closed_without_presenting_phantom_data_controls(
 
 
 def test_trends_window_shard_failure_keeps_window_recovery_actionable(
-    page: Page, site_url: str
+    page: Page, site_url: str, public_dir: Path
 ) -> None:
+    trend_index = json.loads(
+        (public_dir / "data" / "stack-trends" / "index.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    expected_trend_count = trend_index["windows"]["7d"]["trend_count"]
     window_requests = 0
 
     def fail_first_window_shard(route: Route) -> None:
@@ -577,9 +590,28 @@ def test_trends_window_shard_failure_keeps_window_recovery_actionable(
     expect(page.locator("#trend-matrix")).to_have_attribute("tabindex", "-1")
 
     page.locator('[data-trend-window="7d"]').click()
-    expect(page.locator("#trend-status")).to_contain_text("已发现", timeout=15_000)
-    expect(workbench).to_have_attribute("data-load-state", "ready")
+    expect(workbench).to_have_attribute("data-load-state", "ready", timeout=15_000)
     expect(workbench).to_have_attribute("aria-busy", "false")
+    expect(page.locator("#trend-status")).not_to_have_class(re.compile(r"\bis-error\b"))
+    expect(page.locator("#trend-result-count")).to_have_text(
+        f"{expected_trend_count:,} 个主题"
+    )
+    expect(page.locator("#trend-stat-topics")).to_have_text(
+        f"{expected_trend_count:,}"
+    )
+    if expected_trend_count:
+        expect(page.locator("#trend-status")).to_contain_text(
+            f"已发现 {expected_trend_count:,} 个可解释趋势"
+        )
+        expect(page.locator("#trend-list .trend-card__button")).to_have_count(
+            expected_trend_count
+        )
+        expect(page.locator("#trend-empty")).to_be_hidden()
+    else:
+        expect(page.locator("#trend-status")).to_have_text("当前筛选没有趋势信号。")
+        expect(page.locator("#trend-list .trend-card__button")).to_have_count(0)
+        expect(page.locator("#trend-empty")).to_be_visible()
+        expect(page.locator("#trend-matrix-panel")).to_be_hidden()
     expect(page.locator("#trend-stat-window")).to_have_text("7 天")
     expect(page.locator('[data-trend-window="30d"]')).to_be_enabled()
     expect(page.locator('[data-trend-view="list"]')).to_be_enabled()
