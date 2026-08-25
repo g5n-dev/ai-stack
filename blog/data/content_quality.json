@@ -1,8 +1,8 @@
 {
-  "active_count": 2571,
+  "active_count": 2575,
   "archived_count": 276,
-  "complete_count": 51,
-  "interpreted_brief_count": 107,
+  "complete_count": 52,
+  "interpreted_brief_count": 109,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20105,6 +20105,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260825-arxiv-how-ai-assistance-affects-human-skill-development--2-7e70fea4ed.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260825-arxiv-how-to-train-a-critic-stably-and-efficiently-0-6c8cdc8aac.md": {
       "reasons": [
         "concise_source_card"
@@ -20153,6 +20159,15 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260825-blogs_podcasts-building-a-restaurant-telephony-ai-host-with-amazo-0-82836b8dea.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20260825-blogs_podcasts-democratizing-institutional-knowledge-building-an--0-cb9d353d00.md": {
       "reasons": [
         "interpreted_source_card"
@@ -20187,6 +20202,12 @@
       "status": "interpreted_brief"
     },
     "posts/20260825-blogs_podcasts-mtia-300-metas-first-training-chip-with-built-in-n-0-7aadc05d02.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260825-hacker_news-apple-introduces-m6-and-m5-ultra-for-a-big-leap-in-1-b8a7b6f8af.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -20243,11 +20264,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2413,
-  "source_file_count": 2847,
-  "source_tree_sha256": "4e1c49ed7bfa6b0f463815288de5b96481aba667a84d74976939584675fe2621",
-  "verified_provenance_count": 2571,
+  "source_brief_count": 2414,
+  "source_file_count": 2851,
+  "source_tree_sha256": "2a6e7cdbdfe2fa1176a81bb2c3de8753c19dcfa0225fc1f0d841d725904b686d",
+  "verified_provenance_count": 2575,
   "warning_counts": {
-    "source_excerpt_truncated": 775
+    "source_excerpt_truncated": 776
   }
 }
