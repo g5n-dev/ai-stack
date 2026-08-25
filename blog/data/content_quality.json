@@ -1,8 +1,8 @@
 {
-  "active_count": 2556,
+  "active_count": 2558,
   "archived_count": 276,
   "complete_count": 49,
-  "interpreted_brief_count": 99,
+  "interpreted_brief_count": 101,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20105,11 +20105,26 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260825-arxiv-swe-refactor-bench-can-coding-agents-complete-a-lo-0-4de0f2ee6b.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260825-blogs_podcasts-ainews-andrew-ng-gets-into-ai-engineering-0-8a7a8944d0.md": {
       "reasons": [
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20260825-blogs_podcasts-democratizing-institutional-knowledge-building-an--0-cb9d353d00.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     },
     "posts/20260825-blogs_podcasts-introducing-new-ray-capabilities-on-sagemaker-hype-0-35d31ebafc.md": {
       "reasons": [
@@ -20163,10 +20178,10 @@
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2408,
-  "source_file_count": 2832,
-  "source_tree_sha256": "9c926b99890e4ad0b928f6fe38a34fe821502f9f270daf963abe4fc4e255a7fe",
-  "verified_provenance_count": 2556,
+  "source_file_count": 2834,
+  "source_tree_sha256": "7d6f3567c2690c21d76a80b61efd3637bed8fc09b35733256a6615e05d77464d",
+  "verified_provenance_count": 2558,
   "warning_counts": {
-    "source_excerpt_truncated": 774
+    "source_excerpt_truncated": 775
   }
 }
