@@ -1,8 +1,8 @@
 {
-  "active_count": 2552,
+  "active_count": 2556,
   "archived_count": 276,
-  "complete_count": 48,
-  "interpreted_brief_count": 98,
+  "complete_count": 49,
+  "interpreted_brief_count": 99,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20099,11 +20099,29 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260825-arxiv-reworld-an-interactive-world-model-with-long-horiz-0-d15b95708f.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260825-blogs_podcasts-ainews-andrew-ng-gets-into-ai-engineering-0-8a7a8944d0.md": {
       "reasons": [
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20260825-blogs_podcasts-introducing-new-ray-capabilities-on-sagemaker-hype-0-35d31ebafc.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260825-hacker_news-headlong-a-microharness-for-persistent-agents-3-253f6697af.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20260825-hacker_news-llms-could-control-their-host-machines-by-exploiti-14-113584368e.md": {
       "reasons": [
@@ -20144,10 +20162,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2406,
-  "source_file_count": 2828,
-  "source_tree_sha256": "70ef6cf489aa4498c765c44ce5871af6488c15ce9806de697b4c573d06a7cfa0",
-  "verified_provenance_count": 2552,
+  "source_brief_count": 2408,
+  "source_file_count": 2832,
+  "source_tree_sha256": "9c926b99890e4ad0b928f6fe38a34fe821502f9f270daf963abe4fc4e255a7fe",
+  "verified_provenance_count": 2556,
   "warning_counts": {
     "source_excerpt_truncated": 774
   }
