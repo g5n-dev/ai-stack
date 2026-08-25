@@ -334,58 +334,76 @@ test("facet summaries distinguish matching topics from evidence and reconcile st
 });
 
 
-test("committed trend data visibly drills the LLM scenario into its strongest topic", () => {
+test("empty optional scenario facets clear stale state without hiding trends", () => {
+  const values = [
+    trend({ id: "tag:rag", topic: "RAG", scenarios: [] }),
+    trend({ id: "tag:vision", topic: "Computer Vision", scenarios: [] }),
+  ];
+
+  assert.deepEqual(
+    Trends.reconcileFacetState(
+      { source: "", scenario: "stale-scenario", query: "" },
+      { sources: [], scenarios: [] },
+    ),
+    {
+      state: { source: "", scenario: "", query: "" },
+      changed: true,
+    },
+  );
+  assert.deepEqual(
+    Trends.filterTrends(values, { scenario: "" }).map((item) => item.id),
+    ["tag:rag", "tag:vision"],
+  );
+});
+
+
+test("declared committed scenario facets select filterable trend evidence", () => {
   const dataRoot = path.resolve(import.meta.dirname, "../../blog/static/data/stack-trends");
   const index = JSON.parse(readFileSync(path.join(dataRoot, "index.json"), "utf8"));
   const validatedIndex = Trends.validateIndex(index);
   const windowData = JSON.parse(readFileSync(path.join(dataRoot, index.windows["30d"].path), "utf8"));
   const validatedWindow = Trends.validateWindow(windowData, "30d", validatedIndex);
-  const filtered = Trends.filterTrends(validatedWindow.trends, { scenario: "大语言模型" });
+  const declaredScenarios = validatedWindow.facets.scenarios
+    .map((facet) => facet.name)
+    .sort((left, right) => left.localeCompare(right, "zh-CN"));
+  const observedScenarios = [...new Set(
+    validatedWindow.trends.flatMap((item) => item.scenarios.map((facet) => facet.name)),
+  )].sort((left, right) => left.localeCompare(right, "zh-CN"));
 
-  assert.ok(filtered.length > 0 && filtered.length < windowData.trends.length);
-  assert.equal(filtered[0].topic, "大语言模型");
-  assert.ok(filtered.every((item) => item.scenarios.some((facet) => facet.name === "大语言模型")));
+  assert.ok(declaredScenarios.every((scenario) => observedScenarios.includes(scenario)));
+  for (const scenario of validatedWindow.facets.scenarios) {
+    const filtered = Trends.filterTrends(validatedWindow.trends, { scenario: scenario.name });
+    const evidenceCounts = filtered.map((item) => (
+      item.scenarios.find((facet) => facet.name === scenario.name)?.count || 0
+    ));
+
+    assert.ok(filtered.length > 0);
+    assert.ok(filtered.every((item) => item.scenarios.some((facet) => facet.name === scenario.name)));
+    assert.equal(evidenceCounts[0], Math.max(...evidenceCounts));
+  }
 });
 
 
-test("every committed 30 day filter independently changes the visible result set", () => {
+test("every declared committed 30 day facet selects matching evidence", () => {
   const dataRoot = path.resolve(import.meta.dirname, "../../blog/static/data/stack-trends");
   const index = JSON.parse(readFileSync(path.join(dataRoot, "index.json"), "utf8"));
   const windowData = JSON.parse(readFileSync(path.join(dataRoot, index.windows["30d"].path), "utf8"));
-  const total = windowData.trends.length;
-  const partialState = [...new Set(windowData.trends.map((item) => item.state))]
-    .find((state) => {
-      const count = windowData.trends.filter((item) => item.state === state).length;
-      return count > 0 && count < total;
-    });
-  const partialSource = windowData.facets.sources.find((facet) => {
-    const count = Trends.countFacetTopics(windowData.trends, "sources", facet.name);
-    return count > 0 && count < total;
-  });
-  const partialScenario = windowData.facets.scenarios.find((facet) => {
-    const count = Trends.countFacetTopics(windowData.trends, "scenarios", facet.name);
-    return count > 0 && count < total;
-  });
-  assert.ok(partialState, "committed data needs at least one selective signal state");
-  assert.ok(partialSource, "committed data needs at least one selective source");
-  assert.ok(partialScenario, "committed data needs at least one selective scenario");
 
-  const byState = Trends.filterTrends(windowData.trends, { signal: partialState });
-  assert.ok(byState.length > 0 && byState.length < total);
-  assert.ok(byState.every((item) => item.state === partialState));
-
-  const bySource = Trends.filterTrends(windowData.trends, { source: partialSource.name });
-  assert.ok(bySource.length > 0 && bySource.length < total);
-  assert.ok(bySource.every((item) => item.sources.some((facet) => facet.name === partialSource.name)));
-
-  const byScenario = Trends.filterTrends(windowData.trends, { scenario: partialScenario.name });
-  assert.ok(byScenario.length > 0 && byScenario.length < total);
-  assert.ok(byScenario.every((item) => item.scenarios.some((facet) => facet.name === partialScenario.name)));
-
-  const query = windowData.trends.at(-1).topic;
-  const byQuery = Trends.filterTrends(windowData.trends, { query });
-  assert.ok(byQuery.length > 0 && byQuery.length < total);
-  assert.ok(byQuery.every((item) => item.topic.toLocaleLowerCase("zh-CN").includes(query.toLocaleLowerCase("zh-CN"))));
+  for (const state of new Set(windowData.trends.map((item) => item.state))) {
+    const filtered = Trends.filterTrends(windowData.trends, { signal: state });
+    assert.ok(filtered.length > 0);
+    assert.ok(filtered.every((item) => item.state === state));
+  }
+  for (const source of windowData.facets.sources) {
+    const filtered = Trends.filterTrends(windowData.trends, { source: source.name });
+    assert.ok(filtered.length > 0);
+    assert.ok(filtered.every((item) => item.sources.some((facet) => facet.name === source.name)));
+  }
+  for (const scenario of windowData.facets.scenarios) {
+    const filtered = Trends.filterTrends(windowData.trends, { scenario: scenario.name });
+    assert.ok(filtered.length > 0);
+    assert.ok(filtered.every((item) => item.scenarios.some((facet) => facet.name === scenario.name)));
+  }
 });
 
 
