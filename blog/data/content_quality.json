@@ -1,5 +1,5 @@
 {
-  "active_count": 2561,
+  "active_count": 2563,
   "archived_count": 276,
   "complete_count": 49,
   "interpreted_brief_count": 103,
@@ -20105,6 +20105,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260825-arxiv-physics-constrained-deep-learning-model-for-contac-0-b056ea5a19.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260825-arxiv-reworld-an-interactive-world-model-with-long-horiz-0-d15b95708f.md": {
       "reasons": [
         "interpreted_source_card"
@@ -20131,6 +20137,12 @@
       "warnings": [
         "source_excerpt_truncated"
       ]
+    },
+    "posts/20260825-blogs_podcasts-disrupting-a-new-covert-influence-campaign-from-ru-0-62003111f3.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20260825-blogs_podcasts-introducing-new-ray-capabilities-on-sagemaker-hype-0-35d31ebafc.md": {
       "reasons": [
@@ -20195,10 +20207,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2409,
-  "source_file_count": 2837,
-  "source_tree_sha256": "61a87d0a991b4d3e55fb79f400eb79735b90f6e364ee7a5aa8a98cf8c86752ae",
-  "verified_provenance_count": 2561,
+  "source_brief_count": 2411,
+  "source_file_count": 2839,
+  "source_tree_sha256": "f5f6862a6e5f5a1e66b0a7c192df9c4bb049520d4f465244788bd9bd53ea401f",
+  "verified_provenance_count": 2563,
   "warning_counts": {
     "source_excerpt_truncated": 775
   }
