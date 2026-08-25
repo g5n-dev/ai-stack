@@ -1,8 +1,8 @@
 {
-  "active_count": 2594,
+  "active_count": 2596,
   "archived_count": 276,
   "complete_count": 53,
-  "interpreted_brief_count": 117,
+  "interpreted_brief_count": 118,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20294,6 +20294,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260826-arxiv-when-names-cross-scripts-a-source-grounded-benchma-3-ccba448f04.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260826-blogs_podcasts-5-ways-to-upgrade-your-home-decor-with-google-sear-0-0f881d1e2c.md": {
       "reasons": [
         "concise_source_card"
@@ -20311,6 +20317,12 @@
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20260826-blogs_podcasts-introducing-the-admin-plugin-for-chatgpt-work-and--0-33eae87831.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20260826-blogs_podcasts-the-full-stack-behind-abundant-intelligence-0-51cfe3db04.md": {
       "reasons": [
@@ -20375,10 +20387,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2424,
-  "source_file_count": 2870,
-  "source_tree_sha256": "6350d9adb7fed142669adb5028226bf7c6c08e93cb307df7f1a5b4fd6d358fb3",
-  "verified_provenance_count": 2594,
+  "source_brief_count": 2425,
+  "source_file_count": 2872,
+  "source_tree_sha256": "a0caf6a8dd176368de108c99730417bcff59ba118e988042b4e79111d63ab644",
+  "verified_provenance_count": 2596,
   "warning_counts": {
     "source_excerpt_truncated": 777
   }
