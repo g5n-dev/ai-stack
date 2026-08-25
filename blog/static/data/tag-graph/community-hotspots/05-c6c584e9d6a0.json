@@ -1,0 +1,458 @@
+{
+  "community_id": "community:tag:Computer modeling",
+  "generated_at": "2026-08-25T16:57:29Z",
+  "hotspot_limit": 24,
+  "link_limit": 32,
+  "links": [
+    {
+      "id": "edge:cooccurrence:tag:Algorithms->tag:Computer modeling",
+      "source": "tag:Algorithms",
+      "strength": 1,
+      "target": "tag:Computer modeling",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Algorithms->tag:Research",
+      "source": "tag:Algorithms",
+      "strength": 1,
+      "target": "tag:Research",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Computer modeling->tag:Research",
+      "source": "tag:Computer modeling",
+      "strength": 1,
+      "target": "tag:Research",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Computer science and technology->tag:Research",
+      "source": "tag:Computer science and technology",
+      "strength": 1,
+      "target": "tag:Research",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Algorithms->tag:Climate",
+      "source": "tag:Algorithms",
+      "strength": 0.5,
+      "target": "tag:Climate",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Algorithms->tag:Computer science and technology",
+      "source": "tag:Algorithms",
+      "strength": 0.5,
+      "target": "tag:Computer science and technology",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Algorithms->tag:Design",
+      "source": "tag:Algorithms",
+      "strength": 0.5,
+      "target": "tag:Design",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Algorithms->tag:Natural disasters",
+      "source": "tag:Algorithms",
+      "strength": 0.5,
+      "target": "tag:Natural disasters",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Algorithms->tag:Systems design",
+      "source": "tag:Algorithms",
+      "strength": 0.5,
+      "target": "tag:Systems design",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Algorithms->tag:Weather",
+      "source": "tag:Algorithms",
+      "strength": 0.5,
+      "target": "tag:Weather",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Climate->tag:Computer modeling",
+      "source": "tag:Climate",
+      "strength": 0.5,
+      "target": "tag:Computer modeling",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Climate->tag:Natural disasters",
+      "source": "tag:Climate",
+      "strength": 0.5,
+      "target": "tag:Natural disasters",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Climate->tag:Research",
+      "source": "tag:Climate",
+      "strength": 0.5,
+      "target": "tag:Research",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Climate->tag:Weather",
+      "source": "tag:Climate",
+      "strength": 0.5,
+      "target": "tag:Weather",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Computer modeling->tag:Computer science and technology",
+      "source": "tag:Computer modeling",
+      "strength": 0.5,
+      "target": "tag:Computer science and technology",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Computer modeling->tag:Design",
+      "source": "tag:Computer modeling",
+      "strength": 0.5,
+      "target": "tag:Design",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Computer modeling->tag:Natural disasters",
+      "source": "tag:Computer modeling",
+      "strength": 0.5,
+      "target": "tag:Natural disasters",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Computer modeling->tag:Systems design",
+      "source": "tag:Computer modeling",
+      "strength": 0.5,
+      "target": "tag:Systems design",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Computer modeling->tag:Weather",
+      "source": "tag:Computer modeling",
+      "strength": 0.5,
+      "target": "tag:Weather",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Computer science and technology->tag:Design",
+      "source": "tag:Computer science and technology",
+      "strength": 0.5,
+      "target": "tag:Design",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Computer science and technology->tag:Human-computer interaction",
+      "source": "tag:Computer science and technology",
+      "strength": 0.5,
+      "target": "tag:Human-computer interaction",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Computer science and technology->tag:Systems design",
+      "source": "tag:Computer science and technology",
+      "strength": 0.5,
+      "target": "tag:Systems design",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Computer science and technology->tag:Technology and society",
+      "source": "tag:Computer science and technology",
+      "strength": 0.5,
+      "target": "tag:Technology and society",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Design->tag:Research",
+      "source": "tag:Design",
+      "strength": 0.5,
+      "target": "tag:Research",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Design->tag:Systems design",
+      "source": "tag:Design",
+      "strength": 0.5,
+      "target": "tag:Systems design",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Human-computer interaction->tag:Research",
+      "source": "tag:Human-computer interaction",
+      "strength": 0.5,
+      "target": "tag:Research",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Human-computer interaction->tag:Technology and society",
+      "source": "tag:Human-computer interaction",
+      "strength": 0.5,
+      "target": "tag:Technology and society",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Natural disasters->tag:Research",
+      "source": "tag:Natural disasters",
+      "strength": 0.5,
+      "target": "tag:Research",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Natural disasters->tag:Weather",
+      "source": "tag:Natural disasters",
+      "strength": 0.5,
+      "target": "tag:Weather",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Research->tag:Systems design",
+      "source": "tag:Research",
+      "strength": 0.5,
+      "target": "tag:Systems design",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Research->tag:Technology and society",
+      "source": "tag:Research",
+      "strength": 0.5,
+      "target": "tag:Technology and society",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Research->tag:Weather",
+      "source": "tag:Research",
+      "strength": 0.5,
+      "target": "tag:Weather",
+      "type": "cooccurrence",
+      "weight": 1
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 5,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Computer modeling",
+      "degree": 22,
+      "description": "文章标签: Research",
+      "id": "tag:Research",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Research",
+      "level": 6,
+      "name": "Research",
+      "rank": 43,
+      "related_count": 22,
+      "weighted_degree": 31
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Computer modeling",
+      "degree": 12,
+      "description": "文章标签: Computer science and technology",
+      "id": "tag:Computer science and technology",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Computer science and technology",
+      "level": 6,
+      "name": "Computer science and technology",
+      "rank": 60,
+      "related_count": 11,
+      "weighted_degree": 14.6
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Computer modeling",
+      "degree": 12,
+      "description": "文章标签: Algorithms",
+      "id": "tag:Algorithms",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Algorithms",
+      "level": 6,
+      "name": "Algorithms",
+      "rank": 63,
+      "related_count": 12,
+      "weighted_degree": 14
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Computer modeling",
+      "degree": 12,
+      "description": "文章标签: Computer modeling",
+      "id": "tag:Computer modeling",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Computer modeling",
+      "level": 6,
+      "name": "Computer modeling",
+      "rank": 64,
+      "related_count": 12,
+      "weighted_degree": 14
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Computer modeling",
+      "degree": 8,
+      "description": "文章标签: Design",
+      "id": "tag:Design",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Design",
+      "level": 6,
+      "name": "Design",
+      "rank": 93,
+      "related_count": 7,
+      "weighted_degree": 7.6
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Computer modeling",
+      "degree": 8,
+      "description": "文章标签: Systems design",
+      "id": "tag:Systems design",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Systems design",
+      "level": 6,
+      "name": "Systems design",
+      "rank": 94,
+      "related_count": 7,
+      "weighted_degree": 7.6
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Computer modeling",
+      "degree": 7,
+      "description": "文章标签: Climate",
+      "id": "tag:Climate",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Climate",
+      "level": 6,
+      "name": "Climate",
+      "rank": 117,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Computer modeling",
+      "degree": 7,
+      "description": "文章标签: Human-computer interaction",
+      "id": "tag:Human-computer interaction",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Human-computer interaction",
+      "level": 6,
+      "name": "Human-computer interaction",
+      "rank": 124,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Computer modeling",
+      "degree": 7,
+      "description": "文章标签: Natural disasters",
+      "id": "tag:Natural disasters",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Natural disasters",
+      "level": 6,
+      "name": "Natural disasters",
+      "rank": 129,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Computer modeling",
+      "degree": 7,
+      "description": "文章标签: Technology and society",
+      "id": "tag:Technology and society",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Technology and society",
+      "level": 6,
+      "name": "Technology and society",
+      "rank": 132,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Computer modeling",
+      "degree": 7,
+      "description": "文章标签: Weather",
+      "id": "tag:Weather",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Weather",
+      "level": 6,
+      "name": "Weather",
+      "rank": 133,
+      "related_count": 7,
+      "weighted_degree": 7
+    }
+  ],
+  "stats": {
+    "total_links": 32,
+    "total_nodes": 11
+  },
+  "version": 2
+}
