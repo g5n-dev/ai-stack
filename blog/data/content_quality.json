@@ -1,8 +1,8 @@
 {
-  "active_count": 2591,
+  "active_count": 2594,
   "archived_count": 276,
   "complete_count": 53,
-  "interpreted_brief_count": 115,
+  "interpreted_brief_count": 117,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20288,11 +20288,23 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260826-arxiv-the-measurement-revolution-credible-measurement-an-3-ed3396d944.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260826-blogs_podcasts-5-ways-to-upgrade-your-home-decor-with-google-sear-0-0f881d1e2c.md": {
       "reasons": [
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260826-blogs_podcasts-agentic-observability-with-amazon-opensearch-servi-0-ec596dac47.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
     },
     "posts/20260826-blogs_podcasts-governed-reports-with-amazon-quick-desktop-and-ama-0-3a60695b89.md": {
       "reasons": [
@@ -20319,6 +20331,12 @@
       "status": "source_brief"
     },
     "posts/20260826-hacker_news-openai-jalapeño-better-than-nvidia-blackwell-4-4abbccc42d.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260826-hacker_news-show-hn-i-made-a-raspberry-with-qwen-my-local-car--3-93551b217a.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -20357,10 +20375,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2423,
-  "source_file_count": 2867,
-  "source_tree_sha256": "67d8b6958ff430750b897555d8f5304d62c2658ad5976359a2971734fb6af7fb",
-  "verified_provenance_count": 2591,
+  "source_brief_count": 2424,
+  "source_file_count": 2870,
+  "source_tree_sha256": "6350d9adb7fed142669adb5028226bf7c6c08e93cb307df7f1a5b4fd6d358fb3",
+  "verified_provenance_count": 2594,
   "warning_counts": {
     "source_excerpt_truncated": 777
   }
