@@ -1,8 +1,8 @@
 {
-  "active_count": 2558,
+  "active_count": 2561,
   "archived_count": 276,
   "complete_count": 49,
-  "interpreted_brief_count": 101,
+  "interpreted_brief_count": 103,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20093,6 +20093,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260825-arxiv-eg-arsa-an-expert-grounded-open-model-for-visual-r-0-f4c05f6c7a.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260825-arxiv-how-to-train-a-critic-stably-and-efficiently-0-6c8cdc8aac.md": {
       "reasons": [
         "concise_source_card"
@@ -20132,6 +20138,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260825-blogs_podcasts-metaroce-a-new-rdma-transport-built-for-ai-scale-e-0-bc03a0c77f.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260825-hacker_news-headlong-a-microharness-for-persistent-agents-3-253f6697af.md": {
       "reasons": [
         "concise_source_card"
@@ -20139,6 +20151,12 @@
       "status": "source_brief"
     },
     "posts/20260825-hacker_news-llms-could-control-their-host-machines-by-exploiti-14-113584368e.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260825-hacker_news-training-ai-to-paint-with-code-14-468df97caa.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -20177,10 +20195,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2408,
-  "source_file_count": 2834,
-  "source_tree_sha256": "7d6f3567c2690c21d76a80b61efd3637bed8fc09b35733256a6615e05d77464d",
-  "verified_provenance_count": 2558,
+  "source_brief_count": 2409,
+  "source_file_count": 2837,
+  "source_tree_sha256": "61a87d0a991b4d3e55fb79f400eb79735b90f6e364ee7a5aa8a98cf8c86752ae",
+  "verified_provenance_count": 2561,
   "warning_counts": {
     "source_excerpt_truncated": 775
   }
