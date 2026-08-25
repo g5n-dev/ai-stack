@@ -1,5 +1,5 @@
 {
-  "active_count": 2549,
+  "active_count": 2552,
   "archived_count": 276,
   "complete_count": 48,
   "interpreted_brief_count": 97,
@@ -20092,6 +20092,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260825-arxiv-how-to-train-a-critic-stably-and-efficiently-0-6c8cdc8aac.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260825-blogs_podcasts-ainews-andrew-ng-gets-into-ai-engineering-0-8a7a8944d0.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260825-hacker_news-llms-could-control-their-host-machines-by-exploiti-14-113584368e.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -20126,10 +20144,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2404,
-  "source_file_count": 2825,
-  "source_tree_sha256": "bbfb7e6d25a413de891fc736b2e32814aa8468d687c6c4158010a0d8fab62aae",
-  "verified_provenance_count": 2549,
+  "source_brief_count": 2407,
+  "source_file_count": 2828,
+  "source_tree_sha256": "40e760f2ca3cb7d2cce1c929cdf409fb3f065aa69d1a0f12e406dd56775a61c8",
+  "verified_provenance_count": 2552,
   "warning_counts": {
     "source_excerpt_truncated": 774
   }
