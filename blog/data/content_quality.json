@@ -1,8 +1,8 @@
 {
-  "active_count": 2578,
+  "active_count": 2581,
   "archived_count": 276,
   "complete_count": 52,
-  "interpreted_brief_count": 111,
+  "interpreted_brief_count": 112,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20117,6 +20117,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260825-arxiv-interpretable-ai-with-local-distillation-2-a1016849aa.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260825-arxiv-physics-constrained-deep-learning-model-for-contac-0-b056ea5a19.md": {
       "reasons": [
         "concise_source_card"
@@ -20210,6 +20216,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260825-blogs_podcasts-jalapeños-first-results-show-industry-leading-spee-0-b9406ae170.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260825-blogs_podcasts-metaroce-a-new-rdma-transport-built-for-ai-scale-e-0-bc03a0c77f.md": {
       "reasons": [
         "interpreted_source_card"
@@ -20217,6 +20229,12 @@
       "status": "interpreted_brief"
     },
     "posts/20260825-blogs_podcasts-mtia-300-metas-first-training-chip-with-built-in-n-0-7aadc05d02.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260825-hacker_news-anthropic-tells-staff-to-work-from-home-due-to-pos-11-87c1695a1d.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -20285,10 +20303,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2415,
-  "source_file_count": 2854,
-  "source_tree_sha256": "16c93a0aff26e550f1c506313dd94fb084983c2b8f480bd75183f37a15499514",
-  "verified_provenance_count": 2578,
+  "source_brief_count": 2417,
+  "source_file_count": 2857,
+  "source_tree_sha256": "a205c5785b72fbd45bfc1e5c672a512bae89168f81139347816cfbf00121141d",
+  "verified_provenance_count": 2581,
   "warning_counts": {
     "source_excerpt_truncated": 777
   }
