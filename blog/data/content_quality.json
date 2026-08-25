@@ -1,8 +1,8 @@
 {
-  "active_count": 2568,
+  "active_count": 2571,
   "archived_count": 276,
-  "complete_count": 50,
-  "interpreted_brief_count": 105,
+  "complete_count": 51,
+  "interpreted_brief_count": 107,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20093,6 +20093,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260825-arxiv-convergeflow-language-flow-with-provable-convergen-0-000e08e02f.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260825-arxiv-eg-arsa-an-expert-grounded-open-model-for-visual-r-0-f4c05f6c7a.md": {
       "reasons": [
         "interpreted_source_card"
@@ -20130,6 +20136,12 @@
       "status": "interpreted_brief"
     },
     "posts/20260825-arxiv-swe-refactor-bench-can-coding-agents-complete-a-lo-0-4de0f2ee6b.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260825-blogs_podcasts-agentic-resource-discovery-ard-an-open-specificati-0-bac12e9d90.md": {
       "reasons": [
         "interpreted_source_card"
       ],
@@ -20232,9 +20244,9 @@
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2413,
-  "source_file_count": 2844,
-  "source_tree_sha256": "0d9d771af8c2e903da3171d419075516e8383b880e3c0d3f15a6cb7f3d067211",
-  "verified_provenance_count": 2568,
+  "source_file_count": 2847,
+  "source_tree_sha256": "4e1c49ed7bfa6b0f463815288de5b96481aba667a84d74976939584675fe2621",
+  "verified_provenance_count": 2571,
   "warning_counts": {
     "source_excerpt_truncated": 775
   }
