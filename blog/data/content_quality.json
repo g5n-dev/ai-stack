@@ -1,8 +1,8 @@
 {
-  "active_count": 2575,
+  "active_count": 2578,
   "archived_count": 276,
   "complete_count": 52,
-  "interpreted_brief_count": 109,
+  "interpreted_brief_count": 111,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20147,11 +20147,26 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260825-arxiv-the-interaction-tax-when-communication-erases-dive-2-46e0453319.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260825-blogs_podcasts-agentic-resource-discovery-ard-an-open-specificati-0-bac12e9d90.md": {
       "reasons": [
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20260825-blogs_podcasts-ai-powered-metadata-correction-and-harmonization-0-9c61a4b870.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     },
     "posts/20260825-blogs_podcasts-ainews-andrew-ng-gets-into-ai-engineering-0-8a7a8944d0.md": {
       "reasons": [
@@ -20225,6 +20240,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260825-hacker_news-openai-restores-5-hour-codex-and-work-limits-for-c-8-2003db0c38.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260825-hacker_news-training-ai-to-paint-with-code-14-468df97caa.md": {
       "reasons": [
         "concise_source_card"
@@ -20264,11 +20285,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2414,
-  "source_file_count": 2851,
-  "source_tree_sha256": "2a6e7cdbdfe2fa1176a81bb2c3de8753c19dcfa0225fc1f0d841d725904b686d",
-  "verified_provenance_count": 2575,
+  "source_brief_count": 2415,
+  "source_file_count": 2854,
+  "source_tree_sha256": "16c93a0aff26e550f1c506313dd94fb084983c2b8f480bd75183f37a15499514",
+  "verified_provenance_count": 2578,
   "warning_counts": {
-    "source_excerpt_truncated": 776
+    "source_excerpt_truncated": 777
   }
 }
