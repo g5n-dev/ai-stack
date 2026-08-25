@@ -1,0 +1,90 @@
+{
+  "community_id": "community:tag:Networking & Traffic",
+  "generated_at": "2026-08-25T07:59:55Z",
+  "hotspot_limit": 24,
+  "link_limit": 32,
+  "links": [
+    {
+      "id": "edge:cooccurrence:tag:Data Center Engineering->tag:Networking & Traffic",
+      "source": "tag:Data Center Engineering",
+      "strength": 0.5,
+      "target": "tag:Networking & Traffic",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Data Center Engineering->tag:Open Source",
+      "source": "tag:Data Center Engineering",
+      "strength": 0.5,
+      "target": "tag:Open Source",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Networking & Traffic->tag:Open Source",
+      "source": "tag:Networking & Traffic",
+      "strength": 0.5,
+      "target": "tag:Open Source",
+      "type": "cooccurrence",
+      "weight": 1
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Networking & Traffic",
+      "degree": 7,
+      "description": "文章标签: Data Center Engineering",
+      "id": "tag:Data Center Engineering",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Data Center Engineering",
+      "level": 6,
+      "name": "Data Center Engineering",
+      "rank": 129,
+      "related_count": 6,
+      "weighted_degree": 6.6
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Networking & Traffic",
+      "degree": 6,
+      "description": "文章标签: Networking & Traffic",
+      "id": "tag:Networking & Traffic",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Networking & Traffic",
+      "level": 6,
+      "name": "Networking & Traffic",
+      "rank": 136,
+      "related_count": 6,
+      "weighted_degree": 6
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Networking & Traffic",
+      "degree": 6,
+      "description": "文章标签: Open Source",
+      "id": "tag:Open Source",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Open Source",
+      "level": 6,
+      "name": "Open Source",
+      "rank": 137,
+      "related_count": 6,
+      "weighted_degree": 6
+    }
+  ],
+  "stats": {
+    "total_links": 3,
+    "total_nodes": 3
+  },
+  "version": 2
+}
