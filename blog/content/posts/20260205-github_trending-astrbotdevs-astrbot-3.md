@@ -89,9 +89,9 @@ event_id: evt_539d7cf1be7d73c65dcdd8dd9439dec24a077c39ffba5b4be9b181db049226a4
 lineage_relation: original
 parent_observation_id: null
 source_published_at: null
-first_seen_at: 2026-08-26T14:06:01.476298Z
+first_seen_at: 2026-02-05T13:47:18Z
 last_seen_at: 2026-08-26T00:00:00Z
-timestamp_confidence: unknown
+timestamp_confidence: git
 ---
 
 ## 基本信息
