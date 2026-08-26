@@ -20431,7 +20431,7 @@
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2429,
   "source_file_count": 2880,
-  "source_tree_sha256": "d3d0026c82abb468c1ded237597350d9d41e64d19c2cd4c682239913ad6f6dc2",
+  "source_tree_sha256": "6e68a35bc93f3a69897a701a81622cbb937acb594603ede59f9a9e8a8c1083d7",
   "verified_provenance_count": 2604,
   "warning_counts": {
     "source_excerpt_truncated": 777
