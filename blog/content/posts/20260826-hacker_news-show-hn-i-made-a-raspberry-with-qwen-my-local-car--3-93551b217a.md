@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:47db265e8177ca811a79faac4f9635124ac05773f8b57c4c
 source_payload_sha256: "sha256:63b50c4431fa1dc49e3a247b38538519cc4c7eacc72ebc0988070189f53a5596"
 observation_id: obs_93551b217a1b53181f45a4be223e383937e9d5768dcd61c715497a43aa74e9db
 event_id: evt_71994c967c41253276fbc07dbc690952d8475244bfd5c235abae9c815a7a2681
-revision_id: rev_640ffd79aee853f857a783088b19f524d020e0c7f0b3eb09bd732d53d29cfeea
+revision_id: rev_629ddf170f817062e66da97f8022861698dff9f153d6009907c7b3a1fbed6f6b
 source_published_at: 2026-08-25T15:20:20Z
 first_seen_at: 2026-08-25T19:59:21Z
 timestamp_confidence: platform
@@ -27,7 +27,7 @@ source_title_chars_original: 53
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://github.com/ThinkOffApp/CarWatch
 parent_observation_id: null
-last_seen_at: 2026-08-25T19:47:10.824469Z
+last_seen_at: 2026-08-26T00:00:00Z
 ---
 
 ## 基本信息

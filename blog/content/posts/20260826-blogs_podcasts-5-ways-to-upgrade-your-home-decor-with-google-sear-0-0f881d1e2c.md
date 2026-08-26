@@ -27,7 +27,7 @@ source_title_chars_original: 52
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://blog.google/products-and-platforms/products/search/home-decor-tips
 parent_observation_id: null
-last_seen_at: 2026-08-25T18:56:54.528858Z
+last_seen_at: 2026-08-26T00:00:00Z
 ---
 
 ## 基本信息

@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:掘金",
-  "generated_at": "2026-08-25T22:46:13Z",
+  "generated_at": "2026-08-26T02:00:00Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -297,7 +297,7 @@
       "weighted_degree": 1866.2
     },
     {
-      "article_count": 508,
+      "article_count": 509,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -311,7 +311,7 @@
       "name": "掘金",
       "rank": 3,
       "related_count": 26,
-      "weighted_degree": 1303
+      "weighted_degree": 1305
     },
     {
       "article_count": 162,

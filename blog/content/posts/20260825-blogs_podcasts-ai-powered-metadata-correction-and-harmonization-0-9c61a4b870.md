@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:cc58df66087df7346a25326ae018a58c4b957fc1425063de1
 description: "该内容描述一种基于人工智能的元数据校正与统一工作流，能够自动识别模式不符、语义不一致等问题并生成修正建议。 工作流在自动化处理的基础上加入人工审核环节，以确保领域专家保持最终决策权。"
 external_url: https://aws.amazon.com/blogs/machine-learning/ai-powered-metadata-correction-and-harmonization
 parent_observation_id: null
-last_seen_at: 2026-08-25T14:03:45.139169Z
+last_seen_at: 2026-08-26T00:00:00Z
 ---
 
 ## 基本信息

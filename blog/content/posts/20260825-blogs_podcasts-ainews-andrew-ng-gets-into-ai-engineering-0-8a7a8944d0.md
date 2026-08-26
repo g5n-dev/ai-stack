@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:cc211b266dcdce733346bf640c83b5d5b9e4f68b98d4ee973
 description: "Andrew Ng通过DeepLearning.ai重新定位了AI工程方向，基于大量招聘数据和专家访谈，总结出四项关键技能：构建部署AI应用、软件工程基础、使用编码代理、以及推动项目进展。这些技能不仅适用于AI工程师，也适合更广泛的开发者。"
 external_url: https://www.latent.space/p/ainews-andrew-ng-gets-into-ai-engineering
 parent_observation_id: null
-last_seen_at: 2026-08-25T03:46:18.140816Z
+last_seen_at: 2026-08-26T00:00:00Z
 ---
 
 ## 基本信息

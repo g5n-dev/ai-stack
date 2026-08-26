@@ -13,9 +13,9 @@ source_snapshot_sha256: "sha256:ca6750dacf2111d3e04c4a3a74403917ecc761fedfb14420
 source_payload_sha256: "sha256:1a977e5f31a4a936aa69ee042b711bb8738aa62751a3d9021b7f515f653b8e2c"
 observation_id: obs_4abbccc42d96af674efc77688f78b3ffb01f46f3da9c8c06c6c45081c92a75a8
 event_id: evt_1f6f0d9592ce5caaad3cdbf2d0142b26658a70d60bab6f608fe5d6530a0b53f1
-revision_id: rev_146ce5d43ddb0fa066e74f3d5a4b722abbb948c4f9121b44f7c9b8d2955fac5f
+revision_id: rev_c8cd102c5a31efb14902ffd19c60936a174469cb9985d63d1cc978710640d89d
 source_published_at: 2026-08-25T14:06:02Z
-first_seen_at: 2026-08-25T23:37:28.667078Z
+first_seen_at: 2026-08-26T01:58:05.259215Z
 timestamp_confidence: platform
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 45
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia
 parent_observation_id: null
-last_seen_at: 2026-08-25T18:56:44.845146Z
+last_seen_at: 2026-08-26T00:00:00Z
 ---
 
 ## 基本信息

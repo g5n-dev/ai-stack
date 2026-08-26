@@ -15,7 +15,7 @@ observation_id: obs_b9406ae170bd91336ab3bb25f8a481be998406cd07a127a0b7b7880fe2ac
 event_id: evt_d0ca1f6fc4cd90db9f30919fb073d1a26b33ecc5a2c180452a93904d8ce6016e
 revision_id: rev_6a7815f69586bd44fd91f9e390da8b4102458a2f333b8e037d1fc9b009e11d53
 source_published_at: 2026-08-25T07:00:00Z
-first_seen_at: 2026-08-25T23:37:35.172118Z
+first_seen_at: 2026-08-26T01:58:25.810561Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 83
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://openai.com/index/jalapeno-first-results
 parent_observation_id: null
-last_seen_at: 2026-08-25T15:04:45.957840Z
+last_seen_at: 2026-08-26T00:00:00Z
 ---
 
 ## 基本信息

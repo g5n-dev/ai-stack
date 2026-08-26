@@ -27,7 +27,7 @@ source_title_chars_original: 55
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://openai.com/index/introducing-admin-plugin
 parent_observation_id: null
-last_seen_at: 2026-08-25T20:45:38.331235Z
+last_seen_at: 2026-08-26T00:00:00Z
 ---
 
 ## 基本信息

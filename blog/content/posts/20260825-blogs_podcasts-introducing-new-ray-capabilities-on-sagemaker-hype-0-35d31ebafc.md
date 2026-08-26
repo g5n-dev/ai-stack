@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:108425573d541d426f9e0423d22e1d2a1d2320349f53fedb
 source_payload_sha256: "sha256:bcd2a3275e66e15ec077f765e8d7b4577c6a77f904d001638b17d83dbab1443b"
 observation_id: obs_35d31ebafcc15027dd0f6f6eb30e580fe67dbdb2e57923a460e2125e1c588fd0
 event_id: evt_8c7ce239c59a7265d059a9782d3b68c7146b1076fa801428bdb7cd82a62a9843
-revision_id: rev_316e67c90ae45f8bb8a3ef10be4262d73a0f6968f8016f07e85619f7304cfec1
+revision_id: rev_49428b884d3d1cc87fb0ff0f5f135c119ee335934d22199d91cd0221f0b2b68e
 source_published_at: 2026-08-24T19:32:14Z
 first_seen_at: 2026-08-25T05:07:06Z
 timestamp_confidence: feed
@@ -27,7 +27,7 @@ source_title_chars_original: 54
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/introducing-new-ray-capabilities-on-sagemaker-hyperpod
 parent_observation_id: null
-last_seen_at: 2026-08-25T04:53:52.319224Z
+last_seen_at: 2026-08-26T00:00:00Z
 ---
 
 ## 基本信息
