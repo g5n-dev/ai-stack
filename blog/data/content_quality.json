@@ -1,5 +1,5 @@
 {
-  "active_count": 2614,
+  "active_count": 2617,
   "archived_count": 276,
   "complete_count": 55,
   "interpreted_brief_count": 125,
@@ -20282,6 +20282,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260826-arxiv-constrained-entity-selection-under-partial-knowled-3-267a18f538.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260826-arxiv-correcting-a-learned-physical-invariant-improves-w-3-978c3dd8e8.md": {
       "reasons": [
         "interpreted_source_card"
@@ -20408,7 +20414,19 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260826-github_trending-jeecgboot-jimureport-5-913beba9b1.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260826-hacker_news-ai-is-hitting-entry-level-jobs-hardest-stanford-st-7-ea439fd975.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260826-hacker_news-bill-gates-the-turbulent-ai-era-is-here-1-fc96c256d1.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -20483,10 +20501,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2434,
-  "source_file_count": 2890,
-  "source_tree_sha256": "38880117181c87cbe23ea9d3536ea7ed64ac1b4d1bfbff69b736822d73028530",
-  "verified_provenance_count": 2614,
+  "source_brief_count": 2437,
+  "source_file_count": 2893,
+  "source_tree_sha256": "bd78e439aa56663acf038777b81c62c42747e9974b6de2ecc84043748e219884",
+  "verified_provenance_count": 2617,
   "warning_counts": {
     "source_excerpt_truncated": 777
   }
