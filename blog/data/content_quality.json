@@ -1,8 +1,8 @@
 {
-  "active_count": 2600,
+  "active_count": 2601,
   "archived_count": 276,
   "complete_count": 54,
-  "interpreted_brief_count": 119,
+  "interpreted_brief_count": 120,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20300,6 +20300,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260826-arxiv-spo-stream-aligned-policy-optimization-for-asynchr-1-25cc3281d0.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260826-arxiv-the-measurement-revolution-credible-measurement-an-3-ed3396d944.md": {
       "reasons": [
         "interpreted_source_card"
@@ -20406,9 +20412,9 @@
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2427,
-  "source_file_count": 2876,
-  "source_tree_sha256": "e70c7a4eef3395284879c487fb88ea8a93ef3bc3fedda6673c54d9eda9ca73e8",
-  "verified_provenance_count": 2600,
+  "source_file_count": 2877,
+  "source_tree_sha256": "4a5323ccf19a5aabfafca87357b5badc4c2b9084e5e2ee49671b3e18d1b48141",
+  "verified_provenance_count": 2601,
   "warning_counts": {
     "source_excerpt_truncated": 777
   }

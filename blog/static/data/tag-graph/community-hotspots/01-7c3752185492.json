@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Technical How-to",
-  "generated_at": "2026-08-26T03:20:40Z",
+  "generated_at": "2026-08-26T04:08:19Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -314,7 +314,7 @@
       "weighted_degree": 381
     },
     {
-      "article_count": 57,
+      "article_count": 58,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
@@ -328,7 +328,7 @@
       "name": "Prompt 工程",
       "rank": 16,
       "related_count": 47,
-      "weighted_degree": 323
+      "weighted_degree": 326
     },
     {
       "article_count": 23,
