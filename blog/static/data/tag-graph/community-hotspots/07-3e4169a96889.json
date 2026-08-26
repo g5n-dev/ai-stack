@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:ML Applications",
-  "generated_at": "2026-08-26T04:08:19Z",
+  "generated_at": "2026-08-26T04:58:10Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -241,7 +241,7 @@
       "legacy_id": "DevInfra",
       "level": 6,
       "name": "DevInfra",
-      "rank": 145,
+      "rank": 146,
       "related_count": 6,
       "weighted_degree": 6
     },
@@ -258,7 +258,7 @@
       "legacy_id": "Open Source",
       "level": 6,
       "name": "Open Source",
-      "rank": 146,
+      "rank": 147,
       "related_count": 6,
       "weighted_degree": 6
     }

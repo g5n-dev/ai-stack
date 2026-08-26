@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T04:08:19Z",
+  "generated_at": "2026-08-26T04:58:10Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -639,7 +639,7 @@
       "legacy_id": "agent",
       "level": 4,
       "name": "AI Agent",
-      "rank": 156,
+      "rank": 157,
       "weighted_degree": 4.4
     },
     {
@@ -792,7 +792,7 @@
       "legacy_id": "chatbot",
       "level": 4,
       "name": "聊天机器人",
-      "rank": 166,
+      "rank": 167,
       "weighted_degree": 4
     },
     {
@@ -860,7 +860,7 @@
       "legacy_id": "cv",
       "level": 3,
       "name": "计算机视觉",
-      "rank": 171,
+      "rank": 172,
       "weighted_degree": 3.1
     },
     {
@@ -1306,7 +1306,7 @@
       "weighted_degree": 3
     },
     {
-      "article_count": 680,
+      "article_count": 681,
       "category": "nlp",
       "color": "#d97706",
       "community_id": null,
@@ -1323,7 +1323,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 680,
+      "article_count": 681,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
@@ -1438,7 +1438,7 @@
       "legacy_id": "nlp",
       "level": 3,
       "name": "自然语言处理",
-      "rank": 147,
+      "rank": 148,
       "weighted_degree": 5.6
     },
     {
@@ -1659,7 +1659,7 @@
       "legacy_id": "tensorflow",
       "level": 2,
       "name": "TensorFlow",
-      "rank": 167,
+      "rank": 168,
       "weighted_degree": 4
     },
     {
@@ -1693,7 +1693,7 @@
       "legacy_id": "transformers",
       "level": 2,
       "name": "Transformers",
-      "rank": 168,
+      "rank": 169,
       "weighted_degree": 4
     },
     {
@@ -1710,7 +1710,7 @@
       "legacy_id": "typescript",
       "level": 1,
       "name": "TypeScript",
-      "rank": 169,
+      "rank": 170,
       "weighted_degree": 3.6
     },
     {
