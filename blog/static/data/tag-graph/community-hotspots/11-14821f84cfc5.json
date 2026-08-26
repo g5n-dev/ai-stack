@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:来源转写",
-  "generated_at": "2026-08-26T05:52:44Z",
+  "generated_at": "2026-08-26T08:01:27Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -27,7 +27,7 @@
       "legacy_id": "工程实践",
       "level": 6,
       "name": "工程实践",
-      "rank": 29,
+      "rank": 30,
       "related_count": 9,
       "weighted_degree": 113
     },
