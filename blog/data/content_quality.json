@@ -1,8 +1,8 @@
 {
-  "active_count": 2613,
+  "active_count": 2614,
   "archived_count": 276,
   "complete_count": 55,
-  "interpreted_brief_count": 124,
+  "interpreted_brief_count": 125,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20270,6 +20270,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260826-arxiv-a-dual-dimensional-llm-framework-for-automated-ite-3-9d953a96c6.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260826-arxiv-browserforge-scaling-web-episode-via-parallel-brow-3-5b0f6af26e.md": {
       "reasons": [
         "interpreted_source_card"
@@ -20478,9 +20484,9 @@
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2434,
-  "source_file_count": 2889,
-  "source_tree_sha256": "3334fcf260e4cd5fa9653adfa323d8edb8e825a050c594dc29f2cfc29e5ddab4",
-  "verified_provenance_count": 2613,
+  "source_file_count": 2890,
+  "source_tree_sha256": "38880117181c87cbe23ea9d3536ea7ed64ac1b4d1bfbff69b736822d73028530",
+  "verified_provenance_count": 2614,
   "warning_counts": {
     "source_excerpt_truncated": 777
   }
