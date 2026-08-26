@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T19:23:03Z",
+  "generated_at": "2026-08-26T23:34:36Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -626,7 +626,7 @@
       "weighted_degree": 2
     },
     {
-      "article_count": 797,
+      "article_count": 799,
       "category": "ai",
       "color": "#7aa6b8",
       "community_id": null,
@@ -639,11 +639,11 @@
       "legacy_id": "agent",
       "level": 4,
       "name": "AI Agent",
-      "rank": 159,
+      "rank": 160,
       "weighted_degree": 4.4
     },
     {
-      "article_count": 927,
+      "article_count": 929,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
@@ -656,7 +656,7 @@
       "legacy_id": "ai_ml",
       "level": 5,
       "name": "AI/ML项目",
-      "rank": 96,
+      "rank": 98,
       "weighted_degree": 7.2
     },
     {
@@ -690,7 +690,7 @@
       "legacy_id": "api",
       "level": 4,
       "name": "API服务",
-      "rank": 85,
+      "rank": 86,
       "weighted_degree": 9.6
     },
     {
@@ -1306,7 +1306,7 @@
       "weighted_degree": 3
     },
     {
-      "article_count": 688,
+      "article_count": 689,
       "category": "nlp",
       "color": "#d97706",
       "community_id": null,
@@ -1319,11 +1319,11 @@
       "legacy_id": "llm",
       "level": 3,
       "name": "大语言模型",
-      "rank": 89,
+      "rank": 91,
       "weighted_degree": 7.6
     },
     {
-      "article_count": 688,
+      "article_count": 689,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
@@ -1438,7 +1438,7 @@
       "legacy_id": "nlp",
       "level": 3,
       "name": "自然语言处理",
-      "rank": 150,
+      "rank": 151,
       "weighted_degree": 5.6
     },
     {
@@ -1506,7 +1506,7 @@
       "legacy_id": "python",
       "level": 1,
       "name": "Python",
-      "rank": 90,
+      "rank": 92,
       "weighted_degree": 7.6
     },
     {
@@ -1523,7 +1523,7 @@
       "legacy_id": "pytorch",
       "level": 2,
       "name": "PyTorch",
-      "rank": 137,
+      "rank": 139,
       "weighted_degree": 7
     },
     {
@@ -1540,7 +1540,7 @@
       "legacy_id": "rag",
       "level": 4,
       "name": "RAG应用",
-      "rank": 138,
+      "rank": 140,
       "weighted_degree": 6.6
     },
     {
