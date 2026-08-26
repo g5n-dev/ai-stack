@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:掘金",
-  "generated_at": "2026-08-26T02:00:00Z",
+  "generated_at": "2026-08-26T03:20:40Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -10,7 +10,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 291
+      "weight": 292
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:掘金",
@@ -263,7 +263,7 @@
   ],
   "nodes": [
     {
-      "article_count": 790,
+      "article_count": 791,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -277,10 +277,10 @@
       "name": "AI Agent",
       "rank": 1,
       "related_count": 78,
-      "weighted_degree": 2201.2
+      "weighted_degree": 2205.2
     },
     {
-      "article_count": 679,
+      "article_count": 680,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -294,7 +294,7 @@
       "name": "大语言模型",
       "rank": 2,
       "related_count": 89,
-      "weighted_degree": 1866.2
+      "weighted_degree": 1870.2
     },
     {
       "article_count": 509,

@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:来源快报",
-  "generated_at": "2026-08-26T02:00:00Z",
+  "generated_at": "2026-08-26T03:20:40Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -10,7 +10,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 159
+      "weight": 160
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:来源快报",
@@ -26,7 +26,7 @@
       "strength": 1,
       "target": "tag:cs.AI",
       "type": "cooccurrence",
-      "weight": 47
+      "weight": 48
     },
     {
       "id": "edge:cooccurrence:tag:cs.AI->tag:来源快报",
@@ -34,7 +34,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 47
+      "weight": 48
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:cs.CL",
@@ -263,7 +263,7 @@
   ],
   "nodes": [
     {
-      "article_count": 428,
+      "article_count": 429,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -277,10 +277,10 @@
       "name": "来源快报",
       "rank": 4,
       "related_count": 115,
-      "weighted_degree": 1239
+      "weighted_degree": 1243
     },
     {
-      "article_count": 713,
+      "article_count": 714,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -294,7 +294,7 @@
       "name": "ArXiv",
       "rank": 6,
       "related_count": 44,
-      "weighted_degree": 924
+      "weighted_degree": 928
     },
     {
       "article_count": 113,
@@ -314,7 +314,7 @@
       "weighted_degree": 303.6
     },
     {
-      "article_count": 47,
+      "article_count": 48,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -326,9 +326,9 @@
       "legacy_id": "cs.AI",
       "level": 6,
       "name": "cs.AI",
-      "rank": 20,
+      "rank": 19,
       "related_count": 10,
-      "weighted_degree": 149
+      "weighted_degree": 153
     },
     {
       "article_count": 33,
