@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T08:01:27Z",
+  "generated_at": "2026-08-26T09:05:03Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -165,7 +165,7 @@
       "strength": 1,
       "target": "tag:ArXiv",
       "type": "cooccurrence",
-      "weight": 21
+      "weight": 22
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:Company",
@@ -389,7 +389,7 @@
       "strength": 1,
       "target": "tag:cs.AI",
       "type": "cooccurrence",
-      "weight": 11
+      "weight": 12
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:cs.CC",
@@ -493,7 +493,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 112
+      "weight": 113
     },
     {
       "id": "edge:semantic:tag:AI->tech:ai_ml",
@@ -4173,7 +4173,7 @@
       "strength": 1,
       "target": "tag:cs.AI",
       "type": "cooccurrence",
-      "weight": 49
+      "weight": 50
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:cs.CC",
@@ -4421,7 +4421,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 164
+      "weight": 165
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:深度学习",
@@ -8573,7 +8573,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 49
+      "weight": 50
     },
     {
       "id": "edge:cooccurrence:tag:cs.AI->tag:深度学习",
@@ -9620,7 +9620,7 @@
       "weighted_degree": 150
     },
     {
-      "article_count": 113,
+      "article_count": 114,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -9634,7 +9634,7 @@
       "name": "AI",
       "rank": 17,
       "related_count": 51,
-      "weighted_degree": 303.6
+      "weighted_degree": 306.6
     },
     {
       "article_count": 2,
@@ -10368,7 +10368,7 @@
       "weighted_degree": 28
     },
     {
-      "article_count": 718,
+      "article_count": 719,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -10382,7 +10382,7 @@
       "name": "ArXiv",
       "rank": 6,
       "related_count": 45,
-      "weighted_degree": 941
+      "weighted_degree": 944
     },
     {
       "article_count": 1,
@@ -10657,7 +10657,7 @@
       "weighted_degree": 14.6
     },
     {
-      "article_count": 49,
+      "article_count": 50,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -10671,7 +10671,7 @@
       "name": "cs.AI",
       "rank": 19,
       "related_count": 10,
-      "weighted_degree": 156
+      "weighted_degree": 159
     },
     {
       "article_count": 2,
@@ -12459,7 +12459,7 @@
       "weighted_degree": 381
     },
     {
-      "article_count": 434,
+      "article_count": 435,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -12473,7 +12473,7 @@
       "name": "来源快报",
       "rank": 4,
       "related_count": 116,
-      "weighted_degree": 1258
+      "weighted_degree": 1261
     },
     {
       "article_count": 53,
