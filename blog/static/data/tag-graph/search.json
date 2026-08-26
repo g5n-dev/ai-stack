@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-26T08:01:27Z",
+  "generated_at": "2026-08-26T09:05:03Z",
   "items": [
     {
       "article_count": 793,
@@ -54,7 +54,7 @@
       "weighted_degree": 1305
     },
     {
-      "article_count": 434,
+      "article_count": 435,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 116,
@@ -64,7 +64,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 4,
-      "weighted_degree": 1258
+      "weighted_degree": 1261
     },
     {
       "article_count": 441,
@@ -80,7 +80,7 @@
       "weighted_degree": 1109
     },
     {
-      "article_count": 718,
+      "article_count": 719,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 45,
@@ -90,7 +90,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 941
+      "weighted_degree": 944
     },
     {
       "article_count": 162,
@@ -223,7 +223,7 @@
       "weighted_degree": 326
     },
     {
-      "article_count": 113,
+      "article_count": 114,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 52,
@@ -233,7 +233,7 @@
       "legacy_id": "AI",
       "name": "AI",
       "rank": 17,
-      "weighted_degree": 303.6
+      "weighted_degree": 306.6
     },
     {
       "article_count": 69,
@@ -249,7 +249,7 @@
       "weighted_degree": 289.6
     },
     {
-      "article_count": 49,
+      "article_count": 50,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 10,
@@ -259,7 +259,7 @@
       "legacy_id": "cs.AI",
       "name": "cs.AI",
       "rank": 19,
-      "weighted_degree": 156
+      "weighted_degree": 159
     },
     {
       "article_count": 23,
@@ -1237,7 +1237,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 915,
+      "article_count": 916,
       "category": "ai",
       "community_id": null,
       "degree": 10,
