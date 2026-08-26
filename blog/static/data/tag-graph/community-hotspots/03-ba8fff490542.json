@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:掘金",
-  "generated_at": "2026-08-26T04:08:19Z",
+  "generated_at": "2026-08-26T04:58:10Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -280,11 +280,11 @@
       "weighted_degree": 2205.2
     },
     {
-      "article_count": 680,
+      "article_count": 681,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
-      "degree": 91,
+      "degree": 92,
       "description": "文章标签: 大语言模型",
       "id": "tag:大语言模型",
       "layer": "tag",
@@ -293,8 +293,8 @@
       "level": 6,
       "name": "大语言模型",
       "rank": 2,
-      "related_count": 89,
-      "weighted_degree": 1870.2
+      "related_count": 90,
+      "weighted_degree": 1873.2
     },
     {
       "article_count": 509,

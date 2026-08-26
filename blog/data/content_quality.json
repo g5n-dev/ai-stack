@@ -1,5 +1,5 @@
 {
-  "active_count": 2601,
+  "active_count": 2602,
   "archived_count": 276,
   "complete_count": 54,
   "interpreted_brief_count": 120,
@@ -20288,6 +20288,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260826-arxiv-parameterized-complexity-of-l_p-lipschitz-constant-1-a52c390e95.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260826-arxiv-predicting-multiple-clinical-outcomes-related-to-f-3-c8fcf023a3.md": {
       "reasons": [
         "concise_source_card"
@@ -20411,10 +20417,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2427,
-  "source_file_count": 2877,
-  "source_tree_sha256": "4a5323ccf19a5aabfafca87357b5badc4c2b9084e5e2ee49671b3e18d1b48141",
-  "verified_provenance_count": 2601,
+  "source_brief_count": 2428,
+  "source_file_count": 2878,
+  "source_tree_sha256": "eef940f21532dcd17ca60f425be49f5cde1a3ffbccc232c048933a0f18d63688",
+  "verified_provenance_count": 2602,
   "warning_counts": {
     "source_excerpt_truncated": 777
   }
