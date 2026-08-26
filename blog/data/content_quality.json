@@ -1,8 +1,8 @@
 {
-  "active_count": 2602,
+  "active_count": 2604,
   "archived_count": 276,
   "complete_count": 54,
-  "interpreted_brief_count": 120,
+  "interpreted_brief_count": 121,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20282,6 +20282,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260826-arxiv-learning-whom-to-trust-decision-generated-credibil-3-3b0f7fc2b6.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260826-arxiv-mitigating-reasoning-induced-misalignment-via-safe-3-78b1934156.md": {
       "reasons": [
         "interpreted_source_card"
@@ -20383,6 +20389,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260826-hacker_news-students-prefer-gemini-over-chatgpt-and-claude-for-3-54644652f1.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -20417,10 +20429,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2428,
-  "source_file_count": 2878,
-  "source_tree_sha256": "eef940f21532dcd17ca60f425be49f5cde1a3ffbccc232c048933a0f18d63688",
-  "verified_provenance_count": 2602,
+  "source_brief_count": 2429,
+  "source_file_count": 2880,
+  "source_tree_sha256": "d3d0026c82abb468c1ded237597350d9d41e64d19c2cd4c682239913ad6f6dc2",
+  "verified_provenance_count": 2604,
   "warning_counts": {
     "source_excerpt_truncated": 777
   }
