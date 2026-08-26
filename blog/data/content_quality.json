@@ -1,8 +1,8 @@
 {
-  "active_count": 2622,
+  "active_count": 2625,
   "archived_count": 276,
   "complete_count": 55,
-  "interpreted_brief_count": 126,
+  "interpreted_brief_count": 128,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20497,6 +20497,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260827-arxiv-structurally-bounded-agentic-graph-exploration-for-6-19c12b3dca.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260827-blogs_podcasts-evaluate-any-agent-framework-with-amazon-bedrock-a-0-c9880544f2.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260827-hacker_news-its-so-hard-to-finish-an-idea-that-is-not-yours-an-13-b218531862.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -20531,10 +20549,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2441,
-  "source_file_count": 2898,
-  "source_tree_sha256": "6e6ee473e815fe0decd5f2afcf518f510fd6af7ff93dad96d35e0d6f0cc67893",
-  "verified_provenance_count": 2622,
+  "source_brief_count": 2442,
+  "source_file_count": 2901,
+  "source_tree_sha256": "e9b75749567bf4ac3bd36a8d2f40d7b4bd68dcbcb05e8e02b2a1dd5654826b1d",
+  "verified_provenance_count": 2625,
   "warning_counts": {
     "source_excerpt_truncated": 777
   }
