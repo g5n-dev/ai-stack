@@ -1,7 +1,7 @@
 {
-  "active_count": 2609,
+  "active_count": 2613,
   "archived_count": 276,
-  "complete_count": 54,
+  "complete_count": 55,
   "interpreted_brief_count": 124,
   "legacy_analysis_count": 0,
   "pages": {
@@ -20324,6 +20324,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260826-arxiv-reading-is-not-using-retrieval-judgment-and-the-de-3-889975cdb6.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260826-arxiv-recursive-experiential-working-memory-evolution-fo-1-afd8d930f6.md": {
       "reasons": [
         "concise_source_card"
@@ -20378,6 +20384,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260826-blogs_podcasts-how-loveholidays-is-making-everyone-a-builder-with-0-76c95cd852.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260826-blogs_podcasts-introducing-the-admin-plugin-for-chatgpt-work-and--0-33eae87831.md": {
       "reasons": [
         "concise_source_card"
@@ -20425,6 +20437,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260826-hacker_news-zai-confirms-ox-alpha-is-a-new-glm-series-model-an-3-a9c204e117.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -20459,10 +20477,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2431,
-  "source_file_count": 2885,
-  "source_tree_sha256": "23e60a520a4db4e7df4332091bf4d0280a190ff9e7ce2f012a05a27835f039e4",
-  "verified_provenance_count": 2609,
+  "source_brief_count": 2434,
+  "source_file_count": 2889,
+  "source_tree_sha256": "3334fcf260e4cd5fa9653adfa323d8edb8e825a050c594dc29f2cfc29e5ddab4",
+  "verified_provenance_count": 2613,
   "warning_counts": {
     "source_excerpt_truncated": 777
   }
