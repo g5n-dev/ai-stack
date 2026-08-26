@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:来源快报",
-  "generated_at": "2026-08-26T10:53:41Z",
+  "generated_at": "2026-08-26T11:47:03Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -10,7 +10,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 167
+      "weight": 168
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:来源快报",
@@ -26,7 +26,7 @@
       "strength": 1,
       "target": "tag:cs.AI",
       "type": "cooccurrence",
-      "weight": 50
+      "weight": 51
     },
     {
       "id": "edge:cooccurrence:tag:cs.AI->tag:来源快报",
@@ -34,7 +34,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 50
+      "weight": 51
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:cs.CL",
@@ -263,7 +263,7 @@
   ],
   "nodes": [
     {
-      "article_count": 440,
+      "article_count": 441,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -277,10 +277,10 @@
       "name": "来源快报",
       "rank": 4,
       "related_count": 116,
-      "weighted_degree": 1273
+      "weighted_degree": 1276
     },
     {
-      "article_count": 721,
+      "article_count": 722,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -294,7 +294,7 @@
       "name": "ArXiv",
       "rank": 6,
       "related_count": 45,
-      "weighted_degree": 950
+      "weighted_degree": 953
     },
     {
       "article_count": 116,
@@ -314,7 +314,7 @@
       "weighted_degree": 310.6
     },
     {
-      "article_count": 50,
+      "article_count": 51,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -328,7 +328,7 @@
       "name": "cs.AI",
       "rank": 19,
       "related_count": 10,
-      "weighted_degree": 159
+      "weighted_degree": 162
     },
     {
       "article_count": 35,
