@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:fba288dfaa8d79d75c2c0fa1772a46fb1218bc739ceb9f547
 description: "这是一套基于机器学习的算法，能够在缺乏历史极端事件数据的情况下，依据日常气象记录和空间分布图，生成未来可能出现的情景及其强度、持续时间和影响范围。"
 external_url: https://news.mit.edu/2026/generating-scenarios-extreme-events-without-extreme-data-0824
 parent_observation_id: null
-last_seen_at: 2026-08-25T09:51:21.590296Z
+last_seen_at: 2026-08-26T00:00:00Z
 ---
 
 ## 基本信息

@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:c4744850e3b4c89c9c8a4471e16fc1f31a4be5165089c930
 source_payload_sha256: "sha256:1a49bbbd5b12c2905437144f2df186199ab3a70396824779f87b18816bd2f4db"
 observation_id: obs_82836b8dea5256ecb2a3bc73cc32bc190e1cb1702c3d3777cfc43d3567b0297c
 event_id: evt_83bd784f3001b79ed8f91f4b7de5cc7670b38c98a789f7a852058ef8067f187f
-revision_id: rev_cd70cfbccaaa80e20494e41db0373fc03ee063ae0f56356439e729dabc7a2d89
+revision_id: rev_20b5d9d24c8d1ba2e949baa1f852ee131beaac21409960bc65ef61bf78c28dc7
 source_published_at: 2026-08-24T16:13:09Z
 first_seen_at: 2026-08-25T13:23:36Z
 timestamp_confidence: feed
@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:f766bdb830b239d3b33695b8bc6c5b308058cff8394a309a1
 description: "这是一篇技术教程，演示如何在 Amazon Connect 上构建语音点餐系统，让餐厅的电话订单完全由 AI 自动处理，从接听、解答菜单问题到确认订单全程无需人工介入。"
 external_url: https://aws.amazon.com/blogs/machine-learning/building-a-restaurant-telephony-ai-host-with-amazon-connect
 parent_observation_id: null
-last_seen_at: 2026-08-25T13:11:16.382196Z
+last_seen_at: 2026-08-26T00:00:00Z
 ---
 
 ## 基本信息

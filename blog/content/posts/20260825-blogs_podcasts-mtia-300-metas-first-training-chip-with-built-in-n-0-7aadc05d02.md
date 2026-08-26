@@ -27,7 +27,7 @@ source_title_chars_original: 92
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://engineering.fb.com/2026/08/24/networking-traffic/mtia-300-meta-training-chip-built-in-nics
 parent_observation_id: null
-last_seen_at: 2026-08-25T10:49:28.003085Z
+last_seen_at: 2026-08-26T00:00:00Z
 ---
 
 ## 基本信息

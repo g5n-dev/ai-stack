@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:c41dbdf82d8eff2bce6d7f6afcb013eebd0aa3045c6939514
 description: "该内容介绍了通过扩展模型上下文协议，使可观测性代理在返回文本结论的同时，能够直接在对话界面中渲染交互式图表，从而省去在多个工具之间切换的手动验证环节。"
 external_url: https://aws.amazon.com/blogs/machine-learning/agentic-observability-with-amazon-opensearch-service-mcp-apps
 parent_observation_id: null
-last_seen_at: 2026-08-25T19:47:21.268133Z
+last_seen_at: 2026-08-26T00:00:00Z
 ---
 
 ## 基本信息

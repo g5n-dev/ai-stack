@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:c585d32fe7c03c535d6d6f8e0878ba08f15054b2629085c4
 source_payload_sha256: "sha256:a693467890f16f92018d5ee7b5ef64cd3f3a0367400aae6e10527fc18c27a445"
 observation_id: obs_cb9d353d00004b4139732ab4afd6fe6104e09ec06b9a6e0c93e8533ba14eb6ad
 event_id: evt_58acb0c680dbb8ee26b67eac84e1f638d226e0e018f96070106b9862125586e5
-revision_id: rev_8cb313936ead56402ca3ea287126d38e9e3d6a66a6c53af97a63e08fdb9780b1
+revision_id: rev_14d9f28f76fef4ce969ddf8515c0e76772d8783d78601682b640044ca9a4bc89
 source_published_at: 2026-08-24T18:59:15Z
 first_seen_at: 2026-08-25T06:00:12Z
 timestamp_confidence: feed
@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:99665d6f24efb4a9bdede906baa9373f2b8427467820ca7e9
 description: "这是一个基于 AWS 构建的可扩展知识管理系统，利用云存储保存机构内部文档，通过自然语言查询和语音交互的 AI 虚拟形象向用户交付答案，并使用缓存降低重复调用的费用。"
 external_url: https://aws.amazon.com/blogs/machine-learning/democratizing-institutional-knowledge-building-an-ai-powered-knowledge-management-system-with-aws
 parent_observation_id: null
-last_seen_at: 2026-08-25T05:47:17.644963Z
+last_seen_at: 2026-08-26T00:00:00Z
 ---
 
 ## 基本信息

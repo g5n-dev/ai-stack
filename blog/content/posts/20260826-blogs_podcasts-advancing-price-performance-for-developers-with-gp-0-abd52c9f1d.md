@@ -27,7 +27,7 @@ source_title_chars_original: 63
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://openai.com/index/gpt-5-6-in-kiro
 parent_observation_id: null
-last_seen_at: 2026-08-25T22:44:47.665603Z
+last_seen_at: 2026-08-26T00:00:00Z
 ---
 
 ## 基本信息

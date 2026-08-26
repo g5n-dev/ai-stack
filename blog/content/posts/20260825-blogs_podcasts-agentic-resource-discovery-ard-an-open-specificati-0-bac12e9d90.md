@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:9ef780878e9241ee4deeb2708c81be2c4b0f89447c5971e08
 description: "该内容介绍一种集中式资源目录，用于登记、审批和检索 AI 代理、MCP 服务器等工具，并阐述一项开放规范（ARD），旨在实现跨环境的统一发现。"
 external_url: https://aws.amazon.com/blogs/machine-learning/agentic-resource-discovery-ard-an-open-specification-for-agent-discovery
 parent_observation_id: null
-last_seen_at: 2026-08-25T11:43:19.155752Z
+last_seen_at: 2026-08-26T00:00:00Z
 ---
 
 ## 基本信息

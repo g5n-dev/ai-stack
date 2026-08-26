@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:来源转写",
-  "generated_at": "2026-08-25T22:46:13Z",
+  "generated_at": "2026-08-26T02:00:00Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -10,12 +10,12 @@
       "strength": 1,
       "target": "tag:来源转写",
       "type": "cooccurrence",
-      "weight": 52
+      "weight": 53
     }
   ],
   "nodes": [
     {
-      "article_count": 53,
+      "article_count": 54,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源转写",
@@ -29,10 +29,10 @@
       "name": "工程实践",
       "rank": 29,
       "related_count": 9,
-      "weighted_degree": 111
+      "weighted_degree": 113
     },
     {
-      "article_count": 52,
+      "article_count": 53,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源转写",
@@ -46,7 +46,7 @@
       "name": "来源转写",
       "rank": 32,
       "related_count": 2,
-      "weighted_degree": 104
+      "weighted_degree": 106
     }
   ],
   "stats": {

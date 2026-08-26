@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:2efca6b1e1c8ef99360ccd3e47bf7540a1a529be7976125c1
 description: "MetaRoCE 是 Meta 为在大规模 AI 训练和推理场景下利用普通以太网实现高效、可靠数据传输而全新设计的 RDMA 传输协议。"
 external_url: https://engineering.fb.com/2026/08/24/networking-traffic/metaroce-rdma-transport-ai-ethernet
 parent_observation_id: null
-last_seen_at: 2026-08-25T07:58:03.570194Z
+last_seen_at: 2026-08-26T00:00:00Z
 ---
 
 ## 基本信息
