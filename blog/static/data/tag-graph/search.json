@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-26T11:47:03Z",
+  "generated_at": "2026-08-26T13:18:49Z",
   "items": [
     {
       "article_count": 793,
@@ -28,7 +28,7 @@
       "weighted_degree": 2212.2
     },
     {
-      "article_count": 685,
+      "article_count": 686,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 94,
@@ -38,7 +38,7 @@
       "legacy_id": "大语言模型",
       "name": "大语言模型",
       "rank": 2,
-      "weighted_degree": 1888.2
+      "weighted_degree": 1891.2
     },
     {
       "article_count": 510,
@@ -54,17 +54,17 @@
       "weighted_degree": 1307
     },
     {
-      "article_count": 441,
+      "article_count": 444,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
-      "degree": 116,
+      "degree": 117,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 4,
-      "weighted_degree": 1276
+      "weighted_degree": 1284
     },
     {
       "article_count": 442,
@@ -80,7 +80,7 @@
       "weighted_degree": 1111
     },
     {
-      "article_count": 722,
+      "article_count": 723,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 45,
@@ -90,7 +90,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 953
+      "weighted_degree": 956
     },
     {
       "article_count": 162,
@@ -145,6 +145,19 @@
       "weighted_degree": 489
     },
     {
+      "article_count": 874,
+      "category": "article_tag",
+      "community_id": "community:tag:掘金",
+      "degree": 21,
+      "description": "文章标签: Hacker News",
+      "id": "tag:Hacker News",
+      "layer": "tag",
+      "legacy_id": "Hacker News",
+      "name": "Hacker News",
+      "rank": 11,
+      "weighted_degree": 481
+    },
+    {
       "article_count": 115,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
@@ -154,21 +167,8 @@
       "layer": "tag",
       "legacy_id": "RAG",
       "name": "RAG",
-      "rank": 11,
-      "weighted_degree": 479.2
-    },
-    {
-      "article_count": 873,
-      "category": "article_tag",
-      "community_id": "community:tag:掘金",
-      "degree": 21,
-      "description": "文章标签: Hacker News",
-      "id": "tag:Hacker News",
-      "layer": "tag",
-      "legacy_id": "Hacker News",
-      "name": "Hacker News",
       "rank": 12,
-      "weighted_degree": 479
+      "weighted_degree": 479.2
     },
     {
       "article_count": 126,
@@ -223,17 +223,17 @@
       "weighted_degree": 326
     },
     {
-      "article_count": 116,
+      "article_count": 118,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
-      "degree": 52,
+      "degree": 54,
       "description": "文章标签: AI",
       "id": "tag:AI",
       "layer": "tag",
       "legacy_id": "AI",
       "name": "AI",
       "rank": 17,
-      "weighted_degree": 310.6
+      "weighted_degree": 315.6
     },
     {
       "article_count": 69,
@@ -249,7 +249,7 @@
       "weighted_degree": 289.6
     },
     {
-      "article_count": 51,
+      "article_count": 52,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 10,
@@ -259,7 +259,20 @@
       "legacy_id": "cs.AI",
       "name": "cs.AI",
       "rank": 19,
-      "weighted_degree": 162
+      "weighted_degree": 165
+    },
+    {
+      "article_count": 43,
+      "category": "article_tag",
+      "community_id": "community:tag:掘金",
+      "degree": 23,
+      "description": "文章标签: Java",
+      "id": "tag:Java",
+      "layer": "tag",
+      "legacy_id": "Java",
+      "name": "Java",
+      "rank": 20,
+      "weighted_degree": 151.6
     },
     {
       "article_count": 23,
@@ -271,21 +284,8 @@
       "layer": "tag",
       "legacy_id": "Advanced (300)",
       "name": "Advanced (300)",
-      "rank": 20,
-      "weighted_degree": 150
-    },
-    {
-      "article_count": 42,
-      "category": "article_tag",
-      "community_id": "community:tag:掘金",
-      "degree": 21,
-      "description": "文章标签: Java",
-      "id": "tag:Java",
-      "layer": "tag",
-      "legacy_id": "Java",
-      "name": "Java",
       "rank": 21,
-      "weighted_degree": 148.6
+      "weighted_degree": 150
     },
     {
       "article_count": 44,
@@ -496,17 +496,17 @@
       "weighted_degree": 80
     },
     {
-      "article_count": 43,
+      "article_count": 44,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
-      "degree": 20,
+      "degree": 21,
       "description": "文章标签: GitHub",
       "id": "tag:GitHub",
       "layer": "tag",
       "legacy_id": "GitHub",
       "name": "GitHub",
       "rank": 38,
-      "weighted_degree": 61
+      "weighted_degree": 64
     },
     {
       "article_count": 21,
@@ -1159,7 +1159,7 @@
       "weighted_degree": 8.6
     },
     {
-      "article_count": 685,
+      "article_count": 686,
       "category": "nlp",
       "community_id": null,
       "degree": 8,
@@ -1250,7 +1250,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 918,
+      "article_count": 920,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -2435,7 +2435,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:来源快报",
+      "community_id": "community:tag:Technical How-to",
       "degree": 3,
       "description": "文章标签: Startup",
       "id": "tag:Startup",
@@ -2537,7 +2537,7 @@
       "weighted_degree": 2.8
     },
     {
-      "article_count": 685,
+      "article_count": 686,
       "category": "ai",
       "community_id": null,
       "degree": 3,
@@ -3018,7 +3018,7 @@
       "weighted_degree": 0.6
     },
     {
-      "article_count": 42,
+      "article_count": 43,
       "category": "language",
       "community_id": null,
       "degree": 1,
