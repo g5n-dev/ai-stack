@@ -1,5 +1,5 @@
 {
-  "active_count": 2617,
+  "active_count": 2619,
   "archived_count": 276,
   "complete_count": 55,
   "interpreted_brief_count": 125,
@@ -20318,6 +20318,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260826-arxiv-mdte-minority-aware-diffusion-over-temporal-edge-e-6-29a03ad936.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260826-arxiv-mitigating-reasoning-induced-misalignment-via-safe-3-78b1934156.md": {
       "reasons": [
         "interpreted_source_card"
@@ -20432,6 +20438,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260826-hacker_news-fake-us-thinktank-set-up-and-funded-by-israel-soug-5-fb586a988a.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260826-hacker_news-how-much-of-hn-is-ai-7-2bdab5be33.md": {
       "reasons": [
         "concise_source_card"
@@ -20501,10 +20513,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2437,
-  "source_file_count": 2893,
-  "source_tree_sha256": "bd78e439aa56663acf038777b81c62c42747e9974b6de2ecc84043748e219884",
-  "verified_provenance_count": 2617,
+  "source_brief_count": 2439,
+  "source_file_count": 2895,
+  "source_tree_sha256": "a94b074e07fac223c0d085886cb00cd7508900790669ccda6a3986bafa8d2328",
+  "verified_provenance_count": 2619,
   "warning_counts": {
     "source_excerpt_truncated": 777
   }
