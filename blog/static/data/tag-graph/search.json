@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-26T03:20:40Z",
+  "generated_at": "2026-08-26T04:08:19Z",
   "items": [
     {
       "article_count": 791,
@@ -54,7 +54,7 @@
       "weighted_degree": 1305
     },
     {
-      "article_count": 429,
+      "article_count": 430,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 115,
@@ -64,7 +64,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 4,
-      "weighted_degree": 1243
+      "weighted_degree": 1246
     },
     {
       "article_count": 441,
@@ -80,7 +80,7 @@
       "weighted_degree": 1109
     },
     {
-      "article_count": 714,
+      "article_count": 715,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 44,
@@ -90,7 +90,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 928
+      "weighted_degree": 931
     },
     {
       "article_count": 162,
@@ -210,7 +210,7 @@
       "weighted_degree": 338
     },
     {
-      "article_count": 57,
+      "article_count": 58,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 47,
@@ -220,7 +220,7 @@
       "legacy_id": "Prompt 工程",
       "name": "Prompt 工程",
       "rank": 16,
-      "weighted_degree": 323
+      "weighted_degree": 326
     },
     {
       "article_count": 113,
@@ -249,7 +249,7 @@
       "weighted_degree": 289.6
     },
     {
-      "article_count": 48,
+      "article_count": 49,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 10,
@@ -259,7 +259,7 @@
       "legacy_id": "cs.AI",
       "name": "cs.AI",
       "rank": 19,
-      "weighted_degree": 153
+      "weighted_degree": 156
     },
     {
       "article_count": 23,
