@@ -15,7 +15,7 @@ observation_id: obs_250ea167f3438592ef72ca4801d87912115d0d8d287f00f83fce0d7eda27
 event_id: evt_a0d2b38387c02ff7523f022bef48b95c42391fd02e53c27c2bf90a5602b9cec9
 revision_id: rev_6660a04d1f02bd3cb0f0b0b01971889c692f1c38c95ea5cc850051fa3206a248
 source_published_at: 2026-08-26T21:47:04Z
-first_seen_at: 2026-08-26T23:31:52.170637Z
+first_seen_at: 2026-08-26T23:45:36Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 79
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://lexfridman.com/dhh-2
 parent_observation_id: null
-last_seen_at: 2026-08-26T23:31:52.170637Z
+last_seen_at: 2026-08-27T00:00:00Z
 ---
 
 ## 基本信息

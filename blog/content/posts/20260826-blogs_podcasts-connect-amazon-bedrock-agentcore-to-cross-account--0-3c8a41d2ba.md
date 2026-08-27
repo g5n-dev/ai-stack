@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:c3e174744148a54c7bf2ea51788155dfc1f3d9f4bb9082b4d
 description: "这是一篇关于在 Amazon Bedrock AgentCore 中实现跨账号访问知识库的技术实践，提供了代码化的 Strands agent 和声明式的 AgentCore harness 两种实现路径，并说明了它们在访问另一账号 Redshift Serverless 数据时的具体做法。"
 external_url: https://aws.amazon.com/blogs/machine-learning/connect-amazon-bedrock-agentcore-to-cross-account-knowledge-bases
 parent_observation_id: null
-last_seen_at: 2026-08-26T15:53:22.459248Z
+last_seen_at: 2026-08-27T00:00:00Z
 ---
 
 ## 基本信息

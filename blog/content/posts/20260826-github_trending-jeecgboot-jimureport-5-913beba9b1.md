@@ -13,9 +13,9 @@ source_snapshot_sha256: "sha256:0f166b13f33ea61f32919c32a8bbcf32b5f607d4df8c9925
 source_payload_sha256: "sha256:c9eb98e73e8baef7becc03a14160d8aa4ee9e534bc20998e5607836320dbd9a3"
 observation_id: obs_913beba9b1418716640bb36dd50aefe3edbb8988eb2168b35b5af6909d5a4f66
 event_id: evt_6229363acbbc49b8f6f8ccf520eb0f99b982fc63686d4b02bd2d60d12cf15b1c
-revision_id: rev_0b158b78f68efb590aec2e2f8aa1e81bce704dd647dd85b20b6c4a662b9c1827
+revision_id: rev_057ca9db8674e326de311351176d8b22633051ec454d4b5018347dc29590bae0
 first_seen_at: 2026-08-26T13:28:53Z
-timestamp_confidence: unknown
+timestamp_confidence: git
 lineage_relation: original
 extractor_version: "source-contract-v1"
 discovery_method: "repository_metadata"
@@ -27,7 +27,7 @@ description: "当前只保存了标题与来源元数据，未抓取外链全文
 external_url: https://github.com/jeecgboot/jimureport
 parent_observation_id: null
 source_published_at: null
-last_seen_at: 2026-08-26T13:16:27.287053Z
+last_seen_at: 2026-08-27T00:00:00Z
 ---
 
 ## 基本信息

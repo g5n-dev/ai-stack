@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:69e9ffb5a35d04694c0e8509de0dc608c0a535c7c37d4424d
 description: "该内容介绍了麻省理工学院研发的一种材料生成框架，在生成前加入价电子壳层约束，以提升生成材料的化学稳定性，并可在保持目标性能的同时显著降低不稳定材料的比例。"
 external_url: https://news.mit.edu/2026/ai-helps-design-new-materials-that-work-in-real-world-0826
 parent_observation_id: null
-last_seen_at: 2026-08-26T09:57:42.227189Z
+last_seen_at: 2026-08-27T00:00:00Z
 ---
 
 ## 基本信息
