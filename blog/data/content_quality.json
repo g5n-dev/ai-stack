@@ -1,8 +1,8 @@
 {
-  "active_count": 2628,
+  "active_count": 2631,
   "archived_count": 276,
   "complete_count": 55,
-  "interpreted_brief_count": 129,
+  "interpreted_brief_count": 130,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20510,7 +20510,19 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260827-arxiv-vbvr-pro-a-scalable-and-verifiable-suite-for-nativ-0-eee493443e.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260827-blogs_podcasts-501-dhh-future-of-programming-ai-agentic-engineeri-0-250ea167f3.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260827-blogs_podcasts-ainews-nvidia-buys-huggingface-for-13b-as-openai-p-0-132d44f2f5.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -20521,6 +20533,12 @@
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20260827-hacker_news-ceo-fired-developers-to-make-room-for-ai-developer-8-cb7e4bbf99.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20260827-hacker_news-its-so-hard-to-finish-an-idea-that-is-not-yours-an-13-b218531862.md": {
       "reasons": [
@@ -20567,10 +20585,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2444,
-  "source_file_count": 2904,
-  "source_tree_sha256": "d6fe3fe83b5c466cc8e68545fb4dc93c3e64355b4ace45e19dc998cdbfe8cbf9",
-  "verified_provenance_count": 2628,
+  "source_brief_count": 2446,
+  "source_file_count": 2907,
+  "source_tree_sha256": "f9611843cabf177f5b2898a35e9f1fd5a51ff164a15842db215a1f9f117ff3fc",
+  "verified_provenance_count": 2631,
   "warning_counts": {
     "source_excerpt_truncated": 777
   }
