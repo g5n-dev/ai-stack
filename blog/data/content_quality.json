@@ -1,8 +1,8 @@
 {
-  "active_count": 2631,
+  "active_count": 2634,
   "archived_count": 276,
   "complete_count": 55,
-  "interpreted_brief_count": 130,
+  "interpreted_brief_count": 132,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20551,6 +20551,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260828-arxiv-a-visual-dependence-aware-framework-for-multimodal-0-6cd28eb2e7.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260828-blogs_podcasts-looking-beyond-natural-sequences-0-6116da9c83.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260828-hacker_news-nvidia-starts-pac-as-ai-chip-maker-builds-dc-influ-4-76f70ada1d.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -20585,10 +20603,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2446,
-  "source_file_count": 2907,
-  "source_tree_sha256": "f9611843cabf177f5b2898a35e9f1fd5a51ff164a15842db215a1f9f117ff3fc",
-  "verified_provenance_count": 2631,
+  "source_brief_count": 2447,
+  "source_file_count": 2910,
+  "source_tree_sha256": "364c8557d5886ae92f6f46352898593e413bed0543847d57ae0ada95a93eaa18",
+  "verified_provenance_count": 2634,
   "warning_counts": {
     "source_excerpt_truncated": 777
   }

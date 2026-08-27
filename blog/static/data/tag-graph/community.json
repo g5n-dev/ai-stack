@@ -2,69 +2,69 @@
   "algorithm": "deterministic-weighted-label-propagation",
   "communities": [
     {
-      "article_count": 565,
+      "article_count": 566,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-8a02687154ec.json",
+      "hotspot_file": "community-hotspots/01-6c363b9aee09.json",
       "id": "community:tag:Technical How-to",
       "leader_id": "tag:博客与播客",
       "name": "博客与播客",
       "node_count": 46,
       "rank": 1,
-      "tag_occurrences": 975,
-      "weighted_degree": 3648.6
+      "tag_occurrences": 976,
+      "weighted_degree": 3655.6
     },
     {
-      "article_count": 1011,
+      "article_count": 1013,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/02-516b3bb96df0.json",
+      "hotspot_file": "community-hotspots/02-212fff3877bb.json",
       "id": "community:tag:来源快报",
       "leader_id": "tag:ArXiv",
       "name": "ArXiv",
       "node_count": 35,
       "rank": 2,
-      "tag_occurrences": 1472,
-      "weighted_degree": 3129.4
+      "tag_occurrences": 1476,
+      "weighted_degree": 3139.4
     },
     {
-      "article_count": 2143,
+      "article_count": 2145,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/03-4730c44493d2.json",
+      "hotspot_file": "community-hotspots/03-d8a612790234.json",
       "id": "community:tag:掘金",
       "leader_id": "tag:Hacker News",
       "name": "Hacker News",
       "node_count": 29,
       "rank": 3,
-      "tag_occurrences": 4098,
-      "weighted_degree": 10431.2
-    },
-    {
-      "article_count": 7,
-      "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/04-596f193a1f2f.json",
-      "id": "community:tag:Machine learning",
-      "leader_id": "tag:Research",
-      "name": "Research",
-      "node_count": 12,
-      "rank": 4,
-      "tag_occurrences": 28,
-      "weighted_degree": 194.4
+      "tag_occurrences": 4101,
+      "weighted_degree": 10439.2
     },
     {
       "article_count": 10,
       "hotspot_count": 8,
-      "hotspot_file": "community-hotspots/05-ef49234a68cd.json",
+      "hotspot_file": "community-hotspots/04-e4379c52c063.json",
       "id": "community:tag:Google Cloud",
       "leader_id": "tag:Search",
       "name": "Search",
       "node_count": 8,
-      "rank": 5,
+      "rank": 4,
       "tag_occurrences": 19,
       "weighted_degree": 105.6
     },
     {
+      "article_count": 8,
+      "hotspot_count": 8,
+      "hotspot_file": "community-hotspots/05-85948b572edf.json",
+      "id": "community:tag:Machine learning",
+      "leader_id": "tag:Research",
+      "name": "Research",
+      "node_count": 8,
+      "rank": 5,
+      "tag_occurrences": 26,
+      "weighted_degree": 179.2
+    },
+    {
       "article_count": 5,
       "hotspot_count": 8,
-      "hotspot_file": "community-hotspots/06-8ab888f538cd.json",
+      "hotspot_file": "community-hotspots/06-023288f3b3f8.json",
       "id": "community:tag:ML Applications",
       "leader_id": "tag:Data Infrastructure",
       "name": "Data Infrastructure",
@@ -75,80 +75,88 @@
     },
     {
       "article_count": 2,
+      "hotspot_count": 7,
+      "hotspot_file": "community-hotspots/07-237de1e3c03f.json",
+      "id": "community:tag:Computer modeling",
+      "leader_id": "tag:Algorithms",
+      "name": "Algorithms",
+      "node_count": 7,
+      "rank": 7,
+      "tag_occurrences": 9,
+      "weighted_degree": 64.2
+    },
+    {
+      "article_count": 2,
       "hotspot_count": 6,
-      "hotspot_file": "community-hotspots/07-915f81c4bb20.json",
+      "hotspot_file": "community-hotspots/08-ce232e54f318.json",
       "id": "community:tag:Amazon RDS",
       "leader_id": "tag:Amazon Elastic Kubernetes Service",
       "name": "Amazon Elastic Kubernetes Service",
       "node_count": 6,
-      "rank": 7,
+      "rank": 8,
       "tag_occurrences": 7,
       "weighted_degree": 45.6
     },
     {
       "article_count": 2,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/08-eded0782d8ac.json",
+      "hotspot_file": "community-hotspots/09-62d63592d005.json",
       "id": "community:tag:Brain and cognitive sciences",
       "leader_id": "tag:Faculty",
       "name": "Faculty",
       "node_count": 5,
-      "rank": 8,
+      "rank": 9,
       "tag_occurrences": 6,
       "weighted_degree": 42
     },
     {
       "article_count": 1,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/09-47ff846c7e9f.json",
+      "hotspot_file": "community-hotspots/10-9906cb512849.json",
       "id": "community:tag:Codex",
       "leader_id": "tag:ACP",
       "name": "ACP",
       "node_count": 5,
-      "rank": 9,
+      "rank": 10,
       "tag_occurrences": 5,
       "weighted_degree": 35
     },
     {
       "article_count": 3,
       "hotspot_count": 4,
-      "hotspot_file": "community-hotspots/10-c30705c1cb0f.json",
+      "hotspot_file": "community-hotspots/11-ee2e43aa23f4.json",
       "id": "community:tag:AWS Marketplace",
       "leader_id": "tag:Amazon SageMaker AI",
       "name": "Amazon SageMaker AI",
       "node_count": 4,
-      "rank": 10,
+      "rank": 11,
       "tag_occurrences": 6,
       "weighted_degree": 38
     },
     {
-      "article_count": 3,
-      "hotspot_count": 4,
-      "hotspot_file": "community-hotspots/11-14b870384b83.json",
-      "id": "community:tag:Interview",
-      "leader_id": "tag:Safety",
-      "name": "Safety",
-      "node_count": 4,
-      "rank": 11,
-      "tag_occurrences": 6,
-      "weighted_degree": 32
-    },
-    {
-      "article_count": 61,
+      "article_count": 64,
       "hotspot_count": 0,
       "id": "community:other",
       "leader_id": null,
       "name": "其他",
-      "node_count": 15,
+      "node_count": 19,
       "rank": 12,
-      "tag_occurrences": 122,
-      "weighted_degree": 294.6
+      "tag_occurrences": 128,
+      "weighted_degree": 326.6
     }
   ],
-  "generated_at": "2026-08-27T09:49:49Z",
+  "generated_at": "2026-08-27T20:33:19Z",
   "iterations": 10,
   "limit": 11,
   "links": [
+    {
+      "id": "edge:community:community:other->community:tag:Brain and cognitive sciences",
+      "source": "community:other",
+      "strength": 1,
+      "target": "community:tag:Brain and cognitive sciences",
+      "type": "community",
+      "weight": 4
+    },
     {
       "id": "edge:community:community:other->community:tag:Codex",
       "source": "community:other",
@@ -171,7 +179,7 @@
       "strength": 1,
       "target": "community:tag:Machine learning",
       "type": "community",
-      "weight": 9
+      "weight": 24
     },
     {
       "id": "edge:community:community:other->community:tag:Technical How-to",
@@ -179,7 +187,7 @@
       "strength": 1,
       "target": "community:tag:Technical How-to",
       "type": "community",
-      "weight": 22
+      "weight": 21
     },
     {
       "id": "edge:community:community:other->community:tag:掘金",
@@ -195,7 +203,7 @@
       "strength": 1,
       "target": "community:tag:来源快报",
       "type": "community",
-      "weight": 14
+      "weight": 16
     },
     {
       "id": "edge:community:community:tag:AWS Marketplace->community:tag:Technical How-to",
@@ -238,14 +246,6 @@
       "weight": 2
     },
     {
-      "id": "edge:community:community:tag:Brain and cognitive sciences->community:tag:Interview",
-      "source": "community:tag:Brain and cognitive sciences",
-      "strength": 1,
-      "target": "community:tag:Interview",
-      "type": "community",
-      "weight": 4
-    },
-    {
       "id": "edge:community:community:tag:Brain and cognitive sciences->community:tag:Machine learning",
       "source": "community:tag:Brain and cognitive sciences",
       "strength": 1,
@@ -266,6 +266,22 @@
       "source": "community:tag:Codex",
       "strength": 1,
       "target": "community:tag:掘金",
+      "type": "community",
+      "weight": 10
+    },
+    {
+      "id": "edge:community:community:tag:Computer modeling->community:tag:Machine learning",
+      "source": "community:tag:Computer modeling",
+      "strength": 1,
+      "target": "community:tag:Machine learning",
+      "type": "community",
+      "weight": 21
+    },
+    {
+      "id": "edge:community:community:tag:Computer modeling->community:tag:Technical How-to",
+      "source": "community:tag:Computer modeling",
+      "strength": 1,
+      "target": "community:tag:Technical How-to",
       "type": "community",
       "weight": 10
     },
@@ -292,30 +308,6 @@
       "target": "community:tag:来源快报",
       "type": "community",
       "weight": 32
-    },
-    {
-      "id": "edge:community:community:tag:Interview->community:tag:Machine learning",
-      "source": "community:tag:Interview",
-      "strength": 1,
-      "target": "community:tag:Machine learning",
-      "type": "community",
-      "weight": 12
-    },
-    {
-      "id": "edge:community:community:tag:Interview->community:tag:Technical How-to",
-      "source": "community:tag:Interview",
-      "strength": 1,
-      "target": "community:tag:Technical How-to",
-      "type": "community",
-      "weight": 2
-    },
-    {
-      "id": "edge:community:community:tag:Interview->community:tag:来源快报",
-      "source": "community:tag:Interview",
-      "strength": 1,
-      "target": "community:tag:来源快报",
-      "type": "community",
-      "weight": 2
     },
     {
       "id": "edge:community:community:tag:ML Applications->community:tag:Technical How-to",
@@ -387,15 +379,15 @@
       "strength": 1,
       "target": "community:tag:来源快报",
       "type": "community",
-      "weight": 1255
+      "weight": 1261
     }
   ],
   "stats": {
-    "assigned_nodes": 177,
-    "detected_communities": 18,
+    "assigned_nodes": 180,
+    "detected_communities": 19,
     "emitted_communities": 12,
     "total_communities": 12,
-    "total_links": 30,
+    "total_links": 29,
     "weighting": "cosine-association"
   },
   "version": 2
