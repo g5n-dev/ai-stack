@@ -1,8 +1,8 @@
 {
-  "active_count": 2637,
+  "active_count": 2641,
   "archived_count": 276,
   "complete_count": 55,
-  "interpreted_brief_count": 132,
+  "interpreted_brief_count": 134,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20587,6 +20587,33 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260829-arxiv-wikiskill-compiling-agent-experience-into-persiste-0-4497f85210.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260829-blogs_podcasts-how-decathlon-runs-demand-forecasting-at-scale-wit-0-7625e7226a.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260829-hacker_news-autonomous-mathematical-discovery-in-an-open-world-7-de58f2f759.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260829-juejin-用-ai-打造高品质-web-应用-0-65b162e7b3.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     }
   },
   "quarantined_count": 0,
@@ -20621,11 +20648,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2450,
-  "source_file_count": 2913,
-  "source_tree_sha256": "3174bc49b8d3c4b5f1c145d836e42d8b7c565c5928fb47c74916b86ebfb2e564",
-  "verified_provenance_count": 2637,
+  "source_brief_count": 2452,
+  "source_file_count": 2917,
+  "source_tree_sha256": "26d401a7650f80f034f699130b43bf688cfbb5ba7ae5fcd9295c01207eb523db",
+  "verified_provenance_count": 2641,
   "warning_counts": {
-    "source_excerpt_truncated": 777
+    "source_excerpt_truncated": 778
   }
 }
