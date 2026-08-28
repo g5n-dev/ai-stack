@@ -15,7 +15,7 @@ observation_id: obs_6116da9c839ce21791a2b2ad6c48476a554224d32ffffb3eff24f8e9267b
 event_id: evt_abc2bd6003f23d1354dc716a3731840940661f2bf3e46d7bedbeebb20ce45476
 revision_id: rev_5531cb7a5d8d65869e6212edff29f5a567b392a4ddcffc43aae0b4709eb6fe08
 source_published_at: 2026-08-27T19:20:00Z
-first_seen_at: 2026-08-27T20:30:34.840997Z
+first_seen_at: 2026-08-27T20:42:03Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:3fb6cecb61548c0ff0ce3f55206f83d6bd85c4beb6f1f6581
 description: "这条内容介绍了一种名为 PottsMPNN 的新型机器学习框架，它将支配蛋白质结构的物理原理整合进序列生成过程，从而更准确地评估序列能量关系并预测突变对稳定性的影响。"
 external_url: https://news.mit.edu/2026/looking-beyond-natural-sequences-0827
 parent_observation_id: null
-last_seen_at: 2026-08-27T20:30:34.840997Z
+last_seen_at: 2026-08-28T00:00:00Z
 ---
 
 ## 基本信息

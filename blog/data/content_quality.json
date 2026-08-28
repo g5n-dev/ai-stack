@@ -1,5 +1,5 @@
 {
-  "active_count": 2634,
+  "active_count": 2637,
   "archived_count": 276,
   "complete_count": 55,
   "interpreted_brief_count": 132,
@@ -20558,6 +20558,18 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260828-arxiv-criticl-inference-time-weak-to-strong-generalizati-0-d1c7109c4b.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260828-blogs_podcasts-build-agentic-creative-workflows-with-amazon-quick-0-26c11393ee.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260828-blogs_podcasts-looking-beyond-natural-sequences-0-6116da9c83.md": {
       "reasons": [
         "interpreted_source_card"
@@ -20565,6 +20577,12 @@
       "status": "interpreted_brief"
     },
     "posts/20260828-hacker_news-nvidia-starts-pac-as-ai-chip-maker-builds-dc-influ-4-76f70ada1d.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260828-hacker_news-terminal-bench-science-evaluating-ai-agents-on-sci-4-6f8f0395b3.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -20603,10 +20621,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2447,
-  "source_file_count": 2910,
-  "source_tree_sha256": "364c8557d5886ae92f6f46352898593e413bed0543847d57ae0ada95a93eaa18",
-  "verified_provenance_count": 2634,
+  "source_brief_count": 2450,
+  "source_file_count": 2913,
+  "source_tree_sha256": "3174bc49b8d3c4b5f1c145d836e42d8b7c565c5928fb47c74916b86ebfb2e564",
+  "verified_provenance_count": 2637,
   "warning_counts": {
     "source_excerpt_truncated": 777
   }
