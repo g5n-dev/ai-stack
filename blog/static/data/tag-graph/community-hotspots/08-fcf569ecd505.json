@@ -1,0 +1,205 @@
+{
+  "community_id": "community:tag:Amazon RDS",
+  "generated_at": "2026-08-28T05:28:33Z",
+  "hotspot_limit": 24,
+  "link_limit": 32,
+  "links": [
+    {
+      "id": "edge:cooccurrence:tag:Amazon Elastic File System (EFS)->tag:Amazon Elastic Kubernetes Service",
+      "source": "tag:Amazon Elastic File System (EFS)",
+      "strength": 0.5,
+      "target": "tag:Amazon Elastic Kubernetes Service",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Elastic File System (EFS)->tag:Amazon RDS",
+      "source": "tag:Amazon Elastic File System (EFS)",
+      "strength": 0.5,
+      "target": "tag:Amazon RDS",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Elastic File System (EFS)->tag:Amazon Simple Notification Service (SNS)",
+      "source": "tag:Amazon Elastic File System (EFS)",
+      "strength": 0.5,
+      "target": "tag:Amazon Simple Notification Service (SNS)",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Elastic File System (EFS)->tag:Amazon Simple Queue Service (SQS)",
+      "source": "tag:Amazon Elastic File System (EFS)",
+      "strength": 0.5,
+      "target": "tag:Amazon Simple Queue Service (SQS)",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Elastic Kubernetes Service->tag:Amazon RDS",
+      "source": "tag:Amazon Elastic Kubernetes Service",
+      "strength": 0.5,
+      "target": "tag:Amazon RDS",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Elastic Kubernetes Service->tag:Amazon Simple Notification Service (SNS)",
+      "source": "tag:Amazon Elastic Kubernetes Service",
+      "strength": 0.5,
+      "target": "tag:Amazon Simple Notification Service (SNS)",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Elastic Kubernetes Service->tag:Amazon Simple Queue Service (SQS)",
+      "source": "tag:Amazon Elastic Kubernetes Service",
+      "strength": 0.5,
+      "target": "tag:Amazon Simple Queue Service (SQS)",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Elastic Kubernetes Service->tag:Amazon VPC",
+      "source": "tag:Amazon Elastic Kubernetes Service",
+      "strength": 0.5,
+      "target": "tag:Amazon VPC",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon RDS->tag:Amazon Simple Notification Service (SNS)",
+      "source": "tag:Amazon RDS",
+      "strength": 0.5,
+      "target": "tag:Amazon Simple Notification Service (SNS)",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon RDS->tag:Amazon Simple Queue Service (SQS)",
+      "source": "tag:Amazon RDS",
+      "strength": 0.5,
+      "target": "tag:Amazon Simple Queue Service (SQS)",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Amazon Simple Notification Service (SNS)->tag:Amazon Simple Queue Service (SQS)",
+      "source": "tag:Amazon Simple Notification Service (SNS)",
+      "strength": 0.5,
+      "target": "tag:Amazon Simple Queue Service (SQS)",
+      "type": "cooccurrence",
+      "weight": 1
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon RDS",
+      "degree": 10,
+      "description": "文章标签: Amazon Elastic Kubernetes Service",
+      "id": "tag:Amazon Elastic Kubernetes Service",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon Elastic Kubernetes Service",
+      "level": 6,
+      "name": "Amazon Elastic Kubernetes Service",
+      "rank": 71,
+      "related_count": 9,
+      "weighted_degree": 12.6
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon RDS",
+      "degree": 7,
+      "description": "文章标签: Amazon Elastic File System (EFS)",
+      "id": "tag:Amazon Elastic File System (EFS)",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon Elastic File System (EFS)",
+      "level": 6,
+      "name": "Amazon Elastic File System (EFS)",
+      "rank": 107,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon RDS",
+      "degree": 7,
+      "description": "文章标签: Amazon RDS",
+      "id": "tag:Amazon RDS",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon RDS",
+      "level": 6,
+      "name": "Amazon RDS",
+      "rank": 111,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon RDS",
+      "degree": 7,
+      "description": "文章标签: Amazon Simple Notification Service (SNS)",
+      "id": "tag:Amazon Simple Notification Service (SNS)",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon Simple Notification Service (SNS)",
+      "level": 6,
+      "name": "Amazon Simple Notification Service (SNS)",
+      "rank": 114,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon RDS",
+      "degree": 7,
+      "description": "文章标签: Amazon Simple Queue Service (SQS)",
+      "id": "tag:Amazon Simple Queue Service (SQS)",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon Simple Queue Service (SQS)",
+      "level": 6,
+      "name": "Amazon Simple Queue Service (SQS)",
+      "rank": 115,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Amazon RDS",
+      "degree": 5,
+      "description": "文章标签: Amazon VPC",
+      "id": "tag:Amazon VPC",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Amazon VPC",
+      "level": 6,
+      "name": "Amazon VPC",
+      "rank": 156,
+      "related_count": 5,
+      "weighted_degree": 5
+    }
+  ],
+  "stats": {
+    "total_links": 11,
+    "total_nodes": 6
+  },
+  "version": 2
+}

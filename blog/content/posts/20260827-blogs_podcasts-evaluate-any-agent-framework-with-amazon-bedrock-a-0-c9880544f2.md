@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:72f59f3eb5885b84711717a05990c3f4ddf642967d78c2d83
 description: "这段内容介绍了一种评估方案，它能够对使用不同构建框架的 AI 代理进行统一评分。该方案通过读取遵循 OpenTelemetry 标准的链路（trace）中的特定 span 角色，重建对话会话后交由一套与框架无关的评估器进行打分。"
 external_url: https://aws.amazon.com/blogs/machine-learning/evaluate-any-agent-framework-with-amazon-bedrock-agentcore-evaluations
 parent_observation_id: null
-last_seen_at: 2026-08-27T00:00:00Z
+last_seen_at: 2026-08-28T00:00:00Z
 ---
 
 ## 基本信息

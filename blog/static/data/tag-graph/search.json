@@ -12,10 +12,10 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-08-27T20:33:19Z",
+  "generated_at": "2026-08-28T05:28:33Z",
   "items": [
     {
-      "article_count": 800,
+      "article_count": 802,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 82,
@@ -25,10 +25,10 @@
       "legacy_id": "AI Agent",
       "name": "AI Agent",
       "rank": 1,
-      "weighted_degree": 2240.2
+      "weighted_degree": 2249.2
     },
     {
-      "article_count": 690,
+      "article_count": 691,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 94,
@@ -38,10 +38,10 @@
       "legacy_id": "大语言模型",
       "name": "大语言模型",
       "rank": 2,
-      "weighted_degree": 1913.2
+      "weighted_degree": 1916.2
     },
     {
-      "article_count": 458,
+      "article_count": 461,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 117,
@@ -51,7 +51,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 3,
-      "weighted_degree": 1322
+      "weighted_degree": 1334
     },
     {
       "article_count": 510,
@@ -67,7 +67,7 @@
       "weighted_degree": 1307
     },
     {
-      "article_count": 445,
+      "article_count": 446,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 103,
@@ -77,10 +77,10 @@
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 5,
-      "weighted_degree": 1125
+      "weighted_degree": 1132
     },
     {
-      "article_count": 729,
+      "article_count": 730,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 45,
@@ -90,7 +90,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 975
+      "weighted_degree": 978
     },
     {
       "article_count": 162,
@@ -132,7 +132,7 @@
       "weighted_degree": 507.6
     },
     {
-      "article_count": 135,
+      "article_count": 136,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 58,
@@ -142,10 +142,10 @@
       "legacy_id": "生成式 AI",
       "name": "生成式 AI",
       "rank": 10,
-      "weighted_degree": 499
+      "weighted_degree": 506
     },
     {
-      "article_count": 880,
+      "article_count": 881,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 21,
@@ -155,7 +155,7 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 11,
-      "weighted_degree": 493
+      "weighted_degree": 495
     },
     {
       "article_count": 115,
@@ -184,17 +184,17 @@
       "weighted_degree": 470
     },
     {
-      "article_count": 125,
+      "article_count": 126,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
-      "degree": 71,
+      "degree": 72,
       "description": "文章标签: 机器学习",
       "id": "tag:机器学习",
       "layer": "tag",
       "legacy_id": "机器学习",
       "name": "机器学习",
       "rank": 14,
-      "weighted_degree": 406
+      "weighted_degree": 413
     },
     {
       "article_count": 61,
@@ -366,7 +366,20 @@
       "weighted_degree": 136.6
     },
     {
-      "article_count": 36,
+      "article_count": 19,
+      "category": "article_tag",
+      "community_id": "community:tag:Technical How-to",
+      "degree": 32,
+      "description": "文章标签: Technical How-to",
+      "id": "tag:Technical How-to",
+      "layer": "tag",
+      "legacy_id": "Technical How-to",
+      "name": "Technical How-to",
+      "rank": 28,
+      "weighted_degree": 126
+    },
+    {
+      "article_count": 37,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 9,
@@ -375,8 +388,8 @@
       "layer": "tag",
       "legacy_id": "cs.CL",
       "name": "cs.CL",
-      "rank": 28,
-      "weighted_degree": 120
+      "rank": 29,
+      "weighted_degree": 123
     },
     {
       "article_count": 35,
@@ -388,19 +401,6 @@
       "layer": "tag",
       "legacy_id": "cs.CV",
       "name": "cs.CV",
-      "rank": 29,
-      "weighted_degree": 119
-    },
-    {
-      "article_count": 18,
-      "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
-      "degree": 32,
-      "description": "文章标签: Technical How-to",
-      "id": "tag:Technical How-to",
-      "layer": "tag",
-      "legacy_id": "Technical How-to",
-      "name": "Technical How-to",
       "rank": 30,
       "weighted_degree": 119
     },
@@ -457,17 +457,17 @@
       "weighted_degree": 102.2
     },
     {
-      "article_count": 16,
+      "article_count": 17,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
-      "degree": 22,
+      "degree": 23,
       "description": "文章标签: Intermediate (200)",
       "id": "tag:Intermediate (200)",
       "layer": "tag",
       "legacy_id": "Intermediate (200)",
       "name": "Intermediate (200)",
       "rank": 35,
-      "weighted_degree": 89
+      "weighted_degree": 96
     },
     {
       "article_count": 18,
@@ -535,6 +535,19 @@
       "weighted_degree": 54.6
     },
     {
+      "article_count": 8,
+      "category": "article_tag",
+      "community_id": "community:tag:Technical How-to",
+      "degree": 19,
+      "description": "文章标签: Amazon Quick Suite",
+      "id": "tag:Amazon Quick Suite",
+      "layer": "tag",
+      "legacy_id": "Amazon Quick Suite",
+      "name": "Amazon Quick Suite",
+      "rank": 41,
+      "weighted_degree": 46
+    },
+    {
       "article_count": 7,
       "category": "article_tag",
       "community_id": "community:tag:Machine learning",
@@ -544,7 +557,7 @@
       "layer": "tag",
       "legacy_id": "Research",
       "name": "Research",
-      "rank": 41,
+      "rank": 42,
       "weighted_degree": 45
     },
     {
@@ -557,7 +570,7 @@
       "layer": "tag",
       "legacy_id": "Artificial intelligence",
       "name": "Artificial intelligence",
-      "rank": 42,
+      "rank": 43,
       "weighted_degree": 42
     },
     {
@@ -570,21 +583,8 @@
       "layer": "tag",
       "legacy_id": "Machine learning",
       "name": "Machine learning",
-      "rank": 43,
-      "weighted_degree": 42
-    },
-    {
-      "article_count": 7,
-      "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
-      "degree": 17,
-      "description": "文章标签: Amazon Quick Suite",
-      "id": "tag:Amazon Quick Suite",
-      "layer": "tag",
-      "legacy_id": "Amazon Quick Suite",
-      "name": "Amazon Quick Suite",
       "rank": 44,
-      "weighted_degree": 39
+      "weighted_degree": 42
     },
     {
       "article_count": 6,
@@ -1185,7 +1185,7 @@
       "weighted_degree": 8
     },
     {
-      "article_count": 690,
+      "article_count": 691,
       "category": "nlp",
       "community_id": null,
       "degree": 8,
@@ -1276,7 +1276,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 932,
+      "article_count": 934,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -2121,7 +2121,7 @@
       "weighted_degree": 4.6
     },
     {
-      "article_count": 800,
+      "article_count": 802,
       "category": "ai",
       "community_id": null,
       "degree": 5,
@@ -2576,7 +2576,7 @@
       "weighted_degree": 2.8
     },
     {
-      "article_count": 690,
+      "article_count": 691,
       "category": "ai",
       "community_id": null,
       "degree": 3,
