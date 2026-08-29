@@ -15,7 +15,7 @@ observation_id: obs_4497f852104fcbb6c7ea3052e0793c4718a9e56f4be83c0d777cb847e9e4
 event_id: evt_497ac8aab67be06f3733f6d9ce11e30e1daba13694210a06efe218fce87863f0
 revision_id: rev_7bc700a71c9f6f0a81904d21bcdc11110e54f97d344a720db88c94c01f41a30c
 source_published_at: 2026-08-27T17:59:11Z
-first_seen_at: 2026-08-28T18:41:00.024038Z
+first_seen_at: 2026-08-28T18:54:26Z
 timestamp_confidence: publisher
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:89ecfe44a49ed29d3a6982637745bd83faac2cdcd3bed72eb
 description: "WikiSkill 把代理的原始执行经验、已积累的知识和可执行技能分层管理，并通过一个持久化的 Wiki 持续把经验写入其中，使后续技能更新能够直接在前人成果上构建，从而实现技能的逐步演化与复用。"
 external_url: http://arxiv.org/abs/2608.27454v1
 parent_observation_id: null
-last_seen_at: 2026-08-28T18:41:00.024038Z
+last_seen_at: 2026-08-29T00:00:00Z
 ---
 
 ## 基本信息
