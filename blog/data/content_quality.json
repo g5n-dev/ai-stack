@@ -1,5 +1,5 @@
 {
-  "active_count": 2654,
+  "active_count": 2657,
   "archived_count": 276,
   "complete_count": 57,
   "interpreted_brief_count": 139,
@@ -20669,13 +20669,31 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260830-arxiv-persona-execution-separation-an-architecture-patte-2-72f324fdfe.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260830-blogs_podcasts-ainews-openai-to-reach-agi-bar-by-end-2026-0-a425a97515.md": {
       "reasons": [
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260830-blogs_podcasts-our-decision-on-cursor-following-its-acquisition-b-0-b42ac281ec.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260830-hacker_news-debian-votes-to-allow-responsible-use-of-generativ-16-87dc39ec3c.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260830-hacker_news-llms-are-making-me-lose-my-savviness-5-a4c84c945e.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -20714,10 +20732,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2458,
-  "source_file_count": 2930,
-  "source_tree_sha256": "8f05c64e22cf98e6f11b75cc2dddf1436bb329bcc628d9b63bab1306cd835e5a",
-  "verified_provenance_count": 2654,
+  "source_brief_count": 2461,
+  "source_file_count": 2933,
+  "source_tree_sha256": "d3fc10ea54db6560365315de49e46859f82fde9c476c70c846105fb255dbfe84",
+  "verified_provenance_count": 2657,
   "warning_counts": {
     "source_excerpt_truncated": 778
   }
