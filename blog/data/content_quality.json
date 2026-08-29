@@ -1,8 +1,8 @@
 {
-  "active_count": 2644,
+  "active_count": 2648,
   "archived_count": 276,
-  "complete_count": 55,
-  "interpreted_brief_count": 135,
+  "complete_count": 56,
+  "interpreted_brief_count": 136,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20588,6 +20588,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260829-arxiv-from-static-to-dynamic-benchmarking-real-world-cod-1-d07fdf69bf.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260829-arxiv-swe-prime-fewer-trajectories-better-performance-0-8ae7032e9f.md": {
       "reasons": [
         "interpreted_source_card"
@@ -20599,6 +20605,12 @@
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20260829-blogs_podcasts-ainews-openai-shuts-off-cursor-0-74a4be6dfd.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20260829-blogs_podcasts-batch-write-and-discover-records-in-amazon-sagemak-0-9c179a0af6.md": {
       "reasons": [
@@ -20613,6 +20625,12 @@
       "status": "interpreted_brief"
     },
     "posts/20260829-hacker_news-autonomous-mathematical-discovery-in-an-open-world-7-de58f2f759.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260829-hacker_news-i-accidentally-turned-llm-memory-into-program-anal-7-78c9161f73.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -20666,10 +20684,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2454,
-  "source_file_count": 2920,
-  "source_tree_sha256": "04e985e0b2f88d0953162f5026ed5652d5fc0187e3be8b0ff3508ad1770c8908",
-  "verified_provenance_count": 2644,
+  "source_brief_count": 2456,
+  "source_file_count": 2924,
+  "source_tree_sha256": "c477ca141f610c06b6d763104282bd9158c970a198543abc9cbabe73c1bd0b8a",
+  "verified_provenance_count": 2648,
   "warning_counts": {
     "source_excerpt_truncated": 778
   }
