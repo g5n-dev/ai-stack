@@ -15,7 +15,7 @@ observation_id: obs_7625e7226ac0a816ad72721ec4c5f9ea2e93abbdfb23fec89e479619170b
 event_id: evt_98a64dc1e2aa37466b9fd3f7afad558451e6c8a6fd41107de8b4ad95b1160f56
 revision_id: rev_7c3c9eb8af4553b3dd492d48f3885f82e0fef12fb3746d08e715f474899aef13
 source_published_at: 2026-08-28T16:22:30Z
-first_seen_at: 2026-08-28T18:41:19.364201Z
+first_seen_at: 2026-08-28T18:54:26Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:c78a87cf15d3e2d239a89aa2bbb4d9bb3765b870d8f2294c1
 description: "Decathlon 采用时间序列基础模型 Chronos-2 构建需求预测系统，替代原有的深度学习与传统统计方法混合方案，以更低运维成本实现跨区域、多品类的销量预测。"
 external_url: https://aws.amazon.com/blogs/machine-learning/how-decathlon-runs-demand-forecasting-at-scale-with-chronos-2
 parent_observation_id: null
-last_seen_at: 2026-08-28T18:41:19.364201Z
+last_seen_at: 2026-08-29T00:00:00Z
 ---
 
 ## 基本信息

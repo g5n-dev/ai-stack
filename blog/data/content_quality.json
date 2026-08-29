@@ -1,8 +1,8 @@
 {
-  "active_count": 2641,
+  "active_count": 2644,
   "archived_count": 276,
   "complete_count": 55,
-  "interpreted_brief_count": 134,
+  "interpreted_brief_count": 135,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20588,11 +20588,23 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260829-arxiv-swe-prime-fewer-trajectories-better-performance-0-8ae7032e9f.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260829-arxiv-wikiskill-compiling-agent-experience-into-persiste-0-4497f85210.md": {
       "reasons": [
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20260829-blogs_podcasts-batch-write-and-discover-records-in-amazon-sagemak-0-9c179a0af6.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20260829-blogs_podcasts-how-decathlon-runs-demand-forecasting-at-scale-wit-0-7625e7226a.md": {
       "reasons": [
@@ -20601,6 +20613,12 @@
       "status": "interpreted_brief"
     },
     "posts/20260829-hacker_news-autonomous-mathematical-discovery-in-an-open-world-7-de58f2f759.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260829-hacker_news-stemdeck-a-free-open-source-and-local-ai-stem-sepa-5-f067a4ae26.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -20648,10 +20666,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2452,
-  "source_file_count": 2917,
-  "source_tree_sha256": "26d401a7650f80f034f699130b43bf688cfbb5ba7ae5fcd9295c01207eb523db",
-  "verified_provenance_count": 2641,
+  "source_brief_count": 2454,
+  "source_file_count": 2920,
+  "source_tree_sha256": "04e985e0b2f88d0953162f5026ed5652d5fc0187e3be8b0ff3508ad1770c8908",
+  "verified_provenance_count": 2644,
   "warning_counts": {
     "source_excerpt_truncated": 778
   }
