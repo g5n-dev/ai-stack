@@ -1,8 +1,8 @@
 {
-  "active_count": 2671,
+  "active_count": 2674,
   "archived_count": 276,
   "complete_count": 58,
-  "interpreted_brief_count": 144,
+  "interpreted_brief_count": 145,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20759,7 +20759,19 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260831-arxiv-how-language-models-organize-and-structure-moral-k-4-3fbd06c147.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260831-blogs_podcasts-3-new-ways-to-plan-and-book-travel-in-search-0-a7db6e12c1.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260831-blogs_podcasts-piloting-the-worlds-first-double-blind-ai-evaluati-0-f0dc85dcc6.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -20770,6 +20782,12 @@
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20260831-hacker_news-show-hn-academa-long-form-stem-lecture-videos-gene-6-a161648e64.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20260831-hacker_news-what-my-dad-taught-me-about-ai-coding-in-the-90s-16-be8238e425.md": {
       "reasons": [
@@ -20810,10 +20828,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2469,
-  "source_file_count": 2947,
-  "source_tree_sha256": "e3006788339d64289641681f2a76201f122445c164a1dd3164c833840045f63b",
-  "verified_provenance_count": 2671,
+  "source_brief_count": 2471,
+  "source_file_count": 2950,
+  "source_tree_sha256": "e69756c436a7f7365777e12c5bda355a335ea5de806ac7351a8c2c7202ae1935",
+  "verified_provenance_count": 2674,
   "warning_counts": {
     "source_excerpt_truncated": 778
   }
