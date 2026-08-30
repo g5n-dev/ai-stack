@@ -1,8 +1,8 @@
 {
-  "active_count": 2666,
+  "active_count": 2669,
   "archived_count": 276,
   "complete_count": 58,
-  "interpreted_brief_count": 141,
+  "interpreted_brief_count": 143,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20746,6 +20746,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260831-arxiv-boosting-llm-exploration-via-weak-model-guidance-i-2-fa5041158e.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260831-blogs_podcasts-reduce-asr-inference-costs-by-75-with-nvidia-mps-o-0-5b17581a41.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260831-hacker_news-what-my-dad-taught-me-about-ai-coding-in-the-90s-16-be8238e425.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -20780,10 +20798,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2467,
-  "source_file_count": 2942,
-  "source_tree_sha256": "2b233107c51d5b83745b7bcbb6990f71c8bbfe40a477eb8adc907d90c546cc35",
-  "verified_provenance_count": 2666,
+  "source_brief_count": 2468,
+  "source_file_count": 2945,
+  "source_tree_sha256": "e123b1854ce4903e5d1c16d5709ce27989a5139087cc201b70d12a15036af521",
+  "verified_provenance_count": 2669,
   "warning_counts": {
     "source_excerpt_truncated": 778
   }
