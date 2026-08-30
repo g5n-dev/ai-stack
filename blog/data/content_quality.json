@@ -1,7 +1,7 @@
 {
-  "active_count": 2662,
+  "active_count": 2666,
   "archived_count": 276,
-  "complete_count": 57,
+  "complete_count": 58,
   "interpreted_brief_count": 141,
   "legacy_analysis_count": 0,
   "pages": {
@@ -20669,6 +20669,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260830-arxiv-learning-a-continuous-sepsis-severity-score-withou-2-c5a4a33d7f.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260830-arxiv-mechanistic-reaction-prediction-via-discrete-flow--1-31dd9da730.md": {
       "reasons": [
         "interpreted_source_card"
@@ -20686,6 +20692,12 @@
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20260830-blogs_podcasts-deepgram-deepens-amazon-sagemaker-ai-observability-0-cd6609ad79.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20260830-blogs_podcasts-introducing-openai-models-on-amazon-bedrock-for-in-0-e991f28971.md": {
       "reasons": [
@@ -20718,6 +20730,12 @@
       "status": "source_brief"
     },
     "posts/20260830-hacker_news-llms-are-making-me-lose-my-savviness-5-a4c84c945e.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260830-hacker_news-show-hn-bolnee-chat-self-hosted-chatbot-integratio-10-beae54899a.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -20762,10 +20780,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2464,
-  "source_file_count": 2938,
-  "source_tree_sha256": "272403aad09101784f95f01a540c9cead0d8cc24e4874123568eeda768cfb501",
-  "verified_provenance_count": 2662,
+  "source_brief_count": 2467,
+  "source_file_count": 2942,
+  "source_tree_sha256": "2b233107c51d5b83745b7bcbb6990f71c8bbfe40a477eb8adc907d90c546cc35",
+  "verified_provenance_count": 2666,
   "warning_counts": {
     "source_excerpt_truncated": 778
   }
