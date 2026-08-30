@@ -27,7 +27,7 @@ source_title_chars_original: 66
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/batch-write-and-discover-records-in-amazon-sagemaker-feature-store
 parent_observation_id: null
-last_seen_at: 2026-08-29T02:11:20.828371Z
+last_seen_at: 2026-08-30T00:00:00Z
 ---
 
 ## 基本信息

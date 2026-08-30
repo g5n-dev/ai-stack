@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29T21:46:31Z",
+  "generated_at": "2026-08-30T00:20:57Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -173,7 +173,7 @@
       "strength": 1,
       "target": "tag:Company",
       "type": "cooccurrence",
-      "weight": 7
+      "weight": 8
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:Data Center Engineering",
@@ -485,7 +485,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 36
+      "weight": 37
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:大语言模型",
@@ -509,7 +509,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 125
+      "weight": 126
     },
     {
       "id": "edge:semantic:tag:AI->tech:ai_ml",
@@ -837,7 +837,7 @@
       "strength": 1,
       "target": "tag:Hacker News",
       "type": "cooccurrence",
-      "weight": 152
+      "weight": 153
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:Harness",
@@ -1125,7 +1125,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 131
+      "weight": 132
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:深度学习",
@@ -5261,7 +5261,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 10
+      "weight": 11
     },
     {
       "id": "edge:cooccurrence:tag:Company->tag:来源快报",
@@ -5269,7 +5269,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 10
+      "weight": 11
     },
     {
       "id": "edge:cooccurrence:tag:Computer modeling->tag:Computer science and technology",
@@ -6893,7 +6893,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 133
+      "weight": 134
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:深度学习",
@@ -9629,7 +9629,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 131
+      "weight": 132
     },
     {
       "id": "edge:cooccurrence:tag:博客与播客->tag:深度学习",
@@ -10132,7 +10132,7 @@
       "weighted_degree": 157
     },
     {
-      "article_count": 126,
+      "article_count": 127,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -10146,7 +10146,7 @@
       "name": "AI",
       "rank": 17,
       "related_count": 53,
-      "weighted_degree": 333.6
+      "weighted_degree": 336.6
     },
     {
       "article_count": 3,
@@ -10183,7 +10183,7 @@
       "weighted_degree": 5.6
     },
     {
-      "article_count": 810,
+      "article_count": 811,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -10197,7 +10197,7 @@
       "name": "AI Agent",
       "rank": 1,
       "related_count": 81,
-      "weighted_degree": 2278.2
+      "weighted_degree": 2280.2
     },
     {
       "article_count": 2,
@@ -10994,7 +10994,7 @@
       "legacy_id": "AWS Lambda",
       "level": 6,
       "name": "AWS Lambda",
-      "rank": 51,
+      "rank": 52,
       "related_count": 21,
       "weighted_degree": 28
     },
@@ -11186,7 +11186,7 @@
       "weighted_degree": 7
     },
     {
-      "article_count": 10,
+      "article_count": 11,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -11198,9 +11198,9 @@
       "legacy_id": "Company",
       "level": 6,
       "name": "Company",
-      "rank": 52,
+      "rank": 49,
       "related_count": 3,
-      "weighted_degree": 27
+      "weighted_degree": 30
     },
     {
       "article_count": 2,
@@ -11946,7 +11946,7 @@
       "legacy_id": "Go",
       "level": 6,
       "name": "Go",
-      "rank": 49,
+      "rank": 50,
       "related_count": 12,
       "weighted_degree": 29.6
     },
@@ -12070,7 +12070,7 @@
       "weighted_degree": 16
     },
     {
-      "article_count": 886,
+      "article_count": 887,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -12084,7 +12084,7 @@
       "name": "Hacker News",
       "rank": 11,
       "related_count": 21,
-      "weighted_degree": 505
+      "weighted_degree": 507
     },
     {
       "article_count": 1,
@@ -12830,7 +12830,7 @@
       "legacy_id": "Swift",
       "level": 6,
       "name": "Swift",
-      "rank": 50,
+      "rank": 51,
       "related_count": 15,
       "weighted_degree": 28.6
     },
@@ -12954,7 +12954,7 @@
       "weighted_degree": 4
     },
     {
-      "article_count": 451,
+      "article_count": 452,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
@@ -12968,7 +12968,7 @@
       "name": "博客与播客",
       "rank": 5,
       "related_count": 103,
-      "weighted_degree": 1153
+      "weighted_degree": 1156
     },
     {
       "article_count": 141,
@@ -13073,7 +13073,7 @@
       "weighted_degree": 428
     },
     {
-      "article_count": 478,
+      "article_count": 480,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -13087,7 +13087,7 @@
       "name": "来源快报",
       "rank": 3,
       "related_count": 117,
-      "weighted_degree": 1387
+      "weighted_degree": 1392
     },
     {
       "article_count": 56,

@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:1d240cd6d22ee7c97ec821c808396498b1ef072c617692f2e
 description: "Salesforce 在使用 SageMaker 推理组件部署模型时，通过 API 中的 **SchedulingConfig** 参数对副本在多个可用区之间的放置进行细粒度控制，以满足自身的多可用区高可用合规要求。"
 external_url: https://aws.amazon.com/blogs/machine-learning/spreading-the-load-how-salesforce-met-multi-az-ha-with-sagemaker-inference-components
 parent_observation_id: null
-last_seen_at: 2026-08-29T14:28:49.210641Z
+last_seen_at: 2026-08-30T00:00:00Z
 ---
 
 ## 基本信息

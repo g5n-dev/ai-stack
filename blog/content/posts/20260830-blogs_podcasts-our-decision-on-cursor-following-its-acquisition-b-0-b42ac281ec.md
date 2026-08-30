@@ -15,7 +15,7 @@ observation_id: obs_b42ac281ecaf56c08abb695644df43cc6560bb332ec6641a0a17b2c01529
 event_id: evt_9fd9b96d17927e3c238dc700944b969ac8bd3147641fe7d564ffe81c87222660
 revision_id: rev_a911c6d43875a8578bc881b068106847a7929949cbaf9bb3b32d7e53958d7b34
 source_published_at: 2026-08-28T06:00:00Z
-first_seen_at: 2026-08-29T21:44:08.676784Z
+first_seen_at: 2026-08-29T21:56:32Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 58
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex
 parent_observation_id: null
-last_seen_at: 2026-08-29T21:44:08.676784Z
+last_seen_at: 2026-08-30T00:00:00Z
 ---
 
 ## 基本信息
