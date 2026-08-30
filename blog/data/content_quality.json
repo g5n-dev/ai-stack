@@ -1,8 +1,8 @@
 {
-  "active_count": 2669,
+  "active_count": 2671,
   "archived_count": 276,
   "complete_count": 58,
-  "interpreted_brief_count": 143,
+  "interpreted_brief_count": 144,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20753,6 +20753,18 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260831-arxiv-clap-cross-embodiment-video-world-models-are-zero--4-d1d6ccf500.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260831-blogs_podcasts-3-new-ways-to-plan-and-book-travel-in-search-0-a7db6e12c1.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260831-blogs_podcasts-reduce-asr-inference-costs-by-75-with-nvidia-mps-o-0-5b17581a41.md": {
       "reasons": [
         "interpreted_source_card"
@@ -20798,10 +20810,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2468,
-  "source_file_count": 2945,
-  "source_tree_sha256": "e123b1854ce4903e5d1c16d5709ce27989a5139087cc201b70d12a15036af521",
-  "verified_provenance_count": 2669,
+  "source_brief_count": 2469,
+  "source_file_count": 2947,
+  "source_tree_sha256": "e3006788339d64289641681f2a76201f122445c164a1dd3164c833840045f63b",
+  "verified_provenance_count": 2671,
   "warning_counts": {
     "source_excerpt_truncated": 778
   }
