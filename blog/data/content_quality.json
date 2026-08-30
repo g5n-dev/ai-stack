@@ -1,5 +1,5 @@
 {
-  "active_count": 2657,
+  "active_count": 2659,
   "archived_count": 276,
   "complete_count": 57,
   "interpreted_brief_count": 139,
@@ -20687,7 +20687,19 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260830-blogs_podcasts-supporting-thailands-next-generation-of-ai-startup-0-cb1db0d5c7.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260830-hacker_news-debian-votes-to-allow-responsible-use-of-generativ-16-87dc39ec3c.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260830-hacker_news-domain-driven-agents-9-b3ea611c22.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -20732,10 +20744,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2461,
-  "source_file_count": 2933,
-  "source_tree_sha256": "d3fc10ea54db6560365315de49e46859f82fde9c476c70c846105fb255dbfe84",
-  "verified_provenance_count": 2657,
+  "source_brief_count": 2463,
+  "source_file_count": 2935,
+  "source_tree_sha256": "436349ccf8fb08a07f593f6a162a08aa7f9a8167a1577ce3b3eeaac5be49f1b8",
+  "verified_provenance_count": 2659,
   "warning_counts": {
     "source_excerpt_truncated": 778
   }
