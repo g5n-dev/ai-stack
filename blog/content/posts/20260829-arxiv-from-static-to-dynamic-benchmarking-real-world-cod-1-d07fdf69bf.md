@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:7723e3f84fc41131f67620b907f818a4b23965c14e29d6c92
 description: "该内容介绍了一个面向真实多轮代码审查的评测基准，覆盖五种常用编程语言，包含两千余条真实审查任务，并为每条任务标注了缺陷的细粒度属性和跨轮次状态。"
 external_url: http://arxiv.org/abs/2608.27442v1
 parent_observation_id: null
-last_seen_at: 2026-08-29T09:02:24.982787Z
+last_seen_at: 2026-08-30T00:00:00Z
 ---
 
 ## 基本信息

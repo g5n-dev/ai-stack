@@ -1,8 +1,8 @@
 {
-  "active_count": 2659,
+  "active_count": 2662,
   "archived_count": 276,
   "complete_count": 57,
-  "interpreted_brief_count": 139,
+  "interpreted_brief_count": 141,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20663,6 +20663,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260830-arxiv-beyond-f1-evaluating-coverage-and-failure-recovery-2-4a0116170e.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260830-arxiv-mechanistic-reaction-prediction-via-discrete-flow--1-31dd9da730.md": {
       "reasons": [
         "interpreted_source_card"
@@ -20676,6 +20682,12 @@
       "status": "source_brief"
     },
     "posts/20260830-blogs_podcasts-ainews-openai-to-reach-agi-bar-by-end-2026-0-a425a97515.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260830-blogs_podcasts-introducing-openai-models-on-amazon-bedrock-for-in-0-e991f28971.md": {
       "reasons": [
         "interpreted_source_card"
       ],
@@ -20706,6 +20718,12 @@
       "status": "source_brief"
     },
     "posts/20260830-hacker_news-llms-are-making-me-lose-my-savviness-5-a4c84c945e.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260830-hacker_news-the-rise-and-fall-of-agent-civilizations-11-b74188c782.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -20744,10 +20762,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2463,
-  "source_file_count": 2935,
-  "source_tree_sha256": "436349ccf8fb08a07f593f6a162a08aa7f9a8167a1577ce3b3eeaac5be49f1b8",
-  "verified_provenance_count": 2659,
+  "source_brief_count": 2464,
+  "source_file_count": 2938,
+  "source_tree_sha256": "272403aad09101784f95f01a540c9cead0d8cc24e4874123568eeda768cfb501",
+  "verified_provenance_count": 2662,
   "warning_counts": {
     "source_excerpt_truncated": 778
   }

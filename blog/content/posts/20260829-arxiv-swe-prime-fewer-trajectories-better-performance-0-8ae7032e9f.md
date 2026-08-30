@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:6fe802d196325503b1dcec3a119495eab56f036d9dc1f86d5
 description: "SWE-Prime 是一种两阶段的有监督微调数据筛选方法。它先在轨迹层面依据过程质量、结果质量及数据代表性进行过滤，随后在段层面依据对最终方案的贡献度、可学习性和潜在风险进行细选，只让被选中的段参与损失计算。"
 external_url: http://arxiv.org/abs/2608.27449v1
 parent_observation_id: null
-last_seen_at: 2026-08-29T02:11:01.409689Z
+last_seen_at: 2026-08-30T00:00:00Z
 ---
 
 ## 基本信息

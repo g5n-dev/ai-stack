@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:89ecfe44a49ed29d3a6982637745bd83faac2cdcd3bed72eb
 description: "WikiSkill 把代理的原始执行经验、已积累的知识和可执行技能分层管理，并通过一个持久化的 Wiki 持续把经验写入其中，使后续技能更新能够直接在前人成果上构建，从而实现技能的逐步演化与复用。"
 external_url: http://arxiv.org/abs/2608.27454v1
 parent_observation_id: null
-last_seen_at: 2026-08-29T00:00:00Z
+last_seen_at: 2026-08-30T00:00:00Z
 ---
 
 ## 基本信息

@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:6cbc54f254122fb97fce93a857dac127c7c7380e51e6efdce
 description: "该研究将化学反应视为电子在化学键、非键和氢位点上的重新分布，采用离散流匹配在电子占据向量上进行建模，并通过连续时间马尔可夫链结合最优传输构造出一系列可解释的编辑步骤。"
 external_url: http://arxiv.org/abs/2608.27429v1
 parent_observation_id: null
-last_seen_at: 2026-08-29T18:28:26.486591Z
+last_seen_at: 2026-08-30T00:00:00Z
 ---
 
 ## 基本信息
