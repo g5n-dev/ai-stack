@@ -1,8 +1,8 @@
 {
-  "active_count": 2684,
+  "active_count": 2688,
   "archived_count": 276,
-  "complete_count": 58,
-  "interpreted_brief_count": 149,
+  "complete_count": 59,
+  "interpreted_brief_count": 151,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20831,6 +20831,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260901-arxiv-an-enclosed-mode-is-a-gauge-choice-topology-relati-8-6f0b41c7e1.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260901-arxiv-darts-decoder-aware-representation-tuning-via-surg-8-0dd17f7127.md": {
       "reasons": [
         "interpreted_source_card"
@@ -20838,6 +20844,18 @@
       "status": "interpreted_brief"
     },
     "posts/20260901-blogs_podcasts-aws-recognized-as-a-leader-in-the-forrester-wave-a-0-57daf334c9.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260901-blogs_podcasts-connect-an-agentcore-runtime-hosted-mcp-server-to--0-7a560348d1.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260901-hacker_news-apple-caught-off-guard-by-ai-demand-for-mac-mini-a-11-e07729cca8.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -20891,10 +20909,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2477,
-  "source_file_count": 2960,
-  "source_tree_sha256": "bc8b53b9308ebcd7749fc18c3286159c6be4b77088a43f28e9a51dcffc394621",
-  "verified_provenance_count": 2684,
+  "source_brief_count": 2478,
+  "source_file_count": 2964,
+  "source_tree_sha256": "00233a2602785c58fdb46099277fd5335462e53f141f3f58be19dc5f261d1353",
+  "verified_provenance_count": 2688,
   "warning_counts": {
     "source_excerpt_truncated": 779
   }
