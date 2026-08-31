@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:675ee1fb5ac738cb5cae1a4e9fe21a95b301a82f4a3b9d43
 source_payload_sha256: "sha256:b32c8a0cf7aca17c45214d242c242ee8e6c30de65246ee491c91e5d8875a1425"
 observation_id: obs_e991f28971b78ffc4b870f48aedb48451906a0883992dfde8367c738a304e26f
 event_id: evt_c144f90edb18ea51627cac0e95a021d6ea3cfb2f404006cd87ef3853caa380aa
-revision_id: rev_2aab9aa200b65fa1d75349001640f0de419754cb55234d4eae7f71bd85e90114
+revision_id: rev_5ad2c90d92fd27900d588c097c887ed8509ab44d00689f12dabe71538cc28502
 source_published_at: 2026-08-27T18:36:08Z
 first_seen_at: 2026-08-30T06:51:49Z
 timestamp_confidence: feed
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:a4db7003df4b360e7baea5f498b0a29cc6752a96b9b8428c8
 description: "Amazon Bedrock 在印度上线 OpenAI 系列模型，提供仅在境内流转的跨区域推理能力，支持长上下文和多模态输入。"
 external_url: https://aws.amazon.com/blogs/machine-learning/introducing-openai-models-on-amazon-bedrock-for-in-country-inferencing-in-india
 parent_observation_id: null
-last_seen_at: 2026-08-30T06:39:43.983138Z
+last_seen_at: 2026-08-31T00:00:00Z
 ---
 
 ## 基本信息
