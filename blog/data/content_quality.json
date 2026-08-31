@@ -1,8 +1,8 @@
 {
-  "active_count": 2680,
+  "active_count": 2684,
   "archived_count": 276,
   "complete_count": 58,
-  "interpreted_brief_count": 148,
+  "interpreted_brief_count": 149,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20830,6 +20830,33 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260901-arxiv-darts-decoder-aware-representation-tuning-via-surg-8-0dd17f7127.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260901-blogs_podcasts-aws-recognized-as-a-leader-in-the-forrester-wave-a-0-57daf334c9.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260901-hacker_news-smartphone-led-detects-hidden-cameras-with-ai-4-22eced4acc.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260901-juejin-ai-slop-治理实战-0-d8824d86c3.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     }
   },
   "quarantined_count": 0,
@@ -20864,11 +20891,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2474,
-  "source_file_count": 2956,
-  "source_tree_sha256": "d40ace68c9da8edee66cd669d7e01fc80194e6bb620a5571d58e39b4b5782fef",
-  "verified_provenance_count": 2680,
+  "source_brief_count": 2477,
+  "source_file_count": 2960,
+  "source_tree_sha256": "bc8b53b9308ebcd7749fc18c3286159c6be4b77088a43f28e9a51dcffc394621",
+  "verified_provenance_count": 2684,
   "warning_counts": {
-    "source_excerpt_truncated": 778
+    "source_excerpt_truncated": 779
   }
 }
