@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:dfec19069f2ec5b603039ba353b2f88f2d7759161b9914330
 description: "这是一篇关于利用 NVIDIA 多进程服务（MPS）提升 GPU 并发利用率的实践文章，展示了在语音识别推理场景中通过调度优化和模型转换实现成本降低的方法。"
 external_url: https://aws.amazon.com/blogs/machine-learning/reduce-asr-inference-costs-by-75-with-nvidia-mps-on-amazon-ec2
 parent_observation_id: null
-last_seen_at: 2026-08-30T17:29:36.886779Z
+last_seen_at: 2026-08-31T00:00:00Z
 ---
 
 ## 基本信息

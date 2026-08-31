@@ -27,7 +27,7 @@ source_title_chars_original: 44
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://blog.google/products-and-platforms/products/search/book-travel-ai-mode
 parent_observation_id: null
-last_seen_at: 2026-08-30T21:04:55.014940Z
+last_seen_at: 2026-08-31T00:00:00Z
 ---
 
 ## 基本信息

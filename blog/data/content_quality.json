@@ -1,8 +1,8 @@
 {
-  "active_count": 2674,
+  "active_count": 2677,
   "archived_count": 276,
   "complete_count": 58,
-  "interpreted_brief_count": 145,
+  "interpreted_brief_count": 146,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20765,7 +20765,19 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260831-arxiv-logos-an-agent-harness-on-a-cross-process-bus-7-358ba6ceca.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260831-blogs_podcasts-3-new-ways-to-plan-and-book-travel-in-search-0-a7db6e12c1.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260831-blogs_podcasts-expanding-openais-presence-in-brazil-1-fe23f369e0.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -20784,6 +20796,12 @@
       "status": "interpreted_brief"
     },
     "posts/20260831-hacker_news-show-hn-academa-long-form-stem-lecture-videos-gene-6-a161648e64.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260831-hacker_news-the-eu-has-begun-enforcing-the-ai-act-first-rfis-t-3-bf930fd7a0.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -20828,10 +20846,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2471,
-  "source_file_count": 2950,
-  "source_tree_sha256": "e69756c436a7f7365777e12c5bda355a335ea5de806ac7351a8c2c7202ae1935",
-  "verified_provenance_count": 2674,
+  "source_brief_count": 2473,
+  "source_file_count": 2953,
+  "source_tree_sha256": "d422c68a398a3bcd33005d203c3337ee5dd3ef907031d4e9496e3df46223772b",
+  "verified_provenance_count": 2677,
   "warning_counts": {
     "source_excerpt_truncated": 778
   }

@@ -15,7 +15,7 @@ observation_id: obs_f0dc85dcc6d3444f6482829995f5a83e6fdb56513a353598d7cfc58189cd
 event_id: evt_4eb1aa66d33d6d6f6ae57855fbd03a6db207650d7cd585307fc5c63a8132cb26
 revision_id: rev_1cb5e58dfce3fb526c70c7a050e871740fa9cd98730d3595a7de8ff7fe2820bc
 source_published_at: 2026-08-27T12:59:16Z
-first_seen_at: 2026-08-30T23:29:49.680490Z
+first_seen_at: 2026-08-30T23:42:17Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 54
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations
 parent_observation_id: null
-last_seen_at: 2026-08-30T23:29:49.680490Z
+last_seen_at: 2026-08-31T00:00:00Z
 ---
 
 ## 基本信息
