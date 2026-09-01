@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:3fb6cecb61548c0ff0ce3f55206f83d6bd85c4beb6f1f6581
 description: "这条内容介绍了一种名为 PottsMPNN 的新型机器学习框架，它将支配蛋白质结构的物理原理整合进序列生成过程，从而更准确地评估序列能量关系并预测突变对稳定性的影响。"
 external_url: https://news.mit.edu/2026/looking-beyond-natural-sequences-0827
 parent_observation_id: null
-last_seen_at: 2026-08-31T00:00:00Z
+last_seen_at: 2026-09-01T00:00:00Z
 ---
 
 ## 基本信息

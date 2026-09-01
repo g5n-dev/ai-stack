@@ -1,8 +1,8 @@
 {
-  "active_count": 2688,
+  "active_count": 2690,
   "archived_count": 276,
   "complete_count": 59,
-  "interpreted_brief_count": 151,
+  "interpreted_brief_count": 153,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20837,7 +20837,19 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260901-arxiv-auditing-anonymous-ai-models-a-four-stage-protocol-4-742dcdeb82.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260901-arxiv-darts-decoder-aware-representation-tuning-via-surg-8-0dd17f7127.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260901-blogs_podcasts-ainews-fals-h3-max-live-breaks-the-infinite-videog-0-d5a79aec56.md": {
       "reasons": [
         "interpreted_source_card"
       ],
@@ -20910,9 +20922,9 @@
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2478,
-  "source_file_count": 2964,
-  "source_tree_sha256": "00233a2602785c58fdb46099277fd5335462e53f141f3f58be19dc5f261d1353",
-  "verified_provenance_count": 2688,
+  "source_file_count": 2966,
+  "source_tree_sha256": "3da1fbe15cdc15155a8ed8e5f61610c2a403dd2fe6317d729dae5d1193cd63f8",
+  "verified_provenance_count": 2690,
   "warning_counts": {
     "source_excerpt_truncated": 779
   }

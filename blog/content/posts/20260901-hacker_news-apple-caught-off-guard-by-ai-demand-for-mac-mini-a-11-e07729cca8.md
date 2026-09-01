@@ -13,9 +13,9 @@ source_snapshot_sha256: "sha256:a2a630ac2c5596984029654ea517dc0f081cdceecd94d0e8
 source_payload_sha256: "sha256:457a61606bbcb8b0e9b6a19f4625c8eeeec575022e0a64ed078390932ebdf46a"
 observation_id: obs_e07729cca810341c414ef7c60dc903b42d9966b6353e30c97cf459c24e813d2c
 event_id: evt_bcb5e777ea23c823da3cdf2692d6273ce43ce5da672cbf83457f77d1f3d85a18
-revision_id: rev_499228afa3bb1bc11b164be223a8a0ba7a659e058e78f63370c7f563cc43db85
+revision_id: rev_ce67008a0c7e712758a0fd328a034722e90d022c7f45e53afedccc8b7abffa9e
 source_published_at: 2026-08-31T12:41:22Z
-first_seen_at: 2026-08-31T23:50:57.952584Z
+first_seen_at: 2026-09-01T00:03:42Z
 timestamp_confidence: platform
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 63
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://www.macrumors.com/2026/08/30/apple-unexpected-mac-mini-and-studio-demand
 parent_observation_id: null
-last_seen_at: 2026-08-31T23:50:57.952584Z
+last_seen_at: 2026-09-01T00:00:00Z
 ---
 
 ## 基本信息

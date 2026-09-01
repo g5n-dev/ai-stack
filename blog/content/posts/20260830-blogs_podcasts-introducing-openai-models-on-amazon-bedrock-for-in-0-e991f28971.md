@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:a4db7003df4b360e7baea5f498b0a29cc6752a96b9b8428c8
 description: "Amazon Bedrock 在印度上线 OpenAI 系列模型，提供仅在境内流转的跨区域推理能力，支持长上下文和多模态输入。"
 external_url: https://aws.amazon.com/blogs/machine-learning/introducing-openai-models-on-amazon-bedrock-for-in-country-inferencing-in-india
 parent_observation_id: null
-last_seen_at: 2026-08-31T00:00:00Z
+last_seen_at: 2026-09-01T00:00:00Z
 ---
 
 ## 基本信息

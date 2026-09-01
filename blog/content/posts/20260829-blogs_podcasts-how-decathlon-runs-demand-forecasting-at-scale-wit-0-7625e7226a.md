@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:c78a87cf15d3e2d239a89aa2bbb4d9bb3765b870d8f2294c1
 description: "Decathlon 采用时间序列基础模型 Chronos-2 构建需求预测系统，替代原有的深度学习与传统统计方法混合方案，以更低运维成本实现跨区域、多品类的销量预测。"
 external_url: https://aws.amazon.com/blogs/machine-learning/how-decathlon-runs-demand-forecasting-at-scale-with-chronos-2
 parent_observation_id: null
-last_seen_at: 2026-08-31T00:00:00Z
+last_seen_at: 2026-09-01T00:00:00Z
 ---
 
 ## 基本信息
