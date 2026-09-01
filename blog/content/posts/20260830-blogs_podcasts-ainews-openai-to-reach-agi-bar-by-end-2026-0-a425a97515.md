@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:f5e4b9d14570bec3c7ffccce0357b5043948c1d6eee2bb7a8
 description: "这是一份 AI 新闻快讯，汇总了 OpenAI 对通用人工智能实现时间的最新估计、开源双足机器人、算力优化的本地大模型以及视频生成模型和代理框架的产品动态。"
 external_url: https://www.latent.space/p/ainews-openai-to-reach-agi-bar-by
 parent_observation_id: null
-last_seen_at: 2026-08-31T00:00:00Z
+last_seen_at: 2026-09-01T00:00:00Z
 ---
 
 ## 基本信息

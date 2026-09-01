@@ -27,7 +27,7 @@ source_title_chars_original: 86
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/aws-recognized-as-a-leader-in-the-forrester-wave-ai-infrastructure-solutions-q4-2025
 parent_observation_id: null
-last_seen_at: 2026-08-31T20:04:30.963001Z
+last_seen_at: 2026-09-01T00:00:00Z
 ---
 
 ## 基本信息
