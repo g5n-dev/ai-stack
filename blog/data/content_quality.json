@@ -1,8 +1,8 @@
 {
-  "active_count": 2690,
+  "active_count": 2692,
   "archived_count": 276,
   "complete_count": 59,
-  "interpreted_brief_count": 153,
+  "interpreted_brief_count": 155,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20843,6 +20843,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260901-arxiv-configurable-semantic-chunking-for-biomedical-info-4-73781738f8.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260901-arxiv-darts-decoder-aware-representation-tuning-via-surg-8-0dd17f7127.md": {
       "reasons": [
         "interpreted_source_card"
@@ -20866,6 +20872,15 @@
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20260901-blogs_podcasts-manage-agents-tools-and-skills-at-scale-with-aws-a-0-38765f3001.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     },
     "posts/20260901-hacker_news-apple-caught-off-guard-by-ai-demand-for-mac-mini-a-11-e07729cca8.md": {
       "reasons": [
@@ -20922,10 +20937,10 @@
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2478,
-  "source_file_count": 2966,
-  "source_tree_sha256": "3da1fbe15cdc15155a8ed8e5f61610c2a403dd2fe6317d729dae5d1193cd63f8",
-  "verified_provenance_count": 2690,
+  "source_file_count": 2968,
+  "source_tree_sha256": "a7e2c2a3753537bc19e2abbe6e33ce1813bf4911c7e869044bc32dcfc7caf8f0",
+  "verified_provenance_count": 2692,
   "warning_counts": {
-    "source_excerpt_truncated": 779
+    "source_excerpt_truncated": 780
   }
 }
