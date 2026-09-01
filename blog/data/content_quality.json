@@ -1,5 +1,5 @@
 {
-  "active_count": 2695,
+  "active_count": 2699,
   "archived_count": 276,
   "complete_count": 59,
   "interpreted_brief_count": 156,
@@ -20920,6 +20920,33 @@
       "warnings": [
         "source_excerpt_truncated"
       ]
+    },
+    "posts/20260902-arxiv-diasentinel-an-auditable-multi-agent-system-for-gu-5-baabb9b168.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260902-blogs_podcasts-how-ai-native-companies-turn-workflows-into-operat-0-b0cbef3822.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260902-hacker_news-claude-fable-51-and-claude-mythos-51-0-e7232d52f3.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260902-juejin-一只虾到多只虾先聊聊我为什么要拆虾-0-11a259647c.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     }
   },
   "quarantined_count": 0,
@@ -20954,11 +20981,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2480,
-  "source_file_count": 2971,
-  "source_tree_sha256": "9c29362c69df44fad4c7f386151957bce3bdc53fe3cf106d9131b78d6493763c",
-  "verified_provenance_count": 2695,
+  "source_brief_count": 2484,
+  "source_file_count": 2975,
+  "source_tree_sha256": "299ff5fc3956c536557b6a6088534d970acf8040debb851735ced0a3dfb7ab37",
+  "verified_provenance_count": 2699,
   "warning_counts": {
-    "source_excerpt_truncated": 780
+    "source_excerpt_truncated": 781
   }
 }

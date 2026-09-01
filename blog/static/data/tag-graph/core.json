@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T14:56:40Z",
+  "generated_at": "2026-09-01T18:32:26Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -626,7 +626,7 @@
       "weighted_degree": 2
     },
     {
-      "article_count": 821,
+      "article_count": 824,
       "category": "ai",
       "color": "#7aa6b8",
       "community_id": null,
@@ -643,7 +643,7 @@
       "weighted_degree": 4.4
     },
     {
-      "article_count": 968,
+      "article_count": 971,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
@@ -656,7 +656,7 @@
       "legacy_id": "ai_ml",
       "level": 5,
       "name": "AI/ML项目",
-      "rank": 100,
+      "rank": 101,
       "weighted_degree": 7.2
     },
     {
@@ -1306,7 +1306,7 @@
       "weighted_degree": 3
     },
     {
-      "article_count": 712,
+      "article_count": 714,
       "category": "nlp",
       "color": "#d97706",
       "community_id": null,
@@ -1319,11 +1319,11 @@
       "legacy_id": "llm",
       "level": 3,
       "name": "大语言模型",
-      "rank": 93,
+      "rank": 94,
       "weighted_degree": 7.6
     },
     {
-      "article_count": 712,
+      "article_count": 714,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
@@ -1438,7 +1438,7 @@
       "legacy_id": "nlp",
       "level": 3,
       "name": "自然语言处理",
-      "rank": 155,
+      "rank": 156,
       "weighted_degree": 5.6
     },
     {
@@ -1506,7 +1506,7 @@
       "legacy_id": "python",
       "level": 1,
       "name": "Python",
-      "rank": 94,
+      "rank": 95,
       "weighted_degree": 7.6
     },
     {
@@ -1523,7 +1523,7 @@
       "legacy_id": "pytorch",
       "level": 2,
       "name": "PyTorch",
-      "rank": 144,
+      "rank": 145,
       "weighted_degree": 7
     },
     {
@@ -1540,7 +1540,7 @@
       "legacy_id": "rag",
       "level": 4,
       "name": "RAG应用",
-      "rank": 145,
+      "rank": 146,
       "weighted_degree": 6.6
     },
     {
