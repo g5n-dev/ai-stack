@@ -1,8 +1,8 @@
 {
-  "active_count": 2692,
+  "active_count": 2695,
   "archived_count": 276,
   "complete_count": 59,
-  "interpreted_brief_count": 155,
+  "interpreted_brief_count": 156,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20855,6 +20855,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260901-arxiv-ontoaligner-ensemble-voting-based-fusion-across-he-4-f0ce4747db.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260901-blogs_podcasts-ainews-fals-h3-max-live-breaks-the-infinite-videog-0-d5a79aec56.md": {
       "reasons": [
         "interpreted_source_card"
@@ -20866,6 +20872,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260901-blogs_podcasts-build-observable-enterprise-agentic-retrieval-usin-0-f6095a0e1c.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
     },
     "posts/20260901-blogs_podcasts-connect-an-agentcore-runtime-hosted-mcp-server-to--0-7a560348d1.md": {
       "reasons": [
@@ -20883,6 +20895,12 @@
       ]
     },
     "posts/20260901-hacker_news-apple-caught-off-guard-by-ai-demand-for-mac-mini-a-11-e07729cca8.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260901-hacker_news-eff-to-courts-dont-rewrite-copyright-over-ai-hype-18-735dc5333b.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -20936,10 +20954,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2478,
-  "source_file_count": 2968,
-  "source_tree_sha256": "a7e2c2a3753537bc19e2abbe6e33ce1813bf4911c7e869044bc32dcfc7caf8f0",
-  "verified_provenance_count": 2692,
+  "source_brief_count": 2480,
+  "source_file_count": 2971,
+  "source_tree_sha256": "9c29362c69df44fad4c7f386151957bce3bdc53fe3cf106d9131b78d6493763c",
+  "verified_provenance_count": 2695,
   "warning_counts": {
     "source_excerpt_truncated": 780
   }

@@ -12,10 +12,10 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-09-01T10:08:38Z",
+  "generated_at": "2026-09-01T14:56:40Z",
   "items": [
     {
-      "article_count": 820,
+      "article_count": 821,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 84,
@@ -25,10 +25,10 @@
       "legacy_id": "AI Agent",
       "name": "AI Agent",
       "rank": 1,
-      "weighted_degree": 2320.2
+      "weighted_degree": 2327.2
     },
     {
-      "article_count": 710,
+      "article_count": 712,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 94,
@@ -38,10 +38,10 @@
       "legacy_id": "大语言模型",
       "name": "大语言模型",
       "rank": 2,
-      "weighted_degree": 1981.2
+      "weighted_degree": 1991.2
     },
     {
-      "article_count": 509,
+      "article_count": 511,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 119,
@@ -51,7 +51,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 3,
-      "weighted_degree": 1481
+      "weighted_degree": 1486
     },
     {
       "article_count": 516,
@@ -80,7 +80,7 @@
       "weighted_degree": 1200
     },
     {
-      "article_count": 747,
+      "article_count": 748,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 45,
@@ -90,7 +90,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 1032
+      "weighted_degree": 1035
     },
     {
       "article_count": 162,
@@ -106,7 +106,7 @@
       "weighted_degree": 611.6
     },
     {
-      "article_count": 146,
+      "article_count": 147,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 60,
@@ -116,7 +116,7 @@
       "legacy_id": "生成式 AI",
       "name": "生成式 AI",
       "rank": 8,
-      "weighted_degree": 560
+      "weighted_degree": 567
     },
     {
       "article_count": 146,
@@ -132,7 +132,7 @@
       "weighted_degree": 526.6
     },
     {
-      "article_count": 895,
+      "article_count": 896,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 21,
@@ -142,7 +142,7 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 10,
-      "weighted_degree": 523
+      "weighted_degree": 525
     },
     {
       "article_count": 141,
@@ -158,7 +158,7 @@
       "weighted_degree": 507.6
     },
     {
-      "article_count": 117,
+      "article_count": 118,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 41,
@@ -168,7 +168,7 @@
       "legacy_id": "RAG",
       "name": "RAG",
       "rank": 12,
-      "weighted_degree": 489.2
+      "weighted_degree": 496.2
     },
     {
       "article_count": 126,
@@ -184,7 +184,7 @@
       "weighted_degree": 470
     },
     {
-      "article_count": 129,
+      "article_count": 130,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 74,
@@ -194,23 +194,10 @@
       "legacy_id": "机器学习",
       "name": "机器学习",
       "rank": 14,
-      "weighted_degree": 428
+      "weighted_degree": 435
     },
     {
-      "article_count": 137,
-      "category": "article_tag",
-      "community_id": "community:tag:来源快报",
-      "degree": 56,
-      "description": "文章标签: AI",
-      "id": "tag:AI",
-      "layer": "tag",
-      "legacy_id": "AI",
-      "name": "AI",
-      "rank": 15,
-      "weighted_degree": 361.6
-    },
-    {
-      "article_count": 64,
+      "article_count": 65,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 49,
@@ -219,8 +206,21 @@
       "layer": "tag",
       "legacy_id": "Prompt 工程",
       "name": "Prompt 工程",
+      "rank": 15,
+      "weighted_degree": 365
+    },
+    {
+      "article_count": 138,
+      "category": "article_tag",
+      "community_id": "community:tag:来源快报",
+      "degree": 56,
+      "description": "文章标签: AI",
+      "id": "tag:AI",
+      "layer": "tag",
+      "legacy_id": "AI",
+      "name": "AI",
       "rank": 16,
-      "weighted_degree": 358
+      "weighted_degree": 363.6
     },
     {
       "article_count": 86,
@@ -249,7 +249,7 @@
       "weighted_degree": 289.6
     },
     {
-      "article_count": 57,
+      "article_count": 58,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 10,
@@ -259,7 +259,20 @@
       "legacy_id": "cs.AI",
       "name": "cs.AI",
       "rank": 19,
-      "weighted_degree": 180
+      "weighted_degree": 183
+    },
+    {
+      "article_count": 26,
+      "category": "article_tag",
+      "community_id": "community:tag:Technical How-to",
+      "degree": 36,
+      "description": "文章标签: Advanced (300)",
+      "id": "tag:Advanced (300)",
+      "layer": "tag",
+      "legacy_id": "Advanced (300)",
+      "name": "Advanced (300)",
+      "rank": 20,
+      "weighted_degree": 170
     },
     {
       "article_count": 44,
@@ -271,21 +284,8 @@
       "layer": "tag",
       "legacy_id": "深度学习",
       "name": "深度学习",
-      "rank": 20,
-      "weighted_degree": 168
-    },
-    {
-      "article_count": 25,
-      "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
-      "degree": 35,
-      "description": "文章标签: Advanced (300)",
-      "id": "tag:Advanced (300)",
-      "layer": "tag",
-      "legacy_id": "Advanced (300)",
-      "name": "Advanced (300)",
       "rank": 21,
-      "weighted_degree": 163
+      "weighted_degree": 168
     },
     {
       "article_count": 47,
@@ -706,6 +706,19 @@
     {
       "article_count": 4,
       "category": "article_tag",
+      "community_id": "community:tag:Technical How-to",
+      "degree": 15,
+      "description": "文章标签: Amazon Bedrock Knowledge Bases",
+      "id": "tag:Amazon Bedrock Knowledge Bases",
+      "layer": "tag",
+      "legacy_id": "Amazon Bedrock Knowledge Bases",
+      "name": "Amazon Bedrock Knowledge Bases",
+      "rank": 54,
+      "weighted_degree": 25
+    },
+    {
+      "article_count": 4,
+      "category": "article_tag",
       "community_id": "community:tag:ML Applications",
       "degree": 13,
       "description": "文章标签: Data Infrastructure",
@@ -713,7 +726,7 @@
       "layer": "tag",
       "legacy_id": "Data Infrastructure",
       "name": "Data Infrastructure",
-      "rank": 54,
+      "rank": 55,
       "weighted_degree": 22.6
     },
     {
@@ -726,7 +739,7 @@
       "layer": "tag",
       "legacy_id": "Computer science and technology",
       "name": "Computer science and technology",
-      "rank": 55,
+      "rank": 56,
       "weighted_degree": 21.6
     },
     {
@@ -739,7 +752,7 @@
       "layer": "tag",
       "legacy_id": "cs.SE",
       "name": "cs.SE",
-      "rank": 56,
+      "rank": 57,
       "weighted_degree": 21
     },
     {
@@ -752,7 +765,7 @@
       "layer": "tag",
       "legacy_id": "Best Practices",
       "name": "Best Practices",
-      "rank": 57,
+      "rank": 58,
       "weighted_degree": 21
     },
     {
@@ -765,7 +778,7 @@
       "layer": "tag",
       "legacy_id": "Amazon DynamoDB",
       "name": "Amazon DynamoDB",
-      "rank": 58,
+      "rank": 59,
       "weighted_degree": 21
     },
     {
@@ -778,7 +791,7 @@
       "layer": "tag",
       "legacy_id": "Search",
       "name": "Search",
-      "rank": 59,
+      "rank": 60,
       "weighted_degree": 20
     },
     {
@@ -791,7 +804,7 @@
       "layer": "tag",
       "legacy_id": "cs.CR",
       "name": "cs.CR",
-      "rank": 60,
+      "rank": 61,
       "weighted_degree": 19
     },
     {
@@ -804,19 +817,6 @@
       "layer": "tag",
       "legacy_id": "Amazon Nova",
       "name": "Amazon Nova",
-      "rank": 61,
-      "weighted_degree": 18
-    },
-    {
-      "article_count": 3,
-      "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
-      "degree": 14,
-      "description": "文章标签: Amazon Bedrock Knowledge Bases",
-      "id": "tag:Amazon Bedrock Knowledge Bases",
-      "layer": "tag",
-      "legacy_id": "Amazon Bedrock Knowledge Bases",
-      "name": "Amazon Bedrock Knowledge Bases",
       "rank": 62,
       "weighted_degree": 18
     },
@@ -1211,7 +1211,7 @@
       "weighted_degree": 8.6
     },
     {
-      "article_count": 710,
+      "article_count": 712,
       "category": "nlp",
       "community_id": null,
       "degree": 8,
@@ -1302,7 +1302,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 966,
+      "article_count": 968,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -1887,7 +1887,7 @@
       "weighted_degree": 7
     },
     {
-      "article_count": 117,
+      "article_count": 118,
       "category": "ai",
       "community_id": null,
       "degree": 7,
@@ -2134,7 +2134,7 @@
       "weighted_degree": 4.6
     },
     {
-      "article_count": 820,
+      "article_count": 821,
       "category": "ai",
       "community_id": null,
       "degree": 5,
@@ -2602,7 +2602,7 @@
       "weighted_degree": 2.8
     },
     {
-      "article_count": 710,
+      "article_count": 712,
       "category": "ai",
       "community_id": null,
       "degree": 3,
@@ -2862,7 +2862,7 @@
       "weighted_degree": 2
     },
     {
-      "article_count": 117,
+      "article_count": 118,
       "category": "ai",
       "community_id": null,
       "degree": 2,
