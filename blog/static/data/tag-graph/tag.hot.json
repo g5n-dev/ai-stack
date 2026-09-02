@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T04:35:39Z",
+  "generated_at": "2026-09-02T09:40:31Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -309,7 +309,7 @@
       "strength": 1,
       "target": "tag:Hacker News",
       "type": "cooccurrence",
-      "weight": 66
+      "weight": 67
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:Health",
@@ -525,7 +525,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 141
+      "weight": 142
     },
     {
       "id": "edge:semantic:tag:AI->tech:ai_ml",
@@ -749,7 +749,7 @@
       "strength": 1,
       "target": "tag:ArXiv",
       "type": "cooccurrence",
-      "weight": 163
+      "weight": 164
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:Artificial Intelligence",
@@ -949,7 +949,7 @@
       "strength": 1,
       "target": "tag:Prompt 工程",
       "type": "cooccurrence",
-      "weight": 47
+      "weight": 48
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:Publication",
@@ -1093,7 +1093,7 @@
       "strength": 1,
       "target": "tag:cs.SE",
       "type": "cooccurrence",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:博客与播客",
@@ -1101,7 +1101,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 215
+      "weight": 216
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:命令行工具",
@@ -1117,7 +1117,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 306
+      "weight": 307
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:工程实践",
@@ -1157,7 +1157,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 142
+      "weight": 144
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:深度学习",
@@ -4589,7 +4589,7 @@
       "strength": 1,
       "target": "tag:cs.SE",
       "type": "cooccurrence",
-      "weight": 6
+      "weight": 7
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:econ.EM",
@@ -4709,7 +4709,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 198
+      "weight": 199
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:深度学习",
@@ -7213,7 +7213,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 147
+      "weight": 148
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:深度学习",
@@ -8461,7 +8461,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 33
+      "weight": 34
     },
     {
       "id": "edge:cooccurrence:tag:Prompt 工程->tag:大语言模型",
@@ -8469,7 +8469,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 51
+      "weight": 52
     },
     {
       "id": "edge:cooccurrence:tag:Prompt 工程->tag:机器学习",
@@ -8485,7 +8485,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 43
+      "weight": 44
     },
     {
       "id": "edge:cooccurrence:tag:Prompt 工程->tag:深度学习",
@@ -9869,7 +9869,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 6
+      "weight": 7
     },
     {
       "id": "edge:cooccurrence:tag:cs.SE->tag:生成式 AI",
@@ -10005,7 +10005,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 136
+      "weight": 137
     },
     {
       "id": "edge:cooccurrence:tag:博客与播客->tag:数据库",
@@ -10029,7 +10029,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 144
+      "weight": 145
     },
     {
       "id": "edge:cooccurrence:tag:博客与播客->tag:深度学习",
@@ -10165,7 +10165,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 166
+      "weight": 167
     },
     {
       "id": "edge:cooccurrence:tag:大语言模型->tag:深度学习",
@@ -10532,7 +10532,7 @@
       "weighted_degree": 170
     },
     {
-      "article_count": 142,
+      "article_count": 143,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -10546,7 +10546,7 @@
       "name": "AI",
       "rank": 15,
       "related_count": 55,
-      "weighted_degree": 377.6
+      "weighted_degree": 379.6
     },
     {
       "article_count": 3,
@@ -10583,7 +10583,7 @@
       "weighted_degree": 8.6
     },
     {
-      "article_count": 824,
+      "article_count": 826,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -10597,7 +10597,7 @@
       "name": "AI Agent",
       "rank": 1,
       "related_count": 83,
-      "weighted_degree": 2336.2
+      "weighted_degree": 2343.2
     },
     {
       "article_count": 2,
@@ -11314,7 +11314,7 @@
       "weighted_degree": 49
     },
     {
-      "article_count": 752,
+      "article_count": 753,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -11328,7 +11328,7 @@
       "name": "ArXiv",
       "rank": 6,
       "related_count": 45,
-      "weighted_degree": 1048
+      "weighted_degree": 1051
     },
     {
       "article_count": 1,
@@ -11666,7 +11666,7 @@
       "legacy_id": "Computer science and technology",
       "level": 6,
       "name": "Computer science and technology",
-      "rank": 56,
+      "rank": 57,
       "related_count": 14,
       "weighted_degree": 21.6
     },
@@ -11943,7 +11943,7 @@
       "weighted_degree": 7
     },
     {
-      "article_count": 6,
+      "article_count": 7,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -11955,9 +11955,9 @@
       "legacy_id": "cs.SE",
       "level": 6,
       "name": "cs.SE",
-      "rank": 57,
+      "rank": 55,
       "related_count": 7,
-      "weighted_degree": 21
+      "weighted_degree": 24
     },
     {
       "article_count": 16,
@@ -12006,7 +12006,7 @@
       "legacy_id": "Data Infrastructure",
       "level": 6,
       "name": "Data Infrastructure",
-      "rank": 55,
+      "rank": 56,
       "related_count": 12,
       "weighted_degree": 22.6
     },
@@ -12521,7 +12521,7 @@
       "weighted_degree": 16
     },
     {
-      "article_count": 900,
+      "article_count": 901,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -12535,7 +12535,7 @@
       "name": "Hacker News",
       "rank": 9,
       "related_count": 21,
-      "weighted_degree": 533
+      "weighted_degree": 535
     },
     {
       "article_count": 1,
@@ -12980,7 +12980,7 @@
       "weighted_degree": 11
     },
     {
-      "article_count": 66,
+      "article_count": 67,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
@@ -12994,7 +12994,7 @@
       "name": "Prompt 工程",
       "rank": 16,
       "related_count": 49,
-      "weighted_degree": 372
+      "weighted_degree": 376
     },
     {
       "article_count": 1,
@@ -13456,7 +13456,7 @@
       "weighted_degree": 4
     },
     {
-      "article_count": 465,
+      "article_count": 466,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
@@ -13470,7 +13470,7 @@
       "name": "博客与播客",
       "rank": 5,
       "related_count": 105,
-      "weighted_degree": 1217
+      "weighted_degree": 1221
     },
     {
       "article_count": 141,
@@ -13490,7 +13490,7 @@
       "weighted_degree": 507.6
     },
     {
-      "article_count": 719,
+      "article_count": 720,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -13504,7 +13504,7 @@
       "name": "大语言模型",
       "rank": 2,
       "related_count": 93,
-      "weighted_degree": 2018.2
+      "weighted_degree": 2022.2
     },
     {
       "article_count": 59,
@@ -13575,7 +13575,7 @@
       "weighted_degree": 445
     },
     {
-      "article_count": 524,
+      "article_count": 527,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -13589,7 +13589,7 @@
       "name": "来源快报",
       "rank": 3,
       "related_count": 119,
-      "weighted_degree": 1528
+      "weighted_degree": 1537
     },
     {
       "article_count": 58,
