@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:d5a5782530a0f43ab1485c8c2853d0baf4a9f4feeed9941a5
 description: "这是一篇关于将托管在 AgentCore Runtime 上的 MCP 服务器与 Amazon Quick 进行集成的操作指南，旨在帮助用户在 Amazon Quick 的聊天代理中复用已有的 AI 工具，避免重复开发。"
 external_url: https://aws.amazon.com/blogs/machine-learning/connect-an-agentcore-runtime-hosted-mcp-server-to-amazon-quick
 parent_observation_id: null
-last_seen_at: 2026-09-01T00:00:00Z
+last_seen_at: 2026-09-02T00:00:00Z
 ---
 
 ## 基本信息

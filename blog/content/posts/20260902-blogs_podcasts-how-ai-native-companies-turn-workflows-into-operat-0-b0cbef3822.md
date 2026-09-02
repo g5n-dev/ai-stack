@@ -27,7 +27,7 @@ source_title_chars_original: 64
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://openai.com/index/ai-native-company-workflows
 parent_observation_id: null
-last_seen_at: 2026-09-01T18:30:16.606712Z
+last_seen_at: 2026-09-02T00:00:00Z
 ---
 
 ## 基本信息

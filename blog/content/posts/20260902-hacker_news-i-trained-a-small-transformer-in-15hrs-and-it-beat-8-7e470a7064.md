@@ -13,9 +13,9 @@ source_snapshot_sha256: "sha256:5392241b090ce8a0153ae4700cd60eddee7d5db855524f23
 source_payload_sha256: "sha256:56ac273c7ff2aa68612584aa795bf50da286f5962dddaac52878de8bbe41288e"
 observation_id: obs_7e470a706467e65486d585c011e11ef028f09eee34215844dc47ae8d74e0061a
 event_id: evt_dcbb653b36b29cabcaa78af40bf0b0e2fa45840a6dc53fbee7d156a38534bbff
-revision_id: rev_1ca3b2c5086daf59bcd002d5509766959988117b704b5e02f405be6e53783c35
+revision_id: rev_4cb258565a70a3465ace28b44909e9b06f9e3fb5c7683fb45c3e75bd00da8eb9
 source_published_at: 2026-09-01T09:52:45Z
-first_seen_at: 2026-09-01T21:46:35.793565Z
+first_seen_at: 2026-09-01T21:59:26Z
 timestamp_confidence: platform
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 62
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://mvakde.github.io/blog/44-on-arc-1
 parent_observation_id: null
-last_seen_at: 2026-09-01T21:46:35.793565Z
+last_seen_at: 2026-09-02T00:00:00Z
 ---
 
 ## 基本信息

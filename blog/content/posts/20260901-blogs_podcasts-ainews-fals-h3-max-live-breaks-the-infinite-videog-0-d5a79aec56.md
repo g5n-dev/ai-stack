@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:44823b3e2cf24a70c321a9c79230c4ab3b8bb2365cf650475
 description: "这是一份AI行业近期动态的摘要，涵盖视频生成模型的速度突破、多个开源模型与代理能力的更新，以及代理基础设施与上下文管理的研究进展。"
 external_url: https://www.latent.space/p/ainews-fals-h3-max-live-breaks-the
 parent_observation_id: null
-last_seen_at: 2026-09-01T05:06:41.311972Z
+last_seen_at: 2026-09-02T00:00:00Z
 ---
 
 ## 基本信息

@@ -15,7 +15,7 @@ observation_id: obs_437ffb23ae2ef611e091a43b63723da0d909b8e296d32113ca7f85c0af87
 event_id: evt_b3885a3c7fb0c2fa5aada69950fb6a886f8a8bd776be128ef769c2924f8e41f7
 revision_id: rev_812efdc27ad128947a0f4f65d08a498a01b80c796f6b5cbcddf30b1dfdd6f18c
 source_published_at: 2026-09-01T21:25:00Z
-first_seen_at: 2026-09-01T21:46:56.592747Z
+first_seen_at: 2026-09-01T21:59:26Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 68
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://news.mit.edu/2026/walter-torous-named-executive-director-mit-center-real-estate-0901
 parent_observation_id: null
-last_seen_at: 2026-09-01T21:46:56.592747Z
+last_seen_at: 2026-09-02T00:00:00Z
 ---
 
 ## 基本信息

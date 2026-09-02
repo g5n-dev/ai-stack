@@ -27,7 +27,7 @@ source_title_chars_original: 92
 description: "当前保存的是来源摘要，不代表论文全文。请以原始来源为准。"
 external_url: http://arxiv.org/abs/2608.31137v1
 parent_observation_id: null
-last_seen_at: 2026-09-01T14:53:09.314998Z
+last_seen_at: 2026-09-02T00:00:00Z
 ---
 
 ## 基本信息
