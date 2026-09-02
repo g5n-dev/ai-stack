@@ -1,8 +1,8 @@
 {
-  "active_count": 2705,
+  "active_count": 2709,
   "archived_count": 276,
   "complete_count": 59,
-  "interpreted_brief_count": 157,
+  "interpreted_brief_count": 158,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20921,6 +20921,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260902-arxiv-beyond-scores-understanding-llm-as-a-judge-mechani-0-df2edf0951.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260902-arxiv-diasentinel-an-auditable-multi-agent-system-for-gu-5-baabb9b168.md": {
       "reasons": [
         "concise_source_card"
@@ -20944,6 +20950,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260902-blogs_podcasts-introducing-claude-fable-51-on-aws-0-f85c8e7bdc.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
     },
     "posts/20260902-blogs_podcasts-the-latest-ai-news-we-announced-in-august-2026-0-e6646933ca.md": {
       "reasons": [
@@ -20975,7 +20987,22 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260902-hacker_news-the-efficient-frontier-of-llm-inference-2-69a3c08503.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260902-juejin-一只虾到多只虾先聊聊我为什么要拆虾-0-11a259647c.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
+    "posts/20260902-juejin-用ai能写出高考满分作文吗-0-3976d7755b.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -21017,11 +21044,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2489,
-  "source_file_count": 2981,
-  "source_tree_sha256": "2b1048fa298b463238b20abe83d7aa0d73af6bc8bfc8fca57dad7562227d85e0",
-  "verified_provenance_count": 2705,
+  "source_brief_count": 2492,
+  "source_file_count": 2985,
+  "source_tree_sha256": "1301fa5f015dec47a05c773120ab757328b5889e9aab8e758e0560984daab0ed",
+  "verified_provenance_count": 2709,
   "warning_counts": {
-    "source_excerpt_truncated": 781
+    "source_excerpt_truncated": 782
   }
 }
