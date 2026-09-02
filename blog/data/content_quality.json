@@ -1,8 +1,8 @@
 {
-  "active_count": 2712,
+  "active_count": 2716,
   "archived_count": 276,
-  "complete_count": 59,
-  "interpreted_brief_count": 159,
+  "complete_count": 60,
+  "interpreted_brief_count": 160,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -20921,6 +20921,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260902-arxiv-adaptive-critical-token-aware-retrieval-for-reposi-0-c12a719dc8.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260902-arxiv-beyond-scores-understanding-llm-as-a-judge-mechani-0-df2edf0951.md": {
       "reasons": [
         "concise_source_card"
@@ -20959,6 +20965,12 @@
       "warnings": [
         "source_excerpt_truncated"
       ]
+    },
+    "posts/20260902-blogs_podcasts-from-theory-to-delivery-how-atos-upskilled-400-eng-0-603f421f19.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20260902-blogs_podcasts-how-ai-native-companies-turn-workflows-into-operat-0-b0cbef3822.md": {
       "reasons": [
@@ -21009,6 +21021,12 @@
       "status": "source_brief"
     },
     "posts/20260902-hacker_news-the-efficient-frontier-of-llm-inference-2-69a3c08503.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260902-hacker_news-three-sites-made-215128-best-software-pages-for-ai-1-4311f5b57d.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -21065,10 +21083,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2494,
-  "source_file_count": 2988,
-  "source_tree_sha256": "76aef26f0d916255d295e64ff996ae2d7e609d1a07ceaf6f611085a32f55e33e",
-  "verified_provenance_count": 2712,
+  "source_brief_count": 2496,
+  "source_file_count": 2992,
+  "source_tree_sha256": "d05e29b6b123e7591b1fb553a5ac73367d262db234242873af1763b7537566c1",
+  "verified_provenance_count": 2716,
   "warning_counts": {
     "source_excerpt_truncated": 783
   }
