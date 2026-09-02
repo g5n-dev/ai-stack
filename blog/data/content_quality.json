@@ -1,8 +1,8 @@
 {
-  "active_count": 2716,
+  "active_count": 2719,
   "archived_count": 276,
   "complete_count": 60,
-  "interpreted_brief_count": 160,
+  "interpreted_brief_count": 161,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21049,6 +21049,27 @@
       "warnings": [
         "source_excerpt_truncated"
       ]
+    },
+    "posts/20260903-arxiv-cordisbench-can-language-models-reason-about-compo-0-27f54a99fd.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260903-blogs_podcasts-modernizing-and-scaling-support-operations-with-ge-0-be849b092a.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
+    "posts/20260903-hacker_news-gemini-38-flash-and-38-flash-cyber-0-ef239918f1.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -21083,11 +21104,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2496,
-  "source_file_count": 2992,
-  "source_tree_sha256": "d05e29b6b123e7591b1fb553a5ac73367d262db234242873af1763b7537566c1",
-  "verified_provenance_count": 2716,
+  "source_brief_count": 2498,
+  "source_file_count": 2995,
+  "source_tree_sha256": "f355638c92f19caf8a78d023ea5d336aff44d75090d0ed27d4d8c5f861ffa4fe",
+  "verified_provenance_count": 2719,
   "warning_counts": {
-    "source_excerpt_truncated": 783
+    "source_excerpt_truncated": 784
   }
 }
