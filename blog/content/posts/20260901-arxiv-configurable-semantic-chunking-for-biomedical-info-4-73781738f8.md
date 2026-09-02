@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:9acadb13faac59b92c775152d7bb35508f30ed64c714bb663
 description: "该工作提出一种可配置的语义分块框架，旨在解决BioMedRAG中固定大小分块导致语义证据碎片化的问题，仅替换分块阶段即可与其他组件兼容。"
 external_url: http://arxiv.org/abs/2608.31139v1
 parent_observation_id: null
-last_seen_at: 2026-09-01T10:05:40.302854Z
+last_seen_at: 2026-09-02T00:00:00Z
 ---
 
 ## 基本信息

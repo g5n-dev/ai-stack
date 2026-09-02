@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:b3cb8d51048c4b7a0a940ceaa0fc80fea8da7e1f5d52c2e1c
 description: "该内容提出一种四阶段黑盒审计协议，用于验证匿名模型的真实身份，通过平台快照回溯、配置指纹匹配、词汇器差异测试和行为探测四个步骤来判断模型是否与声明一致。"
 external_url: http://arxiv.org/abs/2608.31142v1
 parent_observation_id: null
-last_seen_at: 2026-09-01T05:06:37.802455Z
+last_seen_at: 2026-09-02T00:00:00Z
 ---
 
 ## 基本信息
