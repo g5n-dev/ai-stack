@@ -15,7 +15,7 @@ observation_id: obs_be849b092a65b95dd81a8834fc8814c0756e5b23f029f2f0644c2b1a51f8
 event_id: evt_068def15f5b93caf9ac2bde496b462838a6fd2ee372ec6a41e7f5890ac6c6841
 revision_id: rev_356829348ac540956c8e940749e2d255b430c1e7fe8910d281ef06cd61bfd7a2
 source_published_at: 2026-09-02T18:26:35Z
-first_seen_at: 2026-09-02T18:42:20.023176Z
+first_seen_at: 2026-09-02T18:55:15Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:62c8bcf885ef6b77879a330c306e2ffb1c76f931b004501ad
 description: "该内容描述了利用生成式 AI 在云平台上捕获分散的操作知识、自动为工单提供指引、利用机器学习预测工作负载与 SLA 风险，并通过工作流实现标签、评论、状态更新等常规任务的自动化，同时保留人工审查以确保准确性。"
 external_url: https://aws.amazon.com/blogs/machine-learning/modernizing-and-scaling-support-operations-with-generative-ai-on-aws
 parent_observation_id: null
-last_seen_at: 2026-09-02T18:42:20.023176Z
+last_seen_at: 2026-09-03T00:00:00Z
 ---
 
 ## 基本信息
