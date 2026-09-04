@@ -1,8 +1,8 @@
 {
-  "active_count": 2722,
+  "active_count": 2725,
   "archived_count": 276,
   "complete_count": 60,
-  "interpreted_brief_count": 162,
+  "interpreted_brief_count": 164,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21071,6 +21071,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260904-arxiv-clean-engineering-unstable-measurement-a-preregist-1-fe0ebd2903.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260904-arxiv-discriminative-world-models-for-web-agents-1-d1a20e5253.md": {
       "reasons": [
         "concise_source_card"
@@ -21082,6 +21088,21 @@
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20260904-blogs_podcasts-ainews-gpt-6-astra-openais-biggest-llm-launch-of-a-0-49bf67e781.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
+    "posts/20260904-hacker_news-gpt-6-astra-0-039a4975e1.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20260904-hacker_news-porting-my-1993-amiga-game-to-godot-with-an-llm-re-4-6df785973a.md": {
       "reasons": [
@@ -21122,11 +21143,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2500,
-  "source_file_count": 2998,
-  "source_tree_sha256": "61a5fdbdc004dd889c9929ce47017615f59dbc945536faf3321f8a86b21be813",
-  "verified_provenance_count": 2722,
+  "source_brief_count": 2501,
+  "source_file_count": 3001,
+  "source_tree_sha256": "fb636c576942a2deeeb929c5702feb0f3dda696c5fb939888753eb86a81c17a7",
+  "verified_provenance_count": 2725,
   "warning_counts": {
-    "source_excerpt_truncated": 784
+    "source_excerpt_truncated": 785
   }
 }
