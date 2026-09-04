@@ -15,7 +15,7 @@ observation_id: obs_b5dfb93ee9936b169e4518f3b211559104467f38c21654f28558b8342200
 event_id: evt_898c7c8da637e947e2c458a6970afb8b4c6aeaf3aecdad52b01d25e16ae09d48
 revision_id: rev_477eb15a0b0d5f4f53af105b260f1f65189c7d251ae3f2af683b4ba05efbda23
 source_published_at: 2026-09-03T16:16:28Z
-first_seen_at: 2026-09-03T18:38:35.557295Z
+first_seen_at: 2026-09-03T18:52:06Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:c689a929fac2c74b96177387d02909ddaef33cc9ea5a37464
 description: "这条内容介绍了基于Amazon Bedrock AgentCore的AI驱动开发生命周期实现方案，包含两个参考案例：一个是从SQL schema自动生成ER图的工具，另一个是多代理架构的代码安全分析系统。"
 external_url: https://aws.amazon.com/blogs/machine-learning/ai-driven-development-lifecycle-using-amazon-bedrock-agentcore
 parent_observation_id: null
-last_seen_at: 2026-09-03T18:38:35.557295Z
+last_seen_at: 2026-09-04T00:00:00Z
 ---
 
 ## 基本信息
