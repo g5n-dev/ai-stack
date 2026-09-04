@@ -1,8 +1,8 @@
 {
-  "active_count": 2728,
+  "active_count": 2731,
   "archived_count": 276,
   "complete_count": 60,
-  "interpreted_brief_count": 165,
+  "interpreted_brief_count": 166,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21116,6 +21116,21 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260905-arxiv-legibility-is-not-interpretability-comparing-judge-1-19d67cf100.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260905-blogs_podcasts-build-a-physical-ai-model-factory-with-nvidia-cosm-0-db4572b71e.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20260905-blogs_podcasts-designing-lifecycle-policies-for-agentcore-memory-0-c620d7b2d0.md": {
       "reasons": [
         "interpreted_source_card"
@@ -21126,6 +21141,12 @@
       ]
     },
     "posts/20260905-hacker_news-discovery-of-a-new-openai-agent-message-board-0-61abc28dde.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260905-hacker_news-fermats-last-theorem-anthropic-has-beaten-me-to-it-1-55c9a4d228.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -21164,11 +21185,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2503,
-  "source_file_count": 3004,
-  "source_tree_sha256": "3aca5b384da402b8e041dbcfdfb1bf4747ac9d0d408fcdb4ac45dc6436131741",
-  "verified_provenance_count": 2728,
+  "source_brief_count": 2505,
+  "source_file_count": 3007,
+  "source_tree_sha256": "2bb7f7a0064f24897350f623a04a7ed023be40575e5f32f06e3ee6a01c2b314d",
+  "verified_provenance_count": 2731,
   "warning_counts": {
-    "source_excerpt_truncated": 786
+    "source_excerpt_truncated": 787
   }
 }
