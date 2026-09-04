@@ -1,8 +1,8 @@
 {
-  "active_count": 2725,
+  "active_count": 2728,
   "archived_count": 276,
   "complete_count": 60,
-  "interpreted_brief_count": 164,
+  "interpreted_brief_count": 165,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21109,6 +21109,27 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260905-arxiv-espo-error-structured-prompt-optimization-via-diag-1-9060a4ab20.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260905-blogs_podcasts-designing-lifecycle-policies-for-agentcore-memory-0-c620d7b2d0.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
+    "posts/20260905-hacker_news-discovery-of-a-new-openai-agent-message-board-0-61abc28dde.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -21143,11 +21164,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2501,
-  "source_file_count": 3001,
-  "source_tree_sha256": "fb636c576942a2deeeb929c5702feb0f3dda696c5fb939888753eb86a81c17a7",
-  "verified_provenance_count": 2725,
+  "source_brief_count": 2503,
+  "source_file_count": 3004,
+  "source_tree_sha256": "3aca5b384da402b8e041dbcfdfb1bf4747ac9d0d408fcdb4ac45dc6436131741",
+  "verified_provenance_count": 2728,
   "warning_counts": {
-    "source_excerpt_truncated": 785
+    "source_excerpt_truncated": 786
   }
 }
