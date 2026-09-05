@@ -1,8 +1,8 @@
 {
-  "active_count": 2739,
+  "active_count": 2742,
   "archived_count": 276,
   "complete_count": 61,
-  "interpreted_brief_count": 170,
+  "interpreted_brief_count": 171,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21128,6 +21128,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260905-arxiv-seeing-before-synthesizing-vlm-guided-transition-e-3-0f90d84de8.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260905-blogs_podcasts-build-a-physical-ai-model-factory-with-nvidia-cosm-0-db4572b71e.md": {
       "reasons": [
         "interpreted_source_card"
@@ -21157,6 +21163,15 @@
         "interpreted_source_card"
       ],
       "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
+    "posts/20260905-blogs_podcasts-how-intuit-built-an-agentic-disaster-recovery-assi-0-a3fb326ed5.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
       "warnings": [
         "source_excerpt_truncated"
       ]
@@ -21199,6 +21214,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260905-hacker_news-portal-by-spotify-cut-my-claude-code-token-usage-b-7-e870d219d7.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -21233,11 +21254,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2508,
-  "source_file_count": 3015,
-  "source_tree_sha256": "c9f168625c4d4d8028d516d38e7fe7a259968ae14bf9b57310fc8b5b592dc501",
-  "verified_provenance_count": 2739,
+  "source_brief_count": 2510,
+  "source_file_count": 3018,
+  "source_tree_sha256": "dc3ea6089f5d2e39f9430f1773c4a891f9ab681903cf06522c953e24dd144f47",
+  "verified_provenance_count": 2742,
   "warning_counts": {
-    "source_excerpt_truncated": 789
+    "source_excerpt_truncated": 790
   }
 }
