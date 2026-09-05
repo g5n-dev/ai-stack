@@ -1,8 +1,8 @@
 {
-  "active_count": 2735,
+  "active_count": 2739,
   "archived_count": 276,
-  "complete_count": 60,
-  "interpreted_brief_count": 168,
+  "complete_count": 61,
+  "interpreted_brief_count": 170,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21122,6 +21122,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260905-arxiv-one-editor-many-edits-a-unified-training-free-fram-2-ff07077433.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260905-blogs_podcasts-build-a-physical-ai-model-factory-with-nvidia-cosm-0-db4572b71e.md": {
       "reasons": [
         "interpreted_source_card"
@@ -21130,6 +21136,12 @@
       "warnings": [
         "source_excerpt_truncated"
       ]
+    },
+    "posts/20260905-blogs_podcasts-customizing-your-knowledge-base-on-amazon-bedrock--0-b9be5c650c.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
     },
     "posts/20260905-blogs_podcasts-deploy-a-multimodal-whatsapp-ordering-assistant-wi-0-17e5ae8afd.md": {
       "reasons": [
@@ -21157,6 +21169,12 @@
       "warnings": [
         "source_excerpt_truncated"
       ]
+    },
+    "posts/20260905-hacker_news-ai-handles-incidents-engineers-lose-touch-with-the-0-3d05664479.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20260905-hacker_news-can-ai-design-circuit-boards-yet-4-a80ce387a3.md": {
       "reasons": [
@@ -21215,10 +21233,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2507,
-  "source_file_count": 3011,
-  "source_tree_sha256": "939d56b952d998e4f8c505d600b5892f58e2cd73c04ac31afaf756750f61d32e",
-  "verified_provenance_count": 2735,
+  "source_brief_count": 2508,
+  "source_file_count": 3015,
+  "source_tree_sha256": "c9f168625c4d4d8028d516d38e7fe7a259968ae14bf9b57310fc8b5b592dc501",
+  "verified_provenance_count": 2739,
   "warning_counts": {
     "source_excerpt_truncated": 789
   }
