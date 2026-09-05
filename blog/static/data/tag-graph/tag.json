@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-05T00:07:24Z",
+  "generated_at": "2026-09-05T04:28:20Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -309,7 +309,7 @@
       "strength": 1,
       "target": "tag:Hacker News",
       "type": "cooccurrence",
-      "weight": 69
+      "weight": 70
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:Health",
@@ -525,7 +525,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 144
+      "weight": 145
     },
     {
       "id": "edge:semantic:tag:AI->tech:ai_ml",
@@ -709,7 +709,7 @@
       "strength": 1,
       "target": "tag:Amazon SageMaker HyperPod",
       "type": "cooccurrence",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:Amazon SageMaker Studio",
@@ -1010,10 +1010,10 @@
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:Thought Leadership",
       "source": "tag:AI Agent",
-      "strength": 0.5,
+      "strength": 1,
       "target": "tag:Thought Leadership",
       "type": "cooccurrence",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:TypeScript",
@@ -1117,7 +1117,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 221
+      "weight": 222
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:命令行工具",
@@ -1133,7 +1133,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 312
+      "weight": 313
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:工程实践",
@@ -1173,7 +1173,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 151
+      "weight": 152
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:深度学习",
@@ -1677,7 +1677,7 @@
       "strength": 1,
       "target": "tag:AI Agent",
       "type": "cooccurrence",
-      "weight": 22
+      "weight": 23
     },
     {
       "id": "edge:cooccurrence:tag:Advanced (300)->tag:AWS Fargate",
@@ -1829,7 +1829,7 @@
       "strength": 1,
       "target": "tag:Amazon SageMaker HyperPod",
       "type": "cooccurrence",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:Advanced (300)->tag:Amazon Simple Storage Service (S3)",
@@ -1898,10 +1898,10 @@
     {
       "id": "edge:cooccurrence:tag:Advanced (300)->tag:Thought Leadership",
       "source": "tag:Advanced (300)",
-      "strength": 0.5,
+      "strength": 1,
       "target": "tag:Thought Leadership",
       "type": "cooccurrence",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "edge:cooccurrence:tag:Advanced (300)->tag:博客与播客",
@@ -1909,7 +1909,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 21
+      "weight": 22
     },
     {
       "id": "edge:cooccurrence:tag:Advanced (300)->tag:大语言模型",
@@ -1917,7 +1917,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 18
+      "weight": 19
     },
     {
       "id": "edge:cooccurrence:tag:Advanced (300)->tag:机器学习",
@@ -1933,7 +1933,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 13
+      "weight": 14
     },
     {
       "id": "edge:cooccurrence:tag:Advanced (300)->tag:深度学习",
@@ -3984,12 +3984,20 @@
       "weight": 1
     },
     {
+      "id": "edge:cooccurrence:tag:Amazon SageMaker HyperPod->tag:Thought Leadership",
+      "source": "tag:Amazon SageMaker HyperPod",
+      "strength": 0.5,
+      "target": "tag:Thought Leadership",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
       "id": "edge:cooccurrence:tag:Amazon SageMaker HyperPod->tag:博客与播客",
       "source": "tag:Amazon SageMaker HyperPod",
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 3
+      "weight": 4
     },
     {
       "id": "edge:cooccurrence:tag:Amazon SageMaker HyperPod->tag:大语言模型",
@@ -3997,7 +4005,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:Amazon SageMaker HyperPod->tag:机器学习",
@@ -4013,7 +4021,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:Amazon SageMaker HyperPod->tag:深度学习",
@@ -7293,7 +7301,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 155
+      "weight": 156
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:深度学习",
@@ -9354,16 +9362,24 @@
     {
       "id": "edge:cooccurrence:tag:Thought Leadership->tag:博客与播客",
       "source": "tag:Thought Leadership",
-      "strength": 0.5,
+      "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "edge:cooccurrence:tag:Thought Leadership->tag:大语言模型",
       "source": "tag:Thought Leadership",
-      "strength": 0.5,
+      "strength": 1,
       "target": "tag:大语言模型",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Thought Leadership->tag:来源快报",
+      "source": "tag:Thought Leadership",
+      "strength": 0.5,
+      "target": "tag:来源快报",
       "type": "cooccurrence",
       "weight": 1
     },
@@ -10125,7 +10141,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 139
+      "weight": 140
     },
     {
       "id": "edge:cooccurrence:tag:博客与播客->tag:数据库",
@@ -10149,7 +10165,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 149
+      "weight": 150
     },
     {
       "id": "edge:cooccurrence:tag:博客与播客->tag:深度学习",
@@ -10285,7 +10301,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 177
+      "weight": 178
     },
     {
       "id": "edge:cooccurrence:tag:大语言模型->tag:深度学习",
@@ -10630,12 +10646,12 @@
       "legacy_id": "ACP",
       "level": 6,
       "name": "ACP",
-      "rank": 106,
+      "rank": 107,
       "related_count": 7,
       "weighted_degree": 7
     },
     {
-      "article_count": 30,
+      "article_count": 31,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
@@ -10649,10 +10665,10 @@
       "name": "Advanced (300)",
       "rank": 19,
       "related_count": 37,
-      "weighted_degree": 198
+      "weighted_degree": 204
     },
     {
-      "article_count": 145,
+      "article_count": 146,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -10666,7 +10682,7 @@
       "name": "AI",
       "rank": 16,
       "related_count": 55,
-      "weighted_degree": 383.6
+      "weighted_degree": 385.6
     },
     {
       "article_count": 3,
@@ -10681,7 +10697,7 @@
       "legacy_id": "ai",
       "level": 6,
       "name": "ai",
-      "rank": 89,
+      "rank": 90,
       "related_count": 4,
       "weighted_degree": 9.6
     },
@@ -10698,12 +10714,12 @@
       "legacy_id": "AI Adoption",
       "level": 6,
       "name": "AI Adoption",
-      "rank": 94,
+      "rank": 95,
       "related_count": 4,
       "weighted_degree": 8.6
     },
     {
-      "article_count": 836,
+      "article_count": 837,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -10717,7 +10733,7 @@
       "name": "AI Agent",
       "rank": 1,
       "related_count": 85,
-      "weighted_degree": 2396.2
+      "weighted_degree": 2402.2
     },
     {
       "article_count": 2,
@@ -10732,7 +10748,7 @@
       "legacy_id": "AI Research",
       "level": 6,
       "name": "AI Research",
-      "rank": 98,
+      "rank": 99,
       "related_count": 5,
       "weighted_degree": 7.6
     },
@@ -10783,7 +10799,7 @@
       "legacy_id": "Alumni/ae",
       "level": 6,
       "name": "Alumni/ae",
-      "rank": 107,
+      "rank": 108,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -10800,7 +10816,7 @@
       "legacy_id": "Amazon API Gateway",
       "level": 6,
       "name": "Amazon API Gateway",
-      "rank": 99,
+      "rank": 100,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -10817,7 +10833,7 @@
       "legacy_id": "Amazon Athena",
       "level": 6,
       "name": "Amazon Athena",
-      "rank": 108,
+      "rank": 109,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -10885,7 +10901,7 @@
       "legacy_id": "Amazon Bedrock Guardrails",
       "level": 6,
       "name": "Amazon Bedrock Guardrails",
-      "rank": 87,
+      "rank": 88,
       "related_count": 8,
       "weighted_degree": 10
     },
@@ -10902,7 +10918,7 @@
       "legacy_id": "Amazon Bedrock Knowledge Bases",
       "level": 6,
       "name": "Amazon Bedrock Knowledge Bases",
-      "rank": 55,
+      "rank": 56,
       "related_count": 15,
       "weighted_degree": 25
     },
@@ -10919,7 +10935,7 @@
       "legacy_id": "Amazon CloudWatch",
       "level": 6,
       "name": "Amazon CloudWatch",
-      "rank": 109,
+      "rank": 110,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -10936,7 +10952,7 @@
       "legacy_id": "Amazon Connect",
       "level": 6,
       "name": "Amazon Connect",
-      "rank": 110,
+      "rank": 111,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -10953,7 +10969,7 @@
       "legacy_id": "Amazon DynamoDB",
       "level": 6,
       "name": "Amazon DynamoDB",
-      "rank": 60,
+      "rank": 61,
       "related_count": 16,
       "weighted_degree": 21
     },
@@ -10987,7 +11003,7 @@
       "legacy_id": "Amazon Elastic File System (EFS)",
       "level": 6,
       "name": "Amazon Elastic File System (EFS)",
-      "rank": 111,
+      "rank": 112,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -11004,7 +11020,7 @@
       "legacy_id": "Amazon Elastic Kubernetes Service",
       "level": 6,
       "name": "Amazon Elastic Kubernetes Service",
-      "rank": 78,
+      "rank": 79,
       "related_count": 9,
       "weighted_degree": 12.6
     },
@@ -11021,7 +11037,7 @@
       "legacy_id": "Amazon EventBridge",
       "level": 6,
       "name": "Amazon EventBridge",
-      "rank": 112,
+      "rank": 113,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -11038,7 +11054,7 @@
       "legacy_id": "Amazon FSx for NetApp ONTAP",
       "level": 6,
       "name": "Amazon FSx for NetApp ONTAP",
-      "rank": 113,
+      "rank": 114,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -11055,7 +11071,7 @@
       "legacy_id": "Amazon Machine Learning",
       "level": 6,
       "name": "Amazon Machine Learning",
-      "rank": 114,
+      "rank": 115,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -11089,7 +11105,7 @@
       "legacy_id": "Amazon OpenSearch Service",
       "level": 6,
       "name": "Amazon OpenSearch Service",
-      "rank": 115,
+      "rank": 116,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -11140,7 +11156,7 @@
       "legacy_id": "Amazon RDS",
       "level": 6,
       "name": "Amazon RDS",
-      "rank": 116,
+      "rank": 117,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -11174,7 +11190,7 @@
       "legacy_id": "Amazon SageMaker",
       "level": 6,
       "name": "Amazon SageMaker",
-      "rank": 57,
+      "rank": 58,
       "related_count": 15,
       "weighted_degree": 22
     },
@@ -11196,11 +11212,11 @@
       "weighted_degree": 38
     },
     {
-      "article_count": 3,
+      "article_count": 4,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
-      "degree": 14,
+      "degree": 15,
       "description": "文章标签: Amazon SageMaker HyperPod",
       "id": "tag:Amazon SageMaker HyperPod",
       "layer": "tag",
@@ -11208,9 +11224,9 @@
       "legacy_id": "Amazon SageMaker HyperPod",
       "level": 6,
       "name": "Amazon SageMaker HyperPod",
-      "rank": 63,
-      "related_count": 14,
-      "weighted_degree": 20
+      "rank": 55,
+      "related_count": 15,
+      "weighted_degree": 26
     },
     {
       "article_count": 1,
@@ -11225,7 +11241,7 @@
       "legacy_id": "Amazon SageMaker Studio",
       "level": 6,
       "name": "Amazon SageMaker Studio",
-      "rank": 117,
+      "rank": 118,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -11242,7 +11258,7 @@
       "legacy_id": "Amazon SageMaker Unified Studio",
       "level": 6,
       "name": "Amazon SageMaker Unified Studio",
-      "rank": 118,
+      "rank": 119,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -11259,7 +11275,7 @@
       "legacy_id": "Amazon Simple Notification Service (SNS)",
       "level": 6,
       "name": "Amazon Simple Notification Service (SNS)",
-      "rank": 119,
+      "rank": 120,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -11276,7 +11292,7 @@
       "legacy_id": "Amazon Simple Queue Service (SQS)",
       "level": 6,
       "name": "Amazon Simple Queue Service (SQS)",
-      "rank": 120,
+      "rank": 121,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -11344,7 +11360,7 @@
       "legacy_id": "Android",
       "level": 6,
       "name": "Android",
-      "rank": 79,
+      "rank": 80,
       "related_count": 11,
       "weighted_degree": 12
     },
@@ -11395,7 +11411,7 @@
       "legacy_id": "Architecture",
       "level": 6,
       "name": "Architecture",
-      "rank": 121,
+      "rank": 122,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -11514,7 +11530,7 @@
       "legacy_id": "AWS Identity and Access Management (IAM)",
       "level": 6,
       "name": "AWS Identity and Access Management (IAM)",
-      "rank": 122,
+      "rank": 123,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -11548,7 +11564,7 @@
       "legacy_id": "AWS Marketplace",
       "level": 6,
       "name": "AWS Marketplace",
-      "rank": 123,
+      "rank": 124,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -11565,7 +11581,7 @@
       "legacy_id": "AWS ParallelCluster",
       "level": 6,
       "name": "AWS ParallelCluster",
-      "rank": 124,
+      "rank": 125,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -11582,7 +11598,7 @@
       "legacy_id": "AWS Secrets Manager",
       "level": 6,
       "name": "AWS Secrets Manager",
-      "rank": 125,
+      "rank": 126,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -11599,7 +11615,7 @@
       "legacy_id": "Best Practices",
       "level": 6,
       "name": "Best Practices",
-      "rank": 59,
+      "rank": 60,
       "related_count": 13,
       "weighted_degree": 21
     },
@@ -11616,7 +11632,7 @@
       "legacy_id": "Biological engineering",
       "level": 6,
       "name": "Biological engineering",
-      "rank": 126,
+      "rank": 127,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -11633,7 +11649,7 @@
       "legacy_id": "Biology",
       "level": 6,
       "name": "Biology",
-      "rank": 127,
+      "rank": 128,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -11650,7 +11666,7 @@
       "legacy_id": "Brain and cognitive sciences",
       "level": 6,
       "name": "Brain and cognitive sciences",
-      "rank": 128,
+      "rank": 129,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -11684,7 +11700,7 @@
       "legacy_id": "Chemistry",
       "level": 6,
       "name": "Chemistry",
-      "rank": 129,
+      "rank": 130,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -11701,7 +11717,7 @@
       "legacy_id": "Civil and environmental engineering",
       "level": 6,
       "name": "Civil and environmental engineering",
-      "rank": 130,
+      "rank": 131,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -11718,7 +11734,7 @@
       "legacy_id": "Climate",
       "level": 6,
       "name": "Climate",
-      "rank": 131,
+      "rank": 132,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -11735,7 +11751,7 @@
       "legacy_id": "Codex",
       "level": 6,
       "name": "Codex",
-      "rank": 132,
+      "rank": 133,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -11786,7 +11802,7 @@
       "legacy_id": "Computer science and technology",
       "level": 6,
       "name": "Computer science and technology",
-      "rank": 58,
+      "rank": 59,
       "related_count": 14,
       "weighted_degree": 21.6
     },
@@ -11956,7 +11972,7 @@
       "legacy_id": "cs.GT",
       "level": 6,
       "name": "cs.GT",
-      "rank": 104,
+      "rank": 105,
       "related_count": 4,
       "weighted_degree": 7
     },
@@ -12041,7 +12057,7 @@
       "legacy_id": "cs.RO",
       "level": 6,
       "name": "cs.RO",
-      "rank": 92,
+      "rank": 93,
       "related_count": 5,
       "weighted_degree": 9
     },
@@ -12058,7 +12074,7 @@
       "legacy_id": "cs.SD",
       "level": 6,
       "name": "cs.SD",
-      "rank": 105,
+      "rank": 106,
       "related_count": 4,
       "weighted_degree": 7
     },
@@ -12126,7 +12142,7 @@
       "legacy_id": "Data Infrastructure",
       "level": 6,
       "name": "Data Infrastructure",
-      "rank": 56,
+      "rank": 57,
       "related_count": 12,
       "weighted_degree": 22.6
     },
@@ -12143,7 +12159,7 @@
       "legacy_id": "Design",
       "level": 6,
       "name": "Design",
-      "rank": 100,
+      "rank": 101,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -12245,7 +12261,7 @@
       "legacy_id": "Education, teaching, academics",
       "level": 6,
       "name": "Education, teaching, academics",
-      "rank": 133,
+      "rank": 134,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -12313,7 +12329,7 @@
       "legacy_id": "Elastic Load Balancing",
       "level": 6,
       "name": "Elastic Load Balancing",
-      "rank": 134,
+      "rank": 135,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -12347,7 +12363,7 @@
       "legacy_id": "Ethics",
       "level": 6,
       "name": "Ethics",
-      "rank": 135,
+      "rank": 136,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -12415,7 +12431,7 @@
       "legacy_id": "Gemini App",
       "level": 6,
       "name": "Gemini App",
-      "rank": 80,
+      "rank": 81,
       "related_count": 9,
       "weighted_degree": 12
     },
@@ -12432,7 +12448,7 @@
       "legacy_id": "Gemini models",
       "level": 6,
       "name": "Gemini models",
-      "rank": 61,
+      "rank": 62,
       "related_count": 12,
       "weighted_degree": 21
     },
@@ -12466,7 +12482,7 @@
       "legacy_id": "Generative AI",
       "level": 6,
       "name": "Generative AI",
-      "rank": 136,
+      "rank": 137,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -12500,7 +12516,7 @@
       "legacy_id": "Global Affairs",
       "level": 6,
       "name": "Global Affairs",
-      "rank": 91,
+      "rank": 92,
       "related_count": 3,
       "weighted_degree": 9
     },
@@ -12602,7 +12618,7 @@
       "legacy_id": "Google One",
       "level": 6,
       "name": "Google One",
-      "rank": 93,
+      "rank": 94,
       "related_count": 5,
       "weighted_degree": 9
     },
@@ -12641,7 +12657,7 @@
       "weighted_degree": 16
     },
     {
-      "article_count": 908,
+      "article_count": 909,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -12655,7 +12671,7 @@
       "name": "Hacker News",
       "rank": 9,
       "related_count": 21,
-      "weighted_degree": 549
+      "weighted_degree": 551
     },
     {
       "article_count": 1,
@@ -12670,7 +12686,7 @@
       "legacy_id": "Harness",
       "level": 6,
       "name": "Harness",
-      "rank": 137,
+      "rank": 138,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -12721,7 +12737,7 @@
       "legacy_id": "How-To",
       "level": 6,
       "name": "How-To",
-      "rank": 138,
+      "rank": 139,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -12738,7 +12754,7 @@
       "legacy_id": "Human-computer interaction",
       "level": 6,
       "name": "Human-computer interaction",
-      "rank": 139,
+      "rank": 140,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -12772,7 +12788,7 @@
       "legacy_id": "Interview",
       "level": 6,
       "name": "Interview",
-      "rank": 140,
+      "rank": 141,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -12840,7 +12856,7 @@
       "legacy_id": "Kimi K3",
       "level": 6,
       "name": "Kimi K3",
-      "rank": 141,
+      "rank": 142,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -12925,7 +12941,7 @@
       "legacy_id": "Materials science and engineering",
       "level": 6,
       "name": "Materials science and engineering",
-      "rank": 101,
+      "rank": 102,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -12959,7 +12975,7 @@
       "legacy_id": "Mental health",
       "level": 6,
       "name": "Mental health",
-      "rank": 142,
+      "rank": 143,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -12976,7 +12992,7 @@
       "legacy_id": "ML Applications",
       "level": 6,
       "name": "ML Applications",
-      "rank": 86,
+      "rank": 87,
       "related_count": 6,
       "weighted_degree": 10.6
     },
@@ -12993,7 +13009,7 @@
       "legacy_id": "Natural disasters",
       "level": 6,
       "name": "Natural disasters",
-      "rank": 143,
+      "rank": 144,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -13010,7 +13026,7 @@
       "legacy_id": "Networking & Traffic",
       "level": 6,
       "name": "Networking & Traffic",
-      "rank": 81,
+      "rank": 82,
       "related_count": 9,
       "weighted_degree": 12
     },
@@ -13027,7 +13043,7 @@
       "legacy_id": "Open Interpreter",
       "level": 6,
       "name": "Open Interpreter",
-      "rank": 144,
+      "rank": 145,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -13061,7 +13077,7 @@
       "legacy_id": "Partner solutions",
       "level": 6,
       "name": "Partner solutions",
-      "rank": 88,
+      "rank": 89,
       "related_count": 8,
       "weighted_degree": 10
     },
@@ -13078,7 +13094,7 @@
       "legacy_id": "Product",
       "level": 6,
       "name": "Product",
-      "rank": 82,
+      "rank": 83,
       "related_count": 4,
       "weighted_degree": 11
     },
@@ -13095,7 +13111,7 @@
       "legacy_id": "Production Engineering",
       "level": 6,
       "name": "Production Engineering",
-      "rank": 84,
+      "rank": 85,
       "related_count": 8,
       "weighted_degree": 11
     },
@@ -13129,7 +13145,7 @@
       "legacy_id": "Proteins",
       "level": 6,
       "name": "Proteins",
-      "rank": 145,
+      "rank": 146,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -13248,7 +13264,7 @@
       "legacy_id": "Real estate",
       "level": 6,
       "name": "Real estate",
-      "rank": 146,
+      "rank": 147,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -13299,7 +13315,7 @@
       "legacy_id": "Safety",
       "level": 6,
       "name": "Safety",
-      "rank": 83,
+      "rank": 84,
       "related_count": 9,
       "weighted_degree": 11
     },
@@ -13316,7 +13332,7 @@
       "legacy_id": "Search",
       "level": 6,
       "name": "Search",
-      "rank": 62,
+      "rank": 63,
       "related_count": 10,
       "weighted_degree": 20
     },
@@ -13333,7 +13349,7 @@
       "legacy_id": "Security",
       "level": 6,
       "name": "Security",
-      "rank": 95,
+      "rank": 96,
       "related_count": 3,
       "weighted_degree": 8.6
     },
@@ -13401,7 +13417,7 @@
       "legacy_id": "Statistics",
       "level": 6,
       "name": "Statistics",
-      "rank": 147,
+      "rank": 148,
       "related_count": 7,
       "weighted_degree": 7
     },
@@ -13435,7 +13451,7 @@
       "legacy_id": "Systems design",
       "level": 6,
       "name": "Systems design",
-      "rank": 102,
+      "rank": 103,
       "related_count": 7,
       "weighted_degree": 7.6
     },
@@ -13469,16 +13485,16 @@
       "legacy_id": "Technology and society",
       "level": 6,
       "name": "Technology and society",
-      "rank": 148,
+      "rank": 149,
       "related_count": 7,
       "weighted_degree": 7
     },
     {
-      "article_count": 1,
+      "article_count": 2,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
-      "degree": 7,
+      "degree": 9,
       "description": "文章标签: Thought Leadership",
       "id": "tag:Thought Leadership",
       "layer": "tag",
@@ -13486,9 +13502,9 @@
       "legacy_id": "Thought Leadership",
       "level": 6,
       "name": "Thought Leadership",
-      "rank": 149,
-      "related_count": 7,
-      "weighted_degree": 7
+      "rank": 78,
+      "related_count": 9,
+      "weighted_degree": 13
     },
     {
       "article_count": 1,
@@ -13593,7 +13609,7 @@
       "weighted_degree": 4
     },
     {
-      "article_count": 471,
+      "article_count": 472,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
@@ -13607,7 +13623,7 @@
       "name": "博客与播客",
       "rank": 5,
       "related_count": 106,
-      "weighted_degree": 1251
+      "weighted_degree": 1257
     },
     {
       "article_count": 141,
@@ -13627,7 +13643,7 @@
       "weighted_degree": 507.6
     },
     {
-      "article_count": 733,
+      "article_count": 734,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -13641,7 +13657,7 @@
       "name": "大语言模型",
       "rank": 2,
       "related_count": 94,
-      "weighted_degree": 2073.2
+      "weighted_degree": 2079.2
     },
     {
       "article_count": 60,
@@ -13712,11 +13728,11 @@
       "weighted_degree": 466
     },
     {
-      "article_count": 544,
+      "article_count": 546,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
-      "degree": 119,
+      "degree": 120,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
@@ -13725,8 +13741,8 @@
       "level": 6,
       "name": "来源快报",
       "rank": 3,
-      "related_count": 119,
-      "weighted_degree": 1596
+      "related_count": 120,
+      "weighted_degree": 1604
     },
     {
       "article_count": 59,
@@ -13816,13 +13832,13 @@
   ],
   "stats": {
     "links_by_type": {
-      "cooccurrence": 1284,
+      "cooccurrence": 1286,
       "semantic": 38
     },
     "nodes_by_layer": {
       "tag": 188
     },
-    "total_links": 1322,
+    "total_links": 1324,
     "total_nodes": 188
   },
   "version": 2
