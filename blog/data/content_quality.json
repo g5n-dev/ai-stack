@@ -1,8 +1,8 @@
 {
-  "active_count": 2733,
+  "active_count": 2735,
   "archived_count": 276,
   "complete_count": 60,
-  "interpreted_brief_count": 167,
+  "interpreted_brief_count": 168,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21149,6 +21149,21 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260905-blogs_podcasts-run-agent-driven-amazon-sagemaker-hyperpod-operati-0-184a451fc2.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
+    "posts/20260905-hacker_news-can-ai-design-circuit-boards-yet-4-a80ce387a3.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260905-hacker_news-discovery-of-a-new-openai-agent-message-board-0-61abc28dde.md": {
       "reasons": [
         "concise_source_card"
@@ -21200,11 +21215,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2506,
-  "source_file_count": 3009,
-  "source_tree_sha256": "a07650d421b2bf3522f52f9c724732c45b38a932a856d2a3088a21670eb0887c",
-  "verified_provenance_count": 2733,
+  "source_brief_count": 2507,
+  "source_file_count": 3011,
+  "source_tree_sha256": "939d56b952d998e4f8c505d600b5892f58e2cd73c04ac31afaf756750f61d32e",
+  "verified_provenance_count": 2735,
   "warning_counts": {
-    "source_excerpt_truncated": 788
+    "source_excerpt_truncated": 789
   }
 }
