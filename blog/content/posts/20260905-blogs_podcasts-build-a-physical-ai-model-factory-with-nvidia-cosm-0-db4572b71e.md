@@ -15,7 +15,7 @@ observation_id: obs_db4572b71eb09cccddf27d76236d4dc5d129d84d0c831a8ecd0d3b1f22ae
 event_id: evt_92b34a0be6061e61a820efd82cb68ed3258aff13aab1b5a5091c0e4646d1f45b
 revision_id: rev_5c86583d63895e3c13f79bd3250c7128ca508bf5e7e64b263a19b88e817907bf
 source_published_at: 2026-09-04T16:16:00Z
-first_seen_at: 2026-09-04T21:28:51.322133Z
+first_seen_at: 2026-09-04T21:41:03Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:270fe2fcbaf92a06e8e5d5455de8461ad3042e7c4bd01ce24
 description: "这条内容介绍如何利用NVIDIA Cosmos 3在Amazon SageMaker HyperPod上构建一条持续的物理AI模型生产流水线，把合成数据生成、感知与策略后训练以及闭环仿真评估统一在同一模型框架中。"
 external_url: https://aws.amazon.com/blogs/machine-learning/build-a-physical-ai-model-factory-with-nvidia-cosmos-3-on-sagemaker-hyperpod
 parent_observation_id: null
-last_seen_at: 2026-09-04T21:28:51.322133Z
+last_seen_at: 2026-09-05T00:00:00Z
 ---
 
 ## 基本信息
