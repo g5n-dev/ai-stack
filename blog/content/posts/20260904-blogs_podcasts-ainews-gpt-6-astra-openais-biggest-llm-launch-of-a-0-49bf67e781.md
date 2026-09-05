@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:5590e511c06b9760c5977ecf6c32bd97ae7eb418b4f3bfacf
 description: "这是一条关于OpenAI发布最新旗舰模型GPT-6 Astra的实时报道，涵盖发布后不到一天的观看量、点赞数、核心功能、部署进度、定价以及围绕基准表现和安全性的争议。"
 external_url: https://www.latent.space/p/ainews-gpt-6-astra-openais-biggest
 parent_observation_id: null
-last_seen_at: 2026-09-04T09:38:51.550792Z
+last_seen_at: 2026-09-05T00:00:00Z
 ---
 
 ## 基本信息

@@ -1,8 +1,8 @@
 {
-  "active_count": 2731,
+  "active_count": 2733,
   "archived_count": 276,
   "complete_count": 60,
-  "interpreted_brief_count": 166,
+  "interpreted_brief_count": 167,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21131,6 +21131,15 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260905-blogs_podcasts-deploy-a-multimodal-whatsapp-ordering-assistant-wi-0-17e5ae8afd.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20260905-blogs_podcasts-designing-lifecycle-policies-for-agentcore-memory-0-c620d7b2d0.md": {
       "reasons": [
         "interpreted_source_card"
@@ -21147,6 +21156,12 @@
       "status": "source_brief"
     },
     "posts/20260905-hacker_news-fermats-last-theorem-anthropic-has-beaten-me-to-it-1-55c9a4d228.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260905-hacker_news-gpt-6-astra-on-openrouter-3-0c6009cf40.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -21185,11 +21200,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2505,
-  "source_file_count": 3007,
-  "source_tree_sha256": "2bb7f7a0064f24897350f623a04a7ed023be40575e5f32f06e3ee6a01c2b314d",
-  "verified_provenance_count": 2731,
+  "source_brief_count": 2506,
+  "source_file_count": 3009,
+  "source_tree_sha256": "a07650d421b2bf3522f52f9c724732c45b38a932a856d2a3088a21670eb0887c",
+  "verified_provenance_count": 2733,
   "warning_counts": {
-    "source_excerpt_truncated": 787
+    "source_excerpt_truncated": 788
   }
 }
