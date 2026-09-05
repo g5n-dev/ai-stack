@@ -15,7 +15,7 @@ observation_id: obs_a3fb326ed52ac82e37e8eebd35d18b3eefe4eec39a733e9544f8eac91162
 event_id: evt_f4fa5fb073430060a1442b856ab3659885555214fd528df90f70e5011c2c7f15
 revision_id: rev_b8774d19163c157e3aa9f328b618c56f4068039d00a64b5bc18c6f85cf6c851e
 source_published_at: 2026-09-04T16:06:01Z
-first_seen_at: 2026-09-05T12:42:58.820022Z
+first_seen_at: 2026-09-05T12:55:18Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
