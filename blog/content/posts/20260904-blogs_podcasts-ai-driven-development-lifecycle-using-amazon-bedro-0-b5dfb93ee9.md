@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:c689a929fac2c74b96177387d02909ddaef33cc9ea5a37464
 description: "这条内容介绍了基于Amazon Bedrock AgentCore的AI驱动开发生命周期实现方案，包含两个参考案例：一个是从SQL schema自动生成ER图的工具，另一个是多代理架构的代码安全分析系统。"
 external_url: https://aws.amazon.com/blogs/machine-learning/ai-driven-development-lifecycle-using-amazon-bedrock-agentcore
 parent_observation_id: null
-last_seen_at: 2026-09-05T00:00:00Z
+last_seen_at: 2026-09-06T00:00:00Z
 ---
 
 ## 基本信息

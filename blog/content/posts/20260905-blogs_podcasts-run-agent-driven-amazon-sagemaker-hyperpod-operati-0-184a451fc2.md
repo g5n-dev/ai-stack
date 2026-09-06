@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:bf8d3b9cbd8060e50015448cb86db27a2844473bb7bfa73b6
 description: "这是一篇关于 HyperPod InstantStart 的技术实现解读，介绍了如何通过 AI agent 驱动 SageMaker HyperPod 集群的自动化运维。该方案将集群创建、容量配置、训练和推理等工作流封装为统一的控制平面，同时提供 Web 界面和终端两种交互方式。"
 external_url: https://aws.amazon.com/blogs/machine-learning/run-agent-driven-amazon-sagemaker-hyperpod-operations-with-instantstart
 parent_observation_id: null
-last_seen_at: 2026-09-05T04:27:12.983411Z
+last_seen_at: 2026-09-06T00:00:00Z
 ---
 
 ## 基本信息

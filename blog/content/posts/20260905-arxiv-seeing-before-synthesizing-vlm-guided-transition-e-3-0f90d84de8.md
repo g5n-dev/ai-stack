@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:1becc8fc4dd3a85e92aad7e501ebb7aa0bb6a82df4359560e
 description: "该框架利用视觉语言模型在视频的间隔区段生成帧级叙事，并通过检测语义变化来定位事件转换，仅凭有序的事件描述即可在弱监督下完成稠密视频字幕和事件定位。"
 external_url: http://arxiv.org/abs/2609.04183v1
 parent_observation_id: null
-last_seen_at: 2026-09-05T12:42:36.965354Z
+last_seen_at: 2026-09-06T00:00:00Z
 ---
 
 ## 基本信息

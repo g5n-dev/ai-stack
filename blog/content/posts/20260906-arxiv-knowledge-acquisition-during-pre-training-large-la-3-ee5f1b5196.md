@@ -15,7 +15,7 @@ observation_id: obs_ee5f1b5196f646e9d00f7d30a45a733bb10a436091fd489d303823cea0d2
 event_id: evt_0f269d2613eec28b60aad8a49e8af004b7763b1295fa0b6207ceced160058abe
 revision_id: rev_27904db40ee2ab6b129e21041c243e46bc465211976b4dabf5f1fbae6dc881a6
 source_published_at: 2026-09-03T17:57:02Z
-first_seen_at: 2026-09-05T16:04:07.798832Z
+first_seen_at: 2026-09-05T16:17:10Z
 timestamp_confidence: publisher
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:aa2a47eaaec19325c21d79074fd41ae2f9c8b722b7869ba6d
 description: "本文通过受控实验表明，预训练阶段使用知识的多种辅助表述能够提升模型的学习效果，即使在相同的 token 预算下也能改善事实记忆。"
 external_url: http://arxiv.org/abs/2609.04180v1
 parent_observation_id: null
-last_seen_at: 2026-09-05T16:04:07.798832Z
+last_seen_at: 2026-09-06T00:00:00Z
 ---
 
 ## 基本信息

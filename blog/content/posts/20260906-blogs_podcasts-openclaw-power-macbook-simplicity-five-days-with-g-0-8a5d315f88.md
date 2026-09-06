@@ -15,7 +15,7 @@ observation_id: obs_8a5d315f88fac511ee672507cf53da60c88e297c0ea6ef925c2c7a7f595d
 event_id: evt_7514e51c865a91751ee295cd9f159e1724163c49309b3ccb4cb14c46bc7c77c1
 revision_id: rev_2024debe1707299e484a80c5e8c2acb9e924a8789aafb181b58afb574e9af0e1
 source_published_at: 2026-09-05T15:01:02Z
-first_seen_at: 2026-09-05T16:04:10.707282Z
+first_seen_at: 2026-09-05T16:17:10Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:7e1ff2407d02524ed2f84876afa268448863e697b9c10f747
 description: "这是一篇对 Grok Bot 五天使用体验的初印象，阐述其以机器人为最小编程单元的设计、实现方式以及相对 OpenClaw 的定位差异。"
 external_url: https://www.latent.space/p/grok-bot
 parent_observation_id: null
-last_seen_at: 2026-09-05T16:04:10.707282Z
+last_seen_at: 2026-09-06T00:00:00Z
 ---
 
 ## 基本信息

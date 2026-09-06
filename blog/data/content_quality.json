@@ -1,8 +1,8 @@
 {
-  "active_count": 2746,
+  "active_count": 2749,
   "archived_count": 276,
   "complete_count": 62,
-  "interpreted_brief_count": 173,
+  "interpreted_brief_count": 174,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21238,6 +21238,27 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260907-arxiv-a-computationally-feasible-framework-for-causal-pr-3-fe2674cdc2.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260907-blogs_podcasts-an-alien-mind-0-e0f7544673.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260907-juejin-项目中新增给ai制定的代码规范-0-40fc8b0477.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     }
   },
   "quarantined_count": 0,
@@ -21272,11 +21293,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2511,
-  "source_file_count": 3022,
-  "source_tree_sha256": "11cf44c13a1d4b17af75dbd1bfaaebdd1250e7f6d7bb665d995fe0b4e15f71e0",
-  "verified_provenance_count": 2746,
+  "source_brief_count": 2513,
+  "source_file_count": 3025,
+  "source_tree_sha256": "1a96a06e58ade19f14da7471c265326b63c578b52ec86e152c296d0014e85ede",
+  "verified_provenance_count": 2749,
   "warning_counts": {
-    "source_excerpt_truncated": 790
+    "source_excerpt_truncated": 791
   }
 }

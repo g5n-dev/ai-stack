@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:b8ab5c4ac8619e13b118f5ff6d7441a673faf72d03152959f
 description: "本文通过预先注册的大规模实验，验证“黑盒语言模型评判器在共享端点上对同一请求会产生相同结果”这一假设，发现实际排名一致性远低于预设阈值，表明该评判器缺乏仪器般的稳定性。"
 external_url: http://arxiv.org/abs/2609.04198v1
 parent_observation_id: null
-last_seen_at: 2026-09-05T00:00:00Z
+last_seen_at: 2026-09-06T00:00:00Z
 ---
 
 ## 基本信息
