@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-05T16:07:27Z",
+  "generated_at": "2026-09-06T17:04:00Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -368,6 +368,14 @@
       "weight": 1
     },
     {
+      "id": "edge:cooccurrence:tag:AI->tag:Safety",
+      "source": "tag:AI",
+      "strength": 0.5,
+      "target": "tag:Safety",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
       "id": "edge:cooccurrence:tag:AI->tag:Search",
       "source": "tag:AI",
       "strength": 1,
@@ -501,7 +509,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 41
+      "weight": 42
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:大语言模型",
@@ -517,7 +525,7 @@
       "strength": 1,
       "target": "tag:掘金",
       "type": "cooccurrence",
-      "weight": 7
+      "weight": 8
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:来源快报",
@@ -525,7 +533,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 146
+      "weight": 148
     },
     {
       "id": "edge:semantic:tag:AI->tech:ai_ml",
@@ -4597,7 +4605,7 @@
       "strength": 1,
       "target": "tag:cs.AI",
       "type": "cooccurrence",
-      "weight": 60
+      "weight": 61
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:cs.CC",
@@ -4837,7 +4845,7 @@
       "strength": 1,
       "target": "tag:机器学习",
       "type": "cooccurrence",
-      "weight": 35
+      "weight": 36
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:来源快报",
@@ -4845,7 +4853,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 208
+      "weight": 209
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:深度学习",
@@ -9133,7 +9141,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:Safety->tag:来源快报",
@@ -9141,7 +9149,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:Search->tag:Travel",
@@ -9645,7 +9653,7 @@
       "strength": 1,
       "target": "tag:机器学习",
       "type": "cooccurrence",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:cs.AI->tag:来源快报",
@@ -9653,7 +9661,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 60
+      "weight": 61
     },
     {
       "id": "edge:cooccurrence:tag:cs.AI->tag:深度学习",
@@ -10221,7 +10229,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 152
+      "weight": 153
     },
     {
       "id": "edge:cooccurrence:tag:博客与播客->tag:深度学习",
@@ -10445,7 +10453,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 31
+      "weight": 32
     },
     {
       "id": "edge:cooccurrence:tag:掘金->tag:来源转写",
@@ -10541,7 +10549,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 13
+      "weight": 14
     },
     {
       "id": "edge:cooccurrence:tag:机器学习->tag:深度学习",
@@ -10724,11 +10732,11 @@
       "weighted_degree": 211
     },
     {
-      "article_count": 147,
+      "article_count": 149,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
-      "degree": 56,
+      "degree": 57,
       "description": "文章标签: AI",
       "id": "tag:AI",
       "layer": "tag",
@@ -10737,8 +10745,8 @@
       "level": 6,
       "name": "AI",
       "rank": 16,
-      "related_count": 55,
-      "weighted_degree": 387.6
+      "related_count": 56,
+      "weighted_degree": 392.6
     },
     {
       "article_count": 3,
@@ -10838,7 +10846,7 @@
       "legacy_id": "Algorithms",
       "level": 6,
       "name": "Algorithms",
-      "rank": 72,
+      "rank": 73,
       "related_count": 12,
       "weighted_degree": 14
     },
@@ -11042,7 +11050,7 @@
       "legacy_id": "Amazon EC2",
       "level": 6,
       "name": "Amazon EC2",
-      "rank": 77,
+      "rank": 78,
       "related_count": 11,
       "weighted_degree": 13
     },
@@ -11076,7 +11084,7 @@
       "legacy_id": "Amazon Elastic Kubernetes Service",
       "level": 6,
       "name": "Amazon Elastic Kubernetes Service",
-      "rank": 79,
+      "rank": 80,
       "related_count": 9,
       "weighted_degree": 12.6
     },
@@ -11365,7 +11373,7 @@
       "legacy_id": "Amazon Simple Storage Service (S3)",
       "level": 6,
       "name": "Amazon Simple Storage Service (S3)",
-      "rank": 71,
+      "rank": 72,
       "related_count": 13,
       "weighted_degree": 14
     },
@@ -11433,7 +11441,7 @@
       "legacy_id": "Android",
       "level": 6,
       "name": "Android",
-      "rank": 80,
+      "rank": 81,
       "related_count": 11,
       "weighted_degree": 12
     },
@@ -11523,7 +11531,7 @@
       "weighted_degree": 49
     },
     {
-      "article_count": 762,
+      "article_count": 763,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -11537,7 +11545,7 @@
       "name": "ArXiv",
       "rank": 6,
       "related_count": 45,
-      "weighted_degree": 1083
+      "weighted_degree": 1086
     },
     {
       "article_count": 1,
@@ -11569,7 +11577,7 @@
       "legacy_id": "AWS Fargate",
       "level": 6,
       "name": "AWS Fargate",
-      "rank": 76,
+      "rank": 77,
       "related_count": 13,
       "weighted_degree": 13
     },
@@ -11858,7 +11866,7 @@
       "legacy_id": "Computer modeling",
       "level": 6,
       "name": "Computer modeling",
-      "rank": 73,
+      "rank": 74,
       "related_count": 12,
       "weighted_degree": 14
     },
@@ -11880,7 +11888,7 @@
       "weighted_degree": 21.6
     },
     {
-      "article_count": 60,
+      "article_count": 61,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -11894,7 +11902,7 @@
       "name": "cs.AI",
       "rank": 20,
       "related_count": 10,
-      "weighted_degree": 189
+      "weighted_degree": 192
     },
     {
       "article_count": 2,
@@ -12470,7 +12478,7 @@
       "legacy_id": "Faculty",
       "level": 6,
       "name": "Faculty",
-      "rank": 74,
+      "rank": 75,
       "related_count": 12,
       "weighted_degree": 14
     },
@@ -12504,7 +12512,7 @@
       "legacy_id": "Gemini App",
       "level": 6,
       "name": "Gemini App",
-      "rank": 81,
+      "rank": 82,
       "related_count": 9,
       "weighted_degree": 12
     },
@@ -12980,7 +12988,7 @@
       "legacy_id": "Leadership",
       "level": 6,
       "name": "Leadership",
-      "rank": 75,
+      "rank": 76,
       "related_count": 12,
       "weighted_degree": 14
     },
@@ -13099,7 +13107,7 @@
       "legacy_id": "Networking & Traffic",
       "level": 6,
       "name": "Networking & Traffic",
-      "rank": 82,
+      "rank": 83,
       "related_count": 9,
       "weighted_degree": 12
     },
@@ -13167,7 +13175,7 @@
       "legacy_id": "Product",
       "level": 6,
       "name": "Product",
-      "rank": 83,
+      "rank": 84,
       "related_count": 4,
       "weighted_degree": 11
     },
@@ -13376,11 +13384,11 @@
       "weighted_degree": 140.6
     },
     {
-      "article_count": 3,
+      "article_count": 4,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Interview",
-      "degree": 9,
+      "degree": 10,
       "description": "文章标签: Safety",
       "id": "tag:Safety",
       "layer": "tag",
@@ -13388,9 +13396,9 @@
       "legacy_id": "Safety",
       "level": 6,
       "name": "Safety",
-      "rank": 84,
-      "related_count": 9,
-      "weighted_degree": 11
+      "rank": 71,
+      "related_count": 10,
+      "weighted_degree": 14
     },
     {
       "article_count": 5,
@@ -13575,7 +13583,7 @@
       "legacy_id": "Thought Leadership",
       "level": 6,
       "name": "Thought Leadership",
-      "rank": 78,
+      "rank": 79,
       "related_count": 9,
       "weighted_degree": 13
     },
@@ -13682,7 +13690,7 @@
       "weighted_degree": 4
     },
     {
-      "article_count": 474,
+      "article_count": 475,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
@@ -13696,7 +13704,7 @@
       "name": "博客与播客",
       "rank": 5,
       "related_count": 106,
-      "weighted_degree": 1267
+      "weighted_degree": 1270
     },
     {
       "article_count": 141,
@@ -13750,7 +13758,7 @@
       "weighted_degree": 129
     },
     {
-      "article_count": 521,
+      "article_count": 522,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -13764,7 +13772,7 @@
       "name": "掘金",
       "rank": 4,
       "related_count": 26,
-      "weighted_degree": 1329
+      "weighted_degree": 1331
     },
     {
       "article_count": 146,
@@ -13784,7 +13792,7 @@
       "weighted_degree": 526.6
     },
     {
-      "article_count": 136,
+      "article_count": 137,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
@@ -13798,10 +13806,10 @@
       "name": "机器学习",
       "rank": 13,
       "related_count": 80,
-      "weighted_degree": 473
+      "weighted_degree": 476
     },
     {
-      "article_count": 554,
+      "article_count": 557,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:来源快报",
@@ -13815,7 +13823,7 @@
       "name": "来源快报",
       "rank": 3,
       "related_count": 120,
-      "weighted_degree": 1631
+      "weighted_degree": 1639
     },
     {
       "article_count": 61,
@@ -13905,13 +13913,13 @@
   ],
   "stats": {
     "links_by_type": {
-      "cooccurrence": 1293,
+      "cooccurrence": 1294,
       "semantic": 38
     },
     "nodes_by_layer": {
       "tag": 189
     },
-    "total_links": 1331,
+    "total_links": 1332,
     "total_nodes": 189
   },
   "version": 2

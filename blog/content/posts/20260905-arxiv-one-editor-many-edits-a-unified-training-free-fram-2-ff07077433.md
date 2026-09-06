@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:62967e26d18508b616aa24b2daec5c2f016ef6919f12b0cf0
 description: "EditVid 是一种无需训练的通用视频编辑框架，利用稀疏因果记忆保证局部连贯、对应驱动的后注意力令牌注入保持远距离身份，并采用软潜在混合实现编辑局部性。该框架同时支持文字指令和参考图像两种编辑方式。"
 external_url: http://arxiv.org/abs/2609.04190v1
 parent_observation_id: null
-last_seen_at: 2026-09-05T09:04:48.236633Z
+last_seen_at: 2026-09-06T00:00:00Z
 ---
 
 ## 基本信息

@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:270fe2fcbaf92a06e8e5d5455de8461ad3042e7c4bd01ce24
 description: "这条内容介绍如何利用NVIDIA Cosmos 3在Amazon SageMaker HyperPod上构建一条持续的物理AI模型生产流水线，把合成数据生成、感知与策略后训练以及闭环仿真评估统一在同一模型框架中。"
 external_url: https://aws.amazon.com/blogs/machine-learning/build-a-physical-ai-model-factory-with-nvidia-cosmos-3-on-sagemaker-hyperpod
 parent_observation_id: null
-last_seen_at: 2026-09-05T00:00:00Z
+last_seen_at: 2026-09-06T00:00:00Z
 ---
 
 ## 基本信息

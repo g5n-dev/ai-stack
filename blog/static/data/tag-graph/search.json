@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-09-05T16:07:27Z",
+  "generated_at": "2026-09-06T17:04:00Z",
   "items": [
     {
       "article_count": 839,
@@ -41,7 +41,7 @@
       "weighted_degree": 2108.2
     },
     {
-      "article_count": 554,
+      "article_count": 557,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 120,
@@ -51,10 +51,10 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 3,
-      "weighted_degree": 1631
+      "weighted_degree": 1639
     },
     {
-      "article_count": 521,
+      "article_count": 522,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 26,
@@ -64,10 +64,10 @@
       "legacy_id": "掘金",
       "name": "掘金",
       "rank": 4,
-      "weighted_degree": 1329
+      "weighted_degree": 1331
     },
     {
-      "article_count": 474,
+      "article_count": 475,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 106,
@@ -77,10 +77,10 @@
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 5,
-      "weighted_degree": 1267
+      "weighted_degree": 1270
     },
     {
-      "article_count": 762,
+      "article_count": 763,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 45,
@@ -90,7 +90,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 1083
+      "weighted_degree": 1086
     },
     {
       "article_count": 162,
@@ -171,7 +171,7 @@
       "weighted_degree": 507.6
     },
     {
-      "article_count": 136,
+      "article_count": 137,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 80,
@@ -181,7 +181,7 @@
       "legacy_id": "机器学习",
       "name": "机器学习",
       "rank": 13,
-      "weighted_degree": 473
+      "weighted_degree": 476
     },
     {
       "article_count": 126,
@@ -210,17 +210,17 @@
       "weighted_degree": 418
     },
     {
-      "article_count": 147,
+      "article_count": 149,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
-      "degree": 56,
+      "degree": 57,
       "description": "文章标签: AI",
       "id": "tag:AI",
       "layer": "tag",
       "legacy_id": "AI",
       "name": "AI",
       "rank": 16,
-      "weighted_degree": 387.6
+      "weighted_degree": 392.6
     },
     {
       "article_count": 86,
@@ -262,7 +262,7 @@
       "weighted_degree": 211
     },
     {
-      "article_count": 60,
+      "article_count": 61,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 10,
@@ -272,7 +272,7 @@
       "legacy_id": "cs.AI",
       "name": "cs.AI",
       "rank": 20,
-      "weighted_degree": 189
+      "weighted_degree": 192
     },
     {
       "article_count": 28,
@@ -925,6 +925,19 @@
       "weighted_degree": 14.6
     },
     {
+      "article_count": 4,
+      "category": "article_tag",
+      "community_id": "community:tag:Interview",
+      "degree": 10,
+      "description": "文章标签: Safety",
+      "id": "tag:Safety",
+      "layer": "tag",
+      "legacy_id": "Safety",
+      "name": "Safety",
+      "rank": 71,
+      "weighted_degree": 14
+    },
+    {
       "article_count": 2,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
@@ -934,7 +947,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Simple Storage Service (S3)",
       "name": "Amazon Simple Storage Service (S3)",
-      "rank": 71,
+      "rank": 72,
       "weighted_degree": 14
     },
     {
@@ -947,7 +960,7 @@
       "layer": "tag",
       "legacy_id": "Algorithms",
       "name": "Algorithms",
-      "rank": 72,
+      "rank": 73,
       "weighted_degree": 14
     },
     {
@@ -960,7 +973,7 @@
       "layer": "tag",
       "legacy_id": "Computer modeling",
       "name": "Computer modeling",
-      "rank": 73,
+      "rank": 74,
       "weighted_degree": 14
     },
     {
@@ -973,7 +986,7 @@
       "layer": "tag",
       "legacy_id": "Faculty",
       "name": "Faculty",
-      "rank": 74,
+      "rank": 75,
       "weighted_degree": 14
     },
     {
@@ -986,7 +999,7 @@
       "layer": "tag",
       "legacy_id": "Leadership",
       "name": "Leadership",
-      "rank": 75,
+      "rank": 76,
       "weighted_degree": 14
     },
     {
@@ -999,7 +1012,7 @@
       "layer": "tag",
       "legacy_id": "AWS Fargate",
       "name": "AWS Fargate",
-      "rank": 76,
+      "rank": 77,
       "weighted_degree": 13
     },
     {
@@ -1012,7 +1025,7 @@
       "layer": "tag",
       "legacy_id": "Amazon EC2",
       "name": "Amazon EC2",
-      "rank": 77,
+      "rank": 78,
       "weighted_degree": 13
     },
     {
@@ -1025,7 +1038,7 @@
       "layer": "tag",
       "legacy_id": "Thought Leadership",
       "name": "Thought Leadership",
-      "rank": 78,
+      "rank": 79,
       "weighted_degree": 13
     },
     {
@@ -1038,7 +1051,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Elastic Kubernetes Service",
       "name": "Amazon Elastic Kubernetes Service",
-      "rank": 79,
+      "rank": 80,
       "weighted_degree": 12.6
     },
     {
@@ -1051,7 +1064,7 @@
       "layer": "tag",
       "legacy_id": "Android",
       "name": "Android",
-      "rank": 80,
+      "rank": 81,
       "weighted_degree": 12
     },
     {
@@ -1064,7 +1077,7 @@
       "layer": "tag",
       "legacy_id": "Gemini App",
       "name": "Gemini App",
-      "rank": 81,
+      "rank": 82,
       "weighted_degree": 12
     },
     {
@@ -1077,7 +1090,7 @@
       "layer": "tag",
       "legacy_id": "Networking & Traffic",
       "name": "Networking & Traffic",
-      "rank": 82,
+      "rank": 83,
       "weighted_degree": 12
     },
     {
@@ -1090,19 +1103,6 @@
       "layer": "tag",
       "legacy_id": "Product",
       "name": "Product",
-      "rank": 83,
-      "weighted_degree": 11
-    },
-    {
-      "article_count": 3,
-      "category": "article_tag",
-      "community_id": "community:tag:Interview",
-      "degree": 9,
-      "description": "文章标签: Safety",
-      "id": "tag:Safety",
-      "layer": "tag",
-      "legacy_id": "Safety",
-      "name": "Safety",
       "rank": 84,
       "weighted_degree": 11
     },
@@ -1354,7 +1354,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 995,
+      "article_count": 997,
       "category": "ai",
       "community_id": null,
       "degree": 10,

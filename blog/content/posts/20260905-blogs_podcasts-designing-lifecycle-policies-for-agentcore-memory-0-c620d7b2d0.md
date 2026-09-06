@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:fc1edf777722c679fecae39c96cb87c8d1766dc701fee6f7f
 description: "这段内容介绍了如何对 AI Agent 的记忆进行生命周期管理，通过将记忆分类并采用过期时间、相关性衰减和合并三种策略定期清理记忆，使长期运行的 Agent 保持有效性并避免过时信息干扰。"
 external_url: https://aws.amazon.com/blogs/machine-learning/designing-lifecycle-policies-for-agentcore-memory
 parent_observation_id: null
-last_seen_at: 2026-09-05T00:00:00Z
+last_seen_at: 2026-09-06T00:00:00Z
 ---
 
 ## 基本信息

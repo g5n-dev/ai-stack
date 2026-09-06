@@ -28,7 +28,7 @@ source_title_chars_original: 75
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/how-intuit-built-an-agentic-disaster-recovery-assistant-with-amazon-bedrock
 parent_observation_id: null
-last_seen_at: 2026-09-05T12:42:58.820022Z
+last_seen_at: 2026-09-06T00:00:00Z
 ---
 
 ## 基本信息
