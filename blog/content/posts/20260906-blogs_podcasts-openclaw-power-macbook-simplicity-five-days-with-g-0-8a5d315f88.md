@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:7e1ff2407d02524ed2f84876afa268448863e697b9c10f747
 description: "这是一篇对 Grok Bot 五天使用体验的初印象，阐述其以机器人为最小编程单元的设计、实现方式以及相对 OpenClaw 的定位差异。"
 external_url: https://www.latent.space/p/grok-bot
 parent_observation_id: null
-last_seen_at: 2026-09-06T00:00:00Z
+last_seen_at: 2026-09-07T00:00:00Z
 ---
 
 ## 基本信息

@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:3795643e9591e71183399dca18829b3869e25794effcafa5a
 description: "该内容介绍如何利用 Amazon Bedrock AgentCore 与 Amazon Nova 2 在 WhatsApp Business 平台上构建一个能够同时处理文字、语音笔记和语音通话的订餐助手，并给出基于 AWS CDK 的完整部署方案。"
 external_url: https://aws.amazon.com/blogs/machine-learning/deploy-a-multimodal-whatsapp-ordering-assistant-with-amazon-bedrock-agentcore
 parent_observation_id: null
-last_seen_at: 2026-09-06T00:00:00Z
+last_seen_at: 2026-09-07T00:00:00Z
 ---
 
 ## 基本信息
