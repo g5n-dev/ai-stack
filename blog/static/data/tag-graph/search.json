@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-09-06T21:22:59Z",
+  "generated_at": "2026-09-07T10:18:34Z",
   "items": [
     {
       "article_count": 840,
@@ -41,7 +41,7 @@
       "weighted_degree": 2108.2
     },
     {
-      "article_count": 559,
+      "article_count": 562,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 120,
@@ -51,7 +51,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 3,
-      "weighted_degree": 1645
+      "weighted_degree": 1655
     },
     {
       "article_count": 523,
@@ -67,7 +67,7 @@
       "weighted_degree": 1333
     },
     {
-      "article_count": 476,
+      "article_count": 477,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 106,
@@ -77,10 +77,10 @@
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 5,
-      "weighted_degree": 1273
+      "weighted_degree": 1276
     },
     {
-      "article_count": 764,
+      "article_count": 765,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 45,
@@ -90,7 +90,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 1089
+      "weighted_degree": 1094
     },
     {
       "article_count": 162,
@@ -106,7 +106,7 @@
       "weighted_degree": 611.6
     },
     {
-      "article_count": 152,
+      "article_count": 153,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 62,
@@ -116,10 +116,10 @@
       "legacy_id": "生成式 AI",
       "name": "生成式 AI",
       "rank": 8,
-      "weighted_degree": 602
+      "weighted_degree": 607
     },
     {
-      "article_count": 912,
+      "article_count": 913,
       "category": "article_tag",
       "community_id": "community:tag:掘金",
       "degree": 21,
@@ -129,7 +129,7 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 9,
-      "weighted_degree": 558
+      "weighted_degree": 560
     },
     {
       "article_count": 146,
@@ -197,7 +197,7 @@
       "weighted_degree": 470
     },
     {
-      "article_count": 75,
+      "article_count": 76,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 51,
@@ -207,10 +207,10 @@
       "legacy_id": "Prompt 工程",
       "name": "Prompt 工程",
       "rank": 15,
-      "weighted_degree": 421
+      "weighted_degree": 426
     },
     {
-      "article_count": 149,
+      "article_count": 151,
       "category": "article_tag",
       "community_id": "community:tag:来源快报",
       "degree": 57,
@@ -220,7 +220,7 @@
       "legacy_id": "AI",
       "name": "AI",
       "rank": 16,
-      "weighted_degree": 392.6
+      "weighted_degree": 397.6
     },
     {
       "article_count": 86,
@@ -327,7 +327,7 @@
       "weighted_degree": 171
     },
     {
-      "article_count": 49,
+      "article_count": 50,
       "category": "article_tag",
       "community_id": "community:other",
       "degree": 20,
@@ -337,7 +337,7 @@
       "legacy_id": "计算机视觉",
       "name": "计算机视觉",
       "rank": 25,
-      "weighted_degree": 165.2
+      "weighted_degree": 170.2
     },
     {
       "article_count": 47,
@@ -405,6 +405,19 @@
       "weighted_degree": 136.6
     },
     {
+      "article_count": 39,
+      "category": "article_tag",
+      "community_id": "community:other",
+      "degree": 9,
+      "description": "文章标签: cs.CV",
+      "id": "tag:cs.CV",
+      "layer": "tag",
+      "legacy_id": "cs.CV",
+      "name": "cs.CV",
+      "rank": 31,
+      "weighted_degree": 135
+    },
+    {
       "article_count": 63,
       "category": "article_tag",
       "community_id": "community:other",
@@ -414,21 +427,8 @@
       "layer": "tag",
       "legacy_id": "工程实践",
       "name": "工程实践",
-      "rank": 31,
-      "weighted_degree": 131
-    },
-    {
-      "article_count": 38,
-      "category": "article_tag",
-      "community_id": "community:other",
-      "degree": 9,
-      "description": "文章标签: cs.CV",
-      "id": "tag:cs.CV",
-      "layer": "tag",
-      "legacy_id": "cs.CV",
-      "name": "cs.CV",
       "rank": 32,
-      "weighted_degree": 130
+      "weighted_degree": 131
     },
     {
       "article_count": 62,
@@ -1055,6 +1055,19 @@
       "weighted_degree": 12.6
     },
     {
+      "article_count": 5,
+      "category": "article_tag",
+      "community_id": "community:tag:来源快报",
+      "degree": 3,
+      "description": "文章标签: Global Affairs",
+      "id": "tag:Global Affairs",
+      "layer": "tag",
+      "legacy_id": "Global Affairs",
+      "name": "Global Affairs",
+      "rank": 81,
+      "weighted_degree": 12
+    },
+    {
       "article_count": 2,
       "category": "article_tag",
       "community_id": "community:tag:Gemini Notebook",
@@ -1064,7 +1077,7 @@
       "layer": "tag",
       "legacy_id": "Android",
       "name": "Android",
-      "rank": 81,
+      "rank": 82,
       "weighted_degree": 12
     },
     {
@@ -1077,7 +1090,7 @@
       "layer": "tag",
       "legacy_id": "Gemini App",
       "name": "Gemini App",
-      "rank": 82,
+      "rank": 83,
       "weighted_degree": 12
     },
     {
@@ -1090,7 +1103,7 @@
       "layer": "tag",
       "legacy_id": "Networking & Traffic",
       "name": "Networking & Traffic",
-      "rank": 83,
+      "rank": 84,
       "weighted_degree": 12
     },
     {
@@ -1103,7 +1116,7 @@
       "layer": "tag",
       "legacy_id": "Product",
       "name": "Product",
-      "rank": 84,
+      "rank": 85,
       "weighted_degree": 11
     },
     {
@@ -1116,7 +1129,7 @@
       "layer": "tag",
       "legacy_id": "Production Engineering",
       "name": "Production Engineering",
-      "rank": 85,
+      "rank": 86,
       "weighted_degree": 11
     },
     {
@@ -1129,7 +1142,7 @@
       "layer": "application",
       "legacy_id": "webapp",
       "name": "Web应用",
-      "rank": 86,
+      "rank": 87,
       "weighted_degree": 11
     },
     {
@@ -1142,7 +1155,7 @@
       "layer": "tag",
       "legacy_id": "ML Applications",
       "name": "ML Applications",
-      "rank": 87,
+      "rank": 88,
       "weighted_degree": 10.6
     },
     {
@@ -1155,7 +1168,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Bedrock Guardrails",
       "name": "Amazon Bedrock Guardrails",
-      "rank": 88,
+      "rank": 89,
       "weighted_degree": 10
     },
     {
@@ -1168,7 +1181,7 @@
       "layer": "tag",
       "legacy_id": "Partner solutions",
       "name": "Partner solutions",
-      "rank": 89,
+      "rank": 90,
       "weighted_degree": 10
     },
     {
@@ -1181,7 +1194,7 @@
       "layer": "tag",
       "legacy_id": "ai",
       "name": "ai",
-      "rank": 90,
+      "rank": 91,
       "weighted_degree": 9.6
     },
     {
@@ -1194,21 +1207,8 @@
       "layer": "application",
       "legacy_id": "api",
       "name": "API服务",
-      "rank": 91,
-      "weighted_degree": 9.6
-    },
-    {
-      "article_count": 4,
-      "category": "article_tag",
-      "community_id": "community:tag:来源快报",
-      "degree": 3,
-      "description": "文章标签: Global Affairs",
-      "id": "tag:Global Affairs",
-      "layer": "tag",
-      "legacy_id": "Global Affairs",
-      "name": "Global Affairs",
       "rank": 92,
-      "weighted_degree": 9
+      "weighted_degree": 9.6
     },
     {
       "article_count": 3,
@@ -1354,7 +1354,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 998,
+      "article_count": 1000,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -2446,7 +2446,7 @@
       "weighted_degree": 3.4
     },
     {
-      "article_count": 49,
+      "article_count": 50,
       "category": "vision",
       "community_id": null,
       "degree": 4,
@@ -3161,7 +3161,7 @@
       "weighted_degree": 0.6
     },
     {
-      "article_count": 49,
+      "article_count": 50,
       "category": "ai",
       "community_id": null,
       "degree": 1,

@@ -1,8 +1,8 @@
 {
-  "active_count": 2752,
+  "active_count": 2755,
   "archived_count": 276,
   "complete_count": 63,
-  "interpreted_brief_count": 175,
+  "interpreted_brief_count": 176,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21251,6 +21251,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260907-arxiv-unimate-one-unified-model-to-animate-diverse-skele-0-cd5b2c64cf.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260907-blogs_podcasts-an-alien-mind-0-e0f7544673.md": {
       "reasons": [
         "concise_source_card"
@@ -21258,6 +21264,18 @@
       "status": "source_brief"
     },
     "posts/20260907-blogs_podcasts-research-acceleration-the-view-inside-openai-0-3784d7aba9.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260907-blogs_podcasts-supporting-independent-journalism-in-ukraine-0-073b13b14a.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260907-hacker_news-show-hn-engrim-a-universal-local-first-sqlite-memo-8-3c53f36a7a.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -21305,10 +21323,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2514,
-  "source_file_count": 3028,
-  "source_tree_sha256": "b6acd88a776be9ab135c1367f4f3568686d7bb928d7f1d4eb1fca33c6688c6b6",
-  "verified_provenance_count": 2752,
+  "source_brief_count": 2516,
+  "source_file_count": 3031,
+  "source_tree_sha256": "75d9508a9332d7003f2d2cdd09883432d82effda73e3c2ccce69d87fcb098506",
+  "verified_provenance_count": 2755,
   "warning_counts": {
     "source_excerpt_truncated": 791
   }

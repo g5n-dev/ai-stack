@@ -15,7 +15,7 @@ observation_id: obs_3784d7aba9718af9aa1923cc7e21d6332b37aba7cf0db2607f02e2b6f30a
 event_id: evt_c394cd70ab378888fb35187badf47e03aa3e5b86faa62c3562401289b7a31fa9
 revision_id: rev_b44c3df237efd640572aad2c6b6a7562aafb34017e834f78894803c1d3a3a00c
 source_published_at: 2026-09-06T08:00:00Z
-first_seen_at: 2026-09-06T21:20:43.287335Z
+first_seen_at: 2026-09-06T21:32:19Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 45
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://openai.com/index/research-acceleration-view-inside-openai
 parent_observation_id: null
-last_seen_at: 2026-09-06T21:20:43.287335Z
+last_seen_at: 2026-09-07T00:00:00Z
 ---
 
 ## 基本信息
