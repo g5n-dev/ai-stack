@@ -1,5 +1,5 @@
 {
-  "active_count": 2755,
+  "active_count": 2756,
   "archived_count": 276,
   "complete_count": 63,
   "interpreted_brief_count": 176,
@@ -21289,6 +21289,12 @@
       "warnings": [
         "source_excerpt_truncated"
       ]
+    },
+    "posts/20260908-arxiv-wearableqa-a-benchmark-for-health-reasoning-over-r-0-cd0f73edf5.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -21323,10 +21329,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2516,
-  "source_file_count": 3031,
-  "source_tree_sha256": "75d9508a9332d7003f2d2cdd09883432d82effda73e3c2ccce69d87fcb098506",
-  "verified_provenance_count": 2755,
+  "source_brief_count": 2517,
+  "source_file_count": 3032,
+  "source_tree_sha256": "6083c1f6d2cc0669e52d2d0c34c141a9f8f64cd8a10a5302979dd2bdfa88e8a8",
+  "verified_provenance_count": 2756,
   "warning_counts": {
     "source_excerpt_truncated": 791
   }

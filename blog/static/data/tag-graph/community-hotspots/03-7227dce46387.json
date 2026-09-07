@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:掘金",
-  "generated_at": "2026-09-07T10:18:34Z",
+  "generated_at": "2026-09-07T22:53:36Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -280,7 +280,7 @@
       "weighted_degree": 2415.2
     },
     {
-      "article_count": 741,
+      "article_count": 742,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:掘金",
@@ -294,7 +294,7 @@
       "name": "大语言模型",
       "rank": 2,
       "related_count": 95,
-      "weighted_degree": 2108.2
+      "weighted_degree": 2111.2
     },
     {
       "article_count": 523,
