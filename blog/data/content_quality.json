@@ -1,8 +1,8 @@
 {
-  "active_count": 2757,
+  "active_count": 2759,
   "archived_count": 276,
   "complete_count": 63,
-  "interpreted_brief_count": 176,
+  "interpreted_brief_count": 177,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21290,7 +21290,19 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260908-arxiv-diffusion-tv-experiencing-diffusion-models-through-0-69b89b7182.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260908-arxiv-wearableqa-a-benchmark-for-health-reasoning-over-r-0-cd0f73edf5.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260908-hacker_news-how-well-do-agents-use-testverification-techniques-4-f15cd38d37.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -21335,10 +21347,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2518,
-  "source_file_count": 3033,
-  "source_tree_sha256": "fe6c5c8a7bd5e0e1701f161f7f36291873bc03acd76c273391c13d999bbcf2d8",
-  "verified_provenance_count": 2757,
+  "source_brief_count": 2519,
+  "source_file_count": 3035,
+  "source_tree_sha256": "94d6eaea059a6b1bd5462e833c05b6261141b1410d4dfcd74d5068d5a87589db",
+  "verified_provenance_count": 2759,
   "warning_counts": {
     "source_excerpt_truncated": 791
   }
