@@ -4,7 +4,7 @@
     {
       "article_count": 634,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-fbef3217dbcf.json",
+      "hotspot_file": "community-hotspots/01-1413f25dd4f1.json",
       "id": "community:tag:Technical How-to",
       "leader_id": "tag:博客与播客",
       "name": "博客与播客",
@@ -14,33 +14,33 @@
       "weighted_degree": 4695.6
     },
     {
-      "article_count": 1118,
+      "article_count": 1119,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/02-a1acd5fcdc9e.json",
+      "hotspot_file": "community-hotspots/02-883fc46f533e.json",
       "id": "community:tag:来源快报",
       "leader_id": "tag:ArXiv",
       "name": "ArXiv",
       "node_count": 36,
       "rank": 2,
-      "tag_occurrences": 1686,
-      "weighted_degree": 3797.4
+      "tag_occurrences": 1687,
+      "weighted_degree": 3799.4
     },
     {
-      "article_count": 2200,
+      "article_count": 2201,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/03-7227dce46387.json",
+      "hotspot_file": "community-hotspots/03-27c85b2861ea.json",
       "id": "community:tag:掘金",
       "leader_id": "tag:Hacker News",
       "name": "Hacker News",
       "node_count": 25,
       "rank": 3,
-      "tag_occurrences": 4123,
-      "weighted_degree": 10521
+      "tag_occurrences": 4125,
+      "weighted_degree": 10525
     },
     {
       "article_count": 12,
       "hotspot_count": 11,
-      "hotspot_file": "community-hotspots/04-5b2dfa9f4284.json",
+      "hotspot_file": "community-hotspots/04-b74d6f6d9b87.json",
       "id": "community:tag:Gemini Notebook",
       "leader_id": "tag:Search",
       "name": "Search",
@@ -52,7 +52,7 @@
     {
       "article_count": 10,
       "hotspot_count": 8,
-      "hotspot_file": "community-hotspots/05-1104d319e644.json",
+      "hotspot_file": "community-hotspots/05-0aeced85ca6b.json",
       "id": "community:tag:Machine learning",
       "leader_id": "tag:Research",
       "name": "Research",
@@ -64,7 +64,7 @@
     {
       "article_count": 5,
       "hotspot_count": 8,
-      "hotspot_file": "community-hotspots/06-adcf290df48a.json",
+      "hotspot_file": "community-hotspots/06-dc02ba58eb37.json",
       "id": "community:tag:ML Applications",
       "leader_id": "tag:Data Infrastructure",
       "name": "Data Infrastructure",
@@ -76,7 +76,7 @@
     {
       "article_count": 2,
       "hotspot_count": 7,
-      "hotspot_file": "community-hotspots/07-cccc5e493f9d.json",
+      "hotspot_file": "community-hotspots/07-6c5fb030b37e.json",
       "id": "community:tag:Computer modeling",
       "leader_id": "tag:Algorithms",
       "name": "Algorithms",
@@ -88,7 +88,7 @@
     {
       "article_count": 2,
       "hotspot_count": 6,
-      "hotspot_file": "community-hotspots/08-c9e3386da1ce.json",
+      "hotspot_file": "community-hotspots/08-28d9674b6ac9.json",
       "id": "community:tag:Civil and environmental engineering",
       "leader_id": "tag:Leadership",
       "name": "Leadership",
@@ -100,7 +100,7 @@
     {
       "article_count": 2,
       "hotspot_count": 6,
-      "hotspot_file": "community-hotspots/09-8a60f4209173.json",
+      "hotspot_file": "community-hotspots/09-077c5db69b44.json",
       "id": "community:tag:Amazon RDS",
       "leader_id": "tag:Amazon Elastic Kubernetes Service",
       "name": "Amazon Elastic Kubernetes Service",
@@ -112,7 +112,7 @@
     {
       "article_count": 5,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/10-61cea0246046.json",
+      "hotspot_file": "community-hotspots/10-4e8416e2e777.json",
       "id": "community:tag:Interview",
       "leader_id": "tag:Safety",
       "name": "Safety",
@@ -124,7 +124,7 @@
     {
       "article_count": 1,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/11-cd3babe57f7a.json",
+      "hotspot_file": "community-hotspots/11-da4ed2a63c89.json",
       "id": "community:tag:Codex",
       "leader_id": "tag:ACP",
       "name": "ACP",
@@ -145,7 +145,7 @@
       "weighted_degree": 642.8
     }
   ],
-  "generated_at": "2026-09-07T22:53:36Z",
+  "generated_at": "2026-09-08T01:14:52Z",
   "iterations": 9,
   "limit": 11,
   "links": [
@@ -395,7 +395,7 @@
       "strength": 1,
       "target": "community:tag:来源快报",
       "type": "community",
-      "weight": 1311
+      "weight": 1313
     }
   ],
   "stats": {

@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:5534b25a82a8a4f92897b1dead39124463e27cae9d2b1499d
 description: "利用 Amazon Textract 对 PDF、Word、纯文本、HTML、Excel、图片等多种格式的账单进行文本提取与清洗，再配合 Amazon Bedrock 的生成式 AI 能力构建检索增强生成（RAG）方案，实现对账单的自动解析和问答。"
 external_url: https://aws.amazon.com/blogs/machine-learning/customizing-your-knowledge-base-on-amazon-bedrock-for-large-and-complex-documents-using-amazon-textract
 parent_observation_id: null
-last_seen_at: 2026-09-07T00:00:00Z
+last_seen_at: 2026-09-08T00:00:00Z
 ---
 
 ## 基本信息
