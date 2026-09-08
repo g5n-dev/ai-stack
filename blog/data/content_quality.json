@@ -1,8 +1,8 @@
 {
-  "active_count": 2769,
+  "active_count": 2772,
   "archived_count": 276,
   "complete_count": 64,
-  "interpreted_brief_count": 179,
+  "interpreted_brief_count": 181,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21356,7 +21356,25 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260909-arxiv-reflection-aware-generative-novel-view-synthesis-2-32d3a0d7cd.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260909-blogs_podcasts-amazon-sagemaker-feature-store-introduces-updatere-0-78e3ba01c5.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260909-blogs_podcasts-pathways-brain-inspired-architecture-development-o-0-176410a736.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260909-hacker_news-muse-metas-personal-ai-agent-features-and-capabili-6-080cedd90d.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -21401,10 +21419,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2526,
-  "source_file_count": 3045,
-  "source_tree_sha256": "8e82bb1b4086438f31509e52aba42e354bf90328cd259e0bf56818d4d392a730",
-  "verified_provenance_count": 2769,
+  "source_brief_count": 2527,
+  "source_file_count": 3048,
+  "source_tree_sha256": "5c77d27e0645b47ca301dd2b561a4fb9b408f61848e7b158f5676af15ca22477",
+  "verified_provenance_count": 2772,
   "warning_counts": {
     "source_excerpt_truncated": 791
   }
