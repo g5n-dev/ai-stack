@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:95eeccc93fa07c283f182a5f3fd2617ef3aa0781d19a06f5b
 description: "该模型是一种统一的动画生成框架，仅凭 rigged 三维资产的骨架结构与一段文本提示，即可直接合成符合该骨架的关节运动。它通过图感知注意力、基于图拉普拉斯的旋转型位置编码以及全局拓扑条件器等机制，实现对任意拓扑结构的支持，省去逐骨架的微调或参考动作。"
 external_url: http://arxiv.org/abs/2609.05415v1
 parent_observation_id: null
-last_seen_at: 2026-09-07T10:16:30.713341Z
+last_seen_at: 2026-09-08T00:00:00Z
 ---
 
 ## 基本信息
