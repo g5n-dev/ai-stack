@@ -1,8 +1,8 @@
 {
-  "active_count": 2762,
+  "active_count": 2765,
   "archived_count": 276,
   "complete_count": 63,
-  "interpreted_brief_count": 177,
+  "interpreted_brief_count": 178,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21302,7 +21302,19 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260908-arxiv-multi-step-tool-calling-over-korean-open-public-ap-2-5a2f29b8c5.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260908-arxiv-wearableqa-a-benchmark-for-health-reasoning-over-r-0-cd0f73edf5.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260908-blogs_podcasts-the-work-now-within-reach-1-a00fc889a2.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -21315,6 +21327,12 @@
       "status": "source_brief"
     },
     "posts/20260908-hacker_news-how-well-do-agents-use-testverification-techniques-4-f15cd38d37.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260908-hacker_news-libreoffice-breaks-download-records-after-declarin-1-7820e8f414.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -21365,10 +21383,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2522,
-  "source_file_count": 3038,
-  "source_tree_sha256": "578141cf4fdbf4210fb57b6c821b85041f7a65aa607b3ce49f3866624ee04bfa",
-  "verified_provenance_count": 2762,
+  "source_brief_count": 2524,
+  "source_file_count": 3041,
+  "source_tree_sha256": "fb649713d95b585e23db03f5e7ae11ac2cd6a3f2f4a66694f26364594f2e2819",
+  "verified_provenance_count": 2765,
   "warning_counts": {
     "source_excerpt_truncated": 791
   }
