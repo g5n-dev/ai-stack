@@ -1,8 +1,8 @@
 {
-  "active_count": 2765,
+  "active_count": 2769,
   "archived_count": 276,
-  "complete_count": 63,
-  "interpreted_brief_count": 178,
+  "complete_count": 64,
+  "interpreted_brief_count": 179,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21349,6 +21349,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260909-arxiv-necessary-or-sufficient-evaluating-llm-explanation-2-eb6fbda780.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260909-blogs_podcasts-amazon-sagemaker-feature-store-introduces-updatere-0-78e3ba01c5.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260909-hacker_news-show-hn-llm-attention-visualization-5-ac0bfea119.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -21383,10 +21401,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2524,
-  "source_file_count": 3041,
-  "source_tree_sha256": "fb649713d95b585e23db03f5e7ae11ac2cd6a3f2f4a66694f26364594f2e2819",
-  "verified_provenance_count": 2765,
+  "source_brief_count": 2526,
+  "source_file_count": 3045,
+  "source_tree_sha256": "8e82bb1b4086438f31509e52aba42e354bf90328cd259e0bf56818d4d392a730",
+  "verified_provenance_count": 2769,
   "warning_counts": {
     "source_excerpt_truncated": 791
   }
