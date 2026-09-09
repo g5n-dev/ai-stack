@@ -1,8 +1,8 @@
 {
-  "active_count": 2775,
+  "active_count": 2778,
   "archived_count": 276,
   "complete_count": 64,
-  "interpreted_brief_count": 182,
+  "interpreted_brief_count": 184,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21362,6 +21362,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260909-arxiv-recite-agentic-reasoning-for-faithful-citation-2-59ee715769.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260909-arxiv-reflection-aware-generative-novel-view-synthesis-2-32d3a0d7cd.md": {
       "reasons": [
         "interpreted_source_card"
@@ -21373,6 +21379,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260909-blogs_podcasts-govern-models-with-mlflow-and-amazon-sagemaker-ai--0-f60d4d32f2.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
     },
     "posts/20260909-blogs_podcasts-pathways-brain-inspired-architecture-development-o-0-176410a736.md": {
       "reasons": [
@@ -21399,6 +21411,12 @@
       "status": "source_brief"
     },
     "posts/20260909-hacker_news-show-hn-llm-attention-visualization-5-ac0bfea119.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260909-hacker_news-tao-open-math-problems-being-non-renewably-mined-b-9-711af1fbdb.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -21437,10 +21455,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2529,
-  "source_file_count": 3051,
-  "source_tree_sha256": "222ff901229f19c84df40216a2b63627c8f328e314a5fb7f6c3204a8db03529e",
-  "verified_provenance_count": 2775,
+  "source_brief_count": 2530,
+  "source_file_count": 3054,
+  "source_tree_sha256": "64af68c9b198620997361b887cf920ba0c3e96a036a61117f6af2c5eae1c6009",
+  "verified_provenance_count": 2778,
   "warning_counts": {
     "source_excerpt_truncated": 791
   }
