@@ -2,45 +2,45 @@
   "algorithm": "deterministic-weighted-label-propagation",
   "communities": [
     {
-      "article_count": 646,
+      "article_count": 647,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-036896507e3e.json",
+      "hotspot_file": "community-hotspots/01-6c94a1ff442c.json",
       "id": "community:tag:Technical How-to",
       "leader_id": "tag:博客与播客",
       "name": "博客与播客",
       "node_count": 55,
       "rank": 1,
-      "tag_occurrences": 1204,
-      "weighted_degree": 4926.6
+      "tag_occurrences": 1205,
+      "weighted_degree": 4933.6
     },
     {
-      "article_count": 1140,
+      "article_count": 1142,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/02-157f015ba514.json",
+      "hotspot_file": "community-hotspots/02-2133e8f0cc30.json",
       "id": "community:tag:来源快报",
       "leader_id": "tag:ArXiv",
       "name": "ArXiv",
       "node_count": 36,
       "rank": 2,
-      "tag_occurrences": 1726,
-      "weighted_degree": 3935.4
+      "tag_occurrences": 1730,
+      "weighted_degree": 3946.4
     },
     {
-      "article_count": 2220,
+      "article_count": 2222,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/03-6ae5c405e11a.json",
+      "hotspot_file": "community-hotspots/03-b2efcc8ed78c.json",
       "id": "community:tag:掘金",
       "leader_id": "tag:Hacker News",
       "name": "Hacker News",
       "node_count": 25,
       "rank": 3,
-      "tag_occurrences": 4158,
-      "weighted_degree": 10650
+      "tag_occurrences": 4161,
+      "weighted_degree": 10657
     },
     {
       "article_count": 12,
       "hotspot_count": 11,
-      "hotspot_file": "community-hotspots/04-e6bae20b8d36.json",
+      "hotspot_file": "community-hotspots/04-8cb7325eb717.json",
       "id": "community:tag:Gemini Notebook",
       "leader_id": "tag:Search",
       "name": "Search",
@@ -50,21 +50,21 @@
       "weighted_degree": 151.6
     },
     {
-      "article_count": 10,
-      "hotspot_count": 8,
-      "hotspot_file": "community-hotspots/05-a4330148b75b.json",
+      "article_count": 11,
+      "hotspot_count": 11,
+      "hotspot_file": "community-hotspots/05-4bf6f977a043.json",
       "id": "community:tag:Machine learning",
-      "leader_id": "tag:Research",
-      "name": "Research",
-      "node_count": 8,
+      "leader_id": "tag:Artificial intelligence",
+      "name": "Artificial intelligence",
+      "node_count": 11,
       "rank": 5,
-      "tag_occurrences": 28,
-      "weighted_degree": 189.2
+      "tag_occurrences": 34,
+      "weighted_degree": 231.2
     },
     {
       "article_count": 5,
       "hotspot_count": 8,
-      "hotspot_file": "community-hotspots/06-a89e35c0e8bb.json",
+      "hotspot_file": "community-hotspots/06-2abd40fa9fd1.json",
       "id": "community:tag:ML Applications",
       "leader_id": "tag:Data Infrastructure",
       "name": "Data Infrastructure",
@@ -76,7 +76,7 @@
     {
       "article_count": 2,
       "hotspot_count": 7,
-      "hotspot_file": "community-hotspots/07-a7f9fbbd5581.json",
+      "hotspot_file": "community-hotspots/07-2e5583c80408.json",
       "id": "community:tag:Computer modeling",
       "leader_id": "tag:Algorithms",
       "name": "Algorithms",
@@ -86,21 +86,21 @@
       "weighted_degree": 64.2
     },
     {
-      "article_count": 2,
+      "article_count": 3,
       "hotspot_count": 6,
-      "hotspot_file": "community-hotspots/08-7960346ede9f.json",
+      "hotspot_file": "community-hotspots/08-f12aae641d76.json",
       "id": "community:tag:Civil and environmental engineering",
-      "leader_id": "tag:Leadership",
-      "name": "Leadership",
+      "leader_id": "tag:Education, teaching, academics",
+      "name": "Education, teaching, academics",
       "node_count": 6,
       "rank": 8,
-      "tag_occurrences": 7,
-      "weighted_degree": 49
+      "tag_occurrences": 8,
+      "weighted_degree": 56
     },
     {
       "article_count": 2,
       "hotspot_count": 6,
-      "hotspot_file": "community-hotspots/09-c05ecfe7c9fc.json",
+      "hotspot_file": "community-hotspots/09-4755b674c9be.json",
       "id": "community:tag:Amazon RDS",
       "leader_id": "tag:Amazon Elastic Kubernetes Service",
       "name": "Amazon Elastic Kubernetes Service",
@@ -112,7 +112,7 @@
     {
       "article_count": 5,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/10-919a4fb6b34b.json",
+      "hotspot_file": "community-hotspots/10-87bde1f75572.json",
       "id": "community:tag:Interview",
       "leader_id": "tag:Safety",
       "name": "Safety",
@@ -124,7 +124,7 @@
     {
       "article_count": 1,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/11-6f06e720ddcf.json",
+      "hotspot_file": "community-hotspots/11-04b52e31e64b.json",
       "id": "community:tag:Codex",
       "leader_id": "tag:ACP",
       "name": "ACP",
@@ -145,7 +145,7 @@
       "weighted_degree": 654.8
     }
   ],
-  "generated_at": "2026-09-09T18:38:15Z",
+  "generated_at": "2026-09-09T21:44:48Z",
   "iterations": 9,
   "limit": 11,
   "links": [
@@ -243,7 +243,7 @@
       "strength": 1,
       "target": "community:tag:Machine learning",
       "type": "community",
-      "weight": 8
+      "weight": 14
     },
     {
       "id": "edge:community:community:tag:Civil and environmental engineering->community:tag:Technical How-to",
@@ -251,7 +251,7 @@
       "strength": 1,
       "target": "community:tag:Technical How-to",
       "type": "community",
-      "weight": 7
+      "weight": 8
     },
     {
       "id": "edge:community:community:tag:Codex->community:tag:掘金",
@@ -355,7 +355,7 @@
       "strength": 1,
       "target": "community:tag:Technical How-to",
       "type": "community",
-      "weight": 27
+      "weight": 33
     },
     {
       "id": "edge:community:community:tag:Machine learning->community:tag:掘金",
@@ -395,11 +395,11 @@
       "strength": 1,
       "target": "community:tag:来源快报",
       "type": "community",
-      "weight": 1360
+      "weight": 1365
     }
   ],
   "stats": {
-    "assigned_nodes": 190,
+    "assigned_nodes": 193,
     "detected_communities": 19,
     "emitted_communities": 12,
     "total_communities": 12,
