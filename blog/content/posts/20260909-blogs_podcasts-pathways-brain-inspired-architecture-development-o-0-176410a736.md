@@ -15,7 +15,7 @@ observation_id: obs_176410a7368dfb07faa1294ad8c0da3182dc7d94ba7d99917f06290dfc2a
 event_id: evt_5442deeb992708d08b5843d3b3fc1a0108a9b4e10e6337950cb7a7de12f1f9dc
 revision_id: rev_720fb75f8168ec4599c68cfb676458ebbd8f6b9b4d6d3a8a975e88bb58ddf230
 source_published_at: 2026-09-08T19:12:51Z
-first_seen_at: 2026-09-08T21:51:45.534867Z
+first_seen_at: 2026-09-08T22:04:05Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:a7668978c491a512c41cbc795b38eb7793bed0eeb0776cc53
 description: "这是一篇关于 Pathway 公司开发的新型脑启发式人工智能架构的报道。该架构采用不同于传统 transformer 的设计，通过在潜在空间中进行循环推理来实现智能处理，模仿大脑中神经元通过稀疏局部交互和突触状连接来维持状态的方式。"
 external_url: https://aws.amazon.com/blogs/machine-learning/pathways-brain-inspired-architecture-development-on-amazon-sagemaker-hyperpod
 parent_observation_id: null
-last_seen_at: 2026-09-08T21:51:45.534867Z
+last_seen_at: 2026-09-09T00:00:00Z
 ---
 
 ## 基本信息

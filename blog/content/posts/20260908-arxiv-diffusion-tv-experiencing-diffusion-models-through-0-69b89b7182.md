@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:9534610686befa2cd5c91a853248103b521c86078b2df4c94
 description: "这是一款把扩散模型的生成过程具象化的交互艺术装置，参与者通过调节老式电视的调谐旋钮来改变 AI 生成的图像和声音的清晰度，并在过去、现在和未来的动物形象之间切换，象征性地体验去噪步骤。"
 external_url: http://arxiv.org/abs/2609.05404v1
 parent_observation_id: null
-last_seen_at: 2026-09-08T05:58:22.073812Z
+last_seen_at: 2026-09-09T00:00:00Z
 ---
 
 ## 基本信息
