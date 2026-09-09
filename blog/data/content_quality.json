@@ -1,8 +1,8 @@
 {
-  "active_count": 2778,
+  "active_count": 2781,
   "archived_count": 276,
   "complete_count": 64,
-  "interpreted_brief_count": 184,
+  "interpreted_brief_count": 186,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21421,6 +21421,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260910-arxiv-procedural-graphs-self-evolving-execution-structur-2-72fa48e079.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260910-blogs_podcasts-how-heurist-finance-built-an-ai-native-investment--0-cbf95d88c7.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260910-hacker_news-qwen-38-follows-gpt-55-pro-reasoning-prefills-3-a76cf7777d.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -21455,10 +21473,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2530,
-  "source_file_count": 3054,
-  "source_tree_sha256": "64af68c9b198620997361b887cf920ba0c3e96a036a61117f6af2c5eae1c6009",
-  "verified_provenance_count": 2778,
+  "source_brief_count": 2531,
+  "source_file_count": 3057,
+  "source_tree_sha256": "a33dfe410a7882bc55b128d67aab2abdc39983605f56dc2a23f135750659577a",
+  "verified_provenance_count": 2781,
   "warning_counts": {
     "source_excerpt_truncated": 791
   }
