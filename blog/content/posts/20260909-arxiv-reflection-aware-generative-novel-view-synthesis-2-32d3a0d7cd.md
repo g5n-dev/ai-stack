@@ -15,7 +15,7 @@ observation_id: obs_32d3a0d7cd23c3de900ae1dab7714e9dacf6b7d2c28d1df9fd82716f52db
 event_id: evt_9edf6a65c4cd9fe76a5b2ad0c783e88fc82bfe621939c9eff7e756f9b626a128
 revision_id: rev_2ff3b8c09232dfc2af81da9a1056e88638728cf5bc31e955afbe71713b8288c7
 source_published_at: 2026-09-04T17:33:45Z
-first_seen_at: 2026-09-08T21:51:26.049968Z
+first_seen_at: 2026-09-08T22:04:05Z
 timestamp_confidence: publisher
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:56e32293e8b9ca85fa044bea8564cf46baa5be9f46da48ad4
 description: "该方法是一种无需额外训练的生成式新视角合成技术，专门用于包含镜面的场景。它把镜中像视作两幅互补视角，估计镜面并映射相机位姿形成虚拟视角，随后通过两个阶段的生成步骤——镜门控注意力和反射注入——在多视角扩散模型中显式利用反射关系，实现反射一致且场景连贯的新视角。"
 external_url: http://arxiv.org/abs/2609.05382v1
 parent_observation_id: null
-last_seen_at: 2026-09-08T21:51:26.049968Z
+last_seen_at: 2026-09-09T00:00:00Z
 ---
 
 ## 基本信息

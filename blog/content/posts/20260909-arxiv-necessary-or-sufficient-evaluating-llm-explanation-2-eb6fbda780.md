@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:4975469d7b8737be8448eb1177ac465f35ed4b11b61d67f98
 description: "该研究通过黑盒干预衡量语言模型生成的因素解释是否满足必要性（改变该因素会导致输出变化）或充分性（保留该因素而移除其他可变信息仍能保持输出），并把解释排名与实验得分进行相关性分析，涉及两类合成任务。"
 external_url: http://arxiv.org/abs/2609.05385v1
 parent_observation_id: null
-last_seen_at: 2026-09-08T18:39:56.160717Z
+last_seen_at: 2026-09-09T00:00:00Z
 ---
 
 ## 基本信息

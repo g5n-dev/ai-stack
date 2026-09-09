@@ -1,8 +1,8 @@
 {
-  "active_count": 2772,
+  "active_count": 2775,
   "archived_count": 276,
   "complete_count": 64,
-  "interpreted_brief_count": 181,
+  "interpreted_brief_count": 182,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21350,6 +21350,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260909-arxiv-molecular-déjà-vu-digit-level-retrieval-of-publish-2-8d70f60d09.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260909-arxiv-necessary-or-sufficient-evaluating-llm-explanation-2-eb6fbda780.md": {
       "reasons": [
         "interpreted_source_card"
@@ -21373,6 +21379,18 @@
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20260909-blogs_podcasts-take-on-your-most-ambitious-work-with-gpt-6-astra--0-f8477ed638.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260909-hacker_news-i-have-adhd-a-skill-to-stop-coding-agents-from-bur-9-46f3c1d612.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20260909-hacker_news-muse-metas-personal-ai-agent-features-and-capabili-6-080cedd90d.md": {
       "reasons": [
@@ -21419,10 +21437,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2527,
-  "source_file_count": 3048,
-  "source_tree_sha256": "5c77d27e0645b47ca301dd2b561a4fb9b408f61848e7b158f5676af15ca22477",
-  "verified_provenance_count": 2772,
+  "source_brief_count": 2529,
+  "source_file_count": 3051,
+  "source_tree_sha256": "222ff901229f19c84df40216a2b63627c8f328e314a5fb7f6c3204a8db03529e",
+  "verified_provenance_count": 2775,
   "warning_counts": {
     "source_excerpt_truncated": 791
   }

@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:61f3ff1ff6f0994a98dc77f2822c1d5218fc4fafdf021c5ab
 description: "该条目介绍了一个针对韩国公开公共API的多步骤工具调用评测基准，并提出一种基于实时执行验证的图结构数据合成方法，用于生成可执行的多步骤轨迹，以提升开源模型的调用能力。"
 external_url: http://arxiv.org/abs/2609.05395v1
 parent_observation_id: null
-last_seen_at: 2026-09-08T15:10:19.213333Z
+last_seen_at: 2026-09-09T00:00:00Z
 ---
 
 ## 基本信息
