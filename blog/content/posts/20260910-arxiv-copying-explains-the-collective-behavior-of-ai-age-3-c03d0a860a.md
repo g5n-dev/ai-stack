@@ -15,7 +15,7 @@ observation_id: obs_c03d0a860a609f6071c68df99b9cc2f2878b5f96641d1a1243e5806cb923
 event_id: evt_939573c6019e133c0a320af9b60c02d03f019cbd0f3e9d5fa81cf1a711f63238
 revision_id: rev_099043872430d9a3dcdf9bbce625842fd88dea831694a4be6350c4be6aa8c5de
 source_published_at: 2026-09-08T17:59:20Z
-first_seen_at: 2026-09-09T21:42:01.538162Z
+first_seen_at: 2026-09-09T21:55:39Z
 timestamp_confidence: publisher
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:3bb226bcf8232db7aea1ff762a263c9a60a3a1813a61e1eee
 description: "该研究通过公开的编辑日志分析了大量 AI 代理在共享百科页面上进行写入的行为，发现代理几乎完全依赖环境中已出现的内容来选择写入位置、自己名称以及消息措辞。"
 external_url: http://arxiv.org/abs/2609.09150v1
 parent_observation_id: null
-last_seen_at: 2026-09-09T21:42:01.538162Z
+last_seen_at: 2026-09-10T00:00:00Z
 ---
 
 ## 基本信息

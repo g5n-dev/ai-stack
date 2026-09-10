@@ -13,9 +13,9 @@ source_snapshot_sha256: "sha256:553fe5dd48f73337336bacd411058a457a7b2d6462bb445b
 source_payload_sha256: "sha256:307dcb00c8284f3c66dded0bf48705168f28316e498a9ba0dbf61f5a23fee883"
 observation_id: obs_4ef1fa7cd05791656365a83ff9c2abe5e5a4fe9c3cab5d9b55773bac430e7f43
 event_id: evt_b904ba84f92dcc4eca8e7f42184edfcb5ced319ff42e7a2e3bb90676202049fa
-revision_id: rev_3274c3e7146ae7e7cb0e1cebbba3a058589a5e468a74bf8afe426d0aa89ea78c
+revision_id: rev_3655ccea487ffb49a484b67ba3a27f7221582a650e391bd7ef36eccff32e639a
 source_published_at: 2026-09-09T14:37:47Z
-first_seen_at: 2026-09-09T21:42:00.298890Z
+first_seen_at: 2026-09-09T21:55:39Z
 timestamp_confidence: platform
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 54
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://magazine.sebastianraschka.com/p/gpt-6-astra-looped-transformers-and
 parent_observation_id: null
-last_seen_at: 2026-09-09T21:42:00.298890Z
+last_seen_at: 2026-09-10T00:00:00Z
 ---
 
 ## 基本信息

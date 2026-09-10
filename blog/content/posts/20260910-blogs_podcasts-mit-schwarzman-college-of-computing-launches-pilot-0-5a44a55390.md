@@ -15,7 +15,7 @@ observation_id: obs_5a44a5539042946085c27fd95c748952414042d621a54641c5b28f32e166
 event_id: evt_7c37c6e265b7abb92cf1caa4d8a97a48e90f9637b5c2c10be5f824fc9284ec54
 revision_id: rev_6cd0dc16823dcd7e18e644ad93d78596d8213ae9a07a64df59454d992b6996d6
 source_published_at: 2026-09-09T20:40:00Z
-first_seen_at: 2026-09-09T21:42:20.603064Z
+first_seen_at: 2026-09-09T21:55:39Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:7e1511e588dbab2034ae92d4408956528bad9b054ba92c696
 description: "MIT施瓦茨曼计算学院推出了一个面向高校教师的AI教学试点项目，提供为期一周的工作坊，帮助他们把人工智能融入各自学科的教学。"
 external_url: https://news.mit.edu/2026/mit-schwarzman-college-computing-launches-pilot-help-educators-teach-ai-across-disciplines-0909
 parent_observation_id: null
-last_seen_at: 2026-09-09T21:42:20.603064Z
+last_seen_at: 2026-09-10T00:00:00Z
 ---
 
 ## 基本信息

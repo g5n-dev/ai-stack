@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:a7668978c491a512c41cbc795b38eb7793bed0eeb0776cc53
 description: "这是一篇关于 Pathway 公司开发的新型脑启发式人工智能架构的报道。该架构采用不同于传统 transformer 的设计，通过在潜在空间中进行循环推理来实现智能处理，模仿大脑中神经元通过稀疏局部交互和突触状连接来维持状态的方式。"
 external_url: https://aws.amazon.com/blogs/machine-learning/pathways-brain-inspired-architecture-development-on-amazon-sagemaker-hyperpod
 parent_observation_id: null
-last_seen_at: 2026-09-09T00:00:00Z
+last_seen_at: 2026-09-10T00:00:00Z
 ---
 
 ## 基本信息

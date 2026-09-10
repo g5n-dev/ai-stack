@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:b1b2f85f79d4bb50927063b97e6d0f1340926b079705e88c
 source_payload_sha256: "sha256:9841354b4c916257a981add41aa1a5e93b37dd54c69e0b43ae1328507163e13b"
 observation_id: obs_a76cf7777d6decb4b3d2cb99e7d680cb38b38e1824b72a20347e8f25826a6e9e
 event_id: evt_91df4158399ae839b2bed9b3b365f125d4b15b786ff39e066616225e00a047d2
-revision_id: rev_370df179f5ddbf5005a75ce4571f407f1ef0d9ccf01da93e725de860ca4fef32
+revision_id: rev_8162d862d5e08fba6992aef88fcf11dcd45e786bebb266f4c22c6ed6160d2686
 source_published_at: 2026-09-09T17:24:28Z
 first_seen_at: 2026-09-09T18:48:45Z
 timestamp_confidence: platform
@@ -27,7 +27,7 @@ source_title_chars_original: 47
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://gist.github.com/wsxiaoys/e0286dc6bb624ff5fdf49e7f4c528ba3
 parent_observation_id: null
-last_seen_at: 2026-09-09T18:35:39.961385Z
+last_seen_at: 2026-09-10T00:00:00Z
 ---
 
 ## 基本信息

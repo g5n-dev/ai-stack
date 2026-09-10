@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:1a7f6d4ce25a81e03b29ab77065731a80cb14d26d07caa2b
 source_payload_sha256: "sha256:ed71fbf953fc7b28f8a0b59d5d435d4e4892cc76ddc04bdb47e59b55678df877"
 observation_id: obs_f60d4d32f299f7cfa5512c3face1db8b16a85975844847720e6a557bedd6750e
 event_id: evt_8bb226062a56e02ef260441d4f28e2c51539b8dcab4a92a0cca1d06db0843213
-revision_id: rev_32ff7a95addbc7a59ac35f7939504cc6345a3f85ea4d2863845d7b845927b3ce
+revision_id: rev_587b2d86236304cdabd1f81b548762738e856aa71d4cf10536f0cdd8b02f5362
 source_published_at: 2026-09-08T17:03:50Z
 first_seen_at: 2026-09-09T04:55:31Z
 timestamp_confidence: feed
@@ -28,7 +28,7 @@ source_title_chars_original: 77
 interpretation_sha256: "sha256:9796083addcb5326765fc55ab5de0cd1564f0bf9e0bcd056abdea9a4c7bd981e"
 description: "该内容演示了在多个 AWS 账户之间利用托管 MLflow 与 SageMaker 模型注册表进行模型治理的两种跨账户拓扑（中心辐射式和混合式），并说明了从模型审批到通过 CI/CD 部署的完整流程。"
 external_url: https://aws.amazon.com/blogs/machine-learning/govern-models-with-mlflow-and-amazon-sagemaker-ai-model-registry-sync-part-2
-last_seen_at: 2026-09-09T04:42:41.458289Z
+last_seen_at: 2026-09-10T00:00:00Z
 ---
 
 ## 基本信息
