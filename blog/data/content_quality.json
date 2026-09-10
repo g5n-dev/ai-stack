@@ -1,8 +1,8 @@
 {
-  "active_count": 2793,
+  "active_count": 2797,
   "archived_count": 276,
-  "complete_count": 65,
-  "interpreted_brief_count": 192,
+  "complete_count": 66,
+  "interpreted_brief_count": 193,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21428,6 +21428,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260910-arxiv-cross-model-agreement-as-a-deployment-time-reliabi-5-83b71cdb98.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260910-arxiv-ideaambig-benchmarking-implementation-critical-gap-0-4b54dd08bc.md": {
       "reasons": [
         "interpreted_source_card"
@@ -21488,6 +21494,18 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260910-blogs_podcasts-what-if-everything-changes-tomorrow-a-canadian-com-0-8a57ca7808.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260910-hacker_news-another-researcher-says-openai-trained-on-conversa-11-1a22d1ab9a.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260910-hacker_news-gpt-6-astra-looped-transformers-and-hidden-reasoni-8-4ef1fa7cd0.md": {
       "reasons": [
         "concise_source_card"
@@ -21545,10 +21563,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2536,
-  "source_file_count": 3069,
-  "source_tree_sha256": "895e8a0552cfbc7083e0463e9cf36982b665aa63524c781656f6605e2109fcc2",
-  "verified_provenance_count": 2793,
+  "source_brief_count": 2538,
+  "source_file_count": 3073,
+  "source_tree_sha256": "48779a4ba6376f0b061ad4a17cf42da6cadd17ec15ac79dc4722316a35c54725",
+  "verified_provenance_count": 2797,
   "warning_counts": {
     "source_excerpt_truncated": 793
   }
