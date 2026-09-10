@@ -1,5 +1,5 @@
 {
-  "active_count": 2800,
+  "active_count": 2803,
   "archived_count": 276,
   "complete_count": 66,
   "interpreted_brief_count": 193,
@@ -21530,6 +21530,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260911-arxiv-deep-learning-based-detection-of-electrical-faults-7-58489fe3c3.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260911-arxiv-ibib-a-protocol-for-measuring-enterprise-ai-system-5-65e1715947.md": {
       "reasons": [
         "concise_source_card"
@@ -21542,7 +21548,19 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260911-blogs_podcasts-reduce-inference-cold-starts-on-amazon-sagemaker-h-0-914dba05ce.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260911-hacker_news-cognition-launches-new-swe-2-model-rivaling-fable--1-403f674bce.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260911-hacker_news-more-questions-about-whether-researchers-can-trust-0-d194009aff.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -21581,10 +21599,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2541,
-  "source_file_count": 3076,
-  "source_tree_sha256": "09976cc9c7ad019bee9bd55353e89272b296884af6894c5542a40ae6cf2bdf0e",
-  "verified_provenance_count": 2800,
+  "source_brief_count": 2544,
+  "source_file_count": 3079,
+  "source_tree_sha256": "f399ab8ebfd600f4599305948b2551886af453aa793105ce4f63b348dea371da",
+  "verified_provenance_count": 2803,
   "warning_counts": {
     "source_excerpt_truncated": 793
   }
