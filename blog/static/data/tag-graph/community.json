@@ -2,45 +2,45 @@
   "algorithm": "deterministic-weighted-label-propagation",
   "communities": [
     {
-      "article_count": 653,
+      "article_count": 655,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-d177db697182.json",
+      "hotspot_file": "community-hotspots/01-d0bb47c1ab8e.json",
       "id": "community:tag:Technical How-to",
       "leader_id": "tag:博客与播客",
       "name": "博客与播客",
       "node_count": 55,
       "rank": 1,
-      "tag_occurrences": 1223,
-      "weighted_degree": 5035.6
+      "tag_occurrences": 1231,
+      "weighted_degree": 5083.6
     },
     {
-      "article_count": 1155,
+      "article_count": 1158,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/02-c78ef9902bfd.json",
+      "hotspot_file": "community-hotspots/02-49a3e391f2a8.json",
       "id": "community:tag:来源快报",
       "leader_id": "tag:ArXiv",
       "name": "ArXiv",
       "node_count": 37,
       "rank": 2,
-      "tag_occurrences": 1756,
-      "weighted_degree": 4028.4
+      "tag_occurrences": 1761,
+      "weighted_degree": 4045.4
     },
     {
-      "article_count": 2234,
+      "article_count": 2236,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/03-574a7eba67f0.json",
+      "hotspot_file": "community-hotspots/03-8feefbb5df97.json",
       "id": "community:tag:掘金",
       "leader_id": "tag:Hacker News",
       "name": "Hacker News",
       "node_count": 25,
       "rank": 3,
-      "tag_occurrences": 4178,
-      "weighted_degree": 10715
+      "tag_occurrences": 4180,
+      "weighted_degree": 10724
     },
     {
       "article_count": 12,
       "hotspot_count": 11,
-      "hotspot_file": "community-hotspots/04-8fb02bb7385c.json",
+      "hotspot_file": "community-hotspots/04-8355383dd1ad.json",
       "id": "community:tag:Gemini Notebook",
       "leader_id": "tag:Search",
       "name": "Search",
@@ -52,7 +52,7 @@
     {
       "article_count": 11,
       "hotspot_count": 11,
-      "hotspot_file": "community-hotspots/05-dfc3ffc3bf94.json",
+      "hotspot_file": "community-hotspots/05-d183f42267ca.json",
       "id": "community:tag:Machine learning",
       "leader_id": "tag:Artificial intelligence",
       "name": "Artificial intelligence",
@@ -64,7 +64,7 @@
     {
       "article_count": 5,
       "hotspot_count": 8,
-      "hotspot_file": "community-hotspots/06-a12289a54942.json",
+      "hotspot_file": "community-hotspots/06-31af7dd7ded7.json",
       "id": "community:tag:ML Applications",
       "leader_id": "tag:Data Infrastructure",
       "name": "Data Infrastructure",
@@ -76,7 +76,7 @@
     {
       "article_count": 2,
       "hotspot_count": 7,
-      "hotspot_file": "community-hotspots/07-9fe28e611f7d.json",
+      "hotspot_file": "community-hotspots/07-7acc98f56388.json",
       "id": "community:tag:Computer modeling",
       "leader_id": "tag:Algorithms",
       "name": "Algorithms",
@@ -88,7 +88,7 @@
     {
       "article_count": 3,
       "hotspot_count": 6,
-      "hotspot_file": "community-hotspots/08-a35cc564537a.json",
+      "hotspot_file": "community-hotspots/08-06ea27286157.json",
       "id": "community:tag:Civil and environmental engineering",
       "leader_id": "tag:Education, teaching, academics",
       "name": "Education, teaching, academics",
@@ -100,7 +100,7 @@
     {
       "article_count": 2,
       "hotspot_count": 6,
-      "hotspot_file": "community-hotspots/09-f99dcfcdfa3c.json",
+      "hotspot_file": "community-hotspots/09-be338ab4372b.json",
       "id": "community:tag:Amazon RDS",
       "leader_id": "tag:Amazon Elastic Kubernetes Service",
       "name": "Amazon Elastic Kubernetes Service",
@@ -112,7 +112,7 @@
     {
       "article_count": 5,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/10-7de444b40695.json",
+      "hotspot_file": "community-hotspots/10-724698c659b1.json",
       "id": "community:tag:Interview",
       "leader_id": "tag:Safety",
       "name": "Safety",
@@ -124,7 +124,7 @@
     {
       "article_count": 1,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/11-4e05cb6d3942.json",
+      "hotspot_file": "community-hotspots/11-586f16d6afde.json",
       "id": "community:tag:Codex",
       "leader_id": "tag:ACP",
       "name": "ACP",
@@ -145,7 +145,7 @@
       "weighted_degree": 676.8
     }
   ],
-  "generated_at": "2026-09-10T18:31:08Z",
+  "generated_at": "2026-09-10T21:41:26Z",
   "iterations": 7,
   "limit": 11,
   "links": [
@@ -379,7 +379,7 @@
       "strength": 1,
       "target": "community:tag:掘金",
       "type": "community",
-      "weight": 1607
+      "weight": 1613
     },
     {
       "id": "edge:community:community:tag:Technical How-to->community:tag:来源快报",
@@ -387,7 +387,7 @@
       "strength": 1,
       "target": "community:tag:来源快报",
       "type": "community",
-      "weight": 673
+      "weight": 683
     },
     {
       "id": "edge:community:community:tag:掘金->community:tag:来源快报",
@@ -395,7 +395,7 @@
       "strength": 1,
       "target": "community:tag:来源快报",
       "type": "community",
-      "weight": 1386
+      "weight": 1389
     }
   ],
   "stats": {
