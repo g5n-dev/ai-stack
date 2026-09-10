@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:c008037da6e06790cf1a7df08764efd047f4ee10caa856ffc
 description: "ReCite 是一种解耦的代理式框架，利用位置感知、意图感知的查询规划以及反思式验证来确保引用在逻辑上支撑论点。它通过合成的推理轨迹检验论点‑证据一致性，并在检索结果不支持时触发自我修正。"
 external_url: http://arxiv.org/abs/2609.09156v1
 parent_observation_id: null
-last_seen_at: 2026-09-09T04:42:20.996738Z
+last_seen_at: 2026-09-10T00:00:00Z
 ---
 
 ## 基本信息

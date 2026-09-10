@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:c49f95cc978a177d6e29ce39f553cb1be84708a0a5628c129
 description: "利用云端代理框架，把市场数据、新闻、财务报表等付费信息按查询购买，并与用户的持仓、风险偏好绑定，在隔离的沙箱中完成组合构建、情景分析和回测，同时记录身份、支付和操作的完整审计链。"
 external_url: https://aws.amazon.com/blogs/machine-learning/how-heurist-finance-built-an-ai-native-investment-workbench-on-amazon-bedrock-agentcore
 parent_observation_id: null
-last_seen_at: 2026-09-09T18:36:02.133790Z
+last_seen_at: 2026-09-10T00:00:00Z
 ---
 
 ## 基本信息

@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:1f62ff777470e2a767ed36eeb2d7a313c788cb991e4a78c16
 description: "该研究提出一种名为“程序图”的结构，将流程性知识表示为（步骤，关系，步骤）的三元组，用于在每个决策点为大型语言模型提供情境指导，并通过自进化机制在成功与失败轨迹的对比中自动更新图的拓扑与属性。"
 external_url: http://arxiv.org/abs/2609.09153v1
 parent_observation_id: null
-last_seen_at: 2026-09-09T18:35:42.790606Z
+last_seen_at: 2026-09-10T00:00:00Z
 ---
 
 ## 基本信息
