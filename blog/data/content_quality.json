@@ -1,5 +1,5 @@
 {
-  "active_count": 2805,
+  "active_count": 2808,
   "archived_count": 276,
   "complete_count": 66,
   "interpreted_brief_count": 194,
@@ -21536,6 +21536,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260911-arxiv-general-quantification-of-covariate-and-concept-sh-1-6eca5451cc.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260911-arxiv-ibib-a-protocol-for-measuring-enterprise-ai-system-5-65e1715947.md": {
       "reasons": [
         "concise_source_card"
@@ -21560,6 +21566,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260911-blogs_podcasts-video-and-image-search-in-amazon-bedrock-knowledge-0-c0844f5cb1.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260911-hacker_news-cognition-launches-new-swe-2-model-rivaling-fable--1-403f674bce.md": {
       "reasons": [
         "concise_source_card"
@@ -21573,6 +21585,12 @@
       "status": "source_brief"
     },
     "posts/20260911-hacker_news-openai-agents-api-2-3dffb20e2b.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260911-hacker_news-thelio-mira-ai-linux-workstation-192-gb-gpu-memory-8-7068f4bd34.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -21611,10 +21629,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2545,
-  "source_file_count": 3081,
-  "source_tree_sha256": "1145840a627b32dbab93da396c56ffdc5bcb44272186415d932445b3d68c9246",
-  "verified_provenance_count": 2805,
+  "source_brief_count": 2548,
+  "source_file_count": 3084,
+  "source_tree_sha256": "861ee26860120e2782b2380a108800dbbfcc379c7d18904207e32c82d61573d4",
+  "verified_provenance_count": 2808,
   "warning_counts": {
     "source_excerpt_truncated": 793
   }
