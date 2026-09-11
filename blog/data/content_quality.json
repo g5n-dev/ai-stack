@@ -1,8 +1,8 @@
 {
-  "active_count": 2812,
+  "active_count": 2814,
   "archived_count": 276,
   "complete_count": 67,
-  "interpreted_brief_count": 196,
+  "interpreted_brief_count": 197,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21530,6 +21530,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260911-arxiv-artificial-id-drive-and-persistent-alignment-in-ag-4-f39cece9e9.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260911-arxiv-can-edge-deployable-vision-language-models-identif-2-0e0ea813a4.md": {
       "reasons": [
         "interpreted_source_card"
@@ -21608,6 +21614,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260911-hacker_news-the-waymo-effect-how-ai-is-quietly-making-research-1-244ca616b7.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260911-hacker_news-thelio-mira-ai-linux-workstation-192-gb-gpu-memory-8-7068f4bd34.md": {
       "reasons": [
         "concise_source_card"
@@ -21647,10 +21659,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2549,
-  "source_file_count": 3088,
-  "source_tree_sha256": "df564b2775869e378f2198c0a7c40d42ebc76e9ba1082b490ee647fa152ae167",
-  "verified_provenance_count": 2812,
+  "source_brief_count": 2550,
+  "source_file_count": 3090,
+  "source_tree_sha256": "6a78228cdd465f3b79f5243748d7f57eb5f8fb5e96ad32db723b75039a149b78",
+  "verified_provenance_count": 2814,
   "warning_counts": {
     "source_excerpt_truncated": 793
   }
