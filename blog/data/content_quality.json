@@ -1,8 +1,8 @@
 {
-  "active_count": 2814,
+  "active_count": 2818,
   "archived_count": 276,
-  "complete_count": 67,
-  "interpreted_brief_count": 197,
+  "complete_count": 68,
+  "interpreted_brief_count": 199,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21625,6 +21625,27 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260912-arxiv-from-protocols-to-evidence-bounded-claims-for-ai-i-4-bd7fb0f02e.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260912-blogs_podcasts-monitoring-production-agent-lifecycle-with-aws-dev-0-381ed851c4.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
+    "posts/20260912-hacker_news-a-misalignment-of-ai-in-mathematics-7-e3632e3f1a.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -21659,11 +21680,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2550,
-  "source_file_count": 3090,
-  "source_tree_sha256": "6a78228cdd465f3b79f5243748d7f57eb5f8fb5e96ad32db723b75039a149b78",
-  "verified_provenance_count": 2814,
+  "source_brief_count": 2551,
+  "source_file_count": 3094,
+  "source_tree_sha256": "23699b3c221668dc9ff8e33508f082d05ec926dddcb28e42d972331ad7280a61",
+  "verified_provenance_count": 2818,
   "warning_counts": {
-    "source_excerpt_truncated": 793
+    "source_excerpt_truncated": 794
   }
 }
