@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:a3f47a1c2c63487cf7b94c431ff2fe9ad0ed8b1cf44b09b6f
 description: "这是一份 AI 行业的近期动态汇总，覆盖前沿实验室的安全事件、政策争议、主流产品的功能更新、代理评估方法以及新模型发布等多个维度。"
 external_url: https://www.latent.space/p/ainews-not-much-happened-today-d3b
 parent_observation_id: null
-last_seen_at: 2026-09-10T04:43:54.116675Z
+last_seen_at: 2026-09-11T00:00:00Z
 ---
 
 ## 基本信息

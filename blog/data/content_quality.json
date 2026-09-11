@@ -1,8 +1,8 @@
 {
-  "active_count": 2803,
+  "active_count": 2805,
   "archived_count": 276,
   "complete_count": 66,
-  "interpreted_brief_count": 193,
+  "interpreted_brief_count": 194,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21554,6 +21554,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260911-blogs_podcasts-reduce-llm-latency-with-prefix-aware-routing-on-am-0-4f4661ca30.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260911-hacker_news-cognition-launches-new-swe-2-model-rivaling-fable--1-403f674bce.md": {
       "reasons": [
         "concise_source_card"
@@ -21561,6 +21567,12 @@
       "status": "source_brief"
     },
     "posts/20260911-hacker_news-more-questions-about-whether-researchers-can-trust-0-d194009aff.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260911-hacker_news-openai-agents-api-2-3dffb20e2b.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -21599,10 +21611,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2544,
-  "source_file_count": 3079,
-  "source_tree_sha256": "f399ab8ebfd600f4599305948b2551886af453aa793105ce4f63b348dea371da",
-  "verified_provenance_count": 2803,
+  "source_brief_count": 2545,
+  "source_file_count": 3081,
+  "source_tree_sha256": "1145840a627b32dbab93da396c56ffdc5bcb44272186415d932445b3d68c9246",
+  "verified_provenance_count": 2805,
   "warning_counts": {
     "source_excerpt_truncated": 793
   }

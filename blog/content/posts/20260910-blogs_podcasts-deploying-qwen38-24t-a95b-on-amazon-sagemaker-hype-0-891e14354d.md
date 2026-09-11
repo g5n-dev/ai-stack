@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:09c4cb49187841c2ed326a29e3a43f23d32b94103e8e7142
 source_payload_sha256: "sha256:2b5882f9494b2e395beda0079d56ac66bc32584f9bc568b8f8d7582a3bc664f4"
 observation_id: obs_891e14354dd1027f254824964466f11bb15dfee94833047061140951e94385a8
 event_id: evt_632cae92070518e67494cc153a12f555fada5008bebfdad9c2d865b37ceab8cc
-revision_id: rev_2b59f1157cd726ca805bed1438734971e1bb94a5089c548977113f51a1812789
+revision_id: rev_7414e648a4b7fb3298972ae0492ecc8d30f2f17ac4bad62204a47c30369e7148
 source_published_at: 2026-09-09T22:26:29Z
 first_seen_at: 2026-09-10T00:28:30Z
 timestamp_confidence: feed
@@ -28,7 +28,7 @@ source_title_chars_original: 66
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/deploying-qwen3-8-2-4t-a95b-on-amazon-sagemaker-hyperpod-with-vllm
 parent_observation_id: null
-last_seen_at: 2026-09-10T00:15:02.998070Z
+last_seen_at: 2026-09-11T00:00:00Z
 ---
 
 ## 基本信息
