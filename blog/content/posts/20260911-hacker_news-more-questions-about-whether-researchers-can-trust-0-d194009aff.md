@@ -13,9 +13,9 @@ source_snapshot_sha256: "sha256:e208f1bdabfe7c52ba2fe0c6bc23b1b0702b2021ab406235
 source_payload_sha256: "sha256:fa33e38a5bbfb1de0872d197c5e6091badc542182a5032d15dd0c1fe8cfabbce"
 observation_id: obs_d194009aff36389e561b620503bc121ec1dce469e8e80a58c6164ac7751ce0f8
 event_id: evt_ac07be56686f13ade2f42b9b08bf346d7c187830bde534c223943f32e1ea6db7
-revision_id: rev_d9c62e128d226d13824cc6f744a881bdca7bd59addea9e156f32a8a3aa8595fd
+revision_id: rev_ee88e331825bab24d3af2e2c8d0aa457216e33c892c55dd52d3bf0eca34cd687
 source_published_at: 2026-09-10T06:49:43Z
-first_seen_at: 2026-09-10T21:37:54.581787Z
+first_seen_at: 2026-09-10T21:50:02Z
 timestamp_confidence: platform
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 79
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://mathstodon.xyz/@andreasthom/117240535270608201
 parent_observation_id: null
-last_seen_at: 2026-09-10T21:37:54.581787Z
+last_seen_at: 2026-09-11T00:00:00Z
 ---
 
 ## 基本信息

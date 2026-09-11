@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:1a23997b178d1f5fece5c4d2f64c341280a41fec6dcbc755
 source_payload_sha256: "sha256:d891d2d4b089a6f470d0b1b83d35cfc8989f3a5d4d84334a7815c5760df43ac6"
 observation_id: obs_403f674bcee8f9ccc517614366eaf750f1784cbad08bad08befbae2201c56e89
 event_id: evt_05b4277fbcfecf3d1182cee4561e47bf07870fe842d86d913df7c61e71350bf2
-revision_id: rev_9e5281e013bc41688e5dd87f53c30ef12f4dcb1c110ec02249890e105d06ce34
+revision_id: rev_fb4c26735ca29d2a129db1ad26ad1b76eaef54579175d789b49926473a4e024e
 source_published_at: 2026-09-10T15:29:47Z
 first_seen_at: 2026-09-10T18:41:54Z
 timestamp_confidence: platform
@@ -27,7 +27,7 @@ source_title_chars_original: 68
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://cognition.com/blog/swe-2
 parent_observation_id: null
-last_seen_at: 2026-09-10T18:27:41.331418Z
+last_seen_at: 2026-09-11T00:00:00Z
 ---
 
 ## 基本信息

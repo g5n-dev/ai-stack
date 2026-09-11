@@ -13,9 +13,9 @@ source_snapshot_sha256: "sha256:5d08e93dcfd8e97a6cfece0d58c1783b4ad6128f07a411c9
 source_payload_sha256: "sha256:7194a013bd05a7351ac0bf6e0be183a474f3443193a6dc5262bda6874007aae4"
 observation_id: obs_914dba05ced926e890fec0e4d1b835891a0fe2ac1f00716b81bb7d94aacc2f82
 event_id: evt_5b222a8b4576a6bbf1c9760050496190df044861174d50a94fe037060db10314
-revision_id: rev_0a4c8b581f7226eae46716577156f2d09874396546bfe903a987c3eb54edebfb
+revision_id: rev_6b7b313eb05776013a88615a71052a1349127aed3cbbc4fec27a4ca5832f9bdd
 source_published_at: 2026-09-10T21:37:49Z
-first_seen_at: 2026-09-10T21:38:17.384568Z
+first_seen_at: 2026-09-10T21:50:02Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 76
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/reduce-inference-cold-starts-on-amazon-sagemaker-hyperpod-with-model-caching
 parent_observation_id: null
-last_seen_at: 2026-09-10T21:38:17.384568Z
+last_seen_at: 2026-09-11T00:00:00Z
 ---
 
 ## 基本信息

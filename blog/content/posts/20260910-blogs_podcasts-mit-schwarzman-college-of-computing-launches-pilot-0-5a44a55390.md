@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:7e1511e588dbab2034ae92d4408956528bad9b054ba92c696
 description: "MIT施瓦茨曼计算学院推出了一个面向高校教师的AI教学试点项目，提供为期一周的工作坊，帮助他们把人工智能融入各自学科的教学。"
 external_url: https://news.mit.edu/2026/mit-schwarzman-college-computing-launches-pilot-help-educators-teach-ai-across-disciplines-0909
 parent_observation_id: null
-last_seen_at: 2026-09-10T00:00:00Z
+last_seen_at: 2026-09-11T00:00:00Z
 ---
 
 ## 基本信息
