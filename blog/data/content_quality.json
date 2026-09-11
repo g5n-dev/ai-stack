@@ -1,8 +1,8 @@
 {
-  "active_count": 2808,
+  "active_count": 2812,
   "archived_count": 276,
-  "complete_count": 66,
-  "interpreted_brief_count": 194,
+  "complete_count": 67,
+  "interpreted_brief_count": 196,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21530,6 +21530,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260911-arxiv-can-edge-deployable-vision-language-models-identif-2-0e0ea813a4.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260911-arxiv-deep-learning-based-detection-of-electrical-faults-7-58489fe3c3.md": {
       "reasons": [
         "concise_source_card"
@@ -21553,6 +21559,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260911-blogs_podcasts-build-an-end-to-end-rfi-questionnaire-workflow-usi-0-842b571c18.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
     },
     "posts/20260911-blogs_podcasts-reduce-inference-cold-starts-on-amazon-sagemaker-h-0-914dba05ce.md": {
       "reasons": [
@@ -21585,6 +21597,12 @@
       "status": "source_brief"
     },
     "posts/20260911-hacker_news-openai-agents-api-2-3dffb20e2b.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260911-hacker_news-the-gemini-app-is-now-available-for-windows-6-ca11f5a155.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -21629,10 +21647,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2548,
-  "source_file_count": 3084,
-  "source_tree_sha256": "861ee26860120e2782b2380a108800dbbfcc379c7d18904207e32c82d61573d4",
-  "verified_provenance_count": 2808,
+  "source_brief_count": 2549,
+  "source_file_count": 3088,
+  "source_tree_sha256": "df564b2775869e378f2198c0a7c40d42ebc76e9ba1082b490ee647fa152ae167",
+  "verified_provenance_count": 2812,
   "warning_counts": {
     "source_excerpt_truncated": 793
   }
