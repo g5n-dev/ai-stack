@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:大语言模型",
-  "generated_at": "2026-09-12T09:24:29Z",
+  "generated_at": "2026-09-12T17:11:37Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -50,7 +50,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 182
+      "weight": 183
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:来源快报",
@@ -74,7 +74,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 165
+      "weight": 167
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:Hacker News",
@@ -170,7 +170,7 @@
       "strength": 1,
       "target": "tag:Hacker News",
       "type": "cooccurrence",
-      "weight": 81
+      "weight": 82
     },
     {
       "id": "edge:cooccurrence:tag:MCP->tag:掘金",
@@ -297,7 +297,7 @@
       "weighted_degree": 2211.2
     },
     {
-      "article_count": 618,
+      "article_count": 620,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -311,7 +311,7 @@
       "name": "来源快报",
       "rank": 3,
       "related_count": 122,
-      "weighted_degree": 1834
+      "weighted_degree": 1838
     },
     {
       "article_count": 529,
@@ -365,7 +365,7 @@
       "weighted_degree": 614.6
     },
     {
-      "article_count": 935,
+      "article_count": 936,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -379,7 +379,7 @@
       "name": "Hacker News",
       "rank": 9,
       "related_count": 21,
-      "weighted_degree": 604
+      "weighted_degree": 606
     },
     {
       "article_count": 123,
@@ -450,7 +450,7 @@
       "weighted_degree": 470
     },
     {
-      "article_count": 166,
+      "article_count": 168,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -464,7 +464,7 @@
       "name": "AI",
       "rank": 16,
       "related_count": 57,
-      "weighted_degree": 433.6
+      "weighted_degree": 437.6
     },
     {
       "article_count": 86,

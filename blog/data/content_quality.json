@@ -1,8 +1,8 @@
 {
-  "active_count": 2824,
+  "active_count": 2826,
   "archived_count": 276,
   "complete_count": 69,
-  "interpreted_brief_count": 201,
+  "interpreted_brief_count": 202,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21679,6 +21679,18 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260913-blogs_podcasts-the-rise-of-the-forward-deployed-engineer-and-how--0-b01f2ad61b.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260913-hacker_news-nvidia-is-the-central-bank-of-ai-0-bacf7aac69.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -21713,10 +21725,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2554,
-  "source_file_count": 3100,
-  "source_tree_sha256": "67401e66cb529adcc9792769dcfdf191384013831752fde7d0e0017138284d64",
-  "verified_provenance_count": 2824,
+  "source_brief_count": 2555,
+  "source_file_count": 3102,
+  "source_tree_sha256": "0d5079875afcc6008fcebdd6049338b2ee3c8cd540faf34af6e40571bd3be600",
+  "verified_provenance_count": 2826,
   "warning_counts": {
     "source_excerpt_truncated": 795
   }
