@@ -15,7 +15,7 @@ observation_id: obs_bd7fb0f02ed334bba14ea845347d6d23f6a66fec41815c538d50b61e030d
 event_id: evt_486cfc56aeb7a9c393c8d36922cc41aaa59154fb45d221fa5b0b9212bc1268c2
 revision_id: rev_1f9ad80f5e28ea7d61856c8c492ca48d678c9e546a5464fae6d8fec97c0986d9
 source_published_at: 2026-09-10T17:56:36Z
-first_seen_at: 2026-09-11T18:32:17.358961Z
+first_seen_at: 2026-09-11T18:45:13Z
 timestamp_confidence: publisher
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:d0fcce4d128452e3a70184ecf26c44f8b3c9baf5d07e47d4f
 description: "该文探讨人工智能在治理中的双重作用，提出在把伦理原则转化为具体协议的过程中，需要同步评估技术系统与制度缺陷，并给出证据约束的部署与测量约束的治理框架。"
 external_url: http://arxiv.org/abs/2609.11910v1
 parent_observation_id: null
-last_seen_at: 2026-09-11T18:32:17.358961Z
+last_seen_at: 2026-09-12T00:00:00Z
 ---
 
 ## 基本信息
