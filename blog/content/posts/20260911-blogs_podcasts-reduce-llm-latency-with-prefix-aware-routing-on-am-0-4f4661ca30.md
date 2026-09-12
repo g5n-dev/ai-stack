@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:fc21993abc5a42b2eefdaf22c5ae9597a4ef235260982a5d5
 description: "该内容介绍了一种在模型推理入口根据请求前缀将相同前缀的请求路由到同一实例的策略，以利用已有的前缀缓存来降低首次响应时间并提升吞吐。"
 external_url: https://aws.amazon.com/blogs/machine-learning/reduce-llm-latency-with-prefix-aware-routing-on-amazon-sagemaker-inference
 parent_observation_id: null
-last_seen_at: 2026-09-11T00:11:50.092788Z
+last_seen_at: 2026-09-12T00:00:00Z
 ---
 
 ## 基本信息

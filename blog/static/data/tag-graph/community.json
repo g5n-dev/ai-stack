@@ -2,33 +2,33 @@
   "algorithm": "deterministic-weighted-label-propagation",
   "communities": [
     {
-      "article_count": 2717,
+      "article_count": 2719,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-9aaa9e6db9eb.json",
+      "hotspot_file": "community-hotspots/01-1428265bf1a8.json",
       "id": "community:tag:大语言模型",
       "leader_id": "tag:Hacker News",
       "name": "Hacker News",
       "node_count": 66,
       "rank": 1,
-      "tag_occurrences": 6078,
-      "weighted_degree": 15238.6
+      "tag_occurrences": 6083,
+      "weighted_degree": 15248.6
     },
     {
-      "article_count": 660,
+      "article_count": 661,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/02-e61bdca422e5.json",
+      "hotspot_file": "community-hotspots/02-7718778a971b.json",
       "id": "community:tag:Technical How-to",
       "leader_id": "tag:博客与播客",
       "name": "博客与播客",
       "node_count": 54,
       "rank": 2,
-      "tag_occurrences": 1254,
-      "weighted_degree": 5248.2
+      "tag_occurrences": 1255,
+      "weighted_degree": 5250.2
     },
     {
       "article_count": 12,
       "hotspot_count": 11,
-      "hotspot_file": "community-hotspots/03-42c97c25acec.json",
+      "hotspot_file": "community-hotspots/03-3d06ca406862.json",
       "id": "community:tag:Gemini Notebook",
       "leader_id": "tag:Search",
       "name": "Search",
@@ -40,7 +40,7 @@
     {
       "article_count": 11,
       "hotspot_count": 11,
-      "hotspot_file": "community-hotspots/04-f892093528a5.json",
+      "hotspot_file": "community-hotspots/04-efa57472f3dc.json",
       "id": "community:tag:Machine learning",
       "leader_id": "tag:Artificial intelligence",
       "name": "Artificial intelligence",
@@ -52,7 +52,7 @@
     {
       "article_count": 5,
       "hotspot_count": 8,
-      "hotspot_file": "community-hotspots/05-92d0d13d898b.json",
+      "hotspot_file": "community-hotspots/05-3fffa5cb6d72.json",
       "id": "community:tag:ML Applications",
       "leader_id": "tag:Data Infrastructure",
       "name": "Data Infrastructure",
@@ -64,7 +64,7 @@
     {
       "article_count": 2,
       "hotspot_count": 7,
-      "hotspot_file": "community-hotspots/06-d50a911458e7.json",
+      "hotspot_file": "community-hotspots/06-8c44db73c049.json",
       "id": "community:tag:Computer modeling",
       "leader_id": "tag:Algorithms",
       "name": "Algorithms",
@@ -76,7 +76,7 @@
     {
       "article_count": 3,
       "hotspot_count": 6,
-      "hotspot_file": "community-hotspots/07-4cc89b95fa06.json",
+      "hotspot_file": "community-hotspots/07-0eb57fc65329.json",
       "id": "community:tag:Civil and environmental engineering",
       "leader_id": "tag:Education, teaching, academics",
       "name": "Education, teaching, academics",
@@ -88,7 +88,7 @@
     {
       "article_count": 2,
       "hotspot_count": 6,
-      "hotspot_file": "community-hotspots/08-858bba23fb0e.json",
+      "hotspot_file": "community-hotspots/08-e6d9f41511a1.json",
       "id": "community:tag:Amazon RDS",
       "leader_id": "tag:Amazon Elastic Kubernetes Service",
       "name": "Amazon Elastic Kubernetes Service",
@@ -100,7 +100,7 @@
     {
       "article_count": 5,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/09-4520f7c1b934.json",
+      "hotspot_file": "community-hotspots/09-8fcc1275675c.json",
       "id": "community:tag:Interview",
       "leader_id": "tag:Safety",
       "name": "Safety",
@@ -112,7 +112,7 @@
     {
       "article_count": 1,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/10-1a14df1e5b62.json",
+      "hotspot_file": "community-hotspots/10-2ea857bb6c1c.json",
       "id": "community:tag:Codex",
       "leader_id": "tag:ACP",
       "name": "ACP",
@@ -124,7 +124,7 @@
     {
       "article_count": 1,
       "hotspot_count": 3,
-      "hotspot_file": "community-hotspots/11-4a47a3ee84ac.json",
+      "hotspot_file": "community-hotspots/11-96998f95e851.json",
       "id": "community:tag:Biology",
       "leader_id": "tag:Biological engineering",
       "name": "Biological engineering",
@@ -145,7 +145,7 @@
       "weighted_degree": 336.6
     }
   ],
-  "generated_at": "2026-09-11T18:35:20Z",
+  "generated_at": "2026-09-12T00:19:49Z",
   "iterations": 7,
   "limit": 11,
   "links": [
@@ -363,7 +363,7 @@
       "strength": 1,
       "target": "community:tag:大语言模型",
       "type": "community",
-      "weight": 2389
+      "weight": 2391
     }
   ],
   "stats": {

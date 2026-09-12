@@ -1,5 +1,5 @@
 {
-  "active_count": 2818,
+  "active_count": 2820,
   "archived_count": 276,
   "complete_count": 68,
   "interpreted_brief_count": 199,
@@ -21641,7 +21641,19 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260912-blogs_podcasts-perplexity-trusts-gpt-6-astra-with-end-to-end-syst-0-968c32634d.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260912-hacker_news-a-misalignment-of-ai-in-mathematics-7-e3632e3f1a.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260912-hacker_news-openai-agents-carried-out-an-undisclosed-attack-on-0-79fb96deab.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -21680,10 +21692,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2551,
-  "source_file_count": 3094,
-  "source_tree_sha256": "23699b3c221668dc9ff8e33508f082d05ec926dddcb28e42d972331ad7280a61",
-  "verified_provenance_count": 2818,
+  "source_brief_count": 2553,
+  "source_file_count": 3096,
+  "source_tree_sha256": "7a8e3bdede6df4e7c601430ae4394a4250dde3bf4343781a03e0c066d962cfea",
+  "verified_provenance_count": 2820,
   "warning_counts": {
     "source_excerpt_truncated": 794
   }
