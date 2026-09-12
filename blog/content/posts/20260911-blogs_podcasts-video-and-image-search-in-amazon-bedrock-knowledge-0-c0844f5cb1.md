@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:67e4fa6e974e5ebea8393ce241c174f5e963e077ce8accaf
 source_payload_sha256: "sha256:5f7994c9485ed8e79af10c865e0d2d7ca43450a0065554e65302c5c861633f3e"
 observation_id: obs_c0844f5cb18abbe7df9a6783052f8d100a3ad40d8e5c9fd23eeeafd38996c04b
 event_id: evt_9f0495f6c3a4f7f41da90b834a6f349c6d47fb4deb320633210665650fe41915
-revision_id: rev_1bd8355285e3a96ffbb70552035e4eac5cf5a7deacff6993ccef5c4d6fc4a0c7
+revision_id: rev_645bb159342f6fd13bbec3d25e8d39b21e4e2f8dbc6130635a2b56cc8c5128ec
 source_published_at: 2026-09-10T21:15:39Z
 first_seen_at: 2026-09-11T04:52:35Z
 timestamp_confidence: feed
@@ -27,7 +27,7 @@ source_title_chars_original: 73
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/video-and-image-search-in-amazon-bedrock-knowledge-base-using-marengo-3-0
 parent_observation_id: null
-last_seen_at: 2026-09-11T04:39:09.671367Z
+last_seen_at: 2026-09-12T00:00:00Z
 ---
 
 ## 基本信息

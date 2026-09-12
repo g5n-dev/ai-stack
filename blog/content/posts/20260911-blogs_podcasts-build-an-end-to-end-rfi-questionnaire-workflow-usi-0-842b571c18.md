@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:7d13d42662ca94ec06cecd49287829fe9a3e13e550d7cfc26
 description: "这段内容展示了如何使用 Amazon Quick Automate 构建一套从 Amazon S3 读取多标签 RFI 工作簿、提取结构化问题与分类信息、并将结果输出为 CSV 的完整自动化流程。它通过自然语言描述处理逻辑，由生成式 AI 逐步生成、迭代并验证工作流，最后可导出至其他账户或区域。"
 external_url: https://aws.amazon.com/blogs/machine-learning/build-an-end-to-end-rfi-questionnaire-workflow-using-amazon-quick-automate
 parent_observation_id: null
-last_seen_at: 2026-09-11T09:41:04.498830Z
+last_seen_at: 2026-09-12T00:00:00Z
 ---
 
 ## 基本信息

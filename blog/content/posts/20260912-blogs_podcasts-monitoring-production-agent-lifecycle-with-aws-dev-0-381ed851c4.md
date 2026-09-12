@@ -15,7 +15,7 @@ observation_id: obs_381ed851c46a02e93d1534aa03fdca93a958451c12187f93437bc710a5e3
 event_id: evt_54ca990baa98051f48bcba8058bb2496a33728fa3de9e0de5e509d19420a5c84
 revision_id: rev_065c1a576e868e3abc44cb01142cea389460ec0120199f076d1309ea5812d986
 source_published_at: 2026-09-11T18:26:38Z
-first_seen_at: 2026-09-11T18:32:36.831910Z
+first_seen_at: 2026-09-11T18:45:13Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:37c4afc0cdbe597bc92570a9a7a98ee248be8b930fb92dcf1
 description: "该方案通过两层监控来追踪生产环境中的多智能体系统：一边持续评估智能体的输出质量，一边自动调查底层基础设施的健康状态，以发现传统指标难以捕获的异常。"
 external_url: https://aws.amazon.com/blogs/machine-learning/monitoring-production-agent-lifecycle-with-aws-devops-agent-and-agentcore-evaluations
 parent_observation_id: null
-last_seen_at: 2026-09-11T18:32:36.831910Z
+last_seen_at: 2026-09-12T00:00:00Z
 ---
 
 ## 基本信息
