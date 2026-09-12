@@ -1,8 +1,8 @@
 {
-  "active_count": 2820,
+  "active_count": 2824,
   "archived_count": 276,
-  "complete_count": 68,
-  "interpreted_brief_count": 199,
+  "complete_count": 69,
+  "interpreted_brief_count": 201,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21632,6 +21632,21 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260912-arxiv-mindtopo-can-foundation-models-reason-in-topologic-5-1f35a63811.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260912-blogs_podcasts-ainews-deepseek-v41-flash-763b-p8b-d16b-novel-caus-0-d1d28ac13a.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20260912-blogs_podcasts-monitoring-production-agent-lifecycle-with-aws-dev-0-381ed851c4.md": {
       "reasons": [
         "interpreted_source_card"
@@ -21642,6 +21657,12 @@
       ]
     },
     "posts/20260912-blogs_podcasts-perplexity-trusts-gpt-6-astra-with-end-to-end-syst-0-968c32634d.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260912-hacker_news-a-misalignment-of-ai-in-mathematics-2-09b8dde11d.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -21692,11 +21713,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2553,
-  "source_file_count": 3096,
-  "source_tree_sha256": "7a8e3bdede6df4e7c601430ae4394a4250dde3bf4343781a03e0c066d962cfea",
-  "verified_provenance_count": 2820,
+  "source_brief_count": 2554,
+  "source_file_count": 3100,
+  "source_tree_sha256": "67401e66cb529adcc9792769dcfdf191384013831752fde7d0e0017138284d64",
+  "verified_provenance_count": 2824,
   "warning_counts": {
-    "source_excerpt_truncated": 794
+    "source_excerpt_truncated": 795
   }
 }

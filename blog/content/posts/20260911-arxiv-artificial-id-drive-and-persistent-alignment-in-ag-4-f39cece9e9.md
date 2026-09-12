@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:8959ae14c0952278cee0c4111b22b4e56b6383bb02f7e250e
 description: "提出一种名为人工 id 的内部驱动机制，使自主智能体能够根据行为在不同情境中的持续性自动决定继续、停止或切换，从而实现无需外部明确目标的适应性控制。"
 external_url: http://arxiv.org/abs/2609.11911v1
 parent_observation_id: null
-last_seen_at: 2026-09-11T14:25:54.567362Z
+last_seen_at: 2026-09-12T00:00:00Z
 ---
 
 ## 基本信息

@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:6c494b865fb949e01b6e81533df0bd5e4292f52caf272e2e7
 description: "该研究评估了可在边缘硬件上本地运行的轻量级视觉语言模型在相机陷阱图像中识别野生动物物种的能力，并将它们与专注生物分类的专用模型进行对比。"
 external_url: http://arxiv.org/abs/2609.11916v1
 parent_observation_id: null
-last_seen_at: 2026-09-11T09:40:44.602669Z
+last_seen_at: 2026-09-12T00:00:00Z
 ---
 
 ## 基本信息
