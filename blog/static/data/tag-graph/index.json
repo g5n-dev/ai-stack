@@ -27,7 +27,7 @@
       "focus-shards/004-08a9b1380f4a.json",
       "focus-shards/005-730d1a52eb3d.json",
       "focus-shards/006-0685b5dc515d.json",
-      "focus-shards/007-c0b9be914ffc.json",
+      "focus-shards/007-404eb9a51545.json",
       "focus-shards/008-04bb1de327fc.json",
       "focus-shards/009-8192c91e5b3e.json",
       "focus-shards/010-82102f585f91.json",
@@ -41,7 +41,7 @@
       "focus-shards/018-fe554c9dd2ee.json",
       "focus-shards/019-d1064b9fa1f2.json",
       "focus-shards/020-32993ce527c3.json",
-      "focus-shards/021-b73e8baf2caa.json",
+      "focus-shards/021-83e509f5018c.json",
       "focus-shards/022-f03f00395ef3.json",
       "focus-shards/023-3d83319440e8.json",
       "focus-shards/024-247cb8de16eb.json",
@@ -80,7 +80,7 @@
       "focus-shards/057-6fb23ad7ec16.json",
       "focus-shards/058-b62ec82aac39.json",
       "focus-shards/059-7621eb5f1505.json",
-      "focus-shards/060-a515e8780ecd.json",
+      "focus-shards/060-69e48edd8872.json",
       "focus-shards/061-b1731361fc10.json",
       "focus-shards/062-678f0bb63071.json",
       "focus-shards/063-fd0439bf9417.json",
@@ -92,7 +92,7 @@
       "focus-shards/069-eac25151e0b4.json",
       "focus-shards/070-d5c9ca6d0405.json",
       "focus-shards/071-18b1500e044a.json",
-      "focus-shards/072-2f4e50ee58c8.json",
+      "focus-shards/072-ab70a6041f8c.json",
       "focus-shards/073-cf1c0d9ca09c.json",
       "focus-shards/074-9d5103f231ff.json",
       "focus-shards/075-677e5fdf1041.json",
@@ -153,7 +153,7 @@
     "tag": "tag.json",
     "tagHot": "tag.hot.json"
   },
-  "generated_at": "2026-09-12T09:24:29Z",
+  "generated_at": "2026-09-12T17:11:37Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -209,7 +209,7 @@
       "archived_article_files_skipped": 276,
       "archived_article_groups_skipped": 276,
       "avg_concepts_per_article": 0,
-      "avg_tags_per_article": 2.696883852691218,
+      "avg_tags_per_article": 2.697098372257608,
       "canonical_duplicate_files_skipped": 0,
       "incomplete_article_files_skipped": 0,
       "incomplete_article_groups_skipped": 0,
@@ -218,7 +218,7 @@
         [
           "Hacker News",
           {
-            "article_count": 935,
+            "article_count": 936,
             "category": "article_tag",
             "description": "文章标签: Hacker News",
             "id": "Hacker News",
@@ -266,7 +266,7 @@
         [
           "来源快报",
           {
-            "article_count": 618,
+            "article_count": 620,
             "category": "article_tag",
             "description": "文章标签: 来源快报",
             "id": "来源快报",
@@ -278,13 +278,13 @@
       ],
       "synthetic_article_files_skipped": 0,
       "synthetic_article_groups_skipped": 0,
-      "total_articles": 2824,
+      "total_articles": 2826,
       "total_concept_links": 0,
       "total_concepts": 0,
       "total_tag_links": 1334,
       "total_tags": 195
     },
-    "total_articles": 2824,
+    "total_articles": 2826,
     "total_communities": 12,
     "total_links": 1444,
     "total_nodes": 264

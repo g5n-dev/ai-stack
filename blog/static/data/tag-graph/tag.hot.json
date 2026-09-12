@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-12T09:24:29Z",
+  "generated_at": "2026-09-12T17:11:37Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -317,7 +317,7 @@
       "strength": 1,
       "target": "tag:Hacker News",
       "type": "cooccurrence",
-      "weight": 81
+      "weight": 82
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:Health",
@@ -517,7 +517,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 45
+      "weight": 46
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:大语言模型",
@@ -541,7 +541,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 165
+      "weight": 167
     },
     {
       "id": "edge:semantic:tag:AI->tech:ai_ml",
@@ -7637,7 +7637,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 182
+      "weight": 183
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:深度学习",
@@ -10557,7 +10557,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 167
+      "weight": 168
     },
     {
       "id": "edge:cooccurrence:tag:博客与播客->tag:深度学习",
@@ -11060,7 +11060,7 @@
       "weighted_degree": 245
     },
     {
-      "article_count": 166,
+      "article_count": 168,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -11074,7 +11074,7 @@
       "name": "AI",
       "rank": 16,
       "related_count": 57,
-      "weighted_degree": 433.6
+      "weighted_degree": 437.6
     },
     {
       "article_count": 3,
@@ -13134,7 +13134,7 @@
       "weighted_degree": 16
     },
     {
-      "article_count": 935,
+      "article_count": 936,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -13148,7 +13148,7 @@
       "name": "Hacker News",
       "rank": 9,
       "related_count": 21,
-      "weighted_degree": 604
+      "weighted_degree": 606
     },
     {
       "article_count": 1,
@@ -14120,7 +14120,7 @@
       "weighted_degree": 4
     },
     {
-      "article_count": 492,
+      "article_count": 493,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
@@ -14134,7 +14134,7 @@
       "name": "博客与播客",
       "rank": 4,
       "related_count": 108,
-      "weighted_degree": 1358
+      "weighted_degree": 1360
     },
     {
       "article_count": 141,
@@ -14239,7 +14239,7 @@
       "weighted_degree": 531
     },
     {
-      "article_count": 618,
+      "article_count": 620,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -14253,7 +14253,7 @@
       "name": "来源快报",
       "rank": 3,
       "related_count": 122,
-      "weighted_degree": 1834
+      "weighted_degree": 1838
     },
     {
       "article_count": 68,
