@@ -27,7 +27,7 @@ source_title_chars_original: 53
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://openai.com/index/perplexity-improving-accuracy-with-astra
 parent_observation_id: null
-last_seen_at: 2026-09-12T00:18:36.139245Z
+last_seen_at: 2026-09-14T00:00:00Z
 ---
 
 ## 基本信息

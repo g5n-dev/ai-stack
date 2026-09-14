@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:9bda4fe1b5a372df271f003bb96c70ff9f87f383c807712d5
 description: "这条内容报道了DeepSeek发布的最新开源模型v4.1‑Flash。该模型采用因果编码器‑解码器结构，并在输入与输出阶段使用不同的激活参数规模，同时加入视觉输入能力，专注于在保持性能的同时显著降低推理时的计算和缓存成本。"
 external_url: https://www.latent.space/p/ainews-deepseek-v41-flash-763b-p8b
 parent_observation_id: null
-last_seen_at: 2026-09-12T09:21:01.038232Z
+last_seen_at: 2026-09-14T00:00:00Z
 ---
 
 ## 基本信息
