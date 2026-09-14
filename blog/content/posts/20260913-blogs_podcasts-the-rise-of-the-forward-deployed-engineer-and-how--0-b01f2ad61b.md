@@ -15,7 +15,7 @@ observation_id: obs_b01f2ad61bd017c9f37a1a617c68ae6c479c68ebbe2216a4d51ffc236707
 event_id: evt_ef20289b1c52e0316c8e1626d4e6be557f8435e9feb2138f56912d31b49c2cea
 revision_id: rev_880103f48a113389e1f20f0374e64e843a2775be8b4787aecb636020f2e50482
 source_published_at: 2026-09-12T15:01:19Z
-first_seen_at: 2026-09-12T17:09:29.878266Z
+first_seen_at: 2026-09-12T17:20:19Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:a451a1c3f8afcedab7309adab8bd366b5953657f1791d53ee
 description: "这篇文章由曾在 Palantir、Citadel 与 Kepler 负责前线部署工程（Forward Deployed Engineer）的从业者撰写，概述了该角色的职责、与传统咨询的区别，并通过项目 Frontline 的实践以及一次因数据不一致导致的存储系统崩溃案例，展示了在实际现场中识别并弥补设计缺陷的重要性。"
 external_url: https://www.latent.space/p/forward-deployed-engineer-best-practices
 parent_observation_id: null
-last_seen_at: 2026-09-12T17:09:29.878266Z
+last_seen_at: 2026-09-14T00:00:00Z
 ---
 
 ## 基本信息

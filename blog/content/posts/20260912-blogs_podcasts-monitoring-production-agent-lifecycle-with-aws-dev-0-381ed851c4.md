@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:37c4afc0cdbe597bc92570a9a7a98ee248be8b930fb92dcf1
 description: "该方案通过两层监控来追踪生产环境中的多智能体系统：一边持续评估智能体的输出质量，一边自动调查底层基础设施的健康状态，以发现传统指标难以捕获的异常。"
 external_url: https://aws.amazon.com/blogs/machine-learning/monitoring-production-agent-lifecycle-with-aws-devops-agent-and-agentcore-evaluations
 parent_observation_id: null
-last_seen_at: 2026-09-12T00:00:00Z
+last_seen_at: 2026-09-14T00:00:00Z
 ---
 
 ## 基本信息

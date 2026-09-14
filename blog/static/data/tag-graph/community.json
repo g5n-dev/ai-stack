@@ -2,57 +2,57 @@
   "algorithm": "deterministic-weighted-label-propagation",
   "communities": [
     {
-      "article_count": 2725,
+      "article_count": 2727,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-fff056b5b0a9.json",
+      "hotspot_file": "community-hotspots/01-895abf43e499.json",
       "id": "community:tag:大语言模型",
       "leader_id": "tag:Hacker News",
       "name": "Hacker News",
-      "node_count": 66,
+      "node_count": 67,
       "rank": 1,
-      "tag_occurrences": 6099,
-      "weighted_degree": 15290.6
+      "tag_occurrences": 6106,
+      "weighted_degree": 15308.6
     },
     {
-      "article_count": 663,
+      "article_count": 664,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/02-eaf11822417c.json",
+      "hotspot_file": "community-hotspots/02-6f292f5ab7c3.json",
       "id": "community:tag:Technical How-to",
       "leader_id": "tag:博客与播客",
       "name": "博客与播客",
       "node_count": 54,
       "rank": 2,
-      "tag_occurrences": 1258,
-      "weighted_degree": 5260.2
+      "tag_occurrences": 1260,
+      "weighted_degree": 5274.2
+    },
+    {
+      "article_count": 12,
+      "hotspot_count": 12,
+      "hotspot_file": "community-hotspots/03-d7188bd563bb.json",
+      "id": "community:tag:Machine learning",
+      "leader_id": "tag:Artificial intelligence",
+      "name": "Artificial intelligence",
+      "node_count": 12,
+      "rank": 3,
+      "tag_occurrences": 39,
+      "weighted_degree": 266.2
     },
     {
       "article_count": 12,
       "hotspot_count": 11,
-      "hotspot_file": "community-hotspots/03-7ef670e0a4ea.json",
+      "hotspot_file": "community-hotspots/04-15edef7975ae.json",
       "id": "community:tag:Gemini Notebook",
       "leader_id": "tag:Search",
       "name": "Search",
       "node_count": 11,
-      "rank": 3,
+      "rank": 4,
       "tag_occurrences": 27,
       "weighted_degree": 151.6
     },
     {
-      "article_count": 11,
-      "hotspot_count": 11,
-      "hotspot_file": "community-hotspots/04-be6acf6ae5b0.json",
-      "id": "community:tag:Machine learning",
-      "leader_id": "tag:Artificial intelligence",
-      "name": "Artificial intelligence",
-      "node_count": 11,
-      "rank": 4,
-      "tag_occurrences": 34,
-      "weighted_degree": 231.2
-    },
-    {
       "article_count": 5,
       "hotspot_count": 8,
-      "hotspot_file": "community-hotspots/05-3bf0ce1fa063.json",
+      "hotspot_file": "community-hotspots/05-acd70d320c81.json",
       "id": "community:tag:ML Applications",
       "leader_id": "tag:Data Infrastructure",
       "name": "Data Infrastructure",
@@ -62,21 +62,21 @@
       "weighted_degree": 82.4
     },
     {
-      "article_count": 2,
+      "article_count": 3,
       "hotspot_count": 7,
-      "hotspot_file": "community-hotspots/06-852bdfd2e87e.json",
+      "hotspot_file": "community-hotspots/06-aca82715a4c8.json",
       "id": "community:tag:Computer modeling",
       "leader_id": "tag:Algorithms",
       "name": "Algorithms",
       "node_count": 7,
       "rank": 6,
-      "tag_occurrences": 9,
-      "weighted_degree": 64.2
+      "tag_occurrences": 10,
+      "weighted_degree": 71.2
     },
     {
       "article_count": 3,
       "hotspot_count": 6,
-      "hotspot_file": "community-hotspots/07-b7c5912d688b.json",
+      "hotspot_file": "community-hotspots/07-57e10b93c4ab.json",
       "id": "community:tag:Civil and environmental engineering",
       "leader_id": "tag:Education, teaching, academics",
       "name": "Education, teaching, academics",
@@ -88,7 +88,7 @@
     {
       "article_count": 2,
       "hotspot_count": 6,
-      "hotspot_file": "community-hotspots/08-42e28467cde2.json",
+      "hotspot_file": "community-hotspots/08-e6a22c61cc74.json",
       "id": "community:tag:Amazon RDS",
       "leader_id": "tag:Amazon Elastic Kubernetes Service",
       "name": "Amazon Elastic Kubernetes Service",
@@ -100,7 +100,7 @@
     {
       "article_count": 5,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/09-59dc11db0982.json",
+      "hotspot_file": "community-hotspots/09-25e28f2a39fb.json",
       "id": "community:tag:Interview",
       "leader_id": "tag:Safety",
       "name": "Safety",
@@ -112,7 +112,7 @@
     {
       "article_count": 1,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/10-68fe9a142578.json",
+      "hotspot_file": "community-hotspots/10-1d1d6fc6f85e.json",
       "id": "community:tag:Codex",
       "leader_id": "tag:ACP",
       "name": "ACP",
@@ -124,7 +124,7 @@
     {
       "article_count": 1,
       "hotspot_count": 3,
-      "hotspot_file": "community-hotspots/11-bd1c1f208a72.json",
+      "hotspot_file": "community-hotspots/11-bdbe25182e77.json",
       "id": "community:tag:Biology",
       "leader_id": "tag:Biological engineering",
       "name": "Biological engineering",
@@ -145,7 +145,7 @@
       "weighted_degree": 340.6
     }
   ],
-  "generated_at": "2026-09-12T17:11:37Z",
+  "generated_at": "2026-09-14T06:19:02Z",
   "iterations": 8,
   "limit": 11,
   "links": [
@@ -275,7 +275,7 @@
       "strength": 1,
       "target": "community:tag:Machine learning",
       "type": "community",
-      "weight": 21
+      "weight": 26
     },
     {
       "id": "edge:community:community:tag:Computer modeling->community:tag:Technical How-to",
@@ -283,7 +283,7 @@
       "strength": 1,
       "target": "community:tag:Technical How-to",
       "type": "community",
-      "weight": 10
+      "weight": 12
     },
     {
       "id": "edge:community:community:tag:Gemini Notebook->community:tag:Technical How-to",
@@ -347,7 +347,7 @@
       "strength": 1,
       "target": "community:tag:Technical How-to",
       "type": "community",
-      "weight": 33
+      "weight": 43
     },
     {
       "id": "edge:community:community:tag:Machine learning->community:tag:大语言模型",
@@ -367,7 +367,7 @@
     }
   ],
   "stats": {
-    "assigned_nodes": 195,
+    "assigned_nodes": 197,
     "detected_communities": 17,
     "emitted_communities": 12,
     "total_communities": 12,

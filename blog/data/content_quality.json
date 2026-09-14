@@ -1,8 +1,8 @@
 {
-  "active_count": 2826,
+  "active_count": 2829,
   "archived_count": 276,
   "complete_count": 69,
-  "interpreted_brief_count": 202,
+  "interpreted_brief_count": 203,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21691,6 +21691,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260914-blogs_podcasts-new-method-enables-ai-for-safety-critical-situatio-0-2898a53d04.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260914-github_trending-digoal-blog-10-df29231c69.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260914-hacker_news-open-source-ai-and-open-models-reading-list-16-76f60d64aa.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -21725,10 +21743,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2555,
-  "source_file_count": 3102,
-  "source_tree_sha256": "0d5079875afcc6008fcebdd6049338b2ee3c8cd540faf34af6e40571bd3be600",
-  "verified_provenance_count": 2826,
+  "source_brief_count": 2557,
+  "source_file_count": 3105,
+  "source_tree_sha256": "412d930e5dca2cbbfa2a652d3828c04aabeec11a1abd8412588c3c23daa06a57",
+  "verified_provenance_count": 2829,
   "warning_counts": {
     "source_excerpt_truncated": 795
   }
