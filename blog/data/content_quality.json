@@ -1,7 +1,7 @@
 {
-  "active_count": 2844,
+  "active_count": 2848,
   "archived_count": 276,
-  "complete_count": 71,
+  "complete_count": 72,
   "interpreted_brief_count": 209,
   "legacy_analysis_count": 0,
   "pages": {
@@ -21773,11 +21773,23 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260916-arxiv-bellman-policy-optimization-0-4776cabc7f.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260916-arxiv-corrupt-plans-clean-traces-evading-chain-of-though-0-7ba1987c3f.md": {
       "reasons": [
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20260916-blogs_podcasts-can-skills-learned-in-games-transfer-to-real-world-0-eb64bf4664.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20260916-blogs_podcasts-optimizing-cost-and-latency-with-amazon-bedrock-pr-0-a0a76519ad.md": {
       "reasons": [
@@ -21789,6 +21801,12 @@
       ]
     },
     "posts/20260916-hacker_news-cartesian-ai-3d-modeling-for-design-6-5c633bd545.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260916-hacker_news-gemini-38-live-and-38-live-extended-thinking-3-25823e681a.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -21827,10 +21845,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2564,
-  "source_file_count": 3120,
-  "source_tree_sha256": "f51032271f36a6c942d86c82a48d266d22624a798824ceb6e2eb83e6746dee70",
-  "verified_provenance_count": 2844,
+  "source_brief_count": 2567,
+  "source_file_count": 3124,
+  "source_tree_sha256": "41720d35ebb2105d6b2cc533e08155c06adaf07d86a0870efb009a54191beccd",
+  "verified_provenance_count": 2848,
   "warning_counts": {
     "source_excerpt_truncated": 797
   }
