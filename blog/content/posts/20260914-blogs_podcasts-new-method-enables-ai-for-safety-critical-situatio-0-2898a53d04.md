@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:343d4ab0d28446805559be4ac51658160ea5757622267cb8b
 description: "该技术通过在生成过程的后期才对输出施加严格约束，使预训练生成模型在不重新训练的情况下仍能满足安全、物理或任务关键的需求，同时保持较高的解决质量。"
 external_url: https://news.mit.edu/2026/new-method-enables-ai-safety-critical-situations-0914
 parent_observation_id: null
-last_seen_at: 2026-09-14T06:17:26.416393Z
+last_seen_at: 2026-09-15T00:00:00Z
 ---
 
 ## 基本信息
