@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T18:14:39Z",
+  "generated_at": "2026-09-15T21:23:12Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -1157,7 +1157,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 237
+      "weight": 238
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:命令行工具",
@@ -1173,7 +1173,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 331
+      "weight": 332
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:工程实践",
@@ -1213,7 +1213,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 180
+      "weight": 181
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:深度学习",
@@ -4805,7 +4805,7 @@
       "strength": 1,
       "target": "tag:cs.LG",
       "type": "cooccurrence",
-      "weight": 23
+      "weight": 24
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:cs.MA",
@@ -4949,7 +4949,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 313
+      "weight": 314
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:数据库",
@@ -4973,7 +4973,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 234
+      "weight": 235
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:深度学习",
@@ -7677,7 +7677,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 122
+      "weight": 123
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:数据库",
@@ -7701,7 +7701,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 189
+      "weight": 190
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:深度学习",
@@ -10341,7 +10341,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 9
+      "weight": 10
     },
     {
       "id": "edge:cooccurrence:tag:cs.LG->tag:机器学习",
@@ -10357,7 +10357,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 23
+      "weight": 24
     },
     {
       "id": "edge:cooccurrence:tag:cs.LG->tag:生成式 AI",
@@ -10629,7 +10629,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 155
+      "weight": 156
     },
     {
       "id": "edge:cooccurrence:tag:博客与播客->tag:数据库",
@@ -10653,7 +10653,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 173
+      "weight": 174
     },
     {
       "id": "edge:cooccurrence:tag:博客与播客->tag:深度学习",
@@ -10789,7 +10789,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 209
+      "weight": 212
     },
     {
       "id": "edge:cooccurrence:tag:大语言模型->tag:深度学习",
@@ -10845,7 +10845,7 @@
       "strength": 1,
       "target": "tag:掘金",
       "type": "cooccurrence",
-      "weight": 70
+      "weight": 71
     },
     {
       "id": "edge:cooccurrence:tag:工程实践->tag:来源转写",
@@ -10853,7 +10853,7 @@
       "strength": 1,
       "target": "tag:来源转写",
       "type": "cooccurrence",
-      "weight": 70
+      "weight": 71
     },
     {
       "id": "edge:cooccurrence:tag:掘金->tag:数据库",
@@ -10885,7 +10885,7 @@
       "strength": 1,
       "target": "tag:来源转写",
       "type": "cooccurrence",
-      "weight": 70
+      "weight": 71
     },
     {
       "id": "edge:cooccurrence:tag:掘金->tag:深度学习",
@@ -11207,7 +11207,7 @@
       "weighted_degree": 8.6
     },
     {
-      "article_count": 871,
+      "article_count": 872,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -11221,7 +11221,7 @@
       "name": "AI Agent",
       "rank": 1,
       "related_count": 87,
-      "weighted_degree": 2550.2
+      "weighted_degree": 2553.2
     },
     {
       "article_count": 2,
@@ -11955,7 +11955,7 @@
       "weighted_degree": 63
     },
     {
-      "article_count": 788,
+      "article_count": 789,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -11969,7 +11969,7 @@
       "name": "ArXiv",
       "rank": 6,
       "related_count": 46,
-      "weighted_degree": 1171
+      "weighted_degree": 1174
     },
     {
       "article_count": 1,
@@ -12516,7 +12516,7 @@
       "weighted_degree": 3
     },
     {
-      "article_count": 23,
+      "article_count": 24,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -12530,7 +12530,7 @@
       "name": "cs.LG",
       "rank": 38,
       "related_count": 9,
-      "weighted_degree": 72
+      "weighted_degree": 75
     },
     {
       "article_count": 2,
@@ -13230,7 +13230,7 @@
       "weighted_degree": 16
     },
     {
-      "article_count": 942,
+      "article_count": 943,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -13244,7 +13244,7 @@
       "name": "Hacker News",
       "rank": 8,
       "related_count": 21,
-      "weighted_degree": 618
+      "weighted_degree": 620
     },
     {
       "article_count": 1,
@@ -13905,7 +13905,7 @@
       "legacy_id": "Rust",
       "level": 6,
       "name": "Rust",
-      "rank": 32,
+      "rank": 33,
       "related_count": 25,
       "weighted_degree": 140.6
     },
@@ -14250,7 +14250,7 @@
       "weighted_degree": 4
     },
     {
-      "article_count": 498,
+      "article_count": 499,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -14264,7 +14264,7 @@
       "name": "博客与播客",
       "rank": 4,
       "related_count": 108,
-      "weighted_degree": 1384
+      "weighted_degree": 1387
     },
     {
       "article_count": 141,
@@ -14284,7 +14284,7 @@
       "weighted_degree": 507.6
     },
     {
-      "article_count": 771,
+      "article_count": 774,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -14298,10 +14298,10 @@
       "name": "大语言模型",
       "rank": 2,
       "related_count": 96,
-      "weighted_degree": 2243.2
+      "weighted_degree": 2251.2
     },
     {
-      "article_count": 71,
+      "article_count": 72,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
@@ -14315,10 +14315,10 @@
       "name": "工程实践",
       "rank": 30,
       "related_count": 9,
-      "weighted_degree": 147
+      "weighted_degree": 149
     },
     {
-      "article_count": 531,
+      "article_count": 532,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -14332,7 +14332,7 @@
       "name": "掘金",
       "rank": 5,
       "related_count": 26,
-      "weighted_degree": 1349
+      "weighted_degree": 1351
     },
     {
       "article_count": 146,
@@ -14369,7 +14369,7 @@
       "weighted_degree": 545
     },
     {
-      "article_count": 634,
+      "article_count": 637,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -14383,10 +14383,10 @@
       "name": "来源快报",
       "rank": 3,
       "related_count": 123,
-      "weighted_degree": 1883
+      "weighted_degree": 1891
     },
     {
-      "article_count": 70,
+      "article_count": 71,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
@@ -14398,9 +14398,9 @@
       "legacy_id": "来源转写",
       "level": 6,
       "name": "来源转写",
-      "rank": 33,
+      "rank": 32,
       "related_count": 2,
-      "weighted_degree": 140
+      "weighted_degree": 142
     },
     {
       "article_count": 50,
