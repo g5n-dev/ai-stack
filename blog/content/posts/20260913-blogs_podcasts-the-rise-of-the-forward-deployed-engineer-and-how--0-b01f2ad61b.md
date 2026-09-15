@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:a451a1c3f8afcedab7309adab8bd366b5953657f1791d53ee
 description: "这篇文章由曾在 Palantir、Citadel 与 Kepler 负责前线部署工程（Forward Deployed Engineer）的从业者撰写，概述了该角色的职责、与传统咨询的区别，并通过项目 Frontline 的实践以及一次因数据不一致导致的存储系统崩溃案例，展示了在实际现场中识别并弥补设计缺陷的重要性。"
 external_url: https://www.latent.space/p/forward-deployed-engineer-best-practices
 parent_observation_id: null
-last_seen_at: 2026-09-14T00:00:00Z
+last_seen_at: 2026-09-15T00:00:00Z
 ---
 
 ## 基本信息

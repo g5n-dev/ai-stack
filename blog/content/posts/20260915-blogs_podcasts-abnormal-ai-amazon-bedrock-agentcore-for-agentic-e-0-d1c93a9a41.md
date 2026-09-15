@@ -15,7 +15,7 @@ observation_id: obs_d1c93a9a4173c0b28918d3112f7fd3c28bf7b7db15700155a6cac479db0c
 event_id: evt_851eced6dd5333dd8cbd96920b1425348242118d4905288c994297525c5c829b
 revision_id: rev_198f147d6834be1c6ed79cd90854db54a55ca1ba18337ce39037b0729471155d
 source_published_at: 2026-09-14T21:22:45Z
-first_seen_at: 2026-09-14T22:30:52.086645Z
+first_seen_at: 2026-09-14T22:42:39Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:123d5f4cd1f79a19525a0d028f46a5827d7e3d0388141d770
 description: "该内容介绍了一种将动态代码执行能力集成到 AI 代理中的方案，使代理能够执行计算、数据处理和验证等超出语义推理范围的任务，并展示了在邮件安全检测场景中的实际应用架构。"
 external_url: https://aws.amazon.com/blogs/machine-learning/abnormal-ai-amazon-bedrock-agentcore-for-agentic-email-security-at-scale
 parent_observation_id: null
-last_seen_at: 2026-09-14T22:30:52.086645Z
+last_seen_at: 2026-09-15T00:00:00Z
 ---
 
 ## 基本信息

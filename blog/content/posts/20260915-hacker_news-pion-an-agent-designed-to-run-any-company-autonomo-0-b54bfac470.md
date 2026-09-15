@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:4e2bea310e3e186b553d7ed6b67339ec1a5fc2ad4eac0e51
 source_payload_sha256: "sha256:e21836da34b5d5d4436536ae12eb0174f231240ec27d262b6d832da37b603b5f"
 observation_id: obs_b54bfac470e15413bc3b66a7050fd806dd70198b5512200e1b4e25ecc201c992
 event_id: evt_6800b34dd4757fa60b149254d0e0f52511762c587317ffb0363ce90d822058bf
-revision_id: rev_03ed876eca3bb58805f533b8dbe6980984eb5e9b1eacee04b800b24a83eb11c1
+revision_id: rev_cb3cdef031d43ad8d58778f96467a54ee0ab8b5b4babb32773964481350d5b46
 source_published_at: 2026-09-14T17:16:06Z
 first_seen_at: 2026-09-14T18:51:10Z
 timestamp_confidence: platform
@@ -27,7 +27,7 @@ source_title_chars_original: 55
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://andonlabs.com/blog/why-we-built-pion
 parent_observation_id: null
-last_seen_at: 2026-09-14T18:38:13.314621Z
+last_seen_at: 2026-09-15T00:00:00Z
 ---
 
 ## 基本信息
