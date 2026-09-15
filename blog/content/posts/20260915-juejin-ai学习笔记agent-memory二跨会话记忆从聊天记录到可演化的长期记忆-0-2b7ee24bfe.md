@@ -23,7 +23,7 @@ source_title_chars_original: 43
 description: "核心结论 跨会话记忆的核心挑战不是存储，而是维护一条完整的数据链：记什么、凭什么信、如何随事实变化、什么时候找回来、何时忘掉。四类记忆在工作场景中承担不同职责——工作记忆服务当前任务，情景记忆保留事件的时间、来源与结果，语义记忆提炼值得复用的稳定事实，程序记忆保存做事方式与工具约定。"
 external_url: https://juejin.cn/post/7685206698757947392
 observation_id: obs_2b7ee24bfe3137428ba182f540392ed923b6b92d7c0df534765785c234652462
-revision_id: rev_25522059eb3be4bad041a68d23349ed6bed6743e5617f15ae49ca6323def54f1
+revision_id: rev_f96fc51664a26ace6e22a349fe40cc8cc31176dc2250a0423948fc7e00f7c483
 event_id: evt_46b7e244b71aaa81a360de828b54fd354fbdccc2fc91c005fe9cbf1b37e89cc6
 lineage_relation: original
 parent_observation_id: null

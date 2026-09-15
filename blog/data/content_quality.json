@@ -1,8 +1,8 @@
 {
-  "active_count": 2838,
+  "active_count": 2839,
   "archived_count": 276,
   "complete_count": 71,
-  "interpreted_brief_count": 206,
+  "interpreted_brief_count": 207,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21722,6 +21722,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260915-blogs_podcasts-ainews-aef-1-standard-emerges-for-third-party-eval-0-e3e0524cc2.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260915-blogs_podcasts-humanitys-last-invention-richard-socher-of-recursi-0-24a6ec459a.md": {
       "reasons": [
         "interpreted_source_card"
@@ -21789,9 +21795,9 @@
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2561,
-  "source_file_count": 3114,
-  "source_tree_sha256": "308243e97e611d0be804f3341ffaa5bce8ef8446cf609a34ad22f6cebec071b2",
-  "verified_provenance_count": 2838,
+  "source_file_count": 3115,
+  "source_tree_sha256": "fe5d8e83f7f75f14f047a8337811711fd7b0d790f444c0d9d6eb3e904f547d54",
+  "verified_provenance_count": 2839,
   "warning_counts": {
     "source_excerpt_truncated": 796
   }
