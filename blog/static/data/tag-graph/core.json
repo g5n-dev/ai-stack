@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T01:29:27Z",
+  "generated_at": "2026-09-15T07:45:12Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -626,7 +626,7 @@
       "weighted_degree": 2
     },
     {
-      "article_count": 869,
+      "article_count": 870,
       "category": "ai",
       "color": "#7aa6b8",
       "community_id": null,
@@ -643,7 +643,7 @@
       "weighted_degree": 4.4
     },
     {
-      "article_count": 1050,
+      "article_count": 1051,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
@@ -1306,7 +1306,7 @@
       "weighted_degree": 3
     },
     {
-      "article_count": 769,
+      "article_count": 770,
       "category": "nlp",
       "color": "#d97706",
       "community_id": null,
@@ -1323,7 +1323,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 769,
+      "article_count": 770,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
