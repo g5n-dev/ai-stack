@@ -12,10 +12,10 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-09-15T13:33:53Z",
+  "generated_at": "2026-09-15T18:14:39Z",
   "items": [
     {
-      "article_count": 870,
+      "article_count": 871,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 89,
@@ -25,10 +25,10 @@
       "legacy_id": "AI Agent",
       "name": "AI Agent",
       "rank": 1,
-      "weighted_degree": 2547.2
+      "weighted_degree": 2550.2
     },
     {
-      "article_count": 770,
+      "article_count": 771,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 98,
@@ -38,10 +38,10 @@
       "legacy_id": "大语言模型",
       "name": "大语言模型",
       "rank": 2,
-      "weighted_degree": 2236.2
+      "weighted_degree": 2243.2
     },
     {
-      "article_count": 631,
+      "article_count": 634,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 123,
@@ -51,12 +51,12 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 3,
-      "weighted_degree": 1871
+      "weighted_degree": 1883
     },
     {
-      "article_count": 497,
+      "article_count": 498,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 108,
       "description": "文章标签: 博客与播客",
       "id": "tag:博客与播客",
@@ -64,7 +64,7 @@
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 4,
-      "weighted_degree": 1377
+      "weighted_degree": 1384
     },
     {
       "article_count": 531,
@@ -80,7 +80,7 @@
       "weighted_degree": 1349
     },
     {
-      "article_count": 787,
+      "article_count": 788,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 46,
@@ -90,12 +90,12 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 1168
+      "weighted_degree": 1171
     },
     {
       "article_count": 164,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 67,
       "description": "文章标签: 生成式 AI",
       "id": "tag:生成式 AI",
@@ -106,7 +106,7 @@
       "weighted_degree": 677
     },
     {
-      "article_count": 941,
+      "article_count": 942,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 21,
@@ -116,7 +116,7 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 8,
-      "weighted_degree": 616
+      "weighted_degree": 618
     },
     {
       "article_count": 163,
@@ -134,7 +134,7 @@
     {
       "article_count": 148,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 84,
       "description": "文章标签: 机器学习",
       "id": "tag:机器学习",
@@ -145,7 +145,7 @@
       "weighted_degree": 545
     },
     {
-      "article_count": 123,
+      "article_count": 124,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 43,
@@ -155,7 +155,7 @@
       "legacy_id": "RAG",
       "name": "RAG",
       "rank": 11,
-      "weighted_degree": 528.2
+      "weighted_degree": 535.2
     },
     {
       "article_count": 146,
@@ -171,6 +171,19 @@
       "weighted_degree": 526.6
     },
     {
+      "article_count": 90,
+      "category": "article_tag",
+      "community_id": "community:tag:大语言模型",
+      "degree": 52,
+      "description": "文章标签: Prompt 工程",
+      "id": "tag:Prompt 工程",
+      "layer": "tag",
+      "legacy_id": "Prompt 工程",
+      "name": "Prompt 工程",
+      "rank": 13,
+      "weighted_degree": 510
+    },
+    {
       "article_count": 141,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
@@ -180,21 +193,8 @@
       "layer": "tag",
       "legacy_id": "命令行工具",
       "name": "命令行工具",
-      "rank": 13,
-      "weighted_degree": 507.6
-    },
-    {
-      "article_count": 89,
-      "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
-      "degree": 52,
-      "description": "文章标签: Prompt 工程",
-      "id": "tag:Prompt 工程",
-      "layer": "tag",
-      "legacy_id": "Prompt 工程",
-      "name": "Prompt 工程",
       "rank": 14,
-      "weighted_degree": 503
+      "weighted_degree": 507.6
     },
     {
       "article_count": 126,
@@ -210,7 +210,7 @@
       "weighted_degree": 470
     },
     {
-      "article_count": 174,
+      "article_count": 175,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 59,
@@ -220,7 +220,7 @@
       "legacy_id": "AI",
       "name": "AI",
       "rank": 16,
-      "weighted_degree": 450.6
+      "weighted_degree": 452.6
     },
     {
       "article_count": 86,
@@ -249,9 +249,9 @@
       "weighted_degree": 289.6
     },
     {
-      "article_count": 38,
+      "article_count": 39,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 38,
       "description": "文章标签: Advanced (300)",
       "id": "tag:Advanced (300)",
@@ -259,10 +259,10 @@
       "legacy_id": "Advanced (300)",
       "name": "Advanced (300)",
       "rank": 19,
-      "weighted_degree": 252
+      "weighted_degree": 259
     },
     {
-      "article_count": 71,
+      "article_count": 72,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 10,
@@ -272,12 +272,12 @@
       "legacy_id": "cs.AI",
       "name": "cs.AI",
       "rank": 20,
-      "weighted_degree": 227
+      "weighted_degree": 230
     },
     {
-      "article_count": 31,
+      "article_count": 32,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 40,
       "description": "文章标签: Technical How-to",
       "id": "tag:Technical How-to",
@@ -285,59 +285,59 @@
       "legacy_id": "Technical How-to",
       "name": "Technical How-to",
       "rank": 21,
-      "weighted_degree": 207
-    },
-    {
-      "article_count": 31,
-      "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
-      "degree": 30,
-      "description": "文章标签: Amazon Bedrock AgentCore",
-      "id": "tag:Amazon Bedrock AgentCore",
-      "layer": "tag",
-      "legacy_id": "Amazon Bedrock AgentCore",
-      "name": "Amazon Bedrock AgentCore",
-      "rank": 22,
-      "weighted_degree": 206
+      "weighted_degree": 214
     },
     {
       "article_count": 33,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
-      "degree": 31,
-      "description": "文章标签: Announcements",
-      "id": "tag:Announcements",
-      "layer": "tag",
-      "legacy_id": "Announcements",
-      "name": "Announcements",
-      "rank": 23,
-      "weighted_degree": 203
-    },
-    {
-      "article_count": 50,
-      "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
-      "degree": 40,
-      "description": "文章标签: 深度学习",
-      "id": "tag:深度学习",
-      "layer": "tag",
-      "legacy_id": "深度学习",
-      "name": "深度学习",
-      "rank": 24,
-      "weighted_degree": 202
-    },
-    {
-      "article_count": 32,
-      "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 37,
       "description": "文章标签: Amazon Bedrock",
       "id": "tag:Amazon Bedrock",
       "layer": "tag",
       "legacy_id": "Amazon Bedrock",
       "name": "Amazon Bedrock",
+      "rank": 22,
+      "weighted_degree": 207
+    },
+    {
+      "article_count": 31,
+      "category": "article_tag",
+      "community_id": "community:tag:大语言模型",
+      "degree": 30,
+      "description": "文章标签: Amazon Bedrock AgentCore",
+      "id": "tag:Amazon Bedrock AgentCore",
+      "layer": "tag",
+      "legacy_id": "Amazon Bedrock AgentCore",
+      "name": "Amazon Bedrock AgentCore",
+      "rank": 23,
+      "weighted_degree": 206
+    },
+    {
+      "article_count": 33,
+      "category": "article_tag",
+      "community_id": "community:tag:大语言模型",
+      "degree": 31,
+      "description": "文章标签: Announcements",
+      "id": "tag:Announcements",
+      "layer": "tag",
+      "legacy_id": "Announcements",
+      "name": "Announcements",
+      "rank": 24,
+      "weighted_degree": 203
+    },
+    {
+      "article_count": 50,
+      "category": "article_tag",
+      "community_id": "community:tag:大语言模型",
+      "degree": 40,
+      "description": "文章标签: 深度学习",
+      "id": "tag:深度学习",
+      "layer": "tag",
+      "legacy_id": "深度学习",
+      "name": "深度学习",
       "rank": 25,
-      "weighted_degree": 200
+      "weighted_degree": 202
     },
     {
       "article_count": 53,
@@ -368,7 +368,7 @@
     {
       "article_count": 27,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 26,
       "description": "文章标签: Intermediate (200)",
       "id": "tag:Intermediate (200)",
@@ -472,7 +472,7 @@
     {
       "article_count": 20,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 34,
       "description": "文章标签: Customer Solutions",
       "id": "tag:Customer Solutions",
@@ -524,7 +524,7 @@
     {
       "article_count": 11,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 21,
       "description": "文章标签: Amazon Quick Suite",
       "id": "tag:Amazon Quick Suite",
@@ -550,7 +550,7 @@
     {
       "article_count": 9,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 22,
       "description": "文章标签: Expert (400)",
       "id": "tag:Expert (400)",
@@ -602,7 +602,7 @@
     {
       "article_count": 8,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 20,
       "description": "文章标签: Amazon SageMaker AI",
       "id": "tag:Amazon SageMaker AI",
@@ -615,7 +615,7 @@
     {
       "article_count": 8,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 16,
       "description": "文章标签: Foundational (100)",
       "id": "tag:Foundational (100)",
@@ -628,7 +628,7 @@
     {
       "article_count": 7,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 17,
       "description": "文章标签: Amazon SageMaker HyperPod",
       "id": "tag:Amazon SageMaker HyperPod",
@@ -641,7 +641,7 @@
     {
       "article_count": 7,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 19,
       "description": "文章标签: Artificial Intelligence",
       "id": "tag:Artificial Intelligence",
@@ -680,7 +680,7 @@
     {
       "article_count": 5,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 16,
       "description": "文章标签: Amazon Bedrock Knowledge Bases",
       "id": "tag:Amazon Bedrock Knowledge Bases",
@@ -732,7 +732,7 @@
     {
       "article_count": 5,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 15,
       "description": "文章标签: Best Practices",
       "id": "tag:Best Practices",
@@ -745,7 +745,7 @@
     {
       "article_count": 4,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 21,
       "description": "文章标签: AWS Lambda",
       "id": "tag:AWS Lambda",
@@ -784,7 +784,7 @@
     {
       "article_count": 4,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 15,
       "description": "文章标签: Amazon SageMaker",
       "id": "tag:Amazon SageMaker",
@@ -797,7 +797,7 @@
     {
       "article_count": 3,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 16,
       "description": "文章标签: Amazon DynamoDB",
       "id": "tag:Amazon DynamoDB",
@@ -823,7 +823,7 @@
     {
       "article_count": 3,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 14,
       "description": "文章标签: Amazon Simple Storage Service (S3)",
       "id": "tag:Amazon Simple Storage Service (S3)",
@@ -901,7 +901,7 @@
     {
       "article_count": 3,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 15,
       "description": "文章标签: Amazon Nova",
       "id": "tag:Amazon Nova",
@@ -914,7 +914,7 @@
     {
       "article_count": 3,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 12,
       "description": "文章标签: Amazon Quick Sight",
       "id": "tag:Amazon Quick Sight",
@@ -1018,7 +1018,7 @@
     {
       "article_count": 2,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 7,
       "description": "文章标签: Amazon Machine Learning",
       "id": "tag:Amazon Machine Learning",
@@ -1031,7 +1031,7 @@
     {
       "article_count": 2,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 13,
       "description": "文章标签: AWS Fargate",
       "id": "tag:AWS Fargate",
@@ -1044,7 +1044,7 @@
     {
       "article_count": 2,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 11,
       "description": "文章标签: Amazon EC2",
       "id": "tag:Amazon EC2",
@@ -1057,7 +1057,7 @@
     {
       "article_count": 2,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 9,
       "description": "文章标签: Thought Leadership",
       "id": "tag:Thought Leadership",
@@ -1200,7 +1200,7 @@
     {
       "article_count": 2,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 8,
       "description": "文章标签: Amazon Bedrock Guardrails",
       "id": "tag:Amazon Bedrock Guardrails",
@@ -1213,7 +1213,7 @@
     {
       "article_count": 2,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 8,
       "description": "文章标签: Partner solutions",
       "id": "tag:Partner solutions",
@@ -1289,7 +1289,7 @@
       "weighted_degree": 8.6
     },
     {
-      "article_count": 770,
+      "article_count": 771,
       "category": "nlp",
       "community_id": null,
       "degree": 8,
@@ -1330,7 +1330,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 8,
       "description": "文章标签: Amazon API Gateway",
       "id": "tag:Amazon API Gateway",
@@ -1356,7 +1356,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 8,
       "description": "文章标签: DevOps",
       "id": "tag:DevOps",
@@ -1393,7 +1393,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 1053,
+      "article_count": 1055,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -1460,7 +1460,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:other",
+      "community_id": "community:tag:Brain and cognitive sciences",
       "degree": 7,
       "description": "文章标签: Alumni/ae",
       "id": "tag:Alumni/ae",
@@ -1473,7 +1473,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 7,
       "description": "文章标签: Amazon Athena",
       "id": "tag:Amazon Athena",
@@ -1486,7 +1486,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 7,
       "description": "文章标签: Amazon CloudWatch",
       "id": "tag:Amazon CloudWatch",
@@ -1499,7 +1499,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 7,
       "description": "文章标签: Amazon Connect",
       "id": "tag:Amazon Connect",
@@ -1525,7 +1525,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 7,
       "description": "文章标签: Amazon EventBridge",
       "id": "tag:Amazon EventBridge",
@@ -1538,7 +1538,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 7,
       "description": "文章标签: Amazon FSx for NetApp ONTAP",
       "id": "tag:Amazon FSx for NetApp ONTAP",
@@ -1551,7 +1551,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 7,
       "description": "文章标签: Amazon OpenSearch Service",
       "id": "tag:Amazon OpenSearch Service",
@@ -1577,7 +1577,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 7,
       "description": "文章标签: Amazon SageMaker Studio",
       "id": "tag:Amazon SageMaker Studio",
@@ -1590,7 +1590,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 7,
       "description": "文章标签: Amazon SageMaker Unified Studio",
       "id": "tag:Amazon SageMaker Unified Studio",
@@ -1629,7 +1629,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 7,
       "description": "文章标签: Amazon Textract",
       "id": "tag:Amazon Textract",
@@ -1681,7 +1681,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 7,
       "description": "文章标签: AWS ParallelCluster",
       "id": "tag:AWS ParallelCluster",
@@ -1694,7 +1694,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 7,
       "description": "文章标签: AWS Secrets Manager",
       "id": "tag:AWS Secrets Manager",
@@ -1733,7 +1733,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:other",
+      "community_id": "community:tag:Brain and cognitive sciences",
       "degree": 7,
       "description": "文章标签: Brain and cognitive sciences",
       "id": "tag:Brain and cognitive sciences",
@@ -1811,7 +1811,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 7,
       "description": "文章标签: Elastic Load Balancing",
       "id": "tag:Elastic Load Balancing",
@@ -1837,7 +1837,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 7,
       "description": "文章标签: Generative AI",
       "id": "tag:Generative AI",
@@ -1863,7 +1863,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 7,
       "description": "文章标签: How-To",
       "id": "tag:How-To",
@@ -2006,7 +2006,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:other",
+      "community_id": "community:tag:Brain and cognitive sciences",
       "degree": 7,
       "description": "文章标签: Statistics",
       "id": "tag:Statistics",
@@ -2082,7 +2082,7 @@
       "weighted_degree": 7
     },
     {
-      "article_count": 123,
+      "article_count": 124,
       "category": "ai",
       "community_id": null,
       "degree": 7,
@@ -2175,7 +2175,7 @@
     {
       "article_count": 2,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 3,
       "description": "文章标签: eess.SP",
       "id": "tag:eess.SP",
@@ -2188,7 +2188,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 6,
       "description": "文章标签: Amazon Bedrock Agents",
       "id": "tag:Amazon Bedrock Agents",
@@ -2253,7 +2253,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 5,
       "description": "文章标签: AWS Glue",
       "id": "tag:AWS Glue",
@@ -2316,7 +2316,7 @@
       "weighted_degree": 4.6
     },
     {
-      "article_count": 870,
+      "article_count": 871,
       "category": "ai",
       "community_id": null,
       "degree": 5,
@@ -2331,7 +2331,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 4,
       "description": "文章标签: Amazon Rekognition",
       "id": "tag:Amazon Rekognition",
@@ -2370,7 +2370,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 4,
       "description": "文章标签: AWS DeepRacer",
       "id": "tag:AWS DeepRacer",
@@ -2578,7 +2578,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
+      "community_id": "community:tag:大语言模型",
       "degree": 3,
       "description": "文章标签: cs.HC",
       "id": "tag:cs.HC",
@@ -2797,7 +2797,7 @@
       "weighted_degree": 2.8
     },
     {
-      "article_count": 770,
+      "article_count": 771,
       "category": "ai",
       "community_id": null,
       "degree": 3,
@@ -3057,7 +3057,7 @@
       "weighted_degree": 2
     },
     {
-      "article_count": 123,
+      "article_count": 124,
       "category": "ai",
       "community_id": null,
       "degree": 2,

@@ -1,8 +1,8 @@
 {
-  "active_count": 2841,
+  "active_count": 2844,
   "archived_count": 276,
   "complete_count": 71,
-  "interpreted_brief_count": 207,
+  "interpreted_brief_count": 209,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21772,6 +21772,27 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260916-arxiv-corrupt-plans-clean-traces-evading-chain-of-though-0-7ba1987c3f.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260916-blogs_podcasts-optimizing-cost-and-latency-with-amazon-bedrock-pr-0-a0a76519ad.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
+    "posts/20260916-hacker_news-cartesian-ai-3d-modeling-for-design-6-5c633bd545.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -21806,11 +21827,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2563,
-  "source_file_count": 3117,
-  "source_tree_sha256": "ccd7c9ebc283f75c68fa410a25f6e83d21d4cac3d16e0812d176553ab3d8178e",
-  "verified_provenance_count": 2841,
+  "source_brief_count": 2564,
+  "source_file_count": 3120,
+  "source_tree_sha256": "f51032271f36a6c942d86c82a48d266d22624a798824ceb6e2eb83e6746dee70",
+  "verified_provenance_count": 2844,
   "warning_counts": {
-    "source_excerpt_truncated": 796
+    "source_excerpt_truncated": 797
   }
 }
