@@ -12,10 +12,10 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-09-16T06:04:01Z",
+  "generated_at": "2026-09-16T16:56:01Z",
   "items": [
     {
-      "article_count": 876,
+      "article_count": 877,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 89,
@@ -25,10 +25,10 @@
       "legacy_id": "AI Agent",
       "name": "AI Agent",
       "rank": 1,
-      "weighted_degree": 2569.2
+      "weighted_degree": 2572.2
     },
     {
-      "article_count": 777,
+      "article_count": 778,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 99,
@@ -38,10 +38,10 @@
       "legacy_id": "大语言模型",
       "name": "大语言模型",
       "rank": 2,
-      "weighted_degree": 2264.2
+      "weighted_degree": 2266.2
     },
     {
-      "article_count": 642,
+      "article_count": 645,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 123,
@@ -51,10 +51,10 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 3,
-      "weighted_degree": 1909
+      "weighted_degree": 1917
     },
     {
-      "article_count": 500,
+      "article_count": 501,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 108,
@@ -64,7 +64,7 @@
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 4,
-      "weighted_degree": 1394
+      "weighted_degree": 1397
     },
     {
       "article_count": 532,
@@ -80,7 +80,7 @@
       "weighted_degree": 1351
     },
     {
-      "article_count": 791,
+      "article_count": 792,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 46,
@@ -90,7 +90,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 1181
+      "weighted_degree": 1184
     },
     {
       "article_count": 166,
@@ -106,7 +106,7 @@
       "weighted_degree": 691
     },
     {
-      "article_count": 945,
+      "article_count": 946,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 21,
@@ -116,7 +116,7 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 8,
-      "weighted_degree": 624
+      "weighted_degree": 626
     },
     {
       "article_count": 163,
@@ -210,7 +210,7 @@
       "weighted_degree": 470
     },
     {
-      "article_count": 175,
+      "article_count": 176,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 59,
@@ -220,7 +220,7 @@
       "legacy_id": "AI",
       "name": "AI",
       "rank": 16,
-      "weighted_degree": 452.6
+      "weighted_degree": 455.6
     },
     {
       "article_count": 86,
@@ -262,7 +262,7 @@
       "weighted_degree": 259
     },
     {
-      "article_count": 73,
+      "article_count": 74,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 10,
@@ -272,7 +272,7 @@
       "legacy_id": "cs.AI",
       "name": "cs.AI",
       "rank": 20,
-      "weighted_degree": 234
+      "weighted_degree": 237
     },
     {
       "article_count": 33,
@@ -938,6 +938,19 @@
       "weighted_degree": 16
     },
     {
+      "article_count": 6,
+      "category": "article_tag",
+      "community_id": "community:tag:大语言模型",
+      "degree": 3,
+      "description": "文章标签: Global Affairs",
+      "id": "tag:Global Affairs",
+      "layer": "tag",
+      "legacy_id": "Global Affairs",
+      "name": "Global Affairs",
+      "rank": 72,
+      "weighted_degree": 15
+    },
+    {
       "article_count": 2,
       "category": "article_tag",
       "community_id": "community:tag:Gemini Notebook",
@@ -947,7 +960,7 @@
       "layer": "tag",
       "legacy_id": "Google Cloud",
       "name": "Google Cloud",
-      "rank": 72,
+      "rank": 73,
       "weighted_degree": 14.6
     },
     {
@@ -960,7 +973,7 @@
       "layer": "tag",
       "legacy_id": "Safety",
       "name": "Safety",
-      "rank": 73,
+      "rank": 74,
       "weighted_degree": 14
     },
     {
@@ -973,7 +986,7 @@
       "layer": "tag",
       "legacy_id": "Computer modeling",
       "name": "Computer modeling",
-      "rank": 74,
+      "rank": 75,
       "weighted_degree": 14
     },
     {
@@ -986,7 +999,7 @@
       "layer": "tag",
       "legacy_id": "Education, teaching, academics",
       "name": "Education, teaching, academics",
-      "rank": 75,
+      "rank": 76,
       "weighted_degree": 14
     },
     {
@@ -999,7 +1012,7 @@
       "layer": "tag",
       "legacy_id": "Faculty",
       "name": "Faculty",
-      "rank": 76,
+      "rank": 77,
       "weighted_degree": 14
     },
     {
@@ -1012,7 +1025,7 @@
       "layer": "tag",
       "legacy_id": "Leadership",
       "name": "Leadership",
-      "rank": 77,
+      "rank": 78,
       "weighted_degree": 14
     },
     {
@@ -1025,7 +1038,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Machine Learning",
       "name": "Amazon Machine Learning",
-      "rank": 78,
+      "rank": 79,
       "weighted_degree": 14
     },
     {
@@ -1038,7 +1051,7 @@
       "layer": "tag",
       "legacy_id": "AWS Fargate",
       "name": "AWS Fargate",
-      "rank": 79,
+      "rank": 80,
       "weighted_degree": 13
     },
     {
@@ -1051,7 +1064,7 @@
       "layer": "tag",
       "legacy_id": "Amazon EC2",
       "name": "Amazon EC2",
-      "rank": 80,
+      "rank": 81,
       "weighted_degree": 13
     },
     {
@@ -1064,7 +1077,7 @@
       "layer": "tag",
       "legacy_id": "Thought Leadership",
       "name": "Thought Leadership",
-      "rank": 81,
+      "rank": 82,
       "weighted_degree": 13
     },
     {
@@ -1077,21 +1090,8 @@
       "layer": "tag",
       "legacy_id": "Amazon Elastic Kubernetes Service",
       "name": "Amazon Elastic Kubernetes Service",
-      "rank": 82,
-      "weighted_degree": 12.6
-    },
-    {
-      "article_count": 5,
-      "category": "article_tag",
-      "community_id": "community:tag:大语言模型",
-      "degree": 3,
-      "description": "文章标签: Global Affairs",
-      "id": "tag:Global Affairs",
-      "layer": "tag",
-      "legacy_id": "Global Affairs",
-      "name": "Global Affairs",
       "rank": 83,
-      "weighted_degree": 12
+      "weighted_degree": 12.6
     },
     {
       "article_count": 4,
@@ -1302,7 +1302,7 @@
       "weighted_degree": 8.6
     },
     {
-      "article_count": 777,
+      "article_count": 778,
       "category": "nlp",
       "community_id": null,
       "degree": 8,
@@ -1406,7 +1406,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 1060,
+      "article_count": 1062,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -2316,7 +2316,7 @@
       "weighted_degree": 4.6
     },
     {
-      "article_count": 876,
+      "article_count": 877,
       "category": "ai",
       "community_id": null,
       "degree": 5,
@@ -2797,7 +2797,7 @@
       "weighted_degree": 2.8
     },
     {
-      "article_count": 777,
+      "article_count": 778,
       "category": "ai",
       "community_id": null,
       "degree": 3,

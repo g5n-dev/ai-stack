@@ -1,8 +1,8 @@
 {
-  "active_count": 2854,
+  "active_count": 2857,
   "archived_count": 276,
   "complete_count": 72,
-  "interpreted_brief_count": 211,
+  "interpreted_brief_count": 212,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21847,6 +21847,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260917-arxiv-sciencebuddy-recursive-in-recursive-self-improveme-0-a242b8d54f.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260917-blogs_podcasts-helping-older-adults-use-ai-in-everyday-life-0-b0366f9850.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260917-hacker_news-mistral-x-mozilla-private-multilingual-ai-browsing-3-70a5d3bd15.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -21881,10 +21899,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2571,
-  "source_file_count": 3130,
-  "source_tree_sha256": "08c809be7be5362a7843cb5edb8850a2401675210dd3c43fbb8da1a7fe099d45",
-  "verified_provenance_count": 2854,
+  "source_brief_count": 2573,
+  "source_file_count": 3133,
+  "source_tree_sha256": "093c4878097c9040e71a254bc75f737d712e2e5603127e86f7eaddbe2dd30967",
+  "verified_provenance_count": 2857,
   "warning_counts": {
     "source_excerpt_truncated": 797
   }
