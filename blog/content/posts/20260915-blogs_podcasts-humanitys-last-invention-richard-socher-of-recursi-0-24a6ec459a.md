@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:d5de0d9f87f9291c5f0de36645bf080dcc9b6668f5bc74b42
 description: "这是一段理查德·索彻在《Latent Space》播客中阐释其公司“Recursive”研发的“尤里卡机器”概念，介绍能够自行改进AI研究的系统以及在极短时间内超越人类和代理的优化成果的访谈内容。"
 external_url: https://www.latent.space/p/recursive
 parent_observation_id: null
-last_seen_at: 2026-09-15T00:00:00Z
+last_seen_at: 2026-09-16T00:00:00Z
 ---
 
 ## 基本信息
