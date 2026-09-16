@@ -1,8 +1,8 @@
 {
-  "active_count": 2857,
+  "active_count": 2859,
   "archived_count": 276,
   "complete_count": 72,
-  "interpreted_brief_count": 212,
+  "interpreted_brief_count": 213,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21860,6 +21860,21 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260917-blogs_podcasts-improving-hcls-ai-reasoning-with-open-source-agent-0-c6ae3beb79.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
+    "posts/20260917-hacker_news-learning-programming-in-an-age-of-llms-11-c8087fa977.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260917-hacker_news-mistral-x-mozilla-private-multilingual-ai-browsing-3-70a5d3bd15.md": {
       "reasons": [
         "concise_source_card"
@@ -21899,11 +21914,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2573,
-  "source_file_count": 3133,
-  "source_tree_sha256": "093c4878097c9040e71a254bc75f737d712e2e5603127e86f7eaddbe2dd30967",
-  "verified_provenance_count": 2857,
+  "source_brief_count": 2574,
+  "source_file_count": 3135,
+  "source_tree_sha256": "a8be11e1d1330ac488222394c040e53f694a1da88f116dc7676e9ae1810f7ea1",
+  "verified_provenance_count": 2859,
   "warning_counts": {
-    "source_excerpt_truncated": 797
+    "source_excerpt_truncated": 798
   }
 }
