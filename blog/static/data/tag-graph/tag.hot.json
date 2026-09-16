@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T06:04:01Z",
+  "generated_at": "2026-09-16T16:56:01Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -253,7 +253,7 @@
       "strength": 1,
       "target": "tag:Global Affairs",
       "type": "cooccurrence",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:Google Ads",
@@ -525,7 +525,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 47
+      "weight": 48
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:大语言模型",
@@ -549,7 +549,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 174
+      "weight": 175
     },
     {
       "id": "edge:semantic:tag:AI->tech:ai_ml",
@@ -781,7 +781,7 @@
       "strength": 1,
       "target": "tag:ArXiv",
       "type": "cooccurrence",
-      "weight": 177
+      "weight": 178
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:Artificial Intelligence",
@@ -1077,7 +1077,7 @@
       "strength": 1,
       "target": "tag:cs.AI",
       "type": "cooccurrence",
-      "weight": 31
+      "weight": 32
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:cs.CL",
@@ -1213,7 +1213,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 185
+      "weight": 186
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:深度学习",
@@ -4741,7 +4741,7 @@
       "strength": 1,
       "target": "tag:cs.AI",
       "type": "cooccurrence",
-      "weight": 73
+      "weight": 74
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:cs.CC",
@@ -4997,7 +4997,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 237
+      "weight": 238
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:深度学习",
@@ -7261,7 +7261,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 5
+      "weight": 6
     },
     {
       "id": "edge:cooccurrence:tag:Global Affairs->tag:来源快报",
@@ -7269,7 +7269,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 5
+      "weight": 6
     },
     {
       "id": "edge:cooccurrence:tag:Go->tag:JavaScript",
@@ -7701,7 +7701,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 124
+      "weight": 125
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:数据库",
@@ -7725,7 +7725,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 192
+      "weight": 193
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:深度学习",
@@ -10093,7 +10093,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 73
+      "weight": 74
     },
     {
       "id": "edge:cooccurrence:tag:cs.AI->tag:深度学习",
@@ -10677,7 +10677,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 175
+      "weight": 176
     },
     {
       "id": "edge:cooccurrence:tag:博客与播客->tag:深度学习",
@@ -10813,7 +10813,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 214
+      "weight": 215
     },
     {
       "id": "edge:cooccurrence:tag:大语言模型->tag:深度学习",
@@ -11180,7 +11180,7 @@
       "weighted_degree": 259
     },
     {
-      "article_count": 175,
+      "article_count": 176,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -11194,7 +11194,7 @@
       "name": "AI",
       "rank": 16,
       "related_count": 58,
-      "weighted_degree": 452.6
+      "weighted_degree": 455.6
     },
     {
       "article_count": 3,
@@ -11231,7 +11231,7 @@
       "weighted_degree": 8.6
     },
     {
-      "article_count": 876,
+      "article_count": 877,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -11245,7 +11245,7 @@
       "name": "AI Agent",
       "rank": 1,
       "related_count": 87,
-      "weighted_degree": 2569.2
+      "weighted_degree": 2572.2
     },
     {
       "article_count": 2,
@@ -11498,7 +11498,7 @@
       "legacy_id": "Amazon EC2",
       "level": 6,
       "name": "Amazon EC2",
-      "rank": 80,
+      "rank": 81,
       "related_count": 11,
       "weighted_degree": 13
     },
@@ -11532,7 +11532,7 @@
       "legacy_id": "Amazon Elastic Kubernetes Service",
       "level": 6,
       "name": "Amazon Elastic Kubernetes Service",
-      "rank": 82,
+      "rank": 83,
       "related_count": 9,
       "weighted_degree": 12.6
     },
@@ -11583,7 +11583,7 @@
       "legacy_id": "Amazon Machine Learning",
       "level": 6,
       "name": "Amazon Machine Learning",
-      "rank": 78,
+      "rank": 79,
       "related_count": 7,
       "weighted_degree": 14
     },
@@ -11979,7 +11979,7 @@
       "weighted_degree": 63
     },
     {
-      "article_count": 791,
+      "article_count": 792,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -11993,7 +11993,7 @@
       "name": "ArXiv",
       "rank": 6,
       "related_count": 46,
-      "weighted_degree": 1181
+      "weighted_degree": 1184
     },
     {
       "article_count": 1,
@@ -12025,7 +12025,7 @@
       "legacy_id": "AWS Fargate",
       "level": 6,
       "name": "AWS Fargate",
-      "rank": 79,
+      "rank": 80,
       "related_count": 13,
       "weighted_degree": 13
     },
@@ -12331,7 +12331,7 @@
       "legacy_id": "Computer modeling",
       "level": 6,
       "name": "Computer modeling",
-      "rank": 74,
+      "rank": 75,
       "related_count": 12,
       "weighted_degree": 14
     },
@@ -12353,7 +12353,7 @@
       "weighted_degree": 35.6
     },
     {
-      "article_count": 73,
+      "article_count": 74,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -12367,7 +12367,7 @@
       "name": "cs.AI",
       "rank": 20,
       "related_count": 10,
-      "weighted_degree": 234
+      "weighted_degree": 237
     },
     {
       "article_count": 2,
@@ -12858,7 +12858,7 @@
       "legacy_id": "Education, teaching, academics",
       "level": 6,
       "name": "Education, teaching, academics",
-      "rank": 75,
+      "rank": 76,
       "related_count": 12,
       "weighted_degree": 14
     },
@@ -12994,7 +12994,7 @@
       "legacy_id": "Faculty",
       "level": 6,
       "name": "Faculty",
-      "rank": 76,
+      "rank": 77,
       "related_count": 12,
       "weighted_degree": 14
     },
@@ -13101,7 +13101,7 @@
       "weighted_degree": 70
     },
     {
-      "article_count": 5,
+      "article_count": 6,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -13113,9 +13113,9 @@
       "legacy_id": "Global Affairs",
       "level": 6,
       "name": "Global Affairs",
-      "rank": 83,
+      "rank": 72,
       "related_count": 3,
-      "weighted_degree": 12
+      "weighted_degree": 15
     },
     {
       "article_count": 7,
@@ -13164,7 +13164,7 @@
       "legacy_id": "Google Cloud",
       "level": 6,
       "name": "Google Cloud",
-      "rank": 72,
+      "rank": 73,
       "related_count": 11,
       "weighted_degree": 14.6
     },
@@ -13254,7 +13254,7 @@
       "weighted_degree": 16
     },
     {
-      "article_count": 945,
+      "article_count": 946,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -13268,7 +13268,7 @@
       "name": "Hacker News",
       "rank": 8,
       "related_count": 21,
-      "weighted_degree": 624
+      "weighted_degree": 626
     },
     {
       "article_count": 1,
@@ -13521,7 +13521,7 @@
       "legacy_id": "Leadership",
       "level": 6,
       "name": "Leadership",
-      "rank": 77,
+      "rank": 78,
       "related_count": 12,
       "weighted_degree": 14
     },
@@ -13946,7 +13946,7 @@
       "legacy_id": "Safety",
       "level": 6,
       "name": "Safety",
-      "rank": 73,
+      "rank": 74,
       "related_count": 10,
       "weighted_degree": 14
     },
@@ -14167,7 +14167,7 @@
       "legacy_id": "Thought Leadership",
       "level": 6,
       "name": "Thought Leadership",
-      "rank": 81,
+      "rank": 82,
       "related_count": 9,
       "weighted_degree": 13
     },
@@ -14274,7 +14274,7 @@
       "weighted_degree": 4
     },
     {
-      "article_count": 500,
+      "article_count": 501,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -14288,7 +14288,7 @@
       "name": "博客与播客",
       "rank": 4,
       "related_count": 108,
-      "weighted_degree": 1394
+      "weighted_degree": 1397
     },
     {
       "article_count": 141,
@@ -14308,7 +14308,7 @@
       "weighted_degree": 507.6
     },
     {
-      "article_count": 777,
+      "article_count": 778,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -14322,7 +14322,7 @@
       "name": "大语言模型",
       "rank": 2,
       "related_count": 97,
-      "weighted_degree": 2264.2
+      "weighted_degree": 2266.2
     },
     {
       "article_count": 72,
@@ -14393,7 +14393,7 @@
       "weighted_degree": 559
     },
     {
-      "article_count": 642,
+      "article_count": 645,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -14407,7 +14407,7 @@
       "name": "来源快报",
       "rank": 3,
       "related_count": 123,
-      "weighted_degree": 1909
+      "weighted_degree": 1917
     },
     {
       "article_count": 71,
