@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:d05c6fd7ef12d425a46a43ad1956282b1d826721106472ae9
 description: "这是一条关于AI安全评估标准化的动态报道。AEF-1是由行业论坛发布的基线标准，旨在规范第三方评估机构的独立性要求，包括访问权限、利益冲突管理、资金关系、回避机制和信息披露等维度。已有前沿AI企业承诺向符合该标准的外部评估团队提供类似内部员工的办公权限。"
 external_url: https://www.latent.space/p/ainews-aef-1-standard-emerges-for
 parent_observation_id: null
-last_seen_at: 2026-09-15T07:43:52.222229Z
+last_seen_at: 2026-09-16T00:00:00Z
 ---
 
 ## 基本信息

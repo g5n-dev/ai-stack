@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:558f728ec6a4fc4dcc67c0799e2073513bdf14ac20dd6d21
 source_payload_sha256: "sha256:77382bd45cfc6926427724f54e1fcf7855039af931314533f994e01a78c705b1"
 observation_id: obs_a0a76519ad261018b2db18c7cceaf8b2e3bc4dadb0298f00013751155608c146
 event_id: evt_fcd5cc4a816b3aeac9fa727e79201946a0e837cdd73374587a6668fef5d7fc68
-revision_id: rev_514e32dfe613102436666402b488e860b5542ffa77fd9060b054a7675cb7a764
+revision_id: rev_b243c08f9a9dc34dfffbdfa573dc1f403e5cf8eb6c3aa465ce6793e1d495d876
 source_published_at: 2026-09-15T16:18:19Z
 first_seen_at: 2026-09-15T18:25:44Z
 timestamp_confidence: feed
@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:b1282d48e2930bb05f2c9ec94e87ef6bff1032f2b29f98506
 description: "这篇内容介绍了一种在Amazon Bedrock中实现的缓存机制，通过在后续请求中复用已处理过的输入内容来降低 token 处理成本和首 token 响应时间。内容涵盖了六种实际应用场景和相关的定价说明。"
 external_url: https://aws.amazon.com/blogs/machine-learning/optimizing-cost-and-latency-with-amazon-bedrock-prompt-caching
 parent_observation_id: null
-last_seen_at: 2026-09-15T18:12:41.948607Z
+last_seen_at: 2026-09-16T00:00:00Z
 ---
 
 ## 基本信息

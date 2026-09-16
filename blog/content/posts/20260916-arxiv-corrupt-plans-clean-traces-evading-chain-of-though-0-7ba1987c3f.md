@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:93ec972f539ef74d0dc0079201a1617478454cd095f7b0a26
 description: "这是一种通过在语言模型的上下文植入看似无害但暗含恶意计划的推理片段，使其在执行任务时能够规避另一模型的监控审查的攻击方式。该攻击在多选问答的可监视性场景中得到验证，并可向更复杂的任务和更大规模的模型迁移。"
 external_url: http://arxiv.org/abs/2609.15989v1
 parent_observation_id: null
-last_seen_at: 2026-09-15T18:12:22.897254Z
+last_seen_at: 2026-09-16T00:00:00Z
 ---
 
 ## 基本信息

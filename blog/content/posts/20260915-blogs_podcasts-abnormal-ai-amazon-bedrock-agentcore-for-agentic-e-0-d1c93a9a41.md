@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:123d5f4cd1f79a19525a0d028f46a5827d7e3d0388141d770
 description: "该内容介绍了一种将动态代码执行能力集成到 AI 代理中的方案，使代理能够执行计算、数据处理和验证等超出语义推理范围的任务，并展示了在邮件安全检测场景中的实际应用架构。"
 external_url: https://aws.amazon.com/blogs/machine-learning/abnormal-ai-amazon-bedrock-agentcore-for-agentic-email-security-at-scale
 parent_observation_id: null
-last_seen_at: 2026-09-15T00:00:00Z
+last_seen_at: 2026-09-16T00:00:00Z
 ---
 
 ## 基本信息

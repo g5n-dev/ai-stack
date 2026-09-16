@@ -15,7 +15,7 @@ observation_id: obs_eb64bf46642bd1686947e043c83b8981b93207aa9ec69f9380d39bc041e8
 event_id: evt_b22d3271d24a5784add8c855898f7ad6ca7c92c79a216678cfbaf1f2fd5ab704
 revision_id: rev_3a41f1bab27d6386e70faacc59a1f462d47fd125fdbd65094524e7b156e6072a
 source_published_at: 2026-09-15T20:11:54Z
-first_seen_at: 2026-09-15T21:20:11.597358Z
+first_seen_at: 2026-09-15T21:33:32Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 56
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://www.latent.space/p/good-start-labs
 parent_observation_id: null
-last_seen_at: 2026-09-15T21:20:11.597358Z
+last_seen_at: 2026-09-16T00:00:00Z
 ---
 
 ## 基本信息

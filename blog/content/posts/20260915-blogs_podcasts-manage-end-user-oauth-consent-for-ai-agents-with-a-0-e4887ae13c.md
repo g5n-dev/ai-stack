@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:dd5e085f0a05b1cdc24faa9ff3f12afc75c726f8b6ba5f9a
 source_payload_sha256: "sha256:71ab08f289db44807cf0f5550ceef5ff11a4b9490651bd0853a4d412275dd2b8"
 observation_id: obs_e4887ae13cdf3e0d1a57b577c2d965898d8b92d3c1978971eeb1fa95871f6051
 event_id: evt_5771761369d6b59ca4c7ba0d2797ddb72d1923f605a65e218ac4575b988d4453
-revision_id: rev_894d8eec0a8219a670fa7676316a193df40aefc3ff27cf64391894fa20533714
+revision_id: rev_52fc41fdd2ae6852ba4026e7b3c1d276656fbf07e3738dadd965f0a43dd563ae
 source_published_at: 2026-09-14T20:35:45Z
 first_seen_at: 2026-09-15T01:38:15Z
 timestamp_confidence: feed
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:914e374c388b30bc89f7ba139674ab1c52be2d1b647101819
 description: "该内容介绍 Amazon Bedrock AgentCore 提供的托管式 Consent portal，用于自动完成 AI 代理对 GitHub、Slack 等服务的 OAuth 授权流程，包括身份验证、浏览器跳转、会话绑定以及令牌的安全存储，省去自行搭建回调页面和管理会话的负担。"
 external_url: https://aws.amazon.com/blogs/machine-learning/manage-end-user-oauth-consent-for-ai-agents-with-amazon-bedrock-agentcore
 parent_observation_id: null
-last_seen_at: 2026-09-15T01:28:12.253206Z
+last_seen_at: 2026-09-16T00:00:00Z
 ---
 
 ## 基本信息
