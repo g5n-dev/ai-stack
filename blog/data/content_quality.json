@@ -1,8 +1,8 @@
 {
-  "active_count": 2851,
+  "active_count": 2854,
   "archived_count": 276,
   "complete_count": 72,
-  "interpreted_brief_count": 210,
+  "interpreted_brief_count": 211,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21773,6 +21773,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260916-arxiv-agentic-societies-need-a-social-harness-0-64867fe359.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260916-arxiv-bellman-policy-optimization-0-4776cabc7f.md": {
       "reasons": [
         "concise_source_card"
@@ -21786,6 +21792,12 @@
       "status": "interpreted_brief"
     },
     "posts/20260916-arxiv-stellar-colosseum-a-many-agent-harness-for-long-ho-0-d5a4c616cf.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260916-blogs_podcasts-announcing-instance-preference-lists-for-amazon-sa-0-d3d379a848.md": {
       "reasons": [
         "interpreted_source_card"
       ],
@@ -21813,6 +21825,12 @@
       ]
     },
     "posts/20260916-hacker_news-cartesian-ai-3d-modeling-for-design-6-5c633bd545.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260916-hacker_news-datamimic-dont-let-your-coding-agent-invent-its-ow-6-60d15f0ed3.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -21863,10 +21881,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2569,
-  "source_file_count": 3127,
-  "source_tree_sha256": "ba4deeb2304b9198c9764a19594c29fec62f5fa9e29280635f63169dea6dbf37",
-  "verified_provenance_count": 2851,
+  "source_brief_count": 2571,
+  "source_file_count": 3130,
+  "source_tree_sha256": "08c809be7be5362a7843cb5edb8850a2401675210dd3c43fbb8da1a7fe099d45",
+  "verified_provenance_count": 2854,
   "warning_counts": {
     "source_excerpt_truncated": 797
   }
