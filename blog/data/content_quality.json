@@ -1,8 +1,8 @@
 {
-  "active_count": 2859,
+  "active_count": 2862,
   "archived_count": 276,
   "complete_count": 72,
-  "interpreted_brief_count": 213,
+  "interpreted_brief_count": 214,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21848,7 +21848,19 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260917-arxiv-physstream-streaming-physics-grounded-video-genera-0-7cb3a6c682.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260917-arxiv-sciencebuddy-recursive-in-recursive-self-improveme-0-a242b8d54f.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260917-blogs_podcasts-fault-tolerant-distributed-training-on-amazon-eks--0-323f63404b.md": {
       "reasons": [
         "interpreted_source_card"
       ],
@@ -21868,6 +21880,12 @@
       "warnings": [
         "source_excerpt_truncated"
       ]
+    },
+    "posts/20260917-hacker_news-breaking-the-158-bit-barrier-for-ternary-llms-1-cab4f1a04b.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20260917-hacker_news-learning-programming-in-an-age-of-llms-11-c8087fa977.md": {
       "reasons": [
@@ -21914,10 +21932,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2574,
-  "source_file_count": 3135,
-  "source_tree_sha256": "a8be11e1d1330ac488222394c040e53f694a1da88f116dc7676e9ae1810f7ea1",
-  "verified_provenance_count": 2859,
+  "source_brief_count": 2576,
+  "source_file_count": 3138,
+  "source_tree_sha256": "d39e25343bbb50d2c5092b4b94a675192bf1dd66398f87be2d3de723a2ffd5b9",
+  "verified_provenance_count": 2862,
   "warning_counts": {
     "source_excerpt_truncated": 798
   }
