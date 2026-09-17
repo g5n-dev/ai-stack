@@ -1,8 +1,8 @@
 {
-  "active_count": 2867,
+  "active_count": 2870,
   "archived_count": 276,
   "complete_count": 72,
-  "interpreted_brief_count": 217,
+  "interpreted_brief_count": 218,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21860,6 +21860,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260917-arxiv-panorama-panoptic-grounded-captioning-via-mask-pro-1-d338ec4b9c.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260917-arxiv-physstream-streaming-physics-grounded-video-genera-0-7cb3a6c682.md": {
       "reasons": [
         "concise_source_card"
@@ -21908,6 +21914,15 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260917-blogs_podcasts-underwriting-superintelligence-backing-agents-you--0-0510586cc5.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20260917-hacker_news-breaking-the-158-bit-barrier-for-ternary-llms-1-cab4f1a04b.md": {
       "reasons": [
         "concise_source_card"
@@ -21921,6 +21936,12 @@
       "status": "source_brief"
     },
     "posts/20260917-hacker_news-mistral-x-mozilla-private-multilingual-ai-browsing-3-70a5d3bd15.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260917-hacker_news-my-ai-agent-gets-his-own-calendar-2-843d3e6b60.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -21965,11 +21986,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2578,
-  "source_file_count": 3143,
-  "source_tree_sha256": "9a59467bfb04736da53155cb78774ed56e130c15e0ae03a9a13ee4b158da839f",
-  "verified_provenance_count": 2867,
+  "source_brief_count": 2580,
+  "source_file_count": 3146,
+  "source_tree_sha256": "792e193696249406720047156a00b02f81622f106993d2a08bc66dc618c2d4c6",
+  "verified_provenance_count": 2870,
   "warning_counts": {
-    "source_excerpt_truncated": 799
+    "source_excerpt_truncated": 800
   }
 }
