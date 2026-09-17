@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:ef078a0fa8204d67c533678f0851be8dd9dca9f74704a86e2
 description: "Amazon SageMaker AI 为训练和处理任务新增了实例偏好列表功能，可在提交时指定最多五个实例类型的优先级顺序，系统自动挑选首个有可用容量的类型启动任务。"
 external_url: https://aws.amazon.com/blogs/machine-learning/announcing-instance-preference-lists-for-amazon-sagemaker-ai-training-jobs
 parent_observation_id: null
-last_seen_at: 2026-09-16T06:01:12.518391Z
+last_seen_at: 2026-09-17T00:00:00Z
 ---
 
 ## 基本信息

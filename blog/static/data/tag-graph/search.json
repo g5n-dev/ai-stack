@@ -12,10 +12,10 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-09-16T22:59:28Z",
+  "generated_at": "2026-09-17T01:27:58Z",
   "items": [
     {
-      "article_count": 878,
+      "article_count": 879,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 89,
@@ -25,7 +25,7 @@
       "legacy_id": "AI Agent",
       "name": "AI Agent",
       "rank": 1,
-      "weighted_degree": 2579.2
+      "weighted_degree": 2582.2
     },
     {
       "article_count": 782,
@@ -41,7 +41,7 @@
       "weighted_degree": 2283.2
     },
     {
-      "article_count": 649,
+      "article_count": 652,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 123,
@@ -51,10 +51,10 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 3,
-      "weighted_degree": 1930
+      "weighted_degree": 1938
     },
     {
-      "article_count": 502,
+      "article_count": 503,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 108,
@@ -64,7 +64,7 @@
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 4,
-      "weighted_degree": 1403
+      "weighted_degree": 1406
     },
     {
       "article_count": 532,
@@ -80,7 +80,7 @@
       "weighted_degree": 1351
     },
     {
-      "article_count": 793,
+      "article_count": 794,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 46,
@@ -90,7 +90,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 1187
+      "weighted_degree": 1190
     },
     {
       "article_count": 168,
@@ -106,7 +106,7 @@
       "weighted_degree": 704
     },
     {
-      "article_count": 948,
+      "article_count": 949,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 21,
@@ -116,7 +116,7 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 8,
-      "weighted_degree": 630
+      "weighted_degree": 632
     },
     {
       "article_count": 163,
@@ -132,7 +132,7 @@
       "weighted_degree": 614.6
     },
     {
-      "article_count": 150,
+      "article_count": 151,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 84,
@@ -142,7 +142,7 @@
       "legacy_id": "机器学习",
       "name": "机器学习",
       "rank": 10,
-      "weighted_degree": 559
+      "weighted_degree": 562
     },
     {
       "article_count": 125,
@@ -210,7 +210,7 @@
       "weighted_degree": 470
     },
     {
-      "article_count": 176,
+      "article_count": 177,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 59,
@@ -220,7 +220,7 @@
       "legacy_id": "AI",
       "name": "AI",
       "rank": 16,
-      "weighted_degree": 455.6
+      "weighted_degree": 457.6
     },
     {
       "article_count": 86,
@@ -496,7 +496,7 @@
       "weighted_degree": 84.6
     },
     {
-      "article_count": 24,
+      "article_count": 25,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 9,
@@ -506,7 +506,7 @@
       "legacy_id": "cs.LG",
       "name": "cs.LG",
       "rank": 38,
-      "weighted_degree": 75
+      "weighted_degree": 78
     },
     {
       "article_count": 12,
@@ -1098,12 +1098,25 @@
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 5,
+      "description": "文章标签: ai",
+      "id": "tag:ai",
+      "layer": "tag",
+      "legacy_id": "ai",
+      "name": "ai",
+      "rank": 84,
+      "weighted_degree": 12.6
+    },
+    {
+      "article_count": 4,
+      "category": "article_tag",
+      "community_id": "community:tag:大语言模型",
+      "degree": 5,
       "description": "文章标签: cs.RO",
       "id": "tag:cs.RO",
       "layer": "tag",
       "legacy_id": "cs.RO",
       "name": "cs.RO",
-      "rank": 84,
+      "rank": 85,
       "weighted_degree": 12
     },
     {
@@ -1116,7 +1129,7 @@
       "layer": "tag",
       "legacy_id": "Android",
       "name": "Android",
-      "rank": 85,
+      "rank": 86,
       "weighted_degree": 12
     },
     {
@@ -1129,7 +1142,7 @@
       "layer": "tag",
       "legacy_id": "Gemini App",
       "name": "Gemini App",
-      "rank": 86,
+      "rank": 87,
       "weighted_degree": 12
     },
     {
@@ -1142,7 +1155,7 @@
       "layer": "tag",
       "legacy_id": "Networking & Traffic",
       "name": "Networking & Traffic",
-      "rank": 87,
+      "rank": 88,
       "weighted_degree": 12
     },
     {
@@ -1155,7 +1168,7 @@
       "layer": "tag",
       "legacy_id": "Product",
       "name": "Product",
-      "rank": 88,
+      "rank": 89,
       "weighted_degree": 11
     },
     {
@@ -1168,7 +1181,7 @@
       "layer": "tag",
       "legacy_id": "Production Engineering",
       "name": "Production Engineering",
-      "rank": 89,
+      "rank": 90,
       "weighted_degree": 11
     },
     {
@@ -1181,7 +1194,7 @@
       "layer": "application",
       "legacy_id": "webapp",
       "name": "Web应用",
-      "rank": 90,
+      "rank": 91,
       "weighted_degree": 11
     },
     {
@@ -1194,7 +1207,7 @@
       "layer": "tag",
       "legacy_id": "ML Applications",
       "name": "ML Applications",
-      "rank": 91,
+      "rank": 92,
       "weighted_degree": 10.6
     },
     {
@@ -1207,7 +1220,7 @@
       "layer": "tag",
       "legacy_id": "cs.MA",
       "name": "cs.MA",
-      "rank": 92,
+      "rank": 93,
       "weighted_degree": 10
     },
     {
@@ -1220,7 +1233,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Bedrock Guardrails",
       "name": "Amazon Bedrock Guardrails",
-      "rank": 93,
+      "rank": 94,
       "weighted_degree": 10
     },
     {
@@ -1233,21 +1246,8 @@
       "layer": "tag",
       "legacy_id": "Partner solutions",
       "name": "Partner solutions",
-      "rank": 94,
-      "weighted_degree": 10
-    },
-    {
-      "article_count": 3,
-      "category": "article_tag",
-      "community_id": "community:tag:大语言模型",
-      "degree": 5,
-      "description": "文章标签: ai",
-      "id": "tag:ai",
-      "layer": "tag",
-      "legacy_id": "ai",
-      "name": "ai",
       "rank": 95,
-      "weighted_degree": 9.6
+      "weighted_degree": 10
     },
     {
       "article_count": 1,
@@ -1406,7 +1406,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 1063,
+      "article_count": 1065,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -2316,7 +2316,7 @@
       "weighted_degree": 4.6
     },
     {
-      "article_count": 878,
+      "article_count": 879,
       "category": "ai",
       "community_id": null,
       "degree": 5,

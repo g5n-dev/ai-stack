@@ -27,7 +27,7 @@ source_title_chars_original: 95
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/build-an-ai-powered-product-tagging-system-with-amazon-sagemaker-serverless-model-customization
 parent_observation_id: null
-last_seen_at: 2026-09-16T00:19:27.409162Z
+last_seen_at: 2026-09-17T00:00:00Z
 ---
 
 ## 基本信息

@@ -1,8 +1,8 @@
 {
-  "active_count": 2862,
+  "active_count": 2865,
   "archived_count": 276,
   "complete_count": 72,
-  "interpreted_brief_count": 214,
+  "interpreted_brief_count": 216,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21848,6 +21848,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260917-arxiv-learning-to-program-adaptive-non-local-observables-1-cc6a7e063d.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260917-arxiv-physstream-streaming-physics-grounded-video-genera-0-7cb3a6c682.md": {
       "reasons": [
         "concise_source_card"
@@ -21855,6 +21861,12 @@
       "status": "source_brief"
     },
     "posts/20260917-arxiv-sciencebuddy-recursive-in-recursive-self-improveme-0-a242b8d54f.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260917-blogs_podcasts-502-psychiatry-insane-asylums-mental-illness-ect-l-0-5b9852903e.md": {
       "reasons": [
         "interpreted_source_card"
       ],
@@ -21898,6 +21910,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260917-hacker_news-openspec-a-lightweight-and-configurable-ai-spec-fr-6-8aeba6cc93.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -21932,10 +21950,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2576,
-  "source_file_count": 3138,
-  "source_tree_sha256": "d39e25343bbb50d2c5092b4b94a675192bf1dd66398f87be2d3de723a2ffd5b9",
-  "verified_provenance_count": 2862,
+  "source_brief_count": 2577,
+  "source_file_count": 3141,
+  "source_tree_sha256": "6a042084d3356d5aabeb75482a2fd31e5a3d2a9bcb4a06a399513f76baf7ee1a",
+  "verified_provenance_count": 2865,
   "warning_counts": {
     "source_excerpt_truncated": 798
   }
