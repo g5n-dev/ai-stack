@@ -1,8 +1,8 @@
 {
-  "active_count": 2865,
+  "active_count": 2867,
   "archived_count": 276,
   "complete_count": 72,
-  "interpreted_brief_count": 216,
+  "interpreted_brief_count": 217,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21848,6 +21848,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260917-arxiv-a-zeroth-order-paradigm-for-llm-preference-alignme-1-8a5cc1a437.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260917-arxiv-learning-to-program-adaptive-non-local-observables-1-cc6a7e063d.md": {
       "reasons": [
         "interpreted_source_card"
@@ -21871,6 +21877,15 @@
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20260917-blogs_podcasts-ainews-reality-checks-on-ai-news-yegge-shuts-down--0-3c123bff8b.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     },
     "posts/20260917-blogs_podcasts-fault-tolerant-distributed-training-on-amazon-eks--0-323f63404b.md": {
       "reasons": [
@@ -21950,11 +21965,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2577,
-  "source_file_count": 3141,
-  "source_tree_sha256": "6a042084d3356d5aabeb75482a2fd31e5a3d2a9bcb4a06a399513f76baf7ee1a",
-  "verified_provenance_count": 2865,
+  "source_brief_count": 2578,
+  "source_file_count": 3143,
+  "source_tree_sha256": "9a59467bfb04736da53155cb78774ed56e130c15e0ae03a9a13ee4b158da839f",
+  "verified_provenance_count": 2867,
   "warning_counts": {
-    "source_excerpt_truncated": 798
+    "source_excerpt_truncated": 799
   }
 }
