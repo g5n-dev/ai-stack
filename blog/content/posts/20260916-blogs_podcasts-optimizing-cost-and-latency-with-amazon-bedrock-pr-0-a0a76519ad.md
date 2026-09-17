@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:b1282d48e2930bb05f2c9ec94e87ef6bff1032f2b29f98506
 description: "这篇内容介绍了一种在Amazon Bedrock中实现的缓存机制，通过在后续请求中复用已处理过的输入内容来降低 token 处理成本和首 token 响应时间。内容涵盖了六种实际应用场景和相关的定价说明。"
 external_url: https://aws.amazon.com/blogs/machine-learning/optimizing-cost-and-latency-with-amazon-bedrock-prompt-caching
 parent_observation_id: null
-last_seen_at: 2026-09-16T00:00:00Z
+last_seen_at: 2026-09-17T00:00:00Z
 ---
 
 ## 基本信息

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T22:59:28Z",
+  "generated_at": "2026-09-17T01:27:58Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -626,7 +626,7 @@
       "weighted_degree": 2
     },
     {
-      "article_count": 878,
+      "article_count": 879,
       "category": "ai",
       "color": "#7aa6b8",
       "community_id": null,
@@ -643,7 +643,7 @@
       "weighted_degree": 4.4
     },
     {
-      "article_count": 1063,
+      "article_count": 1065,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
@@ -1778,7 +1778,7 @@
       "legacy_id": "webapp",
       "level": 4,
       "name": "Web应用",
-      "rank": 90,
+      "rank": 91,
       "weighted_degree": 11
     }
   ],

@@ -27,7 +27,7 @@ source_title_chars_original: 44
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://openai.com/index/helping-older-adults-use-ai-in-everyday-life
 parent_observation_id: null
-last_seen_at: 2026-09-16T16:54:13.437806Z
+last_seen_at: 2026-09-17T00:00:00Z
 ---
 
 ## 基本信息
