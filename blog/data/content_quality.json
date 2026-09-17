@@ -1,8 +1,8 @@
 {
-  "active_count": 2870,
+  "active_count": 2873,
   "archived_count": 276,
   "complete_count": 72,
-  "interpreted_brief_count": 218,
+  "interpreted_brief_count": 220,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21952,6 +21952,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260918-arxiv-dreaming-the-sound-of-contact-leveraging-video-and-1-9faf4e0165.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260918-blogs_podcasts-reduce-time-to-hire-for-quality-candidates-with-ai-0-09178a0dd9.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260918-hacker_news-show-hn-aclif-agent-cli-framework-one-grammar-cano-6-3ce988e640.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -21986,10 +22004,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2580,
-  "source_file_count": 3146,
-  "source_tree_sha256": "792e193696249406720047156a00b02f81622f106993d2a08bc66dc618c2d4c6",
-  "verified_provenance_count": 2870,
+  "source_brief_count": 2581,
+  "source_file_count": 3149,
+  "source_tree_sha256": "c0ea4cb7b197f4462def1f4a85fed28539cc73e4a44e4c720c03bd2bedd5d58e",
+  "verified_provenance_count": 2873,
   "warning_counts": {
     "source_excerpt_truncated": 800
   }
