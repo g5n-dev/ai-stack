@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:5dfba7d3b894792d14df6cc6416392fa94ccdfd54d5d3c0e4
 description: "本文介绍在 Amazon EKS 上利用 NVRx 为 PyTorch FSDP 训练添加容错机制，包括异步 checkpoint、进程内恢复和作业内恢复，以避免因网络或硬件故障导致的长时间空转。"
 external_url: https://aws.amazon.com/blogs/machine-learning/fault-tolerant-distributed-training-on-amazon-eks-using-nvrx
 parent_observation_id: null
-last_seen_at: 2026-09-17T00:00:00Z
+last_seen_at: 2026-09-18T00:00:00Z
 ---
 
 ## 基本信息

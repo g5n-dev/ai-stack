@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:bc683c22735e19fc002686e9d2a4feb7e55679c5d395dd8d8
 description: "这是一篇介绍开源代理技能库的技术文章，旨在解决基础模型在医疗和生命科学领域推理时出现的决策框架误用问题。该技能库将专业领域知识封装为可被AI代理在推理时调用的结构化文档，使模型能够按照行业标准进行规范决策。"
 external_url: https://aws.amazon.com/blogs/machine-learning/improving-hcls-ai-reasoning-with-open-source-agent-skills
 parent_observation_id: null
-last_seen_at: 2026-09-17T00:00:00Z
+last_seen_at: 2026-09-18T00:00:00Z
 ---
 
 ## 基本信息

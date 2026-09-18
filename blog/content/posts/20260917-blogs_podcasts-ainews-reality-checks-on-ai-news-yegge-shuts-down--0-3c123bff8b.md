@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:5ec1bada864358d7c506f877f728523927a40b66636c49fff
 description: "这是一份 AI 新闻合集，汇总了近期关于项目关闭、模型费用变化、新安全框架、模型发布和治理讨论等多个方向的动态。"
 external_url: https://www.latent.space/p/ainews-reality-checks-on-ai-news
 parent_observation_id: null
-last_seen_at: 2026-09-17T07:38:46.435350Z
+last_seen_at: 2026-09-18T00:00:00Z
 ---
 
 ## 基本信息

@@ -28,7 +28,7 @@ source_title_chars_original: 77
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://www.latent.space/p/aiuc
 parent_observation_id: null
-last_seen_at: 2026-09-17T13:26:54.653814Z
+last_seen_at: 2026-09-18T00:00:00Z
 ---
 
 ## 基本信息

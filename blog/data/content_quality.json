@@ -1,8 +1,8 @@
 {
-  "active_count": 2876,
+  "active_count": 2879,
   "archived_count": 276,
   "complete_count": 72,
-  "interpreted_brief_count": 221,
+  "interpreted_brief_count": 223,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21953,6 +21953,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260918-arxiv-cognitive-extensions-for-dual-process-language-age-2-f4668fa23f.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260918-arxiv-dreaming-the-sound-of-contact-leveraging-video-and-1-9faf4e0165.md": {
       "reasons": [
         "interpreted_source_card"
@@ -21976,6 +21982,21 @@
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20260918-blogs_podcasts-selecting-a-vector-store-for-amazon-bedrock-knowle-0-caa079bc52.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
+    "posts/20260918-hacker_news-bend-a-language-that-blocks-ai-mistakes-via-proof--1-b04fafad53.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20260918-hacker_news-infinite-parameter-llms-generating-and-adapting-we-7-08dd30dd2c.md": {
       "reasons": [
@@ -22022,11 +22043,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2583,
-  "source_file_count": 3152,
-  "source_tree_sha256": "81f7bf915e0b599f266dc76ff16a08be5a2afa15bb634572a6a28de0c9b11001",
-  "verified_provenance_count": 2876,
+  "source_brief_count": 2584,
+  "source_file_count": 3155,
+  "source_tree_sha256": "37d71cfdd3ced2cf2352f669dc57649ec1219efb02b35ca61d8277732e9daaad",
+  "verified_provenance_count": 2879,
   "warning_counts": {
-    "source_excerpt_truncated": 800
+    "source_excerpt_truncated": 801
   }
 }

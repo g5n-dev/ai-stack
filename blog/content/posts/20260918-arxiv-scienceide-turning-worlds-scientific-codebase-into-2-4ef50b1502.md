@@ -15,7 +15,7 @@ observation_id: obs_4ef50b1502c20a327d1d537d097240b2bfa294eaa9798cbb5c33c9dd8391
 event_id: evt_d16d5e3466fc1c3c3d33ac5a2b2195001d5d39c329755efceeed5e5c13d30ced
 revision_id: rev_ca3b3b12c2f5cec4731cfcd41a185ea0e17120f3c85b8b032517906912c73c68
 source_published_at: 2026-09-16T17:55:47Z
-first_seen_at: 2026-09-17T21:21:26.838242Z
+first_seen_at: 2026-09-17T21:32:20Z
 timestamp_confidence: publisher
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:185f2dd9c6726e13159e188a73c31b2ff31439cb6dcedd711
 description: "ScienceIDE 是一种基础设施，把全球的科学代码库转化为可供 Agent 编程和执行的环境。它依据专家设定的案例与验收标准，让 Agent 将代码库自动生成可运行、可验证的任务。"
 external_url: http://arxiv.org/abs/2609.19134v1
 parent_observation_id: null
-last_seen_at: 2026-09-17T21:21:26.838242Z
+last_seen_at: 2026-09-18T00:00:00Z
 ---
 
 ## 基本信息

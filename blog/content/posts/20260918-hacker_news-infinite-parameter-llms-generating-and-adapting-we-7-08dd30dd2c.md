@@ -13,9 +13,9 @@ source_snapshot_sha256: "sha256:5bcc7d92e5b09010c0499aca95ac1e9d95feeb7526a55fa0
 source_payload_sha256: "sha256:ee110cda334005e1bf748aea5246b60d832c90081eb72cfac634b63a3cbf4b8d"
 observation_id: obs_08dd30dd2c8c5ed5dea21279f49cd4cbac440617a5d41e1abd4c9fe654367114
 event_id: evt_5a3efc6217031b5d6ab6b374a2d1cbb8ece9d4ae6ffa9ab5f2f15e5dac99f31d
-revision_id: rev_fb279726685c25703749270b6f8887e1ab9052d364b4ed566101608f53182d39
+revision_id: rev_31ef8ee7567de9d64f40a6c6c2da0194acf08cb206d19e679f2ab4ce0c3af347
 source_published_at: 2026-09-17T16:55:14Z
-first_seen_at: 2026-09-17T21:21:25.175000Z
+first_seen_at: 2026-09-17T21:32:20Z
 timestamp_confidence: platform
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 71
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://arxiv.org/abs/2609.18842
 parent_observation_id: null
-last_seen_at: 2026-09-17T21:21:25.175000Z
+last_seen_at: 2026-09-18T00:00:00Z
 ---
 
 ## 基本信息
