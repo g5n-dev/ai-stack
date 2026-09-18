@@ -1,5 +1,5 @@
 {
-  "active_count": 2886,
+  "active_count": 2889,
   "archived_count": 276,
   "complete_count": 72,
   "interpreted_brief_count": 225,
@@ -21977,6 +21977,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260918-arxiv-paint-anything-unified-any-color-control-for-image-2-ad54580fe0.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260918-arxiv-scienceide-turning-worlds-scientific-codebase-into-2-4ef50b1502.md": {
       "reasons": [
         "interpreted_source_card"
@@ -22004,6 +22010,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260918-blogs_podcasts-new-experts-join-googles-ai-economy-team-0-2ad49dd9b6.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260918-blogs_podcasts-reduce-time-to-hire-for-quality-candidates-with-ai-0-09178a0dd9.md": {
       "reasons": [
         "interpreted_source_card"
@@ -22018,6 +22030,12 @@
       "warnings": [
         "source_excerpt_truncated"
       ]
+    },
+    "posts/20260918-hacker_news-an-empirical-study-of-harness-design-for-coding-ag-1-34ddd89edd.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20260918-hacker_news-bend-a-language-that-blocks-ai-mistakes-via-proof--1-b04fafad53.md": {
       "reasons": [
@@ -22091,10 +22109,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2589,
-  "source_file_count": 3162,
-  "source_tree_sha256": "e91820928f51345703c1ad7d4ae34234626caa4868e7fca489b217c78acf111e",
-  "verified_provenance_count": 2886,
+  "source_brief_count": 2592,
+  "source_file_count": 3165,
+  "source_tree_sha256": "38c79e46b6a0c9dfafdf415b44539c135712d143ae5ac69df13780cf1c3f227e",
+  "verified_provenance_count": 2889,
   "warning_counts": {
     "source_excerpt_truncated": 803
   }
