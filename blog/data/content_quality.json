@@ -1,8 +1,8 @@
 {
-  "active_count": 2882,
+  "active_count": 2886,
   "archived_count": 276,
   "complete_count": 72,
-  "interpreted_brief_count": 224,
+  "interpreted_brief_count": 225,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21971,6 +21971,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260918-arxiv-famos-feed-forward-3d-articulation-modeling-from-s-2-cd4faa767c.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260918-arxiv-scienceide-turning-worlds-scientific-codebase-into-2-4ef50b1502.md": {
       "reasons": [
         "interpreted_source_card"
@@ -21982,6 +21988,15 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260918-blogs_podcasts-ainews-not-much-happened-today-0-b93edf8d5d.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     },
     "posts/20260918-blogs_podcasts-making-global-data-easier-to-explore-0-57bb3f7243.md": {
       "reasons": [
@@ -22016,6 +22031,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260918-hacker_news-how-to-write-with-an-llm-10-b23e52dd9b.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260918-hacker_news-infinite-parameter-llms-generating-and-adapting-we-7-08dd30dd2c.md": {
       "reasons": [
         "concise_source_card"
@@ -22027,6 +22048,15 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260918-juejin-rk3588-使用-rk-llamacpp-rknpu2-部署-qwen35从零开始的-npu-本地-0-11fcf602af.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     }
   },
   "quarantined_count": 0,
@@ -22061,11 +22091,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2586,
-  "source_file_count": 3158,
-  "source_tree_sha256": "55d12c8721ca7064714884c38d76f87c396ffa1f9fa32fc031608ef814f116f5",
-  "verified_provenance_count": 2882,
+  "source_brief_count": 2589,
+  "source_file_count": 3162,
+  "source_tree_sha256": "e91820928f51345703c1ad7d4ae34234626caa4868e7fca489b217c78acf111e",
+  "verified_provenance_count": 2886,
   "warning_counts": {
-    "source_excerpt_truncated": 801
+    "source_excerpt_truncated": 803
   }
 }
