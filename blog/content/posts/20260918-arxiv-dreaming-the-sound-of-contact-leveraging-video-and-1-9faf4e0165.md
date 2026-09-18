@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:f2bc3493e1711c28ac06a752c76dd472460ea7775f18223bb
 description: "该研究利用视频和音频的联合生成，把音频的响度映射为随时间变化的期望力轮廓，从而得到兼具运动和力信息的轨迹，并在机器人上通过闭环力调节器实现接触任务。"
 external_url: http://arxiv.org/abs/2609.19137v1
 parent_observation_id: null
-last_seen_at: 2026-09-17T18:12:54.596827Z
+last_seen_at: 2026-09-18T00:00:00Z
 ---
 
 ## 基本信息

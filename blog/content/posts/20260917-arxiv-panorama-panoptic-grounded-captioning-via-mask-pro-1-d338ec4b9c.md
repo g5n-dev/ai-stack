@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:a177e9f49c59c73b4045b4cec5b76c099b6eef4a96aff925d
 description: "该工作围绕一种将图像中的前景对象和背景区域同时用文字描述并与像素级掩码对应的任务展开，构建了 PanoCaps 数据集用于密集标注，并提出 PANORAMA 模型，通过从掩码提议池中挑选与每个短语相匹配的掩码，实现精准的实体级分割与连贯的描述。"
 external_url: http://arxiv.org/abs/2609.19143v1
 parent_observation_id: null
-last_seen_at: 2026-09-17T13:26:50.172727Z
+last_seen_at: 2026-09-18T00:00:00Z
 ---
 
 ## 基本信息
