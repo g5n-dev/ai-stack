@@ -1,8 +1,8 @@
 {
-  "active_count": 2892,
+  "active_count": 2896,
   "archived_count": 276,
-  "complete_count": 72,
-  "interpreted_brief_count": 226,
+  "complete_count": 73,
+  "interpreted_brief_count": 227,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22082,7 +22082,28 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260919-arxiv-quantifying-overclaiming-propensity-in-frontier-ll-3-803d5efe7e.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260919-blogs_podcasts-amazon-sagemaker-inference-2026-year-to-date-launc-0-f686afe1e5.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20260919-blogs_podcasts-introducing-kimi-k3-on-amazon-bedrock-0-a6fcd04e22.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260919-hacker_news-claude-code-now-reads-agentsmd-if-there-is-no-clau-0-3d68ad8e13.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -22127,11 +22148,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2594,
-  "source_file_count": 3168,
-  "source_tree_sha256": "220d09d46fde698eb3f124ddc493db0e984b9e7279d3fc09e4ea19be4195c046",
-  "verified_provenance_count": 2892,
+  "source_brief_count": 2596,
+  "source_file_count": 3172,
+  "source_tree_sha256": "c4f8f72e1a53aa727f194b0e36c04d1d47921ec8a03a5ed7f69cdb6be27f2b21",
+  "verified_provenance_count": 2896,
   "warning_counts": {
-    "source_excerpt_truncated": 803
+    "source_excerpt_truncated": 804
   }
 }
