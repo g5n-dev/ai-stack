@@ -1,8 +1,8 @@
 {
-  "active_count": 2879,
+  "active_count": 2882,
   "archived_count": 276,
   "complete_count": 72,
-  "interpreted_brief_count": 223,
+  "interpreted_brief_count": 224,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -21953,6 +21953,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260918-arxiv-coding-agents-with-an-obstacle-aware-harness-for-s-0-e738f009e4.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260918-arxiv-cognitive-extensions-for-dual-process-language-age-2-f4668fa23f.md": {
       "reasons": [
         "interpreted_source_card"
@@ -21970,6 +21976,12 @@
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20260918-blogs_podcasts-a-serverless-data-driven-git-metrics-dashboard-usi-0-39325f0179.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20260918-blogs_podcasts-making-global-data-easier-to-explore-0-57bb3f7243.md": {
       "reasons": [
@@ -21993,6 +22005,12 @@
       ]
     },
     "posts/20260918-hacker_news-bend-a-language-that-blocks-ai-mistakes-via-proof--1-b04fafad53.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260918-hacker_news-hacking-openai-0-b3615add02.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -22043,10 +22061,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2584,
-  "source_file_count": 3155,
-  "source_tree_sha256": "37d71cfdd3ced2cf2352f669dc57649ec1219efb02b35ca61d8277732e9daaad",
-  "verified_provenance_count": 2879,
+  "source_brief_count": 2586,
+  "source_file_count": 3158,
+  "source_tree_sha256": "55d12c8721ca7064714884c38d76f87c396ffa1f9fa32fc031608ef814f116f5",
+  "verified_provenance_count": 2882,
   "warning_counts": {
     "source_excerpt_truncated": 801
   }
