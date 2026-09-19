@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:9867f62952f2ce38a06f60cfdf6029337dec5f9e85470f2d2
 description: "这是一份结合了结肠镜图像、视频、组织病理学和胚系基因信息的多模态数据集，旨在支持人工智能在结直肠息肉病识别和分类中的应用。"
 external_url: http://arxiv.org/abs/2609.20815v1
 parent_observation_id: null
-last_seen_at: 2026-09-18T18:28:17.278654Z
+last_seen_at: 2026-09-19T00:00:00Z
 ---
 
 ## 基本信息

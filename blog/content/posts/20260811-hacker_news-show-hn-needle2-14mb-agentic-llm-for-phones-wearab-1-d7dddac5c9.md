@@ -27,7 +27,7 @@ source_title_chars_original: 79
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://cactuscompute.com/needle
 parent_observation_id: null
-last_seen_at: 2026-09-18T00:00:00Z
+last_seen_at: 2026-09-19T00:00:00Z
 ---
 
 ## 基本信息

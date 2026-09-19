@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:4aefd24d1dee329599be013932b170fffae296c2d2cf13fc
 source_payload_sha256: "sha256:ff4aca36a794b76ecba06a52f3e2c1dbc527fe6352414231d04221fb6f026732"
 observation_id: obs_b93edf8d5d10e6008ab13804545bcb7a5cdfeb7f97d2eb45aa5715c598a386b5
 event_id: evt_0e06c43892ac617e07e81d15a62561d0c5794f091d5a6f9c1f334a8ba7a1205a
-revision_id: rev_06b0236bc817dc5af929d94cc5192a71f4bdc36edd4cceee83eed6b55cfde071
+revision_id: rev_bf3dd1410b41055453f248036eaed05037034db5118c87cef40d45923adff2bd
 source_published_at: 2026-09-18T06:28:43Z
 first_seen_at: 2026-09-18T09:56:43Z
 timestamp_confidence: feed
@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:e964a1db1a9b421ba42140167ce5427ac658dddeb46dd802f
 description: "这是一份AI领域的技术新闻合集，梳理了近期关于AI agent架构、分类器应用、垂直产品化以及多智能体研究的行业动态和社区讨论。"
 external_url: https://www.latent.space/p/ainews-not-much-happened-today-612
 parent_observation_id: null
-last_seen_at: 2026-09-18T09:45:29.924772Z
+last_seen_at: 2026-09-19T00:00:00Z
 ---
 
 ## 基本信息

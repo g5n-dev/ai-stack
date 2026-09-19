@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:341fab98af8177fd4260a73a40a5354bd6015836d32292fbc
 description: "这是一期播客节目，由精神医学史学家 Andrew Scull 主讲，围绕精神疾病分类、收容所历史、额叶切除、电痉挛疗法（ECT）等关键节点展开，并附有完整文字稿和时间戳。"
 external_url: https://lexfridman.com/andrew-scull
 parent_observation_id: null
-last_seen_at: 2026-09-18T00:00:00Z
+last_seen_at: 2026-09-19T00:00:00Z
 ---
 
 ## 基本信息

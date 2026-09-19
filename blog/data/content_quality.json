@@ -1,8 +1,8 @@
 {
-  "active_count": 2896,
+  "active_count": 2900,
   "archived_count": 276,
-  "complete_count": 73,
-  "interpreted_brief_count": 227,
+  "complete_count": 74,
+  "interpreted_brief_count": 229,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22076,6 +22076,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260919-arxiv-an-empirical-study-of-harness-design-for-coding-ag-5-6958412aec.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260919-arxiv-ercpmp-gx-endoscopic-image-and-video-dataset-for-m-2-d266dc3617.md": {
       "reasons": [
         "interpreted_source_card"
@@ -22103,7 +22109,19 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260919-blogs_podcasts-migrating-multi-model-ai-agents-to-amazon-bedrock--0-2ba3db2ddc.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260919-hacker_news-claude-code-now-reads-agentsmd-if-there-is-no-clau-0-3d68ad8e13.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260919-hacker_news-how-openai-used-its-own-llms-to-design-its-jalapeñ-1-3e1dd1f8d6.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -22148,10 +22166,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2596,
-  "source_file_count": 3172,
-  "source_tree_sha256": "c4f8f72e1a53aa727f194b0e36c04d1d47921ec8a03a5ed7f69cdb6be27f2b21",
-  "verified_provenance_count": 2896,
+  "source_brief_count": 2597,
+  "source_file_count": 3176,
+  "source_tree_sha256": "96fb79b88a49adde3916e9e0fd81af73ac109b9f1810f24f9f37a8573faf7e3f",
+  "verified_provenance_count": 2900,
   "warning_counts": {
     "source_excerpt_truncated": 804
   }

@@ -15,7 +15,7 @@ observation_id: obs_f686afe1e576c13612342df580bc6ce5ffea24cf2c9b088a96630d200cdd
 event_id: evt_ee247728beba32151104a9d4f2d13c9b5a54969a85140886b737efbc7f59b3ad
 revision_id: rev_a387983bd00c612ac5aa73927a338198203431b6aaf06600bcb7481a900186d2
 source_published_at: 2026-09-18T20:52:14Z
-first_seen_at: 2026-09-18T21:41:29.587724Z
+first_seen_at: 2026-09-18T21:54:34Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:e5c5649904088fd4e8d022c2831aa4962a5a51b3a886db519
 description: "Amazon SageMaker AI 在2026年已推出多项新功能，帮助用户在不同部署路径（托管端点和 HyperPod）上快速上线生成式 AI 模型，重点实现了自动化实例推荐、容量感知实例池以及与 OpenAI 兼容的 API。"
 external_url: https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-inference-2026-year-to-date-launches-in-review
 parent_observation_id: null
-last_seen_at: 2026-09-18T21:41:29.587724Z
+last_seen_at: 2026-09-19T00:00:00Z
 ---
 
 ## 基本信息
