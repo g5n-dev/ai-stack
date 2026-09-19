@@ -1,8 +1,8 @@
 {
-  "active_count": 2909,
+  "active_count": 2913,
   "archived_count": 276,
-  "complete_count": 74,
-  "interpreted_brief_count": 233,
+  "complete_count": 75,
+  "interpreted_brief_count": 234,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22186,6 +22186,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260920-arxiv-prediction-powered-smoothing-and-validation-for-di-10-989be6ca1b.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260920-blogs_podcasts-introducing-amazon-sagemaker-hyperpod-inference-ga-0-69854448ea.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260920-hacker_news-almost-never-use-ai-to-write-anything-substantive-10-6d84fb98ba.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -22220,10 +22238,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2602,
-  "source_file_count": 3185,
-  "source_tree_sha256": "9e3cb3a21d4161572e5b03bc1fac1cd5c53b43515581f28c1ba4fb87f3350978",
-  "verified_provenance_count": 2909,
+  "source_brief_count": 2604,
+  "source_file_count": 3189,
+  "source_tree_sha256": "f58cd774ab966d4f10d3b4c54461ba53562e649fc66cc0f5bbf8f96b3fa21bbe",
+  "verified_provenance_count": 2913,
   "warning_counts": {
     "source_excerpt_truncated": 804
   }

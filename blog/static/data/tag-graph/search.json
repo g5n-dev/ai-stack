@@ -12,23 +12,23 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-09-19T14:26:57Z",
+  "generated_at": "2026-09-19T18:05:14Z",
   "items": [
     {
-      "article_count": 902,
+      "article_count": 903,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
-      "degree": 91,
+      "degree": 92,
       "description": "文章标签: AI Agent",
       "id": "tag:AI Agent",
       "layer": "tag",
       "legacy_id": "AI Agent",
       "name": "AI Agent",
       "rank": 1,
-      "weighted_degree": 2683.2
+      "weighted_degree": 2686.2
     },
     {
-      "article_count": 802,
+      "article_count": 803,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 100,
@@ -38,23 +38,23 @@
       "legacy_id": "大语言模型",
       "name": "大语言模型",
       "rank": 2,
-      "weighted_degree": 2368.2
+      "weighted_degree": 2375.2
     },
     {
-      "article_count": 689,
+      "article_count": 692,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
-      "degree": 123,
+      "degree": 124,
       "description": "文章标签: 来源快报",
       "id": "tag:来源快报",
       "layer": "tag",
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 3,
-      "weighted_degree": 2050
+      "weighted_degree": 2062
     },
     {
-      "article_count": 515,
+      "article_count": 516,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 108,
@@ -64,10 +64,10 @@
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 4,
-      "weighted_degree": 1464
+      "weighted_degree": 1471
     },
     {
-      "article_count": 535,
+      "article_count": 536,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 26,
@@ -77,23 +77,23 @@
       "legacy_id": "掘金",
       "name": "掘金",
       "rank": 5,
-      "weighted_degree": 1357
+      "weighted_degree": 1359
     },
     {
-      "article_count": 808,
+      "article_count": 809,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
-      "degree": 46,
+      "degree": 47,
       "description": "文章标签: ArXiv",
       "id": "tag:ArXiv",
       "layer": "tag",
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 1236
+      "weighted_degree": 1239
     },
     {
-      "article_count": 174,
+      "article_count": 175,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 68,
@@ -103,10 +103,10 @@
       "legacy_id": "生成式 AI",
       "name": "生成式 AI",
       "rank": 7,
-      "weighted_degree": 743
+      "weighted_degree": 750
     },
     {
-      "article_count": 962,
+      "article_count": 963,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 21,
@@ -116,7 +116,7 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 8,
-      "weighted_degree": 659
+      "weighted_degree": 661
     },
     {
       "article_count": 163,
@@ -145,7 +145,7 @@
       "weighted_degree": 586
     },
     {
-      "article_count": 100,
+      "article_count": 101,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 53,
@@ -155,7 +155,7 @@
       "legacy_id": "Prompt 工程",
       "name": "Prompt 工程",
       "rank": 11,
-      "weighted_degree": 564
+      "weighted_degree": 571
     },
     {
       "article_count": 127,
@@ -197,7 +197,7 @@
       "weighted_degree": 507.6
     },
     {
-      "article_count": 184,
+      "article_count": 185,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 59,
@@ -207,7 +207,7 @@
       "legacy_id": "AI",
       "name": "AI",
       "rank": 15,
-      "weighted_degree": 471.6
+      "weighted_degree": 473.6
     },
     {
       "article_count": 126,
@@ -262,6 +262,19 @@
       "weighted_degree": 278
     },
     {
+      "article_count": 40,
+      "category": "article_tag",
+      "community_id": "community:tag:大语言模型",
+      "degree": 32,
+      "description": "文章标签: Announcements",
+      "id": "tag:Announcements",
+      "layer": "tag",
+      "legacy_id": "Announcements",
+      "name": "Announcements",
+      "rank": 20,
+      "weighted_degree": 249
+    },
+    {
       "article_count": 37,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
@@ -271,7 +284,7 @@
       "layer": "tag",
       "legacy_id": "Technical How-to",
       "name": "Technical How-to",
-      "rank": 20,
+      "rank": 21,
       "weighted_degree": 247
     },
     {
@@ -284,21 +297,8 @@
       "layer": "tag",
       "legacy_id": "cs.AI",
       "name": "cs.AI",
-      "rank": 21,
-      "weighted_degree": 244
-    },
-    {
-      "article_count": 39,
-      "category": "article_tag",
-      "community_id": "community:tag:大语言模型",
-      "degree": 32,
-      "description": "文章标签: Announcements",
-      "id": "tag:Announcements",
-      "layer": "tag",
-      "legacy_id": "Announcements",
-      "name": "Announcements",
       "rank": 22,
-      "weighted_degree": 242
+      "weighted_degree": 244
     },
     {
       "article_count": 53,
@@ -392,7 +392,7 @@
       "weighted_degree": 162
     },
     {
-      "article_count": 74,
+      "article_count": 75,
       "category": "article_tag",
       "community_id": "community:other",
       "degree": 9,
@@ -402,7 +402,7 @@
       "legacy_id": "工程实践",
       "name": "工程实践",
       "rank": 30,
-      "weighted_degree": 153
+      "weighted_degree": 155
     },
     {
       "article_count": 43,
@@ -418,7 +418,7 @@
       "weighted_degree": 151.6
     },
     {
-      "article_count": 73,
+      "article_count": 74,
       "category": "article_tag",
       "community_id": "community:other",
       "degree": 2,
@@ -428,7 +428,7 @@
       "legacy_id": "来源转写",
       "name": "来源转写",
       "rank": 32,
-      "weighted_degree": 146
+      "weighted_degree": 148
     },
     {
       "article_count": 29,
@@ -496,6 +496,19 @@
       "weighted_degree": 84.6
     },
     {
+      "article_count": 12,
+      "category": "article_tag",
+      "community_id": "community:tag:大语言模型",
+      "degree": 23,
+      "description": "文章标签: Expert (400)",
+      "id": "tag:Expert (400)",
+      "layer": "tag",
+      "legacy_id": "Expert (400)",
+      "name": "Expert (400)",
+      "rank": 38,
+      "weighted_degree": 79
+    },
+    {
       "article_count": 25,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
@@ -505,7 +518,7 @@
       "layer": "tag",
       "legacy_id": "cs.LG",
       "name": "cs.LG",
-      "rank": 38,
+      "rank": 39,
       "weighted_degree": 78
     },
     {
@@ -518,7 +531,7 @@
       "layer": "tag",
       "legacy_id": "Amazon SageMaker AI",
       "name": "Amazon SageMaker AI",
-      "rank": 39,
+      "rank": 40,
       "weighted_degree": 73
     },
     {
@@ -531,19 +544,6 @@
       "layer": "tag",
       "legacy_id": "Amazon Quick Suite",
       "name": "Amazon Quick Suite",
-      "rank": 40,
-      "weighted_degree": 72
-    },
-    {
-      "article_count": 11,
-      "category": "article_tag",
-      "community_id": "community:tag:大语言模型",
-      "degree": 23,
-      "description": "文章标签: Expert (400)",
-      "id": "tag:Expert (400)",
-      "layer": "tag",
-      "legacy_id": "Expert (400)",
-      "name": "Expert (400)",
       "rank": 41,
       "weighted_degree": 72
     },
@@ -616,25 +616,25 @@
       "article_count": 8,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
-      "degree": 16,
-      "description": "文章标签: Foundational (100)",
-      "id": "tag:Foundational (100)",
-      "layer": "tag",
-      "legacy_id": "Foundational (100)",
-      "name": "Foundational (100)",
-      "rank": 47,
-      "weighted_degree": 46
-    },
-    {
-      "article_count": 7,
-      "category": "article_tag",
-      "community_id": "community:tag:大语言模型",
       "degree": 17,
       "description": "文章标签: Amazon SageMaker HyperPod",
       "id": "tag:Amazon SageMaker HyperPod",
       "layer": "tag",
       "legacy_id": "Amazon SageMaker HyperPod",
       "name": "Amazon SageMaker HyperPod",
+      "rank": 47,
+      "weighted_degree": 53
+    },
+    {
+      "article_count": 8,
+      "category": "article_tag",
+      "community_id": "community:tag:大语言模型",
+      "degree": 16,
+      "description": "文章标签: Foundational (100)",
+      "id": "tag:Foundational (100)",
+      "layer": "tag",
+      "legacy_id": "Foundational (100)",
+      "name": "Foundational (100)",
       "rank": 48,
       "weighted_degree": 46
     },
@@ -1315,7 +1315,7 @@
       "weighted_degree": 8.6
     },
     {
-      "article_count": 802,
+      "article_count": 803,
       "category": "nlp",
       "community_id": null,
       "degree": 8,
@@ -1419,7 +1419,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 1095,
+      "article_count": 1097,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -2329,7 +2329,7 @@
       "weighted_degree": 4.6
     },
     {
-      "article_count": 902,
+      "article_count": 903,
       "category": "ai",
       "community_id": null,
       "degree": 5,
@@ -2719,6 +2719,19 @@
       "weighted_degree": 3
     },
     {
+      "article_count": 1,
+      "category": "article_tag",
+      "community_id": "community:tag:大语言模型",
+      "degree": 3,
+      "description": "文章标签: stat.ML",
+      "id": "tag:stat.ML",
+      "layer": "tag",
+      "legacy_id": "stat.ML",
+      "name": "stat.ML",
+      "rank": 209,
+      "weighted_degree": 3
+    },
+    {
       "article_count": 0,
       "category": "web",
       "community_id": null,
@@ -2728,7 +2741,7 @@
       "layer": "framework",
       "legacy_id": "django",
       "name": "Django",
-      "rank": 209,
+      "rank": 210,
       "weighted_degree": 3
     },
     {
@@ -2741,7 +2754,7 @@
       "layer": "model",
       "legacy_id": "embedding",
       "name": "向量嵌入",
-      "rank": 210,
+      "rank": 211,
       "weighted_degree": 3
     },
     {
@@ -2754,7 +2767,7 @@
       "layer": "framework",
       "legacy_id": "fastapi",
       "name": "FastAPI",
-      "rank": 211,
+      "rank": 212,
       "weighted_degree": 3
     },
     {
@@ -2767,7 +2780,7 @@
       "layer": "framework",
       "legacy_id": "flask",
       "name": "Flask",
-      "rank": 212,
+      "rank": 213,
       "weighted_degree": 3
     },
     {
@@ -2780,7 +2793,7 @@
       "layer": "framework",
       "legacy_id": "langchain",
       "name": "LangChain",
-      "rank": 213,
+      "rank": 214,
       "weighted_degree": 3
     },
     {
@@ -2793,11 +2806,11 @@
       "layer": "model",
       "legacy_id": "multimodal",
       "name": "多模态模型",
-      "rank": 214,
+      "rank": 215,
       "weighted_degree": 2.8
     },
     {
-      "article_count": 802,
+      "article_count": 803,
       "category": "ai",
       "community_id": null,
       "degree": 3,
@@ -2806,7 +2819,7 @@
       "layer": "scenario",
       "legacy_id": "llm_scene",
       "name": "大语言模型",
-      "rank": 215,
+      "rank": 216,
       "weighted_degree": 2.6
     },
     {
@@ -2819,7 +2832,7 @@
       "layer": "language",
       "legacy_id": "rust",
       "name": "Rust",
-      "rank": 216,
+      "rank": 217,
       "weighted_degree": 2.6
     },
     {
@@ -2832,7 +2845,7 @@
       "layer": "language",
       "legacy_id": "go",
       "name": "Go",
-      "rank": 217,
+      "rank": 218,
       "weighted_degree": 2.6
     },
     {
@@ -2845,7 +2858,7 @@
       "layer": "framework",
       "legacy_id": "react",
       "name": "React",
-      "rank": 218,
+      "rank": 219,
       "weighted_degree": 2.5
     },
     {
@@ -2858,7 +2871,7 @@
       "layer": "language",
       "legacy_id": "javascript",
       "name": "JavaScript",
-      "rank": 219,
+      "rank": 220,
       "weighted_degree": 2.1
     },
     {
@@ -2871,7 +2884,7 @@
       "layer": "tag",
       "legacy_id": "econ.EM",
       "name": "econ.EM",
-      "rank": 220,
+      "rank": 221,
       "weighted_degree": 2
     },
     {
@@ -2884,7 +2897,7 @@
       "layer": "tag",
       "legacy_id": "hep-ph",
       "name": "hep-ph",
-      "rank": 221,
+      "rank": 222,
       "weighted_degree": 2
     },
     {
@@ -2897,7 +2910,7 @@
       "layer": "tag",
       "legacy_id": "Jupyter Notebook",
       "name": "Jupyter Notebook",
-      "rank": 222,
+      "rank": 223,
       "weighted_degree": 2
     },
     {
@@ -2910,7 +2923,7 @@
       "layer": "tag",
       "legacy_id": "q-bio.GN",
       "name": "q-bio.GN",
-      "rank": 223,
+      "rank": 224,
       "weighted_degree": 2
     },
     {
@@ -2923,7 +2936,7 @@
       "layer": "framework",
       "legacy_id": "actix",
       "name": "Actix",
-      "rank": 224,
+      "rank": 225,
       "weighted_degree": 2
     },
     {
@@ -2936,7 +2949,7 @@
       "layer": "application",
       "legacy_id": "automation",
       "name": "自动化工具",
-      "rank": 225,
+      "rank": 226,
       "weighted_degree": 2
     },
     {
@@ -2949,7 +2962,7 @@
       "layer": "framework",
       "legacy_id": "axum",
       "name": "Axum",
-      "rank": 226,
+      "rank": 227,
       "weighted_degree": 2
     },
     {
@@ -2962,7 +2975,7 @@
       "layer": "scenario",
       "legacy_id": "backend",
       "name": "后端开发",
-      "rank": 227,
+      "rank": 228,
       "weighted_degree": 2
     },
     {
@@ -2975,7 +2988,7 @@
       "layer": "application",
       "legacy_id": "dashboard",
       "name": "数据仪表板",
-      "rank": 228,
+      "rank": 229,
       "weighted_degree": 2
     },
     {
@@ -2988,7 +3001,7 @@
       "layer": "framework",
       "legacy_id": "echo",
       "name": "Echo",
-      "rank": 229,
+      "rank": 230,
       "weighted_degree": 2
     },
     {
@@ -3001,7 +3014,7 @@
       "layer": "scenario",
       "legacy_id": "fullstack",
       "name": "全栈开发",
-      "rank": 230,
+      "rank": 231,
       "weighted_degree": 2
     },
     {
@@ -3014,7 +3027,7 @@
       "layer": "framework",
       "legacy_id": "gin",
       "name": "Gin",
-      "rank": 231,
+      "rank": 232,
       "weighted_degree": 2
     },
     {
@@ -3027,7 +3040,7 @@
       "layer": "application",
       "legacy_id": "monitoring",
       "name": "监控系统",
-      "rank": 232,
+      "rank": 233,
       "weighted_degree": 2
     },
     {
@@ -3040,7 +3053,7 @@
       "layer": "framework",
       "legacy_id": "nextjs",
       "name": "Next.js",
-      "rank": 233,
+      "rank": 234,
       "weighted_degree": 2
     },
     {
@@ -3053,7 +3066,7 @@
       "layer": "framework",
       "legacy_id": "vue",
       "name": "Vue",
-      "rank": 234,
+      "rank": 235,
       "weighted_degree": 2
     },
     {
@@ -3066,7 +3079,7 @@
       "layer": "scenario",
       "legacy_id": "rag_scene",
       "name": "RAG应用",
-      "rank": 235,
+      "rank": 236,
       "weighted_degree": 1.6
     },
     {
@@ -3079,7 +3092,7 @@
       "layer": "scenario",
       "legacy_id": "nlp_scene",
       "name": "自然语言处理",
-      "rank": 236,
+      "rank": 237,
       "weighted_degree": 1.6
     },
     {
@@ -3092,7 +3105,7 @@
       "layer": "scenario",
       "legacy_id": "devops",
       "name": "DevOps/运维",
-      "rank": 237,
+      "rank": 238,
       "weighted_degree": 1.6
     },
     {
@@ -3105,7 +3118,7 @@
       "layer": "model",
       "legacy_id": "diffusion",
       "name": "扩散模型",
-      "rank": 238,
+      "rank": 239,
       "weighted_degree": 1.5
     },
     {
@@ -3118,7 +3131,7 @@
       "layer": "scenario",
       "legacy_id": "kubernetes",
       "name": "Kubernetes",
-      "rank": 239,
+      "rank": 240,
       "weighted_degree": 1.2
     },
     {
@@ -3131,7 +3144,7 @@
       "layer": "scenario",
       "legacy_id": "security",
       "name": "安全工具",
-      "rank": 240,
+      "rank": 241,
       "weighted_degree": 1.2
     },
     {
@@ -3144,7 +3157,7 @@
       "layer": "scenario",
       "legacy_id": "design",
       "name": "设计工具",
-      "rank": 241,
+      "rank": 242,
       "weighted_degree": 1.2
     },
     {
@@ -3157,7 +3170,7 @@
       "layer": "scenario",
       "legacy_id": "automation_scene",
       "name": "自动化脚本",
-      "rank": 242,
+      "rank": 243,
       "weighted_degree": 1
     },
     {
@@ -3170,7 +3183,7 @@
       "layer": "scenario",
       "legacy_id": "frontend",
       "name": "前端开发",
-      "rank": 243,
+      "rank": 244,
       "weighted_degree": 1
     },
     {
@@ -3183,7 +3196,7 @@
       "layer": "scenario",
       "legacy_id": "monitoring_scene",
       "name": "监控/日志",
-      "rank": 244,
+      "rank": 245,
       "weighted_degree": 1
     },
     {
@@ -3196,7 +3209,7 @@
       "layer": "scenario",
       "legacy_id": "productivity",
       "name": "效率工具",
-      "rank": 245,
+      "rank": 246,
       "weighted_degree": 1
     },
     {
@@ -3209,7 +3222,7 @@
       "layer": "framework",
       "legacy_id": "svelte",
       "name": "Svelte",
-      "rank": 246,
+      "rank": 247,
       "weighted_degree": 1
     },
     {
@@ -3222,7 +3235,7 @@
       "layer": "scenario",
       "legacy_id": "visualization",
       "name": "数据可视化",
-      "rank": 247,
+      "rank": 248,
       "weighted_degree": 1
     },
     {
@@ -3235,7 +3248,7 @@
       "layer": "scenario",
       "legacy_id": "web_dev",
       "name": "Web应用开发",
-      "rank": 248,
+      "rank": 249,
       "weighted_degree": 1
     },
     {
@@ -3248,7 +3261,7 @@
       "layer": "scenario",
       "legacy_id": "database",
       "name": "数据库",
-      "rank": 249,
+      "rank": 250,
       "weighted_degree": 0.6
     },
     {
@@ -3261,7 +3274,7 @@
       "layer": "scenario",
       "legacy_id": "cli",
       "name": "命令行工具",
-      "rank": 250,
+      "rank": 251,
       "weighted_degree": 0.6
     },
     {
@@ -3274,7 +3287,7 @@
       "layer": "scenario",
       "legacy_id": "cv_scene",
       "name": "计算机视觉",
-      "rank": 251,
+      "rank": 252,
       "weighted_degree": 0.6
     },
     {
@@ -3287,7 +3300,7 @@
       "layer": "language",
       "legacy_id": "java",
       "name": "Java",
-      "rank": 252,
+      "rank": 253,
       "weighted_degree": 0.6
     },
     {
@@ -3300,7 +3313,7 @@
       "layer": "language",
       "legacy_id": "swift",
       "name": "Swift",
-      "rank": 253,
+      "rank": 254,
       "weighted_degree": 0.6
     },
     {
@@ -3313,7 +3326,7 @@
       "layer": "scenario",
       "legacy_id": "cloud",
       "name": "云原生/容器",
-      "rank": 254,
+      "rank": 255,
       "weighted_degree": 0.6
     },
     {
@@ -3326,7 +3339,7 @@
       "layer": "language",
       "legacy_id": "cpp",
       "name": "C++",
-      "rank": 255,
+      "rank": 256,
       "weighted_degree": 0.6
     },
     {
@@ -3339,7 +3352,7 @@
       "layer": "scenario",
       "legacy_id": "animation",
       "name": "动画/3D",
-      "rank": 256,
+      "rank": 257,
       "weighted_degree": 0
     },
     {
@@ -3352,7 +3365,7 @@
       "layer": "scenario",
       "legacy_id": "blockchain",
       "name": "区块链",
-      "rank": 257,
+      "rank": 258,
       "weighted_degree": 0
     },
     {
@@ -3365,7 +3378,7 @@
       "layer": "scenario",
       "legacy_id": "desktop",
       "name": "桌面应用",
-      "rank": 258,
+      "rank": 259,
       "weighted_degree": 0
     },
     {
@@ -3378,7 +3391,7 @@
       "layer": "scenario",
       "legacy_id": "documentation",
       "name": "文档工具",
-      "rank": 259,
+      "rank": 260,
       "weighted_degree": 0
     },
     {
@@ -3391,7 +3404,7 @@
       "layer": "scenario",
       "legacy_id": "editor",
       "name": "编辑器/IDE",
-      "rank": 260,
+      "rank": 261,
       "weighted_degree": 0
     },
     {
@@ -3404,7 +3417,7 @@
       "layer": "scenario",
       "legacy_id": "embedded",
       "name": "嵌入式系统",
-      "rank": 261,
+      "rank": 262,
       "weighted_degree": 0
     },
     {
@@ -3417,7 +3430,7 @@
       "layer": "scenario",
       "legacy_id": "game",
       "name": "游戏开发",
-      "rank": 262,
+      "rank": 263,
       "weighted_degree": 0
     },
     {
@@ -3430,7 +3443,7 @@
       "layer": "scenario",
       "legacy_id": "iot",
       "name": "物联网",
-      "rank": 263,
+      "rank": 264,
       "weighted_degree": 0
     },
     {
@@ -3443,7 +3456,7 @@
       "layer": "scenario",
       "legacy_id": "mobile",
       "name": "移动应用",
-      "rank": 264,
+      "rank": 265,
       "weighted_degree": 0
     },
     {
@@ -3456,7 +3469,7 @@
       "layer": "framework",
       "legacy_id": "nuxt",
       "name": "Nuxt",
-      "rank": 265,
+      "rank": 266,
       "weighted_degree": 0
     },
     {
@@ -3469,12 +3482,12 @@
       "layer": "scenario",
       "legacy_id": "testing",
       "name": "测试工具",
-      "rank": 266,
+      "rank": 267,
       "weighted_degree": 0
     }
   ],
   "stats": {
-    "total_items": 266
+    "total_items": 267
   },
   "version": 2
 }
