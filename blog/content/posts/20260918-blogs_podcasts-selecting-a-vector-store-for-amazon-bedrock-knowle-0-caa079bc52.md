@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:63a6ac03cd1697ca5f0982da4898dbba33c771bbefaa593cd
 description: "这篇内容对比了 Amazon Bedrock Knowledge Bases 在客户自行管理向量库时提供的三种后端（OpenSearch Service、Aurora PostgreSQL + pgvector、S3 Vectors），并结合检索增强生成（RAG）场景说明各自的优势。"
 external_url: https://aws.amazon.com/blogs/machine-learning/selecting-a-vector-store-for-amazon-bedrock-knowledge-bases
 parent_observation_id: null
-last_seen_at: 2026-09-18T00:17:45.964472Z
+last_seen_at: 2026-09-19T00:00:00Z
 ---
 
 ## 基本信息

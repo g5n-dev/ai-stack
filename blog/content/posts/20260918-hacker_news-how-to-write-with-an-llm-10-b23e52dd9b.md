@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:1979ce1257a9bce5d3059125d3f9948dc09f1979e050864a
 source_payload_sha256: "sha256:ea17b5d3e1562e9e8a78968542d333523267d4790f5eebe47fc23f0f0061477f"
 observation_id: obs_b23e52dd9b0cbd43b08496b6ce9e334cf283d13cf97da0c7308da323ef5f6ea3
 event_id: evt_cc405ed45034618fcdc9d6c6c9d89b9eb8558a9f2bff1167c6babf1e5093d572
-revision_id: rev_07b0c62dc014be10e246b88ce2139e76a50d815285a4dd1edfbc1e73ae17cee8
+revision_id: rev_9840de2380986f9588e4d51c7c224612d14964a3b7c7dbe0c008c493dc4808f9
 source_published_at: 2026-09-17T21:48:38Z
 first_seen_at: 2026-09-18T09:56:43Z
 timestamp_confidence: platform
@@ -27,7 +27,7 @@ source_title_chars_original: 24
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://sockpuppet.org/blog/2026/09/17/how-to-write-with-an-llm
 parent_observation_id: null
-last_seen_at: 2026-09-18T09:45:24.118198Z
+last_seen_at: 2026-09-19T00:00:00Z
 ---
 
 ## 基本信息
