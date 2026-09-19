@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-09-19T20:39:58Z",
+  "generated_at": "2026-09-19T23:03:54Z",
   "items": [
     {
       "article_count": 903,
@@ -41,7 +41,7 @@
       "weighted_degree": 2375.2
     },
     {
-      "article_count": 693,
+      "article_count": 694,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 124,
@@ -51,10 +51,10 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 3,
-      "weighted_degree": 2064
+      "weighted_degree": 2067
     },
     {
-      "article_count": 517,
+      "article_count": 518,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 108,
@@ -64,7 +64,7 @@
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 4,
-      "weighted_degree": 1473
+      "weighted_degree": 1476
     },
     {
       "article_count": 536,
@@ -197,7 +197,7 @@
       "weighted_degree": 507.6
     },
     {
-      "article_count": 186,
+      "article_count": 187,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 59,
@@ -207,7 +207,7 @@
       "legacy_id": "AI",
       "name": "AI",
       "rank": 15,
-      "weighted_degree": 475.6
+      "weighted_degree": 478.6
     },
     {
       "article_count": 126,
@@ -652,6 +652,19 @@
       "weighted_degree": 43
     },
     {
+      "article_count": 14,
+      "category": "article_tag",
+      "community_id": "community:tag:大语言模型",
+      "degree": 3,
+      "description": "文章标签: Company",
+      "id": "tag:Company",
+      "layer": "tag",
+      "legacy_id": "Company",
+      "name": "Company",
+      "rank": 50,
+      "weighted_degree": 39
+    },
+    {
       "article_count": 6,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
@@ -661,21 +674,8 @@
       "layer": "tag",
       "legacy_id": "Amazon Bedrock Knowledge Bases",
       "name": "Amazon Bedrock Knowledge Bases",
-      "rank": 50,
-      "weighted_degree": 39
-    },
-    {
-      "article_count": 13,
-      "category": "article_tag",
-      "community_id": "community:tag:大语言模型",
-      "degree": 3,
-      "description": "文章标签: Company",
-      "id": "tag:Company",
-      "layer": "tag",
-      "legacy_id": "Company",
-      "name": "Company",
       "rank": 51,
-      "weighted_degree": 36
+      "weighted_degree": 39
     },
     {
       "article_count": 5,
@@ -1419,7 +1419,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 1098,
+      "article_count": 1099,
       "category": "ai",
       "community_id": null,
       "degree": 10,

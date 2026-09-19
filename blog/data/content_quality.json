@@ -1,5 +1,5 @@
 {
-  "active_count": 2914,
+  "active_count": 2915,
   "archived_count": 276,
   "complete_count": 75,
   "interpreted_brief_count": 234,
@@ -22205,6 +22205,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260920-blogs_podcasts-introducing-the-australian-youth-safety-blueprint-0-a00923bf4d.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260920-hacker_news-almost-never-use-ai-to-write-anything-substantive-10-6d84fb98ba.md": {
       "reasons": [
         "concise_source_card"
@@ -22244,10 +22250,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2605,
-  "source_file_count": 3190,
-  "source_tree_sha256": "15c25257d43c2fabf1e2a90d2d438ce603df4b2d9804cc53d4116003c358db80",
-  "verified_provenance_count": 2914,
+  "source_brief_count": 2606,
+  "source_file_count": 3191,
+  "source_tree_sha256": "32952fc00809a9bc40732c718cd81ea1cde1f9e8804af8f1b475ebd497bb1cfd",
+  "verified_provenance_count": 2915,
   "warning_counts": {
     "source_excerpt_truncated": 804
   }
