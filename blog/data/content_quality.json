@@ -1,8 +1,8 @@
 {
-  "active_count": 2900,
+  "active_count": 2903,
   "archived_count": 276,
   "complete_count": 74,
-  "interpreted_brief_count": 229,
+  "interpreted_brief_count": 230,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22094,6 +22094,18 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260919-arxiv-retireopd-self-retiring-on-policy-distillation-for-7-2f721ab1b5.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260919-blogs_podcasts-ainews-here-are-6-clones-of-jev-in-2-days-0-fb0ebe24a1.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260919-blogs_podcasts-amazon-sagemaker-inference-2026-year-to-date-launc-0-f686afe1e5.md": {
       "reasons": [
         "interpreted_source_card"
@@ -22122,6 +22134,12 @@
       "status": "source_brief"
     },
     "posts/20260919-hacker_news-how-openai-used-its-own-llms-to-design-its-jalapeñ-1-3e1dd1f8d6.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260919-hacker_news-nasa-ibm-lunar-foundation-open-source-geospatial-a-8-38d006d075.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -22166,10 +22184,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2597,
-  "source_file_count": 3176,
-  "source_tree_sha256": "96fb79b88a49adde3916e9e0fd81af73ac109b9f1810f24f9f37a8573faf7e3f",
-  "verified_provenance_count": 2900,
+  "source_brief_count": 2599,
+  "source_file_count": 3179,
+  "source_tree_sha256": "09ef84c23964e1d512ca292ca3030c30a86615c180472de6b440d24481a79889",
+  "verified_provenance_count": 2903,
   "warning_counts": {
     "source_excerpt_truncated": 804
   }
