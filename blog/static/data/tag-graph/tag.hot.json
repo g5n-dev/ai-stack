@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T18:05:14Z",
+  "generated_at": "2026-09-19T20:39:58Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -525,7 +525,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 50
+      "weight": 51
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:大语言模型",
@@ -549,7 +549,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 184
+      "weight": 185
     },
     {
       "id": "edge:semantic:tag:AI->tech:ai_ml",
@@ -10821,7 +10821,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 188
+      "weight": 189
     },
     {
       "id": "edge:cooccurrence:tag:博客与播客->tag:深度学习",
@@ -11324,7 +11324,7 @@
       "weighted_degree": 278
     },
     {
-      "article_count": 185,
+      "article_count": 186,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -11338,7 +11338,7 @@
       "name": "AI",
       "rank": 15,
       "related_count": 58,
-      "weighted_degree": 473.6
+      "weighted_degree": 475.6
     },
     {
       "article_count": 4,
@@ -14435,7 +14435,7 @@
       "weighted_degree": 4
     },
     {
-      "article_count": 516,
+      "article_count": 517,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -14449,7 +14449,7 @@
       "name": "博客与播客",
       "rank": 4,
       "related_count": 108,
-      "weighted_degree": 1471
+      "weighted_degree": 1473
     },
     {
       "article_count": 141,
@@ -14554,7 +14554,7 @@
       "weighted_degree": 586
     },
     {
-      "article_count": 692,
+      "article_count": 693,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -14568,7 +14568,7 @@
       "name": "来源快报",
       "rank": 3,
       "related_count": 124,
-      "weighted_degree": 2062
+      "weighted_degree": 2064
     },
     {
       "article_count": 74,
