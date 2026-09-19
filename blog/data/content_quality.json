@@ -1,5 +1,5 @@
 {
-  "active_count": 2913,
+  "active_count": 2914,
   "archived_count": 276,
   "complete_count": 75,
   "interpreted_brief_count": 234,
@@ -22193,6 +22193,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260920-blogs_podcasts-co-creating-the-future-of-fashion-with-google-0-332bec2b75.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260920-blogs_podcasts-introducing-amazon-sagemaker-hyperpod-inference-ga-0-69854448ea.md": {
       "reasons": [
         "interpreted_source_card"
@@ -22238,10 +22244,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2604,
-  "source_file_count": 3189,
-  "source_tree_sha256": "f58cd774ab966d4f10d3b4c54461ba53562e649fc66cc0f5bbf8f96b3fa21bbe",
-  "verified_provenance_count": 2913,
+  "source_brief_count": 2605,
+  "source_file_count": 3190,
+  "source_tree_sha256": "15c25257d43c2fabf1e2a90d2d438ce603df4b2d9804cc53d4116003c358db80",
+  "verified_provenance_count": 2914,
   "warning_counts": {
     "source_excerpt_truncated": 804
   }
