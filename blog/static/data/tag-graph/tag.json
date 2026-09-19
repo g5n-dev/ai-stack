@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T20:39:58Z",
+  "generated_at": "2026-09-19T23:03:54Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -173,7 +173,7 @@
       "strength": 1,
       "target": "tag:Company",
       "type": "cooccurrence",
-      "weight": 10
+      "weight": 11
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:Customers",
@@ -525,7 +525,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 51
+      "weight": 52
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:大语言模型",
@@ -549,7 +549,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 185
+      "weight": 186
     },
     {
       "id": "edge:semantic:tag:AI->tech:ai_ml",
@@ -5989,7 +5989,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 13
+      "weight": 14
     },
     {
       "id": "edge:cooccurrence:tag:Company->tag:来源快报",
@@ -5997,7 +5997,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 13
+      "weight": 14
     },
     {
       "id": "edge:cooccurrence:tag:Computer modeling->tag:Computer science and technology",
@@ -10821,7 +10821,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 189
+      "weight": 190
     },
     {
       "id": "edge:cooccurrence:tag:博客与播客->tag:深度学习",
@@ -11324,7 +11324,7 @@
       "weighted_degree": 278
     },
     {
-      "article_count": 186,
+      "article_count": 187,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -11338,7 +11338,7 @@
       "name": "AI",
       "rank": 15,
       "related_count": 58,
-      "weighted_degree": 475.6
+      "weighted_degree": 478.6
     },
     {
       "article_count": 4,
@@ -11574,7 +11574,7 @@
       "legacy_id": "Amazon Bedrock Knowledge Bases",
       "level": 6,
       "name": "Amazon Bedrock Knowledge Bases",
-      "rank": 50,
+      "rank": 51,
       "related_count": 17,
       "weighted_degree": 39
     },
@@ -12446,7 +12446,7 @@
       "weighted_degree": 7
     },
     {
-      "article_count": 13,
+      "article_count": 14,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -12458,9 +12458,9 @@
       "legacy_id": "Company",
       "level": 6,
       "name": "Company",
-      "rank": 51,
+      "rank": 50,
       "related_count": 3,
-      "weighted_degree": 36
+      "weighted_degree": 39
     },
     {
       "article_count": 2,
@@ -14435,7 +14435,7 @@
       "weighted_degree": 4
     },
     {
-      "article_count": 517,
+      "article_count": 518,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -14449,7 +14449,7 @@
       "name": "博客与播客",
       "rank": 4,
       "related_count": 108,
-      "weighted_degree": 1473
+      "weighted_degree": 1476
     },
     {
       "article_count": 141,
@@ -14554,7 +14554,7 @@
       "weighted_degree": 586
     },
     {
-      "article_count": 693,
+      "article_count": 694,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -14568,7 +14568,7 @@
       "name": "来源快报",
       "rank": 3,
       "related_count": 124,
-      "weighted_degree": 2064
+      "weighted_degree": 2067
     },
     {
       "article_count": 74,
