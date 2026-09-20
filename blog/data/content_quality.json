@@ -1,8 +1,8 @@
 {
-  "active_count": 2918,
+  "active_count": 2920,
   "archived_count": 276,
   "complete_count": 76,
-  "interpreted_brief_count": 235,
+  "interpreted_brief_count": 236,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22208,6 +22208,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260920-blogs_podcasts-how-mrh-trowe-enabled-secure-self-service-ai-agent-0-098d67a62d.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260920-blogs_podcasts-introducing-amazon-sagemaker-hyperpod-inference-ga-0-69854448ea.md": {
       "reasons": [
         "interpreted_source_card"
@@ -22231,6 +22237,15 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260920-juejin-spring-ai-2-手把手把-filesystem-mcp-server-跑通sse-stdio-1-8464b44f0b.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     }
   },
   "quarantined_count": 0,
@@ -22265,11 +22280,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2607,
-  "source_file_count": 3194,
-  "source_tree_sha256": "b6b230d6f3d91827d5c38ac753a1809572d97b988f5c80f6cbb6ffd54849a8b9",
-  "verified_provenance_count": 2918,
+  "source_brief_count": 2608,
+  "source_file_count": 3196,
+  "source_tree_sha256": "f030e4d1e8b45f84fced4e1594edc21f028a99b9bc0cfacfdd641b8471c1dad3",
+  "verified_provenance_count": 2920,
   "warning_counts": {
-    "source_excerpt_truncated": 805
+    "source_excerpt_truncated": 806
   }
 }
