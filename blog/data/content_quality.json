@@ -1,5 +1,5 @@
 {
-  "active_count": 2922,
+  "active_count": 2923,
   "archived_count": 276,
   "complete_count": 76,
   "interpreted_brief_count": 237,
@@ -22261,6 +22261,12 @@
       "warnings": [
         "source_excerpt_truncated"
       ]
+    },
+    "posts/20260921-hacker_news-pirate-face-rescues-llm-models-from-deletion-6-bdc2bd4430.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -22295,10 +22301,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2609,
-  "source_file_count": 3198,
-  "source_tree_sha256": "426932637504826d3be5ed7e06c3e94534c0f4fcf3188b6bd3c91c2e40807293",
-  "verified_provenance_count": 2922,
+  "source_brief_count": 2610,
+  "source_file_count": 3199,
+  "source_tree_sha256": "e314657be9814cfcd597efe9dc3819212ae98882a7e48eab64dfd16214be86b7",
+  "verified_provenance_count": 2923,
   "warning_counts": {
     "source_excerpt_truncated": 807
   }
