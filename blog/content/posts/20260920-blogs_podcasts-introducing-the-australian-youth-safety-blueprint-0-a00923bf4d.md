@@ -15,7 +15,7 @@ observation_id: obs_a00923bf4ddda715364788a2da3f2ff96c940524eada89a0c5609e53d1b6
 event_id: evt_3020f9538a7ac66d1572e28ef364bc7625c69af10819e188a672ab51e544a66e
 revision_id: rev_88da76f5a43e205cd6affdc7e9083cf7ba6dcab5387a2867e885123d8d238aa5
 source_published_at: 2026-09-18T12:00:00Z
-first_seen_at: 2026-09-19T23:03:14.290818Z
+first_seen_at: 2026-09-19T23:14:35Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 49
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://openai.com/index/australian-youth-safety-blueprint
 parent_observation_id: null
-last_seen_at: 2026-09-19T23:03:14.290818Z
+last_seen_at: 2026-09-20T00:00:00Z
 ---
 
 ## 基本信息

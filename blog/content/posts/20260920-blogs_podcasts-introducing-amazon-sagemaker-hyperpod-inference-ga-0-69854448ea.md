@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:16d0db708ac29d8027387ea6f2d519bc15124e1b650b06d77
 description: "这是一款运行在 Amazon SageMaker HyperPod 集群上的 Kubernetes 原生路由插件，利用实时 GPU 指标（缓存占用、队列深度、LoRA 适配器驻留等）在请求入口处自动选择最优后端，以降低首 token 延迟并提升 GPU 利用率。"
 external_url: https://aws.amazon.com/blogs/machine-learning/introducing-amazon-sagemaker-hyperpod-inference-gateway
 parent_observation_id: null
-last_seen_at: 2026-09-19T18:01:13.003718Z
+last_seen_at: 2026-09-20T00:00:00Z
 ---
 
 ## 基本信息

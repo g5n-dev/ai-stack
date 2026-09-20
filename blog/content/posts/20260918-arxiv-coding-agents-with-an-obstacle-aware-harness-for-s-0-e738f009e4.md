@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:f59e873bb7d7c21ae3293e27c758416bef94d1cc1ae4c3821
 description: "该研究评估了代码生成式机器人在必须避开障碍物的任务中的安全表现，发现现有系统在规划时倾向于只关注任务完成而忽视避障。通过将操控分解为路径阶段和接触阶段，提出了名为 SafeHarness 的框架，分别为路径规划和接触执行配备障碍感知模块，使安全约束能够被优先考虑。"
 external_url: http://arxiv.org/abs/2609.20822v1
 parent_observation_id: null
-last_seen_at: 2026-09-19T00:00:00Z
+last_seen_at: 2026-09-20T00:00:00Z
 ---
 
 ## 基本信息

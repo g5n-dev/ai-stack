@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:cbcc7e6ced907306abbc4a47830da04448ab35bcfd266d9e
 source_payload_sha256: "sha256:c2457b3909545799d6c19ce42e7932045418780e343b4a0f34ead35ac7ff1723"
 observation_id: obs_2ba3db2ddc592fd6fddc0470161438eca7b0e5a18958de16fe36ddccb33c03e9
 event_id: evt_e792a796ffe17c59f8a5e721e708325f6e90cd37317ef803a382d113278d27e6
-revision_id: rev_103969f819e5f7f59d02b9ac35d551dffd5f286fb71e710348f17b495d2e9e95
+revision_id: rev_135939e2b0643396871a57130066337efb13bbc54c76a68df21a45fa780d8f0e
 source_published_at: 2026-09-18T15:38:53Z
 first_seen_at: 2026-09-19T00:32:28Z
 timestamp_confidence: feed
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:bce3a86294d6a2b9631e565444a9401d2eb17a63b46357dae
 description: "本文说明如何把一套在自管理容器上运行的多模型 AI Agent 迁移到 Amazon Bedrock AgentCore 的托管运行时，保留原有业务逻辑并利用平台提供的伸缩、身份和可观测能力。"
 external_url: https://aws.amazon.com/blogs/machine-learning/migrating-multi-model-ai-agents-to-amazon-bedrock-agentcore-runtime
 parent_observation_id: null
-last_seen_at: 2026-09-19T00:20:45.846689Z
+last_seen_at: 2026-09-20T00:00:00Z
 ---
 
 ## 基本信息

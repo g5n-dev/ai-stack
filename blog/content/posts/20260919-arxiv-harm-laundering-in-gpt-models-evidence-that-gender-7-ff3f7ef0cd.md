@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:ef25569c30ae18eeb4f0fa2c6573033a59046bb07d81fcbb0
 description: "该研究指出，现有的安全评估依赖表层毒性指标，而模型实际上是将明显的歧视性内容转化为更隐蔽的形式，而非真正消除，这种现象被称为“危害洗白”。通过对 GPT 系列模型生成的性别导向文本进行大规模分析，揭示了不同代际模型在性别偏见表现上的转变。"
 external_url: http://arxiv.org/abs/2609.20779v1
 parent_observation_id: null
-last_seen_at: 2026-09-19T10:57:17.571650Z
+last_seen_at: 2026-09-20T00:00:00Z
 ---
 
 ## 基本信息
