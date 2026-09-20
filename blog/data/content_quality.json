@@ -22309,7 +22309,7 @@
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2611,
   "source_file_count": 3200,
-  "source_tree_sha256": "d24f916d14435cb55d877b716a88894131e08ae4c8dbaae9f39ca8ca986ef09e",
+  "source_tree_sha256": "7a87c700306c8f3b0f127395ab3d6f3c3e7cdf893add2546c669daaba0ad3197",
   "verified_provenance_count": 2924,
   "warning_counts": {
     "source_excerpt_truncated": 807
