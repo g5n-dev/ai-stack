@@ -1,8 +1,8 @@
 {
-  "active_count": 2920,
+  "active_count": 2922,
   "archived_count": 276,
   "complete_count": 76,
-  "interpreted_brief_count": 236,
+  "interpreted_brief_count": 237,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22208,6 +22208,15 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260920-blogs_podcasts-enhancing-industrial-safety-ai-with-synthetic-data-1-01e55e8631.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20260920-blogs_podcasts-how-mrh-trowe-enabled-secure-self-service-ai-agent-0-098d67a62d.md": {
       "reasons": [
         "interpreted_source_card"
@@ -22221,6 +22230,12 @@
       "status": "interpreted_brief"
     },
     "posts/20260920-blogs_podcasts-introducing-the-australian-youth-safety-blueprint-0-a00923bf4d.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260920-hacker_news-ai-and-the-destruction-of-the-creative-commons-7-8891b9d189.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -22280,11 +22295,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2608,
-  "source_file_count": 3196,
-  "source_tree_sha256": "f030e4d1e8b45f84fced4e1594edc21f028a99b9bc0cfacfdd641b8471c1dad3",
-  "verified_provenance_count": 2920,
+  "source_brief_count": 2609,
+  "source_file_count": 3198,
+  "source_tree_sha256": "426932637504826d3be5ed7e06c3e94534c0f4fcf3188b6bd3c91c2e40807293",
+  "verified_provenance_count": 2922,
   "warning_counts": {
-    "source_excerpt_truncated": 806
+    "source_excerpt_truncated": 807
   }
 }
