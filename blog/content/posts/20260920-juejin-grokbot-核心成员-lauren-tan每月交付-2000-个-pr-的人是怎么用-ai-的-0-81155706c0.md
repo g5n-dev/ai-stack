@@ -23,7 +23,7 @@ source_title_chars_original: 51
 description: "核心结论 这套方法论最核心的洞察不是\"怎么用AI写更多代码\"，而是\"怎么在AI产出大量代码之后还能保证质量\"。这两件事的难度不在同一个量级。 Lauren Tan的实践数据是每月交付1000至2000个PR，但她在文中强调了一个关键判断：600多个重构PR才是真实的基础设施。那晚自动合并的20个PR，只是输出。"
 external_url: https://juejin.cn/post/7687032811338891302
 observation_id: obs_81155706c0363ded4c1124e46c1e5f8c0bee16ba9b7d8f19f9e06619ba44fea1
-revision_id: rev_de3976d152cd4ed6893066765109a0f4ecc6efa8f17e4264d2b1f0e06d5ff23e
+revision_id: rev_14bfbad2d2d3a447d5d0dab0afb1f8ea6cc3343fa058824f4d681c9c108b0f07
 event_id: evt_b309c65cb9c5b68f1e10fb8db03bd111fa47554466352db3a1f7c813685ea950
 lineage_relation: original
 parent_observation_id: null
