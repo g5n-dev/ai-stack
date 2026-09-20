@@ -1,5 +1,5 @@
 {
-  "active_count": 2923,
+  "active_count": 2924,
   "archived_count": 276,
   "complete_count": 76,
   "interpreted_brief_count": 237,
@@ -22262,6 +22262,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260921-hacker_news-i-turned-jev-into-a-lousy-chatbot-6-6b1a637697.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260921-hacker_news-pirate-face-rescues-llm-models-from-deletion-6-bdc2bd4430.md": {
       "reasons": [
         "concise_source_card"
@@ -22301,10 +22307,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2610,
-  "source_file_count": 3199,
-  "source_tree_sha256": "e314657be9814cfcd597efe9dc3819212ae98882a7e48eab64dfd16214be86b7",
-  "verified_provenance_count": 2923,
+  "source_brief_count": 2611,
+  "source_file_count": 3200,
+  "source_tree_sha256": "d24f916d14435cb55d877b716a88894131e08ae4c8dbaae9f39ca8ca986ef09e",
+  "verified_provenance_count": 2924,
   "warning_counts": {
     "source_excerpt_truncated": 807
   }
