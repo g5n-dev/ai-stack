@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:2210ab03981057406bad49662958d524daca5218a8f3a65d5
 description: "这是一款利用 AI 代理进行面试与评估的招聘系统，能够在大量应聘者中统一、数据化地完成筛选并生成详细的评分报告。"
 external_url: https://aws.amazon.com/blogs/machine-learning/reduce-time-to-hire-for-quality-candidates-with-ai-powered-amazon-connect-talent
 parent_observation_id: null
-last_seen_at: 2026-09-19T00:00:00Z
+last_seen_at: 2026-09-20T00:00:00Z
 ---
 
 ## 基本信息

@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:77020a2422353c1089bc543b275b6db4a2e706e789a41d46
 source_payload_sha256: "sha256:a374570734a94ec00c8ef730345ac668d9c9b4452988fb99f862cdf53298423a"
 observation_id: obs_c87efd876aae4ae7c6acc1d475e2b83c9d8fc57abdb7c37d24f6b4673cfcfffd
 event_id: evt_76f43842794f8a4762c7527fd36977e802a726c4d8f56001d8975f6955e8bbdb
-revision_id: rev_e39f0719481add19bc95314766e8a4b961cb772faba883a72063210d6023a191
+revision_id: rev_96b34c3a68fc8f43bc14df36efa754f5871fc17e297ad87367ab38c634f453dd
 source_published_at: 2026-09-18T15:25:23Z
 first_seen_at: 2026-09-19T14:36:05Z
 timestamp_confidence: feed
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:457e6f3430ff24d1bee24e244f78991b605b2bc1c554bc65f
 description: "该内容介绍了利用编程代理配合 Hugging Face Skills 在 Amazon SageMaker AI 上部署模型的方法。无引导的编程代理容易因缺乏最新的部署知识而选错容器、配置不当，导致多次失败和额外计费。"
 external_url: https://aws.amazon.com/blogs/machine-learning/deploy-hugging-face-models-on-amazon-sagemaker-ai-with-coding-agents
 parent_observation_id: null
-last_seen_at: 2026-09-19T14:24:49.407346Z
+last_seen_at: 2026-09-20T00:00:00Z
 ---
 
 ## 基本信息

@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:3149811a22c9e154941ff0bdda3343573a65afe6d147a993
 source_payload_sha256: "sha256:6fb887be24303870c2e4c664650120fd29e363dbfe670915a01e949d6b2f1101"
 observation_id: obs_b9c21ef0e3f58c4a574995353e33b7961d212fa1ce3c5d526e4f8859339b211a
 event_id: evt_2b79656eb25fa1bfc094e0bf3e1015c534be739838ffe9886b656424b4d753e1
-revision_id: rev_7eecce6bda71ee8a20bea929fde4326ccf450e6810a117afadda3eda856b395b
+revision_id: rev_071526eaebe5256377a5f87932f7b707d5b135ee514119ab324b492d73ae4cd4
 source_published_at: 2026-09-19T09:20:58Z
 first_seen_at: 2026-09-19T11:09:50Z
 timestamp_confidence: platform
@@ -27,7 +27,7 @@ source_title_chars_original: 46
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://john.hartnup.uk/2026/06/07/ai-event-posters.html
 parent_observation_id: null
-last_seen_at: 2026-09-19T10:57:15.460809Z
+last_seen_at: 2026-09-20T00:00:00Z
 ---
 
 ## 基本信息

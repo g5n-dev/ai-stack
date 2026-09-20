@@ -1,8 +1,8 @@
 {
-  "active_count": 2915,
+  "active_count": 2918,
   "archived_count": 276,
-  "complete_count": 75,
-  "interpreted_brief_count": 234,
+  "complete_count": 76,
+  "interpreted_brief_count": 235,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22193,6 +22193,15 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260920-blogs_podcasts-a-shared-agentic-platform-for-wood-mackenzie-on-am-0-c5c96ab069.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20260920-blogs_podcasts-co-creating-the-future-of-fashion-with-google-0-332bec2b75.md": {
       "reasons": [
         "concise_source_card"
@@ -22212,6 +22221,12 @@
       "status": "source_brief"
     },
     "posts/20260920-hacker_news-almost-never-use-ai-to-write-anything-substantive-10-6d84fb98ba.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260920-hacker_news-can-you-tell-which-images-are-ai-generated-3-1e72b64cd6.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -22250,11 +22265,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2606,
-  "source_file_count": 3191,
-  "source_tree_sha256": "32952fc00809a9bc40732c718cd81ea1cde1f9e8804af8f1b475ebd497bb1cfd",
-  "verified_provenance_count": 2915,
+  "source_brief_count": 2607,
+  "source_file_count": 3194,
+  "source_tree_sha256": "b6b230d6f3d91827d5c38ac753a1809572d97b988f5c80f6cbb6ffd54849a8b9",
+  "verified_provenance_count": 2918,
   "warning_counts": {
-    "source_excerpt_truncated": 804
+    "source_excerpt_truncated": 805
   }
 }
