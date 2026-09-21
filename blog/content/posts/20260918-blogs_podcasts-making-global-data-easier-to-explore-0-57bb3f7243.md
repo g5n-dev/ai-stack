@@ -27,7 +27,7 @@ source_title_chars_original: 36
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://blog.google/innovation-and-ai/technology/ai/google-un-data-commons-platform
 parent_observation_id: null
-last_seen_at: 2026-09-20T00:00:00Z
+last_seen_at: 2026-09-21T00:00:00Z
 ---
 
 ## 基本信息

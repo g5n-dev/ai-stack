@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:ee011db0e493e35d1f74bbb6ae96d78801ef2cd450aa36d8
 source_payload_sha256: "sha256:4074e97e970738a384fba876bafbdedb3f5cbeb565923f7a8f6932bb9cea0ca1"
 observation_id: obs_6b1a63769769cc47059a076c7e222b8255602a339db30d61266ef9779e517efb
 event_id: evt_1275ecaecb75a9c4b0b11149cb00db015a6f21aa5fd18d636281ee34583a648a
-revision_id: rev_d1710312ee64d9810461a1ead4fa6744b1ca3eb841521ad54658612265bf6e7e
+revision_id: rev_4acdb6aa787641164194056861810061d578917998e99433a6e5653e35d62f36
 source_published_at: 2026-09-20T17:51:27Z
 first_seen_at: 2026-09-20T18:56:44Z
 timestamp_confidence: platform
@@ -27,7 +27,7 @@ source_title_chars_original: 35
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://github.com/kyle-pena-nlp/jevchat
 parent_observation_id: null
-last_seen_at: 2026-09-20T18:47:33.934020Z
+last_seen_at: 2026-09-21T00:00:00Z
 ---
 
 ## 基本信息

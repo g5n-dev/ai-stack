@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:e964a1db1a9b421ba42140167ce5427ac658dddeb46dd802f
 description: "这是一份AI领域的技术新闻合集，梳理了近期关于AI agent架构、分类器应用、垂直产品化以及多智能体研究的行业动态和社区讨论。"
 external_url: https://www.latent.space/p/ainews-not-much-happened-today-612
 parent_observation_id: null
-last_seen_at: 2026-09-20T00:00:00Z
+last_seen_at: 2026-09-21T00:00:00Z
 ---
 
 ## 基本信息

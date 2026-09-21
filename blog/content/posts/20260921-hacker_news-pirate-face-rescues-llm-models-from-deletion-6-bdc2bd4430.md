@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:ed2e75da6e25dc742576cf544f73c3516812748c30a50cef
 source_payload_sha256: "sha256:a3e00de35e49fbe733e8ed284ec03520be7f72bb0d80605fab84bc41b789c704"
 observation_id: obs_bdc2bd4430de2b29fc3887dd374b7c7418d54d9beef6d3fb74ebc7ba043847be
 event_id: evt_3b40927377dd3bbde074944f4fffa17e82f5775c2d01052becf2bc819998232f
-revision_id: rev_3af7d8c4ec8e2eff62b4702b9bd7df1f588d8284cf22972250cc7a19566656df
+revision_id: rev_b844be4e1ffb241a61633683950c1459bb237292d0580e102a8c3785ea20980b
 source_published_at: 2026-09-20T15:16:07Z
 first_seen_at: 2026-09-20T16:16:18Z
 timestamp_confidence: platform
@@ -27,7 +27,7 @@ source_title_chars_original: 44
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://pirateface.co
 parent_observation_id: null
-last_seen_at: 2026-09-20T16:04:38.230391Z
+last_seen_at: 2026-09-21T00:00:00Z
 ---
 
 ## 基本信息

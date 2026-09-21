@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:a340251a5cbe4f67366be947a793455be23ad72e0ee354cd9
 description: "该案例介绍了德国保险经纪公司MRH Trowe通过结合开源SDK、云计算平台和可定制的聊天界面，为员工搭建了受监管的安全AI代理系统，使非技术人员能够快速创建和使用AI代理处理业务任务，同时满足金融行业对数据安全、合规性和成本可控的要求。"
 external_url: https://aws.amazon.com/blogs/machine-learning/how-mrh-trowe-enabled-secure-self-service-ai-agents-in-financial-services
 parent_observation_id: null
-last_seen_at: 2026-09-20T06:15:56.653837Z
+last_seen_at: 2026-09-21T00:00:00Z
 ---
 
 ## 基本信息

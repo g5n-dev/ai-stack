@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:457e6f3430ff24d1bee24e244f78991b605b2bc1c554bc65f
 description: "该内容介绍了利用编程代理配合 Hugging Face Skills 在 Amazon SageMaker AI 上部署模型的方法。无引导的编程代理容易因缺乏最新的部署知识而选错容器、配置不当，导致多次失败和额外计费。"
 external_url: https://aws.amazon.com/blogs/machine-learning/deploy-hugging-face-models-on-amazon-sagemaker-ai-with-coding-agents
 parent_observation_id: null
-last_seen_at: 2026-09-20T00:00:00Z
+last_seen_at: 2026-09-21T00:00:00Z
 ---
 
 ## 基本信息

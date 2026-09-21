@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:f1ad8a8925521bc97c0ef6b29793148deec5ec262fe94da82
 description: "这是一套面向构建和运行 AI 代理的托管计算层，旨在通过在会话结束后立即释放不再使用的内存，并保持容器启动时间不受并发量或镜像大小的影响，实现弹性、优化的运行时性能。"
 external_url: https://aws.amazon.com/blogs/machine-learning/the-new-agentcore-runtime-elastic-optimized-and-consistently-fast-starts
 parent_observation_id: null
-last_seen_at: 2026-09-20T00:00:00Z
+last_seen_at: 2026-09-21T00:00:00Z
 ---
 
 ## 基本信息
