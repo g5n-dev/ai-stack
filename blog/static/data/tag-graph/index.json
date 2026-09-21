@@ -23,11 +23,11 @@
       "focus-shards/000-ae735c0a45a8.json",
       "focus-shards/001-555b7d0762cc.json",
       "focus-shards/002-1f6580b97e6b.json",
-      "focus-shards/003-483db04a9929.json",
+      "focus-shards/003-a30389352028.json",
       "focus-shards/004-08a9b1380f4a.json",
       "focus-shards/005-730d1a52eb3d.json",
       "focus-shards/006-fd94858e14f2.json",
-      "focus-shards/007-1592e1c862c1.json",
+      "focus-shards/007-a97d5048acbf.json",
       "focus-shards/008-04bb1de327fc.json",
       "focus-shards/009-8192c91e5b3e.json",
       "focus-shards/010-82102f585f91.json",
@@ -37,7 +37,7 @@
       "focus-shards/014-461ab09ac9c5.json",
       "focus-shards/015-b2ba5b0e007f.json",
       "focus-shards/016-1ae38f7f11ce.json",
-      "focus-shards/017-d7b199c132b5.json",
+      "focus-shards/017-d0b4d25ab8f7.json",
       "focus-shards/018-e3889572238e.json",
       "focus-shards/019-d1064b9fa1f2.json",
       "focus-shards/020-b4f5199b77bc.json",
@@ -64,7 +64,7 @@
       "focus-shards/041-dd22baf07836.json",
       "focus-shards/042-fe186731b614.json",
       "focus-shards/043-bd09ebfec2f1.json",
-      "focus-shards/044-cf9e051c6fa0.json",
+      "focus-shards/044-0566ea395837.json",
       "focus-shards/045-d08691919f9d.json",
       "focus-shards/046-9d1d2c8c3c5c.json",
       "focus-shards/047-b8569a492cd2.json",
@@ -80,7 +80,7 @@
       "focus-shards/057-6fb23ad7ec16.json",
       "focus-shards/058-b62ec82aac39.json",
       "focus-shards/059-7621eb5f1505.json",
-      "focus-shards/060-ed89fb9fa05a.json",
+      "focus-shards/060-3c98d22eb2b3.json",
       "focus-shards/061-b1731361fc10.json",
       "focus-shards/062-ff181fdea804.json",
       "focus-shards/063-fd0439bf9417.json",
@@ -92,11 +92,11 @@
       "focus-shards/069-eac25151e0b4.json",
       "focus-shards/070-d5c9ca6d0405.json",
       "focus-shards/071-18b1500e044a.json",
-      "focus-shards/072-8ee1a4f2122a.json",
+      "focus-shards/072-722817cabf92.json",
       "focus-shards/073-cf1c0d9ca09c.json",
       "focus-shards/074-9d5103f231ff.json",
-      "focus-shards/075-03e46059a91c.json",
-      "focus-shards/076-094ccb107aa3.json",
+      "focus-shards/075-c4477c81598a.json",
+      "focus-shards/076-f99090660e6b.json",
       "focus-shards/077-38056860cb2b.json",
       "focus-shards/078-0269085fbd08.json",
       "focus-shards/079-3f9052b8e1f6.json",
@@ -104,7 +104,7 @@
       "focus-shards/081-9567482f5d71.json",
       "focus-shards/082-1362f7521748.json",
       "focus-shards/083-8be09ecda047.json",
-      "focus-shards/084-4d79a0e6c552.json",
+      "focus-shards/084-d142fd6b34bb.json",
       "focus-shards/085-17048dad84f9.json",
       "focus-shards/086-a75594d75494.json",
       "focus-shards/087-cf30e9190d1e.json",
@@ -118,7 +118,7 @@
       "focus-shards/095-5f5c1e3d5662.json",
       "focus-shards/096-fea1e6b849ab.json",
       "focus-shards/097-60944de26813.json",
-      "focus-shards/098-86a54308ad0b.json",
+      "focus-shards/098-fe222abba8c5.json",
       "focus-shards/099-5e083eae516f.json",
       "focus-shards/100-1e9bfc916de8.json",
       "focus-shards/101-787ec49ba0ff.json",
@@ -131,12 +131,12 @@
       "focus-shards/108-893a0c43b75e.json",
       "focus-shards/109-316ff037857b.json",
       "focus-shards/110-d54e7436cec4.json",
-      "focus-shards/111-003d7bfa9e59.json",
+      "focus-shards/111-02d982393b3c.json",
       "focus-shards/112-1d7e99524fa5.json",
-      "focus-shards/113-ff4071bd754b.json",
+      "focus-shards/113-876f73fe5a45.json",
       "focus-shards/114-92f5f00dd55f.json",
       "focus-shards/115-43d285c93f57.json",
-      "focus-shards/116-79044641efde.json",
+      "focus-shards/116-b8776741f12b.json",
       "focus-shards/117-d614c465093e.json",
       "focus-shards/118-4c96bb1b68cb.json",
       "focus-shards/119-ffe1a3860164.json",
@@ -153,7 +153,7 @@
     "tag": "tag.json",
     "tagHot": "tag.hot.json"
   },
-  "generated_at": "2026-09-21T10:45:07Z",
+  "generated_at": "2026-09-21T17:07:59Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -193,7 +193,7 @@
   },
   "stats": {
     "links_by_type": {
-      "cooccurrence": 1367,
+      "cooccurrence": 1368,
       "relation": 71,
       "semantic": 39
     },
@@ -209,7 +209,7 @@
       "archived_article_files_skipped": 276,
       "archived_article_groups_skipped": 276,
       "avg_concepts_per_article": 0,
-      "avg_tags_per_article": 2.756655290102389,
+      "avg_tags_per_article": 2.7586912065439675,
       "canonical_duplicate_files_skipped": 0,
       "incomplete_article_files_skipped": 0,
       "incomplete_article_groups_skipped": 0,
@@ -218,7 +218,7 @@
         [
           "Hacker News",
           {
-            "article_count": 969,
+            "article_count": 970,
             "category": "article_tag",
             "description": "文章标签: Hacker News",
             "id": "Hacker News",
@@ -230,7 +230,7 @@
         [
           "AI Agent",
           {
-            "article_count": 907,
+            "article_count": 909,
             "category": "article_tag",
             "description": "文章标签: AI Agent",
             "id": "AI Agent",
@@ -242,7 +242,7 @@
         [
           "ArXiv",
           {
-            "article_count": 811,
+            "article_count": 812,
             "category": "article_tag",
             "description": "文章标签: ArXiv",
             "id": "ArXiv",
@@ -254,19 +254,19 @@
         [
           "大语言模型",
           {
-            "article_count": 807,
+            "article_count": 808,
             "category": "article_tag",
             "description": "文章标签: 大语言模型",
             "id": "大语言模型",
             "layer": "tag",
             "name": "大语言模型",
-            "related_count": 98
+            "related_count": 99
           }
         ],
         [
           "来源快报",
           {
-            "article_count": 707,
+            "article_count": 710,
             "category": "article_tag",
             "description": "文章标签: 来源快报",
             "id": "来源快报",
@@ -278,15 +278,15 @@
       ],
       "synthetic_article_files_skipped": 0,
       "synthetic_article_groups_skipped": 0,
-      "total_articles": 2930,
+      "total_articles": 2934,
       "total_concept_links": 0,
       "total_concepts": 0,
-      "total_tag_links": 1367,
+      "total_tag_links": 1368,
       "total_tags": 198
     },
-    "total_articles": 2930,
+    "total_articles": 2934,
     "total_communities": 12,
-    "total_links": 1477,
+    "total_links": 1478,
     "total_nodes": 267
   },
   "version": 2
