@@ -1,8 +1,8 @@
 {
-  "active_count": 2925,
+  "active_count": 2928,
   "archived_count": 276,
   "complete_count": 77,
-  "interpreted_brief_count": 237,
+  "interpreted_brief_count": 238,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22262,6 +22262,18 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260921-arxiv-designer-rsi-evolving-procedural-memory-from-user--0-720616ae89.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260921-hacker_news-ai-chatbots-give-wrong-answers-to-financial-querie-15-38701d43e7.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260921-hacker_news-i-turned-jev-into-a-lousy-chatbot-6-6b1a637697.md": {
       "reasons": [
         "concise_source_card"
@@ -22273,6 +22285,15 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260921-juejin-推荐一个牛逼的agentscope系统-1-47a2f2f1f5.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     }
   },
   "quarantined_count": 0,
@@ -22307,11 +22328,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2611,
-  "source_file_count": 3201,
-  "source_tree_sha256": "a699006395da2761f78f1b993a2ac0ada30115fcecec80fecdca4e5797402f53",
-  "verified_provenance_count": 2925,
+  "source_brief_count": 2613,
+  "source_file_count": 3204,
+  "source_tree_sha256": "2bb14fdd7691eaf1123a78b852f75baf206258a50958bc5ae1e740215b21a0f9",
+  "verified_provenance_count": 2928,
   "warning_counts": {
-    "source_excerpt_truncated": 807
+    "source_excerpt_truncated": 808
   }
 }
