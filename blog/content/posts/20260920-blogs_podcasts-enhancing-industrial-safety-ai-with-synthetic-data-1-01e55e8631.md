@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:58312df46bc86cae719a5135beeb0dfa1c064fd9b253bd06
 source_payload_sha256: "sha256:6f11ebc347d82fc25f87dfc7da4426b162d85a8a9539679cf2bb32211878e770"
 observation_id: obs_01e55e86316d216e5b1b25a250acfd96677ac81c1d17b8345122bdab7c2cd218
 event_id: evt_ff74653f9fa55165add617fd4e67bbde24a9ad5f899bf271ce7794347430c040
-revision_id: rev_8fb6180085e01c399819a7b42d947ffe11c4c02ba4b4555b92ea2ded1619ac5e
+revision_id: rev_b99325fc39abf7f84a9d3a4c070f8bebb8a4b84260121407810e1096f6e1bf54
 source_published_at: 2026-09-17T15:28:08Z
 first_seen_at: 2026-09-20T11:38:02Z
 timestamp_confidence: feed
@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:9338b6fe167ca6600eb408c0c7db6121e50bf483b7528a94e
 description: "该内容介绍一种基于Amazon SageMaker AI和Amazon Rekognition的合成数据增强方案，可在保留背景的图像中自动插入人物并生成标注，用于训练工业安全场景的人员检测模型。"
 external_url: https://aws.amazon.com/blogs/machine-learning/enhancing-industrial-safety-ai-with-synthetic-data-on-amazon-sagemaker-ai
 parent_observation_id: null
-last_seen_at: 2026-09-20T11:26:30.285088Z
+last_seen_at: 2026-09-21T00:00:00Z
 ---
 
 ## 基本信息

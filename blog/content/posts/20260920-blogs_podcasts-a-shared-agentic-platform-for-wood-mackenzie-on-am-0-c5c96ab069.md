@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:6658c38cd116244d8a4406107ebdcb29ce249dce77e1f32da
 description: "这是一篇企业案例，介绍Wood Mackenzie公司如何在Amazon Bedrock AgentCore基础上构建统一的AI代理平台（APEX），让多个业务团队无需各自搭建基础设施，即可快速上线代理功能。"
 external_url: https://aws.amazon.com/blogs/machine-learning/a-shared-agentic-platform-for-wood-mackenzie-on-amazon-bedrock-agentcore
 parent_observation_id: null
-last_seen_at: 2026-09-20T01:08:13.931244Z
+last_seen_at: 2026-09-21T00:00:00Z
 ---
 
 ## 基本信息

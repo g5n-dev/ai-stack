@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:bce3a86294d6a2b9631e565444a9401d2eb17a63b46357dae
 description: "本文说明如何把一套在自管理容器上运行的多模型 AI Agent 迁移到 Amazon Bedrock AgentCore 的托管运行时，保留原有业务逻辑并利用平台提供的伸缩、身份和可观测能力。"
 external_url: https://aws.amazon.com/blogs/machine-learning/migrating-multi-model-ai-agents-to-amazon-bedrock-agentcore-runtime
 parent_observation_id: null
-last_seen_at: 2026-09-20T00:00:00Z
+last_seen_at: 2026-09-21T00:00:00Z
 ---
 
 ## 基本信息

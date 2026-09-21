@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-09-20T18:48:46Z",
+  "generated_at": "2026-09-21T00:18:07Z",
   "items": [
     {
       "article_count": 905,
@@ -67,7 +67,7 @@
       "weighted_degree": 1496
     },
     {
-      "article_count": 538,
+      "article_count": 539,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 26,
@@ -77,7 +77,7 @@
       "legacy_id": "掘金",
       "name": "掘金",
       "rank": 5,
-      "weighted_degree": 1363
+      "weighted_degree": 1365
     },
     {
       "article_count": 809,
@@ -392,7 +392,7 @@
       "weighted_degree": 162
     },
     {
-      "article_count": 76,
+      "article_count": 77,
       "category": "article_tag",
       "community_id": "community:other",
       "degree": 9,
@@ -402,7 +402,20 @@
       "legacy_id": "工程实践",
       "name": "工程实践",
       "rank": 30,
-      "weighted_degree": 157
+      "weighted_degree": 159
+    },
+    {
+      "article_count": 76,
+      "category": "article_tag",
+      "community_id": "community:other",
+      "degree": 2,
+      "description": "文章标签: 来源转写",
+      "id": "tag:来源转写",
+      "layer": "tag",
+      "legacy_id": "来源转写",
+      "name": "来源转写",
+      "rank": 31,
+      "weighted_degree": 152
     },
     {
       "article_count": 43,
@@ -414,21 +427,8 @@
       "layer": "tag",
       "legacy_id": "Java",
       "name": "Java",
-      "rank": 31,
-      "weighted_degree": 151.6
-    },
-    {
-      "article_count": 75,
-      "category": "article_tag",
-      "community_id": "community:other",
-      "degree": 2,
-      "description": "文章标签: 来源转写",
-      "id": "tag:来源转写",
-      "layer": "tag",
-      "legacy_id": "来源转写",
-      "name": "来源转写",
       "rank": 32,
-      "weighted_degree": 150
+      "weighted_degree": 151.6
     },
     {
       "article_count": 29,
