@@ -1,7 +1,7 @@
 {
-  "active_count": 2930,
+  "active_count": 2934,
   "archived_count": 276,
-  "complete_count": 77,
+  "complete_count": 78,
   "interpreted_brief_count": 239,
   "legacy_analysis_count": 0,
   "pages": {
@@ -22306,6 +22306,24 @@
       "warnings": [
         "source_excerpt_truncated"
       ]
+    },
+    "posts/20260922-arxiv-value-sensitive-delegation-in-everyday-ai-agent-us-1-34d2daad3c.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260922-blogs_podcasts-how-bmw-group-detects-cost-anomalies-across-14000--0-e456ad33f9.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260922-hacker_news-show-hn-foremerge-catch-intent-conflicts-between-p-3-4a311e18c8.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -22340,10 +22358,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2614,
-  "source_file_count": 3206,
-  "source_tree_sha256": "9599e9f8d516a55730cdd1c7276252291fdc20c2c62553b96eb741332c47084c",
-  "verified_provenance_count": 2930,
+  "source_brief_count": 2617,
+  "source_file_count": 3210,
+  "source_tree_sha256": "79941515902e7563f218128d570107047d0caaf8c0a22c575f37510ebe4696b4",
+  "verified_provenance_count": 2934,
   "warning_counts": {
     "source_excerpt_truncated": 808
   }
