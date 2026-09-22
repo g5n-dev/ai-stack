@@ -1,8 +1,8 @@
 {
-  "active_count": 2937,
+  "active_count": 2939,
   "archived_count": 276,
   "complete_count": 78,
-  "interpreted_brief_count": 241,
+  "interpreted_brief_count": 242,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22307,6 +22307,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260922-arxiv-gamehorizon-suite-multi-horizon-data-and-evaluatio-0-8608f274b3.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260922-arxiv-predictable-failure-in-multi-hop-retrieval-score-d-2-eb070799a5.md": {
       "reasons": [
         "interpreted_source_card"
@@ -22345,6 +22351,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260922-hacker_news-study-young-users-9-to-18y-ditch-google-for-ai-wit-1-43d1379acd.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -22379,10 +22391,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2618,
-  "source_file_count": 3213,
-  "source_tree_sha256": "e9fd5bad42a0577239cd6c056fc9e9e55bee22c1e778d484a282b424022229c0",
-  "verified_provenance_count": 2937,
+  "source_brief_count": 2619,
+  "source_file_count": 3215,
+  "source_tree_sha256": "b7188185b22c7a4cfb22ece023b960e8d8301977f6c4cc3c0f4911cdc927ec43",
+  "verified_provenance_count": 2939,
   "warning_counts": {
     "source_excerpt_truncated": 809
   }
