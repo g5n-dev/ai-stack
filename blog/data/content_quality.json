@@ -1,5 +1,5 @@
 {
-  "active_count": 2939,
+  "active_count": 2941,
   "archived_count": 276,
   "complete_count": 78,
   "interpreted_brief_count": 242,
@@ -22325,6 +22325,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260922-arxiv-worldcrafter-consistent-video-world-model-with-imp-1-068d1ed02c.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260922-blogs_podcasts-how-bmw-group-detects-cost-anomalies-across-14000--0-e456ad33f9.md": {
       "reasons": [
         "concise_source_card"
@@ -22341,6 +22347,12 @@
       ]
     },
     "posts/20260922-hacker_news-ai-coding-has-made-ci-a-bottleneck-so-we-reworked--9-680b009e86.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260922-hacker_news-openai-gpt6-astra-breaks-enigma-message-that-has-r-0-1bc897209b.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -22391,10 +22403,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2619,
-  "source_file_count": 3215,
-  "source_tree_sha256": "b7188185b22c7a4cfb22ece023b960e8d8301977f6c4cc3c0f4911cdc927ec43",
-  "verified_provenance_count": 2939,
+  "source_brief_count": 2621,
+  "source_file_count": 3217,
+  "source_tree_sha256": "7c5e880dca7daedca374bd3e8d014a8fa51e7f299426259f0a843d834ad1baa6",
+  "verified_provenance_count": 2941,
   "warning_counts": {
     "source_excerpt_truncated": 809
   }
