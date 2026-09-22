@@ -15,7 +15,7 @@ observation_id: obs_e456ad33f99c6f888c6b09a77c8dd62420d539d497d18f091410194d255b
 event_id: evt_128b78e4eda9205c0b4af8abd102242f6cd9955caa570d3f2181066dbb74ac11
 revision_id: rev_10039ee0259a0a64520b02281cf7d60f180b48cec1744cf0b1378f2b5541aea3
 source_published_at: 2026-09-21T16:36:10Z
-first_seen_at: 2026-09-21T17:03:16.840891Z
+first_seen_at: 2026-09-21T17:19:14Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 65
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/how-bmw-group-detects-cost-anomalies-across-14000-cloud-accounts
 parent_observation_id: null
-last_seen_at: 2026-09-21T17:03:16.840891Z
+last_seen_at: 2026-09-22T00:00:00Z
 ---
 
 ## 基本信息

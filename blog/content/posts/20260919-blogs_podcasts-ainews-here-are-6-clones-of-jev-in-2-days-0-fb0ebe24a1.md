@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:b9f9d7cfc912b067ec5ababddc43056a54bb350abcf91c7e3
 description: "这段内容是AINews对一种非生成式决策模型（Jev）在短短两天内被多个团队快速复现并推出克隆版的综述，概述了各克隆的技术路线和已有的工作流集成案例。"
 external_url: https://www.latent.space/p/ainews-here-are-6-clones-of-jev-in
 parent_observation_id: null
-last_seen_at: 2026-09-21T00:00:00Z
+last_seen_at: 2026-09-22T00:00:00Z
 ---
 
 ## 基本信息

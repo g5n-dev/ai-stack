@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:e8ce0b3123f4538297911bba87b13f8960779e690c2dc8d34
 description: "该内容介绍一种持续适应框架，冻结的前沿模型通过大量工具操作专业设计软件，同时外部程序记忆以自然语言形态积累并细化可复用的设计流程。框架通过获取新子任务的流程并基于成功与失败执行结果修订已有流程，配合匹配的 replay 门只保留修复失败且不回归成功的改动。"
 external_url: http://arxiv.org/abs/2609.22086v1
 parent_observation_id: null
-last_seen_at: 2026-09-21T05:00:06.391901Z
+last_seen_at: 2026-09-22T00:00:00Z
 ---
 
 ## 基本信息

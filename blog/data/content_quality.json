@@ -1,8 +1,8 @@
 {
-  "active_count": 2934,
+  "active_count": 2937,
   "archived_count": 276,
   "complete_count": 78,
-  "interpreted_brief_count": 239,
+  "interpreted_brief_count": 241,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22307,6 +22307,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260922-arxiv-predictable-failure-in-multi-hop-retrieval-score-d-2-eb070799a5.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260922-arxiv-value-sensitive-delegation-in-everyday-ai-agent-us-1-34d2daad3c.md": {
       "reasons": [
         "concise_source_card"
@@ -22314,6 +22320,21 @@
       "status": "source_brief"
     },
     "posts/20260922-blogs_podcasts-how-bmw-group-detects-cost-anomalies-across-14000--0-e456ad33f9.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260922-blogs_podcasts-jev-system-one-models-for-prod-not-god-with-diogo--0-7409d5ffee.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
+    "posts/20260922-hacker_news-ai-coding-has-made-ci-a-bottleneck-so-we-reworked--9-680b009e86.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -22358,11 +22379,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2617,
-  "source_file_count": 3210,
-  "source_tree_sha256": "79941515902e7563f218128d570107047d0caaf8c0a22c575f37510ebe4696b4",
-  "verified_provenance_count": 2934,
+  "source_brief_count": 2618,
+  "source_file_count": 3213,
+  "source_tree_sha256": "e9fd5bad42a0577239cd6c056fc9e9e55bee22c1e778d484a282b424022229c0",
+  "verified_provenance_count": 2937,
   "warning_counts": {
-    "source_excerpt_truncated": 808
+    "source_excerpt_truncated": 809
   }
 }

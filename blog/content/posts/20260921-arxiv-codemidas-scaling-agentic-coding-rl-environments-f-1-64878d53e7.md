@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:ee798d7bffa1ec08340b473cc315498e7e2d6e7a5221cf154
 description: "CodeMidas 将开源代码库中已实现的功能转化为可执行的强化学习环境，用代理探索代码行为、自动生成测试并筛选任务，形成覆盖多种语言和领域的大规模训练数据集，用于提升编码代理在问题修复、整体程序构建以及终端工作等任务上的表现。"
 external_url: http://arxiv.org/abs/2609.22068v1
 parent_observation_id: null
-last_seen_at: 2026-09-21T10:42:52.966512Z
+last_seen_at: 2026-09-22T00:00:00Z
 ---
 
 ## 基本信息
