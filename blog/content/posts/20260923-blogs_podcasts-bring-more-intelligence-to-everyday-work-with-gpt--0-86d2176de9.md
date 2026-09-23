@@ -27,7 +27,7 @@ source_title_chars_original: 88
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/bring-more-intelligence-to-everyday-work-with-gpt-6-sol-and-gpt-6-luna-on-amazon-bedrock
 parent_observation_id: null
-last_seen_at: 2026-09-22T18:54:37.039693Z
+last_seen_at: 2026-09-23T00:00:00Z
 ---
 
 ## 基本信息

@@ -15,7 +15,7 @@ observation_id: obs_709f0ba0cc6c91a33f3c44e186bbe1262e3f8448e34d7d12f6d37902856e
 event_id: evt_da5a6cf8380e3778026c2f27a7a2c2199bc922cbe651b37ed4b7611ee2c98525
 revision_id: rev_797c67076cf671869d13e5151626ab6e8b2902017774c274640ff32403debb96
 source_published_at: 2026-09-22T21:07:39Z
-first_seen_at: 2026-09-22T22:08:46.321148Z
+first_seen_at: 2026-09-22T22:22:01Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:49e2d09fb9647d3f11396258543e8dcbb9308e81b7b93577b
 description: "这是一段播客访谈的文字记录，受访者是机器学习领域的知名研究者。内容围绕其团队开发的一套自动化科研辅助系统展开，该系统能够将科学问题转化为可评分任务，并借助大语言模型自动生成和优化实验方案。同时探讨了人工智能在气候变化研究中的实际应用案例。"
 external_url: https://www.latent.space/p/john-platt
 parent_observation_id: null
-last_seen_at: 2026-09-22T22:08:46.321148Z
+last_seen_at: 2026-09-23T00:00:00Z
 ---
 
 ## 基本信息

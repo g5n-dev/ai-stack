@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:32bb2dee238f5045e19a84ff26000c9c1d6faaa4bf502a89
 source_payload_sha256: "sha256:7381dbb48ae58072c319529eb71394e26b17b7fafd19546124b01bf799e7e8b6"
 observation_id: obs_1bc897209ba053366dc5f3ed85e565fb8b0026a0c4c8fe8ecd6c9cdc09b89463
 event_id: evt_fdbd6e5f70b00419670bcd2d51e92f79e106b43a4ffab92725d87dff532ca99e
-revision_id: rev_4182693c5cd4e1e87ece17423d01f53f1e551f0f7aa087a6d662449f7f69b92d
+revision_id: rev_0161285fcc6c2f275f6f2de1c4824a6c79afd3aaa869b72fd64b7f8ae8ad9415
 source_published_at: 2026-09-22T13:52:15Z
 first_seen_at: 2026-09-22T15:07:22Z
 timestamp_confidence: platform
@@ -27,7 +27,7 @@ source_title_chars_original: 78
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://www.cryptocellar.org/bgac/the-mvueh-break.html
 parent_observation_id: null
-last_seen_at: 2026-09-22T14:52:37.986150Z
+last_seen_at: 2026-09-23T00:00:00Z
 ---
 
 ## 基本信息

@@ -13,10 +13,10 @@ source_snapshot_sha256: "sha256:508a64fef727f414b4f3323c7a2f79c662f856ca001aa5f7
 source_payload_sha256: "sha256:241acdc313f250e8f6370178a56b8b29bd4a1ee5ca7a9bc1eab29c6e565dc517"
 observation_id: obs_73461b3e97af0d93277a11c940eddd760e1483f50dc51139e0bbfefde7d9b54f
 event_id: evt_90e111d731569cc46e0afd55551021cff4d019ca7a366832a63d14f6da906a5a
-revision_id: rev_0ffe6d314faf3396622d6d0b9b58141db6201aa3b290493babf899baa212bb50
-source_published_at: 2026-09-22T18:00:34Z
+revision_id: rev_b36cb6c68cf2c93caafb81de678647741aae09642453d101e89e5fbc71699b30
+source_published_at: 2026-09-22T18:00:00Z
 first_seen_at: 2026-09-22T19:07:26Z
-timestamp_confidence: platform
+timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
 discovery_method: "api_metadata"
@@ -27,7 +27,7 @@ source_title_chars_original: 18
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://openai.com/index/introducing-gpt-6-sol-and-luna
 parent_observation_id: null
-last_seen_at: 2026-09-22T18:54:14.531719Z
+last_seen_at: 2026-09-23T00:00:00Z
 ---
 
 ## 基本信息

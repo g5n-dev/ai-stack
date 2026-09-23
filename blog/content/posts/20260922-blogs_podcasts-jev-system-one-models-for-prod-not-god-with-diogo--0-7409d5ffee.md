@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:66274da6d54f322ac0768209f21453caa12bf0edc4027e2a7
 description: "这是一段访谈，探讨 Jev 的设计思路、RLCD（基于校准决策的强化学习）训练方法以及如何让模型在软件系统中实现可靠的概率预测。"
 external_url: https://www.latent.space/p/jev
 parent_observation_id: null
-last_seen_at: 2026-09-22T00:06:49.096466Z
+last_seen_at: 2026-09-23T00:00:00Z
 ---
 
 ## 基本信息
