@@ -1,8 +1,8 @@
 {
-  "active_count": 2950,
+  "active_count": 2953,
   "archived_count": 276,
   "complete_count": 79,
-  "interpreted_brief_count": 244,
+  "interpreted_brief_count": 246,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22370,6 +22370,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260923-arxiv-flash-dllm-io-aware-kv-caching-and-parallel-decodi-0-c45ca9ceec.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260923-arxiv-lora-generating-hypernetworks-for-efficient-on-dev-1-d0c52413c6.md": {
       "reasons": [
         "interpreted_source_card"
@@ -22400,6 +22406,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260923-blogs_podcasts-claude-opus-55-is-now-available-on-aws-0-7322241f50.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260923-hacker_news-claude-opus-55-0-0dd3bed5c7.md": {
       "reasons": [
         "concise_source_card"
@@ -22413,6 +22425,12 @@
       "status": "source_brief"
     },
     "posts/20260923-hacker_news-gpt-6-sol-and-luna-0-73461b3e97.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260923-hacker_news-pentagon-says-overreliance-on-ai-contributed-to-mi-10-918d27378b.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -22451,10 +22469,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2627,
-  "source_file_count": 3226,
-  "source_tree_sha256": "7712c504d742d65dee784fd5f4fcd542a6b973520b1eef09d0a54dbe63a8bf72",
-  "verified_provenance_count": 2950,
+  "source_brief_count": 2628,
+  "source_file_count": 3229,
+  "source_tree_sha256": "3acacc7bc2b52fe2ab72543ea8c222f996a45fb103aa463163db07f308d284e1",
+  "verified_provenance_count": 2953,
   "warning_counts": {
     "source_excerpt_truncated": 809
   }
