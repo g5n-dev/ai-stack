@@ -1,8 +1,8 @@
 {
-  "active_count": 2953,
+  "active_count": 2956,
   "archived_count": 276,
   "complete_count": 79,
-  "interpreted_brief_count": 246,
+  "interpreted_brief_count": 248,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22370,6 +22370,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260923-arxiv-agensh-scaling-organizational-intelligence-to-1024-1-8439166c93.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260923-arxiv-flash-dllm-io-aware-kv-caching-and-parallel-decodi-0-c45ca9ceec.md": {
       "reasons": [
         "interpreted_source_card"
@@ -22387,6 +22393,15 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260923-blogs_podcasts-ainews-claude-opus-55-the-new-default-model-for-ai-0-19163c30f0.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     },
     "posts/20260923-blogs_podcasts-an-oscar-two-asteroids-and-the-algorithm-in-your-s-0-709f0ba0cc.md": {
       "reasons": [
@@ -22435,6 +22450,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260923-hacker_news-the-download-why-ais-latest-breakthroughs-and-fear-5-9081062812.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -22469,11 +22490,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2628,
-  "source_file_count": 3229,
-  "source_tree_sha256": "3acacc7bc2b52fe2ab72543ea8c222f996a45fb103aa463163db07f308d284e1",
-  "verified_provenance_count": 2953,
+  "source_brief_count": 2629,
+  "source_file_count": 3232,
+  "source_tree_sha256": "7ecfbc5e187417add01d5ca6538883f13fe4cab5c0eae947dc85a7db71429249",
+  "verified_provenance_count": 2956,
   "warning_counts": {
-    "source_excerpt_truncated": 809
+    "source_excerpt_truncated": 810
   }
 }
