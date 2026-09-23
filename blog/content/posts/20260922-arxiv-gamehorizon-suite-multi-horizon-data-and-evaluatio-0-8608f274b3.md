@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:f93ff6147791db78b7e775ae5b338f23bd2604f4e920a23a1
 description: "它是一套针对视频游戏的多时间跨度数据和评测框架，包含自动化标注流程、大规模游戏录像与指令集合，以及可重复的离线与逐步在线评估模块。"
 external_url: http://arxiv.org/abs/2609.25001v1
 parent_observation_id: null
-last_seen_at: 2026-09-22T09:56:54.486583Z
+last_seen_at: 2026-09-23T00:00:00Z
 ---
 
 ## 基本信息

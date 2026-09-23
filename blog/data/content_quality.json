@@ -1,8 +1,8 @@
 {
-  "active_count": 2947,
+  "active_count": 2950,
   "archived_count": 276,
   "complete_count": 79,
-  "interpreted_brief_count": 243,
+  "interpreted_brief_count": 244,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22370,6 +22370,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260923-arxiv-lora-generating-hypernetworks-for-efficient-on-dev-1-d0c52413c6.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260923-arxiv-onpanda-efficient-annotation-of-on-policy-alignmen-1-ad60a02dc1.md": {
       "reasons": [
         "concise_source_card"
@@ -22382,6 +22388,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260923-blogs_podcasts-better-prompt-caching-for-gpt-6-0-f9027d80e8.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260923-blogs_podcasts-bring-more-intelligence-to-everyday-work-with-gpt--0-86d2176de9.md": {
       "reasons": [
         "concise_source_card"
@@ -22389,6 +22401,12 @@
       "status": "source_brief"
     },
     "posts/20260923-hacker_news-claude-opus-55-0-0dd3bed5c7.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260923-hacker_news-claude-opus-55-intelligence-performance-and-price--4-308053ac24.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -22433,10 +22451,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2625,
-  "source_file_count": 3223,
-  "source_tree_sha256": "5f8f32a0de038d302c095340f49cc0a7da0a402dac2f917a224f42f5f66c268e",
-  "verified_provenance_count": 2947,
+  "source_brief_count": 2627,
+  "source_file_count": 3226,
+  "source_tree_sha256": "7712c504d742d65dee784fd5f4fcd542a6b973520b1eef09d0a54dbe63a8bf72",
+  "verified_provenance_count": 2950,
   "warning_counts": {
     "source_excerpt_truncated": 809
   }
