@@ -1,8 +1,8 @@
 {
-  "active_count": 2959,
+  "active_count": 2963,
   "archived_count": 276,
-  "complete_count": 79,
-  "interpreted_brief_count": 249,
+  "complete_count": 80,
+  "interpreted_brief_count": 251,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22457,13 +22457,31 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260924-arxiv-cliffcompaction-cost-efficient-compaction-for-long-1-f20fc2a20e.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260924-arxiv-speakermem-r1-speaker-centered-dual-track-memory-f-1-1ef9cc7a7e.md": {
       "reasons": [
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260924-blogs_podcasts-from-portal-hopping-to-instant-answers-hemas-journ-0-b45d691505.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260924-blogs_podcasts-ringgs-ai-agents-resolve-up-to-65-of-customer-call-0-4e56c73123.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260924-hacker_news-claude-discovers-a-novel-enzyme-system-with-crispr-0-ef1b3a4772.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -22508,10 +22526,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2631,
-  "source_file_count": 3235,
-  "source_tree_sha256": "b5acd83686bfb1a2c3ca66ab1c3cd9e28ed7f64c7010c44f28be6685417e2ef5",
-  "verified_provenance_count": 2959,
+  "source_brief_count": 2632,
+  "source_file_count": 3239,
+  "source_tree_sha256": "a931ae2aaf64ebfcdb001f40b52fc2631586d12d18e5eae04bbbb7cf165498ee",
+  "verified_provenance_count": 2963,
   "warning_counts": {
     "source_excerpt_truncated": 810
   }
