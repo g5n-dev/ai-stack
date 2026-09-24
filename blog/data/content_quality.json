@@ -1,8 +1,8 @@
 {
-  "active_count": 2966,
+  "active_count": 2969,
   "archived_count": 276,
   "complete_count": 80,
-  "interpreted_brief_count": 252,
+  "interpreted_brief_count": 254,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22463,6 +22463,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260924-arxiv-on-the-diffusibility-of-high-dimensional-latents-0-6b817f2bc4.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260924-arxiv-speakermem-r1-speaker-centered-dual-track-memory-f-1-1ef9cc7a7e.md": {
       "reasons": [
         "interpreted_source_card"
@@ -22484,6 +22490,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260924-blogs_podcasts-bringing-private-processing-to-meta-ai-glasses-0-fe19c32b68.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260924-blogs_podcasts-from-portal-hopping-to-instant-answers-hemas-journ-0-b45d691505.md": {
       "reasons": [
         "interpreted_source_card"
@@ -22497,6 +22509,12 @@
       "status": "source_brief"
     },
     "posts/20260924-hacker_news-claude-discovers-a-novel-enzyme-system-with-crispr-0-ef1b3a4772.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260924-hacker_news-feds-target-ai-critics-as-foreign-agents-2-a124b92a0e.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -22547,10 +22565,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2634,
-  "source_file_count": 3242,
-  "source_tree_sha256": "f2dcd8cc4ce6d3c4ae8a8169a28fecf939067e39882d369caa4acc97704489d9",
-  "verified_provenance_count": 2966,
+  "source_brief_count": 2635,
+  "source_file_count": 3245,
+  "source_tree_sha256": "18630da84ad0446909926d999c20a6afc3e418ffc946140d51cbbb3c893233d2",
+  "verified_provenance_count": 2969,
   "warning_counts": {
     "source_excerpt_truncated": 811
   }

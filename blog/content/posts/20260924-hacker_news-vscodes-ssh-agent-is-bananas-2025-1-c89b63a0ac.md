@@ -13,9 +13,9 @@ source_snapshot_sha256: "sha256:2f39205f6f057a3f8296bd2c9c09e7eb01de6c77ec955c64
 source_payload_sha256: "sha256:d35e061da97b4b4bf54c493fc5db99407ac3d16c906b2a51d46300f7d2c2833c"
 observation_id: obs_c89b63a0acade8f6d22314946394bf3dccc1f5eebe4c022554b2ccd381add1ea
 event_id: evt_dee0a5d0ade089cb6e35eab9e8b71759e8b65817c98cf36690c5f3fd9d71556b
-revision_id: rev_91d6fc759212c59f2280529c54500944b2160d038f1a5f0e23443b7ca553eba5
+revision_id: rev_03ae9b20f01cc27a4af1fdcb228efa52ffa3241408b0f19c970615370058fda9
 source_published_at: 2026-09-23T21:01:48Z
-first_seen_at: 2026-09-23T23:41:44.864662Z
+first_seen_at: 2026-09-23T23:53:46Z
 timestamp_confidence: platform
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 36
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://fly.io/blog/vscode-ssh-wtf
 parent_observation_id: null
-last_seen_at: 2026-09-23T23:41:44.864662Z
+last_seen_at: 2026-09-24T00:00:00Z
 ---
 
 ## 基本信息
