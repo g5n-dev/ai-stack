@@ -14,7 +14,7 @@ source_payload_sha256: "sha256:b945850fecddfc4bd31942a3d80cc260ce0bd2a72bce40df4
 observation_id: obs_4e56c7312349a760a0edf744bd151f1352583693dfaa6156b9b09ca8e15ad634
 event_id: evt_b70d096250579170718921c0f2eb244f5c2177b959c789dc225ffbbce481f540
 revision_id: rev_a92d2dfef4622a75654b7352a1994155046fb5a0fb542184785b36885f3d1fbf
-source_published_at: 2026-09-24T12:00:00Z
+source_published_at: 2026-09-23T12:00:00Z
 first_seen_at: 2026-09-23T17:09:32Z
 timestamp_confidence: feed
 lineage_relation: original
@@ -27,7 +27,7 @@ source_title_chars_original: 65
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://openai.com/index/ringg
 parent_observation_id: null
-last_seen_at: 2026-09-23T16:56:56.666069Z
+last_seen_at: 2026-09-24T00:00:00Z
 ---
 
 ## 基本信息

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T23:43:18Z",
+  "generated_at": "2026-09-24T04:51:57Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -626,7 +626,7 @@
       "weighted_degree": 2
     },
     {
-      "article_count": 920,
+      "article_count": 922,
       "category": "ai",
       "color": "#7aa6b8",
       "community_id": null,
@@ -643,7 +643,7 @@
       "weighted_degree": 4.4
     },
     {
-      "article_count": 1126,
+      "article_count": 1128,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
@@ -656,7 +656,7 @@
       "legacy_id": "ai_ml",
       "level": 5,
       "name": "AI/ML项目",
-      "rank": 110,
+      "rank": 111,
       "weighted_degree": 7.2
     },
     {
@@ -847,7 +847,7 @@
       "weighted_degree": 0.6
     },
     {
-      "article_count": 60,
+      "article_count": 61,
       "category": "vision",
       "color": "#d97706",
       "community_id": null,
@@ -864,7 +864,7 @@
       "weighted_degree": 3.1
     },
     {
-      "article_count": 60,
+      "article_count": 61,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
@@ -1438,7 +1438,7 @@
       "legacy_id": "nlp",
       "level": 3,
       "name": "自然语言处理",
-      "rank": 172,
+      "rank": 173,
       "weighted_degree": 5.6
     },
     {
@@ -1523,7 +1523,7 @@
       "legacy_id": "pytorch",
       "level": 2,
       "name": "PyTorch",
-      "rank": 160,
+      "rank": 161,
       "weighted_degree": 7
     },
     {
@@ -1540,7 +1540,7 @@
       "legacy_id": "rag",
       "level": 4,
       "name": "RAG应用",
-      "rank": 161,
+      "rank": 162,
       "weighted_degree": 6.6
     },
     {
@@ -1595,7 +1595,7 @@
       "weighted_degree": 2.6
     },
     {
-      "article_count": 4,
+      "article_count": 5,
       "category": "infra",
       "color": "#cbd5e1",
       "community_id": null,

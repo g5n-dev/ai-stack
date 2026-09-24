@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:03f3160d86102a4374aecbf9a7e72b5ae8b9a802cceaec03b
 description: "Anthropic 推出了新版 Claude Opus 5.5，宣称在多数任务上接近上代旗舰水平，同时 API 费用下调约 40%，并在写作和信息组织上有所提升。"
 external_url: https://www.latent.space/p/ainews-claude-opus-55-the-new-default
 parent_observation_id: null
-last_seen_at: 2026-09-23T11:34:15.181617Z
+last_seen_at: 2026-09-24T00:00:00Z
 ---
 
 ## 基本信息

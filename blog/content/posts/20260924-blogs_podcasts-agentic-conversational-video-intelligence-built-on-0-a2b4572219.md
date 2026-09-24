@@ -15,7 +15,7 @@ observation_id: obs_a2b457221961f9263e3ee4cb7a7028384c9748a857491fd2b0b1c09a3f4d
 event_id: evt_7755d96b23a9a3af7242041015a3b4137ff66439db40217e7dc923949ed2b15c
 revision_id: rev_3c8ad35c41d523b14f70efcb8898e1c1e2c1848ce04ff6d67e9eb7d2dc7deef8
 source_published_at: 2026-09-23T18:21:54Z
-first_seen_at: 2026-09-23T23:41:57.554588Z
+first_seen_at: 2026-09-23T23:53:46Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:d89f2ae72088dd3982824aad778bfaef24ea8bd5c8454c122
 description: "这是一种基于云平台的视频智能查询方案，允许用户用自然语言向系统提问关于视频内容的问题，系统自动判断需要调用哪些分析服务来生成答案。用户无需为不同类型的问题分别构建处理流程。"
 external_url: https://aws.amazon.com/blogs/machine-learning/agentic-conversational-video-intelligence-built-on-aws
 parent_observation_id: null
-last_seen_at: 2026-09-23T23:41:57.554588Z
+last_seen_at: 2026-09-24T00:00:00Z
 ---
 
 ## 基本信息

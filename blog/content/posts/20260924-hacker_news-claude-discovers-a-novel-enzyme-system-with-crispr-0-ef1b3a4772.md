@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:7c5e9cd9c94f876c05de2cbb0312737925ed9f0a2d315b6e
 source_payload_sha256: "sha256:594d0a5f450d43381905ff61b8c44953e0f5c8c3545cf9cf228fa57123e38c35"
 observation_id: obs_ef1b3a4772eab8370f467eb49319d91c1c1642fda763a0cf8c75d29f7c5a5328
 event_id: evt_b51861eb94b6acd0ddbed58d32580c2a35ddde1073b6ba0f39afe00bf9b5c9f9
-revision_id: rev_d5a11182f907d0cf9d2ef6661bc5d0757a42ecb9f9dcb1e95eb0347b7175e001
+revision_id: rev_fe0fe7f963798a9c286819a04fffd83e78cb5c84803c7d48c21705c20a58fcd1
 source_published_at: 2026-09-23T18:06:47Z
 first_seen_at: 2026-09-23T20:33:59Z
 timestamp_confidence: platform
@@ -27,7 +27,7 @@ source_title_chars_original: 63
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://www.anthropic.com/news/claude-discovers-novel-enzyme-system
 parent_observation_id: null
-last_seen_at: 2026-09-23T20:21:14.356030Z
+last_seen_at: 2026-09-24T00:00:00Z
 ---
 
 ## 基本信息
