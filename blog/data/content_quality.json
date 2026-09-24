@@ -1,5 +1,5 @@
 {
-  "active_count": 2973,
+  "active_count": 2976,
   "archived_count": 276,
   "complete_count": 81,
   "interpreted_brief_count": 256,
@@ -22457,6 +22457,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260924-arxiv-can-llms-reason-about-runtime-behavior-a-repositor-3-abbef313fd.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260924-arxiv-cliffcompaction-cost-efficient-compaction-for-long-1-f20fc2a20e.md": {
       "reasons": [
         "interpreted_source_card"
@@ -22508,6 +22514,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260924-blogs_podcasts-foundries-vs-navigators-lowering-the-cost-of-scien-0-75ba7d33d5.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260924-blogs_podcasts-from-portal-hopping-to-instant-answers-hemas-journ-0-b45d691505.md": {
       "reasons": [
         "interpreted_source_card"
@@ -22515,6 +22527,12 @@
       "status": "interpreted_brief"
     },
     "posts/20260924-blogs_podcasts-ringgs-ai-agents-resolve-up-to-65-of-customer-call-0-4e56c73123.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260924-hacker_news-best-llm-for-every-budget-updated-daily-4-c15d41e703.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -22583,10 +22601,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2636,
-  "source_file_count": 3249,
-  "source_tree_sha256": "29021c22ccb6a4cb5cff8f3e6335895d0966c3f9c2853ee7d41b12630aac84c4",
-  "verified_provenance_count": 2973,
+  "source_brief_count": 2639,
+  "source_file_count": 3252,
+  "source_tree_sha256": "9b3dd5d039a647932609057b30a3580a77071c0d38fdddbd15faf60095f120ef",
+  "verified_provenance_count": 2976,
   "warning_counts": {
     "source_excerpt_truncated": 811
   }
