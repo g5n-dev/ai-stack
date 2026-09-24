@@ -1,8 +1,8 @@
 {
-  "active_count": 2976,
+  "active_count": 2980,
   "archived_count": 276,
-  "complete_count": 81,
-  "interpreted_brief_count": 256,
+  "complete_count": 82,
+  "interpreted_brief_count": 257,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22567,6 +22567,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260925-arxiv-nonequilibrium-phases-of-repulsive-self-attention--3-b96f629991.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260925-blogs_podcasts-speaker-labeled-transcription-with-whisperx-on-sag-0-779a1ba64a.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260925-hacker_news-security-auditing-in-the-age-of-good-enough-ai-12-44a4249ca6.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -22601,10 +22619,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2639,
-  "source_file_count": 3252,
-  "source_tree_sha256": "9b3dd5d039a647932609057b30a3580a77071c0d38fdddbd15faf60095f120ef",
-  "verified_provenance_count": 2976,
+  "source_brief_count": 2641,
+  "source_file_count": 3256,
+  "source_tree_sha256": "811d128f4b0880f9eed312499588d59265338b75a1c8cf0566d87d351abc71a8",
+  "verified_provenance_count": 2980,
   "warning_counts": {
     "source_excerpt_truncated": 811
   }
