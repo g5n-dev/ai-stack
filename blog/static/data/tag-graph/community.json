@@ -2,21 +2,21 @@
   "algorithm": "deterministic-weighted-label-propagation",
   "communities": [
     {
-      "article_count": 2967,
+      "article_count": 2971,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-71b1c43c48ef.json",
+      "hotspot_file": "community-hotspots/01-2fac22ebf9d6.json",
       "id": "community:tag:大语言模型",
       "leader_id": "tag:Hacker News",
       "name": "Hacker News",
       "node_count": 123,
       "rank": 1,
-      "tag_occurrences": 7950,
-      "weighted_degree": 22969.8
+      "tag_occurrences": 7963,
+      "weighted_degree": 23009.8
     },
     {
       "article_count": 12,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/02-853d49e15a25.json",
+      "hotspot_file": "community-hotspots/02-a29c707d6b85.json",
       "id": "community:tag:Machine learning",
       "leader_id": "tag:Artificial intelligence",
       "name": "Artificial intelligence",
@@ -28,7 +28,7 @@
     {
       "article_count": 12,
       "hotspot_count": 11,
-      "hotspot_file": "community-hotspots/03-0b6a79870b22.json",
+      "hotspot_file": "community-hotspots/03-5e5a75968c7c.json",
       "id": "community:tag:Gemini Notebook",
       "leader_id": "tag:Search",
       "name": "Search",
@@ -40,7 +40,7 @@
     {
       "article_count": 5,
       "hotspot_count": 8,
-      "hotspot_file": "community-hotspots/04-8cbb62e9ce5d.json",
+      "hotspot_file": "community-hotspots/04-7ccbb5d564e2.json",
       "id": "community:tag:ML Applications",
       "leader_id": "tag:Data Infrastructure",
       "name": "Data Infrastructure",
@@ -52,7 +52,7 @@
     {
       "article_count": 3,
       "hotspot_count": 7,
-      "hotspot_file": "community-hotspots/05-5209c063bc0d.json",
+      "hotspot_file": "community-hotspots/05-3e85e6959874.json",
       "id": "community:tag:Computer modeling",
       "leader_id": "tag:Algorithms",
       "name": "Algorithms",
@@ -64,7 +64,7 @@
     {
       "article_count": 3,
       "hotspot_count": 6,
-      "hotspot_file": "community-hotspots/06-c588d3213805.json",
+      "hotspot_file": "community-hotspots/06-c0445cc7c7a5.json",
       "id": "community:tag:Civil and environmental engineering",
       "leader_id": "tag:Education, teaching, academics",
       "name": "Education, teaching, academics",
@@ -76,7 +76,7 @@
     {
       "article_count": 3,
       "hotspot_count": 6,
-      "hotspot_file": "community-hotspots/07-0b91a245a676.json",
+      "hotspot_file": "community-hotspots/07-b286280c3aa1.json",
       "id": "community:tag:Amazon RDS",
       "leader_id": "tag:Amazon Elastic Kubernetes Service",
       "name": "Amazon Elastic Kubernetes Service",
@@ -88,7 +88,7 @@
     {
       "article_count": 5,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/08-42c9808511d0.json",
+      "hotspot_file": "community-hotspots/08-24dd7b594568.json",
       "id": "community:tag:Interview",
       "leader_id": "tag:Safety",
       "name": "Safety",
@@ -100,7 +100,7 @@
     {
       "article_count": 1,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/09-cdc2c947daa0.json",
+      "hotspot_file": "community-hotspots/09-aacd63ff5019.json",
       "id": "community:tag:Codex",
       "leader_id": "tag:ACP",
       "name": "ACP",
@@ -112,7 +112,7 @@
     {
       "article_count": 1,
       "hotspot_count": 3,
-      "hotspot_file": "community-hotspots/10-46b3b72667a3.json",
+      "hotspot_file": "community-hotspots/10-82291cdb0104.json",
       "id": "community:tag:Biology",
       "leader_id": "tag:Biological engineering",
       "name": "Biological engineering",
@@ -124,7 +124,7 @@
     {
       "article_count": 1,
       "hotspot_count": 3,
-      "hotspot_file": "community-hotspots/11-114c9af73d6c.json",
+      "hotspot_file": "community-hotspots/11-2a17bc68da7e.json",
       "id": "community:tag:Brain and cognitive sciences",
       "leader_id": "tag:Alumni/ae",
       "name": "Alumni/ae",
@@ -134,18 +134,18 @@
       "weighted_degree": 21
     },
     {
-      "article_count": 85,
+      "article_count": 86,
       "hotspot_count": 0,
       "id": "community:other",
       "leader_id": null,
       "name": "其他",
       "node_count": 10,
       "rank": 12,
-      "tag_occurrences": 168,
-      "weighted_degree": 366.6
+      "tag_occurrences": 170,
+      "weighted_degree": 370.6
     }
   ],
-  "generated_at": "2026-09-24T04:51:57Z",
+  "generated_at": "2026-09-24T10:03:47Z",
   "iterations": 8,
   "limit": 11,
   "links": [
@@ -171,7 +171,7 @@
       "strength": 1,
       "target": "community:tag:大语言模型",
       "type": "community",
-      "weight": 193
+      "weight": 195
     },
     {
       "id": "edge:community:community:tag:Amazon RDS->community:tag:大语言模型",
