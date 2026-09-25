@@ -1,8 +1,8 @@
 {
-  "active_count": 2985,
+  "active_count": 2988,
   "archived_count": 276,
-  "complete_count": 82,
-  "interpreted_brief_count": 261,
+  "complete_count": 83,
+  "interpreted_brief_count": 262,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22580,6 +22580,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260925-arxiv-llm-agents-can-easily-tamper-with-their-own-traces-0-4edb16da9a.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260925-arxiv-nonequilibrium-phases-of-repulsive-self-attention--3-b96f629991.md": {
       "reasons": [
         "interpreted_source_card"
@@ -22608,6 +22614,12 @@
       "status": "source_brief"
     },
     "posts/20260925-hacker_news-security-auditing-in-the-age-of-good-enough-ai-12-44a4249ca6.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260925-hacker_news-the-efficiency-throughput-gap-with-github-copilot-6-6e8b21b79a.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -22652,10 +22664,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2642,
-  "source_file_count": 3261,
-  "source_tree_sha256": "87fcc308d7ecc7f35be60a1ce857e1a78f1a206c42efb56dd5cd3c2e64bd4b37",
-  "verified_provenance_count": 2985,
+  "source_brief_count": 2643,
+  "source_file_count": 3264,
+  "source_tree_sha256": "866e032b1415982fccd97bc6f1f11ae38fc19d26cdb77b2512e778647730d35a",
+  "verified_provenance_count": 2988,
   "warning_counts": {
     "source_excerpt_truncated": 812
   }
