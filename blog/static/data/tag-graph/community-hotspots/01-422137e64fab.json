@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:大语言模型",
-  "generated_at": "2026-09-25T07:49:57Z",
+  "generated_at": "2026-09-25T13:49:34Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -26,7 +26,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 275
+      "weight": 276
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:掘金",
@@ -82,7 +82,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 199
+      "weight": 200
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:ArXiv",
@@ -226,7 +226,7 @@
       "strength": 1,
       "target": "tag:cs.AI",
       "type": "cooccurrence",
-      "weight": 81
+      "weight": 82
     },
     {
       "id": "edge:cooccurrence:tag:cs.AI->tag:来源快报",
@@ -234,7 +234,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 81
+      "weight": 82
     },
     {
       "id": "edge:cooccurrence:tag:大语言模型->tag:生成式 AI",
@@ -297,7 +297,7 @@
       "weighted_degree": 2519.2
     },
     {
-      "article_count": 755,
+      "article_count": 756,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -311,7 +311,7 @@
       "name": "来源快报",
       "rank": 3,
       "related_count": 126,
-      "weighted_degree": 2263
+      "weighted_degree": 2266
     },
     {
       "article_count": 535,
@@ -348,7 +348,7 @@
       "weighted_degree": 1379
     },
     {
-      "article_count": 829,
+      "article_count": 830,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -362,7 +362,7 @@
       "name": "ArXiv",
       "rank": 6,
       "related_count": 49,
-      "weighted_degree": 1309
+      "weighted_degree": 1312
     },
     {
       "article_count": 184,
@@ -484,6 +484,23 @@
       "weighted_degree": 526.6
     },
     {
+      "article_count": 201,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:大语言模型",
+      "degree": 60,
+      "description": "文章标签: AI",
+      "id": "tag:AI",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "AI",
+      "level": 6,
+      "name": "AI",
+      "rank": 14,
+      "related_count": 59,
+      "weighted_degree": 508.6
+    },
+    {
       "article_count": 141,
       "category": "article_tag",
       "color": "#f59e0b",
@@ -496,26 +513,9 @@
       "legacy_id": "命令行工具",
       "level": 6,
       "name": "命令行工具",
-      "rank": 14,
+      "rank": 15,
       "related_count": 26,
       "weighted_degree": 507.6
-    },
-    {
-      "article_count": 200,
-      "category": "article_tag",
-      "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
-      "degree": 60,
-      "description": "文章标签: AI",
-      "id": "tag:AI",
-      "layer": "tag",
-      "layer_name": "标签层",
-      "legacy_id": "AI",
-      "level": 6,
-      "name": "AI",
-      "rank": 15,
-      "related_count": 59,
-      "weighted_degree": 505.6
     },
     {
       "article_count": 126,
@@ -603,6 +603,23 @@
       "weighted_degree": 275
     },
     {
+      "article_count": 82,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:大语言模型",
+      "degree": 10,
+      "description": "文章标签: cs.AI",
+      "id": "tag:cs.AI",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "cs.AI",
+      "level": 6,
+      "name": "cs.AI",
+      "rank": 21,
+      "related_count": 10,
+      "weighted_degree": 264
+    },
+    {
       "article_count": 42,
       "category": "article_tag",
       "color": "#f59e0b",
@@ -615,26 +632,9 @@
       "legacy_id": "Announcements",
       "level": 6,
       "name": "Announcements",
-      "rank": 21,
+      "rank": 22,
       "related_count": 32,
       "weighted_degree": 263
-    },
-    {
-      "article_count": 81,
-      "category": "article_tag",
-      "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
-      "degree": 10,
-      "description": "文章标签: cs.AI",
-      "id": "tag:cs.AI",
-      "layer": "tag",
-      "layer_name": "标签层",
-      "legacy_id": "cs.AI",
-      "level": 6,
-      "name": "cs.AI",
-      "rank": 22,
-      "related_count": 10,
-      "weighted_degree": 261
     },
     {
       "article_count": 39,

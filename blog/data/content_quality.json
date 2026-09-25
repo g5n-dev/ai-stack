@@ -1,5 +1,5 @@
 {
-  "active_count": 2988,
+  "active_count": 2989,
   "archived_count": 276,
   "complete_count": 83,
   "interpreted_brief_count": 262,
@@ -22568,6 +22568,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260925-arxiv-ad-wm-action-discriminative-world-models-for-count-0-ca8e22822c.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260925-arxiv-cross-scale-transfer-learning-for-depression-sever-5-7d398d2fe2.md": {
       "reasons": [
         "interpreted_source_card"
@@ -22664,10 +22670,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2643,
-  "source_file_count": 3264,
-  "source_tree_sha256": "866e032b1415982fccd97bc6f1f11ae38fc19d26cdb77b2512e778647730d35a",
-  "verified_provenance_count": 2988,
+  "source_brief_count": 2644,
+  "source_file_count": 3265,
+  "source_tree_sha256": "4775fb6578984b0968286611c781c6fc7164b4cc5b44cd6086290fbdf33eee90",
+  "verified_provenance_count": 2989,
   "warning_counts": {
     "source_excerpt_truncated": 812
   }
