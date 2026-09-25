@@ -1,5 +1,5 @@
 {
-  "active_count": 2989,
+  "active_count": 2992,
   "archived_count": 276,
   "complete_count": 83,
   "interpreted_brief_count": 262,
@@ -22636,6 +22636,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260926-arxiv-temporal-gradient-inversion-for-private-trajectory-0-7f3c8a336f.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260926-blogs_podcasts-proaction-boosts-sales-60-and-saves-75-hours-with--0-9de028fbe4.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260926-hacker_news-classified-estimates-show-the-nsa-is-paying-billio-5-60b8559cd9.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -22670,10 +22688,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2644,
-  "source_file_count": 3265,
-  "source_tree_sha256": "4775fb6578984b0968286611c781c6fc7164b4cc5b44cd6086290fbdf33eee90",
-  "verified_provenance_count": 2989,
+  "source_brief_count": 2647,
+  "source_file_count": 3268,
+  "source_tree_sha256": "41b1f0f511cf4e63e3f6b3e4fbe572ad34170c089109f7346329daa0fec842b3",
+  "verified_provenance_count": 2992,
   "warning_counts": {
     "source_excerpt_truncated": 812
   }
