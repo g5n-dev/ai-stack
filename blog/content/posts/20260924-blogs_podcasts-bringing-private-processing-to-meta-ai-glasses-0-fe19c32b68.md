@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:5dcd66c9524d940d1868e811e7712411f6efb2d231e2e5fd9
 description: "这是一种面向AI眼镜的隐私计算方案。它在云端的机密虚拟机中运行模型，使得用户数据即使在处理时也保持加密且不可被平台访问。"
 external_url: https://engineering.fb.com/2026/09/23/security/private-processing-meta-ai-glasses
 parent_observation_id: null
-last_seen_at: 2026-09-24T04:48:45.797614Z
+last_seen_at: 2026-09-25T00:00:00Z
 ---
 
 ## 基本信息

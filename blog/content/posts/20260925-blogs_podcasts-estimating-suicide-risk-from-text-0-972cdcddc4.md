@@ -15,7 +15,7 @@ observation_id: obs_972cdcddc42f338f41110cfeb5550eb2b54084fd86b369f9cc8b3bdf3b03
 event_id: evt_c790d1b0521e1cb9b2ea380bde2b23514204157dcf6e82fd435857cc7361239d
 revision_id: rev_17d6a05bd508019db976f3fa0ad1cec6e1a9a8ce6d84ce97f8256a3be0fa2b33
 source_published_at: 2026-09-24T21:00:00Z
-first_seen_at: 2026-09-24T22:24:06.049007Z
+first_seen_at: 2026-09-24T22:35:58Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:23f8f582fb3ab80898abd89c50b95c65fdd957cd0a604f18f
 description: "这是一款基于词库的文本分析工具，能够在危机对话中快速评估自杀风险，并定位与最高风险相关的因素。"
 external_url: https://news.mit.edu/2026/estimating-suicide-risk-from-text-0924
 parent_observation_id: null
-last_seen_at: 2026-09-24T22:24:06.049007Z
+last_seen_at: 2026-09-25T00:00:00Z
 ---
 
 ## 基本信息

@@ -13,9 +13,9 @@ source_snapshot_sha256: "sha256:d4e135ec0fea2bc1c3700d57f3fe8fc2dbaa1018b346b2cf
 source_payload_sha256: "sha256:a231ba76b3f74aff936886adcccc879fbbd197be8086d46de8aa73550dd17c5d"
 observation_id: obs_4fee5780a16953f4a68b089b51624325b87a5c862bde74fa560bd24551bc811c
 event_id: evt_8bbb923a4561fea7ce25091b47c60f54a16b29d2982224787d8f2a88cf44ccc6
-revision_id: rev_3d14c1b03ae6bf7b071812c00b54384bcaa114ec48417957575dfee5b70e41eb
+revision_id: rev_f9963b570c016d0bf78c18bbb9b793b8f30de73d57487f8e1a8e8dfb937a85fd
 source_published_at: 2026-09-24T19:14:27Z
-first_seen_at: 2026-09-24T22:23:55.685039Z
+first_seen_at: 2026-09-24T22:35:58Z
 timestamp_confidence: platform
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 72
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://resobscura.substack.com/p/ai-labs-need-to-start-funding-historical
 parent_observation_id: null
-last_seen_at: 2026-09-24T22:23:55.685039Z
+last_seen_at: 2026-09-25T00:00:00Z
 ---
 
 ## 基本信息

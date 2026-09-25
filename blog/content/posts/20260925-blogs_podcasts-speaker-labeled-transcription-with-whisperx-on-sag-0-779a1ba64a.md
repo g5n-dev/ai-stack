@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:59e3c8835ef565a51ad405a078f72d5eca2db65541972dff
 source_payload_sha256: "sha256:f085391d0071fc6c8c871d7d625d36537ce7be1b90e4a063381d6cda4206415a"
 observation_id: obs_779a1ba64af323a34a47ec8faadab92b3dda7836d54ea3b4e91007e1a0fc79b7
 event_id: evt_219361563ff24996d41759b53a76b18ef475b5f43d3ee2d64dcafeef5aba97bf
-revision_id: rev_c282b81744c9d027bcce3aa9b79a3d155fa114a9b717cccc2e5b50630ef97ac2
+revision_id: rev_32f8bf428fb1af5b891f5df03cd1f0ba0c0bdc4a49216b204f24d799c146fd70
 source_published_at: 2026-09-24T16:20:12Z
 first_seen_at: 2026-09-24T19:23:44Z
 timestamp_confidence: feed
@@ -27,7 +27,7 @@ source_title_chars_original: 59
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/speaker-labeled-transcription-with-whisperx-on-sagemaker-ai
 parent_observation_id: null
-last_seen_at: 2026-09-24T19:09:31.384589Z
+last_seen_at: 2026-09-25T00:00:00Z
 ---
 
 ## 基本信息

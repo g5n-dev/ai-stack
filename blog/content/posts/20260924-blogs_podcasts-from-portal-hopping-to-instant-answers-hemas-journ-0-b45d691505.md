@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:626ec80160200bfaa104ce600ad5737163ce8d4f678547766
 description: "这条内容介绍了一家荷兰零售商如何通过构建内部AI助手来解决内部知识分散的痛点。团队利用MCP（Model Context Protocol）作为标准化接口，将分散在不同系统的知识整合到统一平台中，并通过Amazon Bedrock AgentCore托管AI代理能力。"
 external_url: https://aws.amazon.com/blogs/machine-learning/from-portal-hopping-to-instant-answers-hemas-journey-with-mcp-and-amazon-bedrock
 parent_observation_id: null
-last_seen_at: 2026-09-24T00:00:00Z
+last_seen_at: 2026-09-25T00:00:00Z
 ---
 
 ## 基本信息
