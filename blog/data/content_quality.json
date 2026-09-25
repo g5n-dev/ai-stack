@@ -1,8 +1,8 @@
 {
-  "active_count": 2992,
+  "active_count": 2996,
   "archived_count": 276,
-  "complete_count": 83,
-  "interpreted_brief_count": 262,
+  "complete_count": 84,
+  "interpreted_brief_count": 263,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22637,6 +22637,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260926-arxiv-agentic-detection-of-online-conspiracies-0-ee5658b6a1.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260926-arxiv-temporal-gradient-inversion-for-private-trajectory-0-7f3c8a336f.md": {
       "reasons": [
         "concise_source_card"
@@ -22649,7 +22655,22 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260926-blogs_podcasts-scaling-moe-reinforcement-learning-on-amazon-eks-w-0-95f314d997.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20260926-hacker_news-classified-estimates-show-the-nsa-is-paying-billio-5-60b8559cd9.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260926-hacker_news-revealing-the-details-of-how-openai-agents-hacked--1-f4f8fa0327.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -22688,11 +22709,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2647,
-  "source_file_count": 3268,
-  "source_tree_sha256": "41b1f0f511cf4e63e3f6b3e4fbe572ad34170c089109f7346329daa0fec842b3",
-  "verified_provenance_count": 2992,
+  "source_brief_count": 2649,
+  "source_file_count": 3272,
+  "source_tree_sha256": "66fef577bcce03ae9776b9971f19e92d1071012ff13a754c62e8f127582d082e",
+  "verified_provenance_count": 2996,
   "warning_counts": {
-    "source_excerpt_truncated": 812
+    "source_excerpt_truncated": 813
   }
 }
