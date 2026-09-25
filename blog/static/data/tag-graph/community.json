@@ -2,21 +2,21 @@
   "algorithm": "deterministic-weighted-label-propagation",
   "communities": [
     {
-      "article_count": 2987,
+      "article_count": 2990,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-422137e64fab.json",
+      "hotspot_file": "community-hotspots/01-b7345bbe3b11.json",
       "id": "community:tag:大语言模型",
       "leader_id": "tag:Hacker News",
       "name": "Hacker News",
       "node_count": 124,
       "rank": 1,
-      "tag_occurrences": 8025,
-      "weighted_degree": 23263.8
+      "tag_occurrences": 8035,
+      "weighted_degree": 23287.8
     },
     {
       "article_count": 13,
       "hotspot_count": 12,
-      "hotspot_file": "community-hotspots/02-2db58197f597.json",
+      "hotspot_file": "community-hotspots/02-d7d1be6f4045.json",
       "id": "community:tag:Machine learning",
       "leader_id": "tag:Research",
       "name": "Research",
@@ -28,7 +28,7 @@
     {
       "article_count": 12,
       "hotspot_count": 11,
-      "hotspot_file": "community-hotspots/03-aea777ae446f.json",
+      "hotspot_file": "community-hotspots/03-fe117a506302.json",
       "id": "community:tag:Gemini Notebook",
       "leader_id": "tag:Search",
       "name": "Search",
@@ -40,7 +40,7 @@
     {
       "article_count": 5,
       "hotspot_count": 8,
-      "hotspot_file": "community-hotspots/04-dd993b6a24e2.json",
+      "hotspot_file": "community-hotspots/04-bf923e8de8b5.json",
       "id": "community:tag:ML Applications",
       "leader_id": "tag:Data Infrastructure",
       "name": "Data Infrastructure",
@@ -52,7 +52,7 @@
     {
       "article_count": 3,
       "hotspot_count": 7,
-      "hotspot_file": "community-hotspots/05-fbdf61af60e8.json",
+      "hotspot_file": "community-hotspots/05-eb255b4b70d1.json",
       "id": "community:tag:Computer modeling",
       "leader_id": "tag:Algorithms",
       "name": "Algorithms",
@@ -64,7 +64,7 @@
     {
       "article_count": 3,
       "hotspot_count": 6,
-      "hotspot_file": "community-hotspots/06-bd86112f609d.json",
+      "hotspot_file": "community-hotspots/06-bfd5b40c7214.json",
       "id": "community:tag:Civil and environmental engineering",
       "leader_id": "tag:Education, teaching, academics",
       "name": "Education, teaching, academics",
@@ -76,7 +76,7 @@
     {
       "article_count": 3,
       "hotspot_count": 6,
-      "hotspot_file": "community-hotspots/07-eb0b31f0e389.json",
+      "hotspot_file": "community-hotspots/07-a5705714efa0.json",
       "id": "community:tag:Amazon RDS",
       "leader_id": "tag:Amazon Elastic Kubernetes Service",
       "name": "Amazon Elastic Kubernetes Service",
@@ -88,7 +88,7 @@
     {
       "article_count": 3,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/08-da6d7835df54.json",
+      "hotspot_file": "community-hotspots/08-2f4b43b9ef0b.json",
       "id": "community:tag:Medicine",
       "leader_id": "tag:Brain and cognitive sciences",
       "name": "Brain and cognitive sciences",
@@ -100,7 +100,7 @@
     {
       "article_count": 1,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/09-12deb5e930ed.json",
+      "hotspot_file": "community-hotspots/09-d2fda8ab7034.json",
       "id": "community:tag:Codex",
       "leader_id": "tag:ACP",
       "name": "ACP",
@@ -112,7 +112,7 @@
     {
       "article_count": 5,
       "hotspot_count": 4,
-      "hotspot_file": "community-hotspots/10-7fc65b476fd3.json",
+      "hotspot_file": "community-hotspots/10-a45160974d40.json",
       "id": "community:tag:Interview",
       "leader_id": "tag:Safety",
       "name": "Safety",
@@ -124,7 +124,7 @@
     {
       "article_count": 1,
       "hotspot_count": 3,
-      "hotspot_file": "community-hotspots/11-f7b7fc657d22.json",
+      "hotspot_file": "community-hotspots/11-2830760081a6.json",
       "id": "community:tag:Biology",
       "leader_id": "tag:Biological engineering",
       "name": "Biological engineering",
@@ -145,7 +145,7 @@
       "weighted_degree": 392.6
     }
   ],
-  "generated_at": "2026-09-25T13:49:34Z",
+  "generated_at": "2026-09-25T18:37:47Z",
   "iterations": 8,
   "limit": 11,
   "links": [
