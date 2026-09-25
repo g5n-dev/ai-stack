@@ -1,8 +1,8 @@
 {
-  "active_count": 2983,
+  "active_count": 2985,
   "archived_count": 276,
   "complete_count": 82,
-  "interpreted_brief_count": 259,
+  "interpreted_brief_count": 261,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22574,11 +22574,26 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260925-arxiv-hard-stop-kernel-level-preemption-and-containment--0-50aba05755.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260925-arxiv-nonequilibrium-phases-of-repulsive-self-attention--3-b96f629991.md": {
       "reasons": [
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20260925-blogs_podcasts-build-a-multi-account-ai-agent-with-agentcore-gate-0-cca310b8dc.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     },
     "posts/20260925-blogs_podcasts-estimating-suicide-risk-from-text-0-972cdcddc4.md": {
       "reasons": [
@@ -22638,10 +22653,10 @@
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2642,
-  "source_file_count": 3259,
-  "source_tree_sha256": "0db20b269f9022e90eae7519e6c55b416f1fc6ad0caa3f4ca144084fa7047422",
-  "verified_provenance_count": 2983,
+  "source_file_count": 3261,
+  "source_tree_sha256": "87fcc308d7ecc7f35be60a1ce857e1a78f1a206c42efb56dd5cd3c2e64bd4b37",
+  "verified_provenance_count": 2985,
   "warning_counts": {
-    "source_excerpt_truncated": 811
+    "source_excerpt_truncated": 812
   }
 }

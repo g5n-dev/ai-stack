@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:d89f2ae72088dd3982824aad778bfaef24ea8bd5c8454c122
 description: "这是一种基于云平台的视频智能查询方案，允许用户用自然语言向系统提问关于视频内容的问题，系统自动判断需要调用哪些分析服务来生成答案。用户无需为不同类型的问题分别构建处理流程。"
 external_url: https://aws.amazon.com/blogs/machine-learning/agentic-conversational-video-intelligence-built-on-aws
 parent_observation_id: null
-last_seen_at: 2026-09-24T00:00:00Z
+last_seen_at: 2026-09-25T00:00:00Z
 ---
 
 ## 基本信息
