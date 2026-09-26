@@ -1,8 +1,8 @@
 {
-  "active_count": 3007,
+  "active_count": 3010,
   "archived_count": 276,
-  "complete_count": 85,
-  "interpreted_brief_count": 266,
+  "complete_count": 86,
+  "interpreted_brief_count": 267,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22727,7 +22727,19 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260927-arxiv-requirement-bound-verified-commissioning-a-frozen--4-1e05a707cc.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260927-arxiv-trackeverything-long-horizon-dense-tracking-via-de-4-6414f904f1.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260927-hacker_news-drawgent-coding-agent-on-a-live-excalidraw-canvas-1-b716be8129.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -22772,10 +22784,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2656,
-  "source_file_count": 3283,
-  "source_tree_sha256": "1d98ebdcd48dfc5e466e2b6af23f58fe60569da0232d210ddc51c05c60f9363d",
-  "verified_provenance_count": 3007,
+  "source_brief_count": 2657,
+  "source_file_count": 3286,
+  "source_tree_sha256": "04981b27f6652dd169d68429d4b169f8de3eed435b14e1275152d3c7856f8bb6",
+  "verified_provenance_count": 3010,
   "warning_counts": {
     "source_excerpt_truncated": 814
   }
