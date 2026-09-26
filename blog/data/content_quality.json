@@ -1,8 +1,8 @@
 {
-  "active_count": 3010,
+  "active_count": 3012,
   "archived_count": 276,
   "complete_count": 86,
-  "interpreted_brief_count": 267,
+  "interpreted_brief_count": 268,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22727,6 +22727,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260927-arxiv-instrumental-monitor-evasion-emerges-under-ordinar-5-a262baf03d.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260927-arxiv-requirement-bound-verified-commissioning-a-frozen--4-1e05a707cc.md": {
       "reasons": [
         "interpreted_source_card"
@@ -22740,6 +22746,12 @@
       "status": "source_brief"
     },
     "posts/20260927-hacker_news-drawgent-coding-agent-on-a-live-excalidraw-canvas-1-b716be8129.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260927-hacker_news-how-to-keep-enjoying-programming-in-a-world-of-llm-14-e266205743.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -22784,10 +22796,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2657,
-  "source_file_count": 3286,
-  "source_tree_sha256": "04981b27f6652dd169d68429d4b169f8de3eed435b14e1275152d3c7856f8bb6",
-  "verified_provenance_count": 3010,
+  "source_brief_count": 2658,
+  "source_file_count": 3288,
+  "source_tree_sha256": "19e27b684bd70ce35ce0a647b1c9f4788d5ce1618ac0a3871df3e2c5099605d6",
+  "verified_provenance_count": 3012,
   "warning_counts": {
     "source_excerpt_truncated": 814
   }
