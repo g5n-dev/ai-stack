@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:23f8f582fb3ab80898abd89c50b95c65fdd957cd0a604f18f
 description: "这是一款基于词库的文本分析工具，能够在危机对话中快速评估自杀风险，并定位与最高风险相关的因素。"
 external_url: https://news.mit.edu/2026/estimating-suicide-risk-from-text-0924
 parent_observation_id: null
-last_seen_at: 2026-09-25T00:00:00Z
+last_seen_at: 2026-09-26T00:00:00Z
 ---
 
 ## 基本信息

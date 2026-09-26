@@ -13,9 +13,9 @@ source_snapshot_sha256: "sha256:83f55bf9df758a7dd06a3686a14a7f4464db4ff8bc8db397
 source_payload_sha256: "sha256:6ba1272970269e4d2472c95ef04ce2fc21e1b02f34170cb541b7252e40fe1252"
 observation_id: obs_f4f8fa032720fb5d70710daa2bf47eebc4a7ec36e90fc55d6c6dc42bb7fd283d
 event_id: evt_1dc4bf0161b938cbb9b385f32f630325a940c9d6443611e174b5f122305d100d
-revision_id: rev_9dee89d82487b1e2d0860cd5364c17b7a7fe487198f896b413d48c45b2234690
+revision_id: rev_7be26b84eaaf2b020d15a348628cbb927d975c726bad6248243598766ac0ddc3
 source_published_at: 2026-09-25T21:09:27Z
-first_seen_at: 2026-09-25T22:19:13.320682Z
+first_seen_at: 2026-09-25T22:32:54Z
 timestamp_confidence: platform
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 62
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://swarmtraces.org
 parent_observation_id: null
-last_seen_at: 2026-09-25T22:19:13.320682Z
+last_seen_at: 2026-09-26T00:00:00Z
 ---
 
 ## 基本信息

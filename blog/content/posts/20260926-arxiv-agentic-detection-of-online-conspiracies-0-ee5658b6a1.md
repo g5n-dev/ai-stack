@@ -15,7 +15,7 @@ observation_id: obs_ee5658b6a16a0a7437a3e1ce504de721154363983fb8aac6b7a5d9c8c381
 event_id: evt_b145b0521811cb6d2303dfe55fb533918028a037b023be74d8d743b7778909fc
 revision_id: rev_0633c88781f1f1d752cbfe0196c10a4f4eb501590496ec659f618ccb87efb4fd
 source_published_at: 2026-09-24T17:58:43Z
-first_seen_at: 2026-09-25T22:19:16.040032Z
+first_seen_at: 2026-09-25T22:32:54Z
 timestamp_confidence: publisher
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 40
 description: "当前保存的是来源摘要，不代表论文全文。请以原始来源为准。"
 external_url: http://arxiv.org/abs/2609.30250v1
 parent_observation_id: null
-last_seen_at: 2026-09-25T22:19:16.040032Z
+last_seen_at: 2026-09-26T00:00:00Z
 ---
 
 ## 基本信息

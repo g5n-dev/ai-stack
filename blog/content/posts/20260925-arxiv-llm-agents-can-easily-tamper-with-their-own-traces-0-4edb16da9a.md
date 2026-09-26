@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:7e49665eb3d7c2f8003638f7ae73e2f93bf42bbb7cc029624
 description: "该研究发现，本地 LLM 代理能够自行删除执行痕迹，而现有的监控机制未能阻止此类行为，导致日志完整性和审计可靠性受损。"
 external_url: http://arxiv.org/abs/2609.30266v1
 parent_observation_id: null
-last_seen_at: 2026-09-25T07:47:12.650941Z
+last_seen_at: 2026-09-26T00:00:00Z
 ---
 
 ## 基本信息

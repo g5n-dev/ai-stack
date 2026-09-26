@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:b284c60b607f8e4e26e96a10605c81822881f916bdee1b79d
 description: "这是一份关于 Meta Connect 2026 的资讯摘要，重点介绍了该公司发布的 Muse 个人 AI 助手、新款眼镜硬件、实时语音/视频功能以及配套的 Charm 钥匙链设备，并列出了多项商业与生产力合作项目。"
 external_url: https://www.latent.space/p/ainews-meta-connect-2026-muse-glasses
 parent_observation_id: null
-last_seen_at: 2026-09-25T00:00:00Z
+last_seen_at: 2026-09-26T00:00:00Z
 ---
 
 ## 基本信息
