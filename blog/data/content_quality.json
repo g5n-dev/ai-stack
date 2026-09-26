@@ -1,5 +1,5 @@
 {
-  "active_count": 3005,
+  "active_count": 3007,
   "archived_count": 276,
   "complete_count": 85,
   "interpreted_brief_count": 266,
@@ -22726,6 +22726,18 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260927-arxiv-trackeverything-long-horizon-dense-tracking-via-de-4-6414f904f1.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260927-hacker_news-show-hn-a-claude-code-skill-to-analyze-your-chess--3-4b894348ba.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -22760,10 +22772,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2654,
-  "source_file_count": 3281,
-  "source_tree_sha256": "16d1e3a13d13be76d7b9d8a6d1ba698629aa1b035d9f043d3abc120f4fb9cead",
-  "verified_provenance_count": 3005,
+  "source_brief_count": 2656,
+  "source_file_count": 3283,
+  "source_tree_sha256": "1d98ebdcd48dfc5e466e2b6af23f58fe60569da0232d210ddc51c05c60f9363d",
+  "verified_provenance_count": 3007,
   "warning_counts": {
     "source_excerpt_truncated": 814
   }
