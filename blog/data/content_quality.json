@@ -1,8 +1,8 @@
 {
-  "active_count": 3002,
+  "active_count": 3005,
   "archived_count": 276,
   "complete_count": 85,
-  "interpreted_brief_count": 265,
+  "interpreted_brief_count": 266,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22643,6 +22643,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260926-arxiv-coding-agents-for-generalized-task-and-motion-plan-2-44bb531f44.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260926-arxiv-rapid-robot-agentic-programming-from-demonstration-0-17bc28fb53.md": {
       "reasons": [
         "interpreted_source_card"
@@ -22685,6 +22691,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260926-github_trending-raywangqvq-bilibilitoolpro-4-33e65eca4b.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260926-hacker_news-a-single-function-jev-like-wrapper-for-llms-includ-0-0966d3f130.md": {
       "reasons": [
         "concise_source_card"
@@ -22692,6 +22704,12 @@
       "status": "source_brief"
     },
     "posts/20260926-hacker_news-classified-estimates-show-the-nsa-is-paying-billio-5-60b8559cd9.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260926-hacker_news-one-month-without-ai-7-f51481a21e.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -22742,10 +22760,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2652,
-  "source_file_count": 3278,
-  "source_tree_sha256": "c1e66d3db75abda6d97e0b8d6afebad74549a9ced3ff35e229db0a7eab02269f",
-  "verified_provenance_count": 3002,
+  "source_brief_count": 2654,
+  "source_file_count": 3281,
+  "source_tree_sha256": "16d1e3a13d13be76d7b9d8a6d1ba698629aa1b035d9f043d3abc120f4fb9cead",
+  "verified_provenance_count": 3005,
   "warning_counts": {
     "source_excerpt_truncated": 814
   }
