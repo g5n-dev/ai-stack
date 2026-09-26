@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-09-26T13:07:27Z",
+  "generated_at": "2026-09-26T17:12:52Z",
   "items": [
     {
       "article_count": 935,
@@ -28,7 +28,7 @@
       "weighted_degree": 2817.2
     },
     {
-      "article_count": 847,
+      "article_count": 848,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 103,
@@ -38,10 +38,10 @@
       "legacy_id": "大语言模型",
       "name": "大语言模型",
       "rank": 2,
-      "weighted_degree": 2540.2
+      "weighted_degree": 2542.2
     },
     {
-      "article_count": 770,
+      "article_count": 772,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 127,
@@ -51,7 +51,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 3,
-      "weighted_degree": 2307
+      "weighted_degree": 2312
     },
     {
       "article_count": 538,
@@ -80,7 +80,7 @@
       "weighted_degree": 1383
     },
     {
-      "article_count": 835,
+      "article_count": 836,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 49,
@@ -90,7 +90,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 1328
+      "weighted_degree": 1331
     },
     {
       "article_count": 185,
@@ -106,7 +106,7 @@
       "weighted_degree": 807
     },
     {
-      "article_count": 992,
+      "article_count": 993,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 21,
@@ -116,7 +116,7 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 8,
-      "weighted_degree": 719
+      "weighted_degree": 721
     },
     {
       "article_count": 162,
@@ -353,7 +353,7 @@
       "weighted_degree": 215
     },
     {
-      "article_count": 61,
+      "article_count": 62,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 20,
@@ -363,7 +363,7 @@
       "legacy_id": "计算机视觉",
       "name": "计算机视觉",
       "rank": 27,
-      "weighted_degree": 208.2
+      "weighted_degree": 211.2
     },
     {
       "article_count": 62,
@@ -379,6 +379,19 @@
       "weighted_degree": 206
     },
     {
+      "article_count": 51,
+      "category": "article_tag",
+      "community_id": "community:tag:大语言模型",
+      "degree": 9,
+      "description": "文章标签: cs.CV",
+      "id": "tag:cs.CV",
+      "layer": "tag",
+      "legacy_id": "cs.CV",
+      "name": "cs.CV",
+      "rank": 29,
+      "weighted_degree": 176
+    },
+    {
       "article_count": 85,
       "category": "article_tag",
       "community_id": "community:other",
@@ -388,21 +401,8 @@
       "layer": "tag",
       "legacy_id": "工程实践",
       "name": "工程实践",
-      "rank": 29,
-      "weighted_degree": 175
-    },
-    {
-      "article_count": 50,
-      "category": "article_tag",
-      "community_id": "community:tag:大语言模型",
-      "degree": 9,
-      "description": "文章标签: cs.CV",
-      "id": "tag:cs.CV",
-      "layer": "tag",
-      "legacy_id": "cs.CV",
-      "name": "cs.CV",
       "rank": 30,
-      "weighted_degree": 173
+      "weighted_degree": 175
     },
     {
       "article_count": 84,
@@ -1354,7 +1354,7 @@
       "weighted_degree": 8.6
     },
     {
-      "article_count": 847,
+      "article_count": 848,
       "category": "nlp",
       "community_id": null,
       "degree": 8,
@@ -2576,7 +2576,7 @@
       "weighted_degree": 3.4
     },
     {
-      "article_count": 61,
+      "article_count": 62,
       "category": "vision",
       "community_id": null,
       "degree": 4,
@@ -2888,7 +2888,7 @@
       "weighted_degree": 2.8
     },
     {
-      "article_count": 847,
+      "article_count": 848,
       "category": "ai",
       "community_id": null,
       "degree": 3,
@@ -3356,7 +3356,7 @@
       "weighted_degree": 0.6
     },
     {
-      "article_count": 61,
+      "article_count": 62,
       "category": "ai",
       "community_id": null,
       "degree": 1,
