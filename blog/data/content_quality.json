@@ -1,5 +1,5 @@
 {
-  "active_count": 3000,
+  "active_count": 3002,
   "archived_count": 276,
   "complete_count": 85,
   "interpreted_brief_count": 265,
@@ -22649,6 +22649,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260926-arxiv-semmsa-latent-semantic-aided-robust-multimodal-sen-2-d272faf7bf.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260926-arxiv-temporal-gradient-inversion-for-private-trajectory-0-7f3c8a336f.md": {
       "reasons": [
         "concise_source_card"
@@ -22678,6 +22684,12 @@
       "warnings": [
         "source_excerpt_truncated"
       ]
+    },
+    "posts/20260926-hacker_news-a-single-function-jev-like-wrapper-for-llms-includ-0-0966d3f130.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20260926-hacker_news-classified-estimates-show-the-nsa-is-paying-billio-5-60b8559cd9.md": {
       "reasons": [
@@ -22730,10 +22742,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2650,
-  "source_file_count": 3276,
-  "source_tree_sha256": "35bde0a265af24e94812d119edace28d2579601d803f74b815d886d8c7ef7f00",
-  "verified_provenance_count": 3000,
+  "source_brief_count": 2652,
+  "source_file_count": 3278,
+  "source_tree_sha256": "c1e66d3db75abda6d97e0b8d6afebad74549a9ced3ff35e229db0a7eab02269f",
+  "verified_provenance_count": 3002,
   "warning_counts": {
     "source_excerpt_truncated": 814
   }

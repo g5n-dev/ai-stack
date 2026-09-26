@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-09-26T01:36:52Z",
+  "generated_at": "2026-09-26T07:43:29Z",
   "items": [
     {
       "article_count": 934,
@@ -28,7 +28,7 @@
       "weighted_degree": 2813.2
     },
     {
-      "article_count": 844,
+      "article_count": 846,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 102,
@@ -38,10 +38,10 @@
       "legacy_id": "大语言模型",
       "name": "大语言模型",
       "rank": 2,
-      "weighted_degree": 2531.2
+      "weighted_degree": 2536.2
     },
     {
-      "article_count": 765,
+      "article_count": 767,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 126,
@@ -51,7 +51,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 3,
-      "weighted_degree": 2293
+      "weighted_degree": 2298
     },
     {
       "article_count": 538,
@@ -80,7 +80,7 @@
       "weighted_degree": 1383
     },
     {
-      "article_count": 833,
+      "article_count": 834,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 49,
@@ -90,7 +90,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 1321
+      "weighted_degree": 1324
     },
     {
       "article_count": 185,
@@ -106,7 +106,7 @@
       "weighted_degree": 807
     },
     {
-      "article_count": 990,
+      "article_count": 991,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 21,
@@ -116,7 +116,7 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 8,
-      "weighted_degree": 715
+      "weighted_degree": 717
     },
     {
       "article_count": 162,
@@ -366,7 +366,7 @@
       "weighted_degree": 208.2
     },
     {
-      "article_count": 61,
+      "article_count": 62,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 9,
@@ -376,7 +376,7 @@
       "legacy_id": "cs.CL",
       "name": "cs.CL",
       "rank": 28,
-      "weighted_degree": 203
+      "weighted_degree": 206
     },
     {
       "article_count": 85,
@@ -1354,7 +1354,7 @@
       "weighted_degree": 8.6
     },
     {
-      "article_count": 844,
+      "article_count": 846,
       "category": "nlp",
       "community_id": null,
       "degree": 8,
@@ -2875,7 +2875,7 @@
       "weighted_degree": 2.8
     },
     {
-      "article_count": 844,
+      "article_count": 846,
       "category": "ai",
       "community_id": null,
       "degree": 3,
