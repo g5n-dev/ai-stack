@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:8295442a74bb0f7513732841035e0672decae425b1abc232
 source_payload_sha256: "sha256:7decb6e3754ed89c0ce3f50bb097616438fa5e568786c9bf9ec7b7bb982ec33e"
 observation_id: obs_cca310b8dce1d42c7ad3300fbcae136961e31264b13bdaf7784c9e1d8a584dc9
 event_id: evt_b68eb5daadb0b2db29df017651ace17bdb3d55fc13ddf6405fa02e8428047dce
-revision_id: rev_f580c085510ce573d9d3d6a5745322ec89dfbadebd7fd96aa29ee9da28dd537a
+revision_id: rev_9474dc58289547df76b2c45d991c24554c873035e166d0192b6eb75bbc681dad
 source_published_at: 2026-09-24T16:12:47Z
 first_seen_at: 2026-09-25T01:44:58Z
 timestamp_confidence: feed
@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:7c16f85ba1dc93b511d1ac65ad0aaa07152affad6d8533677
 description: "这是一种在 AWS 多账户环境下，让 AI 代理能够统一查询分散在不同业务账户中的数据和工具，同时保持数据不出本地账户的架构方案。"
 external_url: https://aws.amazon.com/blogs/machine-learning/build-a-multi-account-ai-agent-with-agentcore-gateway-and-mcp
 parent_observation_id: null
-last_seen_at: 2026-09-25T01:30:24.159580Z
+last_seen_at: 2026-09-26T00:00:00Z
 ---
 
 ## 基本信息

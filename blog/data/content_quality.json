@@ -1,8 +1,8 @@
 {
-  "active_count": 2996,
+  "active_count": 3000,
   "archived_count": 276,
-  "complete_count": 84,
-  "interpreted_brief_count": 263,
+  "complete_count": 85,
+  "interpreted_brief_count": 265,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22643,11 +22643,26 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260926-arxiv-rapid-robot-agentic-programming-from-demonstration-0-17bc28fb53.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260926-arxiv-temporal-gradient-inversion-for-private-trajectory-0-7f3c8a336f.md": {
       "reasons": [
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260926-blogs_podcasts-openrouter-from-seed-to-stripe-with-openrouters-al-0-bfe1ce9ba4.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     },
     "posts/20260926-blogs_podcasts-proaction-boosts-sales-60-and-saves-75-hours-with--0-9de028fbe4.md": {
       "reasons": [
@@ -22671,6 +22686,12 @@
       "status": "source_brief"
     },
     "posts/20260926-hacker_news-revealing-the-details-of-how-openai-agents-hacked--1-f4f8fa0327.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260926-hacker_news-us-appeals-court-upholds-designation-of-anthropic--11-4bfa8e77be.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -22709,11 +22730,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2649,
-  "source_file_count": 3272,
-  "source_tree_sha256": "66fef577bcce03ae9776b9971f19e92d1071012ff13a754c62e8f127582d082e",
-  "verified_provenance_count": 2996,
+  "source_brief_count": 2650,
+  "source_file_count": 3276,
+  "source_tree_sha256": "35bde0a265af24e94812d119edace28d2579601d803f74b815d886d8c7ef7f00",
+  "verified_provenance_count": 3000,
   "warning_counts": {
-    "source_excerpt_truncated": 813
+    "source_excerpt_truncated": 814
   }
 }

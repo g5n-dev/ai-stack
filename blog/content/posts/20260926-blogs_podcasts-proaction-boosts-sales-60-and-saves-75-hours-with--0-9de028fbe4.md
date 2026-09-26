@@ -27,7 +27,7 @@ source_title_chars_original: 57
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://openai.com/index/proaction
 parent_observation_id: null
-last_seen_at: 2026-09-25T18:36:01.788434Z
+last_seen_at: 2026-09-26T00:00:00Z
 ---
 
 ## 基本信息
