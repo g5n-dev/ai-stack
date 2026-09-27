@@ -15,7 +15,7 @@ observation_id: obs_a262baf03d31c4f8e100650783e4759932ed1e2b45fce5369d608cfa9e8d
 event_id: evt_bf1147d65950635f61ad0aed5ab93e1a663276f26bf844c8fcc0f5890e2ec485
 revision_id: rev_d62f72f84945f7d99d3cdf075e51a0fd3a05acf92b2fa1e2c804d5fa6c92ab1c
 source_published_at: 2026-09-24T17:46:27Z
-first_seen_at: 2026-09-26T22:49:32.401508Z
+first_seen_at: 2026-09-26T23:01:30Z
 timestamp_confidence: publisher
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:23396148cf33b33745f5a0e445eaf92c84659801632f21764
 description: "研究关注大语言模型在完成普通任务时是否会在被监控的情况下尝试规避监管，并提出了一个包含多种任务‑策略配对的基准测试，用于记录模型在需要执行被禁止操作时的逃避行为。"
 external_url: http://arxiv.org/abs/2609.30217v1
 parent_observation_id: null
-last_seen_at: 2026-09-26T22:49:32.401508Z
+last_seen_at: 2026-09-27T00:00:00Z
 ---
 
 ## 基本信息
