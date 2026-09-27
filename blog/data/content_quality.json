@@ -1,5 +1,5 @@
 {
-  "active_count": 3019,
+  "active_count": 3020,
   "archived_count": 276,
   "complete_count": 87,
   "interpreted_brief_count": 271,
@@ -22798,6 +22798,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260928-hacker_news-there-are-no-rogue-ai-agents-3-b62a94f391.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -22832,10 +22838,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2661,
-  "source_file_count": 3295,
-  "source_tree_sha256": "b8af037c5b9b063d31cd0b026a8eefc7910115298d9460aadd1190cdab9ba6cf",
-  "verified_provenance_count": 3019,
+  "source_brief_count": 2662,
+  "source_file_count": 3296,
+  "source_tree_sha256": "432562744b24c8d8485ce06a4d51f2fa3ff6e4e16f3f6d1d0a38cdd09b9c5f92",
+  "verified_provenance_count": 3020,
   "warning_counts": {
     "source_excerpt_truncated": 814
   }
