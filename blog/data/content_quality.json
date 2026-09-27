@@ -1,8 +1,8 @@
 {
-  "active_count": 3017,
+  "active_count": 3019,
   "archived_count": 276,
   "complete_count": 87,
-  "interpreted_brief_count": 270,
+  "interpreted_brief_count": 271,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22727,6 +22727,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260927-arxiv-a-living-benchmark-for-information-retrieval-from--7-6c78261af7.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260927-arxiv-instrumental-monitor-evasion-emerges-under-ordinar-5-a262baf03d.md": {
       "reasons": [
         "interpreted_source_card"
@@ -22781,6 +22787,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260927-hacker_news-openai-feared-optics-of-what-might-appear-on-hacke-1-bf6e13bc84.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260927-hacker_news-show-hn-a-claude-code-skill-to-analyze-your-chess--3-4b894348ba.md": {
       "reasons": [
         "concise_source_card"
@@ -22820,10 +22832,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2660,
-  "source_file_count": 3293,
-  "source_tree_sha256": "01d5b13e88a49376b5897c27545187f4c3f7f9bfa00507de57bfc271a06962ac",
-  "verified_provenance_count": 3017,
+  "source_brief_count": 2661,
+  "source_file_count": 3295,
+  "source_tree_sha256": "b8af037c5b9b063d31cd0b026a8eefc7910115298d9460aadd1190cdab9ba6cf",
+  "verified_provenance_count": 3019,
   "warning_counts": {
     "source_excerpt_truncated": 814
   }
