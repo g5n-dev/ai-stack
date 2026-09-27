@@ -1,5 +1,5 @@
 {
-  "active_count": 3020,
+  "active_count": 3021,
   "archived_count": 276,
   "complete_count": 87,
   "interpreted_brief_count": 271,
@@ -22799,6 +22799,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20260928-hacker_news-show-hn-tinyaiarena-watch-ai-agents-battle-it-out-14-46124c83aa.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260928-hacker_news-there-are-no-rogue-ai-agents-3-b62a94f391.md": {
       "reasons": [
         "concise_source_card"
@@ -22838,10 +22844,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2662,
-  "source_file_count": 3296,
-  "source_tree_sha256": "432562744b24c8d8485ce06a4d51f2fa3ff6e4e16f3f6d1d0a38cdd09b9c5f92",
-  "verified_provenance_count": 3020,
+  "source_brief_count": 2663,
+  "source_file_count": 3297,
+  "source_tree_sha256": "7d1577afbb243a6cf779867271dc306482081b8c29dd97175c61a5bb71d06f59",
+  "verified_provenance_count": 3021,
   "warning_counts": {
     "source_excerpt_truncated": 814
   }
