@@ -13,9 +13,9 @@ source_snapshot_sha256: "sha256:b98602e80cc2360a9a94c511c91e8f7666c255affb0300df
 source_payload_sha256: "sha256:873e815346236bf573437a9589353310ffe234ba373239ae21715c55583d36aa"
 observation_id: obs_33e65eca4b58cd9db6ddb918d3d51df8b165e28d8c70f1bfaee81921a798f284
 event_id: evt_e9df41de39e3d85b000c17877d7d9fc9002b72fd91e08b4f36c57f5348453b95
-revision_id: rev_bc09b2d272abe5924d6c507fced7f391d24b9133982f9e592346127c64ba36b5
+revision_id: rev_56169ba121d88f112d096c5cae2d172f3250fc76eb4ef7d4b1a86400d7edd75d
 first_seen_at: 2026-09-26T13:17:23Z
-timestamp_confidence: unknown
+timestamp_confidence: git
 lineage_relation: original
 extractor_version: "source-contract-v1"
 discovery_method: "repository_metadata"
@@ -27,7 +27,7 @@ description: "当前只保存了标题与来源元数据，未抓取外链全文
 external_url: https://github.com/RayWangQvQ/BiliBiliToolPro
 parent_observation_id: null
 source_published_at: null
-last_seen_at: 2026-09-26T13:04:47.698275Z
+last_seen_at: 2026-09-27T00:00:00Z
 ---
 
 ## 基本信息

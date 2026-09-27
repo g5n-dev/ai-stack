@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:797898d6dda988d750ef4f68a75f5b4d39a302e1dd6b9618f
 description: "RAPID 是一种仅凭一次视觉示范即可自动生成、验证并改进机器人任务程序的方法，通过迭代式的代码优化循环把示范转化为可执行的策略。"
 external_url: http://arxiv.org/abs/2609.30249v1
 parent_observation_id: null
-last_seen_at: 2026-09-26T01:32:57.032334Z
+last_seen_at: 2026-09-27T00:00:00Z
 ---
 
 ## 基本信息
