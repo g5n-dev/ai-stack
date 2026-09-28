@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-09-28T06:56:22Z",
+  "generated_at": "2026-09-28T15:29:47Z",
   "items": [
     {
       "article_count": 942,
@@ -41,7 +41,7 @@
       "weighted_degree": 2560.2
     },
     {
-      "article_count": 787,
+      "article_count": 789,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 127,
@@ -51,7 +51,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 3,
-      "weighted_degree": 2351
+      "weighted_degree": 2356
     },
     {
       "article_count": 538,
@@ -80,7 +80,7 @@
       "weighted_degree": 1389
     },
     {
-      "article_count": 842,
+      "article_count": 843,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 49,
@@ -90,23 +90,23 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 6,
-      "weighted_degree": 1351
+      "weighted_degree": 1354
     },
     {
-      "article_count": 185,
+      "article_count": 186,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
-      "degree": 68,
+      "degree": 69,
       "description": "文章标签: 生成式 AI",
       "id": "tag:生成式 AI",
       "layer": "tag",
       "legacy_id": "生成式 AI",
       "name": "生成式 AI",
       "rank": 7,
-      "weighted_degree": 807
+      "weighted_degree": 810
     },
     {
-      "article_count": 1001,
+      "article_count": 1002,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 21,
@@ -116,7 +116,7 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 8,
-      "weighted_degree": 738
+      "weighted_degree": 740
     },
     {
       "article_count": 111,
@@ -184,7 +184,7 @@
       "weighted_degree": 526.6
     },
     {
-      "article_count": 208,
+      "article_count": 209,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 61,
@@ -194,7 +194,7 @@
       "legacy_id": "AI",
       "name": "AI",
       "rank": 14,
-      "weighted_degree": 523.6
+      "weighted_degree": 525.6
     },
     {
       "article_count": 141,
@@ -1471,7 +1471,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 1159,
+      "article_count": 1160,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -2228,13 +2228,26 @@
       "article_count": 2,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
+      "degree": 4,
+      "description": "文章标签: stat.ML",
+      "id": "tag:stat.ML",
+      "layer": "tag",
+      "legacy_id": "stat.ML",
+      "name": "stat.ML",
+      "rank": 171,
+      "weighted_degree": 6
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "community_id": "community:tag:大语言模型",
       "degree": 3,
       "description": "文章标签: cs.CY",
       "id": "tag:cs.CY",
       "layer": "tag",
       "legacy_id": "cs.CY",
       "name": "cs.CY",
-      "rank": 171,
+      "rank": 172,
       "weighted_degree": 6
     },
     {
@@ -2247,7 +2260,7 @@
       "layer": "tag",
       "legacy_id": "eess.SP",
       "name": "eess.SP",
-      "rank": 172,
+      "rank": 173,
       "weighted_degree": 6
     },
     {
@@ -2260,7 +2273,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Bedrock Agents",
       "name": "Amazon Bedrock Agents",
-      "rank": 173,
+      "rank": 174,
       "weighted_degree": 6
     },
     {
@@ -2273,7 +2286,7 @@
       "layer": "tag",
       "legacy_id": "DevInfra",
       "name": "DevInfra",
-      "rank": 174,
+      "rank": 175,
       "weighted_degree": 6
     },
     {
@@ -2286,7 +2299,7 @@
       "layer": "tag",
       "legacy_id": "Open Source",
       "name": "Open Source",
-      "rank": 175,
+      "rank": 176,
       "weighted_degree": 6
     },
     {
@@ -2299,7 +2312,7 @@
       "layer": "model",
       "legacy_id": "nlp",
       "name": "自然语言处理",
-      "rank": 176,
+      "rank": 177,
       "weighted_degree": 5.6
     },
     {
@@ -2312,7 +2325,7 @@
       "layer": "tag",
       "legacy_id": "Amazon VPC",
       "name": "Amazon VPC",
-      "rank": 177,
+      "rank": 178,
       "weighted_degree": 5
     },
     {
@@ -2325,7 +2338,7 @@
       "layer": "tag",
       "legacy_id": "AWS Glue",
       "name": "AWS Glue",
-      "rank": 178,
+      "rank": 179,
       "weighted_degree": 5
     },
     {
@@ -2338,7 +2351,7 @@
       "layer": "tag",
       "legacy_id": "Gemini Notebook",
       "name": "Gemini Notebook",
-      "rank": 179,
+      "rank": 180,
       "weighted_degree": 5
     },
     {
@@ -2351,7 +2364,7 @@
       "layer": "tag",
       "legacy_id": "Google Health",
       "name": "Google Health",
-      "rank": 180,
+      "rank": 181,
       "weighted_degree": 5
     },
     {
@@ -2364,7 +2377,7 @@
       "layer": "tag",
       "legacy_id": "Google Research",
       "name": "Google Research",
-      "rank": 181,
+      "rank": 182,
       "weighted_degree": 5
     },
     {
@@ -2377,7 +2390,7 @@
       "layer": "application",
       "legacy_id": "agent",
       "name": "AI Agent",
-      "rank": 182,
+      "rank": 183,
       "weighted_degree": 4.4
     },
     {
@@ -2390,7 +2403,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Rekognition",
       "name": "Amazon Rekognition",
-      "rank": 183,
+      "rank": 184,
       "weighted_degree": 4
     },
     {
@@ -2403,7 +2416,7 @@
       "layer": "tag",
       "legacy_id": "Analytics",
       "name": "Analytics",
-      "rank": 184,
+      "rank": 185,
       "weighted_degree": 4
     },
     {
@@ -2416,7 +2429,7 @@
       "layer": "tag",
       "legacy_id": "Applied AI",
       "name": "Applied AI",
-      "rank": 185,
+      "rank": 186,
       "weighted_degree": 4
     },
     {
@@ -2429,7 +2442,7 @@
       "layer": "tag",
       "legacy_id": "AWS DeepRacer",
       "name": "AWS DeepRacer",
-      "rank": 186,
+      "rank": 187,
       "weighted_degree": 4
     },
     {
@@ -2442,7 +2455,7 @@
       "layer": "tag",
       "legacy_id": "cs.NE",
       "name": "cs.NE",
-      "rank": 187,
+      "rank": 188,
       "weighted_degree": 4
     },
     {
@@ -2455,7 +2468,7 @@
       "layer": "tag",
       "legacy_id": "Google Ads",
       "name": "Google Ads",
-      "rank": 188,
+      "rank": 189,
       "weighted_degree": 4
     },
     {
@@ -2468,7 +2481,7 @@
       "layer": "tag",
       "legacy_id": "Travel",
       "name": "Travel",
-      "rank": 189,
+      "rank": 190,
       "weighted_degree": 4
     },
     {
@@ -2481,7 +2494,7 @@
       "layer": "tag",
       "legacy_id": "WhatsApp",
       "name": "WhatsApp",
-      "rank": 190,
+      "rank": 191,
       "weighted_degree": 4
     },
     {
@@ -2494,7 +2507,7 @@
       "layer": "tag",
       "legacy_id": "Work & Life",
       "name": "Work & Life",
-      "rank": 191,
+      "rank": 192,
       "weighted_degree": 4
     },
     {
@@ -2507,7 +2520,7 @@
       "layer": "application",
       "legacy_id": "chatbot",
       "name": "聊天机器人",
-      "rank": 192,
+      "rank": 193,
       "weighted_degree": 4
     },
     {
@@ -2520,7 +2533,7 @@
       "layer": "framework",
       "legacy_id": "tensorflow",
       "name": "TensorFlow",
-      "rank": 193,
+      "rank": 194,
       "weighted_degree": 4
     },
     {
@@ -2533,7 +2546,7 @@
       "layer": "framework",
       "legacy_id": "transformers",
       "name": "Transformers",
-      "rank": 194,
+      "rank": 195,
       "weighted_degree": 4
     },
     {
@@ -2546,7 +2559,7 @@
       "layer": "language",
       "legacy_id": "typescript",
       "name": "TypeScript",
-      "rank": 195,
+      "rank": 196,
       "weighted_degree": 3.6
     },
     {
@@ -2559,7 +2572,7 @@
       "layer": "tag",
       "legacy_id": "C++",
       "name": "C++",
-      "rank": 196,
+      "rank": 197,
       "weighted_degree": 3.6
     },
     {
@@ -2572,7 +2585,7 @@
       "layer": "scenario",
       "legacy_id": "data_science",
       "name": "数据科学",
-      "rank": 197,
+      "rank": 198,
       "weighted_degree": 3.4
     },
     {
@@ -2585,7 +2598,7 @@
       "layer": "model",
       "legacy_id": "cv",
       "name": "计算机视觉",
-      "rank": 198,
+      "rank": 199,
       "weighted_degree": 3.1
     },
     {
@@ -2598,7 +2611,7 @@
       "layer": "tag",
       "legacy_id": "C#",
       "name": "C#",
-      "rank": 199,
+      "rank": 200,
       "weighted_degree": 3
     },
     {
@@ -2611,7 +2624,7 @@
       "layer": "tag",
       "legacy_id": "cond-mat.dis-nn",
       "name": "cond-mat.dis-nn",
-      "rank": 200,
+      "rank": 201,
       "weighted_degree": 3
     },
     {
@@ -2624,7 +2637,7 @@
       "layer": "tag",
       "legacy_id": "cs.DB",
       "name": "cs.DB",
-      "rank": 201,
+      "rank": 202,
       "weighted_degree": 3
     },
     {
@@ -2637,7 +2650,7 @@
       "layer": "tag",
       "legacy_id": "cs.DC",
       "name": "cs.DC",
-      "rank": 202,
+      "rank": 203,
       "weighted_degree": 3
     },
     {
@@ -2650,7 +2663,7 @@
       "layer": "tag",
       "legacy_id": "cs.DS",
       "name": "cs.DS",
-      "rank": 203,
+      "rank": 204,
       "weighted_degree": 3
     },
     {
@@ -2663,7 +2676,7 @@
       "layer": "tag",
       "legacy_id": "cs.IR",
       "name": "cs.IR",
-      "rank": 204,
+      "rank": 205,
       "weighted_degree": 3
     },
     {
@@ -2676,7 +2689,7 @@
       "layer": "tag",
       "legacy_id": "cs.PL",
       "name": "cs.PL",
-      "rank": 205,
+      "rank": 206,
       "weighted_degree": 3
     },
     {
@@ -2689,7 +2702,7 @@
       "layer": "tag",
       "legacy_id": "Customers",
       "name": "Customers",
-      "rank": 206,
+      "rank": 207,
       "weighted_degree": 3
     },
     {
@@ -2702,7 +2715,7 @@
       "layer": "tag",
       "legacy_id": "econ.GN",
       "name": "econ.GN",
-      "rank": 207,
+      "rank": 208,
       "weighted_degree": 3
     },
     {
@@ -2715,7 +2728,7 @@
       "layer": "tag",
       "legacy_id": "eess.AS",
       "name": "eess.AS",
-      "rank": 208,
+      "rank": 209,
       "weighted_degree": 3
     },
     {
@@ -2728,7 +2741,7 @@
       "layer": "tag",
       "legacy_id": "eess.SY",
       "name": "eess.SY",
-      "rank": 209,
+      "rank": 210,
       "weighted_degree": 3
     },
     {
@@ -2741,7 +2754,7 @@
       "layer": "tag",
       "legacy_id": "Health",
       "name": "Health",
-      "rank": 210,
+      "rank": 211,
       "weighted_degree": 3
     },
     {
@@ -2754,7 +2767,7 @@
       "layer": "tag",
       "legacy_id": "HTML",
       "name": "HTML",
-      "rank": 211,
+      "rank": 212,
       "weighted_degree": 3
     },
     {
@@ -2767,7 +2780,7 @@
       "layer": "tag",
       "legacy_id": "q-fin.PM",
       "name": "q-fin.PM",
-      "rank": 212,
+      "rank": 213,
       "weighted_degree": 3
     },
     {
@@ -2780,7 +2793,7 @@
       "layer": "tag",
       "legacy_id": "Startup",
       "name": "Startup",
-      "rank": 213,
+      "rank": 214,
       "weighted_degree": 3
     },
     {
@@ -2793,19 +2806,6 @@
       "layer": "tag",
       "legacy_id": "stat.ME",
       "name": "stat.ME",
-      "rank": 214,
-      "weighted_degree": 3
-    },
-    {
-      "article_count": 1,
-      "category": "article_tag",
-      "community_id": "community:tag:大语言模型",
-      "degree": 3,
-      "description": "文章标签: stat.ML",
-      "id": "tag:stat.ML",
-      "layer": "tag",
-      "legacy_id": "stat.ML",
-      "name": "stat.ML",
       "rank": 215,
       "weighted_degree": 3
     },

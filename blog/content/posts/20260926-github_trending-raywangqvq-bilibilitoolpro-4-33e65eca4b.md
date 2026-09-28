@@ -14,8 +14,8 @@ source_payload_sha256: "sha256:873e815346236bf573437a9589353310ffe234ba373239ae2
 observation_id: obs_33e65eca4b58cd9db6ddb918d3d51df8b165e28d8c70f1bfaee81921a798f284
 event_id: evt_e9df41de39e3d85b000c17877d7d9fc9002b72fd91e08b4f36c57f5348453b95
 revision_id: rev_56169ba121d88f112d096c5cae2d172f3250fc76eb4ef7d4b1a86400d7edd75d
-first_seen_at: 2026-09-26T13:17:23Z
-timestamp_confidence: git
+first_seen_at: 2026-09-28T15:27:13.788241Z
+timestamp_confidence: unknown
 lineage_relation: original
 extractor_version: "source-contract-v1"
 discovery_method: "repository_metadata"
