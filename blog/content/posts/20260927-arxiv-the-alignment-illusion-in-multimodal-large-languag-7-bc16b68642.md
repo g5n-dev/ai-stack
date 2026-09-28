@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:56c87141562ab278f4ce55da305088110285c090543702ccb
 description: "该研究通过在视觉流中加入噪声来检验常见的层间视觉‑文本对齐指标是否真正反映跨模态内容交互，发现四种标准标量度量在噪声干扰下仍难以区分原始与受损表示，并将此现象称为对齐幻觉。"
 external_url: http://arxiv.org/abs/2609.30210v1
 parent_observation_id: null
-last_seen_at: 2026-09-27T08:08:40.563014Z
+last_seen_at: 2026-09-28T00:00:00Z
 ---
 
 ## 基本信息

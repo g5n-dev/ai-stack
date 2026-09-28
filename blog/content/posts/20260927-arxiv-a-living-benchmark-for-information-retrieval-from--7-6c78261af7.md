@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:01dff1bd9f6ea83c11cfe68fd9e006dbfabbfbb39241f7e0a
 description: "该研究提出一种可扩展的自动生成框架，从纵向电子健康记录中产出问答对，并经临床医生验证后形成可持续更新的评估数据集（BRIE），用于衡量临床语言模型在信息检索任务上的表现。"
 external_url: http://arxiv.org/abs/2609.30205v1
 parent_observation_id: null
-last_seen_at: 2026-09-27T13:58:03.933116Z
+last_seen_at: 2026-09-28T00:00:00Z
 ---
 
 ## 基本信息

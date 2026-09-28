@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-09-27T22:11:24Z",
+  "generated_at": "2026-09-28T00:46:32Z",
   "items": [
     {
       "article_count": 942,
@@ -28,7 +28,7 @@
       "weighted_degree": 2837.2
     },
     {
-      "article_count": 852,
+      "article_count": 853,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 103,
@@ -38,10 +38,10 @@
       "legacy_id": "大语言模型",
       "name": "大语言模型",
       "rank": 2,
-      "weighted_degree": 2555.2
+      "weighted_degree": 2557.2
     },
     {
-      "article_count": 784,
+      "article_count": 785,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 127,
@@ -51,7 +51,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 3,
-      "weighted_degree": 2344
+      "weighted_degree": 2346
     },
     {
       "article_count": 538,
@@ -67,7 +67,7 @@
       "weighted_degree": 1576
     },
     {
-      "article_count": 550,
+      "article_count": 551,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 26,
@@ -77,7 +77,7 @@
       "legacy_id": "掘金",
       "name": "掘金",
       "rank": 5,
-      "weighted_degree": 1387
+      "weighted_degree": 1389
     },
     {
       "article_count": 841,
@@ -1354,7 +1354,7 @@
       "weighted_degree": 8.6
     },
     {
-      "article_count": 852,
+      "article_count": 853,
       "category": "nlp",
       "community_id": null,
       "degree": 8,
@@ -2888,7 +2888,7 @@
       "weighted_degree": 2.8
     },
     {
-      "article_count": 852,
+      "article_count": 853,
       "category": "ai",
       "community_id": null,
       "degree": 3,

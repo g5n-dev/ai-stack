@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:63c3fb83f3004baff01b256c1d2bc0ca1a63afdafede22538
 description: "该工作提出一种面向近场重载水下遥控潜水器（ROV）打捞的目标中心化多视角预测世界模型（C³‑JEPA），利用同步的多摄像头RGB图像与车辆控制信号，在隐空间直接预测任务‑目标状态在接触交互和水体动力滞后下的变化。"
 external_url: http://arxiv.org/abs/2609.30214v1
 parent_observation_id: null
-last_seen_at: 2026-09-27T01:26:31.077214Z
+last_seen_at: 2026-09-28T00:00:00Z
 ---
 
 ## 基本信息
