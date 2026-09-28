@@ -27,7 +27,7 @@
       "focus-shards/004-08a9b1380f4a.json",
       "focus-shards/005-730d1a52eb3d.json",
       "focus-shards/006-24f92915c45b.json",
-      "focus-shards/007-d7f412ab7e9d.json",
+      "focus-shards/007-4be0d5bac415.json",
       "focus-shards/008-04bb1de327fc.json",
       "focus-shards/009-8192c91e5b3e.json",
       "focus-shards/010-82102f585f91.json",
@@ -96,7 +96,7 @@
       "focus-shards/073-cf1c0d9ca09c.json",
       "focus-shards/074-9d5103f231ff.json",
       "focus-shards/075-7ad1f6e46436.json",
-      "focus-shards/076-71e17776175a.json",
+      "focus-shards/076-80753c1495a4.json",
       "focus-shards/077-2ecb6f856698.json",
       "focus-shards/078-0269085fbd08.json",
       "focus-shards/079-3f9052b8e1f6.json",
@@ -136,7 +136,7 @@
       "focus-shards/113-5d0317c1a5aa.json",
       "focus-shards/114-92f5f00dd55f.json",
       "focus-shards/115-1b7902900632.json",
-      "focus-shards/116-0e39ef248c99.json",
+      "focus-shards/116-e1fa979c4bb9.json",
       "focus-shards/117-d614c465093e.json",
       "focus-shards/118-a349355ce525.json",
       "focus-shards/119-ffe1a3860164.json",
@@ -153,7 +153,7 @@
     "tag": "tag.json",
     "tagHot": "tag.hot.json"
   },
-  "generated_at": "2026-09-27T22:11:24Z",
+  "generated_at": "2026-09-28T00:46:32Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -209,7 +209,7 @@
       "archived_article_files_skipped": 276,
       "archived_article_groups_skipped": 276,
       "avg_concepts_per_article": 0,
-      "avg_tags_per_article": 2.797087057265806,
+      "avg_tags_per_article": 2.797154202514891,
       "canonical_duplicate_files_skipped": 0,
       "incomplete_article_files_skipped": 0,
       "incomplete_article_groups_skipped": 0,
@@ -242,7 +242,7 @@
         [
           "大语言模型",
           {
-            "article_count": 852,
+            "article_count": 853,
             "category": "article_tag",
             "description": "文章标签: 大语言模型",
             "id": "大语言模型",
@@ -266,7 +266,7 @@
         [
           "来源快报",
           {
-            "article_count": 784,
+            "article_count": 785,
             "category": "article_tag",
             "description": "文章标签: 来源快报",
             "id": "来源快报",
@@ -278,13 +278,13 @@
       ],
       "synthetic_article_files_skipped": 0,
       "synthetic_article_groups_skipped": 0,
-      "total_articles": 3021,
+      "total_articles": 3022,
       "total_concept_links": 0,
       "total_concepts": 0,
       "total_tag_links": 1406,
       "total_tags": 204
     },
-    "total_articles": 3021,
+    "total_articles": 3022,
     "total_communities": 12,
     "total_links": 1516,
     "total_nodes": 273

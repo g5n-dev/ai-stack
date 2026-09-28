@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:a7f2673ea41dca8d5646429016475ef9ed4721479b9ca4ffc
 description: "该研究探讨了编码代理能否通过合成可在不同问题实例间复用的程序，来降低任务与运动规划的计算复杂度。实验对比了代理生成程序与手工规划器的表现。"
 external_url: http://arxiv.org/abs/2609.30233v1
 parent_observation_id: null
-last_seen_at: 2026-09-27T00:00:00Z
+last_seen_at: 2026-09-28T00:00:00Z
 ---
 
 ## 基本信息

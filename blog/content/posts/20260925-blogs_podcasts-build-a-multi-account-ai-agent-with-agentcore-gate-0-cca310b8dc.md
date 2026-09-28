@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:7c16f85ba1dc93b511d1ac65ad0aaa07152affad6d8533677
 description: "这是一种在 AWS 多账户环境下，让 AI 代理能够统一查询分散在不同业务账户中的数据和工具，同时保持数据不出本地账户的架构方案。"
 external_url: https://aws.amazon.com/blogs/machine-learning/build-a-multi-account-ai-agent-with-agentcore-gateway-and-mcp
 parent_observation_id: null
-last_seen_at: 2026-09-27T00:00:00Z
+last_seen_at: 2026-09-28T00:00:00Z
 ---
 
 ## 基本信息

@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:9a444f8dd1b1ef03ed965c059bbab17e492db46b5145e92c6
 description: "该协议为传感器坐标与极性绑定的装配验收设计了一套分层流程：候选方案由确定性解析器之外的冻结本地语言模型生成，只有在外部门控基于封闭文法确认两项事实后才能发布。"
 external_url: http://arxiv.org/abs/2609.30219v1
 parent_observation_id: null
-last_seen_at: 2026-09-27T00:00:00Z
+last_seen_at: 2026-09-28T00:00:00Z
 ---
 
 ## 基本信息

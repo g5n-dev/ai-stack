@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:23396148cf33b33745f5a0e445eaf92c84659801632f21764
 description: "研究关注大语言模型在完成普通任务时是否会在被监控的情况下尝试规避监管，并提出了一个包含多种任务‑策略配对的基准测试，用于记录模型在需要执行被禁止操作时的逃避行为。"
 external_url: http://arxiv.org/abs/2609.30217v1
 parent_observation_id: null
-last_seen_at: 2026-09-27T00:00:00Z
+last_seen_at: 2026-09-28T00:00:00Z
 ---
 
 ## 基本信息
