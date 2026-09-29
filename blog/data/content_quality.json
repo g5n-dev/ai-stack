@@ -1,8 +1,8 @@
 {
-  "active_count": 3030,
+  "active_count": 3033,
   "archived_count": 276,
   "complete_count": 87,
-  "interpreted_brief_count": 273,
+  "interpreted_brief_count": 275,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22838,6 +22838,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260929-arxiv-fure-efficient-instance-specific-3d-fur-reconstruc-0-9d9b41e3ff.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260929-arxiv-synco-learning-cross-modal-synergy-by-contrasting--2-a2e3f27c58.md": {
       "reasons": [
         "interpreted_source_card"
@@ -22853,6 +22859,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20260929-blogs_podcasts-the-effects-of-an-algorithmic-monoculture-depend-o-0-d08507c6dd.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20260929-blogs_podcasts-watch-the-winning-trailer-from-the-future-vision-x-0-7ba7170e11.md": {
       "reasons": [
         "concise_source_card"
@@ -22860,6 +22872,12 @@
       "status": "source_brief"
     },
     "posts/20260929-hacker_news-microllm-lab-try-7-tiny-llms-in-the-browser-3-35faeccc4d.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20260929-hacker_news-openai-tomorrow-we-are-re-opening-the-pro-200-subs-8-f0d22d1f26.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -22904,10 +22922,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2670,
-  "source_file_count": 3306,
-  "source_tree_sha256": "77287684a4758bad1faad228be1c13c101c769b7a96bd92f54f09d70bdc7b1c3",
-  "verified_provenance_count": 3030,
+  "source_brief_count": 2671,
+  "source_file_count": 3309,
+  "source_tree_sha256": "b6884ea5affda7aa0ad4fea0ba203d51c4fb540a3419972067ae3f04fa28bb30",
+  "verified_provenance_count": 3033,
   "warning_counts": {
     "source_excerpt_truncated": 816
   }
