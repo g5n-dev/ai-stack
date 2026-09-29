@@ -15,7 +15,7 @@ observation_id: obs_7ba7170e114ec367c0aea60b2aad34063147c275e6f3d6808f9994c5791d
 event_id: evt_75461ecc8302bc86528b800cff52bd62062cdf8173d045e37fbaec726de8d6fc
 revision_id: rev_d5095db30efe4e628cb89446be00efd474953e4fc206296751bf5d53140adafc
 source_published_at: 2026-09-28T19:00:00Z
-first_seen_at: 2026-09-28T22:00:43.988054Z
+first_seen_at: 2026-09-28T22:13:35Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 68
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://blog.google/innovation-and-ai/technology/ai/winner-future-vision-xprize
 parent_observation_id: null
-last_seen_at: 2026-09-28T22:00:43.988054Z
+last_seen_at: 2026-09-29T00:00:00Z
 ---
 
 ## 基本信息
