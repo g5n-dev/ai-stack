@@ -1,8 +1,8 @@
 {
-  "active_count": 3036,
+  "active_count": 3039,
   "archived_count": 276,
   "complete_count": 87,
-  "interpreted_brief_count": 277,
+  "interpreted_brief_count": 279,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22906,6 +22906,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260930-arxiv-pdmd-projected-distribution-matching-distillation--0-a3ec0d34f6.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260930-blogs_podcasts-bring-near-astra-intelligence-to-everyday-work-wit-0-05f4f97488.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260930-hacker_news-draftkings-is-using-ai-to-behaviorally-target-chro-5-f44c9c06a5.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -22940,10 +22958,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2672,
-  "source_file_count": 3312,
-  "source_tree_sha256": "b9b49ccf20d13f77c2c19fb05bb8ba6e621caed681ae6f6f392aa93d288e3d38",
-  "verified_provenance_count": 3036,
+  "source_brief_count": 2673,
+  "source_file_count": 3315,
+  "source_tree_sha256": "7c62007b1d8bbd8092afba57cc9ca9bd342301dd973b48429ece5c75b6708f6c",
+  "verified_provenance_count": 3039,
   "warning_counts": {
     "source_excerpt_truncated": 816
   }
