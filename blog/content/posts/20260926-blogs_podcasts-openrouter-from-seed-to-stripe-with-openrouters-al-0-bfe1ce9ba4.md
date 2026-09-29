@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:430265305cfc20241a85e88ec59b4b685c127cea00f3b1da8
 description: "这是一段对话式播客，讲述 OpenRouter 从开源模型路由起家，成长为 AI 开发者常用的中立分发层，并涉及产品聚焦、模型市场与安全等议题。"
 external_url: https://www.latent.space/p/openrouter
 parent_observation_id: null
-last_seen_at: 2026-09-28T00:00:00Z
+last_seen_at: 2026-09-29T00:00:00Z
 ---
 
 ## 基本信息

@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:f5d84b41d211ee021e44cbead8158fead3cb8b36797e6d117
 description: "这是一篇关于在云平台上搭建大规模 MoE 模型强化学习训练架构的技术方案，介绍了如何通过容器编排和高速网络互联来协调推理生成与策略训练两类异构工作负载。"
 external_url: https://aws.amazon.com/blogs/machine-learning/scaling-moe-reinforcement-learning-on-amazon-eks-with-efa-and-deepep-with-40-more-throughput
 parent_observation_id: null
-last_seen_at: 2026-09-28T00:00:00Z
+last_seen_at: 2026-09-29T00:00:00Z
 ---
 
 ## 基本信息
