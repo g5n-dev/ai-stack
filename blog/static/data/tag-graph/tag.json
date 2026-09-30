@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T13:45:34Z",
+  "generated_at": "2026-09-30T19:22:34Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -653,7 +653,7 @@
       "strength": 1,
       "target": "tag:Amazon Bedrock",
       "type": "cooccurrence",
-      "weight": 26
+      "weight": 27
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:Amazon Bedrock AgentCore",
@@ -677,7 +677,7 @@
       "strength": 1,
       "target": "tag:Amazon Bedrock Knowledge Bases",
       "type": "cooccurrence",
-      "weight": 4
+      "weight": 5
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:Amazon Connect",
@@ -925,7 +925,7 @@
       "strength": 1,
       "target": "tag:Hacker News",
       "type": "cooccurrence",
-      "weight": 178
+      "weight": 179
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:Harness",
@@ -1037,7 +1037,7 @@
       "strength": 1,
       "target": "tag:RAG",
       "type": "cooccurrence",
-      "weight": 79
+      "weight": 80
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:Research",
@@ -1077,7 +1077,7 @@
       "strength": 1,
       "target": "tag:Technical How-to",
       "type": "cooccurrence",
-      "weight": 27
+      "weight": 28
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:Thought Leadership",
@@ -1205,7 +1205,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 268
+      "weight": 269
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:命令行工具",
@@ -1261,7 +1261,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 248
+      "weight": 249
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:深度学习",
@@ -1277,7 +1277,7 @@
       "strength": 1,
       "target": "tag:生成式 AI",
       "type": "cooccurrence",
-      "weight": 100
+      "weight": 101
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:自然语言处理",
@@ -1765,7 +1765,7 @@
       "strength": 1,
       "target": "tag:AI Agent",
       "type": "cooccurrence",
-      "weight": 33
+      "weight": 34
     },
     {
       "id": "edge:cooccurrence:tag:Advanced (300)->tag:AWS Fargate",
@@ -1813,7 +1813,7 @@
       "strength": 1,
       "target": "tag:Amazon Bedrock",
       "type": "cooccurrence",
-      "weight": 9
+      "weight": 10
     },
     {
       "id": "edge:cooccurrence:tag:Advanced (300)->tag:Amazon Bedrock AgentCore",
@@ -1826,10 +1826,10 @@
     {
       "id": "edge:cooccurrence:tag:Advanced (300)->tag:Amazon Bedrock Knowledge Bases",
       "source": "tag:Advanced (300)",
-      "strength": 0.5,
+      "strength": 1,
       "target": "tag:Amazon Bedrock Knowledge Bases",
       "type": "cooccurrence",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "edge:cooccurrence:tag:Advanced (300)->tag:Amazon CloudWatch",
@@ -1989,7 +1989,7 @@
       "strength": 1,
       "target": "tag:RAG",
       "type": "cooccurrence",
-      "weight": 8
+      "weight": 9
     },
     {
       "id": "edge:cooccurrence:tag:Advanced (300)->tag:Technical How-to",
@@ -1997,7 +1997,7 @@
       "strength": 1,
       "target": "tag:Technical How-to",
       "type": "cooccurrence",
-      "weight": 23
+      "weight": 24
     },
     {
       "id": "edge:cooccurrence:tag:Advanced (300)->tag:Thought Leadership",
@@ -2013,7 +2013,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 33
+      "weight": 34
     },
     {
       "id": "edge:cooccurrence:tag:Advanced (300)->tag:大语言模型",
@@ -2053,7 +2053,7 @@
       "strength": 1,
       "target": "tag:生成式 AI",
       "type": "cooccurrence",
-      "weight": 21
+      "weight": 22
     },
     {
       "id": "edge:cooccurrence:tag:Advanced (300)->tag:自然语言处理",
@@ -2394,10 +2394,10 @@
     {
       "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:Amazon Bedrock Knowledge Bases",
       "source": "tag:Amazon Bedrock",
-      "strength": 0.5,
+      "strength": 1,
       "target": "tag:Amazon Bedrock Knowledge Bases",
       "type": "cooccurrence",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:Amazon DynamoDB",
@@ -2573,7 +2573,7 @@
       "strength": 1,
       "target": "tag:RAG",
       "type": "cooccurrence",
-      "weight": 10
+      "weight": 11
     },
     {
       "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:Technical How-to",
@@ -2581,7 +2581,7 @@
       "strength": 1,
       "target": "tag:Technical How-to",
       "type": "cooccurrence",
-      "weight": 8
+      "weight": 9
     },
     {
       "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:博客与播客",
@@ -2589,7 +2589,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 30
+      "weight": 31
     },
     {
       "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:大语言模型",
@@ -2621,7 +2621,7 @@
       "strength": 1,
       "target": "tag:生成式 AI",
       "type": "cooccurrence",
-      "weight": 16
+      "weight": 17
     },
     {
       "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:自然语言处理",
@@ -2989,15 +2989,15 @@
       "strength": 1,
       "target": "tag:RAG",
       "type": "cooccurrence",
-      "weight": 4
+      "weight": 5
     },
     {
       "id": "edge:cooccurrence:tag:Amazon Bedrock Knowledge Bases->tag:Technical How-to",
       "source": "tag:Amazon Bedrock Knowledge Bases",
-      "strength": 0.5,
+      "strength": 1,
       "target": "tag:Technical How-to",
       "type": "cooccurrence",
-      "weight": 1
+      "weight": 2
     },
     {
       "id": "edge:cooccurrence:tag:Amazon Bedrock Knowledge Bases->tag:博客与播客",
@@ -3005,7 +3005,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 3
+      "weight": 4
     },
     {
       "id": "edge:cooccurrence:tag:Amazon Bedrock Knowledge Bases->tag:大语言模型",
@@ -3037,7 +3037,7 @@
       "strength": 1,
       "target": "tag:生成式 AI",
       "type": "cooccurrence",
-      "weight": 4
+      "weight": 5
     },
     {
       "id": "edge:cooccurrence:tag:Amazon CloudWatch->tag:AWS Lambda",
@@ -4925,7 +4925,7 @@
       "strength": 1,
       "target": "tag:cs.CV",
       "type": "cooccurrence",
-      "weight": 57
+      "weight": 58
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:cs.CY",
@@ -5165,7 +5165,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 296
+      "weight": 297
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:深度学习",
@@ -5197,7 +5197,7 @@
       "strength": 1,
       "target": "tag:计算机视觉",
       "type": "cooccurrence",
-      "weight": 56
+      "weight": 57
     },
     {
       "id": "edge:cooccurrence:tag:Architecture->tag:Artificial intelligence",
@@ -7989,7 +7989,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 255
+      "weight": 256
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:深度学习",
@@ -9693,7 +9693,7 @@
       "strength": 1,
       "target": "tag:Technical How-to",
       "type": "cooccurrence",
-      "weight": 7
+      "weight": 8
     },
     {
       "id": "edge:cooccurrence:tag:RAG->tag:TypeScript",
@@ -9709,7 +9709,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 29
+      "weight": 30
     },
     {
       "id": "edge:cooccurrence:tag:RAG->tag:命令行工具",
@@ -9773,7 +9773,7 @@
       "strength": 1,
       "target": "tag:生成式 AI",
       "type": "cooccurrence",
-      "weight": 28
+      "weight": 29
     },
     {
       "id": "edge:cooccurrence:tag:RAG->tag:自然语言处理",
@@ -10229,7 +10229,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 29
+      "weight": 30
     },
     {
       "id": "edge:cooccurrence:tag:Technical How-to->tag:大语言模型",
@@ -10269,7 +10269,7 @@
       "strength": 1,
       "target": "tag:生成式 AI",
       "type": "cooccurrence",
-      "weight": 22
+      "weight": 23
     },
     {
       "id": "edge:cooccurrence:tag:Technology and society->tag:大语言模型",
@@ -10669,7 +10669,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 57
+      "weight": 58
     },
     {
       "id": "edge:cooccurrence:tag:cs.CV->tag:深度学习",
@@ -10693,7 +10693,7 @@
       "strength": 1,
       "target": "tag:计算机视觉",
       "type": "cooccurrence",
-      "weight": 52
+      "weight": 53
     },
     {
       "id": "edge:cooccurrence:tag:cs.CY->tag:来源快报",
@@ -11189,7 +11189,7 @@
       "strength": 1,
       "target": "tag:生成式 AI",
       "type": "cooccurrence",
-      "weight": 119
+      "weight": 120
     },
     {
       "id": "edge:cooccurrence:tag:博客与播客->tag:自然语言处理",
@@ -11365,7 +11365,7 @@
       "strength": 1,
       "target": "tag:掘金",
       "type": "cooccurrence",
-      "weight": 86
+      "weight": 87
     },
     {
       "id": "edge:cooccurrence:tag:工程实践->tag:来源转写",
@@ -11373,7 +11373,7 @@
       "strength": 1,
       "target": "tag:来源转写",
       "type": "cooccurrence",
-      "weight": 86
+      "weight": 87
     },
     {
       "id": "edge:cooccurrence:tag:掘金->tag:数据库",
@@ -11405,7 +11405,7 @@
       "strength": 1,
       "target": "tag:来源转写",
       "type": "cooccurrence",
-      "weight": 86
+      "weight": 87
     },
     {
       "id": "edge:cooccurrence:tag:掘金->tag:深度学习",
@@ -11557,7 +11557,7 @@
       "strength": 1,
       "target": "tag:计算机视觉",
       "type": "cooccurrence",
-      "weight": 52
+      "weight": 53
     },
     {
       "id": "edge:cooccurrence:tag:深度学习->tag:生成式 AI",
@@ -11659,7 +11659,7 @@
       "weighted_degree": 7
     },
     {
-      "article_count": 45,
+      "article_count": 46,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
@@ -11673,7 +11673,7 @@
       "name": "Advanced (300)",
       "rank": 18,
       "related_count": 39,
-      "weighted_degree": 297
+      "weighted_degree": 304
     },
     {
       "article_count": 214,
@@ -11727,7 +11727,7 @@
       "weighted_degree": 8.6
     },
     {
-      "article_count": 949,
+      "article_count": 951,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -11741,7 +11741,7 @@
       "name": "AI Agent",
       "rank": 1,
       "related_count": 91,
-      "weighted_degree": 2866.2
+      "weighted_degree": 2875.2
     },
     {
       "article_count": 2,
@@ -11846,7 +11846,7 @@
       "weighted_degree": 7
     },
     {
-      "article_count": 41,
+      "article_count": 42,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
@@ -11860,7 +11860,7 @@
       "name": "Amazon Bedrock",
       "rank": 23,
       "related_count": 38,
-      "weighted_degree": 262
+      "weighted_degree": 269
     },
     {
       "article_count": 37,
@@ -11914,7 +11914,7 @@
       "weighted_degree": 10
     },
     {
-      "article_count": 6,
+      "article_count": 7,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
@@ -11926,9 +11926,9 @@
       "legacy_id": "Amazon Bedrock Knowledge Bases",
       "level": 6,
       "name": "Amazon Bedrock Knowledge Bases",
-      "rank": 53,
+      "rank": 49,
       "related_count": 17,
-      "weighted_degree": 39
+      "weighted_degree": 46
     },
     {
       "article_count": 1,
@@ -12453,7 +12453,7 @@
       "legacy_id": "Artificial Intelligence",
       "level": 6,
       "name": "Artificial Intelligence",
-      "rank": 49,
+      "rank": 50,
       "related_count": 19,
       "weighted_degree": 43
     },
@@ -12475,7 +12475,7 @@
       "weighted_degree": 70
     },
     {
-      "article_count": 850,
+      "article_count": 851,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -12489,7 +12489,7 @@
       "name": "ArXiv",
       "rank": 6,
       "related_count": 49,
-      "weighted_degree": 1377
+      "weighted_degree": 1380
     },
     {
       "article_count": 1,
@@ -12640,7 +12640,7 @@
       "legacy_id": "Best Practices",
       "level": 6,
       "name": "Best Practices",
-      "rank": 51,
+      "rank": 52,
       "related_count": 20,
       "weighted_degree": 42
     },
@@ -12827,7 +12827,7 @@
       "legacy_id": "Company",
       "level": 6,
       "name": "Company",
-      "rank": 52,
+      "rank": 53,
       "related_count": 3,
       "weighted_degree": 39
     },
@@ -12861,7 +12861,7 @@
       "legacy_id": "Computer science and technology",
       "level": 6,
       "name": "Computer science and technology",
-      "rank": 50,
+      "rank": 51,
       "related_count": 20,
       "weighted_degree": 42.6
     },
@@ -12951,7 +12951,7 @@
       "weighted_degree": 32
     },
     {
-      "article_count": 57,
+      "article_count": 58,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
@@ -12965,7 +12965,7 @@
       "name": "cs.CV",
       "rank": 29,
       "related_count": 9,
-      "weighted_degree": 196
+      "weighted_degree": 199
     },
     {
       "article_count": 2,
@@ -13801,7 +13801,7 @@
       "weighted_degree": 16
     },
     {
-      "article_count": 1008,
+      "article_count": 1009,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -13815,7 +13815,7 @@
       "name": "Hacker News",
       "rank": 8,
       "related_count": 21,
-      "weighted_degree": 752
+      "weighted_degree": 754
     },
     {
       "article_count": 1,
@@ -14464,7 +14464,7 @@
       "weighted_degree": 6
     },
     {
-      "article_count": 131,
+      "article_count": 132,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -14478,7 +14478,7 @@
       "name": "RAG",
       "rank": 12,
       "related_count": 44,
-      "weighted_degree": 583.2
+      "weighted_degree": 590.2
     },
     {
       "article_count": 1,
@@ -14736,7 +14736,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 42,
+      "article_count": 43,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
@@ -14750,7 +14750,7 @@
       "name": "Technical How-to",
       "rank": 20,
       "related_count": 41,
-      "weighted_degree": 280
+      "weighted_degree": 287
     },
     {
       "article_count": 1,
@@ -14889,7 +14889,7 @@
       "weighted_degree": 4
     },
     {
-      "article_count": 545,
+      "article_count": 546,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
@@ -14903,7 +14903,7 @@
       "name": "博客与播客",
       "rank": 4,
       "related_count": 108,
-      "weighted_degree": 1610
+      "weighted_degree": 1617
     },
     {
       "article_count": 141,
@@ -14940,7 +14940,7 @@
       "weighted_degree": 2596.2
     },
     {
-      "article_count": 87,
+      "article_count": 88,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
@@ -14954,10 +14954,10 @@
       "name": "工程实践",
       "rank": 30,
       "related_count": 9,
-      "weighted_degree": 179
+      "weighted_degree": 181
     },
     {
-      "article_count": 552,
+      "article_count": 553,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -14971,7 +14971,7 @@
       "name": "掘金",
       "rank": 5,
       "related_count": 26,
-      "weighted_degree": 1391
+      "weighted_degree": 1393
     },
     {
       "article_count": 146,
@@ -15008,7 +15008,7 @@
       "weighted_degree": 634
     },
     {
-      "article_count": 809,
+      "article_count": 811,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -15022,10 +15022,10 @@
       "name": "来源快报",
       "rank": 3,
       "related_count": 127,
-      "weighted_degree": 2420
+      "weighted_degree": 2425
     },
     {
-      "article_count": 86,
+      "article_count": 87,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
@@ -15039,7 +15039,7 @@
       "name": "来源转写",
       "rank": 31,
       "related_count": 2,
-      "weighted_degree": 172
+      "weighted_degree": 174
     },
     {
       "article_count": 57,
@@ -15059,7 +15059,7 @@
       "weighted_degree": 249
     },
     {
-      "article_count": 191,
+      "article_count": 192,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:Technical How-to",
@@ -15073,7 +15073,7 @@
       "name": "生成式 AI",
       "rank": 7,
       "related_count": 70,
-      "weighted_degree": 840
+      "weighted_degree": 847
     },
     {
       "article_count": 34,
@@ -15093,7 +15093,7 @@
       "weighted_degree": 126.2
     },
     {
-      "article_count": 68,
+      "article_count": 69,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:other",
@@ -15107,7 +15107,7 @@
       "name": "计算机视觉",
       "rank": 27,
       "related_count": 18,
-      "weighted_degree": 231.2
+      "weighted_degree": 234.2
     }
   ],
   "stats": {
