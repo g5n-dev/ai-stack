@@ -15,7 +15,7 @@ observation_id: obs_05f4f9748885e1c59e65c4eac32533835fff3ea66ca004e45b09b1a9c9c8
 event_id: evt_6865ae8240aecc91b3326602e21a88b4aa6101d1169235f5ed0cf021e312288d
 revision_id: rev_c838c84e05954e708b51f8826bfb353b03cb90c684481c1baada67a029630f00
 source_published_at: 2026-09-29T19:34:14Z
-first_seen_at: 2026-09-29T20:46:46.439270Z
+first_seen_at: 2026-09-29T20:59:23Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:167634bca3672496176177a9a4948f6ae6a8fd9d45f7ba243
 description: "GPT-6.1 Sol 在 Amazon Bedrock 上正式发布，为 AI 代理的编码、计算机操作和专业工作流程带来更强的推理能力，同时在成本上优于前代版本。"
 external_url: https://aws.amazon.com/blogs/machine-learning/bring-near-astra-intelligence-to-everyday-work-with-gpt-6-1-sol-on-amazon-bedrock
 parent_observation_id: null
-last_seen_at: 2026-09-29T20:46:46.439270Z
+last_seen_at: 2026-09-30T00:00:00Z
 ---
 
 ## 基本信息

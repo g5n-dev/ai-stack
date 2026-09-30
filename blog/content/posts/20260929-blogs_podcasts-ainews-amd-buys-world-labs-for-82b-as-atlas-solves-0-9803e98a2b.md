@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:607c57bf3d57e35e27abad5a2e11c889e77ce38077c7034db
 description: "这条内容报道了一起硬件厂商对一家空间智能公司的收购，并介绍了能够从少量二维图像预测新视角、解决稀疏重建难题的模型。"
 external_url: https://www.latent.space/p/ainews-amd-buys-world-labs-for-82b
 parent_observation_id: null
-last_seen_at: 2026-09-29T15:50:57.943649Z
+last_seen_at: 2026-09-30T00:00:00Z
 ---
 
 ## 基本信息
