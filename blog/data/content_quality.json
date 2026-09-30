@@ -1,8 +1,8 @@
 {
-  "active_count": 3045,
+  "active_count": 3048,
   "archived_count": 276,
   "complete_count": 87,
-  "interpreted_brief_count": 283,
+  "interpreted_brief_count": 284,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -22913,6 +22913,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20260930-arxiv-leapquant-efficient-linear-attention-with-accurate-3-ff9a484b19.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20260930-arxiv-learning-native-reflection-in-unified-models-with--0-701b2c99af.md": {
       "reasons": [
         "interpreted_source_card"
@@ -22926,6 +22932,12 @@
       "status": "interpreted_brief"
     },
     "posts/20260930-blogs_podcasts-ainews-openai-devday-2026-dots-61-sol-ultrafast-de-0-3439063e9f.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20260930-blogs_podcasts-amazon-bedrock-expands-claude-model-availability-t-0-e2ff5c2e78.md": {
       "reasons": [
         "interpreted_source_card"
       ],
@@ -22960,6 +22972,15 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20260930-juejin-在职前端-skill-和-mcp-分享-0-1b4440921d.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     }
   },
   "quarantined_count": 0,
@@ -22994,11 +23015,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2675,
-  "source_file_count": 3321,
-  "source_tree_sha256": "77d4aa77383f8d6ca991834a02089ff1cb6727fbd2b27479c52eb233c1ae238a",
-  "verified_provenance_count": 3045,
+  "source_brief_count": 2677,
+  "source_file_count": 3324,
+  "source_tree_sha256": "fc9b325ad49b69554c9bdf899424403b9bd25f776d955b8a0102bd051dc15163",
+  "verified_provenance_count": 3048,
   "warning_counts": {
-    "source_excerpt_truncated": 816
+    "source_excerpt_truncated": 817
   }
 }
