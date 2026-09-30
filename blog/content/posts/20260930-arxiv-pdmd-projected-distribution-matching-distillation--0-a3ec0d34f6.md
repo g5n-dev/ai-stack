@@ -15,7 +15,7 @@ observation_id: obs_a3ec0d34f67725e0144b7efdd803b91777f37233528b80249686bb9158b4
 event_id: evt_74ac7625f37b0766907e172cff1f63fb8968a4581c60f0b0d368baa861243236
 revision_id: rev_6b3d57f3a80ec870c68d9c0d17f6b59f87be89dd7e832eade5f056acdf30b497
 source_published_at: 2026-09-28T17:59:52Z
-first_seen_at: 2026-09-29T20:46:35.164371Z
+first_seen_at: 2026-09-29T20:59:23Z
 timestamp_confidence: publisher
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:7ad2efc8ae062a5c87e18d0d581a2728b019e8f969697a83c
 description: "PDMD 是一种针对视频扩散模型的知识蒸馏技术，通过在更新过程中过滤评论者（critic）引入的错误来提升训练稳定性，从而在减少函数评估次数的同时生成更高质量的视频样本。该方法仅需对现有框架做极小改动，无需额外的网络或数据。"
 external_url: http://arxiv.org/abs/2609.35768v1
 parent_observation_id: null
-last_seen_at: 2026-09-29T20:46:35.164371Z
+last_seen_at: 2026-09-30T00:00:00Z
 ---
 
 ## 基本信息

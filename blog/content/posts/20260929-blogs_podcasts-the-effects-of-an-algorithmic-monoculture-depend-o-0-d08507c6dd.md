@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:7b01b04bb6a227f35587a1ce497ff2bc7e4702d92cc6b13f1
 description: "这是一篇关于“算法单一文化”现象的研究综述，探讨统一使用同一算法在不同情境下的潜在影响，指出其后果取决于细节，且常被提及的某些担忧并不一定成立。"
 external_url: https://news.mit.edu/2026/algorithmic-monoculture-effects-depend-on-details-0929
 parent_observation_id: null
-last_seen_at: 2026-09-29T08:29:16.410871Z
+last_seen_at: 2026-09-30T00:00:00Z
 ---
 
 ## 基本信息

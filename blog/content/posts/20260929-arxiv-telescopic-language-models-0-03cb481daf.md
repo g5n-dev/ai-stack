@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:02d8f06328bf51573986386a1996d2b7b0ca528b91bfe7090
 description: "该工作提出一种可伸缩的语言模型，通过在每次训练迭代中同时使用随机截断的容量前缀和完整容量的前向‑后向通道，使同一模型在任意层数前缀下都保持有效的语言建模能力。"
 external_url: http://arxiv.org/abs/2609.35769v1
 parent_observation_id: null
-last_seen_at: 2026-09-29T15:50:53.659399Z
+last_seen_at: 2026-09-30T00:00:00Z
 ---
 
 ## 基本信息

@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:cfdd7e500795636ab4603fffe38197778c49dc21e780a937
 source_payload_sha256: "sha256:24b4491f5cb496ac8a019b0c1ba81db16d4fd8dc837180b01eb51b179b560999"
 observation_id: obs_b4c0eaf0034db9d3d987ed692de2ea30171a35eaa0e6da4eca771985f9b5eed4
 event_id: evt_0273be1727a68bf14ed76736c6d75db71844e3d083e30d4381a0627710b20f1e
-revision_id: rev_b85ec531e77c1227fccc7b365c59326e74f7feb54da6f1427e91f2467720f8b9
+revision_id: rev_c990955e6ecba592c8942adf57d3ef2f35a41414c382e4ac4c375fb640100d5d
 source_published_at: 2026-09-29T01:48:18Z
 first_seen_at: 2026-09-29T02:09:31Z
 timestamp_confidence: feed
@@ -28,7 +28,7 @@ source_title_chars_original: 51
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://www.latent.space/p/thariq
 parent_observation_id: null
-last_seen_at: 2026-09-29T01:56:58.000330Z
+last_seen_at: 2026-09-30T00:00:00Z
 ---
 
 ## 基本信息

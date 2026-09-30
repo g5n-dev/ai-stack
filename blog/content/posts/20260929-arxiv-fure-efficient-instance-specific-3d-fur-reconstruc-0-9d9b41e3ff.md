@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:5839bc727c1878997961e2c9e184b733626ac24d2b73dab15
 description: "FurE 是一种基于单根毛发的动物毛发三维重建方法，通过根节点条件潜在场和主成分解码器实现可编辑的毛发生成，并利用表面约束的高斯霜冻表示恢复去毛后的动物体形。"
 external_url: http://arxiv.org/abs/2609.35770v1
 parent_observation_id: null
-last_seen_at: 2026-09-29T08:29:08.824534Z
+last_seen_at: 2026-09-30T00:00:00Z
 ---
 
 ## 基本信息
