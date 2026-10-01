@@ -1,8 +1,8 @@
 {
-  "active_count": 3061,
+  "active_count": 3063,
   "archived_count": 276,
   "complete_count": 88,
-  "interpreted_brief_count": 287,
+  "interpreted_brief_count": 288,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23056,6 +23056,18 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20261002-blogs_podcasts-build-agent-memory-with-nvidia-nemo-agent-toolkit--0-67198745eb.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20261002-hacker_news-show-hn-vote-on-which-of-hacker-news-challenges-fo-4-44bf63d131.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -23090,10 +23102,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2686,
-  "source_file_count": 3337,
-  "source_tree_sha256": "89da6e28e33b2162be7638741a621a5a90573ce45ecbca0845f0edaf8ec2ff14",
-  "verified_provenance_count": 3061,
+  "source_brief_count": 2687,
+  "source_file_count": 3339,
+  "source_tree_sha256": "b83292b08d630a6600cbd8098fb40a37d57b98d42f93ccbac28019ff73e3faca",
+  "verified_provenance_count": 3063,
   "warning_counts": {
     "source_excerpt_truncated": 818
   }

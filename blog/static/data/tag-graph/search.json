@@ -12,10 +12,10 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-10-01T13:14:33Z",
+  "generated_at": "2026-10-01T18:56:36Z",
   "items": [
     {
-      "article_count": 954,
+      "article_count": 955,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 93,
@@ -25,23 +25,23 @@
       "legacy_id": "AI Agent",
       "name": "AI Agent",
       "rank": 1,
-      "weighted_degree": 2889.2
+      "weighted_degree": 2896.2
     },
     {
-      "article_count": 870,
+      "article_count": 871,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
-      "degree": 103,
+      "degree": 104,
       "description": "文章标签: 大语言模型",
       "id": "tag:大语言模型",
       "layer": "tag",
       "legacy_id": "大语言模型",
       "name": "大语言模型",
       "rank": 2,
-      "weighted_degree": 2621.2
+      "weighted_degree": 2628.2
     },
     {
-      "article_count": 819,
+      "article_count": 820,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 127,
@@ -51,10 +51,10 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 3,
-      "weighted_degree": 2448
+      "weighted_degree": 2450
     },
     {
-      "article_count": 549,
+      "article_count": 550,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 108,
@@ -64,7 +64,7 @@
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 4,
-      "weighted_degree": 1631
+      "weighted_degree": 1638
     },
     {
       "article_count": 553,
@@ -106,7 +106,7 @@
       "weighted_degree": 847
     },
     {
-      "article_count": 1012,
+      "article_count": 1013,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 21,
@@ -116,10 +116,10 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 8,
-      "weighted_degree": 760
+      "weighted_degree": 762
     },
     {
-      "article_count": 119,
+      "article_count": 120,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 54,
@@ -129,20 +129,20 @@
       "legacy_id": "Prompt 工程",
       "name": "Prompt 工程",
       "rank": 9,
-      "weighted_degree": 669
+      "weighted_degree": 676
     },
     {
-      "article_count": 165,
+      "article_count": 166,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
-      "degree": 89,
+      "degree": 90,
       "description": "文章标签: 机器学习",
       "id": "tag:机器学习",
       "layer": "tag",
       "legacy_id": "机器学习",
       "name": "机器学习",
       "rank": 10,
-      "weighted_degree": 643
+      "weighted_degree": 650
     },
     {
       "article_count": 163,
@@ -171,7 +171,7 @@
       "weighted_degree": 590.2
     },
     {
-      "article_count": 214,
+      "article_count": 215,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 61,
@@ -181,7 +181,7 @@
       "legacy_id": "AI",
       "name": "AI",
       "rank": 13,
-      "weighted_degree": 536.6
+      "weighted_degree": 538.6
     },
     {
       "article_count": 146,
@@ -236,7 +236,7 @@
       "weighted_degree": 338
     },
     {
-      "article_count": 47,
+      "article_count": 48,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 39,
@@ -246,10 +246,10 @@
       "legacy_id": "Advanced (300)",
       "name": "Advanced (300)",
       "rank": 18,
-      "weighted_degree": 311
+      "weighted_degree": 318
     },
     {
-      "article_count": 44,
+      "article_count": 45,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 41,
@@ -259,7 +259,7 @@
       "legacy_id": "Technical How-to",
       "name": "Technical How-to",
       "rank": 19,
-      "weighted_degree": 294
+      "weighted_degree": 301
     },
     {
       "article_count": 69,
@@ -797,6 +797,19 @@
     {
       "article_count": 4,
       "category": "article_tag",
+      "community_id": "community:tag:Technical How-to",
+      "degree": 16,
+      "description": "文章标签: Amazon Simple Storage Service (S3)",
+      "id": "tag:Amazon Simple Storage Service (S3)",
+      "layer": "tag",
+      "legacy_id": "Amazon Simple Storage Service (S3)",
+      "name": "Amazon Simple Storage Service (S3)",
+      "rank": 61,
+      "weighted_degree": 28
+    },
+    {
+      "article_count": 4,
+      "category": "article_tag",
       "community_id": "community:tag:Computer modeling",
       "degree": 15,
       "description": "文章标签: Algorithms",
@@ -804,7 +817,7 @@
       "layer": "tag",
       "legacy_id": "Algorithms",
       "name": "Algorithms",
-      "rank": 61,
+      "rank": 62,
       "weighted_degree": 28
     },
     {
@@ -817,7 +830,7 @@
       "layer": "tag",
       "legacy_id": "Kotlin",
       "name": "Kotlin",
-      "rank": 62,
+      "rank": 63,
       "weighted_degree": 27
     },
     {
@@ -830,7 +843,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Elastic Kubernetes Service",
       "name": "Amazon Elastic Kubernetes Service",
-      "rank": 63,
+      "rank": 64,
       "weighted_degree": 23.6
     },
     {
@@ -843,7 +856,7 @@
       "layer": "tag",
       "legacy_id": "Data Infrastructure",
       "name": "Data Infrastructure",
-      "rank": 64,
+      "rank": 65,
       "weighted_degree": 22.6
     },
     {
@@ -856,7 +869,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Quick Sight",
       "name": "Amazon Quick Sight",
-      "rank": 65,
+      "rank": 66,
       "weighted_degree": 22
     },
     {
@@ -869,19 +882,6 @@
       "layer": "tag",
       "legacy_id": "Amazon DynamoDB",
       "name": "Amazon DynamoDB",
-      "rank": 66,
-      "weighted_degree": 21
-    },
-    {
-      "article_count": 3,
-      "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
-      "degree": 14,
-      "description": "文章标签: Amazon Simple Storage Service (S3)",
-      "id": "tag:Amazon Simple Storage Service (S3)",
-      "layer": "tag",
-      "legacy_id": "Amazon Simple Storage Service (S3)",
-      "name": "Amazon Simple Storage Service (S3)",
       "rank": 67,
       "weighted_degree": 21
     },
@@ -1367,7 +1367,7 @@
       "weighted_degree": 8.6
     },
     {
-      "article_count": 870,
+      "article_count": 871,
       "category": "nlp",
       "community_id": null,
       "degree": 8,
@@ -1484,7 +1484,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 1177,
+      "article_count": 1179,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -2381,7 +2381,7 @@
       "weighted_degree": 5
     },
     {
-      "article_count": 954,
+      "article_count": 955,
       "category": "ai",
       "community_id": null,
       "degree": 5,
@@ -2888,7 +2888,7 @@
       "weighted_degree": 2.8
     },
     {
-      "article_count": 870,
+      "article_count": 871,
       "category": "ai",
       "community_id": null,
       "degree": 3,
