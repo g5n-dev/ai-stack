@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:大语言模型",
-  "generated_at": "2026-10-01T18:56:36Z",
+  "generated_at": "2026-10-01T23:15:13Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -18,7 +18,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 342
+      "weight": 343
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:来源快报",
@@ -26,7 +26,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 300
+      "weight": 301
     },
     {
       "id": "edge:cooccurrence:tag:大语言模型->tag:来源快报",
@@ -34,7 +34,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 297
+      "weight": 298
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:掘金",
@@ -280,7 +280,7 @@
       "weighted_degree": 2896.2
     },
     {
-      "article_count": 871,
+      "article_count": 872,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -294,10 +294,10 @@
       "name": "大语言模型",
       "rank": 2,
       "related_count": 102,
-      "weighted_degree": 2628.2
+      "weighted_degree": 2631.2
     },
     {
-      "article_count": 820,
+      "article_count": 821,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -311,7 +311,24 @@
       "name": "来源快报",
       "rank": 3,
       "related_count": 127,
-      "weighted_degree": 2450
+      "weighted_degree": 2453
+    },
+    {
+      "article_count": 855,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:大语言模型",
+      "degree": 49,
+      "description": "文章标签: ArXiv",
+      "id": "tag:ArXiv",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "ArXiv",
+      "level": 6,
+      "name": "ArXiv",
+      "rank": 5,
+      "related_count": 49,
+      "weighted_degree": 1393
     },
     {
       "article_count": 553,
@@ -326,26 +343,9 @@
       "legacy_id": "掘金",
       "level": 6,
       "name": "掘金",
-      "rank": 5,
+      "rank": 6,
       "related_count": 26,
       "weighted_degree": 1393
-    },
-    {
-      "article_count": 854,
-      "category": "article_tag",
-      "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
-      "degree": 49,
-      "description": "文章标签: ArXiv",
-      "id": "tag:ArXiv",
-      "layer": "tag",
-      "layer_name": "标签层",
-      "legacy_id": "ArXiv",
-      "level": 6,
-      "name": "ArXiv",
-      "rank": 6,
-      "related_count": 49,
-      "weighted_degree": 1390
     },
     {
       "article_count": 1013,
@@ -603,7 +603,7 @@
       "weighted_degree": 126.2
     },
     {
-      "article_count": 31,
+      "article_count": 32,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -617,7 +617,7 @@
       "name": "cs.LG",
       "rank": 37,
       "related_count": 9,
-      "weighted_degree": 97
+      "weighted_degree": 100
     },
     {
       "article_count": 18,
