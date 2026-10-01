@@ -15,7 +15,7 @@ observation_id: obs_cfe32cdb08fcc91ab019a4753d80f9cb52d195340914158089043086cb62
 event_id: evt_11166925da2bab0ae98e8cfa5891e2cf21c811d16175b15234cecef0e77497be
 revision_id: rev_4d5ec038b061a96cf1ae6b90d53747163805ba050a5228ef96fdb7dac2837864
 source_published_at: 2026-09-30T22:23:40Z
-first_seen_at: 2026-09-30T23:48:28.428719Z
+first_seen_at: 2026-10-01T00:03:43Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ source_title_chars_original: 90
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://www.latent.space/p/devday-2026
 parent_observation_id: null
-last_seen_at: 2026-09-30T23:48:28.428719Z
+last_seen_at: 2026-10-01T00:00:00Z
 ---
 
 ## 基本信息

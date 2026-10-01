@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:1ce125233b2e7f42ae94fa876d473c15b3f0da1319e7c5240
 description: "这是一份AI行业通讯对OpenAI 2026开发者日的综合报道，涵盖了其发布的语音代理产品、新一代模型、加速功能、决策接口以及企业级平台调整，并包含与竞争对手模型的性能对比评测。"
 external_url: https://www.latent.space/p/ainews-openai-devday-2026-dots-61
 parent_observation_id: null
-last_seen_at: 2026-09-30T06:42:42.718143Z
+last_seen_at: 2026-10-01T00:00:00Z
 ---
 
 ## 基本信息

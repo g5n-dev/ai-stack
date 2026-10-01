@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:e0c84b42712154e04712c3f2a1af51441b4678cb68f58dda5
 description: "它介绍了在 Amazon Quick 平台上，通过清晰、具体、具上下文且结合示例的提示方法，以及 CRISPE 等结构化框架，提升自然语言请求结果的准确性和可重复性。"
 external_url: https://aws.amazon.com/blogs/machine-learning/prompt-engineering-fundamentals-for-amazon-quick
 parent_observation_id: null
-last_seen_at: 2026-09-30T00:26:52.384905Z
+last_seen_at: 2026-10-01T00:00:00Z
 ---
 
 ## 基本信息

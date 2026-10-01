@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:b25a7020e2410d6e84fc20f44dfa11ceeab9ab506ba9dc70
 source_payload_sha256: "sha256:3ae2668710d32b516f530ff61edfed548998e2aa9f625adefbd99be14f9f1ced"
 observation_id: obs_0241e600b90d751edb67d0e42bee7f0465567b2f0886c79fce263ae1be3a93c2
 event_id: evt_9b08f95cbb949599b1b17c9a0caaa831b3584d4a4d148007451888cef7d8cf16
-revision_id: rev_84f9aaa1402eaee17d8f83090ef80d0249ff863846e2e7a538eeeaf1546c81b7
+revision_id: rev_053a73b8d2c214b977cd46d997c6a3d63a4b2a2adaf89a411345da06305f70a6
 source_published_at: 2026-09-30T17:37:40Z
 first_seen_at: 2026-09-30T19:32:37Z
 timestamp_confidence: platform
@@ -27,7 +27,7 @@ source_title_chars_original: 75
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://github.com/magnitudedev/magnitude
 parent_observation_id: null
-last_seen_at: 2026-09-30T19:19:10.017073Z
+last_seen_at: 2026-10-01T00:00:00Z
 ---
 
 ## 基本信息
