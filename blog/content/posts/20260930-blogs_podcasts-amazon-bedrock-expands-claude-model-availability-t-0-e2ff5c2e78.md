@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:76a9b0ebaf143006fed73dd2532a58c0c92d4da4498ac4918
 description: "亚马逊云服务在印度启用跨区域推理，使Claude Opus 5、Sonnet 5、Haiku 4.5在孟买和海得拉巴两个区域之间完成计算，数据始终保持在本地且默认不保留模型输入输出。"
 external_url: https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-expands-claude-model-availability-to-india-cross-region-inference
 parent_observation_id: null
-last_seen_at: 2026-09-30T13:42:44.272398Z
+last_seen_at: 2026-10-01T00:00:00Z
 ---
 
 ## 基本信息

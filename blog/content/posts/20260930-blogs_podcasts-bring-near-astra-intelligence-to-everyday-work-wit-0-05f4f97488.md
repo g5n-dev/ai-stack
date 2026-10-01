@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:167634bca3672496176177a9a4948f6ae6a8fd9d45f7ba243
 description: "GPT-6.1 Sol 在 Amazon Bedrock 上正式发布，为 AI 代理的编码、计算机操作和专业工作流程带来更强的推理能力，同时在成本上优于前代版本。"
 external_url: https://aws.amazon.com/blogs/machine-learning/bring-near-astra-intelligence-to-everyday-work-with-gpt-6-1-sol-on-amazon-bedrock
 parent_observation_id: null
-last_seen_at: 2026-09-30T00:00:00Z
+last_seen_at: 2026-10-01T00:00:00Z
 ---
 
 ## 基本信息
