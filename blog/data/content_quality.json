@@ -1,5 +1,5 @@
 {
-  "active_count": 3052,
+  "active_count": 3055,
   "archived_count": 276,
   "complete_count": 88,
   "interpreted_brief_count": 285,
@@ -22982,6 +22982,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20261001-arxiv-a-spectral-theory-of-distortion-in-llm-graph-recon-3-a2faa0bf7f.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20261001-arxiv-cropland-patterns-parallel-dimensional-attention-n-3-1e7b8ed0db.md": {
       "reasons": [
         "concise_source_card"
@@ -22993,6 +22999,21 @@
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20261001-blogs_podcasts-why-dwarkesh-is-wrong-about-computer-use-how-opena-0-cfe32cdb08.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
+    "posts/20261001-hacker_news-gemini-4-argon-0-8a18dee8ca.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20261001-hacker_news-launch-hn-magnitude-yc-s25-self-optimizing-inferen-0-0241e600b9.md": {
       "reasons": [
@@ -23033,11 +23054,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2679,
-  "source_file_count": 3328,
-  "source_tree_sha256": "3f2e78660a8f516e6d1d04c6810314566a4c789b07c41af22cd2d50f9403e7cc",
-  "verified_provenance_count": 3052,
+  "source_brief_count": 2682,
+  "source_file_count": 3331,
+  "source_tree_sha256": "9b1568406c4b981bf5847045a08fab858f7c77fa8432a33c0911c98ef12d6db9",
+  "verified_provenance_count": 3055,
   "warning_counts": {
-    "source_excerpt_truncated": 817
+    "source_excerpt_truncated": 818
   }
 }
