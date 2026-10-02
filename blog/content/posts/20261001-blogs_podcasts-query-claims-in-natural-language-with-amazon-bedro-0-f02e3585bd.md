@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:3b3470b9bf3d21f572ed46df118d8df7e03effd158ab94c39
 description: "这是一篇技术实践指南，演示如何利用托管的检索增强生成能力，让用户通过自然语言提问，从分散在多种格式文档中的保险理赔记录里获取带出处的回答。"
 external_url: https://aws.amazon.com/blogs/machine-learning/query-claims-in-natural-language-with-amazon-bedrock-knowledge-bases
 parent_observation_id: null
-last_seen_at: 2026-10-01T00:00:00Z
+last_seen_at: 2026-10-02T00:00:00Z
 ---
 
 ## 基本信息
