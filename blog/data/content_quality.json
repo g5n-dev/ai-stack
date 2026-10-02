@@ -1,8 +1,8 @@
 {
-  "active_count": 3069,
+  "active_count": 3072,
   "archived_count": 276,
   "complete_count": 88,
-  "interpreted_brief_count": 292,
+  "interpreted_brief_count": 293,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23069,6 +23069,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20261002-arxiv-reconstruct-practice-go-real-guided-self-improveme-0-e2a630667d.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20261002-arxiv-removing-timing-shortcuts-improves-non-invasive-br-0-06651255eb.md": {
       "reasons": [
         "interpreted_source_card"
@@ -23084,6 +23090,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20261002-blogs_podcasts-add-secure-web-search-to-claude-desktop-with-amazo-0-236dbb8238.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261002-blogs_podcasts-ainews-pi-10-pi-durable-and-aie-nyc-0-901948bef6.md": {
       "reasons": [
         "interpreted_source_card"
@@ -23095,6 +23107,12 @@
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20261002-hacker_news-ai-makes-me-sad-1-7c35e1148c.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20261002-hacker_news-aweb-communication-for-ai-agents-15-5eac50629b.md": {
       "reasons": [
@@ -23141,10 +23159,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2689,
-  "source_file_count": 3345,
-  "source_tree_sha256": "c03ab13bca4cfb69b32f6ac27f9a26172637b77f4305bace5ffcad1ddb5ab16d",
-  "verified_provenance_count": 3069,
+  "source_brief_count": 2691,
+  "source_file_count": 3348,
+  "source_tree_sha256": "a4fb458996c3e00b621bd9954c2c7aee0811f026e19417c0be4c694fcaf15eb1",
+  "verified_provenance_count": 3072,
   "warning_counts": {
     "source_excerpt_truncated": 819
   }
