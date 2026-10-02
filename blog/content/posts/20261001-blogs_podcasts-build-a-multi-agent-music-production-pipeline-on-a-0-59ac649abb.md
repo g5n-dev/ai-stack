@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:8d9f27fa3a519f20c489b26572cafb8861adf72ea2b758fad
 description: "这是一篇技术实践文章，演示了如何在AWS Bedrock的Runtime Instances上构建多智能体协作流水线，以音乐制作为例，展示了三个专业智能体如何共享计算资源、持久化存储和GPU来协同完成从音频生成到合规检查的完整工作流程。"
 external_url: https://aws.amazon.com/blogs/machine-learning/build-a-multi-agent-music-production-pipeline-on-amazon-bedrock-agentcore-runtime-instances
 parent_observation_id: null
-last_seen_at: 2026-10-01T05:51:00.804599Z
+last_seen_at: 2026-10-02T00:00:00Z
 ---
 
 ## 基本信息

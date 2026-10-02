@@ -1,8 +1,8 @@
 {
-  "active_count": 3064,
+  "active_count": 3067,
   "archived_count": 276,
   "complete_count": 88,
-  "interpreted_brief_count": 289,
+  "interpreted_brief_count": 291,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23057,17 +23057,38 @@
       ],
       "status": "source_brief"
     },
+    "posts/20261002-arxiv-one-basis-to-animate-them-all-gaussian-blendshape--0-984db9560b.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261002-arxiv-removing-timing-shortcuts-improves-non-invasive-br-0-06651255eb.md": {
       "reasons": [
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
     },
+    "posts/20261002-blogs_podcasts-academia-is-for-ambition-alex-zhang-mit-0-da0034913a.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20261002-blogs_podcasts-build-agent-memory-with-nvidia-nemo-agent-toolkit--0-67198745eb.md": {
       "reasons": [
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20261002-hacker_news-aweb-communication-for-ai-agents-15-5eac50629b.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20261002-hacker_news-show-hn-vote-on-which-of-hacker-news-challenges-fo-4-44bf63d131.md": {
       "reasons": [
@@ -23108,11 +23129,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2687,
-  "source_file_count": 3340,
-  "source_tree_sha256": "7ff4ce70519d2f594fc11b0d911731fdc862ad5676911751da0d81e1c9c049b8",
-  "verified_provenance_count": 3064,
+  "source_brief_count": 2688,
+  "source_file_count": 3343,
+  "source_tree_sha256": "26b79a5cd3e1354e0544fc404d3b71d7a0f3115b2d6e9afbefa0413c756dbe87",
+  "verified_provenance_count": 3067,
   "warning_counts": {
-    "source_excerpt_truncated": 818
+    "source_excerpt_truncated": 819
   }
 }

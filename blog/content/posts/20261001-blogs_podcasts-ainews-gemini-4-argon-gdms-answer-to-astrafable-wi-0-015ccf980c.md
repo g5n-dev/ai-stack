@@ -27,7 +27,7 @@ source_title_chars_original: 68
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://www.latent.space/p/ainews-gemini-4-argon-gdms-answer
 parent_observation_id: null
-last_seen_at: 2026-10-01T13:11:45.105826Z
+last_seen_at: 2026-10-02T00:00:00Z
 ---
 
 ## 基本信息
