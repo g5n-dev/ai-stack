@@ -12,10 +12,10 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-10-03T19:59:29Z",
+  "generated_at": "2026-10-03T23:06:00Z",
   "items": [
     {
-      "article_count": 968,
+      "article_count": 969,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 93,
@@ -25,10 +25,10 @@
       "legacy_id": "AI Agent",
       "name": "AI Agent",
       "rank": 1,
-      "weighted_degree": 2951.2
+      "weighted_degree": 2955.2
     },
     {
-      "article_count": 889,
+      "article_count": 891,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 106,
@@ -38,10 +38,10 @@
       "legacy_id": "大语言模型",
       "name": "大语言模型",
       "rank": 2,
-      "weighted_degree": 2702.2
+      "weighted_degree": 2708.2
     },
     {
-      "article_count": 844,
+      "article_count": 846,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 127,
@@ -51,10 +51,10 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 3,
-      "weighted_degree": 2527
+      "weighted_degree": 2533
     },
     {
-      "article_count": 557,
+      "article_count": 558,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 109,
@@ -64,7 +64,7 @@
       "legacy_id": "博客与播客",
       "name": "博客与播客",
       "rank": 4,
-      "weighted_degree": 1674
+      "weighted_degree": 1678
     },
     {
       "article_count": 864,
@@ -80,7 +80,7 @@
       "weighted_degree": 1426
     },
     {
-      "article_count": 554,
+      "article_count": 555,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 26,
@@ -90,10 +90,10 @@
       "legacy_id": "掘金",
       "name": "掘金",
       "rank": 6,
-      "weighted_degree": 1396
+      "weighted_degree": 1398
     },
     {
-      "article_count": 195,
+      "article_count": 196,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 70,
@@ -103,10 +103,10 @@
       "legacy_id": "生成式 AI",
       "name": "生成式 AI",
       "rank": 7,
-      "weighted_degree": 862
+      "weighted_degree": 866
     },
     {
-      "article_count": 1021,
+      "article_count": 1022,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 21,
@@ -116,7 +116,7 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 8,
-      "weighted_degree": 778
+      "weighted_degree": 780
     },
     {
       "article_count": 126,
@@ -392,7 +392,7 @@
       "weighted_degree": 210
     },
     {
-      "article_count": 88,
+      "article_count": 89,
       "category": "article_tag",
       "community_id": "community:other",
       "degree": 9,
@@ -402,10 +402,10 @@
       "legacy_id": "工程实践",
       "name": "工程实践",
       "rank": 30,
-      "weighted_degree": 181
+      "weighted_degree": 183
     },
     {
-      "article_count": 87,
+      "article_count": 88,
       "category": "article_tag",
       "community_id": "community:other",
       "degree": 2,
@@ -415,7 +415,7 @@
       "legacy_id": "来源转写",
       "name": "来源转写",
       "rank": 31,
-      "weighted_degree": 174
+      "weighted_degree": 176
     },
     {
       "article_count": 43,
@@ -1380,7 +1380,7 @@
       "weighted_degree": 8.6
     },
     {
-      "article_count": 889,
+      "article_count": 891,
       "category": "nlp",
       "community_id": null,
       "degree": 8,
@@ -1497,7 +1497,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 1195,
+      "article_count": 1196,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -2472,7 +2472,7 @@
       "weighted_degree": 5
     },
     {
-      "article_count": 968,
+      "article_count": 969,
       "category": "ai",
       "community_id": null,
       "degree": 5,
@@ -2979,7 +2979,7 @@
       "weighted_degree": 2.8
     },
     {
-      "article_count": 889,
+      "article_count": 891,
       "category": "ai",
       "community_id": null,
       "degree": 3,
