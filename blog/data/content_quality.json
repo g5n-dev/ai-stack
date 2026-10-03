@@ -1,8 +1,8 @@
 {
-  "active_count": 3088,
+  "active_count": 3091,
   "archived_count": 276,
   "complete_count": 88,
-  "interpreted_brief_count": 298,
+  "interpreted_brief_count": 299,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23213,6 +23213,12 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20261004-arxiv-hierarchical-continuous-diffusion-language-models-2-4ff3a1a714.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261004-arxiv-taco-ternary-absolute-max-column-wise-one-sparse-o-0-faf8ced7f9.md": {
       "reasons": [
         "concise_source_card"
@@ -23225,7 +23231,19 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20261004-blogs_podcasts-the-latest-ai-news-we-announced-in-september-2026-0-aacb8ca8a4.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20261004-hacker_news-kolibri-is-an-open-weight-llm-from-aleph-alpha-for-1-1ef1b38c39.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261004-hacker_news-show-hn-pi-pod-run-your-pi-coding-agent-in-sandbox-5-b035a7e14d.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -23264,10 +23282,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2702,
-  "source_file_count": 3364,
-  "source_tree_sha256": "21d94ad593a8632737022428458f931a1b891e09b23c0dfdd2d4e0905e22af2f",
-  "verified_provenance_count": 3088,
+  "source_brief_count": 2704,
+  "source_file_count": 3367,
+  "source_tree_sha256": "52ff70af20004fe1c81097594b1efa38be8c0c4ededb1f81e675c77a6a81c881",
+  "verified_provenance_count": 3091,
   "warning_counts": {
     "source_excerpt_truncated": 822
   }
