@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:27d078d089b76e3c24dcb5928676cc463d2eded026a2af0e2
 description: "这是一份AI技术周报，汇总了近期多个AI工具和模型的发布动态，包括编程助手Pi的版本更新、多款语言模型和图像模型的新版本，以及视频交互产品的进展。"
 external_url: https://www.latent.space/p/ainews-pi-10-pi-durable-and-aie-nyc
 parent_observation_id: null
-last_seen_at: 2026-10-02T08:33:59.185548Z
+last_seen_at: 2026-10-03T00:00:00Z
 ---
 
 ## 基本信息

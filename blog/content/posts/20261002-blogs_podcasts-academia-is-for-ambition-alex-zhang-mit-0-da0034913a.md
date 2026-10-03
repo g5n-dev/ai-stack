@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:e75b6bec4479cb76e4d2e7ffe61f4b6e4627c6682407e3595
 description: "这是一期播客访谈，邀请麻省理工学院研究者亚历克斯·张，讨论递归语言模型、GPU 内核优化、多智能体系统设计以及 AI 研究品味等话题。"
 external_url: https://www.latent.space/p/rlm
 parent_observation_id: null
-last_seen_at: 2026-10-02T02:15:28.149005Z
+last_seen_at: 2026-10-03T00:00:00Z
 ---
 
 ## 基本信息

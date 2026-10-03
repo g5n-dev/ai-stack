@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:775b2426450f5329220d0ca6e7e93f573b8d477e7e732e6e
 source_payload_sha256: "sha256:2026eec9ff7ef41d4ba6a07c494e41068b58c2daac0446b886f624985d88a6b6"
 observation_id: obs_236dbb8238cdf625118730f1fcaab635d506047f0e13b256b9809f63993bc86d
 event_id: evt_05bf1fcc65dc6a78a760429c3098ef191e2f804e2bbf25ec8c17711d329596bf
-revision_id: rev_31c68a42e61aa7786ef26b34b7806ffdf91d43af916b18d46fe808904f78dcae
+revision_id: rev_47b073e6daf88854bd1293d5fd8351b5ded2aa51e604bf4a7292eabcc0501c6e
 source_published_at: 2026-10-02T15:46:05Z
 first_seen_at: 2026-10-02T16:01:57Z
 timestamp_confidence: feed
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:d66324249872ed69b54ef50edc450cae8290d0419c42ea7d4
 description: "该内容介绍如何通过 Amazon Bedrock AgentCore Gateway 将 Web Search 能力接入 Claude Desktop，并使用基于 JWT 的认证机制保障通信安全，整个认证链路涉及 IAM Identity Center、Amazon Cognito 等 AWS 服务。"
 external_url: https://aws.amazon.com/blogs/machine-learning/add-secure-web-search-to-claude-desktop-with-amazon-bedrock-agentcore
 parent_observation_id: null
-last_seen_at: 2026-10-02T15:48:39.627944Z
+last_seen_at: 2026-10-03T00:00:00Z
 ---
 
 ## 基本信息
