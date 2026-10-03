@@ -1,5 +1,5 @@
 {
-  "active_count": 3076,
+  "active_count": 3079,
   "archived_count": 276,
   "complete_count": 88,
   "interpreted_brief_count": 294,
@@ -23132,6 +23132,18 @@
       ],
       "status": "source_brief"
     },
+    "posts/20261003-arxiv-scholarcatalyst-a-benchmark-for-retrieving-papers--0-04f7c28a71.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261003-blogs_podcasts-a-model-guide-for-the-gpt-6-family-0-c38af6e5ca.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20261003-blogs_podcasts-computational-tools-for-societys-most-complex-chal-0-bebca6424b.md": {
       "reasons": [
         "interpreted_source_card"
@@ -23139,6 +23151,12 @@
       "status": "interpreted_brief"
     },
     "posts/20261003-hacker_news-greg-kroah-hartman-security-in-the-llm-age-video-4-d0bacd5807.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261003-hacker_news-with-most-information-hidden-the-game-stratego-had-4-e7998846bd.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -23186,10 +23204,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2694,
-  "source_file_count": 3352,
-  "source_tree_sha256": "d0d2a7b13f86d97906191e4d04141755e05ad7fa492a25d6be0279be2a37f9f8",
-  "verified_provenance_count": 3076,
+  "source_brief_count": 2697,
+  "source_file_count": 3355,
+  "source_tree_sha256": "77c774158d57a0ed1a46d21140a196a3b072f76e36d54f5dc3677c6dc2d56e50",
+  "verified_provenance_count": 3079,
   "warning_counts": {
     "source_excerpt_truncated": 820
   }

@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:b0ffbaa07520f3c965a07665cc5c8a8f1c163d635a90ee831
 description: "这篇内容展示如何把 Amazon S3 Vectors 作为持久化记忆后端，集成到 NVIDIA NeMo Agent Toolkit 的记忆子系统中，并在 Amazon EKS 上完成部署。"
 external_url: https://aws.amazon.com/blogs/machine-learning/build-agent-memory-with-nvidia-nemo-agent-toolkit-and-amazon-s3-vectors
 parent_observation_id: null
-last_seen_at: 2026-10-02T00:00:00Z
+last_seen_at: 2026-10-03T00:00:00Z
 ---
 
 ## 基本信息

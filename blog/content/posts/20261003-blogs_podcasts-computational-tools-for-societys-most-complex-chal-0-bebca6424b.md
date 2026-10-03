@@ -15,7 +15,7 @@ observation_id: obs_bebca6424b0efee5984cc8767b7bb73b56d347a483516fbb5ca0dd84cef8
 event_id: evt_4aadf4aac8dce0967c36ac49f8d2c1f04681a33a73f108aaea83fdf37e48e741
 revision_id: rev_22c0b97b3f53d2f6f04c59ae2ffc2fe3ab48571c836600402e7417daf9f2cb67
 source_published_at: 2026-10-02T19:30:00Z
-first_seen_at: 2026-10-02T20:44:17.911599Z
+first_seen_at: 2026-10-02T20:58:53Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:38f8d414068cde606ec840a3dfdf12356052a3f75016de0cb
 description: "这是一篇关于 MIT 副教授 Cathy Wu 的访谈/博客，讲述她如何借助机器学习与强化学习改进交通系统的研究路径与最新突破。"
 external_url: https://news.mit.edu/2026/computational-tools-for-societys-most-complex-challenges-cathy-wu-1002
 parent_observation_id: null
-last_seen_at: 2026-10-02T20:44:17.911599Z
+last_seen_at: 2026-10-03T00:00:00Z
 ---
 
 ## 基本信息

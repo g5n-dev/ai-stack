@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:b5553e805a1cc44e47f9e17c210342455e70cf715904de70f
 description: "该研究提出一种基于线性混合形状的蒸馏方法，用浅层网络预测混合系数并通过线性组合实现三维角色的实时动画，省去逐帧的高开销神经解码。"
 external_url: http://arxiv.org/abs/2610.02207v1
 parent_observation_id: null
-last_seen_at: 2026-10-02T02:15:24.047089Z
+last_seen_at: 2026-10-03T00:00:00Z
 ---
 
 ## 基本信息
