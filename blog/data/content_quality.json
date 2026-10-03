@@ -1,8 +1,8 @@
 {
-  "active_count": 3082,
+  "active_count": 3085,
   "archived_count": 276,
   "complete_count": 88,
-  "interpreted_brief_count": 296,
+  "interpreted_brief_count": 297,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23144,11 +23144,26 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20261003-arxiv-vista-a-visual-harness-for-reasoning-in-an-interac-0-571b57f9dc.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261003-blogs_podcasts-a-model-guide-for-the-gpt-6-family-0-c38af6e5ca.md": {
       "reasons": [
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20261003-blogs_podcasts-ainews-not-much-happened-today-0-d43d2f1330.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     },
     "posts/20261003-blogs_podcasts-computational-tools-for-societys-most-complex-chal-0-bebca6424b.md": {
       "reasons": [
@@ -23172,6 +23187,12 @@
       "status": "source_brief"
     },
     "posts/20261003-hacker_news-greg-kroah-hartman-security-in-the-llm-age-video-4-d0bacd5807.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261003-hacker_news-show-hn-offrun-manage-every-coding-agent-from-one--10-a20e9d516e.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -23225,11 +23246,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2698,
-  "source_file_count": 3358,
-  "source_tree_sha256": "3154dc1f067b90f62635670f10bbc1ab13c11e0b344943f51d24d3150f8f5c30",
-  "verified_provenance_count": 3082,
+  "source_brief_count": 2700,
+  "source_file_count": 3361,
+  "source_tree_sha256": "b2f58094e918afe456f619736441f09df0d6b2aa6440b675e9d9c922a1dc6bef",
+  "verified_provenance_count": 3085,
   "warning_counts": {
-    "source_excerpt_truncated": 821
+    "source_excerpt_truncated": 822
   }
 }
