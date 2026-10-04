@@ -1,8 +1,8 @@
 {
-  "active_count": 3099,
+  "active_count": 3101,
   "archived_count": 276,
   "complete_count": 89,
-  "interpreted_brief_count": 301,
+  "interpreted_brief_count": 302,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23290,6 +23290,18 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20261005-arxiv-dmad-distribution-matching-as-adversarial-distilla-3-52769b62a6.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20261005-hacker_news-how-to-scale-intent-quality-and-artistry-with-ai-v-6-1c3fa1d835.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -23324,10 +23336,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2709,
-  "source_file_count": 3375,
-  "source_tree_sha256": "37aeff481b12dfb8701462426286b16fbc2565e4a97c5fb908633baa822ebc01",
-  "verified_provenance_count": 3099,
+  "source_brief_count": 2710,
+  "source_file_count": 3377,
+  "source_tree_sha256": "86c39cf3b23fb5a073d016f77a43152cbce17070b55fa7e299717c2f5d107b66",
+  "verified_provenance_count": 3101,
   "warning_counts": {
     "source_excerpt_truncated": 822
   }
