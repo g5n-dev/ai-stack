@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:ab883f3102284df6e581ac4053cf6930d72ccdbf71211f471
 description: "VISTA 是一种视觉框架，让通用多模态模型获得长时间视觉感知能力，并通过无损视觉记忆保留过去观察，使模型能够在推理过程中主动检索并重组视觉输入。"
 external_url: http://arxiv.org/abs/2610.02200v1
 parent_observation_id: null
-last_seen_at: 2026-10-03T12:33:30.220691Z
+last_seen_at: 2026-10-04T00:00:00Z
 ---
 
 ## 基本信息

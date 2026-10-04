@@ -1,5 +1,5 @@
 {
-  "active_count": 3094,
+  "active_count": 3097,
   "archived_count": 276,
   "complete_count": 89,
   "interpreted_brief_count": 300,
@@ -23225,6 +23225,18 @@
       ],
       "status": "source_brief"
     },
+    "posts/20261004-arxiv-the-missing-primitive-diagnosing-and-repairing-mat-2-a45aea5363.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261004-blogs_podcasts-chatham-scales-its-capital-markets-expertise-with--0-882596cbc7.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20261004-blogs_podcasts-fine-tune-a-search-agent-with-multi-turn-rl-on-ama-0-813f4b8521.md": {
       "reasons": [
         "interpreted_source_card"
@@ -23250,6 +23262,12 @@
       "status": "source_brief"
     },
     "posts/20261004-hacker_news-kolibri-is-an-open-weight-llm-from-aleph-alpha-for-1-1ef1b38c39.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261004-hacker_news-openai-safety-leader-quits-warning-ai-companys-cul-6-902a8fe986.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -23294,10 +23312,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2705,
-  "source_file_count": 3370,
-  "source_tree_sha256": "c3c4a5f420e7354299ad03ebb3b3bd0618985bc391683a8bad843df739b03042",
-  "verified_provenance_count": 3094,
+  "source_brief_count": 2708,
+  "source_file_count": 3373,
+  "source_tree_sha256": "75edcf7180e9ca4bb97f09fd25b23c31fdfaa5e34ed43e68f636ca8ca3877f45",
+  "verified_provenance_count": 3097,
   "warning_counts": {
     "source_excerpt_truncated": 822
   }

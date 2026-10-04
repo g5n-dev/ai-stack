@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:38f8d414068cde606ec840a3dfdf12356052a3f75016de0cb
 description: "这是一篇关于 MIT 副教授 Cathy Wu 的访谈/博客，讲述她如何借助机器学习与强化学习改进交通系统的研究路径与最新突破。"
 external_url: https://news.mit.edu/2026/computational-tools-for-societys-most-complex-challenges-cathy-wu-1002
 parent_observation_id: null
-last_seen_at: 2026-10-03T00:00:00Z
+last_seen_at: 2026-10-04T00:00:00Z
 ---
 
 ## 基本信息

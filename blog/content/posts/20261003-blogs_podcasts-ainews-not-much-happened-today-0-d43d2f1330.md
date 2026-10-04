@@ -28,7 +28,7 @@ source_title_chars_original: 32
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://www.latent.space/p/ainews-not-much-happened-today-cee
 parent_observation_id: null
-last_seen_at: 2026-10-03T12:33:34.625154Z
+last_seen_at: 2026-10-04T00:00:00Z
 ---
 
 ## 基本信息

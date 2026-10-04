@@ -27,7 +27,7 @@ source_title_chars_original: 49
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026
 parent_observation_id: null
-last_seen_at: 2026-10-03T19:57:22.146604Z
+last_seen_at: 2026-10-04T00:00:00Z
 ---
 
 ## 基本信息

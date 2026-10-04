@@ -2,21 +2,21 @@
   "algorithm": "deterministic-weighted-label-propagation",
   "communities": [
     {
-      "article_count": 3092,
+      "article_count": 3095,
       "hotspot_count": 24,
-      "hotspot_file": "community-hotspots/01-75a7a3876f56.json",
+      "hotspot_file": "community-hotspots/01-a557eabcfc33.json",
       "id": "community:tag:大语言模型",
       "leader_id": "tag:Hacker News",
       "name": "Hacker News",
       "node_count": 125,
       "rank": 1,
-      "tag_occurrences": 8441,
-      "weighted_degree": 24822.8
+      "tag_occurrences": 8451,
+      "weighted_degree": 24846.8
     },
     {
       "article_count": 13,
       "hotspot_count": 14,
-      "hotspot_file": "community-hotspots/02-f298129163a3.json",
+      "hotspot_file": "community-hotspots/02-25927451080c.json",
       "id": "community:tag:Gemini Notebook",
       "leader_id": "tag:Search",
       "name": "Search",
@@ -28,7 +28,7 @@
     {
       "article_count": 14,
       "hotspot_count": 10,
-      "hotspot_file": "community-hotspots/03-da5bd0cc201f.json",
+      "hotspot_file": "community-hotspots/03-a173833339fe.json",
       "id": "community:tag:Machine learning",
       "leader_id": "tag:Research",
       "name": "Research",
@@ -40,7 +40,7 @@
     {
       "article_count": 5,
       "hotspot_count": 8,
-      "hotspot_file": "community-hotspots/04-2b82fe0998dc.json",
+      "hotspot_file": "community-hotspots/04-047a37043709.json",
       "id": "community:tag:ML Applications",
       "leader_id": "tag:Data Infrastructure",
       "name": "Data Infrastructure",
@@ -52,7 +52,7 @@
     {
       "article_count": 4,
       "hotspot_count": 7,
-      "hotspot_file": "community-hotspots/05-481763346a6a.json",
+      "hotspot_file": "community-hotspots/05-553478585513.json",
       "id": "community:tag:Computer modeling",
       "leader_id": "tag:Algorithms",
       "name": "Algorithms",
@@ -64,7 +64,7 @@
     {
       "article_count": 3,
       "hotspot_count": 7,
-      "hotspot_file": "community-hotspots/06-3ecb0c0db95b.json",
+      "hotspot_file": "community-hotspots/06-e6a2de537434.json",
       "id": "community:tag:Logistics",
       "leader_id": "tag:Faculty",
       "name": "Faculty",
@@ -76,7 +76,7 @@
     {
       "article_count": 4,
       "hotspot_count": 6,
-      "hotspot_file": "community-hotspots/07-7fbda5a87c27.json",
+      "hotspot_file": "community-hotspots/07-bde31c0ba8ff.json",
       "id": "community:tag:Amazon RDS",
       "leader_id": "tag:Amazon Elastic Kubernetes Service",
       "name": "Amazon Elastic Kubernetes Service",
@@ -88,7 +88,7 @@
     {
       "article_count": 3,
       "hotspot_count": 6,
-      "hotspot_file": "community-hotspots/08-8459e8ee2a26.json",
+      "hotspot_file": "community-hotspots/08-b4653fdcf628.json",
       "id": "community:tag:Civil and environmental engineering",
       "leader_id": "tag:Education, teaching, academics",
       "name": "Education, teaching, academics",
@@ -100,7 +100,7 @@
     {
       "article_count": 3,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/09-90c9a04594a2.json",
+      "hotspot_file": "community-hotspots/09-acb10ffbdc91.json",
       "id": "community:tag:Medicine",
       "leader_id": "tag:Brain and cognitive sciences",
       "name": "Brain and cognitive sciences",
@@ -112,7 +112,7 @@
     {
       "article_count": 1,
       "hotspot_count": 5,
-      "hotspot_file": "community-hotspots/10-5c55864f7cae.json",
+      "hotspot_file": "community-hotspots/10-7039ea91259b.json",
       "id": "community:tag:Codex",
       "leader_id": "tag:ACP",
       "name": "ACP",
@@ -124,7 +124,7 @@
     {
       "article_count": 4,
       "hotspot_count": 3,
-      "hotspot_file": "community-hotspots/11-f827c126c391.json",
+      "hotspot_file": "community-hotspots/11-a0547b9d5261.json",
       "id": "community:tag:Interview",
       "leader_id": "tag:Safety",
       "name": "Safety",
@@ -145,7 +145,7 @@
       "weighted_degree": 442.2
     }
   ],
-  "generated_at": "2026-10-03T23:06:00Z",
+  "generated_at": "2026-10-04T02:40:54Z",
   "iterations": 9,
   "limit": 11,
   "links": [

@@ -13,9 +13,9 @@ source_snapshot_sha256: "sha256:d086aae8ae6800daa3de0562aa35dd2d1cb7abe7f8328059
 source_payload_sha256: "sha256:b76060df074d7f2067d395f426548d147bd2788090433897817ad17cc5e8bbd8"
 observation_id: obs_9461f7b3268afc679df121821190159e39d3d6b2d23ef0d20e09ba8ab661b585
 event_id: evt_08570b5832f2fe1e000669125dada5e555da188d9775bbc80a799c27f8aadd30
-revision_id: rev_10e35453ac2671f6ab3f8bc1313d40b6aacfb9073577f4abe4a673e6f16e02e3
+revision_id: rev_bfed990d55f9b350105ff24af7152d80a0f3dc40047d39747a207413f09a3cc9
 source_published_at: 2026-10-03T18:29:30Z
-first_seen_at: 2026-10-03T23:03:16.141344Z
+first_seen_at: 2026-10-03T23:15:32Z
 timestamp_confidence: platform
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 58
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://claude.dev/blog/getting-the-most-out-of-opus-5-5
 parent_observation_id: null
-last_seen_at: 2026-10-03T23:03:16.141344Z
+last_seen_at: 2026-10-04T00:00:00Z
 ---
 
 ## 基本信息

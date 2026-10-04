@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:f47d5a7970ac62ddcb21fabbbd2cafbc3407c8d715a87012
 source_payload_sha256: "sha256:c3930621fbbe36b19d4558f9ac76a168c1b0a183d405fda9060768401ff8659f"
 observation_id: obs_813f4b8521bddb77fa640b7b64b035f4cfb1baa088ff76dbd5d50ef577520e78
 event_id: evt_ddc51795d6b689694980f5d75e503035f51f77e9afa78ce8726d0fbc5601e6b3
-revision_id: rev_878fa6bd8b56e517fde548a27f726c69c72267e7d85ed2c2abb6679336624316
+revision_id: rev_05ba23c6b8179a611c8f01390987ae1cb8d7ee695027951c8ec93bae4527092e
 source_published_at: 2026-10-02T15:44:20Z
 first_seen_at: 2026-10-03T17:30:11Z
 timestamp_confidence: feed
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:ab3e427786e23a054e5e64ce3a77999c07a8ec588a841fab9
 description: "该内容介绍如何通过多轮强化学习在云服务平台上微调搜索智能体，使小型语言模型能够自主决定搜索策略并在多轮交互中逐步优化检索行为。"
 external_url: https://aws.amazon.com/blogs/machine-learning/fine-tune-a-search-agent-with-multi-turn-rl-on-amazon-sagemaker-ai
 parent_observation_id: null
-last_seen_at: 2026-10-03T17:16:45.680043Z
+last_seen_at: 2026-10-04T00:00:00Z
 ---
 
 ## 基本信息
