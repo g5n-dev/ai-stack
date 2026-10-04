@@ -15,7 +15,7 @@ observation_id: obs_4ff3a1a7148d7bc20958e8f62dd251b0fd6ff123b75624063f07cba760c5
 event_id: evt_b267f2fe50f2009eefe15e29c49ee78650868b711d975b66381e4ab9f567631f
 revision_id: rev_2d1577039604502cdfffc650bd13703bffa565952ce9512363c957624f72b607
 source_published_at: 2026-10-01T17:59:39Z
-first_seen_at: 2026-10-03T19:57:15.833548Z
+first_seen_at: 2026-10-03T20:11:20Z
 timestamp_confidence: publisher
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:b59f11fd8a5cb18c8e24564ade6bb02a11d884eb99169b83f
 description: "该工作提出一种层次化连续扩散语言模型，通过在单一去噪过程中耦合离散 token 生成与连续潜在轨迹，使每个 token 的生成都受到全局潜在状态的约束。"
 external_url: http://arxiv.org/abs/2610.02193v1
 parent_observation_id: null
-last_seen_at: 2026-10-03T19:57:15.833548Z
+last_seen_at: 2026-10-04T00:00:00Z
 ---
 
 ## 基本信息

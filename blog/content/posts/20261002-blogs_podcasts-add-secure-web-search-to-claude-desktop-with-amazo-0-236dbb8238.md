@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:d66324249872ed69b54ef50edc450cae8290d0419c42ea7d4
 description: "该内容介绍如何通过 Amazon Bedrock AgentCore Gateway 将 Web Search 能力接入 Claude Desktop，并使用基于 JWT 的认证机制保障通信安全，整个认证链路涉及 IAM Identity Center、Amazon Cognito 等 AWS 服务。"
 external_url: https://aws.amazon.com/blogs/machine-learning/add-secure-web-search-to-claude-desktop-with-amazon-bedrock-agentcore
 parent_observation_id: null
-last_seen_at: 2026-10-03T00:00:00Z
+last_seen_at: 2026-10-04T00:00:00Z
 ---
 
 ## 基本信息

@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:133fe6c005abdfee8eab4e46b39dbf5982bd9845f98c10dee
 description: "SILSA是一种把三维形状表示为沿三个主轴的滑动窗口切片潜在向量的生成框架。它通过切片级拓扑监督保持跨截面连续性，并使用单阶段纠正流进行高分辨率建模。"
 external_url: http://arxiv.org/abs/2610.02201v1
 parent_observation_id: null
-last_seen_at: 2026-10-03T06:31:53.907892Z
+last_seen_at: 2026-10-04T00:00:00Z
 ---
 
 ## 基本信息

@@ -15,7 +15,7 @@ observation_id: obs_0300916b911fbe76cc9315dbc27812bafa6fd69cd12f602778b7b6d1d87c
 event_id: evt_0978f95bfde3d5961ccbdec36a8f67ffa6a0733f1e553d4ab01866871d8d9548
 revision_id: rev_397970dfc80338fc12b688f32ec1d7320c53e28f49d58c754c35ffa2457548b0
 source_published_at: 2026-10-02T14:04:49Z
-first_seen_at: 2026-10-03T23:03:47.515051Z
+first_seen_at: 2026-10-03T23:15:32Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:0052ce56e38d3fc676e2a0bd846b5c01b808eb9d9da729442
 description: "这篇文章描述了 Airbnb 通过在内部研发环节广泛使用 AI，从而加速产品迭代，再将这些能力直接用于改善用户服务，形成一种“从内部到外部”的 AI 应用思路，并展示了其在客服和新功能上线中的实际效果。"
 external_url: https://www.latent.space/p/airbnb
 parent_observation_id: null
-last_seen_at: 2026-10-03T23:03:47.515051Z
+last_seen_at: 2026-10-04T00:00:00Z
 ---
 
 ## 基本信息

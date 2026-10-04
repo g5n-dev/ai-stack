@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:e218d94528dcf7def733bf0609d35300f2e70e252d061b36
 source_payload_sha256: "sha256:18fb3841912582a8c85dd608d6c6d919c70140462207cf2d5e5657e338bc8e37"
 observation_id: obs_f8b71528f0b4b4ef710101301cd3b5e0c645f2e82626ab00ded0cda5e160760e
 event_id: evt_7c68ca1465d9991e0c4855a44f2e9f6362956494a0e4bf77b2f15883e7579e34
-revision_id: rev_f4fc161226f072497a3ec1e9aec7b1b0c7edd772bbfdeb909ef78907f9b25409
+revision_id: rev_543af52bba50532a0842db7fc7a6847875d534d1938ac7f0274c8cec80306bca
 source_published_at: 2026-10-02T15:48:26Z
 first_seen_at: 2026-10-03T06:45:04Z
 timestamp_confidence: feed
@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:0eaa32f1453b65af4eaeb4c8e016cb31ff3d2122c49ab0ab7
 description: "这是一种将自然语言对话界面与确定性规则引擎相结合的合规检查方案。模型仅负责把用户提问转换为规则调用并呈现结果，具体的通过或驳回判断由规则引擎完成，且每次检查都生成完整性凭证，确保没有记录被遗漏。"
 external_url: https://aws.amazon.com/blogs/machine-learning/sweep-thousands-of-leases-for-compliance-using-amazon-quick-and-the-adjudicated-query-pattern
 parent_observation_id: null
-last_seen_at: 2026-10-03T06:32:02.696489Z
+last_seen_at: 2026-10-04T00:00:00Z
 ---
 
 ## 基本信息
