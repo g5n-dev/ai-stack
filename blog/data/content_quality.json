@@ -1,8 +1,8 @@
 {
-  "active_count": 3097,
+  "active_count": 3099,
   "archived_count": 276,
   "complete_count": 89,
-  "interpreted_brief_count": 300,
+  "interpreted_brief_count": 301,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23231,6 +23231,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20261004-arxiv-trust-the-direction-search-the-step-zero-and-first-2-e8276c3ec2.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261004-blogs_podcasts-chatham-scales-its-capital-markets-expertise-with--0-882596cbc7.md": {
       "reasons": [
         "concise_source_card"
@@ -23250,6 +23256,12 @@
       "status": "interpreted_brief"
     },
     "posts/20261004-blogs_podcasts-the-latest-ai-news-we-announced-in-september-2026-0-aacb8ca8a4.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261004-hacker_news-agents-dont-need-memory-they-need-documentation-5-6923b5b640.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -23312,10 +23324,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2708,
-  "source_file_count": 3373,
-  "source_tree_sha256": "75edcf7180e9ca4bb97f09fd25b23c31fdfaa5e34ed43e68f636ca8ca3877f45",
-  "verified_provenance_count": 3097,
+  "source_brief_count": 2709,
+  "source_file_count": 3375,
+  "source_tree_sha256": "37aeff481b12dfb8701462426286b16fbc2565e4a97c5fb908633baa822ebc01",
+  "verified_provenance_count": 3099,
   "warning_counts": {
     "source_excerpt_truncated": 822
   }
