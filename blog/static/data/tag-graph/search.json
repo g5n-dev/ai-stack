@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-10-04T09:50:50Z",
+  "generated_at": "2026-10-04T19:40:05Z",
   "items": [
     {
       "article_count": 970,
@@ -41,7 +41,7 @@
       "weighted_degree": 2716.2
     },
     {
-      "article_count": 851,
+      "article_count": 853,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 127,
@@ -51,7 +51,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 3,
-      "weighted_degree": 2545
+      "weighted_degree": 2551
     },
     {
       "article_count": 559,
@@ -67,7 +67,7 @@
       "weighted_degree": 1680
     },
     {
-      "article_count": 866,
+      "article_count": 867,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 49,
@@ -77,7 +77,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 5,
-      "weighted_degree": 1432
+      "weighted_degree": 1436
     },
     {
       "article_count": 555,
@@ -93,7 +93,7 @@
       "weighted_degree": 1398
     },
     {
-      "article_count": 196,
+      "article_count": 197,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 70,
@@ -103,10 +103,10 @@
       "legacy_id": "生成式 AI",
       "name": "生成式 AI",
       "rank": 7,
-      "weighted_degree": 866
+      "weighted_degree": 870
     },
     {
-      "article_count": 1024,
+      "article_count": 1025,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 21,
@@ -116,7 +116,7 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 8,
-      "weighted_degree": 784
+      "weighted_degree": 786
     },
     {
       "article_count": 126,
@@ -171,7 +171,7 @@
       "weighted_degree": 604.2
     },
     {
-      "article_count": 219,
+      "article_count": 220,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 62,
@@ -181,7 +181,7 @@
       "legacy_id": "AI",
       "name": "AI",
       "rank": 13,
-      "weighted_degree": 551.6
+      "weighted_degree": 553.6
     },
     {
       "article_count": 146,
@@ -327,6 +327,19 @@
       "weighted_degree": 261
     },
     {
+      "article_count": 73,
+      "category": "article_tag",
+      "community_id": "community:tag:大语言模型",
+      "degree": 20,
+      "description": "文章标签: 计算机视觉",
+      "id": "tag:计算机视觉",
+      "layer": "tag",
+      "legacy_id": "计算机视觉",
+      "name": "计算机视觉",
+      "rank": 25,
+      "weighted_degree": 249.2
+    },
+    {
       "article_count": 57,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
@@ -336,21 +349,8 @@
       "layer": "tag",
       "legacy_id": "深度学习",
       "name": "深度学习",
-      "rank": 25,
-      "weighted_degree": 249
-    },
-    {
-      "article_count": 72,
-      "category": "article_tag",
-      "community_id": "community:tag:大语言模型",
-      "degree": 20,
-      "description": "文章标签: 计算机视觉",
-      "id": "tag:计算机视觉",
-      "layer": "tag",
-      "legacy_id": "计算机视觉",
-      "name": "计算机视觉",
       "rank": 26,
-      "weighted_degree": 245.2
+      "weighted_degree": 249
     },
     {
       "article_count": 37,
@@ -379,7 +379,7 @@
       "weighted_degree": 215
     },
     {
-      "article_count": 61,
+      "article_count": 62,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 9,
@@ -389,7 +389,7 @@
       "legacy_id": "cs.CV",
       "name": "cs.CV",
       "rank": 29,
-      "weighted_degree": 210
+      "weighted_degree": 214
     },
     {
       "article_count": 89,
@@ -1497,7 +1497,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 1198,
+      "article_count": 1199,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -2680,7 +2680,7 @@
       "weighted_degree": 3.4
     },
     {
-      "article_count": 72,
+      "article_count": 73,
       "category": "vision",
       "community_id": null,
       "degree": 4,
@@ -3447,7 +3447,7 @@
       "weighted_degree": 0.6
     },
     {
-      "article_count": 72,
+      "article_count": 73,
       "category": "ai",
       "community_id": null,
       "degree": 1,
