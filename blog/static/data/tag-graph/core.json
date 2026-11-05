@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T19:40:05Z",
+  "generated_at": "2026-11-05T18:45:06Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -626,7 +626,7 @@
       "weighted_degree": 2
     },
     {
-      "article_count": 970,
+      "article_count": 974,
       "category": "ai",
       "color": "#7aa6b8",
       "community_id": null,
@@ -643,7 +643,7 @@
       "weighted_degree": 4.4
     },
     {
-      "article_count": 1199,
+      "article_count": 1203,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
@@ -1306,7 +1306,7 @@
       "weighted_degree": 3
     },
     {
-      "article_count": 894,
+      "article_count": 896,
       "category": "nlp",
       "color": "#d97706",
       "community_id": null,
@@ -1323,7 +1323,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 894,
+      "article_count": 896,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
@@ -1493,7 +1493,7 @@
       "weighted_degree": 1
     },
     {
-      "article_count": 163,
+      "article_count": 164,
       "category": "language",
       "color": "#4db6ac",
       "community_id": null,
@@ -1778,7 +1778,7 @@
       "legacy_id": "webapp",
       "level": 4,
       "name": "Web应用",
-      "rank": 96,
+      "rank": 97,
       "weighted_degree": 11
     }
   ],
