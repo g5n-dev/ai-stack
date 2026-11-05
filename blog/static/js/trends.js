@@ -373,7 +373,10 @@
     ));
     if (!isPlainObject(value.topics)) fail("index topics");
     const topicEntries = Object.entries(value.topics);
-    if (topicEntries.length === 0 || topicEntries.length > MAX_TOPICS) fail("index topics count");
+    // Zero topics is a valid evidence-shortage state, not corrupt data: after a
+    // long publication gap every window can hold fewer than the minimum number
+    // of unique events. The page renders an empty state instead of erroring.
+    if (topicEntries.length > MAX_TOPICS) fail("index topics count");
     const topics = Object.create(null);
     for (const [id, ref] of topicEntries) {
       topicId(id, "index topic id");

@@ -147,7 +147,8 @@ jobs:
             tests/test_v1_release_contract.py \
             tests/test_check_release_runs.py \
             tests/test_runner_pinning_contract.py \
-            tests/test_lineage_retention_parents.py
+            tests/test_lineage_retention_parents.py \
+            tests/test_trends_empty_state_contract.py
 
       - name: Verify committed lineage fixed point
         env:
