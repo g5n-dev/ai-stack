@@ -1,405 +1,139 @@
-# AI-Stack 工作流程文档
-
-## 概述
-
-AI-Stack 项目采用单分支架构（main 分支）：
-
-- **main 分支**：包含所有代码逻辑、数据、Hugo 构建产物和部署配置
-- **GitHub Pages**：自动从 main 分支部署，无需额外的 gh-pages 分支
+# AI Stack 工作流程文档
 
-## 核心架构
+> 本文件面向在本仓库内工作的 AI 协作者与维护者。以代码和 CI 契约为准；若本文与
+> `.github/workflows/` 不一致，优先修本文。
+> 最近一次重大修订：2026-11-04（INCIDENT-2026-10-05 复盘后）。
 
-### 单分支结构
+## 1. 项目定位
 
-```
-main 分支（完整仓库）
-├── crawler/              # 爬虫逻辑
-├── processor/            # 内容处理逻辑
-├── scripts/              # 生成脚本
-├── blog/                 # Hugo 配置和主题
-│   ├── config.toml       # Hugo 配置
-│   ├── content/posts/    # 文章目录
-│   ├── static/data/      # 图谱数据（tag-graph.json）
-│   ├── themes/           # Hugo 主题
-│   └── public/           # Hugo 构建产物（gitignore）
-├── .github/workflows/    # GitHub Actions 工作流
-│   └── deploy.yml        # 构建和部署工作流
-└── data/                 # 本地测试数据
-```
-
-## GitHub Actions 工作流
-
-### Deploy Workflow（构建和部署）
-
-**文件：** `.github/workflows/deploy.yml`
-
-**触发条件：**
-- 定时触发：每 30 分钟
-- 推送到 main 分支
-- 手动触发
+AI Stack 是**无数据库、无消息队列、无常驻服务**的静态 AI 情报档案与知识图谱：
+多源采集 → URL 去重与事件谱系 → AI 精炼 → Markdown 归档 → Hugo + Pagefind →
+GitHub Pages。内容是 Markdown，关系是 Graph JSON v2，产物全部可版本化、可回查。
 
-**工作流程：**
-
-```yaml
-1. Checkout main branch
-   - 获取 main 分支的最新代码和数据
-
-2. 配置 Git 和环境
-   - 配置 Git 用户信息
-   - 安装 Python 和 Hugo
-
-3. 运行爬虫系统
-   - 执行 crawler/main.py 采集数据
-   - 输出原始数据到 data/ 目录
-
-4. 运行内容处理系统
-   - 执行 processor/main.py 处理数据
-   - 生成标签和元数据
-
-5. 构建标签图谱
-   - 执行 processor/tag_graph.py
-   - 生成 tag-graph.json 到 blog/static/data/
-
-6. 构建 Hugo 站点
-   - 执行 hugo --baseURL "https://ai-stack.site/" --minify
-   - 生成静态站点到 blog/public/
-
-7. 提交更改
-   - 提交更新的 posts 和 data
-   - 推送到 main 分支
+生产地址 <https://ai-stack.site/>；趋势 `/trends/`；图谱 `/scenarios/`。
 
-8. 部署到 GitHub Pages
-   - 上传 blog/public/ 为 Pages artifact
-   - 自动部署到 https://ai-stack.site/
-```
+## 2. 分支与发布模型
 
-**关键配置：**
+- 唯一主干 `main`，受保护；Pages 从 Actions artifact 部署，不使用 `gh-pages` 分支。
+- 数据写入由 `scripts/git_cas_writer.py` 以 **exact-base CAS** 提交到临时
+  `automation/data-<run_id>` 分支，再由 `scripts/protected_branch_merge.py` 合并。
+- 严禁 `reset --hard`、`git pull --rebase`、force push 绕过 CAS。
+- 提交形如 `chore(data): persist validated release [skip ci]`；push 由 bot 触发时不再重复刷新。
 
-```yaml
-on:
-  schedule:
-    - cron: "*/30 * * * *"  # 每 30 分钟运行一次
-  workflow_dispatch:
-  push:
-    branches:
-      - main
+## 3. 生产 DAG
 
-permissions:
-  contents: write
-  pages: write
-  id-token: write
+`deploy.yml` 的 7 个 job 严格串联，任一失败后续全部 skipped：
 
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout main branch
-        uses: actions/checkout@v4
+| # | Job | 权限 | 职责 |
+| --- | --- | --- | --- |
+| 1 | `refresh` | `contents: read` | 抓取 + 模型精炼；**唯一接触模型密钥的阶段** |
+| 2 | `validate` | `contents: read` | artifact 校验、刷新跃迁守卫、派生数据重建 |
+| 3 | `persist` | 写权限 | 精确 SHA 的 CAS 写入与受保护分支合并 |
+| 4 | `build` | `contents: read` | 固定点复现、Hugo/Pagefind/CSS、release marker |
+| 5 | `deploy` | `pages: write` | 上传并发布已守卫的 artifact |
+| 6 | `production-verify` | `contents: read` | 线上 SHA / release ID 烟测，保留 90 天验证回执 |
+| 7 | `notify` | `contents: read` | 验证通过后才通知搜索索引 |
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+调度：每小时 `:17` 完整刷新；`:41` 只读新鲜度监控；push 到 `main` 只部署已提交快照
+（`AI_STACK_REFRESH_DATA=false`）；`workflow_dispatch` 可选 `refresh_data` 与 `expected_sha`。
+监控阈值固定为 3 小时版本分歧 / 12 小时刷新陈旧，**不得为掩盖停滞而放宽**。
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+`Production Recovery` 只接受有未过期生产验证回执的精确 `main` 祖先 SHA。
 
-      - name: Run crawler
-        run: python3 crawler/main.py
+## 4. Runner 与浏览器边界（重要）
 
-      - name: Run processor
-        run: python3 processor/main.py
+所有 job 固定 `runs-on: ubuntu-24.04`，**禁止 `ubuntu-latest`**。
+`ubuntu-latest` 在 2026-10-05 滚到 `ubuntu26.04-x64`，锁定的 Playwright 1.57.0
+拒绝在该镜像安装 Chromium，导致 `refresh` 前置步骤失败、全链中断 30 天。
+详见 `docs/operations/INCIDENT-2026-10-05.md` 与 `docs/operations/runner-pinning.md`。
 
-      - name: Build tag graph
-        run: python3 processor/tag_graph.py
+- 生产 `refresh` **不得**出现浏览器/Chromium 安装：5 类来源全是 HTTP/RSS/API。
+- Chromium 只允许出现在 `ci.yml` 的 PR 测试套件（`tests/e2e/test_static_site.py`、
+  图谱烟测）与可选的本地 `crawler/twitter_crawler.py`。
+- 固定工具链：Python 3.11、Node.js 22、Hugo Extended 0.153.4、全部依赖锁版本。
 
-      - name: Build Hugo site
-        run: |
-          cd blog
-          hugo --baseURL "https://ai-stack.site/" --minify
+## 5. 目录结构
 
-      - name: Commit changes
-        run: |
-          git add -A
-          git diff --cached --quiet || git commit -m "Update content and build"
-          git push origin main
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: blog/public
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
-```
-
-## 数据流
-
-### 完整流程
-
-```
-main 分支（开发者修改或定时触发）
-  ↓
-deploy.yml（运行爬虫和处理器）
-  ↓
-main 分支（更新 posts 和 data）
-  ↓
-deploy.yml（构建 Hugo 站点）
-  ↓
-GitHub Pages（自动部署到 https://ai-stack.site/）
-```
-
-### 数据一致性保证
-
-1. **单分支管理**
-   - 所有代码、数据、配置都在 main 分支
-   - 无需跨分支同步
-
-2. **自动构建和部署**
-   - 每次 main 分支更新都自动触发部署
-   - GitHub Pages 直接从 main 分支部署
-
-3. **构建产物管理**
-   - blog/public/ 目录在 .gitignore 中
-   - GitHub Actions 自动构建并上传为 artifact
-
-## 核心组件
-
-### 1. 爬虫系统
-
-**位置：** `crawler/main.py`
-
-**功能：**
-- 协调多个数据源爬虫
-- 采集 blogs_podcasts、github_discussions 等数据
-- 输出原始数据到 `data/` 目录
-
-**运行方式：**
-```bash
-python3 crawler/main.py
-```
-
-### 2. 内容处理系统
-
-**位置：** `processor/main.py`
-
-**功能：**
-- 清洗和预处理爬虫数据
-- 生成标签（使用 LLM）
-- 提取关键信息
-
-**运行方式：**
-```bash
-python3 processor/main.py
-```
-
-### 3. 标签图谱系统
-
-**位置：** `processor/tag_graph.py`
-
-**功能：**
-- 构建标签共现关系图谱
-- 生成 7 层架构（语言、框架、模型、应用、场景、标签、概念）
-- 输出到 `blog/static/data/tag-graph.json`
-
-**运行方式：**
-```bash
-python3 processor/tag_graph.py
-```
-
-### 4. AI 主题过滤
-
-**位置：** `processor/ai_filter.py`
-
-**功能：**
-- 使用 Claude-3.5-Sonnet 判断内容是否与 AI 相关
-- 置信度阈值：0.6
-- 自动过滤非 AI 相关内容
-
-**环境变量：**
-- `ANTHROPIC_API_KEY`: Claude API 密钥
-
-## 常用命令
-
-### 本地开发
-
-```bash
-# 运行爬虫
-python3 crawler/main.py
-
-# 运行内容处理
-python3 processor/main.py
-
-# 生成标签图谱
-python3 processor/tag_graph.py
-
-# 本地 Hugo 开发
-cd blog
-hugo server
-
-# 本地 Hugo 构建
-cd blog
-hugo --baseURL "https://ai-stack.site/" --minify
-```
-
-### GitHub Actions 管理
-
-```bash
-# 手动触发部署工作流
-gh workflow run deploy.yml
-
-# 查看工作流运行状态
-gh run list
-gh run view <run-id>
-
-# 查看部署状态
-gh api repos/{owner}/{repo}/pages
-```
-
-## 文件结构
-
-```
+```text
 ai-stack/
-├── crawler/
-│   └── main.py              # 爬虫主程序
-├── processor/
-│   ├── main.py              # 内容处理主程序
-│   ├── tag_graph.py         # 标签图谱生成器
-│   ├── tagger.py            # 标签生成器
-│   ├── ai_filter.py         # AI 主题过滤器
-│   └── tech_stack.py        # 技术栈节点定义
-├── scripts/
-│   └── generate_content.py  # 内容生成脚本
-├── blog/
-│   ├── config.toml          # Hugo 配置
-│   ├── content/posts/       # 文章目录
-│   ├── static/data/         # 图谱数据
-│   ├── themes/              # Hugo 主题
-│   └── public/              # Hugo 构建产物（gitignore）
-├── .github/workflows/
-│   └── deploy.yml           # 构建和部署工作流
-├── .gitignore               # Git 忽略配置
-└── CLAUDE.md               # 本文档
+├── crawler/             # 多源抓取（5 类生产源 + 可选本地源）
+├── processor/           # 模型兼容层、内容精炼、标签、图谱
+├── publisher/           # 可选发布器，默认全部关闭
+├── ai_stack/            # 领域模型、事件谱系、清单、流水线 CLI
+├── blog/                # Hugo 内容/主题、静态数据、Graph JSON v2
+├── config/              # 来源、模型、趋势、谱系、发布配置
+├── scripts/             # 生成、校验、构建、CAS、监控、运维脚本
+├── tests/               # Python / JS / Playwright 测试
+├── docs/                # 架构、部署、操作手册与事故复盘
+└── .github/workflows/   # deploy / monitoring / ci / pr-gate / recovery / delete-post
 ```
 
-## Gitignore 配置
+关键配置：`config/sources.yaml`（来源与配额）、`config/anthropic.yaml`、
+`config/lineage.yaml`、`config/stack_trends.yaml`、`runtime_profile.py`（本地/CI 档位）。
 
-**关键配置：**
-```gitignore
-# Hugo 构建产物
-blog/public/
+## 6. 常用命令
 
-# 临时文件
-*.pyc
-__pycache__/
-
-# 环境变量
-.env
-.env.local
-```
-
-## 故障排查
-
-### 1. GitHub Pages 未更新
-
-**问题：** 推送 main 分支后网站未更新
-
-**解决方案：**
 ```bash
-# 检查 deploy.yml 运行状态
-gh run list --workflow=deploy.yml
+# 本地环境与完整流水线
+bash scripts/setup.sh
+bash scripts/run_local.sh --serve
 
-# 查看详细日志
-gh run view <run-id> --log
+# 只看站点（无需 Python / 密钥）
+cd blog && hugo server -D
 
-# 手动触发部署
-gh workflow run deploy.yml
+# 数据质量与派生数据校验
+python3 scripts/build_content_quality_manifest.py --content-root blog/content \
+  --output /tmp/content_quality.json --fail-on-quarantine \
+  --fail-on-structural-warning --fail-on-unverified-provenance
+python3 scripts/repair_historical_content.py --check
+python3 scripts/verify_lineage.py --verify-hashes
+bash scripts/rebuild_release_data.sh
+
+# 与本次修复相关的回归测试
+python3 -m pytest -q tests/test_runner_pinning_contract.py \
+  tests/test_check_release_runs.py tests/test_workflow_security.py \
+  tests/test_v1_release_contract.py
+
+# 手动刷新 / 只读监控
+gh workflow run deploy.yml --repo g5n-dev/ai-stack -f refresh_data=true
+gh workflow run monitoring.yml --repo g5n-dev/ai-stack
 ```
 
-### 2. 爬虫未运行
+新增测试必须同时注册进 `ci.yml` 的 pytest 清单，否则不执行。
 
-**问题：** 没有新的 posts 或 tag-graph.json
+## 7. 数据与告警约定
 
-**解决方案：**
-```bash
-# 检查工作流日志中的爬虫步骤
-gh run view <run-id> --log | grep -A 20 "Run crawler"
+- 趋势按稳定 `event_id` 计算 `unique_events`，只有 allowlist 认可的 `same_event` 才合并；
+  必须满足 `redundant_observations = observations - unique_events`。
+- 派生 JSON（lineage / trends / tag-graph / content_quality）只能由生成器重建，
+  **禁止手工编辑绕过哈希校验**；索引与分片的 path/bytes/sha256/schema 必须一致。
+- 来源不可恢复时转成带失败类型、原因、时间与原始链接的**透明归档**，不得用模型
+  推测正文填补证据空白，不得把抓取时间伪装成事件时间。
+- 告警由 `scripts/ops_alert.py` 以 Issue 形式维护，持续故障只更新正文，恢复自动关闭。
+  `scripts/check_release_runs.py` 会把最近一次失败运行的**首个失败 job 与步骤**写进告警；
+  诊断查询自身失败时只记录，不掩盖已检出的故障。
 
-# 本地测试爬虫
-python3 crawler/main.py
-```
+## 8. 安全边界
 
-### 3. 图谱未显示
+- 密钥只存在于本地 `.env` 或 GitHub Actions Secrets；公开 IndexNow key 用 repository Variable。
+- GitHub Actions 日志只写布尔状态、计数、错误类别、运行链接与公开资源 URL。
+- 不把认证值、cookie、私有 endpoint、完整请求头或外部响应正文复制到日志、Issue、PR 或文档。
+- 本地 `git remote` 不应内嵌明文 token；疑似泄露先轮换，再提交脱敏报告。
 
-**问题：** scenarios 页面没有显示图谱
+## 9. 常见陷阱
 
-**检查项：**
-1. 确认 `blog/static/data/tag-graph.json` 文件存在
-2. 检查 Hugo 构建是否成功
-3. 清除浏览器缓存
-4. 检查前端控制台错误
+1. 看到「工作流一直在跑」就认为健康——定时任务可以每小时失败，告警也会持续刷屏。
+2. 按告警里的固定阶段名排障——始终以 API 定位的**首个失败步骤**为准。
+3. 把可选依赖放进发布关键路径——任何非必需安装步骤都可能成为单点故障。
+4. 用放宽阈值、手工改 JSON、force push 让流水线「变绿」。
+5. 改了测试却没注册进 CI，或改了 workflow 却没有对应契约测试。
 
-### 4. Anthropic API 错误
+## 10. 文档索引
 
-**问题：** AI 主题过滤失败
-
-**解决方案：**
-```bash
-# 检查 GitHub Secrets 配置
-gh secret list
-
-# 确认 ANTHROPIC_AUTH_TOKEN 已设置
-gh secret set ANTHROPIC_AUTH_TOKEN
-```
-
-### 5. GitHub Pages 部署失败
-
-**问题：** Deploy to GitHub Pages 步骤失败
-
-**检查项：**
-1. 确认仓库启用了 GitHub Pages
-2. 检查 Pages 设置是否正确配置（Source: GitHub Actions）
-3. 确认工作流有正确的权限（contents: write, pages: write, id-token: write）
-
-## 最佳实践
-
-1. **分支管理**
-   - 所有开发都在 main 分支进行
-   - 无需额外的 gh-pages 分支
-   - 使用功能分支开发，然后合并到 main
-
-2. **测试流程**
-   - 在 main 分支本地测试爬虫和内容处理
-   - 确认逻辑正确后推送到 main
-   - GitHub Actions 自动运行部署
-
-3. **监控和调试**
-   - 定期检查 GitHub Actions 运行状态
-   - 查看 main 分支的提交历史
-   - 监控 https://ai-stack.site/ 的更新情况
-
-4. **文档维护**
-   - 重大流程变更时更新本文档
-   - 记录故障排查经验
-   - 同步更新工作流注释
-
-## GitHub Pages 配置
-
-### 仓库设置
-
-1. **启用 GitHub Pages**
-   - 进入仓库 Settings → Pages
-   - Source 选择 "GitHub Actions"
-
-2. **配置工作流权限**
-   - Settings → Actions → General
-   - Workflow permissions 选择 "Read and write permissions"
-   - 勾选 "Allow GitHub Actions to create and approve pull requests"
-
-3. **环境变量配置**
-   - Settings → Secrets and variables → Actions
-   - 配置以下 Secrets：
-     - `ANTHROPIC_AUTH_TOKEN`: Claude API 密钥
-     - `ANTHROPIC_BASE_URL`: Claude API Base URL（可选）
-
-## 联系和支持
-
-如有问题或建议，请查看 GitHub Issues 或联系维护团队。
+- `README.md` — 能力、快速开始、自动化与可靠性
+- `DEPLOYMENT.md` — Pages、域名、Secrets、部署验证
+- `docs/README.md` — 详细使用文档
+- `docs/operations/freshness-runbook.md` — 新鲜度排障决策顺序
+- `docs/operations/runner-pinning.md` — runner 固定策略与升级流程
+- `docs/operations/INCIDENT-2026-10-05.md` — 30 天断更事故复盘
+- `docs/architecture/ci-trust-model.md` — 工作流权限与信任边界

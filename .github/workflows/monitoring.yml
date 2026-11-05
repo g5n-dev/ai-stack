@@ -15,7 +15,7 @@ permissions: {}
 jobs:
   verify-production-state:
     name: Verify Production Release State
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     # Raised from 10 deliberately, and only here. Elsewhere a timeout should stay
     # tight so a slow checkout surfaces rather than being absorbed by a bigger
     # budget — but this job is the thing that reports a stall, and run
@@ -133,7 +133,8 @@ jobs:
               head -c 4000 "$RUNNER_TEMP/release_state.err" || true
               echo '```'
               echo
-              echo "排查顺序：\`Build and Deploy\` 最近一次运行的 \`validate\` 阶段。"
+              echo "排查顺序：按新鲜度排障手册定位 \`Build and Deploy\` 最近一次运行的**首个失败 job 与失败步骤**。"
+              echo "不要预判断为 \`validate\` 阶段，也不要用放宽新鲜度阈值掩盖停滞。"
             } > "$RUNNER_TEMP/release_state.md"
             python3 scripts/ops_alert.py \
               --repository "$GITHUB_REPOSITORY" \

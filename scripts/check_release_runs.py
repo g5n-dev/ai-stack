@@ -102,6 +102,62 @@ def fetch_runs(
     return [run for run in runs if isinstance(run, dict)]
 
 
+def fetch_first_failure(
+    api: GitHubApi,
+    *,
+    repository: str,
+    run_id: object,
+) -> dict[str, Any] | None:
+    """Return the first failed job/step of a run, or ``None`` if none is found.
+
+    An alert that says "the release chain is broken" without saying where costs
+    an operator a log dive on every recurrence. During the 2026-10-05 outage
+    145 consecutive alerts named a ``validate`` stage that was never reached;
+    the actual failure was a browser install in ``refresh``.
+    """
+
+    if isinstance(run_id, bool):
+        raise ReleaseRunError("workflow run id is invalid")
+    if isinstance(run_id, str) and run_id.isdigit():
+        run_id = int(run_id)
+    if not isinstance(run_id, int) or run_id <= 0:
+        raise ReleaseRunError("workflow run id is invalid")
+    payload = api.request(
+        "GET",
+        f"/repos/{repository}/actions/runs/{run_id}/jobs?per_page=100",
+    )
+    if not isinstance(payload, dict):
+        raise ReleaseRunError("workflow job listing is invalid")
+    jobs = payload.get("jobs")
+    if not isinstance(jobs, list):
+        raise ReleaseRunError("workflow job listing has no jobs")
+    for job in jobs:
+        if not isinstance(job, dict):
+            continue
+        job_name = str(job.get("name") or "")
+        steps = job.get("steps")
+        if isinstance(steps, list):
+            for step in steps:
+                if not isinstance(step, dict):
+                    continue
+                conclusion = str(step.get("conclusion") or "")
+                if conclusion in _INCOMPLETE or conclusion == "failure":
+                    return {
+                        "job": job_name,
+                        "step": str(step.get("name") or ""),
+                        "conclusion": conclusion,
+                    }
+        # A job can fail at the runner level without any failed step. Naming the
+        # job is still far better than a generic "check validate" instruction.
+        if str(job.get("conclusion") or "") in _INCOMPLETE | {"failure"}:
+            return {
+                "job": job_name,
+                "step": "(no step reported; runner-level failure)",
+                "conclusion": str(job.get("conclusion")),
+            }
+    return None
+
+
 def evaluate_runs(
     runs: Sequence[dict[str, Any]],
     *,
@@ -171,6 +227,25 @@ def summarize(report: dict[str, Any]) -> str:
             "若停在 `Checkout`，那是仓库体积问题而非测试问题。",
         ]
     )
+    failure = report.get("first_failure")
+    if isinstance(failure, dict):
+        lines.extend(
+            [
+                "",
+                f"**首个失败步骤**（API 自动定位）：`{failure.get('job', '')}` → "
+                f"`{failure.get('step', '')}`（`{failure.get('conclusion', '')}`）。",
+                "",
+                "按该步骤修复即可；不要预判断为 `validate` 阶段，也不要放宽新鲜度阈值。",
+            ]
+        )
+    elif report.get("first_failure_error"):
+        lines.extend(
+            [
+                "",
+                f"首个失败步骤定位失败：`{report['first_failure_error']}`。",
+                "请按新鲜度排障手册手工定位最近一次运行的首个失败 job。",
+            ]
+        )
     return "\n".join(lines)
 
 
@@ -186,14 +261,29 @@ def _parser() -> argparse.ArgumentParser:
 
 def main(argv: Sequence[str] | None = None, *, api: GitHubApi | None = None) -> int:
     args = _parser().parse_args(argv)
+    client = api or GhCliApi()
     try:
         runs = fetch_runs(
-            api or GhCliApi(),
+            client,
             repository=args.repository,
             workflow=args.workflow,
             limit=max(1, min(args.inspect, 100)),
         )
         report = evaluate_runs(runs, consecutive=args.consecutive)
+        # Enrich the alert with the exact failing step. A diagnostic lookup must
+        # never turn a detected outage into an unreported one, so its own errors
+        # are recorded rather than propagated.
+        if report["status"] != "ok" and report["runs"]:
+            try:
+                failure = fetch_first_failure(
+                    client,
+                    repository=args.repository,
+                    run_id=report["runs"][0]["id"],
+                )
+                if failure is not None:
+                    report["first_failure"] = failure
+            except ReleaseRunError as exc:
+                report["first_failure_error"] = str(exc)
     except ReleaseRunError as exc:
         print(f"check_release_runs: {exc}", file=sys.stderr)
         if args.summary_output:

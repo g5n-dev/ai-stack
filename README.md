@@ -163,7 +163,7 @@ bash scripts/run_local.sh --serve
 | 手动触发 | 选择完整刷新或只发布；恢复仅接受有生产验证回执的精确 SHA | 故障恢复与运营控制 |
 | 每小时第 `41` 分钟 | 只读比较 `main` 与生产 release marker，检查 3 小时分歧和 12 小时陈旧阈值 | 及时发现数据或部署停滞 |
 
-生产 DAG 为 `refresh → validate → persist → build → deploy → production-verify → notify`：模型密钥只进入只读刷新阶段，写入阶段没有模型密钥，Pages 权限只进入部署阶段。每次生产烟测成功会保留 90 天 `verified-release-<sha>` 回执；搜索通知只在验证后发生。生产固定使用 Python `3.11`、Node.js `22` 与 Hugo Extended `0.153.4`。
+生产 DAG 为 `refresh → validate → persist → build → deploy → production-verify → notify`：模型密钥只进入只读刷新阶段，写入阶段没有模型密钥，Pages 权限只进入部署阶段。每次生产烟测成功会保留 90 天 `verified-release-<sha>` 回执；搜索通知只在验证后发生。生产固定使用 Python `3.11`、Node.js `22`、Hugo Extended `0.153.4` 与 **固定的 `ubuntu-24.04` runner**（不使用浮动的 `ubuntu-latest`）；浏览器只用于 CI 测试与可选本地爬虫，不进入生产刷新路径，见 [runner 镜像固定策略](./docs/operations/runner-pinning.md)。
 
 ## ⚙️ 配置与部署
 
@@ -214,6 +214,8 @@ ai-stack/
 | [历史文章质量报告](./docs/HISTORICAL_CONTENT_QUALITY.md) | 异常识别、透明归档、标签修复与验收统计 |
 | [v1.0 发布清单](./docs/V1_RELEASE_CHECKLIST.md) | 数据、内容、图谱、趋势、搜索、安全与线上烟测 |
 | [新鲜度排障手册](./docs/operations/freshness-runbook.md) | 12 小时检查、失败阶段判断与安全处置 |
+| [Runner 镜像固定策略](./docs/operations/runner-pinning.md) | 固定 `ubuntu-24.04`、浏览器依赖边界与 OS 升级流程 |
+| [INCIDENT-2026-10-05 复盘](./docs/operations/INCIDENT-2026-10-05.md) | 定时发布链静默中断 30 天的根因、修复与防复发契约 |
 | [CI 信任模型](./docs/architecture/ci-trust-model.md) | 工作流权限、发布边界与安全假设 |
 | [系统设计](./docs/系统设计文档.md) | 数据流、AI 处理、展示层与扩展设计 |
 
