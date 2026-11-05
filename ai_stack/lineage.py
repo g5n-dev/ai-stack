@@ -2176,12 +2176,24 @@ def _public_cluster_entry(
             item["target"]["observation_id"],
         )
     )
+    # Budget retention may retire an older event. Its Posts stay readable, but
+    # publishing a parent id that is no longer present in the public assets
+    # leaves a dangling edge, which build_stack_trends correctly rejects. Drop
+    # the edge for those members instead of weakening downstream validation.
+    retained_ids = set(public_observation_records)
+    public_members: list[dict[str, Any]] = []
+    for member in members:
+        payload = _public_observation(member)
+        parent_id = payload.get("parent_observation_id")
+        if parent_id is not None and parent_id not in retained_ids:
+            payload["parent_observation_id"] = None
+        public_members.append(payload)
     return {
         "earliest_observed_id": event["earliest_observed_id"],
         "event_aliases": event["event_aliases"],
         "event_id": event_id,
         "lineage_links": lineage_links[:6],
-        "observations": [_public_observation(member) for member in members],
+        "observations": public_members,
         "probable_origin_id": event["probable_origin_id"],
         "representative_article_url": representative["article_url"],
     }
@@ -2660,6 +2672,23 @@ def _safe_asset_path(root: Path, value: Any) -> Path:
     return target
 
 
+def _verify_published_parents(
+    references: list[tuple[str, str]], published: set[str]
+) -> None:
+    """Reject dangling parent edges left behind by public-asset retention.
+
+    Hash checks prove the shards were written as declared, not that the graph
+    they declare is self-consistent. A parent that was retired from the public
+    budget must have been cleared from the member that referenced it.
+    """
+
+    for observation_id, parent_id in references:
+        if parent_id not in published:
+            raise LineageValidationError(
+                f"lineage parent is not published: {observation_id} -> {parent_id}"
+            )
+
+
 def verify_lineage_assets(
     public_dir: Path,
     *,
@@ -2697,6 +2726,7 @@ def verify_lineage_assets(
     route_count = 0
     events: set[str] = set()
     observations: set[str] = set()
+    parent_references: list[tuple[str, str]] = []
     referenced_paths: set[Path] = {index_path.resolve()}
     total_bytes = len(index_bytes)
     for refs, field_name in ((route_refs, "routes"), (cluster_refs, "clusters")):
@@ -2760,6 +2790,15 @@ def verify_lineage_assets(
                     for item in timeline:
                         if item.get("relation") not in {kind.value for kind in RelationKind}:
                             raise LineageValidationError("cluster contains an invalid relation")
+                        parent_id = item.get("parent_observation_id")
+                        if parent_id is not None:
+                            if not isinstance(parent_id, str) or not parent_id.startswith("obs_"):
+                                raise LineageValidationError(
+                                    "cluster parent_observation_id is invalid"
+                                )
+                            parent_references.append(
+                                (str(item.get("observation_id")), parent_id)
+                            )
                         if "source_text" in item or "fingerprint" in item:
                             raise LineageValidationError("public cluster leaks source evidence")
                     lineage_links = cluster.get("lineage_links")
@@ -2783,6 +2822,7 @@ def verify_lineage_assets(
                             raise LineageValidationError("cluster lineage target is invalid")
                         if "source_text" in target_observation or "fingerprint" in target_observation:
                             raise LineageValidationError("public lineage link leaks source evidence")
+    _verify_published_parents(parent_references, observations)
     actual_public = {path.resolve() for path in public_dir.rglob("*.json") if path.is_file()}
     if actual_public != referenced_paths:
         raise LineageValidationError("public lineage directory contains unreferenced JSON assets")
