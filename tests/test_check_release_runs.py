@@ -8,11 +8,34 @@ or the publication heartbeat (26h).
 
 from __future__ import annotations
 
+from pathlib import Path
 from typing import Any
 
 import pytest
 
-from scripts.check_release_runs import ReleaseRunError, evaluate_runs, summarize
+from scripts.check_release_runs import (
+    ReleaseRunError,
+    evaluate_runs,
+    fetch_first_failure,
+    main,
+    summarize,
+)
+
+
+class _FakeApi:
+    """Minimal GitHubApi double; a wrong endpoint shape fails the test loudly."""
+
+    def __init__(self, runs: object, jobs: object | None = None) -> None:
+        self.runs = runs
+        self.jobs = jobs
+        self.endpoints: list[str] = []
+
+    def request(self, method: str, endpoint: str) -> object | None:
+        assert method == "GET"
+        self.endpoints.append(endpoint)
+        if "/jobs?" in endpoint:
+            return self.jobs
+        return self.runs
 
 
 def _run(conclusion: str, run_id: int = 1, status: str = "completed") -> dict[str, Any]:
@@ -104,3 +127,140 @@ def test_a_push_triggered_run_cannot_clear_a_stalled_schedule() -> None:
 def test_only_scheduled_history_counts_as_history() -> None:
     with pytest.raises(ReleaseRunError):
         evaluate_runs([{**_run("success", 1), "event": "push"}])
+
+
+def test_first_failure_names_the_step_that_actually_failed() -> None:
+    """The 2026-10-05 outage was in refresh, but alerts kept naming validate."""
+
+    api = _FakeApi(
+        runs={},
+        jobs={
+            "jobs": [
+                {
+                    "name": "refresh",
+                    "conclusion": "failure",
+                    "steps": [
+                        {"name": "Set up Python", "conclusion": "success"},
+                        {"name": "Install crawler browser", "conclusion": "failure"},
+                        {"name": "Refresh Posts", "conclusion": "skipped"},
+                    ],
+                },
+                {"name": "validate", "conclusion": "skipped", "steps": []},
+            ]
+        },
+    )
+
+    failure = fetch_first_failure(api, repository="g5n-dev/ai-stack", run_id=41784410985)
+
+    assert failure == {
+        "job": "refresh",
+        "step": "Install crawler browser",
+        "conclusion": "failure",
+    }
+    assert api.endpoints == [
+        "/repos/g5n-dev/ai-stack/actions/runs/41784410985/jobs?per_page=100"
+    ]
+
+
+def test_first_failure_falls_back_to_the_job_for_a_runner_level_failure() -> None:
+    api = _FakeApi(
+        runs={},
+        jobs={
+            "jobs": [
+                {"name": "refresh", "conclusion": "failure", "steps": []},
+            ]
+        },
+    )
+
+    failure = fetch_first_failure(api, repository="g5n-dev/ai-stack", run_id=1)
+
+    assert failure is not None
+    assert failure["job"] == "refresh"
+    assert "runner-level" in failure["step"]
+
+
+def test_first_failure_returns_none_when_nothing_failed() -> None:
+    api = _FakeApi(
+        runs={},
+        jobs={"jobs": [{"name": "refresh", "conclusion": "success", "steps": []}]},
+    )
+
+    assert fetch_first_failure(api, repository="g5n-dev/ai-stack", run_id=1) is None
+
+
+@pytest.mark.parametrize("bad_id", [None, 0, -1, True, "../../secrets", 1.5])
+def test_first_failure_rejects_unsafe_run_ids(bad_id: object) -> None:
+    api = _FakeApi(runs={}, jobs={"jobs": []})
+
+    with pytest.raises(ReleaseRunError):
+        fetch_first_failure(api, repository="g5n-dev/ai-stack", run_id=bad_id)
+
+
+def test_first_failure_rejects_an_unreadable_jobs_payload() -> None:
+    api = _FakeApi(runs={}, jobs={"jobs": "not-a-list"})
+
+    with pytest.raises(ReleaseRunError):
+        fetch_first_failure(api, repository="g5n-dev/ai-stack", run_id=1)
+
+
+def test_alert_carries_the_exact_failed_step(tmp_path: Path) -> None:
+    runs = {"workflow_runs": [_run("failure", 1), _run("failure", 2)]}
+    jobs = {
+        "jobs": [
+            {
+                "name": "refresh",
+                "conclusion": "failure",
+                "steps": [{"name": "Install crawler browser", "conclusion": "failure"}],
+            }
+        ]
+    }
+    api = _FakeApi(runs=runs, jobs=jobs)
+    summary = tmp_path / "release_runs.md"
+
+    code = main(
+        [
+            "--repository",
+            "g5n-dev/ai-stack",
+            "--summary-output",
+            str(summary),
+        ],
+        api=api,
+    )
+
+    assert code == 1
+    text = summary.read_text(encoding="utf-8")
+    assert "Install crawler browser" in text
+    assert "`refresh` →" in text
+    assert "不要预判断为 `validate`" in text
+
+
+def test_a_broken_diagnostic_never_masks_a_detected_outage(tmp_path: Path) -> None:
+    api = _FakeApi(
+        runs={"workflow_runs": [_run("failure", 1), _run("failure", 2)]},
+        jobs={"jobs": "unreadable"},
+    )
+    summary = tmp_path / "release_runs.md"
+
+    code = main(
+        ["--repository", "g5n-dev/ai-stack", "--summary-output", str(summary)],
+        api=api,
+    )
+
+    assert code == 1
+    text = summary.read_text(encoding="utf-8")
+    assert "发布链已经中断" in text
+    assert "首个失败步骤定位失败" in text
+
+
+def test_summary_reports_the_first_failed_step_when_available() -> None:
+    report = evaluate_runs([_run("failure", 1), _run("failure", 2)])
+    report["first_failure"] = {
+        "job": "refresh",
+        "step": "Install crawler browser",
+        "conclusion": "failure",
+    }
+
+    text = summarize(report)
+
+    assert "首个失败步骤" in text
+    assert "`refresh` → `Install crawler browser`" in text

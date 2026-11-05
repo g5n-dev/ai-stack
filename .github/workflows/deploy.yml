@@ -1,3 +1,6 @@
+# Runner OS is deliberately pinned; see docs/operations/runner-pinning.md.
+# ubuntu-latest is a moving label: its 26.04 rollout broke the pinned Playwright
+# build and caused a 30-day content outage (INCIDENT-2026-10-05).
 name: Build and Deploy
 
 on:
@@ -29,7 +32,7 @@ permissions: {}
 jobs:
   refresh:
     if: ${{ !(github.event_name == 'push' && github.actor == 'github-actions[bot]') }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 60
     permissions:
       contents: read
@@ -75,13 +78,12 @@ jobs:
       - name: Install refresh dependencies
         run: python3 -m pip install --disable-pip-version-check -r requirements.txt
 
-      - name: Install crawler browser
-        if: ${{ env.AI_STACK_REFRESH_DATA == 'true' }}
-        run: |
-          if python3 -m pip show playwright >/dev/null 2>&1; then
-            python3 -m playwright install --with-deps chromium
-          fi
-
+      # Production sources (config/sources.yaml) are HTTP/RSS/API only. Chromium
+      # belongs to the optional local Twitter crawler and the CI browser smoke
+      # tests, never to this release-critical job. The 2026-10-05 outage began
+      # when the floating runner label rolled to 26.04 and the browser install
+      # here rejected that OS; every downstream job was skipped for 30 days.
+      # See docs/operations/INCIDENT-2026-10-05.md. Do not re-add it here.
       - name: Refresh Posts with crawler and model
         if: ${{ env.AI_STACK_REFRESH_DATA == 'true' }}
         env:
@@ -139,7 +141,7 @@ jobs:
 
   validate:
     needs: refresh
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     permissions:
       contents: read
@@ -240,7 +242,7 @@ jobs:
 
   persist:
     needs: [refresh, validate]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     permissions:
       actions: write
@@ -352,7 +354,7 @@ jobs:
 
   build:
     needs: persist
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     permissions:
       contents: read
@@ -479,7 +481,7 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
       pages: write
@@ -494,7 +496,7 @@ jobs:
 
   production-verify:
     needs: [build, deploy]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     permissions:
       contents: read
@@ -542,7 +544,7 @@ jobs:
 
   notify:
     needs: [build, production-verify]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     environment:
       name: production-publish

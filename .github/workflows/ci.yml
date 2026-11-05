@@ -19,7 +19,7 @@ permissions:
 jobs:
   unit-tests:
     name: PR Test Suite
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - name: Validate exact target SHA
@@ -144,7 +144,9 @@ jobs:
             tests/test_pagefind_catalog.py \
             tests/test_template_hardening.py \
             tests/test_secret_safe_logging.py \
-            tests/test_v1_release_contract.py
+            tests/test_v1_release_contract.py \
+            tests/test_check_release_runs.py \
+            tests/test_runner_pinning_contract.py
 
       - name: Verify committed lineage fixed point
         env:

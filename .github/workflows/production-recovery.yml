@@ -20,7 +20,7 @@ permissions: {}
 
 jobs:
   authorize:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     environment:
       name: production-recovery
@@ -79,7 +79,7 @@ jobs:
 
   build:
     needs: authorize
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     permissions:
       contents: read
@@ -197,7 +197,7 @@ jobs:
 
   deploy:
     needs: [authorize, build]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
       pages: write
@@ -212,7 +212,7 @@ jobs:
 
   production-verify:
     needs: [authorize, build, deploy]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     permissions:
       contents: read
