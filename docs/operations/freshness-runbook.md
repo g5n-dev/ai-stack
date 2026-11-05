@@ -26,6 +26,22 @@ CI 会为每个启用来源请求 20–30 条轻量候选元数据，再执行�
 | `production-verify` | 线上 SHA/release ID 或关键资源未收敛 | 比较 marker、缓存与部署记录；烟测通过前不会通知 |
 | `notify` | 已验证版本的可选索引通知失败 | 站点已经验证上线；单独修通知配置，不回滚内容 |
 | `monitoring` | 线上新鲜度或版本收敛失败 | 比较 `main` SHA、marker SHA、`stale_hours` 与 `divergence_hours` |
+| `refresh` 的前置环境步骤 | runner 镜像/工具链不兼容，内容尚未开始抓取 | 查首个失败步骤名与 runner OS；见下方「基础设施型失败」 |
+
+## 基础设施型失败（INCIDENT-2026-10-05）
+
+若 `refresh` 在抓取之前就失败、且后续 6 个 job 全部 `skipped`，先怀疑运行环境而不是数据源或模型：
+
+1. 打开告警正文的 **「首个失败步骤（API 自动定位）」**，它给出 job 名与步骤名；没有该段时按 `Build and Deploy` 最近一次运行手工查看首个失败 job。
+2. 检查失败步骤是否属于 runner 镜像、依赖安装或浏览器安装，而不是业务流水线。
+3. 核对 runner OS 是否仍是固定版本（见 [`runner-pinning.md`](./runner-pinning.md)）；`ubuntu-latest` 被上游滚动升级曾让 Playwright 拒绝在 `ubuntu26.04-x64` 安装 Chromium。
+4. 生产 `refresh` 不应有任何浏览器安装步骤；浏览器只属于 CI 测试与可选的本地 Twitter 爬虫。
+5. 修复后手动触发完整刷新，并确认全链绿色与告警自动关闭。
+
+**不要**因为这类失败放宽新鲜度阈值，也不要把「工作流一直在跑」当成健康证据——
+该事故中定时任务每小时都触发、7 个工作流全部 active，但每次都停在同一前置步骤。
+
+告警里的排障阶段只是线索，不是结论：本次 #503 固定指向 `validate`，而真实失败在 `refresh`。
 
 ## 采集失败
 
