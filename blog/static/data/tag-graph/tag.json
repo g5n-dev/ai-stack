@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T19:40:05Z",
+  "generated_at": "2026-11-06T00:15:05Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -661,7 +661,7 @@
       "strength": 1,
       "target": "tag:Amazon Bedrock",
       "type": "cooccurrence",
-      "weight": 28
+      "weight": 29
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:Amazon Bedrock AgentCore",
@@ -669,7 +669,7 @@
       "strength": 1,
       "target": "tag:Amazon Bedrock AgentCore",
       "type": "cooccurrence",
-      "weight": 37
+      "weight": 38
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:Amazon Bedrock Agents",
@@ -813,7 +813,7 @@
       "strength": 1,
       "target": "tag:ArXiv",
       "type": "cooccurrence",
-      "weight": 205
+      "weight": 206
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:Artificial Intelligence",
@@ -909,7 +909,7 @@
       "strength": 1,
       "target": "tag:GitHub",
       "type": "cooccurrence",
-      "weight": 5
+      "weight": 6
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:Go",
@@ -957,7 +957,7 @@
       "strength": 1,
       "target": "tag:Intermediate (200)",
       "type": "cooccurrence",
-      "weight": 22
+      "weight": 23
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:Java",
@@ -1021,7 +1021,7 @@
       "strength": 1,
       "target": "tag:Prompt 工程",
       "type": "cooccurrence",
-      "weight": 88
+      "weight": 90
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:Publication",
@@ -1037,7 +1037,7 @@
       "strength": 1,
       "target": "tag:Python",
       "type": "cooccurrence",
-      "weight": 103
+      "weight": 104
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:RAG",
@@ -1085,7 +1085,7 @@
       "strength": 1,
       "target": "tag:Technical How-to",
       "type": "cooccurrence",
-      "weight": 33
+      "weight": 34
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:Thought Leadership",
@@ -1173,7 +1173,7 @@
       "strength": 1,
       "target": "tag:cs.MA",
       "type": "cooccurrence",
-      "weight": 3
+      "weight": 4
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:cs.NE",
@@ -1213,7 +1213,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 279
+      "weight": 280
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:命令行工具",
@@ -1229,7 +1229,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 388
+      "weight": 390
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:工程实践",
@@ -1269,7 +1269,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 264
+      "weight": 266
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:深度学习",
@@ -2389,7 +2389,7 @@
       "strength": 1,
       "target": "tag:Amazon Bedrock AgentCore",
       "type": "cooccurrence",
-      "weight": 8
+      "weight": 9
     },
     {
       "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:Amazon Bedrock Agents",
@@ -2565,7 +2565,7 @@
       "strength": 1,
       "target": "tag:Intermediate (200)",
       "type": "cooccurrence",
-      "weight": 20
+      "weight": 21
     },
     {
       "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:Prompt 工程",
@@ -2573,7 +2573,7 @@
       "strength": 1,
       "target": "tag:Prompt 工程",
       "type": "cooccurrence",
-      "weight": 25
+      "weight": 26
     },
     {
       "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:RAG",
@@ -2589,7 +2589,7 @@
       "strength": 1,
       "target": "tag:Technical How-to",
       "type": "cooccurrence",
-      "weight": 10
+      "weight": 11
     },
     {
       "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:博客与播客",
@@ -2597,7 +2597,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 32
+      "weight": 33
     },
     {
       "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:大语言模型",
@@ -2605,7 +2605,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 29
+      "weight": 30
     },
     {
       "id": "edge:cooccurrence:tag:Amazon Bedrock->tag:机器学习",
@@ -2765,7 +2765,7 @@
       "strength": 1,
       "target": "tag:Intermediate (200)",
       "type": "cooccurrence",
-      "weight": 8
+      "weight": 9
     },
     {
       "id": "edge:cooccurrence:tag:Amazon Bedrock AgentCore->tag:Prompt 工程",
@@ -2773,7 +2773,7 @@
       "strength": 1,
       "target": "tag:Prompt 工程",
       "type": "cooccurrence",
-      "weight": 22
+      "weight": 23
     },
     {
       "id": "edge:cooccurrence:tag:Amazon Bedrock AgentCore->tag:RAG",
@@ -2789,7 +2789,7 @@
       "strength": 1,
       "target": "tag:Technical How-to",
       "type": "cooccurrence",
-      "weight": 18
+      "weight": 19
     },
     {
       "id": "edge:cooccurrence:tag:Amazon Bedrock AgentCore->tag:Thought Leadership",
@@ -2805,7 +2805,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 29
+      "weight": 30
     },
     {
       "id": "edge:cooccurrence:tag:Amazon Bedrock AgentCore->tag:大语言模型",
@@ -2813,7 +2813,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 30
+      "weight": 31
     },
     {
       "id": "edge:cooccurrence:tag:Amazon Bedrock AgentCore->tag:机器学习",
@@ -4877,7 +4877,7 @@
       "strength": 1,
       "target": "tag:Prompt 工程",
       "type": "cooccurrence",
-      "weight": 34
+      "weight": 35
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:Python",
@@ -5021,7 +5021,7 @@
       "strength": 1,
       "target": "tag:cs.MA",
       "type": "cooccurrence",
-      "weight": 3
+      "weight": 4
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:cs.NE",
@@ -5165,7 +5165,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 350
+      "weight": 351
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:数据库",
@@ -5189,7 +5189,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 313
+      "weight": 314
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:深度学习",
@@ -7589,7 +7589,7 @@
       "strength": 1,
       "target": "tag:Python",
       "type": "cooccurrence",
-      "weight": 13
+      "weight": 14
     },
     {
       "id": "edge:cooccurrence:tag:GitHub->tag:RAG",
@@ -7645,7 +7645,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 7
+      "weight": 8
     },
     {
       "id": "edge:cooccurrence:tag:GitHub->tag:深度学习",
@@ -8157,7 +8157,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 154
+      "weight": 155
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:数据库",
@@ -8181,7 +8181,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 272
+      "weight": 273
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:深度学习",
@@ -8381,7 +8381,7 @@
       "strength": 1,
       "target": "tag:Prompt 工程",
       "type": "cooccurrence",
-      "weight": 15
+      "weight": 16
     },
     {
       "id": "edge:cooccurrence:tag:Intermediate (200)->tag:RAG",
@@ -8397,7 +8397,7 @@
       "strength": 1,
       "target": "tag:Technical How-to",
       "type": "cooccurrence",
-      "weight": 8
+      "weight": 9
     },
     {
       "id": "edge:cooccurrence:tag:Intermediate (200)->tag:博客与播客",
@@ -8405,7 +8405,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 30
+      "weight": 31
     },
     {
       "id": "edge:cooccurrence:tag:Intermediate (200)->tag:大语言模型",
@@ -8413,7 +8413,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 22
+      "weight": 23
     },
     {
       "id": "edge:cooccurrence:tag:Intermediate (200)->tag:机器学习",
@@ -9693,7 +9693,7 @@
       "strength": 1,
       "target": "tag:Technical How-to",
       "type": "cooccurrence",
-      "weight": 24
+      "weight": 25
     },
     {
       "id": "edge:cooccurrence:tag:Prompt 工程->tag:Thought Leadership",
@@ -9717,7 +9717,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 70
+      "weight": 71
     },
     {
       "id": "edge:cooccurrence:tag:Prompt 工程->tag:大语言模型",
@@ -9725,7 +9725,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 96
+      "weight": 98
     },
     {
       "id": "edge:cooccurrence:tag:Prompt 工程->tag:机器学习",
@@ -9741,7 +9741,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 85
+      "weight": 86
     },
     {
       "id": "edge:cooccurrence:tag:Prompt 工程->tag:深度学习",
@@ -9893,7 +9893,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 2
+      "weight": 3
     },
     {
       "id": "edge:cooccurrence:tag:Python->tag:深度学习",
@@ -10517,7 +10517,7 @@
       "strength": 1,
       "target": "tag:博客与播客",
       "type": "cooccurrence",
-      "weight": 34
+      "weight": 35
     },
     {
       "id": "edge:cooccurrence:tag:Technical How-to->tag:大语言模型",
@@ -10525,7 +10525,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 27
+      "weight": 28
     },
     {
       "id": "edge:cooccurrence:tag:Technical How-to->tag:机器学习",
@@ -11168,12 +11168,20 @@
       "weight": 7
     },
     {
-      "id": "edge:cooccurrence:tag:cs.MA->tag:大语言模型",
+      "id": "edge:cooccurrence:tag:cs.MA->tag:Prompt 工程",
       "source": "tag:cs.MA",
       "strength": 0.5,
-      "target": "tag:大语言模型",
+      "target": "tag:Prompt 工程",
       "type": "cooccurrence",
       "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:cs.MA->tag:大语言模型",
+      "source": "tag:cs.MA",
+      "strength": 1,
+      "target": "tag:大语言模型",
+      "type": "cooccurrence",
+      "weight": 2
     },
     {
       "id": "edge:cooccurrence:tag:cs.MA->tag:来源快报",
@@ -11181,7 +11189,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 3
+      "weight": 4
     },
     {
       "id": "edge:cooccurrence:tag:cs.NE->tag:来源快报",
@@ -11461,7 +11469,7 @@
       "strength": 1,
       "target": "tag:大语言模型",
       "type": "cooccurrence",
-      "weight": 200
+      "weight": 201
     },
     {
       "id": "edge:cooccurrence:tag:博客与播客->tag:数据库",
@@ -11621,7 +11629,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 317
+      "weight": 319
     },
     {
       "id": "edge:cooccurrence:tag:大语言模型->tag:深度学习",
@@ -11974,7 +11982,7 @@
       "article_count": 51,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 39,
       "description": "文章标签: Advanced (300)",
       "id": "tag:Advanced (300)",
@@ -12017,7 +12025,7 @@
       "legacy_id": "ai",
       "level": 6,
       "name": "ai",
-      "rank": 90,
+      "rank": 91,
       "related_count": 4,
       "weighted_degree": 12.6
     },
@@ -12039,7 +12047,7 @@
       "weighted_degree": 8.6
     },
     {
-      "article_count": 970,
+      "article_count": 973,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -12053,7 +12061,7 @@
       "name": "AI Agent",
       "rank": 1,
       "related_count": 91,
-      "weighted_degree": 2957.2
+      "weighted_degree": 2972.2
     },
     {
       "article_count": 2,
@@ -12127,7 +12135,7 @@
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 8,
       "description": "文章标签: Amazon API Gateway",
       "id": "tag:Amazon API Gateway",
@@ -12144,7 +12152,7 @@
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 7,
       "description": "文章标签: Amazon Athena",
       "id": "tag:Amazon Athena",
@@ -12158,10 +12166,10 @@
       "weighted_degree": 7
     },
     {
-      "article_count": 43,
+      "article_count": 44,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 38,
       "description": "文章标签: Amazon Bedrock",
       "id": "tag:Amazon Bedrock",
@@ -12170,15 +12178,15 @@
       "legacy_id": "Amazon Bedrock",
       "level": 6,
       "name": "Amazon Bedrock",
-      "rank": 23,
+      "rank": 21,
       "related_count": 38,
-      "weighted_degree": 276
+      "weighted_degree": 283
     },
     {
-      "article_count": 39,
+      "article_count": 40,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 30,
       "description": "文章标签: Amazon Bedrock AgentCore",
       "id": "tag:Amazon Bedrock AgentCore",
@@ -12189,13 +12197,13 @@
       "name": "Amazon Bedrock AgentCore",
       "rank": 24,
       "related_count": 30,
-      "weighted_degree": 261
+      "weighted_degree": 268
     },
     {
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 6,
       "description": "文章标签: Amazon Bedrock Agents",
       "id": "tag:Amazon Bedrock Agents",
@@ -12212,7 +12220,7 @@
       "article_count": 2,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 8,
       "description": "文章标签: Amazon Bedrock Guardrails",
       "id": "tag:Amazon Bedrock Guardrails",
@@ -12229,7 +12237,7 @@
       "article_count": 7,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 17,
       "description": "文章标签: Amazon Bedrock Knowledge Bases",
       "id": "tag:Amazon Bedrock Knowledge Bases",
@@ -12246,7 +12254,7 @@
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 7,
       "description": "文章标签: Amazon CloudWatch",
       "id": "tag:Amazon CloudWatch",
@@ -12263,7 +12271,7 @@
       "article_count": 2,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 8,
       "description": "文章标签: Amazon Connect",
       "id": "tag:Amazon Connect",
@@ -12272,7 +12280,7 @@
       "legacy_id": "Amazon Connect",
       "level": 6,
       "name": "Amazon Connect",
-      "rank": 94,
+      "rank": 95,
       "related_count": 8,
       "weighted_degree": 11
     },
@@ -12280,7 +12288,7 @@
       "article_count": 3,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 16,
       "description": "文章标签: Amazon DynamoDB",
       "id": "tag:Amazon DynamoDB",
@@ -12297,7 +12305,7 @@
       "article_count": 2,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 11,
       "description": "文章标签: Amazon EC2",
       "id": "tag:Amazon EC2",
@@ -12306,7 +12314,7 @@
       "legacy_id": "Amazon EC2",
       "level": 6,
       "name": "Amazon EC2",
-      "rank": 88,
+      "rank": 89,
       "related_count": 11,
       "weighted_degree": 13
     },
@@ -12348,7 +12356,7 @@
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 7,
       "description": "文章标签: Amazon EventBridge",
       "id": "tag:Amazon EventBridge",
@@ -12365,7 +12373,7 @@
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 7,
       "description": "文章标签: Amazon FSx for NetApp ONTAP",
       "id": "tag:Amazon FSx for NetApp ONTAP",
@@ -12382,7 +12390,7 @@
       "article_count": 2,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 7,
       "description": "文章标签: Amazon Machine Learning",
       "id": "tag:Amazon Machine Learning",
@@ -12391,7 +12399,7 @@
       "legacy_id": "Amazon Machine Learning",
       "level": 6,
       "name": "Amazon Machine Learning",
-      "rank": 86,
+      "rank": 87,
       "related_count": 7,
       "weighted_degree": 14
     },
@@ -12399,7 +12407,7 @@
       "article_count": 3,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 15,
       "description": "文章标签: Amazon Nova",
       "id": "tag:Amazon Nova",
@@ -12416,7 +12424,7 @@
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 7,
       "description": "文章标签: Amazon OpenSearch Service",
       "id": "tag:Amazon OpenSearch Service",
@@ -12433,7 +12441,7 @@
       "article_count": 4,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 14,
       "description": "文章标签: Amazon Quick Sight",
       "id": "tag:Amazon Quick Sight",
@@ -12450,7 +12458,7 @@
       "article_count": 14,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 24,
       "description": "文章标签: Amazon Quick Suite",
       "id": "tag:Amazon Quick Suite",
@@ -12484,7 +12492,7 @@
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 4,
       "description": "文章标签: Amazon Rekognition",
       "id": "tag:Amazon Rekognition",
@@ -12501,7 +12509,7 @@
       "article_count": 5,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 18,
       "description": "文章标签: Amazon SageMaker",
       "id": "tag:Amazon SageMaker",
@@ -12518,7 +12526,7 @@
       "article_count": 14,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 20,
       "description": "文章标签: Amazon SageMaker AI",
       "id": "tag:Amazon SageMaker AI",
@@ -12535,7 +12543,7 @@
       "article_count": 8,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 17,
       "description": "文章标签: Amazon SageMaker HyperPod",
       "id": "tag:Amazon SageMaker HyperPod",
@@ -12552,7 +12560,7 @@
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 7,
       "description": "文章标签: Amazon SageMaker Studio",
       "id": "tag:Amazon SageMaker Studio",
@@ -12569,7 +12577,7 @@
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 7,
       "description": "文章标签: Amazon SageMaker Unified Studio",
       "id": "tag:Amazon SageMaker Unified Studio",
@@ -12620,7 +12628,7 @@
       "article_count": 4,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 16,
       "description": "文章标签: Amazon Simple Storage Service (S3)",
       "id": "tag:Amazon Simple Storage Service (S3)",
@@ -12637,7 +12645,7 @@
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 7,
       "description": "文章标签: Amazon Textract",
       "id": "tag:Amazon Textract",
@@ -12697,7 +12705,7 @@
       "legacy_id": "Android",
       "level": 6,
       "name": "Android",
-      "rank": 91,
+      "rank": 92,
       "related_count": 11,
       "weighted_degree": 12
     },
@@ -12705,7 +12713,7 @@
       "article_count": 44,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 32,
       "description": "文章标签: Announcements",
       "id": "tag:Announcements",
@@ -12714,7 +12722,7 @@
       "legacy_id": "Announcements",
       "level": 6,
       "name": "Announcements",
-      "rank": 22,
+      "rank": 23,
       "related_count": 32,
       "weighted_degree": 276
     },
@@ -12756,7 +12764,7 @@
       "article_count": 7,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 19,
       "description": "文章标签: Artificial Intelligence",
       "id": "tag:Artificial Intelligence",
@@ -12787,7 +12795,7 @@
       "weighted_degree": 70
     },
     {
-      "article_count": 867,
+      "article_count": 868,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -12801,7 +12809,7 @@
       "name": "ArXiv",
       "rank": 5,
       "related_count": 49,
-      "weighted_degree": 1436
+      "weighted_degree": 1441
     },
     {
       "article_count": 1,
@@ -12824,7 +12832,7 @@
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 4,
       "description": "文章标签: AWS DeepRacer",
       "id": "tag:AWS DeepRacer",
@@ -12841,7 +12849,7 @@
       "article_count": 2,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 13,
       "description": "文章标签: AWS Fargate",
       "id": "tag:AWS Fargate",
@@ -12850,7 +12858,7 @@
       "legacy_id": "AWS Fargate",
       "level": 6,
       "name": "AWS Fargate",
-      "rank": 87,
+      "rank": 88,
       "related_count": 13,
       "weighted_degree": 13
     },
@@ -12858,7 +12866,7 @@
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 5,
       "description": "文章标签: AWS Glue",
       "id": "tag:AWS Glue",
@@ -12892,7 +12900,7 @@
       "article_count": 4,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 21,
       "description": "文章标签: AWS Lambda",
       "id": "tag:AWS Lambda",
@@ -12926,7 +12934,7 @@
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 7,
       "description": "文章标签: AWS ParallelCluster",
       "id": "tag:AWS ParallelCluster",
@@ -12943,7 +12951,7 @@
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 7,
       "description": "文章标签: AWS Secrets Manager",
       "id": "tag:AWS Secrets Manager",
@@ -12960,7 +12968,7 @@
       "article_count": 7,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 20,
       "description": "文章标签: Best Practices",
       "id": "tag:Best Practices",
@@ -13020,7 +13028,7 @@
       "legacy_id": "Brain and cognitive sciences",
       "level": 6,
       "name": "Brain and cognitive sciences",
-      "rank": 80,
+      "rank": 81,
       "related_count": 13,
       "weighted_degree": 14
     },
@@ -13062,7 +13070,7 @@
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:other",
+      "community_id": "community:tag:Machine learning",
       "degree": 7,
       "description": "文章标签: Chemistry",
       "id": "tag:Chemistry",
@@ -13173,7 +13181,7 @@
       "legacy_id": "Computer modeling",
       "level": 6,
       "name": "Computer modeling",
-      "rank": 82,
+      "rank": 83,
       "related_count": 12,
       "weighted_degree": 14
     },
@@ -13224,7 +13232,7 @@
       "legacy_id": "cs.AI",
       "level": 6,
       "name": "cs.AI",
-      "rank": 21,
+      "rank": 22,
       "related_count": 10,
       "weighted_degree": 278
     },
@@ -13394,7 +13402,7 @@
       "legacy_id": "cs.HC",
       "level": 6,
       "name": "cs.HC",
-      "rank": 98,
+      "rank": 99,
       "related_count": 5,
       "weighted_degree": 10
     },
@@ -13433,11 +13441,11 @@
       "weighted_degree": 109
     },
     {
-      "article_count": 3,
+      "article_count": 4,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
-      "degree": 4,
+      "degree": 5,
       "description": "文章标签: cs.MA",
       "id": "tag:cs.MA",
       "layer": "tag",
@@ -13445,9 +13453,9 @@
       "legacy_id": "cs.MA",
       "level": 6,
       "name": "cs.MA",
-      "rank": 99,
-      "related_count": 4,
-      "weighted_degree": 10
+      "rank": 78,
+      "related_count": 5,
+      "weighted_degree": 15
     },
     {
       "article_count": 1,
@@ -13538,7 +13546,7 @@
       "article_count": 24,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 34,
       "description": "文章标签: Customer Solutions",
       "id": "tag:Customer Solutions",
@@ -13657,7 +13665,7 @@
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 8,
       "description": "文章标签: DevOps",
       "id": "tag:DevOps",
@@ -13734,7 +13742,7 @@
       "legacy_id": "Education, teaching, academics",
       "level": 6,
       "name": "Education, teaching, academics",
-      "rank": 83,
+      "rank": 84,
       "related_count": 12,
       "weighted_degree": 14
     },
@@ -13759,7 +13767,7 @@
       "article_count": 2,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 3,
       "description": "文章标签: eess.SP",
       "id": "tag:eess.SP",
@@ -13793,7 +13801,7 @@
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 7,
       "description": "文章标签: Elastic Load Balancing",
       "id": "tag:Elastic Load Balancing",
@@ -13827,7 +13835,7 @@
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:Interview",
+      "community_id": "community:other",
       "degree": 7,
       "description": "文章标签: Ethics",
       "id": "tag:Ethics",
@@ -13844,7 +13852,7 @@
       "article_count": 13,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 24,
       "description": "文章标签: Expert (400)",
       "id": "tag:Expert (400)",
@@ -13878,7 +13886,7 @@
       "article_count": 8,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 16,
       "description": "文章标签: Foundational (100)",
       "id": "tag:Foundational (100)",
@@ -13946,7 +13954,7 @@
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 7,
       "description": "文章标签: Generative AI",
       "id": "tag:Generative AI",
@@ -13960,7 +13968,7 @@
       "weighted_degree": 7
     },
     {
-      "article_count": 47,
+      "article_count": 48,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -13974,7 +13982,7 @@
       "name": "GitHub",
       "rank": 42,
       "related_count": 23,
-      "weighted_degree": 73
+      "weighted_degree": 76
     },
     {
       "article_count": 6,
@@ -14040,7 +14048,7 @@
       "legacy_id": "Google Cloud",
       "level": 6,
       "name": "Google Cloud",
-      "rank": 78,
+      "rank": 79,
       "related_count": 11,
       "weighted_degree": 14.6
     },
@@ -14108,7 +14116,7 @@
       "legacy_id": "Google Research",
       "level": 6,
       "name": "Google Research",
-      "rank": 92,
+      "rank": 93,
       "related_count": 9,
       "weighted_degree": 12
     },
@@ -14147,7 +14155,7 @@
       "weighted_degree": 7
     },
     {
-      "article_count": 1025,
+      "article_count": 1026,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -14161,7 +14169,7 @@
       "name": "Hacker News",
       "rank": 8,
       "related_count": 21,
-      "weighted_degree": 786
+      "weighted_degree": 788
     },
     {
       "article_count": 1,
@@ -14235,7 +14243,7 @@
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 7,
       "description": "文章标签: How-To",
       "id": "tag:How-To",
@@ -14278,15 +14286,15 @@
       "legacy_id": "Human-computer interaction",
       "level": 6,
       "name": "Human-computer interaction",
-      "rank": 85,
+      "rank": 86,
       "related_count": 9,
       "weighted_degree": 14
     },
     {
-      "article_count": 37,
+      "article_count": 38,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 28,
       "description": "文章标签: Intermediate (200)",
       "id": "tag:Intermediate (200)",
@@ -14297,13 +14305,13 @@
       "name": "Intermediate (200)",
       "rank": 27,
       "related_count": 28,
-      "weighted_degree": 235
+      "weighted_degree": 242
     },
     {
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:Interview",
+      "community_id": "community:other",
       "degree": 7,
       "description": "文章标签: Interview",
       "id": "tag:Interview",
@@ -14431,7 +14439,7 @@
       "legacy_id": "Leadership",
       "level": 6,
       "name": "Leadership",
-      "rank": 84,
+      "rank": 85,
       "related_count": 12,
       "weighted_degree": 14
     },
@@ -14473,7 +14481,7 @@
       "article_count": 1,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:other",
+      "community_id": "community:tag:Machine learning",
       "degree": 8,
       "description": "文章标签: Materials science and engineering",
       "id": "tag:Materials science and engineering",
@@ -14550,7 +14558,7 @@
       "legacy_id": "Mental health",
       "level": 6,
       "name": "Mental health",
-      "rank": 81,
+      "rank": 82,
       "related_count": 13,
       "weighted_degree": 14
     },
@@ -14567,7 +14575,7 @@
       "legacy_id": "ML Applications",
       "level": 6,
       "name": "ML Applications",
-      "rank": 97,
+      "rank": 98,
       "related_count": 6,
       "weighted_degree": 10.6
     },
@@ -14601,7 +14609,7 @@
       "legacy_id": "Networking & Traffic",
       "level": 6,
       "name": "Networking & Traffic",
-      "rank": 93,
+      "rank": 94,
       "related_count": 9,
       "weighted_degree": 12
     },
@@ -14660,7 +14668,7 @@
       "article_count": 2,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 8,
       "description": "文章标签: Partner solutions",
       "id": "tag:Partner solutions",
@@ -14703,7 +14711,7 @@
       "legacy_id": "Production Engineering",
       "level": 6,
       "name": "Production Engineering",
-      "rank": 95,
+      "rank": 96,
       "related_count": 8,
       "weighted_degree": 11
     },
@@ -14725,11 +14733,11 @@
       "weighted_degree": 7
     },
     {
-      "article_count": 126,
+      "article_count": 128,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
-      "degree": 54,
+      "community_id": "community:tag:Technical How-to",
+      "degree": 55,
       "description": "文章标签: Prompt 工程",
       "id": "tag:Prompt 工程",
       "layer": "tag",
@@ -14738,8 +14746,8 @@
       "level": 6,
       "name": "Prompt 工程",
       "rank": 9,
-      "related_count": 54,
-      "weighted_degree": 705
+      "related_count": 55,
+      "weighted_degree": 717
     },
     {
       "article_count": 1,
@@ -14776,7 +14784,7 @@
       "weighted_degree": 6
     },
     {
-      "article_count": 163,
+      "article_count": 164,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -14790,7 +14798,7 @@
       "name": "Python",
       "rank": 11,
       "related_count": 27,
-      "weighted_degree": 614.6
+      "weighted_degree": 617.6
     },
     {
       "article_count": 1,
@@ -14932,7 +14940,7 @@
       "article_count": 4,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:Interview",
+      "community_id": "community:other",
       "degree": 10,
       "description": "文章标签: Safety",
       "id": "tag:Safety",
@@ -14941,7 +14949,7 @@
       "legacy_id": "Safety",
       "level": 6,
       "name": "Safety",
-      "rank": 79,
+      "rank": 80,
       "related_count": 10,
       "weighted_degree": 14
     },
@@ -15133,10 +15141,10 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 48,
+      "article_count": 49,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 41,
       "description": "文章标签: Technical How-to",
       "id": "tag:Technical How-to",
@@ -15147,7 +15155,7 @@
       "name": "Technical How-to",
       "rank": 19,
       "related_count": 41,
-      "weighted_degree": 322
+      "weighted_degree": 329
     },
     {
       "article_count": 1,
@@ -15170,7 +15178,7 @@
       "article_count": 2,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 9,
       "description": "文章标签: Thought Leadership",
       "id": "tag:Thought Leadership",
@@ -15179,7 +15187,7 @@
       "legacy_id": "Thought Leadership",
       "level": 6,
       "name": "Thought Leadership",
-      "rank": 89,
+      "rank": 90,
       "related_count": 9,
       "weighted_degree": 13
     },
@@ -15320,10 +15328,10 @@
       "weighted_degree": 4
     },
     {
-      "article_count": 559,
+      "article_count": 560,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 109,
       "description": "文章标签: 博客与播客",
       "id": "tag:博客与播客",
@@ -15334,7 +15342,7 @@
       "name": "博客与播客",
       "rank": 4,
       "related_count": 109,
-      "weighted_degree": 1680
+      "weighted_degree": 1687
     },
     {
       "article_count": 141,
@@ -15354,7 +15362,7 @@
       "weighted_degree": 507.6
     },
     {
-      "article_count": 894,
+      "article_count": 897,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -15368,7 +15376,7 @@
       "name": "大语言模型",
       "rank": 2,
       "related_count": 104,
-      "weighted_degree": 2716.2
+      "weighted_degree": 2730.2
     },
     {
       "article_count": 89,
@@ -15425,7 +15433,7 @@
       "article_count": 168,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 96,
       "description": "文章标签: 机器学习",
       "id": "tag:机器学习",
@@ -15439,7 +15447,7 @@
       "weighted_degree": 664
     },
     {
-      "article_count": 853,
+      "article_count": 856,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -15453,7 +15461,7 @@
       "name": "来源快报",
       "rank": 3,
       "related_count": 127,
-      "weighted_degree": 2551
+      "weighted_degree": 2561
     },
     {
       "article_count": 88,
@@ -15476,7 +15484,7 @@
       "article_count": 57,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 50,
       "description": "文章标签: 深度学习",
       "id": "tag:深度学习",
@@ -15493,7 +15501,7 @@
       "article_count": 197,
       "category": "article_tag",
       "color": "#f59e0b",
-      "community_id": "community:tag:大语言模型",
+      "community_id": "community:tag:Technical How-to",
       "degree": 70,
       "description": "文章标签: 生成式 AI",
       "id": "tag:生成式 AI",
@@ -15543,13 +15551,13 @@
   ],
   "stats": {
     "links_by_type": {
-      "cooccurrence": 1450,
+      "cooccurrence": 1451,
       "semantic": 39
     },
     "nodes_by_layer": {
       "tag": 211
     },
-    "total_links": 1489,
+    "total_links": 1490,
     "total_nodes": 211
   },
   "version": 2
