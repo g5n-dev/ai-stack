@@ -1,8 +1,8 @@
 {
-  "active_count": 3109,
+  "active_count": 3113,
   "archived_count": 276,
   "complete_count": 90,
-  "interpreted_brief_count": 306,
+  "interpreted_brief_count": 308,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23309,7 +23309,19 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20261106-arxiv-swarmevolve-latent-agent-swarms-for-evolutionary-d-0-6f7078b324.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261106-arxiv-user-embeddings-are-superpositions-of-interpretabl-0-09f127f7a4.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20261106-blogs_podcasts-controlling-biology-fabian-theis-helmholtz-munich-0-e6527a9cee.md": {
       "reasons": [
         "interpreted_source_card"
       ],
@@ -23327,6 +23339,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20261106-github_trending-ccfos-nightingale-0-a9efcea186.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20261106-github_trending-evil0ctal-douyin_tiktok_download_api-9-bc2884ba1b.md": {
       "reasons": [
         "concise_source_card"
@@ -23340,6 +23358,12 @@
       "status": "source_brief"
     },
     "posts/20261106-hacker_news-how-accurately-did-science-fiction-stories-predict-6-d1cbc346ad.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261106-hacker_news-university-libraries-are-being-swarmed-by-ai-bots--9-84864f2184.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -23378,10 +23402,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2713,
-  "source_file_count": 3385,
-  "source_tree_sha256": "8b57b12c205e176ce0e49c7bf625b3a2fc9d38e677ea0f9e6de32d43218b6ba8",
-  "verified_provenance_count": 3109,
+  "source_brief_count": 2715,
+  "source_file_count": 3389,
+  "source_tree_sha256": "6f09462fe74781cbca5d370da55977194f82e65c3ad349b6a14de5a97aaec26f",
+  "verified_provenance_count": 3113,
   "warning_counts": {
     "source_excerpt_truncated": 822
   }
