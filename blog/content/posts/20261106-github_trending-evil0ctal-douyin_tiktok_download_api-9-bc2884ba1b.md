@@ -13,9 +13,9 @@ source_snapshot_sha256: "sha256:5f51b66d988a53c7ad1b415f72cd1cabe42a0452b6e2b241
 source_payload_sha256: "sha256:b91d1a5e62db1370da7895fd000ec28613ea775cb226ca74f934bdd5774cc3f6"
 observation_id: obs_bc2884ba1b1bfb5d6000f1382427ce9f71e49f10164ee7a8842e905ecba491df
 event_id: evt_dd1f052132a92b622a4f67c91d786c0ae120116df847b7bd47c0cb89a0dd47c6
-revision_id: rev_10ee7bfc8a39ae1a72fee9aa4fb712ab01baff1cce92b113ecf9f4c349d0a5bc
+revision_id: rev_88919f0be42a84a99c17e414525ed65024d8e6cc457087594ca99b34fab0af96
 first_seen_at: 2026-11-06T00:24:00Z
-timestamp_confidence: unknown
+timestamp_confidence: git
 lineage_relation: original
 extractor_version: "source-contract-v1"
 discovery_method: "repository_metadata"
@@ -27,7 +27,7 @@ description: "当前只保存了标题与来源元数据，未抓取外链全文
 external_url: https://github.com/Evil0ctal/Douyin_TikTok_Download_API
 parent_observation_id: null
 source_published_at: null
-last_seen_at: 2026-11-06T00:13:59.103997Z
+last_seen_at: 2026-11-07T00:00:00Z
 ---
 
 ## 基本信息

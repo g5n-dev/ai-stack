@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T07:09:13Z",
+  "generated_at": "2026-11-07T14:01:19Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -165,7 +165,7 @@
       "strength": 1,
       "target": "tag:ArXiv",
       "type": "cooccurrence",
-      "weight": 36
+      "weight": 37
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:C#",
@@ -501,7 +501,7 @@
       "strength": 1,
       "target": "tag:cs.LG",
       "type": "cooccurrence",
-      "weight": 4
+      "weight": 5
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:cs.RO",
@@ -573,7 +573,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 224
+      "weight": 225
     },
     {
       "id": "edge:semantic:tag:AI->tech:ai_ml",
@@ -933,7 +933,7 @@
       "strength": 1,
       "target": "tag:Hacker News",
       "type": "cooccurrence",
-      "weight": 183
+      "weight": 184
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:Harness",
@@ -1269,7 +1269,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 269
+      "weight": 270
     },
     {
       "id": "edge:cooccurrence:tag:AI Agent->tag:深度学习",
@@ -5029,7 +5029,7 @@
       "strength": 1,
       "target": "tag:cs.LG",
       "type": "cooccurrence",
-      "weight": 38
+      "weight": 39
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:cs.MA",
@@ -5205,7 +5205,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 319
+      "weight": 320
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:深度学习",
@@ -8325,7 +8325,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 277
+      "weight": 278
     },
     {
       "id": "edge:cooccurrence:tag:Hacker News->tag:深度学习",
@@ -11325,7 +11325,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 38
+      "weight": 39
     },
     {
       "id": "edge:cooccurrence:tag:cs.LG->tag:生成式 AI",
@@ -12164,7 +12164,7 @@
       "weighted_degree": 339
     },
     {
-      "article_count": 226,
+      "article_count": 227,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -12178,7 +12178,7 @@
       "name": "AI",
       "rank": 13,
       "related_count": 61,
-      "weighted_degree": 568.6
+      "weighted_degree": 571.6
     },
     {
       "article_count": 4,
@@ -12215,7 +12215,7 @@
       "weighted_degree": 8.6
     },
     {
-      "article_count": 977,
+      "article_count": 978,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -12229,7 +12229,7 @@
       "name": "AI Agent",
       "rank": 1,
       "related_count": 91,
-      "weighted_degree": 2991.2
+      "weighted_degree": 2993.2
     },
     {
       "article_count": 2,
@@ -12963,7 +12963,7 @@
       "weighted_degree": 77
     },
     {
-      "article_count": 873,
+      "article_count": 874,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -12977,7 +12977,7 @@
       "name": "ArXiv",
       "rank": 5,
       "related_count": 49,
-      "weighted_degree": 1459
+      "weighted_degree": 1462
     },
     {
       "article_count": 1,
@@ -13609,7 +13609,7 @@
       "weighted_degree": 3
     },
     {
-      "article_count": 38,
+      "article_count": 39,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -13623,7 +13623,7 @@
       "name": "cs.LG",
       "rank": 37,
       "related_count": 9,
-      "weighted_degree": 120
+      "weighted_degree": 123
     },
     {
       "article_count": 4,
@@ -14357,7 +14357,7 @@
       "weighted_degree": 7
     },
     {
-      "article_count": 1030,
+      "article_count": 1031,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -14371,7 +14371,7 @@
       "name": "Hacker News",
       "rank": 8,
       "related_count": 21,
-      "weighted_degree": 796
+      "weighted_degree": 798
     },
     {
       "article_count": 1,
@@ -15666,7 +15666,7 @@
       "weighted_degree": 683
     },
     {
-      "article_count": 867,
+      "article_count": 869,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -15680,7 +15680,7 @@
       "name": "来源快报",
       "rank": 3,
       "related_count": 127,
-      "weighted_degree": 2592
+      "weighted_degree": 2597
     },
     {
       "article_count": 89,
