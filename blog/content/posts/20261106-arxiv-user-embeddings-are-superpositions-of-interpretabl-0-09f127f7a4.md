@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:26542f74e322a42287b2a02bd1fbecb1ac52b5bdea90c04b4
 description: "这项研究提出：用户向量可视为多个可解释行为模式的稀疏叠加，并通过稀疏字典学习（如稀疏自编码器）提取这些模式，再为其生成自然语言标签。"
 external_url: http://arxiv.org/abs/2611.08487v1
 parent_observation_id: null
-last_seen_at: 2026-11-06T06:45:04.031037Z
+last_seen_at: 2026-11-07T00:00:00Z
 ---
 
 ## 基本信息
