@@ -1,8 +1,8 @@
 {
-  "active_count": 3120,
+  "active_count": 3122,
   "archived_count": 276,
   "complete_count": 90,
-  "interpreted_brief_count": 313,
+  "interpreted_brief_count": 314,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23381,6 +23381,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20261107-arxiv-unpacking-the-compute-efficiency-of-strong-to-weak-2-999bba1c21.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261107-arxiv-xstack-a-benchmark-for-ml-repo-migration-0-c506adad28.md": {
       "reasons": [
         "interpreted_source_card"
@@ -23406,6 +23412,12 @@
       "status": "source_brief"
     },
     "posts/20261107-hacker_news-memorilla-latent-semantic-memory-for-llms-6-bc00e1abe2.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261107-hacker_news-the-components-of-agent-memory-8-f0247d2be6.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -23444,10 +23456,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2717,
-  "source_file_count": 3396,
-  "source_tree_sha256": "d7d16bcb5e4f6b5ae0683ed8ff7fdba3bf0c75a234e07cbae238698a10586d59",
-  "verified_provenance_count": 3120,
+  "source_brief_count": 2718,
+  "source_file_count": 3398,
+  "source_tree_sha256": "8cbd1db0be677fbb771e0be9df7d4aab6efe88a885f0a18ecae14843e1bd1860",
+  "verified_provenance_count": 3122,
   "warning_counts": {
     "source_excerpt_truncated": 822
   }
