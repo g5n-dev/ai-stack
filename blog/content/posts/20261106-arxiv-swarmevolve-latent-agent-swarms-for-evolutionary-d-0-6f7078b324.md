@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:ba4fb45bc327064080e3a2139fcbaedf0e7092d695272a592
 description: "SwarmEvolve 是一种利用大规模智能体群体进行进化式搜索的方法，让智能体在隐空间协作、共享 KV 缓存信息，并结合新颖性筛选与隐式交叉来生成和优化程序。实验显示，它在数学发现与科学计算任务上以更短时间取得了较高平均分。"
 external_url: http://arxiv.org/abs/2611.08483v1
 parent_observation_id: null
-last_seen_at: 2026-11-06T15:01:36.718405Z
+last_seen_at: 2026-11-07T00:00:00Z
 ---
 
 ## 基本信息

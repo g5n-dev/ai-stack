@@ -15,7 +15,7 @@ observation_id: obs_4cf38e69c8d390b47e32c5b1fa807314288d210e57a5d04a6a82aa3ed8ce
 event_id: evt_b84d22cb57772147d16ed53e446b5bbb7ab58f2f2733abfbf36175fbaff99314
 revision_id: rev_56182221a28c79c1e74d5a6ee38d0ee623901279b02d41d5b0b7ebd3626ebc6f
 source_published_at: 2026-11-05T18:58:17Z
-first_seen_at: 2026-11-06T20:53:18.029774Z
+first_seen_at: 2026-11-06T21:05:41Z
 timestamp_confidence: publisher
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:1ea90a578380d2ecc7d0f081836ffff81b722d2421fec352d
 description: "Scientist World 将科研论文转化为可执行的研究环境：自动提取开放问题、复现作者方法作为基线，并让 AI 科学家接受与人类研究者成果对比的评估。项目已发布 1,000 个经过验证的环境，并记录 6,400 小时的完整研究轨迹。"
 external_url: http://arxiv.org/abs/2611.08478v1
 parent_observation_id: null
-last_seen_at: 2026-11-06T20:53:18.029774Z
+last_seen_at: 2026-11-07T00:00:00Z
 ---
 
 ## 基本信息

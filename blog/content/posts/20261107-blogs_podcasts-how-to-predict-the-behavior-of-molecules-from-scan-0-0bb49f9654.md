@@ -15,7 +15,7 @@ observation_id: obs_0bb49f96544d94ecd80e77ab083459a74cffd73257f1c75429a36d100ed1
 event_id: evt_cd3561f842c0907333a36b94ffc5aa11142644d97c075c4b3bddf3879ff2a85e
 revision_id: rev_969058541a9dbddec845bafc8dc819f9fd58b6b952593ffc410b6293a7822d6d
 source_published_at: 2026-11-06T19:00:00Z
-first_seen_at: 2026-11-06T20:53:29.326358Z
+first_seen_at: 2026-11-06T21:05:41Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:2ec12a250a3bc7578af47b5495c1e126339a3e188314bdb63
 description: "MIT 团队提出分子性质预测模型 CheMeleon：通过预训练学习分子结构与化学描述符之间的关系，再用少量任务数据微调，以预测溶解度、黏度、生物活性等性质。"
 external_url: https://news.mit.edu/2026/how-to-predict-molecule-behavior-with-scant-data-1106
 parent_observation_id: null
-last_seen_at: 2026-11-06T20:53:29.326358Z
+last_seen_at: 2026-11-07T00:00:00Z
 ---
 
 ## 基本信息

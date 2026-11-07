@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:cf1e9497fd874a4e0d10c5e4d66da4381d1f24b87b2e9238
 source_payload_sha256: "sha256:92507acda08d9293716d89aaa8f9b234f4f6f2fee81c84d9e16eeec82112c468"
 observation_id: obs_614ec411e822a540898f15e570bc65f7c99b1de4d8e763c931bcb2cccaf8f043
 event_id: evt_d1fb334d50dabd2939a698e52348a32ed767b5af7ed03e4beb97c88eb661747a
-revision_id: rev_88d6824c759ca264bbd9d3483a217eb80d4213ea240d76bbea118555bc145eab
+revision_id: rev_4a6b8470c6ea606faec5b27c2983142a0a07e265dd0cf193a2c2b0fb5c2e9a0d
 source_published_at: 2026-11-05T21:04:24Z
 first_seen_at: 2026-11-06T00:24:00Z
 timestamp_confidence: feed
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:f0dae21dd052a34073b7f7cbed5d4449262bd09277bb95763
 description: "Amazon Bedrock AgentCore 的 Web Answer 现已正式可用。开发者只需调用一次工具，即可获得基于当前网页信息、由模型综合生成并附带来源链接的回答，无需自行搭建搜索、检索、内容清洗和引用提取流程。"
 external_url: https://aws.amazon.com/blogs/machine-learning/getting-started-with-web-answer-on-amazon-bedrock-agentcore
 parent_observation_id: null
-last_seen_at: 2026-11-06T00:14:11.217084Z
+last_seen_at: 2026-11-07T00:00:00Z
 ---
 
 ## 基本信息
