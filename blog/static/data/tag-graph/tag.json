@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T00:56:25Z",
+  "generated_at": "2026-11-07T07:09:13Z",
   "layer": "tag",
   "layers": {
     "application": {
@@ -165,7 +165,7 @@
       "strength": 1,
       "target": "tag:ArXiv",
       "type": "cooccurrence",
-      "weight": 35
+      "weight": 36
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:C#",
@@ -501,7 +501,7 @@
       "strength": 1,
       "target": "tag:cs.LG",
       "type": "cooccurrence",
-      "weight": 3
+      "weight": 4
     },
     {
       "id": "edge:cooccurrence:tag:AI->tag:cs.RO",
@@ -573,7 +573,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 223
+      "weight": 224
     },
     {
       "id": "edge:semantic:tag:AI->tech:ai_ml",
@@ -5029,7 +5029,7 @@
       "strength": 1,
       "target": "tag:cs.LG",
       "type": "cooccurrence",
-      "weight": 37
+      "weight": 38
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:cs.MA",
@@ -5205,7 +5205,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 318
+      "weight": 319
     },
     {
       "id": "edge:cooccurrence:tag:ArXiv->tag:深度学习",
@@ -11325,7 +11325,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 37
+      "weight": 38
     },
     {
       "id": "edge:cooccurrence:tag:cs.LG->tag:生成式 AI",
@@ -12164,7 +12164,7 @@
       "weighted_degree": 339
     },
     {
-      "article_count": 225,
+      "article_count": 226,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -12178,7 +12178,7 @@
       "name": "AI",
       "rank": 13,
       "related_count": 61,
-      "weighted_degree": 565.6
+      "weighted_degree": 568.6
     },
     {
       "article_count": 4,
@@ -12963,7 +12963,7 @@
       "weighted_degree": 77
     },
     {
-      "article_count": 872,
+      "article_count": 873,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -12977,7 +12977,7 @@
       "name": "ArXiv",
       "rank": 5,
       "related_count": 49,
-      "weighted_degree": 1456
+      "weighted_degree": 1459
     },
     {
       "article_count": 1,
@@ -13609,7 +13609,7 @@
       "weighted_degree": 3
     },
     {
-      "article_count": 37,
+      "article_count": 38,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -13623,7 +13623,7 @@
       "name": "cs.LG",
       "rank": 37,
       "related_count": 9,
-      "weighted_degree": 117
+      "weighted_degree": 120
     },
     {
       "article_count": 4,
@@ -15666,7 +15666,7 @@
       "weighted_degree": 683
     },
     {
-      "article_count": 866,
+      "article_count": 867,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -15680,7 +15680,7 @@
       "name": "来源快报",
       "rank": 3,
       "related_count": 127,
-      "weighted_degree": 2589
+      "weighted_degree": 2592
     },
     {
       "article_count": 89,
