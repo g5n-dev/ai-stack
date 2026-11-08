@@ -1,8 +1,8 @@
 {
-  "active_count": 3126,
+  "active_count": 3128,
   "archived_count": 276,
   "complete_count": 90,
-  "interpreted_brief_count": 316,
+  "interpreted_brief_count": 317,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23423,6 +23423,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20261108-arxiv-medgraph-maintaining-patient-state-with-graph-memo-4-7386abdb3f.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261108-arxiv-reprobridge-building-reproducibility-into-ml-resea-2-5d920b8c07.md": {
       "reasons": [
         "interpreted_source_card"
@@ -23434,6 +23440,12 @@
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20261108-hacker_news-claude-codes-dont-ask-again-exposes-passwords-in-1-3-10bdc73097.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20261108-hacker_news-microsoft-researcher-john-langford-exits-ai-fronti-0-f3f115801f.md": {
       "reasons": [
@@ -23480,10 +23492,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2720,
-  "source_file_count": 3402,
-  "source_tree_sha256": "897b094cdeafb1a839f915bcc9bbe1699b0ac2feef48dc1a95b562228758badf",
-  "verified_provenance_count": 3126,
+  "source_brief_count": 2721,
+  "source_file_count": 3404,
+  "source_tree_sha256": "59fcefb3ca856842ecb318a4bbfde357f42e43593c37255e8bd8b09eb235715d",
+  "verified_provenance_count": 3128,
   "warning_counts": {
     "source_excerpt_truncated": 822
   }

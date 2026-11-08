@@ -15,7 +15,7 @@ observation_id: obs_24c60861af6df27f008ec147f64c4c9b0d03ef13ed2cdc2f18589d4d7272
 event_id: evt_defa639135263e0de264cfd75c01a5a6ec37d9969941bf1dbe146dff68b55980
 revision_id: rev_0116741467d433ee26b24d93d964a532c18477539d119af9772dfd5d9333bcc5
 source_published_at: 2026-11-05T18:30:54Z
-first_seen_at: 2026-11-07T22:44:18.560793Z
+first_seen_at: 2026-11-07T22:56:58Z
 timestamp_confidence: publisher
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:723bdc784fbc5bd6c7a08d61deedd1727786f2b29805e573e
 description: "这是一篇关于机制可解释性与 AI 安全的综述，系统梳理特征、电路、因果验证、自然语言解释等方法，并提出评估机制可解释性主张的统一框架。文章也讨论知识编辑、行为引导与监控等应用，以及相关局限、失效模式和开放问题。"
 external_url: http://arxiv.org/abs/2611.08438v1
 parent_observation_id: null
-last_seen_at: 2026-11-07T22:44:18.560793Z
+last_seen_at: 2026-11-08T00:00:00Z
 ---
 
 ## 基本信息

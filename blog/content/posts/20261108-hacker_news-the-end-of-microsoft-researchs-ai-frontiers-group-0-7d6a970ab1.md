@@ -13,9 +13,9 @@ source_snapshot_sha256: "sha256:8f888c9a5f7fcfb3dc8d4c3459eca202edf394d26f08f9f3
 source_payload_sha256: "sha256:1ed14abdf84effee18074a0f091f1e8453e39ffa455fb29fd398cee0c7a2701e"
 observation_id: obs_7d6a970ab1ba21607a9e93b8d387da963799c542bd38d598539da61ebe656548
 event_id: evt_085af39055083507631863a4cc1a706fc153ebac7db0147dfbd4e649f2ae8342
-revision_id: rev_318048cdb412a1a520a5eda20bf52d52bbc56f6383fcbca14b21264243dd53bd
+revision_id: rev_7187d933c51bfe2624bca6ad0fe88fd17dea1436c4b820a1bd4fc55fbeac829e
 source_published_at: 2026-11-07T18:02:17Z
-first_seen_at: 2026-11-07T22:44:16.261320Z
+first_seen_at: 2026-11-07T22:56:58Z
 timestamp_confidence: platform
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 50
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://hunch.net?p=13764006
 parent_observation_id: null
-last_seen_at: 2026-11-07T22:44:16.261320Z
+last_seen_at: 2026-11-08T00:00:00Z
 ---
 
 ## 基本信息

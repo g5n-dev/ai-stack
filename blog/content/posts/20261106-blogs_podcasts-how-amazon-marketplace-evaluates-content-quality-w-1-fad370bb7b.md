@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:8b94df379057ae707143efdaeb9867a605a62bab1a176e86f
 description: "这篇文章介绍一种面向电商商品详情页的内容质量评估方案：用视觉语言模型理解整页图片、文字与布局的协同效果，再结合 OCR 可读性信号和 CatBoost 分类器，依据专家标注输出质量判断。方案还利用 SHAP 解释评分依据，并在 Amazon SageMaker AI 上覆盖数据接入、模型托管、监控等环节。"
 external_url: https://aws.amazon.com/blogs/machine-learning/how-amazon-marketplace-evaluates-content-quality-with-amazon-sagemaker-ai
 parent_observation_id: null
-last_seen_at: 2026-11-07T00:00:00Z
+last_seen_at: 2026-11-08T00:00:00Z
 ---
 
 ## 基本信息

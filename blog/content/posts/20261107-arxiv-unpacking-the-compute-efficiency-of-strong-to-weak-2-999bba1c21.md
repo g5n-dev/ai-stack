@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:d51c2383ceca4eeba39bc59fc57de4f12af5881182764c36e
 description: "这项工作比较了 on-policy distillation（OPD）与 GRPO 在达到目标精度时的训练 FLOPs，并考察教师来源、模型规模、任务难度和领域等因素。结果表明，教师是否就是学生自身的 GRPO 检查点，会显著影响蒸馏的计算效率。"
 external_url: http://arxiv.org/abs/2611.08453v1
 parent_observation_id: null
-last_seen_at: 2026-11-07T14:00:00.596675Z
+last_seen_at: 2026-11-08T00:00:00Z
 ---
 
 ## 基本信息
