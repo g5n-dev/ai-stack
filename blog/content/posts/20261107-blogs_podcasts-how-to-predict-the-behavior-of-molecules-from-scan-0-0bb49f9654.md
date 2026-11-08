@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:2ec12a250a3bc7578af47b5495c1e126339a3e188314bdb63
 description: "MIT 团队提出分子性质预测模型 CheMeleon：通过预训练学习分子结构与化学描述符之间的关系，再用少量任务数据微调，以预测溶解度、黏度、生物活性等性质。"
 external_url: https://news.mit.edu/2026/how-to-predict-molecule-behavior-with-scant-data-1106
 parent_observation_id: null
-last_seen_at: 2026-11-07T00:00:00Z
+last_seen_at: 2026-11-08T00:00:00Z
 ---
 
 ## 基本信息

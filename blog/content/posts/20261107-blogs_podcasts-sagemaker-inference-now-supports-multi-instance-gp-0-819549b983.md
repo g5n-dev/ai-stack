@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:1e4c3916f455a59085ed76f516103496dd8ff2091abd81f9
 source_payload_sha256: "sha256:69234d7fe2af8db510baff093dbc3e1bad76f78b5ad8f7a670b369c02da616db"
 observation_id: obs_819549b983fd9118af23e6dd5e48bbf3e95ea8e30cf14630f24b1b5f1369fa27
 event_id: evt_27d7cfc3822ac623dd4a5f8737112573d31ab225a894bcf630b7e6d4e83477ba
-revision_id: rev_c81f049142b0a9796782099e245155d1d740c351d4bac85583ed65a27fb36035
+revision_id: rev_ca1009b3257b54944c4df9436f7bbfa5b0dc1f986ef74d87f33497213073b970
 source_published_at: 2026-11-06T18:01:00Z
 first_seen_at: 2026-11-07T01:07:28Z
 timestamp_confidence: feed
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:7b318ddba5a250b5c86bacdc9e0f301ce1949fefd83af9c24
 description: "Amazon SageMaker Inference 现支持使用 NVIDIA Multi-Instance GPU（MIG）将一块物理 GPU 划分为多个独立分区，让不同模型共享同一块 GPU，同时获得硬件层面的资源隔离和更合适的算力规格。"
 external_url: https://aws.amazon.com/blogs/machine-learning/sagemaker-inference-now-supports-multi-instance-gpu-to-maximize-gpu-utilization-for-model-endpoints
 parent_observation_id: null
-last_seen_at: 2026-11-07T00:55:34.386569Z
+last_seen_at: 2026-11-08T00:00:00Z
 ---
 
 ## 基本信息

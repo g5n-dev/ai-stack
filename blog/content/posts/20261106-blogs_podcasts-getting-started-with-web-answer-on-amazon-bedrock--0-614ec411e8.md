@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:f0dae21dd052a34073b7f7cbed5d4449262bd09277bb95763
 description: "Amazon Bedrock AgentCore 的 Web Answer 现已正式可用。开发者只需调用一次工具，即可获得基于当前网页信息、由模型综合生成并附带来源链接的回答，无需自行搭建搜索、检索、内容清洗和引用提取流程。"
 external_url: https://aws.amazon.com/blogs/machine-learning/getting-started-with-web-answer-on-amazon-bedrock-agentcore
 parent_observation_id: null
-last_seen_at: 2026-11-07T00:00:00Z
+last_seen_at: 2026-11-08T00:00:00Z
 ---
 
 ## 基本信息

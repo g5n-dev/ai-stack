@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:1ea90a578380d2ecc7d0f081836ffff81b722d2421fec352d
 description: "Scientist World 将科研论文转化为可执行的研究环境：自动提取开放问题、复现作者方法作为基线，并让 AI 科学家接受与人类研究者成果对比的评估。项目已发布 1,000 个经过验证的环境，并记录 6,400 小时的完整研究轨迹。"
 external_url: http://arxiv.org/abs/2611.08478v1
 parent_observation_id: null
-last_seen_at: 2026-11-07T00:00:00Z
+last_seen_at: 2026-11-08T00:00:00Z
 ---
 
 ## 基本信息
