@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:6f791c33ee37f16b5418f5ac3e35d94858e68a51fa3a4c240
 description: "XStack 是一个用于评估 AI 代理跨框架、跨硬件迁移机器学习代码仓库的基准。代理需要把 PyTorch 仓库迁移为可在 TPU 上运行的 JAX 仓库，并通过基于原仓库结果的校准评分。"
 external_url: http://arxiv.org/abs/2611.08472v1
 parent_observation_id: null
-last_seen_at: 2026-11-08T00:00:00Z
+last_seen_at: 2026-11-09T00:00:00Z
 ---
 
 ## 基本信息

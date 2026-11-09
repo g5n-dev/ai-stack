@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:6731169724bef9d70b0b802c0ad059ecaf5058dd3ad18173e
 description: "MedGraph 是一种面向长期医疗对话的图记忆方法，通过按患者归属事实、链接用药、诊断和测量记录，检索与问题时间相匹配的患者状态。它针对证据过时、混入他人健康信息及遗漏关键安全信息三类记忆错误进行改进。"
 external_url: http://arxiv.org/abs/2611.08433v1
 parent_observation_id: null
-last_seen_at: 2026-11-08T02:28:05.366115Z
+last_seen_at: 2026-11-09T00:00:00Z
 ---
 
 ## 基本信息
