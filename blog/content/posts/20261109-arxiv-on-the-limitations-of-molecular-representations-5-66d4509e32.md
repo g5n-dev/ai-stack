@@ -15,7 +15,7 @@ observation_id: obs_66d4509e328b015ac0e2da269af5528d551496c43b9adaeccc7dcb8c365c
 event_id: evt_17d0530e3edf75c33bce4657b5bc86e0e3bcc11f89f25690fd2c883b23b12bda
 revision_id: rev_2d0d57a6fce19b006951feafd0d6dec4932147d3a85a0899395c18a65be501db
 source_published_at: 2026-11-05T18:19:19Z
-first_seen_at: 2026-11-08T21:09:34.939959Z
+first_seen_at: 2026-11-08T21:18:43Z
 timestamp_confidence: publisher
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:c36ccf5075201f93f96bb96d5e4f06e58471602e3c9c34774
 description: "这项研究系统比较了分子指纹、学习型嵌入和理化描述符，发现现有先进嵌入模型在捕捉分子图结构、三维形状及 ADMET 终点相似性方面并未优于传统方法。研究还指出，分子表示的碰撞可能影响虚拟筛选。"
 external_url: http://arxiv.org/abs/2611.08420v1
 parent_observation_id: null
-last_seen_at: 2026-11-08T21:09:34.939959Z
+last_seen_at: 2026-11-09T00:00:00Z
 ---
 
 ## 基本信息

@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:e377c429348ba2df3dc572ab0d112e6da175ce480420bc53e
 description: "ReproBridge 将代码、环境配置、实验启动器和复现指南整合成标准化制品，并通过智能体工作流保存实验过程中的操作知识与决策。其目标是提升机器学习实验的独立复现成功率。"
 external_url: http://arxiv.org/abs/2611.08452v1
 parent_observation_id: null
-last_seen_at: 2026-11-08T00:00:00Z
+last_seen_at: 2026-11-09T00:00:00Z
 ---
 
 ## 基本信息

@@ -1,8 +1,8 @@
 {
-  "active_count": 3134,
+  "active_count": 3137,
   "archived_count": 276,
   "complete_count": 90,
-  "interpreted_brief_count": 319,
+  "interpreted_brief_count": 321,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23471,6 +23471,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20261109-arxiv-benchmarks-as-software-terminal-bench-and-the-case-5-554e91182f.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261109-arxiv-data-driven-discovery-of-intrinsic-lie-point-symme-5-42dfe44cf6.md": {
       "reasons": [
         "interpreted_source_card"
@@ -23483,7 +23489,22 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20261109-blogs_podcasts-how-stanford-teaches-ai-native-engineering-mihail--0-2c00110bd6.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20261109-hacker_news-goldman-sachs-is-pulling-claude-code-from-its-bank-0-fe5fdb83e1.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261109-hacker_news-how-i-fight-ai-brain-fry-16-8b18a5361e.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -23528,11 +23549,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2725,
-  "source_file_count": 3410,
-  "source_tree_sha256": "b8447e06dea96722c381c909c8a9df1096763fcbc5681ba1f02f60adf7efe500",
-  "verified_provenance_count": 3134,
+  "source_brief_count": 2726,
+  "source_file_count": 3413,
+  "source_tree_sha256": "455dd796d587662f110fc0d3426f646eab7e122c0e776d7da952b56e7104e5d3",
+  "verified_provenance_count": 3137,
   "warning_counts": {
-    "source_excerpt_truncated": 822
+    "source_excerpt_truncated": 823
   }
 }

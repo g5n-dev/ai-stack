@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:7b318ddba5a250b5c86bacdc9e0f301ce1949fefd83af9c24
 description: "Amazon SageMaker Inference 现支持使用 NVIDIA Multi-Instance GPU（MIG）将一块物理 GPU 划分为多个独立分区，让不同模型共享同一块 GPU，同时获得硬件层面的资源隔离和更合适的算力规格。"
 external_url: https://aws.amazon.com/blogs/machine-learning/sagemaker-inference-now-supports-multi-instance-gpu-to-maximize-gpu-utilization-for-model-endpoints
 parent_observation_id: null
-last_seen_at: 2026-11-08T00:00:00Z
+last_seen_at: 2026-11-09T00:00:00Z
 ---
 
 ## 基本信息

@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:c06b6b71230d681826557513cab70f005ea6fa0466f93da11
 description: "这项研究把从微分方程数据中发现连续李点对称性的过程转化为算子问题，在采样的射影空间数据上识别有效生成元，并排除冗余、解相关及几何平凡方向。方法不需要先写出符号确定方程或系统的闭式表示。"
 external_url: http://arxiv.org/abs/2611.08421v1
 parent_observation_id: null
-last_seen_at: 2026-11-08T16:43:01.252436Z
+last_seen_at: 2026-11-09T00:00:00Z
 ---
 
 ## 基本信息

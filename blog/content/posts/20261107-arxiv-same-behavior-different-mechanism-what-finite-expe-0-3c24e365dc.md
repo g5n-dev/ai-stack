@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:f5c3beedecd780198632f75f6592b3e5ad35d97c83a4b85d7
 description: "这项工作研究：仅凭有限、部分且带噪声的实验数据，能否可靠识别系统的机制级指标——整合信息论中的整合信息 \\(\\varphi\\)。文章在四、五单元随机网络中分析可辨识性、数据可认证性、误差边界及参数变化导致的突变。"
 external_url: http://arxiv.org/abs/2611.08469v1
 parent_observation_id: null
-last_seen_at: 2026-11-08T00:00:00Z
+last_seen_at: 2026-11-09T00:00:00Z
 ---
 
 ## 基本信息

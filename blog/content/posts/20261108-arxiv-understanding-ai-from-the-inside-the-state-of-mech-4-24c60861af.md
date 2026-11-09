@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:723bdc784fbc5bd6c7a08d61deedd1727786f2b29805e573e
 description: "这是一篇关于机制可解释性与 AI 安全的综述，系统梳理特征、电路、因果验证、自然语言解释等方法，并提出评估机制可解释性主张的统一框架。文章也讨论知识编辑、行为引导与监控等应用，以及相关局限、失效模式和开放问题。"
 external_url: http://arxiv.org/abs/2611.08438v1
 parent_observation_id: null
-last_seen_at: 2026-11-08T00:00:00Z
+last_seen_at: 2026-11-09T00:00:00Z
 ---
 
 ## 基本信息
