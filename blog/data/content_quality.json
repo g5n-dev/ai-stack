@@ -1,8 +1,8 @@
 {
-  "active_count": 3144,
+  "active_count": 3147,
   "archived_count": 276,
   "complete_count": 90,
-  "interpreted_brief_count": 325,
+  "interpreted_brief_count": 327,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23557,6 +23557,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20261111-arxiv-kolmogorov-chapman-maps-trajectory-free-learning-f-0-5c36d448a8.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20261111-blogs_podcasts-the-agent-evaluation-playbook-built-in-deepeval-an-0-6d77a575f5.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20261111-hacker_news-show-hn-get-your-coding-agent-off-2019-javascript--8-a4978faa7e.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -23591,10 +23609,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2729,
-  "source_file_count": 3420,
-  "source_tree_sha256": "7ac323f17ec5670a07cf959b5515d3d5fa31645548af0e7435e4e6b519fdfdc9",
-  "verified_provenance_count": 3144,
+  "source_brief_count": 2730,
+  "source_file_count": 3423,
+  "source_tree_sha256": "0ef0346454c8d962f712fd4a830ee5fc362f7025c120827eb71aa7c0aafa3074",
+  "verified_provenance_count": 3147,
   "warning_counts": {
     "source_excerpt_truncated": 823
   }
