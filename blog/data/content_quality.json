@@ -1,8 +1,8 @@
 {
-  "active_count": 3141,
+  "active_count": 3144,
   "archived_count": 276,
   "complete_count": 90,
-  "interpreted_brief_count": 324,
+  "interpreted_brief_count": 325,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23516,6 +23516,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20261110-arxiv-guiding-data-allocation-for-robust-subpopulation-g-0-a70cf49782.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261110-arxiv-on-agentic-manipulation-policies-0-e84d20698c.md": {
       "reasons": [
         "interpreted_source_card"
@@ -23528,11 +23534,23 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20261110-blogs_podcasts-closing-the-ai-guidance-gap-in-education-0-69d4d9d74e.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20261110-blogs_podcasts-professional-work-deserves-professional-tools-meet-0-a393a08732.md": {
       "reasons": [
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20261110-hacker_news-claude-fable-52-and-mythos-52-1-a989f15820.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20261110-hacker_news-google-gemini-routes-personal-drive-files-and-emai-3-a847d13407.md": {
       "reasons": [
@@ -23573,10 +23591,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2727,
-  "source_file_count": 3417,
-  "source_tree_sha256": "1a6233ebef06f619947b51e44ad3913f6bb94e1ca1b33a663041b418428a1446",
-  "verified_provenance_count": 3141,
+  "source_brief_count": 2729,
+  "source_file_count": 3420,
+  "source_tree_sha256": "7ac323f17ec5670a07cf959b5515d3d5fa31645548af0e7435e4e6b519fdfdc9",
+  "verified_provenance_count": 3144,
   "warning_counts": {
     "source_excerpt_truncated": 823
   }
