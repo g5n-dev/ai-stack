@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:3cb31a4789f43576462b9d798474c3604314685749b1e4c22
 description: "这是一段对 Stanford 课程教师、Monaco AI 负责人 Mihail Eric 的访谈，讨论 AI 时代软件工程师需要学习什么，以及编码代理如何进入课程、代码审查、故障排查和软件交付流程。"
 external_url: https://latent.space/p/cs146s
 parent_observation_id: null
-last_seen_at: 2026-11-09T00:52:36.112955Z
+last_seen_at: 2026-11-10T00:00:00Z
 ---
 
 ## 基本信息

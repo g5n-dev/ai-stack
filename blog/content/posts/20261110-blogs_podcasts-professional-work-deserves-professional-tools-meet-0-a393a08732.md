@@ -15,7 +15,7 @@ observation_id: obs_a393a08732124dc48b79299a0700e8da6df3fce9b04c9f5627076cb3f66f
 event_id: evt_a81b4186e38610f6dd20d17326190d0db192d3abb1f5a37fc673a08f67564f52
 revision_id: rev_c2f1557a174b5e169577b99cc8b44070a5ea1d840ea339a5a548eefa7064474b
 source_published_at: 2026-11-09T18:43:30Z
-first_seen_at: 2026-11-09T18:46:57.492096Z
+first_seen_at: 2026-11-09T18:58:56Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:ebe298cc53b72b5c01646aa5b08f2a055b440d15101cbc31b
 description: "AWS Quick 是面向企业知识工作者的 AI 工作空间，可让 AI 智能体跨企业现有数据与应用进行研究、分析和执行操作。此次内容还介绍了其品牌更名、企业级安全治理能力及面向美国和英国知识工作者的推广活动。"
 external_url: https://aws.amazon.com/blogs/machine-learning/professional-work-deserves-professional-tools-meet-aws-quick
 parent_observation_id: null
-last_seen_at: 2026-11-09T18:46:57.492096Z
+last_seen_at: 2026-11-10T00:00:00Z
 ---
 
 ## 基本信息
