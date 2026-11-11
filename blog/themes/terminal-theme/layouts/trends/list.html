@@ -23,6 +23,7 @@
   <main
     id="trend-workbench"
     class="site-shell trend-workbench"
+    data-view="list"
     data-index-url="{{ "data/stack-trends/index.json" | relURL }}"
     data-base-path="{{ .Site.Home.RelPermalink }}"
   >
@@ -30,7 +31,7 @@
       <div class="trend-hero__copy">
         <p class="site-page-kicker trend-kicker">INTELLIGENCE TRENDS / LIVE SIGNALS</p>
         <h1 id="trend-page-title" class="site-page-title">趋势洞察</h1>
-        <p class="site-page-lead trend-hero__lead">从收录证据识别正在形成的技术信号，再下钻到文章脉络与知识图谱。</p>
+        <p class="site-page-lead trend-hero__lead">追踪具体技术议题的变化，查看历史比较与证据文章。</p>
       </div>
       <div class="trend-hero__status" role="status" aria-live="polite">
         <span class="trend-live-dot" aria-hidden="true"></span>
@@ -48,7 +49,7 @@
         <small>质量门禁通过</small>
       </div>
       <div>
-        <dt>趋势主题</dt>
+        <dt>技术议题</dt>
         <dd id="trend-stat-topics">—</dd>
         <small>当前窗口</small>
       </div>
@@ -89,9 +90,9 @@
         </fieldset>
 
         <div class="trend-control-group">
-          <label for="trend-query">搜索主题</label>
+          <label for="trend-query">搜索议题</label>
           <input id="trend-query" type="search" maxlength="100" autocomplete="off"
-            placeholder="例如：Agent、RAG、LLM">
+            placeholder="例如：Agent 记忆、推理优化">
         </div>
 
         <div class="trend-control-group trend-control-grid">
@@ -104,6 +105,7 @@
                 <option value="rising">上升</option>
                 <option value="steady">稳定</option>
                 <option value="cooling">降温</option>
+                <option value="insufficient_baseline">基线不足</option>
               </select>
             </div>
           </div>
@@ -131,24 +133,22 @@
 
         <div class="trend-method-note">
           <strong>可解释评分</strong>
-          <p>数量、增长、加速度、来源多样性、新颖度与来源权重共同计算；重复观测会降低得分。</p>
+          <p>历史比较使用议题在站内收录事件中的占比。采样不足时会标明基线不足。</p>
         </div>
 
-        <p id="trend-sample-notice" class="trend-sample-notice" hidden></p>
         </div>
       </aside>
 
       <section class="site-main trend-stage" aria-labelledby="trend-stage-title">
         <div class="trend-stage__toolbar">
           <div>
-            <p class="trend-panel-index">02 / SIGNAL TOPOLOGY</p>
-            <h2 id="trend-stage-title" class="site-section-title">趋势矩阵</h2>
+            <h2 id="trend-stage-title" class="site-section-title">技术议题</h2>
           </div>
           <div class="trend-stage__actions">
             <span id="trend-result-count">— 个主题</span>
             <div class="trend-view-switch" role="group" aria-label="趋势展示方式">
-              <button type="button" data-trend-view="matrix" aria-pressed="true">矩阵</button>
-              <button type="button" data-trend-view="list" aria-pressed="false">列表</button>
+              <button type="button" data-trend-view="list" aria-pressed="true">列表</button>
+              <button type="button" data-trend-view="matrix" aria-pressed="false">矩阵</button>
             </div>
           </div>
         </div>
@@ -156,6 +156,7 @@
         <div id="trend-status" class="trend-status" role="status" aria-live="polite" aria-atomic="true">
           正在载入趋势索引…
         </div>
+        <p id="trend-sample-notice" class="trend-sample-notice" hidden></p>
 
         <div id="trend-matrix-panel" class="trend-matrix-panel">
           <div class="trend-topology-meta" aria-hidden="true">
@@ -186,13 +187,13 @@
         <aside id="trend-detail" class="trend-detail" aria-labelledby="trend-detail-title">
           <div class="trend-detail__placeholder">
             <p class="trend-panel-index">03 / EVIDENCE DRILLDOWN</p>
-            <h2 id="trend-detail-title" class="site-section-title">主题详情</h2>
-            <p>选择主题细胞域或排名条目，查看评分依据、关联主题和证据文章。</p>
+            <h2 id="trend-detail-title" class="site-section-title">议题详情</h2>
+            <p>选择议题查看变化依据和证据文章。</p>
             <small>站内文章在当前标签页打开；使用浏览器返回可恢复当前趋势状态。</small>
           </div>
         </aside>
 
-        <ol id="trend-list" class="trend-list" aria-label="趋势主题排名"></ol>
+        <ol id="trend-list" class="trend-list" aria-label="技术议题列表"></ol>
       </section>
     </div>
 

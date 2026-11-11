@@ -14,7 +14,7 @@ import math
 import os
 import re
 import tempfile
-from collections import defaultdict
+from collections import Counter, defaultdict
 from collections.abc import Iterable, Mapping, Sequence
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
@@ -186,15 +186,15 @@ def _clamp(value: float) -> float:
     return max(0.0, min(1.0, value))
 
 
-def _normalized_delta(current: int, previous: int) -> float:
-    scale = max(current, previous, 1)
+def _normalized_delta(current: float, previous: float) -> float:
+    scale = max(current, previous) or 1
     return _clamp(0.5 + 0.5 * ((current - previous) / scale))
 
 
-def _normalized_acceleration(current: int, previous: int, pre_previous: int) -> float:
+def _normalized_acceleration(current: float, previous: float, pre_previous: float) -> float:
     current_velocity = current - previous
     previous_velocity = previous - pre_previous
-    scale = max(current, previous, pre_previous, 1)
+    scale = max(current, previous, pre_previous) or 1
     return _clamp(0.5 + 0.5 * ((current_velocity - previous_velocity) / scale))
 
 
@@ -236,13 +236,41 @@ def _observation_counts(
     return dict(counts)
 
 
+def _period_coverage(
+    sample: list[tuple[dict[str, Any], datetime]],
+    *,
+    start: datetime,
+    duration: timedelta,
+    minimum_events: int,
+) -> tuple[Counter[str], bool]:
+    sources = Counter(
+        str(event.get("source") or "unknown").strip() or "unknown" for event, _ in sample
+    )
+    thirds = {min(2, int(3 * (timestamp - start) / duration)) for _, timestamp in sample}
+    # Without capture logs this is a conservative estimate based on published evidence.
+    return sources, len(sample) >= minimum_events and len(thirds) >= 2
+
+
+def _has_shared_source_coverage(
+    left: Counter[str],
+    right: Counter[str],
+) -> bool:
+    left_total = left.total()
+    right_total = right.total()
+    if not left_total or not right_total:
+        return False
+    overlap = sum(min(left[source] / left_total, right[source] / right_total) for source in left)
+    return overlap >= 0.5
+
+
 def calculate_trends(
     events: Iterable[Mapping[str, Any]],
     *,
     as_of: datetime | str,
     minimum_unique_events: int = MINIMUM_UNIQUE_EVENTS,
+    compare_coverage: bool = False,
 ) -> dict[str, Any]:
-    """Calculate deterministic ``trend_v1`` windows with inspectable components."""
+    """Calculate deterministic trends, optionally comparing shares in covered windows."""
 
     if minimum_unique_events < 1:
         raise IntelligenceValidationError("minimum_unique_events must be at least 1")
@@ -280,16 +308,68 @@ def calculate_trends(
         current_by_topic: defaultdict[str, list[dict[str, Any]]] = defaultdict(list)
         previous_counts: defaultdict[str, int] = defaultdict(int)
         pre_previous_counts: defaultdict[str, int] = defaultdict(int)
+        period_starts = {
+            "current": current_start,
+            "previous": previous_start,
+            "pre_previous": pre_previous_start,
+        }
+        samples: dict[str, list[tuple[dict[str, Any], datetime]]] = {
+            period: [] for period in period_starts
+        }
+        topic_sources: dict[str, defaultdict[str, set[str]]] = {
+            period: defaultdict(set) for period in period_starts
+        }
+        prior_topics: set[str] = set()
 
         for event, occurred_at in timestamped:
+            period = next(
+                (name for name, start in period_starts.items() if start <= occurred_at),
+                None,
+            )
             topics = _string_list(event.get("topics", []), field="topics")
+            if compare_coverage:
+                if period != "current":
+                    prior_topics.update(topics)
+                if period is not None:
+                    samples[period].append((event, occurred_at))
+                    for topic in topics:
+                        topic_sources[period][topic].add(
+                            str(event.get("source") or "unknown").strip() or "unknown"
+                        )
             for topic in topics:
-                if current_start <= occurred_at <= cutoff:
+                if period == "current":
                     current_by_topic[topic].append(event)
-                elif previous_start <= occurred_at < current_start:
+                elif period == "previous":
                     previous_counts[topic] += 1
-                elif pre_previous_start <= occurred_at < previous_start:
+                elif period == "pre_previous":
                     pre_previous_counts[topic] += 1
+
+        sample_counts = {period: len(sample) for period, sample in samples.items()}
+        baseline_covered = acceleration_covered = False
+        baseline_sources: set[str] = set()
+        acceleration_sources: set[str] = set()
+        if compare_coverage:
+            coverage = {
+                period: _period_coverage(
+                    sample,
+                    start=period_starts[period],
+                    duration=duration,
+                    minimum_events=minimum_unique_events,
+                )
+                for period, sample in samples.items()
+            }
+            current_sources, current_covered = coverage["current"]
+            previous_sources, previous_covered = coverage["previous"]
+            earlier_sources, earlier_covered = coverage["pre_previous"]
+            baseline_covered = current_covered and previous_covered and (
+                _has_shared_source_coverage(current_sources, previous_sources)
+            )
+            acceleration_covered = baseline_covered and earlier_covered and (
+                _has_shared_source_coverage(current_sources, earlier_sources)
+                and _has_shared_source_coverage(previous_sources, earlier_sources)
+            )
+            baseline_sources = current_sources.keys() & previous_sources.keys()
+            acceleration_sources = baseline_sources & earlier_sources.keys()
 
         observations = _observation_counts(
             raw_events,
@@ -310,21 +390,65 @@ def calculate_trends(
                 str(event.get("source", "unknown")).strip() or "unknown"
                 for event in topic_events
             }
+            counts = {
+                "current": unique_count,
+                "previous": previous_counts[topic],
+                "pre_previous": pre_previous_counts[topic],
+            }
+            growth = _normalized_delta(unique_count, counts["previous"])
+            acceleration = _normalized_acceleration(
+                unique_count, counts["previous"], counts["pre_previous"]
+            )
+            comparison = None
+            if compare_coverage:
+                compared_topic_sources = (
+                    topic_sources["current"][topic] | topic_sources["previous"][topic]
+                )
+                baseline_available = (
+                    baseline_covered and compared_topic_sources <= baseline_sources
+                )
+                acceleration_available = (
+                    baseline_available
+                    and acceleration_covered
+                    and (
+                        compared_topic_sources | topic_sources["pre_previous"][topic]
+                    ) <= acceleration_sources
+                )
+                current_share = unique_count / sample_counts["current"]
+                previous_share = (
+                    counts["previous"] / sample_counts["previous"] if baseline_available else None
+                )
+                earlier_share = (
+                    counts["pre_previous"] / sample_counts["pre_previous"]
+                    if acceleration_available else None
+                )
+                growth = (
+                    _normalized_delta(current_share, previous_share)
+                    if previous_share is not None
+                    else 0.5
+                )
+                acceleration = (
+                    _normalized_acceleration(current_share, previous_share, earlier_share)
+                    if previous_share is not None and earlier_share is not None
+                    else 0.5
+                )
+                comparison = {
+                    "baseline_available": baseline_available,
+                    "acceleration_available": acceleration_available,
+                    "has_prior_evidence": topic in prior_topics,
+                    "sample_counts": dict(sample_counts),
+                    "shares": {
+                        "current": round(current_share, 6),
+                        "previous": None if previous_share is None else round(previous_share, 6),
+                        "pre_previous": None if earlier_share is None else round(earlier_share, 6),
+                    },
+                }
             components = {
                 "quantity": round(
                     _clamp(unique_count / QUANTITY_NORMALIZATION_TARGET), 6
                 ),
-                "growth": round(
-                    _normalized_delta(unique_count, previous_counts[topic]), 6
-                ),
-                "acceleration": round(
-                    _normalized_acceleration(
-                        unique_count,
-                        previous_counts[topic],
-                        pre_previous_counts[topic],
-                    ),
-                    6,
-                ),
+                "growth": round(growth, 6),
+                "acceleration": round(acceleration, 6),
                 "source_diversity": round(
                     _clamp(len(sources) / unique_count), 6
                 ),
@@ -358,6 +482,11 @@ def calculate_trends(
                     "duplicate_rate": round(duplicate_rate, 6),
                     "components": components,
                     "event_ids": sorted(event["event_id"] for event in topic_events),
+                    **(
+                        {"counts": counts, "comparison": comparison}
+                        if comparison is not None
+                        else {}
+                    ),
                 }
             )
 

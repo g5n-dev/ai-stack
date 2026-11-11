@@ -1137,6 +1137,25 @@
   padding: 12px 16px;
 }
 
+.trend-workbench[data-view="list"] .trend-card__title {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.trend-workbench[data-view="list"] .trend-card__meta {
+  color: var(--trend-muted);
+  font-size: 12px;
+}
+
+.trend-card__description {
+  display: block;
+  margin-top: 7px;
+  color: var(--trend-copy);
+  font-size: var(--site-copy-size, 14px);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
 .trend-detail__topline {
   display: flex;
   align-items: center;

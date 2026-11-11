@@ -3,7 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 from collections.abc import Callable
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 import pytest
@@ -16,6 +16,7 @@ from processor.ai_filter import AIThemeFilter
 from processor.intelligence import calculate_trends
 from processor.main import ProcessorOrchestrator
 from processor.stack_trends import (
+    DEFAULT_CONFIG_PATH,
     INDEX_SCHEMA_VERSION_V2,
     StackTrendsValidationError,
     TOPIC_SCHEMA_VERSION_V2,
@@ -30,6 +31,15 @@ from scripts.generate_content import SuperEnhancedContentGenerator
 from scripts.verify_stack_trends import main as verify_cli_main
 
 AS_OF = "2026-07-16T12:00:00Z"
+
+
+def _legacy_config(root: Path) -> Path:
+    """Keep tag-based fixtures independent of the production topic rules."""
+    payload = yaml.safe_load(DEFAULT_CONFIG_PATH.read_text(encoding="utf-8"))
+    payload.pop("topic_rules", None)
+    path = root / "legacy-trend-config.yaml"
+    path.write_text(yaml.safe_dump(payload), encoding="utf-8")
+    return path
 
 
 def _write_post(
@@ -410,6 +420,7 @@ def test_adapter_applies_quality_canonicalization_aliases_and_cutoff(tmp_path: P
     content_root, manifest_path = _fixture_site(tmp_path)
 
     dataset = adapt_posts_to_events(
+        config_path=_legacy_config(tmp_path),
         content_root=content_root,
         quality_manifest_path=manifest_path,
         as_of=AS_OF,
@@ -461,6 +472,7 @@ def test_source_brief_semantic_tag_advances_trend_data_cutoff(tmp_path: Path) ->
     manifest = write_content_quality_manifest(content_root, manifest_path)
 
     dataset = adapt_posts_to_events(
+        config_path=_legacy_config(tmp_path),
         content_root=content_root,
         quality_manifest_path=manifest_path,
         as_of=AS_OF,
@@ -556,6 +568,7 @@ def test_adapter_consumes_lineage_without_merging_derivative_reports(tmp_path: P
     )
 
     dataset = adapt_posts_to_events(
+        config_path=_legacy_config(tmp_path),
         content_root=content_root,
         quality_manifest_path=manifest_path,
         lineage_root=lineage_root,
@@ -634,6 +647,7 @@ def test_trends_merge_same_event_only_after_reviewed_promotion_gate(
 
     unreviewed_output = tmp_path / "unreviewed"
     build_stack_trends(
+        config_path=_legacy_config(tmp_path),
         content_root=content_root,
         quality_manifest_path=manifest_path,
         lineage_root=lineage_root,
@@ -655,9 +669,7 @@ def test_trends_merge_same_event_only_after_reviewed_promotion_gate(
     assert unreviewed["observations"] == 4
     assert unreviewed_index["stats"]["promoted_same_event_pairs"] == 0
 
-    config_payload = yaml.safe_load(
-        Path("config/stack_trends.yaml").read_text(encoding="utf-8")
-    )
+    config_payload = yaml.safe_load(_legacy_config(tmp_path).read_text(encoding="utf-8"))
     config_payload["same_event_promotions"] = [
         _reviewed_same_event_promotion(
             event_id=event_id,
@@ -734,6 +746,7 @@ def test_build_emits_v2_event_observation_metrics_and_verifier_accepts_v1(
     output = tmp_path / "stack-trends"
 
     build_stack_trends(
+        config_path=_legacy_config(tmp_path),
         content_root=content_root,
         quality_manifest_path=manifest_path,
         output_dir=output,
@@ -776,6 +789,7 @@ def test_adapter_rejects_a_stale_quality_manifest(tmp_path: Path) -> None:
 
     with pytest.raises(StackTrendsValidationError, match="stale"):
         adapt_posts_to_events(
+            config_path=_legacy_config(tmp_path),
             content_root=content_root,
             quality_manifest_path=manifest_path,
             as_of=AS_OF,
@@ -796,6 +810,7 @@ def test_adapter_rejects_a_missing_noncomplete_quality_record(tmp_path: Path) ->
 
     with pytest.raises(StackTrendsValidationError, match="missing quality record"):
         adapt_posts_to_events(
+            config_path=_legacy_config(tmp_path),
             content_root=content_root,
             quality_manifest_path=manifest_path,
             as_of=AS_OF,
@@ -816,6 +831,7 @@ def test_adapter_rejects_encoded_internal_route_traversal(tmp_path: Path) -> Non
 
     with pytest.raises(StackTrendsValidationError, match="unsafe internal url"):
         adapt_posts_to_events(
+            config_path=_legacy_config(tmp_path),
             content_root=content_root,
             quality_manifest_path=manifest_path,
             as_of=AS_OF,
@@ -827,6 +843,7 @@ def test_build_reuses_trend_formula_and_emits_v2_drilldown_contract(tmp_path: Pa
     output = tmp_path / "stack-trends"
 
     result = build_stack_trends(
+        config_path=_legacy_config(tmp_path),
         content_root=content_root,
         quality_manifest_path=manifest_path,
         output_dir=output,
@@ -840,13 +857,16 @@ def test_build_reuses_trend_formula_and_emits_v2_drilldown_contract(tmp_path: Pa
     topic = json.loads((output / topic_ref["path"]).read_text(encoding="utf-8"))
 
     dataset = adapt_posts_to_events(
+        config_path=_legacy_config(tmp_path),
         content_root=content_root,
         quality_manifest_path=manifest_path,
         as_of=AS_OF,
     )
     expected = next(
         trend
-        for trend in calculate_trends(dataset["events"], as_of=AS_OF)["windows"]["24h"]["trends"]
+        for trend in calculate_trends(
+            dataset["events"], as_of=AS_OF, compare_coverage=True,
+        )["windows"]["24h"]["trends"]
         if trend["topic"] == "LLM"
     )
 
@@ -874,7 +894,9 @@ def test_build_reuses_trend_formula_and_emits_v2_drilldown_contract(tmp_path: Pa
         6,
     )
     assert llm["counts"] == {"current": 3, "previous": 2, "pre_previous": 1}
-    assert llm["state"] == "rising"
+    assert llm["state"] == "insufficient_baseline"
+    assert llm["comparison"]["shares"]["previous"] is None
+    assert llm["comparison"] == topic["windows"]["24h"]["comparison"]
     assert llm["confidence"] == "medium"
     assert llm["graph_node_id"] == "tag:LLM"
     assert llm["detail_path"] == topic_ref["path"]
@@ -912,18 +934,56 @@ def test_build_reuses_trend_formula_and_emits_v2_drilldown_contract(tmp_path: Pa
     assert all("example.com" not in json.dumps(item) for item in topic["evidence"])
 
 
+@pytest.mark.parametrize("with_history", [False, True])
+def test_growth_uses_comparable_coverage_including_unmatched_events(
+    with_history: bool,
+) -> None:
+    cutoff = datetime.fromisoformat(AS_OF)
+    periods = [(0, 3, 4)]
+    if with_history:
+        periods.extend([(24, 4, 8), (48, 1, 4)])
+    events = []
+    for start, topic_count, total_count in periods:
+        for index in range(total_count):
+            hours = start + (2, 10, 20)[index % 3]
+            events.append({
+                "event_id": f"event-{start}-{index}",
+                "occurred_at": (cutoff - timedelta(hours=hours)).isoformat(),
+                "source": "arxiv",
+                "topics": ["Agent memory"] if index < topic_count else [],
+            })
+
+    trend = calculate_trends(events, as_of=cutoff, compare_coverage=True)["windows"][
+        "24h"
+    ]["trends"][0]
+
+    assert trend["comparison"]["baseline_available"] is with_history
+    assert trend["comparison"]["acceleration_available"] is with_history
+    assert trend["comparison"]["shares"] == {
+        "current": 0.75,
+        "previous": 0.5 if with_history else None,
+        "pre_previous": 0.25 if with_history else None,
+    }
+    assert trend["counts"]["previous"] == (4 if with_history else 0)
+    # Absolute topic volume fell 4 -> 3, but its share of eligible evidence rose.
+    assert trend["components"]["growth"] == (0.666667 if with_history else 0.5)
+    assert trend["components"]["acceleration"] == 0.5
+
+
 def test_build_is_byte_stable_content_addressed_and_within_budgets(tmp_path: Path) -> None:
     content_root, manifest_path = _fixture_site(tmp_path)
     first = tmp_path / "first"
     second = tmp_path / "second"
 
     build_stack_trends(
+        config_path=_legacy_config(tmp_path),
         content_root=content_root,
         quality_manifest_path=manifest_path,
         output_dir=first,
         as_of=AS_OF,
     )
     build_stack_trends(
+        config_path=_legacy_config(tmp_path),
         content_root=content_root,
         quality_manifest_path=manifest_path,
         output_dir=second,
@@ -950,6 +1010,7 @@ def test_build_rejects_secret_like_public_text_before_writing(tmp_path: Path) ->
 
     with pytest.raises(StackTrendsValidationError, match="sensitive"):
         build_stack_trends(
+            config_path=_legacy_config(tmp_path),
             content_root=content_root,
             quality_manifest_path=manifest_path,
             output_dir=output,
@@ -965,6 +1026,7 @@ def test_build_rejects_markup_like_public_text_before_writing(tmp_path: Path) ->
 
     with pytest.raises(StackTrendsValidationError, match="unsafe public text"):
         build_stack_trends(
+            config_path=_legacy_config(tmp_path),
             content_root=content_root,
             quality_manifest_path=manifest_path,
             output_dir=output,
@@ -978,6 +1040,7 @@ def test_verifier_rejects_hash_mismatch_and_orphans(tmp_path: Path) -> None:
     content_root, manifest_path = _fixture_site(tmp_path)
     output = tmp_path / "stack-trends"
     build_stack_trends(
+        config_path=_legacy_config(tmp_path),
         content_root=content_root,
         quality_manifest_path=manifest_path,
         output_dir=output,
@@ -994,6 +1057,7 @@ def test_verifier_rejects_hash_mismatch_and_orphans(tmp_path: Path) -> None:
         verify_stack_trends(output, verify_hashes=True)
 
     build_stack_trends(
+        config_path=_legacy_config(tmp_path),
         content_root=content_root,
         quality_manifest_path=manifest_path,
         output_dir=output,
@@ -1051,6 +1115,7 @@ def test_verifier_rejects_semantically_swapped_or_detached_shards(
     content_root, manifest_path = _fixture_site(tmp_path)
     output = tmp_path / "stack-trends"
     build_stack_trends(
+        config_path=_legacy_config(tmp_path),
         content_root=content_root,
         quality_manifest_path=manifest_path,
         output_dir=output,
@@ -1075,6 +1140,7 @@ def test_verifier_cross_checks_window_trend_count(
     content_root, manifest_path = _fixture_site(tmp_path)
     output = tmp_path / "stack-trends"
     build_stack_trends(
+        config_path=_legacy_config(tmp_path),
         content_root=content_root,
         quality_manifest_path=manifest_path,
         output_dir=output,
@@ -1100,6 +1166,7 @@ def test_verifier_requires_deterministic_release_timestamp_identity(tmp_path: Pa
     content_root, manifest_path = _fixture_site(tmp_path)
     output = tmp_path / "stack-trends"
     build_stack_trends(
+        config_path=_legacy_config(tmp_path),
         content_root=content_root,
         quality_manifest_path=manifest_path,
         output_dir=output,
@@ -1128,6 +1195,8 @@ def test_build_and_verify_cli_contract(tmp_path: Path, capsys: pytest.CaptureFix
             str(content_root),
             "--quality-manifest",
             str(manifest_path),
+            "--config",
+            str(_legacy_config(tmp_path)),
             "--output",
             str(output),
             "--as-of",
@@ -1144,3 +1213,44 @@ def test_build_and_verify_cli_contract(tmp_path: Path, capsys: pytest.CaptureFix
     assert build_result["index_path"] == "index.json"
     assert verify_exit == 0
     assert verify_result["schema_version"] == INDEX_SCHEMA_VERSION_V2
+
+
+def test_production_topics_use_article_evidence_instead_of_tags(tmp_path: Path) -> None:
+    content_root = tmp_path / "content"
+    evidence = (
+        ("Agent memory across sessions", "arxiv", "介绍智能体记忆的持久化机制。"),
+        ("Memorilla: Latent Semantic Memory for LLMs", "hacker_news", "来源讨论。"),
+        ("Persistent conversation state", "blogs_podcasts", "介绍图记忆和跨会话状态更新。"),
+        ("Announcements and general discussion", "hacker_news", "领域新闻汇总。"),
+    )
+    for index, (title, source, description) in enumerate(evidence):
+        _write_post(
+            content_root,
+            f"post-{index}",
+            date=f"2026-07-1{index + 2}T10:00:00Z",
+            tags=["AI", "AI Agent", "LLM", "Announcements"],
+            title=title,
+            source=source,
+            description=description,
+        )
+    manifest_path = tmp_path / "content_quality.json"
+    write_content_quality_manifest(content_root, manifest_path)
+    output = tmp_path / "stack-trends"
+    build_stack_trends(
+        content_root=content_root,
+        quality_manifest_path=manifest_path,
+        output_dir=output,
+        as_of=AS_OF,
+    )
+
+    index = json.loads((output / "index.json").read_text(encoding="utf-8"))
+    window = json.loads(
+        (output / index["windows"]["7d"]["path"]).read_text(encoding="utf-8")
+    )
+    [trend] = window["trends"]
+    assert trend["topic"] == "Agent 记忆与状态管理"
+    assert trend["graph_node_id"] == "tag:AI Agent"
+    assert trend["unique_events"] == 3
+    assert trend["comparison"]["sample_counts"]["current"] == 4
+    assert trend["state"] == "insufficient_baseline"
+    assert verify_stack_trends(output, verify_hashes=True)["schema_version"] == INDEX_SCHEMA_VERSION_V2

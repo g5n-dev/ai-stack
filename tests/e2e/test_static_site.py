@@ -81,7 +81,7 @@ def page(browser: Browser) -> Generator[Page, None, None]:
 # A publication-gap recovery can leave every trend window with zero topics.
 # The empty state is a valid, already-contracted render ("当前筛选没有趋势信号。"),
 # so status assertions accept it while interaction-heavy tests skip cleanly.
-_STATUS_READY_OR_EMPTY = re.compile(r"已发现|没有趋势信号")
+_STATUS_READY_OR_EMPTY = re.compile(r"当前窗口收录|没有趋势信号")
 
 
 def _skip_when_no_trend_evidence(page: Page) -> None:
@@ -225,7 +225,6 @@ def test_trends_initializes_and_all_primary_controls_change_real_state(
     expect(status).not_to_have_class(re.compile(r"\bis-error\b"))
     expect(page.locator("#trend-result-count")).to_contain_text("个主题")
 
-    page.locator('[data-trend-view="list"]').click()
     expect(workbench).to_have_attribute("data-view", "list")
     topic_cards = page.locator("#trend-list .trend-card__button")
     # A recovered archive can have too little recent evidence for any topic to
@@ -279,7 +278,7 @@ def test_trends_initializes_and_all_primary_controls_change_real_state(
         first_topic = page.locator("#trend-list .trend-card__button").first
         first_topic.click()
         expect(workbench).to_have_attribute("data-detail", "open")
-        expect(page.locator("#trend-detail .trend-link--graph")).to_be_visible(timeout=15_000)
+        expect(page.locator("#trend-detail .trend-evidence-list")).to_be_visible(timeout=15_000)
         assert "topic=" in page.url
 
         page.locator("#trend-detail [data-close-trend-detail]").click()
@@ -292,7 +291,7 @@ def test_trends_initializes_and_all_primary_controls_change_real_state(
         assert box is not None
         matrix.click(position={"x": box["width"] / 2, "y": box["height"] / 2})
         expect(workbench).to_have_attribute("data-detail", "open", timeout=15_000)
-        expect(page.locator("#trend-detail .trend-link--graph")).to_be_visible(timeout=15_000)
+        expect(page.locator("#trend-detail .trend-evidence-list")).to_be_visible(timeout=15_000)
 
 
 def test_trends_typography_uses_the_shared_site_scale(
@@ -477,7 +476,7 @@ def test_touch_inputs_avoid_mobile_browser_zoom(
 def test_trend_matrix_badge_is_a_pointer_and_click_target(
     page: Page, site_url: str
 ) -> None:
-    response = page.goto(f"{site_url}/trends/?window=30d", wait_until="networkidle")
+    response = page.goto(f"{site_url}/trends/?window=30d&view=matrix", wait_until="networkidle")
     assert response is not None and response.ok
 
     workbench = page.locator("#trend-workbench")
@@ -504,13 +503,13 @@ def test_trend_matrix_badge_is_a_pointer_and_click_target(
     expect(matrix).to_have_css("cursor", "pointer")
     matrix.click(position=badge_position)
     expect(workbench).to_have_attribute("data-detail", "open", timeout=15_000)
-    expect(page.locator("#trend-detail .trend-link--graph")).to_be_visible(timeout=15_000)
+    expect(page.locator("#trend-detail .trend-evidence-list")).to_be_visible(timeout=15_000)
 
 
 def test_trend_matrix_canvas_keyboard_opens_the_first_visible_topic(
     page: Page, site_url: str
 ) -> None:
-    response = page.goto(f"{site_url}/trends/?window=30d", wait_until="networkidle")
+    response = page.goto(f"{site_url}/trends/?window=30d&view=matrix", wait_until="networkidle")
     assert response is not None and response.ok
 
     workbench = page.locator("#trend-workbench")
@@ -668,7 +667,7 @@ def test_trend_matrix_cannot_activate_stale_nodes_while_a_window_is_loading(
         "**/data/stack-trends/windows/7d-*.json",
         lambda route: pending_routes.append(route),
     )
-    response = page.goto(f"{site_url}/trends/?window=30d", wait_until="networkidle")
+    response = page.goto(f"{site_url}/trends/?window=30d&view=matrix", wait_until="networkidle")
     assert response is not None and response.ok
     expect(page.locator("#trend-status")).to_contain_text(_STATUS_READY_OR_EMPTY, timeout=15_000)
     _skip_when_no_trend_evidence(page)
@@ -680,7 +679,7 @@ def test_trend_matrix_cannot_activate_stale_nodes_while_a_window_is_loading(
     expected_topic_name = first_topic.locator(".trend-card__title").inner_text()
     assert expected_topic_id and expected_topic_name
     first_topic.click()
-    expect(page.locator("#trend-detail .trend-link--graph")).to_be_visible(timeout=15_000)
+    expect(page.locator("#trend-detail .trend-evidence-list")).to_be_visible(timeout=15_000)
     expect(page.locator("#trend-detail-title")).to_have_text(expected_topic_name)
 
     page.locator('[data-trend-window="7d"]').click()
