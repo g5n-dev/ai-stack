@@ -13,9 +13,9 @@ source_snapshot_sha256: "sha256:549b8d62c43a7ff3c5ed7a2638b4d1eff55a426c2d4ff1d9
 source_payload_sha256: "sha256:d57ee3ad8495fa4f7fd28df4fdf53380e66ed690b866b8ac755a6e35052bf74e"
 observation_id: obs_a4978faa7e166cdb12b818c5397aad221fe34e5d74e2dc0c479fe886ef474c07
 event_id: evt_dcd418c4245c96e85979a8bd046bc6d84a79bcb9838aa3be450f475c85019a07
-revision_id: rev_cebd9ea79933f12f1666775cbb48678b31dd600607e2f734e16eb23fcd81e260
+revision_id: rev_e75a260d51f746cff08f6dee09ce34c224d00588d30ea8317c47c2a1f18000c0
 source_published_at: 2026-11-10T18:01:15Z
-first_seen_at: 2026-11-10T23:17:47.895862Z
+first_seen_at: 2026-11-10T23:28:43Z
 timestamp_confidence: platform
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 79
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://github.com/GoogleChrome/modern-web-guidance
 parent_observation_id: null
-last_seen_at: 2026-11-10T23:17:47.895862Z
+last_seen_at: 2026-11-11T00:00:00Z
 ---
 
 ## 基本信息

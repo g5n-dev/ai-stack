@@ -1,5 +1,5 @@
 {
-  "active_count": 3147,
+  "active_count": 3150,
   "archived_count": 276,
   "complete_count": 90,
   "interpreted_brief_count": 327,
@@ -23564,11 +23564,29 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20261111-arxiv-medical-image-segmentation-foundation-model-adapta-0-515e0e99a5.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261111-blogs_podcasts-gilbert-tobin-rethinks-the-business-of-law-with-ai-0-65b96c2384.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20261111-blogs_podcasts-the-agent-evaluation-playbook-built-in-deepeval-an-0-6d77a575f5.md": {
       "reasons": [
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20261111-hacker_news-apple-has-new-mac-app-coming-to-make-running-local-10-9836df3492.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20261111-hacker_news-show-hn-get-your-coding-agent-off-2019-javascript--8-a4978faa7e.md": {
       "reasons": [
@@ -23609,10 +23627,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2730,
-  "source_file_count": 3423,
-  "source_tree_sha256": "0ef0346454c8d962f712fd4a830ee5fc362f7025c120827eb71aa7c0aafa3074",
-  "verified_provenance_count": 3147,
+  "source_brief_count": 2733,
+  "source_file_count": 3426,
+  "source_tree_sha256": "4105851b9ea5af51d6051c96d8a7213871527a2a54ac71c07255fa9446aba3d3",
+  "verified_provenance_count": 3150,
   "warning_counts": {
     "source_excerpt_truncated": 823
   }

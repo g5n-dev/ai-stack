@@ -15,7 +15,7 @@ observation_id: obs_6d77a575f579de9bddf060a1269b34c406ecd2d2de042436b64417f39ef2
 event_id: evt_ef45433b032bc579e197be1c644e0ea3e441835116fed8a0b8d4f1a1949fee7e
 revision_id: rev_765be2e6d25d45bf671660402b593c1ee51cc7f3b71955db27d94ab4b4e4a1d2
 source_published_at: 2026-11-10T22:35:03Z
-first_seen_at: 2026-11-10T23:17:59.953443Z
+first_seen_at: 2026-11-10T23:28:43Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:2120ee6654f88f72b9c4cec23cdc01e0c905902a0ebf6b02a
 description: "这是一篇关于智能体评估实践的技术文章，介绍如何以业务目标为起点，将成功标准拆解为可观察行为，再映射到轨迹级或会话级评估器。文章重点讲解 Amazon Bedrock AgentCore Evaluations 中内置评估器、DeepEval 和 AutoEval 的用途及组合方式。"
 external_url: https://aws.amazon.com/blogs/machine-learning/the-agent-evaluation-playbook-built-in-deepeval-and-autoeval-on-agentcore
 parent_observation_id: null
-last_seen_at: 2026-11-10T23:17:59.953443Z
+last_seen_at: 2026-11-11T00:00:00Z
 ---
 
 ## 基本信息
