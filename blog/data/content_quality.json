@@ -1,8 +1,8 @@
 {
-  "active_count": 3150,
+  "active_count": 3153,
   "archived_count": 276,
   "complete_count": 90,
-  "interpreted_brief_count": 327,
+  "interpreted_brief_count": 329,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23570,6 +23570,21 @@
       ],
       "status": "source_brief"
     },
+    "posts/20261111-arxiv-toward-foundation-detection-models-via-example-bas-0-16dfbee56d.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20261111-blogs_podcasts-ainews-mercor-750m-series-d-at-20b-valuation-3b-ru-0-78d158c9c8.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20261111-blogs_podcasts-gilbert-tobin-rethinks-the-business-of-law-with-ai-0-65b96c2384.md": {
       "reasons": [
         "concise_source_card"
@@ -23583,6 +23598,12 @@
       "status": "interpreted_brief"
     },
     "posts/20261111-hacker_news-apple-has-new-mac-app-coming-to-make-running-local-10-9836df3492.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261111-hacker_news-google-swe-points-48-ai-agents-at-nasa-lidar-finds-0-488eb497c0.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -23627,11 +23648,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2733,
-  "source_file_count": 3426,
-  "source_tree_sha256": "4105851b9ea5af51d6051c96d8a7213871527a2a54ac71c07255fa9446aba3d3",
-  "verified_provenance_count": 3150,
+  "source_brief_count": 2734,
+  "source_file_count": 3429,
+  "source_tree_sha256": "fc13ebcd4a4aee423d10031c5c7e5176e3e1c3a57c881fc2f3396a8f6328d40d",
+  "verified_provenance_count": 3153,
   "warning_counts": {
-    "source_excerpt_truncated": 823
+    "source_excerpt_truncated": 824
   }
 }
