@@ -27,7 +27,7 @@ source_title_chars_original: 52
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://openai.com/index/gilbert-tobin-sam-nickless
 parent_observation_id: null
-last_seen_at: 2026-11-11T06:13:02.431804Z
+last_seen_at: 2026-11-12T00:00:00Z
 ---
 
 ## 基本信息

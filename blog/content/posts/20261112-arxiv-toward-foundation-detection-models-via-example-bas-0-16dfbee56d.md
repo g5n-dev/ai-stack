@@ -15,7 +15,7 @@ observation_id: obs_16dfbee56de33db2dfda3d59931f1172a7b5afaec5e3c1b6e65ccd055a53
 event_id: evt_2a52ab19c2ffb090334e16fc7c9a3ec9237de3e67eb5ed7a96f2ed7aef17a70e
 revision_id: rev_9fd7a3394a4cd1b337d4f2628eaf82d54143aa42190d4251aa6ebe329d1b3cff
 source_published_at: 2026-11-10T18:59:17Z
-first_seen_at: 2026-11-11T21:56:05.472898Z
+first_seen_at: 2026-11-11T22:10:22Z
 timestamp_confidence: publisher
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:a8c6474d18de6825cb1a3b7b8c797cdeb1bd1a6821cbce7ae
 description: "该研究提出一种面向病灶检测的多领域基础模型构建方法，通过师生训练和 EM-DETR 联合学习异构标注数据，以减轻灾难性遗忘并提升检测性能。"
 external_url: http://arxiv.org/abs/2611.14518v1
 parent_observation_id: null
-last_seen_at: 2026-11-11T21:56:05.472898Z
+last_seen_at: 2026-11-12T00:00:00Z
 ---
 
 ## 基本信息
