@@ -1,8 +1,8 @@
 {
-  "active_count": 3154,
+  "active_count": 3158,
   "archived_count": 276,
-  "complete_count": 91,
-  "interpreted_brief_count": 329,
+  "complete_count": 92,
+  "interpreted_brief_count": 331,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23594,11 +23594,26 @@
       ],
       "status": "source_brief"
     },
+    "posts/20261112-arxiv-autoscaffold-ai-guided-scaffolding-for-reinforceme-1-283f892f9c.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261112-arxiv-toward-foundation-detection-models-via-example-bas-0-16dfbee56d.md": {
       "reasons": [
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20261112-blogs_podcasts-build-autonomous-ai-agents-with-amazon-bedrock-and-0-df6566d4fc.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     },
     "posts/20261112-blogs_podcasts-the-attendees-guide-to-the-aws-reinvent-2026-aiml--0-e3fb265c4a.md": {
       "reasons": [
@@ -23610,6 +23625,12 @@
       ]
     },
     "posts/20261112-hacker_news-faster-retrieval-for-better-more-efficient-rag-7-b21fa54b83.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261112-hacker_news-united-airlines-bans-ai-agents-from-booking-flight-4-1df6a00742.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -23648,11 +23669,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2734,
-  "source_file_count": 3430,
-  "source_tree_sha256": "37607099bfd7df80674e55409ebdbbf8aa0e8bb66570c3010063f775a1d6475d",
-  "verified_provenance_count": 3154,
+  "source_brief_count": 2735,
+  "source_file_count": 3434,
+  "source_tree_sha256": "6afdfdc55085baa7bd18dd24017c84944145be74677c4de389f7291c3ef12afe",
+  "verified_provenance_count": 3158,
   "warning_counts": {
-    "source_excerpt_truncated": 824
+    "source_excerpt_truncated": 825
   }
 }

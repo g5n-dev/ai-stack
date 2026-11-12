@@ -15,7 +15,7 @@ observation_id: obs_e3fb265c4a7f0c03e332381c674e35ece02aac3c1eec6df11ee65ed9b8e8
 event_id: evt_41d3f459fdf663c57644e0e2751ead5861c390fbdd58b9793d32be7cc3125a0a
 revision_id: rev_7fc0f6c7e4d54d2501648fcece23aa3c2efe8e633afd0e9f06212fea2aa0a251
 source_published_at: 2026-11-11T21:05:59Z
-first_seen_at: 2026-11-11T21:56:14.034607Z
+first_seen_at: 2026-11-11T22:10:22Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:c0bbd64d8d8543eb887fbf0a2c1e664096e9881e5d5d5b23d
 description: "这是一份面向 AWS re:Invent 2026 AI/ML 专题的参会指南，介绍不同会话形式，并按 AI 芯片、模型训练与推理、智能体开发及管理等层级整理相关学习内容。内容还梳理了 AWS 从基础设施到智能体解决方案的 AI 技术栈。"
 external_url: https://aws.amazon.com/blogs/machine-learning/the-attendees-guide-to-the-aws-reinvent-2026-ai-ml-track
 parent_observation_id: null
-last_seen_at: 2026-11-11T21:56:14.034607Z
+last_seen_at: 2026-11-12T00:00:00Z
 ---
 
 ## 基本信息
