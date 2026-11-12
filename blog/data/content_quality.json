@@ -1,8 +1,8 @@
 {
-  "active_count": 3161,
+  "active_count": 3164,
   "archived_count": 276,
   "complete_count": 92,
-  "interpreted_brief_count": 332,
+  "interpreted_brief_count": 334,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23653,6 +23653,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20261113-arxiv-pyrite-building-and-benchmarking-protein-ligand-po-1-57d7d2f6b4.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20261113-blogs_podcasts-optimizing-cost-per-task-and-proving-agent-roi-on--0-409a77b0b1.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20261113-hacker_news-gemini-4-hydrogen-2-d7c21c501e.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -23687,10 +23705,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2737,
-  "source_file_count": 3437,
-  "source_tree_sha256": "1c28d071053cad589c29b30a410c5f3bc374fec819497f55c6b1017da2c6859b",
-  "verified_provenance_count": 3161,
+  "source_brief_count": 2738,
+  "source_file_count": 3440,
+  "source_tree_sha256": "1abfc3430608727b70432682a54060709131859b13e84d613525641d8b1e0963",
+  "verified_provenance_count": 3164,
   "warning_counts": {
     "source_excerpt_truncated": 825
   }
