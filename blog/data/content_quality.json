@@ -1,8 +1,8 @@
 {
-  "active_count": 3169,
+  "active_count": 3173,
   "archived_count": 276,
-  "complete_count": 92,
-  "interpreted_brief_count": 337,
+  "complete_count": 93,
+  "interpreted_brief_count": 338,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23701,6 +23701,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20261114-arxiv-archspace-recording-reviewing-and-referencing-llm--0-a630d99dd6.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20261114-blogs_podcasts-introducing-chatgpt-wallet-0-7d4d71d056.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261114-hacker_news-elevated-errors-on-claudeai-claude-code-and-platfo-6-1a09f77a48.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -23735,10 +23753,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2740,
-  "source_file_count": 3445,
-  "source_tree_sha256": "ee441350bd88e9e74ba01320372b3f9d7e96cd0830e8673bc0706d3d5f0df24e",
-  "verified_provenance_count": 3169,
+  "source_brief_count": 2742,
+  "source_file_count": 3449,
+  "source_tree_sha256": "6da7e78683bb27dac778e9a4cfded066646a1712205f4208f3a02d7e024b51bb",
+  "verified_provenance_count": 3173,
   "warning_counts": {
     "source_excerpt_truncated": 825
   }
