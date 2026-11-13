@@ -15,7 +15,7 @@ observation_id: obs_57d7d2f6b4aa20be2834015865dea887cbf8be89f9724b5395fb34f3c536
 event_id: evt_1c1d3cbb4c57dec1c8416b056f3b0531555a5b726d5fb643b6ac574b7d881ec2
 revision_id: rev_1228b69d53a5489e021a1918bc1a02965d5ce1b7f8ec904f64c205851f34c472
 source_published_at: 2026-11-10T18:56:32Z
-first_seen_at: 2026-11-12T18:53:51.758170Z
+first_seen_at: 2026-11-12T19:05:28Z
 timestamp_confidence: publisher
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:89ff903225f860b117c00dc3bb89d90c01702e2e87124b25e
 description: "Pyrite 是蛋白质—配体结合姿态排序基准，包含 1,500 组姿态对。它结合结构化分子表示 PyriteRep，以及直接比较姿态的 PyriteReasoner 和生成特征代码的 PyriteFeaturizer 两类 LLM 智能体。"
 external_url: http://arxiv.org/abs/2611.14511v1
 parent_observation_id: null
-last_seen_at: 2026-11-12T18:53:51.758170Z
+last_seen_at: 2026-11-13T00:00:00Z
 ---
 
 ## 基本信息
