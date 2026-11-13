@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:a8c6474d18de6825cb1a3b7b8c797cdeb1bd1a6821cbce7ae
 description: "该研究提出一种面向病灶检测的多领域基础模型构建方法，通过师生训练和 EM-DETR 联合学习异构标注数据，以减轻灾难性遗忘并提升检测性能。"
 external_url: http://arxiv.org/abs/2611.14518v1
 parent_observation_id: null
-last_seen_at: 2026-11-12T00:00:00Z
+last_seen_at: 2026-11-13T00:00:00Z
 ---
 
 ## 基本信息

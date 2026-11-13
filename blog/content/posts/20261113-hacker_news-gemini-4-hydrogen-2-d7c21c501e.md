@@ -13,9 +13,9 @@ source_snapshot_sha256: "sha256:9e394088ff450526b8bf337b9f644f7760859f080006464b
 source_payload_sha256: "sha256:f41a0e3c0adad813c8f72d0acc661aaaa3e624a0e9ffd71cd16edbbe76e18ebd"
 observation_id: obs_d7c21c501eb23f12ba47c2340d026d981857380497913d0eb9b51d95ebac21c6
 event_id: evt_abef6dd43cab89b8553c45e27aa2186aea3a92252462cbc1a6c04cca5b453d69
-revision_id: rev_03b4acb6b113b92bd3bcd0fed966a4fc72839af1de4b3435956b1fb5727e4b5b
+revision_id: rev_6d757e7c93711adc82179c23c077abfc42690ce84e6119ba5f3e2763bd83e76f
 source_published_at: 2026-11-12T18:01:48Z
-first_seen_at: 2026-11-12T18:53:49.171215Z
+first_seen_at: 2026-11-12T19:05:28Z
 timestamp_confidence: platform
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 17
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen
 parent_observation_id: null
-last_seen_at: 2026-11-12T18:53:49.171215Z
+last_seen_at: 2026-11-13T00:00:00Z
 ---
 
 ## 基本信息

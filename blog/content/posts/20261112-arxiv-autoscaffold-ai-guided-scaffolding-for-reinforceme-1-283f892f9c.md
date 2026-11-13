@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:d3dcb8e08090fe5cb1bd670b87774b5d793bead7ee63af98e
 description: "AutoScaffold 是一种面向强化学习的自适应辅助框架：由冻结的教师模型分析学生的训练经验，诊断不同任务中的瓶颈，并动态设计通用策略或针对性提示。辅助内容会在评估阶段移除，训练后的学生模型在四个任务领域均优于对应的强化学习基线。"
 external_url: http://arxiv.org/abs/2611.14515v1
 parent_observation_id: null
-last_seen_at: 2026-11-12T02:57:41.024414Z
+last_seen_at: 2026-11-13T00:00:00Z
 ---
 
 ## 基本信息

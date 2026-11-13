@@ -15,7 +15,7 @@ observation_id: obs_409a77b0b17a5148c50fa2d34fd8e289467f415901180490ea46c922f918
 event_id: evt_75652dc861592c234e2fae4d15983948199915ef11c45d74b7e69306b21913aa
 revision_id: rev_1f80b7f5adcb67e9e7a67a45ae2170b3944802fc89a7e7795d7ad4a4d65fe17d
 source_published_at: 2026-11-12T18:43:19Z
-first_seen_at: 2026-11-12T18:54:00.861750Z
+first_seen_at: 2026-11-12T19:05:28Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:c6b9fa0100266f371dae04997f45084891d650c9bfaf2ae53
 description: "这套方法不再只看模型的 token 单价，而是按完整任务核算成本，并纳入分词效率、输出冗长度、代理循环次数和推理开销。它还通过人工基线、对照实验和五维评分卡，衡量智能体相对人工的表现与投资回报。"
 external_url: https://aws.amazon.com/blogs/machine-learning/optimizing-cost-per-task-and-proving-agent-roi-on-amazon-bedrock
 parent_observation_id: null
-last_seen_at: 2026-11-12T18:54:00.861750Z
+last_seen_at: 2026-11-13T00:00:00Z
 ---
 
 ## 基本信息

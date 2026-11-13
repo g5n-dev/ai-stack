@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:ecc343c3a410d648a7f1f440618f5f2597ec90efaffb8ccc9
 description: "这项研究提出“对比式发现”：让智能体同时评估一组相互排斥、覆盖完整备选方案的科学解释，并根据实验后各解释的信念变化判断问题是否解决。"
 external_url: http://arxiv.org/abs/2611.14514v1
 parent_observation_id: null
-last_seen_at: 2026-11-12T11:02:24.975910Z
+last_seen_at: 2026-11-13T00:00:00Z
 ---
 
 ## 基本信息
