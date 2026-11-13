@@ -12,7 +12,7 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-11-13T00:21:05Z",
+  "generated_at": "2026-11-13T07:56:52Z",
   "items": [
     {
       "article_count": 993,
@@ -41,7 +41,7 @@
       "weighted_degree": 2821.2
     },
     {
-      "article_count": 908,
+      "article_count": 910,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 127,
@@ -51,7 +51,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 3,
-      "weighted_degree": 2713
+      "weighted_degree": 2718
     },
     {
       "article_count": 569,
@@ -67,7 +67,7 @@
       "weighted_degree": 1732
     },
     {
-      "article_count": 891,
+      "article_count": 892,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 49,
@@ -77,7 +77,7 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 5,
-      "weighted_degree": 1521
+      "weighted_degree": 1524
     },
     {
       "article_count": 558,
@@ -93,20 +93,20 @@
       "weighted_degree": 1404
     },
     {
-      "article_count": 202,
+      "article_count": 203,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
-      "degree": 71,
+      "degree": 73,
       "description": "文章标签: 生成式 AI",
       "id": "tag:生成式 AI",
       "layer": "tag",
       "legacy_id": "生成式 AI",
       "name": "生成式 AI",
       "rank": 7,
-      "weighted_degree": 902
+      "weighted_degree": 909
     },
     {
-      "article_count": 1047,
+      "article_count": 1048,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 21,
@@ -116,7 +116,7 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 8,
-      "weighted_degree": 830
+      "weighted_degree": 832
     },
     {
       "article_count": 137,
@@ -132,17 +132,17 @@
       "weighted_degree": 771
     },
     {
-      "article_count": 179,
+      "article_count": 180,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
-      "degree": 101,
+      "degree": 102,
       "description": "文章标签: 机器学习",
       "id": "tag:机器学习",
       "layer": "tag",
       "legacy_id": "机器学习",
       "name": "机器学习",
       "rank": 10,
-      "weighted_degree": 718
+      "weighted_degree": 725
     },
     {
       "article_count": 165,
@@ -171,7 +171,7 @@
       "weighted_degree": 618.2
     },
     {
-      "article_count": 234,
+      "article_count": 235,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 62,
@@ -181,7 +181,7 @@
       "legacy_id": "AI",
       "name": "AI",
       "rank": 13,
-      "weighted_degree": 587.6
+      "weighted_degree": 589.6
     },
     {
       "article_count": 146,
@@ -340,7 +340,7 @@
       "weighted_degree": 269
     },
     {
-      "article_count": 75,
+      "article_count": 76,
       "category": "article_tag",
       "community_id": "community:other",
       "degree": 20,
@@ -350,7 +350,7 @@
       "legacy_id": "计算机视觉",
       "name": "计算机视觉",
       "rank": 26,
-      "weighted_degree": 255.2
+      "weighted_degree": 258.2
     },
     {
       "article_count": 39,
@@ -366,6 +366,19 @@
       "weighted_degree": 249
     },
     {
+      "article_count": 65,
+      "category": "article_tag",
+      "community_id": "community:other",
+      "degree": 9,
+      "description": "文章标签: cs.CV",
+      "id": "tag:cs.CV",
+      "layer": "tag",
+      "legacy_id": "cs.CV",
+      "name": "cs.CV",
+      "rank": 28,
+      "weighted_degree": 223
+    },
+    {
       "article_count": 67,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
@@ -375,21 +388,8 @@
       "layer": "tag",
       "legacy_id": "cs.CL",
       "name": "cs.CL",
-      "rank": 28,
-      "weighted_degree": 221
-    },
-    {
-      "article_count": 64,
-      "category": "article_tag",
-      "community_id": "community:other",
-      "degree": 9,
-      "description": "文章标签: cs.CV",
-      "id": "tag:cs.CV",
-      "layer": "tag",
-      "legacy_id": "cs.CV",
-      "name": "cs.CV",
       "rank": 29,
-      "weighted_degree": 220
+      "weighted_degree": 221
     },
     {
       "article_count": 92,
@@ -548,6 +548,32 @@
       "weighted_degree": 84.6
     },
     {
+      "article_count": 12,
+      "category": "article_tag",
+      "community_id": "community:tag:Machine learning",
+      "degree": 38,
+      "description": "文章标签: Artificial intelligence",
+      "id": "tag:Artificial intelligence",
+      "layer": "tag",
+      "legacy_id": "Artificial intelligence",
+      "name": "Artificial intelligence",
+      "rank": 42,
+      "weighted_degree": 84
+    },
+    {
+      "article_count": 13,
+      "category": "article_tag",
+      "community_id": "community:tag:Machine learning",
+      "degree": 38,
+      "description": "文章标签: Research",
+      "id": "tag:Research",
+      "layer": "tag",
+      "legacy_id": "Research",
+      "name": "Research",
+      "rank": 43,
+      "weighted_degree": 83
+    },
+    {
       "article_count": 50,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
@@ -557,37 +583,11 @@
       "layer": "tag",
       "legacy_id": "GitHub",
       "name": "GitHub",
-      "rank": 42,
+      "rank": 44,
       "weighted_degree": 82
     },
     {
       "article_count": 11,
-      "category": "article_tag",
-      "community_id": "community:tag:Machine learning",
-      "degree": 38,
-      "description": "文章标签: Artificial intelligence",
-      "id": "tag:Artificial intelligence",
-      "layer": "tag",
-      "legacy_id": "Artificial intelligence",
-      "name": "Artificial intelligence",
-      "rank": 43,
-      "weighted_degree": 77
-    },
-    {
-      "article_count": 12,
-      "category": "article_tag",
-      "community_id": "community:tag:Machine learning",
-      "degree": 38,
-      "description": "文章标签: Research",
-      "id": "tag:Research",
-      "layer": "tag",
-      "legacy_id": "Research",
-      "name": "Research",
-      "rank": 44,
-      "weighted_degree": 76
-    },
-    {
-      "article_count": 10,
       "category": "article_tag",
       "community_id": "community:tag:Machine learning",
       "degree": 34,
@@ -597,7 +597,7 @@
       "legacy_id": "Machine learning",
       "name": "Machine learning",
       "rank": 45,
-      "weighted_degree": 70
+      "weighted_degree": 77
     },
     {
       "article_count": 10,
@@ -730,6 +730,19 @@
       "weighted_degree": 37
     },
     {
+      "article_count": 5,
+      "category": "article_tag",
+      "community_id": "community:tag:Computer modeling",
+      "degree": 15,
+      "description": "文章标签: Algorithms",
+      "id": "tag:Algorithms",
+      "layer": "tag",
+      "legacy_id": "Algorithms",
+      "name": "Algorithms",
+      "rank": 56,
+      "weighted_degree": 35
+    },
+    {
       "article_count": 8,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
@@ -739,7 +752,7 @@
       "layer": "tag",
       "legacy_id": "Go",
       "name": "Go",
-      "rank": 56,
+      "rank": 57,
       "weighted_degree": 32.6
     },
     {
@@ -752,7 +765,7 @@
       "layer": "tag",
       "legacy_id": "cs.CR",
       "name": "cs.CR",
-      "rank": 57,
+      "rank": 58,
       "weighted_degree": 32
     },
     {
@@ -765,7 +778,7 @@
       "layer": "tag",
       "legacy_id": "Amazon SageMaker",
       "name": "Amazon SageMaker",
-      "rank": 58,
+      "rank": 59,
       "weighted_degree": 29
     },
     {
@@ -778,7 +791,7 @@
       "layer": "tag",
       "legacy_id": "Swift",
       "name": "Swift",
-      "rank": 59,
+      "rank": 60,
       "weighted_degree": 28.6
     },
     {
@@ -791,7 +804,7 @@
       "layer": "tag",
       "legacy_id": "AWS Lambda",
       "name": "AWS Lambda",
-      "rank": 60,
+      "rank": 61,
       "weighted_degree": 28
     },
     {
@@ -804,19 +817,6 @@
       "layer": "tag",
       "legacy_id": "Amazon Simple Storage Service (S3)",
       "name": "Amazon Simple Storage Service (S3)",
-      "rank": 61,
-      "weighted_degree": 28
-    },
-    {
-      "article_count": 4,
-      "category": "article_tag",
-      "community_id": "community:tag:Computer modeling",
-      "degree": 15,
-      "description": "文章标签: Algorithms",
-      "id": "tag:Algorithms",
-      "layer": "tag",
-      "legacy_id": "Algorithms",
-      "name": "Algorithms",
       "rank": 62,
       "weighted_degree": 28
     },
@@ -925,6 +925,19 @@
       "weighted_degree": 21
     },
     {
+      "article_count": 3,
+      "category": "article_tag",
+      "community_id": "community:tag:Computer modeling",
+      "degree": 13,
+      "description": "文章标签: Computer modeling",
+      "id": "tag:Computer modeling",
+      "layer": "tag",
+      "legacy_id": "Computer modeling",
+      "name": "Computer modeling",
+      "rank": 71,
+      "weighted_degree": 21
+    },
+    {
       "article_count": 5,
       "category": "article_tag",
       "community_id": "community:tag:Gemini Notebook",
@@ -934,7 +947,7 @@
       "layer": "tag",
       "legacy_id": "Search",
       "name": "Search",
-      "rank": 71,
+      "rank": 72,
       "weighted_degree": 20
     },
     {
@@ -947,7 +960,7 @@
       "layer": "tag",
       "legacy_id": "Gemini App",
       "name": "Gemini App",
-      "rank": 72,
+      "rank": 73,
       "weighted_degree": 19
     },
     {
@@ -960,7 +973,7 @@
       "layer": "tag",
       "legacy_id": "Developer tools",
       "name": "Developer tools",
-      "rank": 73,
+      "rank": 74,
       "weighted_degree": 19
     },
     {
@@ -973,7 +986,7 @@
       "layer": "tag",
       "legacy_id": "Product",
       "name": "Product",
-      "rank": 74,
+      "rank": 75,
       "weighted_degree": 18
     },
     {
@@ -986,7 +999,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Nova",
       "name": "Amazon Nova",
-      "rank": 75,
+      "rank": 76,
       "weighted_degree": 18
     },
     {
@@ -999,7 +1012,7 @@
       "layer": "tag",
       "legacy_id": "Google Workspace",
       "name": "Google Workspace",
-      "rank": 76,
+      "rank": 77,
       "weighted_degree": 16
     },
     {
@@ -1012,7 +1025,7 @@
       "layer": "tag",
       "legacy_id": "Global Affairs",
       "name": "Global Affairs",
-      "rank": 77,
+      "rank": 78,
       "weighted_degree": 15
     },
     {
@@ -1025,7 +1038,7 @@
       "layer": "tag",
       "legacy_id": "cs.MA",
       "name": "cs.MA",
-      "rank": 78,
+      "rank": 79,
       "weighted_degree": 15
     },
     {
@@ -1038,7 +1051,20 @@
       "layer": "tag",
       "legacy_id": "Google Cloud",
       "name": "Google Cloud",
-      "rank": 79,
+      "rank": 80,
+      "weighted_degree": 14.6
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "community_id": "community:tag:Computer modeling",
+      "degree": 10,
+      "description": "文章标签: Design",
+      "id": "tag:Design",
+      "layer": "tag",
+      "legacy_id": "Design",
+      "name": "Design",
+      "rank": 81,
       "weighted_degree": 14.6
     },
     {
@@ -1051,7 +1077,7 @@
       "layer": "tag",
       "legacy_id": "Safety",
       "name": "Safety",
-      "rank": 80,
+      "rank": 82,
       "weighted_degree": 14
     },
     {
@@ -1064,7 +1090,7 @@
       "layer": "tag",
       "legacy_id": "Brain and cognitive sciences",
       "name": "Brain and cognitive sciences",
-      "rank": 81,
+      "rank": 83,
       "weighted_degree": 14
     },
     {
@@ -1077,20 +1103,7 @@
       "layer": "tag",
       "legacy_id": "Mental health",
       "name": "Mental health",
-      "rank": 82,
-      "weighted_degree": 14
-    },
-    {
-      "article_count": 2,
-      "category": "article_tag",
-      "community_id": "community:tag:Computer modeling",
-      "degree": 12,
-      "description": "文章标签: Computer modeling",
-      "id": "tag:Computer modeling",
-      "layer": "tag",
-      "legacy_id": "Computer modeling",
-      "name": "Computer modeling",
-      "rank": 83,
+      "rank": 84,
       "weighted_degree": 14
     },
     {
@@ -1103,7 +1116,7 @@
       "layer": "tag",
       "legacy_id": "Education, teaching, academics",
       "name": "Education, teaching, academics",
-      "rank": 84,
+      "rank": 85,
       "weighted_degree": 14
     },
     {
@@ -1116,7 +1129,7 @@
       "layer": "tag",
       "legacy_id": "Leadership",
       "name": "Leadership",
-      "rank": 85,
+      "rank": 86,
       "weighted_degree": 14
     },
     {
@@ -1129,7 +1142,7 @@
       "layer": "tag",
       "legacy_id": "Chemistry",
       "name": "Chemistry",
-      "rank": 86,
+      "rank": 87,
       "weighted_degree": 14
     },
     {
@@ -1142,7 +1155,7 @@
       "layer": "tag",
       "legacy_id": "Human-computer interaction",
       "name": "Human-computer interaction",
-      "rank": 87,
+      "rank": 88,
       "weighted_degree": 14
     },
     {
@@ -1155,7 +1168,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Machine Learning",
       "name": "Amazon Machine Learning",
-      "rank": 88,
+      "rank": 89,
       "weighted_degree": 14
     },
     {
@@ -1168,7 +1181,7 @@
       "layer": "tag",
       "legacy_id": "AWS Fargate",
       "name": "AWS Fargate",
-      "rank": 89,
+      "rank": 90,
       "weighted_degree": 13
     },
     {
@@ -1181,7 +1194,7 @@
       "layer": "tag",
       "legacy_id": "Amazon EC2",
       "name": "Amazon EC2",
-      "rank": 90,
+      "rank": 91,
       "weighted_degree": 13
     },
     {
@@ -1194,7 +1207,7 @@
       "layer": "tag",
       "legacy_id": "Thought Leadership",
       "name": "Thought Leadership",
-      "rank": 91,
+      "rank": 92,
       "weighted_degree": 13
     },
     {
@@ -1207,7 +1220,7 @@
       "layer": "tag",
       "legacy_id": "ai",
       "name": "ai",
-      "rank": 92,
+      "rank": 93,
       "weighted_degree": 12.6
     },
     {
@@ -1220,7 +1233,7 @@
       "layer": "tag",
       "legacy_id": "Android",
       "name": "Android",
-      "rank": 93,
+      "rank": 94,
       "weighted_degree": 12
     },
     {
@@ -1233,7 +1246,7 @@
       "layer": "tag",
       "legacy_id": "Google Research",
       "name": "Google Research",
-      "rank": 94,
+      "rank": 95,
       "weighted_degree": 12
     },
     {
@@ -1246,7 +1259,7 @@
       "layer": "tag",
       "legacy_id": "Networking & Traffic",
       "name": "Networking & Traffic",
-      "rank": 95,
+      "rank": 96,
       "weighted_degree": 12
     },
     {
@@ -1259,7 +1272,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Connect",
       "name": "Amazon Connect",
-      "rank": 96,
+      "rank": 97,
       "weighted_degree": 11
     },
     {
@@ -1272,7 +1285,7 @@
       "layer": "tag",
       "legacy_id": "Production Engineering",
       "name": "Production Engineering",
-      "rank": 97,
+      "rank": 98,
       "weighted_degree": 11
     },
     {
@@ -1285,7 +1298,7 @@
       "layer": "application",
       "legacy_id": "webapp",
       "name": "Web应用",
-      "rank": 98,
+      "rank": 99,
       "weighted_degree": 11
     },
     {
@@ -1298,7 +1311,7 @@
       "layer": "tag",
       "legacy_id": "ML Applications",
       "name": "ML Applications",
-      "rank": 99,
+      "rank": 100,
       "weighted_degree": 10.6
     },
     {
@@ -1311,7 +1324,7 @@
       "layer": "tag",
       "legacy_id": "cs.HC",
       "name": "cs.HC",
-      "rank": 100,
+      "rank": 101,
       "weighted_degree": 10
     },
     {
@@ -1324,7 +1337,7 @@
       "layer": "tag",
       "legacy_id": "Amazon Bedrock Guardrails",
       "name": "Amazon Bedrock Guardrails",
-      "rank": 101,
+      "rank": 102,
       "weighted_degree": 10
     },
     {
@@ -1337,7 +1350,7 @@
       "layer": "tag",
       "legacy_id": "Partner solutions",
       "name": "Partner solutions",
-      "rank": 102,
+      "rank": 103,
       "weighted_degree": 10
     },
     {
@@ -1350,7 +1363,7 @@
       "layer": "application",
       "legacy_id": "api",
       "name": "API服务",
-      "rank": 103,
+      "rank": 104,
       "weighted_degree": 9.6
     },
     {
@@ -1363,7 +1376,7 @@
       "layer": "tag",
       "legacy_id": "Google One",
       "name": "Google One",
-      "rank": 104,
+      "rank": 105,
       "weighted_degree": 9
     },
     {
@@ -1376,7 +1389,7 @@
       "layer": "tag",
       "legacy_id": "AI Adoption",
       "name": "AI Adoption",
-      "rank": 105,
+      "rank": 106,
       "weighted_degree": 8.6
     },
     {
@@ -1389,7 +1402,7 @@
       "layer": "tag",
       "legacy_id": "Security",
       "name": "Security",
-      "rank": 106,
+      "rank": 107,
       "weighted_degree": 8.6
     },
     {
@@ -1402,7 +1415,7 @@
       "layer": "model",
       "legacy_id": "llm",
       "name": "大语言模型",
-      "rank": 107,
+      "rank": 108,
       "weighted_degree": 7.6
     },
     {
@@ -1415,7 +1428,7 @@
       "layer": "language",
       "legacy_id": "python",
       "name": "Python",
-      "rank": 108,
+      "rank": 109,
       "weighted_degree": 7.6
     },
     {
@@ -1428,7 +1441,7 @@
       "layer": "tag",
       "legacy_id": "AI Research",
       "name": "AI Research",
-      "rank": 109,
+      "rank": 110,
       "weighted_degree": 7.6
     },
     {
@@ -1441,7 +1454,7 @@
       "layer": "tag",
       "legacy_id": "Security & Privacy",
       "name": "Security & Privacy",
-      "rank": 110,
+      "rank": 111,
       "weighted_degree": 7.6
     },
     {
@@ -1454,19 +1467,6 @@
       "layer": "tag",
       "legacy_id": "Amazon API Gateway",
       "name": "Amazon API Gateway",
-      "rank": 111,
-      "weighted_degree": 7.6
-    },
-    {
-      "article_count": 1,
-      "category": "article_tag",
-      "community_id": "community:tag:Computer modeling",
-      "degree": 8,
-      "description": "文章标签: Design",
-      "id": "tag:Design",
-      "layer": "tag",
-      "legacy_id": "Design",
-      "name": "Design",
       "rank": 112,
       "weighted_degree": 7.6
     },
@@ -1510,7 +1510,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 1236,
+      "article_count": 1237,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -1863,7 +1863,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Machine learning",
+      "community_id": "community:other",
       "degree": 7,
       "description": "文章标签: Classes and programs",
       "id": "tag:Classes and programs",
@@ -2175,7 +2175,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Machine learning",
+      "community_id": "community:other",
       "degree": 7,
       "description": "文章标签: Special events and guest speakers",
       "id": "tag:Special events and guest speakers",
@@ -2201,7 +2201,7 @@
     {
       "article_count": 1,
       "category": "article_tag",
-      "community_id": "community:tag:Machine learning",
+      "community_id": "community:other",
       "degree": 7,
       "description": "文章标签: STEM education",
       "id": "tag:STEM education",
@@ -2732,7 +2732,7 @@
       "weighted_degree": 3.4
     },
     {
-      "article_count": 75,
+      "article_count": 76,
       "category": "vision",
       "community_id": null,
       "degree": 4,
@@ -3369,7 +3369,7 @@
       "weighted_degree": 1.2
     },
     {
-      "article_count": 1,
+      "article_count": 2,
       "category": "design",
       "community_id": null,
       "degree": 2,
@@ -3499,7 +3499,7 @@
       "weighted_degree": 0.6
     },
     {
-      "article_count": 75,
+      "article_count": 76,
       "category": "ai",
       "community_id": null,
       "degree": 1,

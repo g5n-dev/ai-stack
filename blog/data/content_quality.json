@@ -1,8 +1,8 @@
 {
-  "active_count": 3166,
+  "active_count": 3169,
   "archived_count": 276,
   "complete_count": 92,
-  "interpreted_brief_count": 335,
+  "interpreted_brief_count": 337,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23660,7 +23660,19 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20261113-arxiv-unbundling-multimodal-vision-encoding-0-b87d6d714a.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261113-arxiv-when-does-the-real-wiring-win-testing-connectome-s-1-84af289cec.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20261113-blogs_podcasts-new-ai-copilot-helps-engineers-design-better-struc-0-babb1d6956.md": {
       "reasons": [
         "interpreted_source_card"
       ],
@@ -23671,6 +23683,12 @@
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20261113-hacker_news-edge0-145b-frontier-ai-capabilities-on-your-own-co-7-4e10e32134.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20261113-hacker_news-gemini-4-hydrogen-2-d7c21c501e.md": {
       "reasons": [
@@ -23717,10 +23735,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2739,
-  "source_file_count": 3442,
-  "source_tree_sha256": "9c7d0b10f9b727df9e10767e8faf3b6fd22889aae203ddb94a9f67593443e327",
-  "verified_provenance_count": 3166,
+  "source_brief_count": 2740,
+  "source_file_count": 3445,
+  "source_tree_sha256": "ee441350bd88e9e74ba01320372b3f9d7e96cd0830e8673bc0706d3d5f0df24e",
+  "verified_provenance_count": 3169,
   "warning_counts": {
     "source_excerpt_truncated": 825
   }

@@ -1,0 +1,327 @@
+{
+  "community_id": "community:tag:Machine learning",
+  "generated_at": "2026-11-13T07:56:52Z",
+  "hotspot_limit": 24,
+  "link_limit": 32,
+  "links": [
+    {
+      "id": "edge:cooccurrence:tag:Artificial intelligence->tag:Machine learning",
+      "source": "tag:Artificial intelligence",
+      "strength": 1,
+      "target": "tag:Machine learning",
+      "type": "cooccurrence",
+      "weight": 11
+    },
+    {
+      "id": "edge:cooccurrence:tag:Artificial intelligence->tag:Research",
+      "source": "tag:Artificial intelligence",
+      "strength": 1,
+      "target": "tag:Research",
+      "type": "cooccurrence",
+      "weight": 9
+    },
+    {
+      "id": "edge:cooccurrence:tag:Machine learning->tag:Research",
+      "source": "tag:Machine learning",
+      "strength": 1,
+      "target": "tag:Research",
+      "type": "cooccurrence",
+      "weight": 9
+    },
+    {
+      "id": "edge:cooccurrence:tag:Artificial intelligence->tag:Computer science and technology",
+      "source": "tag:Artificial intelligence",
+      "strength": 1,
+      "target": "tag:Computer science and technology",
+      "type": "cooccurrence",
+      "weight": 6
+    },
+    {
+      "id": "edge:cooccurrence:tag:Computer science and technology->tag:Machine learning",
+      "source": "tag:Computer science and technology",
+      "strength": 1,
+      "target": "tag:Machine learning",
+      "type": "cooccurrence",
+      "weight": 6
+    },
+    {
+      "id": "edge:cooccurrence:tag:Computer science and technology->tag:Research",
+      "source": "tag:Computer science and technology",
+      "strength": 1,
+      "target": "tag:Research",
+      "type": "cooccurrence",
+      "weight": 5
+    },
+    {
+      "id": "edge:cooccurrence:tag:Artificial intelligence->tag:Human-computer interaction",
+      "source": "tag:Artificial intelligence",
+      "strength": 1,
+      "target": "tag:Human-computer interaction",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Computer science and technology->tag:Human-computer interaction",
+      "source": "tag:Computer science and technology",
+      "strength": 1,
+      "target": "tag:Human-computer interaction",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Human-computer interaction->tag:Machine learning",
+      "source": "tag:Human-computer interaction",
+      "strength": 1,
+      "target": "tag:Machine learning",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Human-computer interaction->tag:Research",
+      "source": "tag:Human-computer interaction",
+      "strength": 1,
+      "target": "tag:Research",
+      "type": "cooccurrence",
+      "weight": 2
+    },
+    {
+      "id": "edge:cooccurrence:tag:Artificial intelligence->tag:Materials science and engineering",
+      "source": "tag:Artificial intelligence",
+      "strength": 0.5,
+      "target": "tag:Materials science and engineering",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Artificial intelligence->tag:Mechanical engineering",
+      "source": "tag:Artificial intelligence",
+      "strength": 0.5,
+      "target": "tag:Mechanical engineering",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Artificial intelligence->tag:Technology and society",
+      "source": "tag:Artificial intelligence",
+      "strength": 0.5,
+      "target": "tag:Technology and society",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Computer science and technology->tag:Mechanical engineering",
+      "source": "tag:Computer science and technology",
+      "strength": 0.5,
+      "target": "tag:Mechanical engineering",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Computer science and technology->tag:Technology and society",
+      "source": "tag:Computer science and technology",
+      "strength": 0.5,
+      "target": "tag:Technology and society",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Human-computer interaction->tag:Technology and society",
+      "source": "tag:Human-computer interaction",
+      "strength": 0.5,
+      "target": "tag:Technology and society",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Machine learning->tag:Materials science and engineering",
+      "source": "tag:Machine learning",
+      "strength": 0.5,
+      "target": "tag:Materials science and engineering",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Machine learning->tag:Mechanical engineering",
+      "source": "tag:Machine learning",
+      "strength": 0.5,
+      "target": "tag:Mechanical engineering",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Machine learning->tag:Technology and society",
+      "source": "tag:Machine learning",
+      "strength": 0.5,
+      "target": "tag:Technology and society",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Materials science and engineering->tag:Research",
+      "source": "tag:Materials science and engineering",
+      "strength": 0.5,
+      "target": "tag:Research",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Mechanical engineering->tag:Research",
+      "source": "tag:Mechanical engineering",
+      "strength": 0.5,
+      "target": "tag:Research",
+      "type": "cooccurrence",
+      "weight": 1
+    },
+    {
+      "id": "edge:cooccurrence:tag:Research->tag:Technology and society",
+      "source": "tag:Research",
+      "strength": 0.5,
+      "target": "tag:Technology and society",
+      "type": "cooccurrence",
+      "weight": 1
+    }
+  ],
+  "nodes": [
+    {
+      "article_count": 12,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Machine learning",
+      "degree": 38,
+      "description": "文章标签: Artificial intelligence",
+      "id": "tag:Artificial intelligence",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Artificial intelligence",
+      "level": 6,
+      "name": "Artificial intelligence",
+      "rank": 42,
+      "related_count": 38,
+      "weighted_degree": 84
+    },
+    {
+      "article_count": 13,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Machine learning",
+      "degree": 38,
+      "description": "文章标签: Research",
+      "id": "tag:Research",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Research",
+      "level": 6,
+      "name": "Research",
+      "rank": 43,
+      "related_count": 38,
+      "weighted_degree": 83
+    },
+    {
+      "article_count": 11,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Machine learning",
+      "degree": 34,
+      "description": "文章标签: Machine learning",
+      "id": "tag:Machine learning",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Machine learning",
+      "level": 6,
+      "name": "Machine learning",
+      "rank": 45,
+      "related_count": 34,
+      "weighted_degree": 77
+    },
+    {
+      "article_count": 6,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Machine learning",
+      "degree": 21,
+      "description": "文章标签: Computer science and technology",
+      "id": "tag:Computer science and technology",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Computer science and technology",
+      "level": 6,
+      "name": "Computer science and technology",
+      "rank": 52,
+      "related_count": 20,
+      "weighted_degree": 42.6
+    },
+    {
+      "article_count": 2,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Machine learning",
+      "degree": 9,
+      "description": "文章标签: Human-computer interaction",
+      "id": "tag:Human-computer interaction",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Human-computer interaction",
+      "level": 6,
+      "name": "Human-computer interaction",
+      "rank": 88,
+      "related_count": 9,
+      "weighted_degree": 14
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Machine learning",
+      "degree": 8,
+      "description": "文章标签: Materials science and engineering",
+      "id": "tag:Materials science and engineering",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Materials science and engineering",
+      "level": 6,
+      "name": "Materials science and engineering",
+      "rank": 114,
+      "related_count": 7,
+      "weighted_degree": 7.6
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Machine learning",
+      "degree": 7,
+      "description": "文章标签: Mechanical engineering",
+      "id": "tag:Mechanical engineering",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Mechanical engineering",
+      "level": 6,
+      "name": "Mechanical engineering",
+      "rank": 157,
+      "related_count": 7,
+      "weighted_degree": 7
+    },
+    {
+      "article_count": 1,
+      "category": "article_tag",
+      "color": "#f59e0b",
+      "community_id": "community:tag:Machine learning",
+      "degree": 7,
+      "description": "文章标签: Technology and society",
+      "id": "tag:Technology and society",
+      "layer": "tag",
+      "layer_name": "标签层",
+      "legacy_id": "Technology and society",
+      "level": 6,
+      "name": "Technology and society",
+      "rank": 170,
+      "related_count": 7,
+      "weighted_degree": 7
+    }
+  ],
+  "stats": {
+    "total_links": 22,
+    "total_nodes": 8
+  },
+  "version": 2
+}
