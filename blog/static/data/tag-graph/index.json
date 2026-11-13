@@ -23,11 +23,11 @@
       "focus-shards/000-a2cf835b15a3.json",
       "focus-shards/001-555b7d0762cc.json",
       "focus-shards/002-1f6580b97e6b.json",
-      "focus-shards/003-ea6db84e58cd.json",
+      "focus-shards/003-28d81120e5cc.json",
       "focus-shards/004-08a9b1380f4a.json",
       "focus-shards/005-730d1a52eb3d.json",
       "focus-shards/006-b17b6eece700.json",
-      "focus-shards/007-9f89d8f7a955.json",
+      "focus-shards/007-68d8723e0dc3.json",
       "focus-shards/008-04bb1de327fc.json",
       "focus-shards/009-8192c91e5b3e.json",
       "focus-shards/010-82102f585f91.json",
@@ -41,14 +41,14 @@
       "focus-shards/018-81874680265a.json",
       "focus-shards/019-2051f0ef6ebd.json",
       "focus-shards/020-3f0a0ca6d686.json",
-      "focus-shards/021-6b95be94fecf.json",
+      "focus-shards/021-92b652ccdb80.json",
       "focus-shards/022-f03f00395ef3.json",
       "focus-shards/023-08bb135b581c.json",
       "focus-shards/024-247cb8de16eb.json",
       "focus-shards/025-42afa223fcb4.json",
       "focus-shards/026-dc4713be8688.json",
       "focus-shards/027-96ac8910277c.json",
-      "focus-shards/028-6d3ff2bc6d68.json",
+      "focus-shards/028-4fe6633314c2.json",
       "focus-shards/029-2420a24439a6.json",
       "focus-shards/030-204786625289.json",
       "focus-shards/031-98d7281288c7.json",
@@ -92,7 +92,7 @@
       "focus-shards/069-eac25151e0b4.json",
       "focus-shards/070-d5c9ca6d0405.json",
       "focus-shards/071-18b1500e044a.json",
-      "focus-shards/072-5a423f5d3bc0.json",
+      "focus-shards/072-121784e4ae3a.json",
       "focus-shards/073-cf1c0d9ca09c.json",
       "focus-shards/074-9d5103f231ff.json",
       "focus-shards/075-31a8e9f93c8c.json",
@@ -104,7 +104,7 @@
       "focus-shards/081-faaec18fb2cf.json",
       "focus-shards/082-4c468f5837a6.json",
       "focus-shards/083-8be09ecda047.json",
-      "focus-shards/084-954fd6647499.json",
+      "focus-shards/084-e2c5275a2c88.json",
       "focus-shards/085-17048dad84f9.json",
       "focus-shards/086-a75594d75494.json",
       "focus-shards/087-cf30e9190d1e.json",
@@ -153,7 +153,7 @@
     "tag": "tag.json",
     "tagHot": "tag.hot.json"
   },
-  "generated_at": "2026-11-13T16:20:58Z",
+  "generated_at": "2026-11-13T22:38:15Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -209,7 +209,7 @@
       "archived_article_files_skipped": 276,
       "archived_article_groups_skipped": 276,
       "avg_concepts_per_article": 0,
-      "avg_tags_per_article": 2.8726757012291206,
+      "avg_tags_per_article": 2.8730708661417323,
       "canonical_duplicate_files_skipped": 0,
       "incomplete_article_files_skipped": 0,
       "incomplete_article_groups_skipped": 0,
@@ -218,7 +218,7 @@
         [
           "Hacker News",
           {
-            "article_count": 1049,
+            "article_count": 1050,
             "category": "article_tag",
             "description": "文章标签: Hacker News",
             "id": "Hacker News",
@@ -230,7 +230,7 @@
         [
           "AI Agent",
           {
-            "article_count": 994,
+            "article_count": 995,
             "category": "article_tag",
             "description": "文章标签: AI Agent",
             "id": "AI Agent",
@@ -254,7 +254,7 @@
         [
           "来源快报",
           {
-            "article_count": 913,
+            "article_count": 915,
             "category": "article_tag",
             "description": "文章标签: 来源快报",
             "id": "来源快报",
@@ -266,7 +266,7 @@
         [
           "ArXiv",
           {
-            "article_count": 893,
+            "article_count": 894,
             "category": "article_tag",
             "description": "文章标签: ArXiv",
             "id": "ArXiv",
@@ -278,13 +278,13 @@
       ],
       "synthetic_article_files_skipped": 0,
       "synthetic_article_groups_skipped": 0,
-      "total_articles": 3173,
+      "total_articles": 3175,
       "total_concept_links": 0,
       "total_concepts": 0,
       "total_tag_links": 1485,
       "total_tags": 215
     },
-    "total_articles": 3173,
+    "total_articles": 3175,
     "total_communities": 12,
     "total_links": 1595,
     "total_nodes": 284

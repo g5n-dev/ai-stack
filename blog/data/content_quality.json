@@ -1,8 +1,8 @@
 {
-  "active_count": 3173,
+  "active_count": 3175,
   "archived_count": 276,
   "complete_count": 93,
-  "interpreted_brief_count": 338,
+  "interpreted_brief_count": 339,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23708,7 +23708,19 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20261114-arxiv-internalizing-investment-mandates-a-neurosymbolic--0-abcecd6333.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261114-blogs_podcasts-introducing-chatgpt-wallet-0-7d4d71d056.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261114-hacker_news-ai-unlocks-gödels-notebooks-said-to-contain-hundre-15-12990af15e.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -23753,10 +23765,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2742,
-  "source_file_count": 3449,
-  "source_tree_sha256": "6da7e78683bb27dac778e9a4cfded066646a1712205f4208f3a02d7e024b51bb",
-  "verified_provenance_count": 3173,
+  "source_brief_count": 2743,
+  "source_file_count": 3451,
+  "source_tree_sha256": "547c324dc6b86c796b45ac9f471d34405df5138dbfbb7a4cdff65519ab49a32f",
+  "verified_provenance_count": 3175,
   "warning_counts": {
     "source_excerpt_truncated": 825
   }
