@@ -1,8 +1,8 @@
 {
-  "active_count": 3178,
+  "active_count": 3180,
   "archived_count": 276,
   "complete_count": 93,
-  "interpreted_brief_count": 341,
+  "interpreted_brief_count": 342,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23720,6 +23720,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20261114-arxiv-learning-when-diffusion-language-models-should-reg-0-679b2c4e80.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261114-blogs_podcasts-introducing-chatgpt-wallet-0-7d4d71d056.md": {
       "reasons": [
         "concise_source_card"
@@ -23745,6 +23751,12 @@
       "status": "source_brief"
     },
     "posts/20261114-hacker_news-elevated-errors-on-claudeai-claude-code-and-platfo-6-1a09f77a48.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261114-hacker_news-nvidia-allegedly-engineered-scarcity-by-funding-ai-3-8f4b2632f4.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -23783,10 +23795,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2744,
-  "source_file_count": 3454,
-  "source_tree_sha256": "236e92c72790b28079cbf28348ee6360b1faf2e3e95ed569bafd30bdeb325c12",
-  "verified_provenance_count": 3178,
+  "source_brief_count": 2745,
+  "source_file_count": 3456,
+  "source_tree_sha256": "af2ff0d5326d5f1e762fa9781c137c0d5021d3f2aecc274bf522de86eeed01a1",
+  "verified_provenance_count": 3180,
   "warning_counts": {
     "source_excerpt_truncated": 825
   }
