@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:7b1cd340467d242747e7f95cdb15a517cbd2e21111f6dd74
 source_payload_sha256: "sha256:5be610418f469ea64e01140555728c5992a7bf89c4d0aa5fe6452a49b06f22d7"
 observation_id: obs_a9efcea186a6d2c96a51047ed1422b195147b5acef8809afa904a1d91e532b6b
 event_id: evt_38d6712f4ea72a8c79da32ec543587a978bb1471972344bf22b348b4d4b4587d
-revision_id: rev_3ba06cbf2aa1725485e24ce21a337d04dc48cae0bf26ef23f6b05099ff5a0611
+revision_id: rev_d8a783d5a73cee67a16f850001713beb39b4e7d22e76e459a854505c8a4cbd5e
 first_seen_at: 2026-11-06T15:10:15Z
 timestamp_confidence: git
 lineage_relation: original
@@ -27,7 +27,7 @@ description: "当前只保存了标题与来源元数据，未抓取外链全文
 external_url: https://github.com/ccfos/nightingale
 parent_observation_id: null
 source_published_at: null
-last_seen_at: 2026-11-13T00:00:00Z
+last_seen_at: 2026-11-14T00:00:00Z
 ---
 
 ## 基本信息

@@ -1,7 +1,7 @@
 {
-  "active_count": 3180,
+  "active_count": 3182,
   "archived_count": 276,
-  "complete_count": 93,
+  "complete_count": 94,
   "interpreted_brief_count": 342,
   "legacy_analysis_count": 0,
   "pages": {
@@ -23761,6 +23761,12 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20261115-hacker_news-generative-ai-uses-more-energy-on-non-english-text-7-491f8d171c.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -23795,10 +23801,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2745,
-  "source_file_count": 3456,
-  "source_tree_sha256": "af2ff0d5326d5f1e762fa9781c137c0d5021d3f2aecc274bf522de86eeed01a1",
-  "verified_provenance_count": 3180,
+  "source_brief_count": 2746,
+  "source_file_count": 3458,
+  "source_tree_sha256": "3a8b4f9e3e2ced977b077e49a1fa11a6d58ae4c3158e8b1b9499df36c401fcbf",
+  "verified_provenance_count": 3182,
   "warning_counts": {
     "source_excerpt_truncated": 825
   }
