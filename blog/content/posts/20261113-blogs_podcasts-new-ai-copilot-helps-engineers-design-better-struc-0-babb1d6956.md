@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:e81d8e48bc1f4fbc5888a2acd24ee57579fa35cbb3d96230f
 description: "MIT 团队提出了一种“人在回路中”的拓扑优化系统：算法生成结构时，由机器学习快速标出设计师可能需要调整的区域，让人边设计边反馈。它希望兼顾计算效率、结构性能、制造可行性与工程师对结果的掌控感。"
 external_url: https://news.mit.edu/2026/new-ai-copilot-helps-engineers-design-better-structures-1113
 parent_observation_id: null
-last_seen_at: 2026-11-13T07:55:44.301257Z
+last_seen_at: 2026-11-14T00:00:00Z
 ---
 
 ## 基本信息

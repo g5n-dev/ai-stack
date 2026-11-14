@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:4653c0b47fafbb4dd81806349a1094fefb912f6182de63c91
 description: "ArchSpace 是一个面向大语言模型架构研究的公开平台，用于记录研究提案、实验过程与推理，并通过社区评审和后续引用形成可追溯的积累。它还用缩放定律从较小规模实验预测更大规模的模型损失，以辅助早期评估。"
 external_url: http://arxiv.org/abs/2611.17332v1
 parent_observation_id: null
-last_seen_at: 2026-11-13T16:19:39.710054Z
+last_seen_at: 2026-11-14T00:00:00Z
 ---
 
 ## 基本信息
