@@ -171,7 +171,7 @@ def test_live_release_fails_closed_for_tampered_or_missing_asset() -> None:
         ("window_data_as_of", "data_as_of"),
         ("detail_path", "detail_path"),
         ("topic_identity", "topic identity"),
-        ("topic_graph_node", "topic identity"),
+        ("topic_graph_node", "graph node mismatch"),
         ("topic_data_as_of", "data_as_of"),
         ("trend_identity", "topic identity"),
         ("missing_topic_reference", "topic reference"),

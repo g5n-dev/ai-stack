@@ -153,7 +153,7 @@ def test_trends_runtime_uses_safe_text_progressive_loading_and_distinct_links() 
     assert "trendCardScoreCopy" in source
     assert "appendScoreExplanation" in source
     assert "scoreExplanation(signal, model.state.window, model.index.formula)" in source
-    assert "appendComponents(elements.detail, signal.components)" in source
+    assert "appendComponents(elements.detail, signal)" in source
     assert "buildTrendReturnUrl(windowObject.location.pathname, model.state)" in source
     assert "appendReturnContext" in source
     assert "elements.matrix.title" not in source
@@ -163,7 +163,7 @@ def test_trends_runtime_uses_safe_text_progressive_loading_and_distinct_links() 
     cache_lookup = source.index("const cached = model.topicCache.get(id);", load_topic)
     assert invalidate < cache_lookup
     assert "30 天来源分布" in source
-    assert "30 天证据文章" in source
+    assert "appendEvidence(elements.detail, evidence, evidenceWindow)" in source
 
 
 def test_trends_route_and_navigation_use_the_short_user_facing_name() -> None:

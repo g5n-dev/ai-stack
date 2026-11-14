@@ -58,7 +58,7 @@ test("parses only bounded trend URL state and preserves a valid topic drill-down
 });
 
 
-test("rejects unsafe URL state and falls back to the honest 30 day matrix", () => {
+test("rejects unsafe URL state and defaults to the 30 day list", () => {
   assert.deepEqual(Trends.parseState("?window=year&signal=viral&topic=javascript:boom&query=%00"), {
     window: "30d",
     signal: "all",
@@ -66,16 +66,18 @@ test("rejects unsafe URL state and falls back to the honest 30 day matrix", () =
     scenario: "",
     query: "",
     topic: "",
-    view: "matrix",
+    view: "list",
   });
 });
 
 
 test("compact view uses the accessible list instead of claiming a hidden matrix", () => {
-  const desktop = Trends.adaptStateForViewport(Trends.parseState("?window=30d"), false);
-  const compact = Trends.adaptStateForViewport(Trends.parseState("?window=30d"), true);
+  const matrix = Trends.parseState("?window=30d&view=matrix");
+  const desktop = Trends.adaptStateForViewport(matrix, false);
+  const compact = Trends.adaptStateForViewport(matrix, true);
 
   assert.equal(desktop.view, "matrix");
+  assert.equal(Trends.serializeState(desktop), "?window=30d&view=matrix");
   assert.equal(compact.view, "list");
   assert.equal(Trends.serializeState(compact), "?window=30d&view=list");
   assert.equal(Trends.shouldRenderMatrix("list", false), false);
@@ -410,22 +412,17 @@ test("every declared committed 30 day facet selects matching evidence", () => {
 test("committed observation windows select distinct snapshots", () => {
   const dataRoot = path.resolve(import.meta.dirname, "../../blog/static/data/stack-trends");
   const index = JSON.parse(readFileSync(path.join(dataRoot, "index.json"), "utf8"));
-  const loadWindow = (name) => JSON.parse(
-    readFileSync(path.join(dataRoot, index.windows[name].path), "utf8"),
-  );
-  const day = loadWindow("24h");
-  const month = loadWindow("30d");
-  const dayIds = day.trends.map((item) => item.id);
-  const monthIds = month.trends.map((item) => item.id);
-
-  assert.ok(Array.isArray(dayIds) && Array.isArray(monthIds));
-  // During a publication-gap recovery every recent observation can land in a
-  // single day, so both windows may legitimately be empty or identical. Only a
-  // populated pair has to prove the windows are distinct snapshots.
-  if (dayIds.length > 0 || monthIds.length > 0) {
-    assert.notDeepEqual(dayIds, monthIds);
-    assert.notEqual(dayIds.length, monthIds.length);
+  const validated = Trends.validateIndex(index);
+  const paths = new Set();
+  for (const name of ["24h", "7d", "30d"]) {
+    const reference = index.windows[name];
+    const data = JSON.parse(readFileSync(path.join(dataRoot, reference.path), "utf8"));
+    const window = Trends.validateWindow(data, name, validated);
+    assert.equal(window.window, name);
+    assert.equal(window.trends.length, reference.trend_count);
+    paths.add(reference.path);
   }
+  assert.equal(paths.size, 3);
 });
 
 
@@ -814,7 +811,16 @@ test("v2 validators expose event accounting while retaining the v1 rollout fallb
     },
   });
   const value = trend({
-    graph_node_id: "tag:llm",
+    graph_node_id: "tag:大语言模型",
+    description: "推理服务的批处理优化",
+    state: "insufficient_baseline",
+    comparison: {
+      baseline_available: false,
+      acceleration_available: false,
+      has_prior_evidence: true,
+      sample_counts: { current: 12, previous: 2, pre_previous: 0 },
+      shares: { current: 0.25, previous: null, pre_previous: null },
+    },
     sparkline: Array(12).fill(1),
     unique_events: 3,
     observations: 4,
@@ -836,7 +842,7 @@ test("v2 validators expose event accounting while retaining the v1 rollout fallb
     schema_version: "stack_trends_topic_v2",
     id: "tag:llm",
     topic: "LLM",
-    graph_node_id: "tag:llm",
+    graph_node_id: null,
     data_as_of: index.data_as_of,
     description: "可审计主题",
     windows: {
@@ -844,7 +850,7 @@ test("v2 validators expose event accounting while retaining the v1 rollout fallb
       "7d": null,
       "30d": {
         score: 82.4,
-        state: "rising",
+        state: "insufficient_baseline",
         confidence: "high",
         unique_events: 3,
         observations: 4,
@@ -852,6 +858,7 @@ test("v2 validators expose event accounting while retaining the v1 rollout fallb
         unique_sources: 3,
         source_diversity: 3,
         counts: { current: 3, previous: 2, pre_previous: 1 },
+        comparison: value.comparison,
         sparkline: Array(12).fill(1),
       },
     },
@@ -883,6 +890,13 @@ test("v2 validators expose event accounting while retaining the v1 rollout fallb
   assert.equal(index.schema_version, "stack_trends_index_v2");
   assert.equal(index.stats.promoted_same_event_pairs, 1);
   assert.equal(windowData.trends[0].redundant_observations, 1);
+  assert.equal(windowData.trends[0].graph_node_id, "tag:大语言模型");
+  assert.equal(windowData.trends[0].comparison.shares.previous, null);
+  assert.equal(Trends.filterTrends(windowData.trends, {
+    query: "批处理", signal: "insufficient_baseline",
+  }).length, 1);
+  assert.equal(topic.graph_node_id, null);
+  assert.equal(topic.windows["30d"].comparison.baseline_available, false);
   assert.equal(topic.evidence[0].associated_observations, 2);
   assert.equal(topic.evidence[0].related_reports[0].relation, "syndicated");
   assert.throws(

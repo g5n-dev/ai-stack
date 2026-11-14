@@ -212,7 +212,13 @@ def _topic_identity(
     topic = payload.get("topic")
     if not isinstance(topic, str) or not topic or f"tag:{topic}" != expected_id:
         raise TrendMonitoringError(f"topic identity mismatch: {location}")
-    if payload.get("id") != expected_id or payload.get("graph_node_id") != expected_id:
+    graph_node_id = payload.get("graph_node_id")
+    if (
+        payload.get("id") != expected_id
+        or not isinstance(graph_node_id, str)
+        or not graph_node_id.startswith("tag:")
+        or not graph_node_id[4:].strip()
+    ):
         raise TrendMonitoringError(f"topic identity mismatch: {location}")
 
 
@@ -284,6 +290,8 @@ def _verify_release_semantics(
                 raise TrendMonitoringError(f"trend topic reference missing: {path}")
             if trend.get("detail_path") != expected_detail:
                 raise TrendMonitoringError(f"trend detail_path mismatch: {path}")
+            if trend["graph_node_id"] != assets[expected_detail]["graph_node_id"]:
+                raise TrendMonitoringError(f"trend graph node mismatch: {path}")
         topics_seen.update(window_topics)
     if topics_seen != set(topic_paths):
         raise TrendMonitoringError("index topic references do not match window trends")

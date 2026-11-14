@@ -27,6 +27,73 @@ excluded_tags:
   - math.OC
   - stat.ML
 
+# Match specific technical subjects in the title or published summary. Generic
+# article tags remain useful for navigation but do not nominate trend topics.
+topic_rules:
+  Agent 评测与基准:
+    description: 比较 Agent 评测集、轨迹评分、任务验证与基准维护的方法。
+    graph_tag: AI Agent
+    patterns:
+      - '\bagent(?:ic|s)?[ -]+(?:evaluation|evals?|benchmarks?)\b'
+      - '\b(?:terminal-bench|swe-bench|webbench|agentbench|xstack)\b'
+      - '智能体.{0,6}(?:评估|评测|基准)|(?:评估|评测) (?:AI )?(?:代理|智能体)'
+  Agent 记忆与状态管理:
+    description: 跟踪 Agent 和对话系统如何保存、检索与更新跨会话状态。
+    graph_tag: AI Agent
+    patterns:
+      - '\b(?:agent(?:ic|s)?[ -]+memory|memory for (?:llms?|agents?)|graph memory|cross-session memory|persistent agent state)\b'
+      - '智能体记忆|(?:长期|跨会话|图)记忆|记忆(?:管理|压缩|检索)'
+  Agent 上下文管理:
+    description: 跟踪上下文补充、压缩、隔离与选择如何影响 Agent 行为。
+    graph_tag: AI Agent
+    patterns:
+      - '\bcontext (?:enrichment|engineering|compaction|pruning|isolation)\b'
+      - '上下文(?:工程|增强|压缩|裁剪|隔离)|提示上下文.{0,12}(?:稳健|波动)'
+  Agent 工具接入与编排:
+    description: 跟踪工具接入协议、调用执行与多 Agent 协作机制。
+    graph_tag: AI Agent
+    patterns:
+      - '\b(?:model context protocol|agent-to-agent protocol|multi-agent orchestration|agent swarms?|tool calling|tool routing)\b'
+      - '工具(?:调用|路由|编排)|多智能体(?:协作|编排)|智能体(?:群体|编排)'
+  Agent 权限与数据保护:
+    description: 跟踪 Agent 的工具授权、数据暴露、沙箱与企业治理。
+    graph_tag: AI Agent
+    patterns:
+      - '\b(?:coding agents?|claude code|agentic tools?)\b.{0,75}\b(?:sandbox(?:ing)?|permissions?|exposes?|leaks?|privacy|data governance)\b'
+      - '\b(?:agent sandbox(?:ing)?|agent permissions?|prompt injection)\b'
+      - '智能体.{0,12}(?:权限控制|隐私|数据泄露|沙箱)|提示词注入|工具授权'
+  编码 Agent 工作流:
+    description: 跟踪编码 Agent 在开发、代码审查、调试和交付中的实践。
+    graph_tag: AI Agent
+    patterns:
+      - '\b(?:coding agents?|agentic coding|ai-native (?:software )?engineering|agentic software development)\b'
+      - '编码(?:代理|智能体)|编程智能体|(?:代码审查|故障排查).{0,10}(?:智能体|Agent)'
+  模型推理部署与显存优化:
+    description: 跟踪部署门槛、显存占用、推理吞吐和单位成本的变化。
+    graph_tag: 大语言模型
+    patterns:
+      - '\b(?:speculative decoding|kv[ -]cache (?:compression|quantization|optimization)|inference (?:latency|throughput|costs?|serving)|multi-instance gpu|llm serving)\b'
+      - '\b\d+\s*gb ram.{0,20}\bno gpu\b'
+      - '推理(?:部署|加速|吞吐|延迟|成本)|显存(?:优化|占用)|多实例 GPU|投机解码'
+  模型蒸馏与训练效率:
+    description: 跟踪蒸馏方法、计算开销和达到目标效果所需的训练资源。
+    graph_tag: 大语言模型
+    patterns:
+      - '\b(?:on-policy distillation|knowledge distillation|training flops|training compute efficiency|strong-to-weak opd)\b'
+      - '(?:模型|知识|在线)蒸馏|训练(?:算力|计算开销|效率)'
+  科研 Agent 与实验复现:
+    description: 跟踪 Agent 如何执行科研实验、保存运行证据和复现结果。
+    graph_tag: AI Agent
+    patterns:
+      - '\b(?:ai[- ]scientists?|research agents?|autonomous research|reprobridge|ml research artifacts)\b'
+      - 'AI 科学家|科研智能体|智能体.{0,22}(?:独立复现|实验复现|科学发现)'
+  检索增强与引用验证:
+    description: 跟踪检索增强回答、证据选择以及对引用可靠性的验证。
+    graph_tag: 大语言模型
+    patterns:
+      - '\b(?:retrieval-augmented generation|citation (?:verification|grounding|accuracy)|grounded web answers?|web answer on amazon bedrock)\b'
+      - '检索增强(?:生成|问答)|引用(?:验证|可靠性|准确性)|网页信息.{0,30}来源链接'
+
 # Keep source contribution neutral until a reviewed provenance-based weighting
 # policy exists. Source diversity is already an explicit trend_v1 component.
 source_weight: 0.5

@@ -126,6 +126,14 @@ class SameEventPromotion:
 
 
 @dataclass(frozen=True, slots=True)
+class TrendTopicRule:
+    label: str
+    description: str
+    graph_tag: str
+    patterns: tuple[re.Pattern[str], ...]
+
+
+@dataclass(frozen=True, slots=True)
 class StackTrendsConfig:
     """Reviewed configuration for the deterministic Post adapter."""
 
@@ -133,6 +141,7 @@ class StackTrendsConfig:
     excluded_tags: frozenset[str]
     source_weight: float
     same_event_promotions: tuple[SameEventPromotion, ...]
+    topic_rules: tuple[TrendTopicRule, ...] | None = None
 
 
 def _stable_json_bytes(value: Any) -> bytes:
@@ -172,7 +181,7 @@ def _isoformat(value: datetime) -> str:
 
 
 def load_stack_trends_config(path: str | Path = DEFAULT_CONFIG_PATH) -> StackTrendsConfig:
-    """Load the versioned, exact trend-label exclusion registry."""
+    """Load the versioned trend topic policy."""
 
     config_path = Path(path)
     try:
@@ -188,6 +197,7 @@ def load_stack_trends_config(path: str | Path = DEFAULT_CONFIG_PATH) -> StackTre
         "excluded_tags",
         "source_weight",
         "same_event_promotions",
+        "topic_rules",
     }
     if unknown_top_level:
         raise StackTrendsValidationError(
@@ -324,7 +334,38 @@ def load_stack_trends_config(path: str | Path = DEFAULT_CONFIG_PATH) -> StackTre
                 ),
             )
         ),
+        topic_rules=(
+            _compile_topic_rules(payload["topic_rules"]) if "topic_rules" in payload else None
+        ),
     )
+
+
+def _compile_topic_rules(value: Any) -> tuple[TrendTopicRule, ...]:
+    if not isinstance(value, Mapping) or not value:
+        raise StackTrendsValidationError("topic_rules must be a non-empty mapping")
+    rules = []
+    for label, rule in value.items():
+        if not isinstance(label, str) or not label.strip() or label != label.strip():
+            raise StackTrendsValidationError("topic_rules requires non-empty trimmed labels")
+        if not isinstance(rule, Mapping) or set(rule) != {"description", "graph_tag", "patterns"}:
+            raise StackTrendsValidationError(f"invalid topic rule for {label!r}")
+        description, graph_tag, patterns = rule["description"], rule["graph_tag"], rule["patterns"]
+        if not isinstance(description, str) or not description.strip() or len(description) > 240:
+            raise StackTrendsValidationError(f"invalid description for topic {label!r}")
+        if not isinstance(graph_tag, str) or not graph_tag.strip() or graph_tag != graph_tag.strip():
+            raise StackTrendsValidationError(f"invalid graph tag for topic {label!r}")
+        if not isinstance(patterns, list) or not patterns or any(
+            not isinstance(pattern, str) or not pattern.strip() for pattern in patterns
+        ):
+            raise StackTrendsValidationError(f"invalid patterns for topic {label!r}")
+        try:
+            compiled = tuple(re.compile(pattern, re.IGNORECASE) for pattern in patterns)
+        except re.error as exc:
+            raise StackTrendsValidationError(f"invalid pattern for topic {label!r}: {exc}") from exc
+        if any(pattern.search("") for pattern in compiled):
+            raise StackTrendsValidationError(f"topic {label!r} matches empty text")
+        rules.append(TrendTopicRule(label, description.strip(), graph_tag, compiled))
+    return tuple(sorted(rules, key=lambda rule: (rule.label.casefold(), rule.label)))
 
 
 def _lineage_identifier(value: Any, *, field: str) -> str:
@@ -701,14 +742,27 @@ def _candidate_from_post(
     except ValueError as exc:
         raise StackTrendsValidationError(f"invalid external_url in {path.name}") from exc
 
-    topics = [
-        topic
-        for topic in normalize_tags(metadata.get("tags"), limit=8)
-        if topic not in config.excluded_tags
-    ]
-    topics = sorted(set(topics), key=lambda item: (item.casefold(), item))
-    if not topics:
-        return None
+    title = _string(metadata.get("title"), field=f"{path.name}.title", maximum=300)
+    summary = _string(metadata.get("description"), field=f"{path.name}.description", maximum=240)
+    if config.topic_rules is None:
+        topics = sorted(
+            {
+                topic
+                for topic in normalize_tags(metadata.get("tags"), limit=8)
+                if topic not in config.excluded_tags
+            },
+            key=lambda item: (item.casefold(), item),
+        )
+        if not topics:
+            return None
+    else:
+        # Keep unmatched articles in the sample so their absence from a topic
+        # does not disappear from the window's coverage and share denominators.
+        topics = [
+            rule.label
+            for rule in config.topic_rules
+            if any(pattern.search(title) or pattern.search(summary) for pattern in rule.patterns)
+        ]
 
     source = str(metadata.get("source") or "unknown").strip() or "unknown"
     observation_id = metadata.get("observation_id")
@@ -738,12 +792,8 @@ def _candidate_from_post(
         "source": source,
         "source_weight": config.source_weight,
         "topics": topics,
-        "title": _string(metadata.get("title"), field=f"{path.name}.title", maximum=300),
-        "summary": _string(
-            metadata.get("description"),
-            field=f"{path.name}.description",
-            maximum=240,
-        ),
+        "title": title,
+        "summary": summary,
         "internal_url": _safe_internal_url(path, metadata),
         "scenarios": _facet_values(metadata.get("scenarios")),
         "categories": _facet_values(metadata.get("categories")),
@@ -1031,6 +1081,13 @@ def adapt_posts_to_events(
         ).hexdigest(),
         "config_version": config.version,
         "lineage_mode": lineage_mode,
+        "topic_metadata": {
+            rule.label: {
+                "description": rule.description,
+                "graph_node_id": f"tag:{rule.graph_tag}",
+            }
+            for rule in config.topic_rules or ()
+        },
     }
 
 
@@ -1044,7 +1101,6 @@ def _events_for_topic(
     *,
     start: datetime,
     end: datetime,
-    include_end: bool = True,
     canonical_only: bool = False,
 ) -> list[Mapping[str, Any]]:
     result = []
@@ -1052,60 +1108,20 @@ def _events_for_topic(
         if canonical_only and event.get("event_id") != event.get("canonical_event_id"):
             continue
         occurred_at = _parse_timestamp(event["occurred_at"], field="occurred_at")
-        in_range = start <= occurred_at <= end if include_end else start <= occurred_at < end
-        if in_range and topic in event["topics"]:
+        if start <= occurred_at <= end and topic in event["topics"]:
             result.append(event)
     return sorted(result, key=lambda event: event["event_id"])
 
 
-def _trend_counts(
-    events: list[Mapping[str, Any]],
-    topic: str,
-    *,
-    cutoff: datetime,
-    duration: timedelta,
-) -> dict[str, int]:
-    current_start = cutoff - duration
-    previous_start = current_start - duration
-    pre_previous_start = previous_start - duration
-    return {
-        "current": len(
-            _events_for_topic(
-                events,
-                topic,
-                start=current_start,
-                end=cutoff,
-                canonical_only=True,
-            )
-        ),
-        "previous": len(
-            _events_for_topic(
-                events,
-                topic,
-                start=previous_start,
-                end=current_start,
-                include_end=False,
-                canonical_only=True,
-            )
-        ),
-        "pre_previous": len(
-            _events_for_topic(
-                events,
-                topic,
-                start=pre_previous_start,
-                end=previous_start,
-                include_end=False,
-                canonical_only=True,
-            )
-        ),
-    }
-
-
-def _signal_state(counts: Mapping[str, int]) -> str:
-    current = counts["current"]
-    previous = counts["previous"]
-    if previous == 0 and current >= MINIMUM_UNIQUE_EVENTS:
+def _signal_state(counts: Mapping[str, int], comparison: Mapping[str, Any]) -> str:
+    if not comparison["baseline_available"]:
+        return "insufficient_baseline"
+    if counts["previous"] == 0 and not comparison["has_prior_evidence"]:
         return "new"
+    sample_counts = comparison["sample_counts"]
+    # Compare shares exactly so display rounding cannot change the direction.
+    current = counts["current"] * sample_counts["previous"]
+    previous = counts["previous"] * sample_counts["current"]
     if current > previous:
         return "rising"
     if current == previous:
@@ -1166,6 +1182,7 @@ def _trend_projection(
     events: list[Mapping[str, Any]],
     cutoff: datetime,
     duration: timedelta,
+    topic_metadata: Mapping[str, Mapping[str, str]],
 ) -> dict[str, Any]:
     topic = str(trend["topic"])
     topic_id = f"tag:{topic}"
@@ -1175,18 +1192,31 @@ def _trend_projection(
         start=cutoff - duration,
         end=cutoff,
     )
-    counts = _trend_counts(events, topic, cutoff=cutoff, duration=duration)
+    counts = trend["counts"]
+    comparison = trend["comparison"]
+    state = _signal_state(counts, comparison)
     facets = _event_facets(current_events)
     observations = int(trend["observations"])
     unique_events = int(trend["unique_events"])
     source_diversity = len({str(event["source"]) for event in current_events})
+    display = dict(topic_metadata.get(topic, {}))
+    if display:
+        newest = max(
+            (event for event in current_events if event["event_id"] == event["canonical_event_id"]),
+            key=lambda event: (event["occurred_at"], event["event_id"]),
+        )
+        display["description"] = f'{display["description"]} 最近收录《{newest["title"]}》。'
     return {
         "id": topic_id,
         "topic": topic,
         "graph_node_id": topic_id,
         "score": trend["score"],
-        "state": _signal_state(counts),
-        "confidence": _confidence(trend["unique_events"], trend["unique_sources"]),
+        "state": state,
+        "confidence": (
+            _confidence(trend["unique_events"], trend["unique_sources"])
+            if comparison["baseline_available"]
+            else "medium"
+        ),
         "unique_events": unique_events,
         "observations": observations,
         "redundant_observations": max(0, observations - unique_events),
@@ -1194,6 +1224,7 @@ def _trend_projection(
         "unique_sources": trend["unique_sources"],
         "duplicate_rate": trend["duplicate_rate"],
         "counts": counts,
+        "comparison": comparison,
         "components": trend["components"],
         "sparkline": _sparkline(
             events,
@@ -1203,6 +1234,7 @@ def _trend_projection(
         ),
         "sources": facets["sources"],
         "scenarios": facets["scenarios"],
+        **display,
     }
 
 
@@ -1219,6 +1251,7 @@ def _related_topics(
     *,
     topic: str,
     events: list[Mapping[str, Any]],
+    topic_metadata: Mapping[str, Mapping[str, str]],
 ) -> list[dict[str, Any]]:
     topic_events = [event for event in events if topic in event["topics"]]
     topic_event_ids = {event["canonical_event_id"] for event in topic_events}
@@ -1239,7 +1272,7 @@ def _related_topics(
             {
                 "id": topic_id,
                 "topic": label,
-                "graph_node_id": topic_id,
+                "graph_node_id": topic_metadata.get(label, {}).get("graph_node_id", topic_id),
                 "cooccurrence": cooccurrence,
                 "jaccard": round(cooccurrence / union, 6) if union else 0,
             }
@@ -1319,6 +1352,7 @@ def _topic_payload(
     events: list[Mapping[str, Any]],
     cutoff: datetime,
     data_as_of: str,
+    topic_metadata: Mapping[str, Mapping[str, str]],
 ) -> dict[str, Any]:
     topic_id = f"tag:{topic}"
     thirty_days = _events_for_topic(
@@ -1344,6 +1378,7 @@ def _topic_payload(
                 "unique_sources": projected["unique_sources"],
                 "source_diversity": projected["source_diversity"],
                 "counts": projected["counts"],
+                "comparison": projected["comparison"],
                 "sparkline": projected["sparkline"],
             }
         )
@@ -1358,6 +1393,7 @@ def _topic_payload(
         "related_topics": _related_topics(
             topic=topic,
             events=thirty_days,
+            topic_metadata=topic_metadata,
         ),
         "sources": _facet(str(event["source"]) for event in thirty_days),
         "scenarios": _facet(
@@ -1367,6 +1403,7 @@ def _topic_payload(
             category for event in thirty_days for category in event.get("categories", [])
         ),
         "evidence": ordered_evidence,
+        **topic_metadata.get(topic, {}),
     }
 
 
@@ -1439,11 +1476,13 @@ def build_stack_trends(
         as_of=as_of,
     )
     events = dataset["events"]
+    topic_metadata = dataset["topic_metadata"]
     cutoff = _parse_timestamp(dataset["as_of"], field="as_of")
     calculated = calculate_trends(
         events,
         as_of=cutoff,
         minimum_unique_events=MINIMUM_UNIQUE_EVENTS,
+        compare_coverage=True,
     )
     durations = _duration_by_name()
 
@@ -1457,6 +1496,7 @@ def build_stack_trends(
                 events=events,
                 cutoff=cutoff,
                 duration=durations[window_name],
+                topic_metadata=topic_metadata,
             )
             for trend in trends
         ]
@@ -1480,6 +1520,7 @@ def build_stack_trends(
             events=events,
             cutoff=cutoff,
             data_as_of=dataset["data_as_of"],
+            topic_metadata=topic_metadata,
         )
         _scan_public_value(payload)
         body = _stable_json_bytes(payload)
@@ -1510,11 +1551,11 @@ def build_stack_trends(
             event for event in events if event["canonical_event_id"] in evidence_ids
         ]
         facets = _event_facets(evidence)
-        sample_notice = (
-            "样本量较小，建议结合更长时间窗口判断。"
-            if len(projected) < 3 or len(evidence) < 30
-            else None
-        )
+        sample_notice = None
+        if any(trend["state"] == "insufficient_baseline" for trend in projected):
+            sample_notice = "可比较的采样覆盖不足。标为「基线不足」的议题暂不判断升温或降温。"
+        elif len(projected) < 3 or len(evidence) < 30:
+            sample_notice = "样本量较小，建议结合更长时间窗口判断。"
         payload = {
             "schema_version": WINDOW_SCHEMA_VERSION,
             "window": window_name,
@@ -1666,7 +1707,13 @@ def _verify_topic_identity(
     topic = payload.get("topic")
     if not isinstance(topic, str) or not topic or f"tag:{topic}" != expected_id:
         raise StackTrendsValidationError(f"topic identity mismatch: {location}")
-    if payload.get("id") != expected_id or payload.get("graph_node_id") != expected_id:
+    graph_node_id = payload.get("graph_node_id")
+    if (
+        payload.get("id") != expected_id
+        or not isinstance(graph_node_id, str)
+        or not graph_node_id.startswith("tag:")
+        or not graph_node_id[4:].strip()
+    ):
         raise StackTrendsValidationError(f"topic identity mismatch: {location}")
 
 
@@ -1878,6 +1925,8 @@ def verify_stack_trends(
                 raise StackTrendsValidationError(f"trend topic reference missing: {relative}")
             if trend.get("detail_path") != expected_detail:
                 raise StackTrendsValidationError(f"trend detail_path mismatch: {relative}")
+            if trend["graph_node_id"] != topic_payloads[trend_id]["graph_node_id"]:
+                raise StackTrendsValidationError(f"trend graph node mismatch: {relative}")
             if is_v2:
                 unique_events = _verified_count(
                     trend.get("unique_events"), field=f"{relative} unique_events"
