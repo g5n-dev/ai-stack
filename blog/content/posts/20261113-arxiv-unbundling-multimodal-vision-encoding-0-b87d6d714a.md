@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:78337f4beca5eff033ac711de02093230243a1f8f10faf989
 description: "这项研究将多模态模型的视觉编码拆解为视觉先验、独立视觉容量，以及视觉模块在融合前的位置，并在统一数据、训练条件和计算预算下进行比较。结果表明，独立视觉容量更关键，而视觉模块不必单独放在多模态融合之前。"
 external_url: http://arxiv.org/abs/2611.17334v1
 parent_observation_id: null
-last_seen_at: 2026-11-13T07:55:36.482520Z
+last_seen_at: 2026-11-14T00:00:00Z
 ---
 
 ## 基本信息

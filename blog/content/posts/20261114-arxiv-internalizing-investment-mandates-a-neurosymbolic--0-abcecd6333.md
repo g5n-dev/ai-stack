@@ -15,7 +15,7 @@ observation_id: obs_abcecd6333f5ed1bdbe0e7085d07e9646945ccac172ebdf75fc1cf1a93e3
 event_id: evt_3ef71bf30bbf1eb5c3cf423bddacd2d7b0c4cd80dae9f6ba8fd1f3ac680f837f
 revision_id: rev_db2c6a9c60de79eb29267d29c985fff6337b7c151ef509cad54528f9aaf98752
 source_published_at: 2026-11-12T18:59:37Z
-first_seen_at: 2026-11-13T22:36:39.139228Z
+first_seen_at: 2026-11-13T22:47:22Z
 timestamp_confidence: publisher
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:7224731e352dbd21e561a120ddbf410d3c7461a77dae7029c
 description: "论文将可微分的符号逻辑监督引入连续资产配置，使智能体在学习过程中掌握投资政策声明的约束，而非在执行后补救违规。实验显示，在六条随市场状态变化的规则下，违规率明显低于无约束强化学习和奖励惩罚方法。"
 external_url: http://arxiv.org/abs/2611.17329v1
 parent_observation_id: null
-last_seen_at: 2026-11-13T22:36:39.139228Z
+last_seen_at: 2026-11-14T00:00:00Z
 ---
 
 ## 基本信息
