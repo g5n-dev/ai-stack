@@ -1,8 +1,8 @@
 {
-  "active_count": 3182,
+  "active_count": 3183,
   "archived_count": 276,
   "complete_count": 94,
-  "interpreted_brief_count": 342,
+  "interpreted_brief_count": 343,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23762,6 +23762,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20261115-arxiv-coremem-cost-internalizing-memory-for-successive-c-0-21fb7be8e1.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261115-hacker_news-generative-ai-uses-more-energy-on-non-english-text-7-491f8d171c.md": {
       "reasons": [
         "concise_source_card"
@@ -23802,9 +23808,9 @@
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2746,
-  "source_file_count": 3458,
-  "source_tree_sha256": "3a8b4f9e3e2ced977b077e49a1fa11a6d58ae4c3158e8b1b9499df36c401fcbf",
-  "verified_provenance_count": 3182,
+  "source_file_count": 3459,
+  "source_tree_sha256": "8c6c5e7aaf93a53c58d87b395257fc9e6274c433eb674a8e1eb8cc36227a62f9",
+  "verified_provenance_count": 3183,
   "warning_counts": {
     "source_excerpt_truncated": 825
   }
