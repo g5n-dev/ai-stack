@@ -23,11 +23,11 @@
       "focus-shards/000-a2cf835b15a3.json",
       "focus-shards/001-555b7d0762cc.json",
       "focus-shards/002-1f6580b97e6b.json",
-      "focus-shards/003-438b906440b1.json",
+      "focus-shards/003-f452fe734518.json",
       "focus-shards/004-08a9b1380f4a.json",
       "focus-shards/005-730d1a52eb3d.json",
       "focus-shards/006-b17b6eece700.json",
-      "focus-shards/007-f93f348c4ad0.json",
+      "focus-shards/007-cd3d20ae7062.json",
       "focus-shards/008-04bb1de327fc.json",
       "focus-shards/009-8192c91e5b3e.json",
       "focus-shards/010-82102f585f91.json",
@@ -82,7 +82,7 @@
       "focus-shards/059-7621eb5f1505.json",
       "focus-shards/060-10a78529f35b.json",
       "focus-shards/061-8a3cfe7d370f.json",
-      "focus-shards/062-dfaa8be2d81e.json",
+      "focus-shards/062-1d10d56fc045.json",
       "focus-shards/063-fd0439bf9417.json",
       "focus-shards/064-ee6be01f98b2.json",
       "focus-shards/065-ec8837379f8c.json",
@@ -92,7 +92,7 @@
       "focus-shards/069-eac25151e0b4.json",
       "focus-shards/070-d5c9ca6d0405.json",
       "focus-shards/071-18b1500e044a.json",
-      "focus-shards/072-a18318678295.json",
+      "focus-shards/072-e6eb49fd673b.json",
       "focus-shards/073-cf1c0d9ca09c.json",
       "focus-shards/074-9d5103f231ff.json",
       "focus-shards/075-3b1443b328c1.json",
@@ -153,7 +153,7 @@
     "tag": "tag.json",
     "tagHot": "tag.hot.json"
   },
-  "generated_at": "2026-11-14T21:29:47Z",
+  "generated_at": "2026-11-15T01:54:54Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -193,7 +193,7 @@
   },
   "stats": {
     "links_by_type": {
-      "cooccurrence": 1492,
+      "cooccurrence": 1493,
       "relation": 71,
       "semantic": 39
     },
@@ -209,7 +209,7 @@
       "archived_article_files_skipped": 276,
       "archived_article_groups_skipped": 276,
       "avg_concepts_per_article": 0,
-      "avg_tags_per_article": 2.8762174049638705,
+      "avg_tags_per_article": 2.876570351758794,
       "canonical_duplicate_files_skipped": 0,
       "incomplete_article_files_skipped": 0,
       "incomplete_article_groups_skipped": 0,
@@ -254,7 +254,7 @@
         [
           "来源快报",
           {
-            "article_count": 921,
+            "article_count": 922,
             "category": "article_tag",
             "description": "文章标签: 来源快报",
             "id": "来源快报",
@@ -266,7 +266,7 @@
         [
           "ArXiv",
           {
-            "article_count": 897,
+            "article_count": 898,
             "category": "article_tag",
             "description": "文章标签: ArXiv",
             "id": "ArXiv",
@@ -278,15 +278,15 @@
       ],
       "synthetic_article_files_skipped": 0,
       "synthetic_article_groups_skipped": 0,
-      "total_articles": 3183,
+      "total_articles": 3184,
       "total_concept_links": 0,
       "total_concepts": 0,
-      "total_tag_links": 1492,
+      "total_tag_links": 1493,
       "total_tags": 216
     },
-    "total_articles": 3183,
+    "total_articles": 3184,
     "total_communities": 12,
-    "total_links": 1602,
+    "total_links": 1603,
     "total_nodes": 285
   },
   "version": 2

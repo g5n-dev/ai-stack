@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:c5c6f3eb0818445d2f6918387ca101afa92c7229c7883ee7
 source_payload_sha256: "sha256:7944e3418e35ddf229a5134f7cce555c7b74c7828c8e86429c8f5cc3070f7de2"
 observation_id: obs_4536e10993f7030af8c202010afc26234a100576c2a235c65b97303580c3bc39
 event_id: evt_977d02a4da406cd8e25ea62cd18a8c0116d1703e436ad59d1f331dd726a06b88
-revision_id: rev_9a7de8ba6c60f8b9c9dc5a0027bd89455454c29cc37f88ced5245034d0309d44
+revision_id: rev_93c2d15715c172375a723a4d7b722203c6446c0a123b172387ea492823eef13a
 source_published_at: 2026-11-13T23:22:09Z
 first_seen_at: 2026-11-14T03:24:33Z
 timestamp_confidence: feed
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:1cb11d3d80fe96364c8aeda2417286fe5a4b892ac999693b3
 description: "GS Caltex 介绍了如何将 Amazon SageMaker Canvas 中构建并验证的模型与预处理流程，接入 Amazon SageMaker Pipelines 的生产工作流。其目标是缩短部署周期，并支持定时批量推理。"
 external_url: https://aws.amazon.com/blogs/machine-learning/production-mlops-at-gs-caltex-with-amazon-sagemaker-canvas-part-1
 parent_observation_id: null
-last_seen_at: 2026-11-14T03:12:32.764589Z
+last_seen_at: 2026-11-15T00:00:00Z
 ---
 
 ## 基本信息

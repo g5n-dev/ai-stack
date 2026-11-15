@@ -15,7 +15,7 @@ observation_id: obs_21fb7be8e1ad838382dac69bd380e79bc41ed2c103bc993095e2b1120932
 event_id: evt_155205a4f5d7b2566ae335294c006f4b5c3d321a75bbada04827a522ad888bcd
 revision_id: rev_541191e878afec0ad82e8191125e5684c5d3554ff35e4ed5c8d91adbd902a8d5
 source_published_at: 2026-11-12T18:58:22Z
-first_seen_at: 2026-11-14T21:28:36.481647Z
+first_seen_at: 2026-11-14T21:41:16Z
 timestamp_confidence: publisher
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:7fd47996a2e65659a6ebcc6730653f5d5c5ebbdc38fc492be
 description: "CoReMem 是一种面向连续编程任务的记忆框架，在写入、读取记忆时权衡成本与未来收益。它通过比较下一任务在不同记忆条件下的表现，筛选更有价值的代码库位置与可执行检查。"
 external_url: http://arxiv.org/abs/2611.17316v1
 parent_observation_id: null
-last_seen_at: 2026-11-14T21:28:36.481647Z
+last_seen_at: 2026-11-15T00:00:00Z
 ---
 
 ## 基本信息

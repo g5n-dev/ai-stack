@@ -1,8 +1,8 @@
 {
-  "active_count": 3183,
+  "active_count": 3184,
   "archived_count": 276,
   "complete_count": 94,
-  "interpreted_brief_count": 343,
+  "interpreted_brief_count": 344,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23768,6 +23768,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20261115-arxiv-sketching-language-models-for-context-attribution-1-b4bd2b3d30.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261115-hacker_news-generative-ai-uses-more-energy-on-non-english-text-7-491f8d171c.md": {
       "reasons": [
         "concise_source_card"
@@ -23808,9 +23814,9 @@
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2746,
-  "source_file_count": 3459,
-  "source_tree_sha256": "8c6c5e7aaf93a53c58d87b395257fc9e6274c433eb674a8e1eb8cc36227a62f9",
-  "verified_provenance_count": 3183,
+  "source_file_count": 3460,
+  "source_tree_sha256": "ceeb4afe4067d0622cb76b7814601cf9d957893c97414e6d7e411cdfa8683387",
+  "verified_provenance_count": 3184,
   "warning_counts": {
     "source_excerpt_truncated": 825
   }

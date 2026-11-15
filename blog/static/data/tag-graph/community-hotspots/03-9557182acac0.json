@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:Gemini Notebook",
-  "generated_at": "2026-11-14T21:29:47Z",
+  "generated_at": "2026-11-15T01:54:54Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -462,7 +462,7 @@
       "legacy_id": "Gemini Notebook",
       "level": 6,
       "name": "Gemini Notebook",
-      "rank": 193,
+      "rank": 194,
       "related_count": 5,
       "weighted_degree": 5
     },
@@ -479,7 +479,7 @@
       "legacy_id": "Google Health",
       "level": 6,
       "name": "Google Health",
-      "rank": 194,
+      "rank": 195,
       "related_count": 5,
       "weighted_degree": 5
     },
@@ -496,7 +496,7 @@
       "legacy_id": "Travel",
       "level": 6,
       "name": "Travel",
-      "rank": 202,
+      "rank": 203,
       "related_count": 4,
       "weighted_degree": 4
     }
