@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:39f873177219c44274f2b508b643c549190359845d1fcbab2
 description: "AgentSSL 研究 MLE 智能体在标注数据有限、未标注数据丰富时，能否自动组合并改进半监督学习方案。实验显示其在多数设置中超过人工基线，但程序选择仍会造成明显性能下降，并配套提出 ProgramSelectBench 基准。"
 external_url: http://arxiv.org/abs/2611.17323v1
 parent_observation_id: null
-last_seen_at: 2026-11-14T03:12:22.680622Z
+last_seen_at: 2026-11-15T00:00:00Z
 ---
 
 ## 基本信息

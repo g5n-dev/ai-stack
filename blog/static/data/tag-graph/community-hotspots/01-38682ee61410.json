@@ -1,6 +1,6 @@
 {
   "community_id": "community:tag:大语言模型",
-  "generated_at": "2026-11-14T21:29:47Z",
+  "generated_at": "2026-11-15T01:54:54Z",
   "hotspot_limit": 24,
   "link_limit": 32,
   "links": [
@@ -26,7 +26,7 @@
       "strength": 1,
       "target": "tag:来源快报",
       "type": "cooccurrence",
-      "weight": 343
+      "weight": 344
     },
     {
       "id": "edge:cooccurrence:tag:大语言模型->tag:来源快报",
@@ -297,7 +297,7 @@
       "weighted_degree": 2828.2
     },
     {
-      "article_count": 921,
+      "article_count": 922,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -311,10 +311,10 @@
       "name": "来源快报",
       "rank": 3,
       "related_count": 127,
-      "weighted_degree": 2747
+      "weighted_degree": 2750
     },
     {
-      "article_count": 897,
+      "article_count": 898,
       "category": "article_tag",
       "color": "#f59e0b",
       "community_id": "community:tag:大语言模型",
@@ -328,7 +328,7 @@
       "name": "ArXiv",
       "rank": 5,
       "related_count": 49,
-      "weighted_degree": 1540
+      "weighted_degree": 1543
     },
     {
       "article_count": 560,

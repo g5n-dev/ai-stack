@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:325566c459461bb0b52ca74d671d28fa403823e1697e88772
 description: "该工作提出一种名为 DiVR 的验证器，用于判断扩散语言模型的部分生成结果是否可能得到正确答案，并据此决定是否重生成文本块及保留哪个候选方案。生成器本身无需改变。"
 external_url: http://arxiv.org/abs/2611.17320v1
 parent_observation_id: null
-last_seen_at: 2026-11-14T10:22:45.783425Z
+last_seen_at: 2026-11-15T00:00:00Z
 ---
 
 ## 基本信息

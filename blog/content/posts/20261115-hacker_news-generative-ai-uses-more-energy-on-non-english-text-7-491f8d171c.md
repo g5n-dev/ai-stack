@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:3237fde5e524079d767c9a59141eb36b3c62498bc01ad622
 source_payload_sha256: "sha256:3646ffc179fb0b331ef0952c8e5951d01b813d1ad9c221a00ced32ed3c9e99fa"
 observation_id: obs_491f8d171c272620910c10d47dd77e7f01112e1d5725f272b9085b994d738116
 event_id: evt_368f8e2771fa712e12784e0ac21c3de67c1158956a257afd5d28ebfb838ed314
-revision_id: rev_8d5bb8bc6a03c13fa8d731b99582af54a89ed3d83cddc8db7f212c940c755288
+revision_id: rev_178d40e925d4c89a1f54d47e830dd1f5f8d24626a853f3e83fbc77ee040f0824
 source_published_at: 2026-11-10T15:07:28Z
 first_seen_at: 2026-11-14T17:17:40Z
 timestamp_confidence: platform
@@ -27,7 +27,7 @@ source_title_chars_original: 50
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://news.umich.edu/generative-ai-uses-more-energy-on-non-english-text
 parent_observation_id: null
-last_seen_at: 2026-11-14T17:05:20.430077Z
+last_seen_at: 2026-11-15T00:00:00Z
 ---
 
 ## 基本信息

@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:7224731e352dbd21e561a120ddbf410d3c7461a77dae7029c
 description: "论文将可微分的符号逻辑监督引入连续资产配置，使智能体在学习过程中掌握投资政策声明的约束，而非在执行后补救违规。实验显示，在六条随市场状态变化的规则下，违规率明显低于无约束强化学习和奖励惩罚方法。"
 external_url: http://arxiv.org/abs/2611.17329v1
 parent_observation_id: null
-last_seen_at: 2026-11-14T00:00:00Z
+last_seen_at: 2026-11-15T00:00:00Z
 ---
 
 ## 基本信息
