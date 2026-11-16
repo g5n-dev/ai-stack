@@ -1,5 +1,5 @@
 {
-  "active_count": 3184,
+  "active_count": 3186,
   "archived_count": 276,
   "complete_count": 94,
   "interpreted_brief_count": 344,
@@ -23779,6 +23779,18 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20261116-blogs_podcasts-a-step-toward-defining-the-standard-model-on-a-lat-0-2e8f421d2e.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261116-hacker_news-claude-code-and-codex-reverse-engineered-my-1994-j-12-f3ec7aca50.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -23813,10 +23825,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2746,
-  "source_file_count": 3460,
-  "source_tree_sha256": "ceeb4afe4067d0622cb76b7814601cf9d957893c97414e6d7e411cdfa8683387",
-  "verified_provenance_count": 3184,
+  "source_brief_count": 2748,
+  "source_file_count": 3462,
+  "source_tree_sha256": "b869a9b5ea15abcfc59310971efad9c63c61e669508692dfcfda276fb9556422",
+  "verified_provenance_count": 3186,
   "warning_counts": {
     "source_excerpt_truncated": 825
   }

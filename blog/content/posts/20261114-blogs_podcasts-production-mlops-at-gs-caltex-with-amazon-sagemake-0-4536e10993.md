@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:1cb11d3d80fe96364c8aeda2417286fe5a4b892ac999693b3
 description: "GS Caltex 介绍了如何将 Amazon SageMaker Canvas 中构建并验证的模型与预处理流程，接入 Amazon SageMaker Pipelines 的生产工作流。其目标是缩短部署周期，并支持定时批量推理。"
 external_url: https://aws.amazon.com/blogs/machine-learning/production-mlops-at-gs-caltex-with-amazon-sagemaker-canvas-part-1
 parent_observation_id: null
-last_seen_at: 2026-11-15T00:00:00Z
+last_seen_at: 2026-11-16T00:00:00Z
 ---
 
 ## 基本信息
