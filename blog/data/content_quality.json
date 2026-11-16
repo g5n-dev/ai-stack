@@ -1,8 +1,8 @@
 {
-  "active_count": 3189,
+  "active_count": 3192,
   "archived_count": 276,
-  "complete_count": 95,
-  "interpreted_brief_count": 345,
+  "complete_count": 96,
+  "interpreted_brief_count": 347,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23803,6 +23803,18 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20261117-arxiv-bal-bidirectional-autoregression-in-latent-space-f-2-bb23effe0a.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20261117-blogs_podcasts-how-moengage-built-agentic-customer-engagement-on--0-38a73038f4.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
     }
   },
   "quarantined_count": 0,
@@ -23838,9 +23850,9 @@
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2749,
-  "source_file_count": 3465,
-  "source_tree_sha256": "ccd46065afbc1b60044a2804734bcf2f3597b4b6527e0a9ba196e9a51b6c6533",
-  "verified_provenance_count": 3189,
+  "source_file_count": 3468,
+  "source_tree_sha256": "4de8bf43b2a86d543a7a6ec0dbc565a2ccb66207071c801680a7cdfa496a3b9a",
+  "verified_provenance_count": 3192,
   "warning_counts": {
     "source_excerpt_truncated": 825
   }
