@@ -1,8 +1,8 @@
 {
-  "active_count": 3186,
+  "active_count": 3189,
   "archived_count": 276,
-  "complete_count": 94,
-  "interpreted_brief_count": 344,
+  "complete_count": 95,
+  "interpreted_brief_count": 345,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23780,7 +23780,19 @@
       ],
       "status": "source_brief"
     },
+    "posts/20261116-arxiv-training-reasoning-models-in-simulation-to-nativel-2-084301ebd6.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261116-blogs_podcasts-a-step-toward-defining-the-standard-model-on-a-lat-0-2e8f421d2e.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261116-blogs_podcasts-our-new-blog-for-science-0-33b95c2112.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -23825,10 +23837,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2748,
-  "source_file_count": 3462,
-  "source_tree_sha256": "b869a9b5ea15abcfc59310971efad9c63c61e669508692dfcfda276fb9556422",
-  "verified_provenance_count": 3186,
+  "source_brief_count": 2749,
+  "source_file_count": 3465,
+  "source_tree_sha256": "ccd46065afbc1b60044a2804734bcf2f3597b4b6527e0a9ba196e9a51b6c6533",
+  "verified_provenance_count": 3189,
   "warning_counts": {
     "source_excerpt_truncated": 825
   }
