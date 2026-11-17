@@ -1,8 +1,8 @@
 {
-  "active_count": 3198,
+  "active_count": 3201,
   "archived_count": 276,
   "complete_count": 97,
-  "interpreted_brief_count": 349,
+  "interpreted_brief_count": 351,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23845,6 +23845,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20261118-arxiv-vira-toward-ultra-high-resolution-visual-agents-vi-0-51009fb859.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20261118-blogs_podcasts-cut-generative-ai-costs-code-for-rules-models-for--0-ecd295cd80.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20261118-hacker_news-launch-hn-starsling-yc-p25-self-improving-ci-for-a-14-7bd4069e0f.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -23879,10 +23897,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2752,
-  "source_file_count": 3474,
-  "source_tree_sha256": "a462151066082da2afd7c8517f5bfabe3d5ee9ed260d36110f644bc8297343d5",
-  "verified_provenance_count": 3198,
+  "source_brief_count": 2753,
+  "source_file_count": 3477,
+  "source_tree_sha256": "25a326fab783b1d0781af82062a2ee0b2133c96446fee56e6768cc3ba6779456",
+  "verified_provenance_count": 3201,
   "warning_counts": {
     "source_excerpt_truncated": 825
   }
