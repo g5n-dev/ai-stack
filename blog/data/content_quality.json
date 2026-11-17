@@ -1,8 +1,8 @@
 {
-  "active_count": 3195,
+  "active_count": 3198,
   "archived_count": 276,
   "complete_count": 97,
-  "interpreted_brief_count": 348,
+  "interpreted_brief_count": 349,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23816,11 +23816,29 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20261117-arxiv-latent-lattice-language-models-0-fc2354f6ba.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261117-blogs_podcasts-ainews-perplexity-hits-a-1b-revenue-run-rate-up-4x-0-c2b6352c27.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261117-blogs_podcasts-how-moengage-built-agentic-customer-engagement-on--0-38a73038f4.md": {
       "reasons": [
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20261117-hacker_news-how-the-claude-code-team-thinks-about-verification-12-9a0aa0e71b.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20261117-hacker_news-windows-11-is-collecting-data-on-which-coding-agen-1-d586dccccf.md": {
       "reasons": [
@@ -23861,10 +23879,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2750,
-  "source_file_count": 3471,
-  "source_tree_sha256": "8749567991bf425bcf955b3b28823d9fb8aeeb4c29ce4571a6dff4dd242a4c91",
-  "verified_provenance_count": 3195,
+  "source_brief_count": 2752,
+  "source_file_count": 3474,
+  "source_tree_sha256": "a462151066082da2afd7c8517f5bfabe3d5ee9ed260d36110f644bc8297343d5",
+  "verified_provenance_count": 3198,
   "warning_counts": {
     "source_excerpt_truncated": 825
   }
