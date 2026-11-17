@@ -15,7 +15,7 @@ observation_id: obs_38a73038f401258c1101cee1b87d010cae924cf6e06991abb42f655846d0
 event_id: evt_98de93f0e32c6857ffd11454fbfe512bba28bc245568db1d3b67b9601ed8f6af
 revision_id: rev_25e48287736fe30fd99788d69189a496817b57cac2d30e3720265d8178299b6d
 source_published_at: 2026-11-16T18:16:07Z
-first_seen_at: 2026-11-16T20:27:54.749369Z
+first_seen_at: 2026-11-16T20:39:02Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:6c6a9c16687e2eed6a230b03bb90616ef839f8907e08a9e3b
 description: "MoEngage 介绍其如何利用 Amazon Bedrock 与 Amazon Bedrock AgentCore 构建 Merlin AI，并通过 MCP 将分群、历史活动和内容库等能力开放给 Claude、ChatGPT 等兼容客户端。"
 external_url: https://aws.amazon.com/blogs/machine-learning/how-moengage-built-agentic-customer-engagement-on-amazon-bedrock-agentcore
 parent_observation_id: null
-last_seen_at: 2026-11-16T20:27:54.749369Z
+last_seen_at: 2026-11-17T00:00:00Z
 ---
 
 ## 基本信息

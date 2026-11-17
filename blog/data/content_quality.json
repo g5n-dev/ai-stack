@@ -1,8 +1,8 @@
 {
-  "active_count": 3192,
+  "active_count": 3195,
   "archived_count": 276,
-  "complete_count": 96,
-  "interpreted_brief_count": 347,
+  "complete_count": 97,
+  "interpreted_brief_count": 348,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23810,11 +23810,23 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20261117-arxiv-found-but-not-fixed-from-software-vulnerability-di-0-0ba4088e5d.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261117-blogs_podcasts-how-moengage-built-agentic-customer-engagement-on--0-38a73038f4.md": {
       "reasons": [
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20261117-hacker_news-windows-11-is-collecting-data-on-which-coding-agen-1-d586dccccf.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -23849,10 +23861,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2749,
-  "source_file_count": 3468,
-  "source_tree_sha256": "4de8bf43b2a86d543a7a6ec0dbc565a2ccb66207071c801680a7cdfa496a3b9a",
-  "verified_provenance_count": 3192,
+  "source_brief_count": 2750,
+  "source_file_count": 3471,
+  "source_tree_sha256": "8749567991bf425bcf955b3b28823d9fb8aeeb4c29ce4571a6dff4dd242a4c91",
+  "verified_provenance_count": 3195,
   "warning_counts": {
     "source_excerpt_truncated": 825
   }
