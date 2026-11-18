@@ -15,7 +15,7 @@ observation_id: obs_ecd295cd80fbdb5f0bdd3a6049720c3cb955c7794916b348e1fbc196d4c1
 event_id: evt_a34ab54f5ecae222e1836853e0a1863a9d9dd10307b133f33781403a03bf0ab4
 revision_id: rev_4adfe656c5b7dfde5adae8b8b9822ff0465e1323a0abf6de9593f12a1e6f02d8
 source_published_at: 2026-11-17T21:14:55Z
-first_seen_at: 2026-11-17T22:20:49.757319Z
+first_seen_at: 2026-11-17T22:31:00Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:c9366ff5594acef00e1344b35bf1f75667cba64d21c19da3e
 description: "这是一篇关于降低生成式 AI 系统成本的实践文章，主张先判断每个工作流步骤是否真的需要调用模型：能用确定性规则完成的任务交给代码，只有开放、含糊或需要生成的任务才交给模型。文章还介绍了固定选项决策、结构化输出与分层升级等实现方式，并结合 Amazon Bedrock 和 AWS 工作流服务说明落地路径。"
 external_url: https://aws.amazon.com/blogs/machine-learning/cut-generative-ai-costs-code-for-rules-models-for-judgment
 parent_observation_id: null
-last_seen_at: 2026-11-17T22:20:49.757319Z
+last_seen_at: 2026-11-18T00:00:00Z
 ---
 
 ## 基本信息

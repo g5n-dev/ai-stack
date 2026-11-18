@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:093bf9135b0d73c0339967e6305694a00da14d364ef52a170
 description: "这期 AI 行业简报重点关注 Perplexity 年化收入突破 10 亿美元及估值变化，同时汇总 Qwen4-Max、模型安全评估、智能体基础设施和推理性能等进展。"
 external_url: https://latent.space/p/ainews-perplexity-hits-a-1b-revenue-run-rate-up-4x-in-2026
 parent_observation_id: null
-last_seen_at: 2026-11-17T13:22:13.679637Z
+last_seen_at: 2026-11-18T00:00:00Z
 ---
 
 ## 基本信息

@@ -12,10 +12,10 @@
     "community_id",
     "rank"
   ],
-  "generated_at": "2026-11-17T22:21:53Z",
+  "generated_at": "2026-11-18T04:19:39Z",
   "items": [
     {
-      "article_count": 1005,
+      "article_count": 1006,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 97,
@@ -25,10 +25,10 @@
       "legacy_id": "AI Agent",
       "name": "AI Agent",
       "rank": 1,
-      "weighted_degree": 3113.2
+      "weighted_degree": 3120.2
     },
     {
-      "article_count": 932,
+      "article_count": 934,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 109,
@@ -38,10 +38,10 @@
       "legacy_id": "大语言模型",
       "name": "大语言模型",
       "rank": 2,
-      "weighted_degree": 2866.2
+      "weighted_degree": 2876.2
     },
     {
-      "article_count": 935,
+      "article_count": 937,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 129,
@@ -51,7 +51,7 @@
       "legacy_id": "来源快报",
       "name": "来源快报",
       "rank": 3,
-      "weighted_degree": 2794
+      "weighted_degree": 2799
     },
     {
       "article_count": 575,
@@ -67,7 +67,7 @@
       "weighted_degree": 1760
     },
     {
-      "article_count": 903,
+      "article_count": 904,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 49,
@@ -77,10 +77,10 @@
       "legacy_id": "ArXiv",
       "name": "ArXiv",
       "rank": 5,
-      "weighted_degree": 1561
+      "weighted_degree": 1564
     },
     {
-      "article_count": 563,
+      "article_count": 564,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 26,
@@ -90,10 +90,10 @@
       "legacy_id": "掘金",
       "name": "掘金",
       "rank": 6,
-      "weighted_degree": 1414
+      "weighted_degree": 1416
     },
     {
-      "article_count": 208,
+      "article_count": 209,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 74,
@@ -103,10 +103,10 @@
       "legacy_id": "生成式 AI",
       "name": "生成式 AI",
       "rank": 7,
-      "weighted_degree": 935
+      "weighted_degree": 942
     },
     {
-      "article_count": 1057,
+      "article_count": 1058,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 21,
@@ -116,10 +116,10 @@
       "legacy_id": "Hacker News",
       "name": "Hacker News",
       "rank": 8,
-      "weighted_degree": 850
+      "weighted_degree": 852
     },
     {
-      "article_count": 140,
+      "article_count": 141,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 58,
@@ -129,7 +129,7 @@
       "legacy_id": "Prompt 工程",
       "name": "Prompt 工程",
       "rank": 9,
-      "weighted_degree": 786
+      "weighted_degree": 793
     },
     {
       "article_count": 183,
@@ -171,7 +171,7 @@
       "weighted_degree": 620.6
     },
     {
-      "article_count": 239,
+      "article_count": 240,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 63,
@@ -181,7 +181,7 @@
       "legacy_id": "AI",
       "name": "AI",
       "rank": 13,
-      "weighted_degree": 599.6
+      "weighted_degree": 601.6
     },
     {
       "article_count": 146,
@@ -223,7 +223,7 @@
       "weighted_degree": 470
     },
     {
-      "article_count": 54,
+      "article_count": 55,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 40,
@@ -233,7 +233,7 @@
       "legacy_id": "Advanced (300)",
       "name": "Advanced (300)",
       "rank": 17,
-      "weighted_degree": 360
+      "weighted_degree": 367
     },
     {
       "article_count": 51,
@@ -288,7 +288,7 @@
       "weighted_degree": 311
     },
     {
-      "article_count": 47,
+      "article_count": 48,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 32,
@@ -298,7 +298,7 @@
       "legacy_id": "Announcements",
       "name": "Announcements",
       "rank": 22,
-      "weighted_degree": 295
+      "weighted_degree": 302
     },
     {
       "article_count": 69,
@@ -327,7 +327,7 @@
       "weighted_degree": 282
     },
     {
-      "article_count": 61,
+      "article_count": 62,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
       "degree": 52,
@@ -337,7 +337,7 @@
       "legacy_id": "深度学习",
       "name": "深度学习",
       "rank": 25,
-      "weighted_degree": 269
+      "weighted_degree": 276
     },
     {
       "article_count": 78,
@@ -392,7 +392,7 @@
       "weighted_degree": 227
     },
     {
-      "article_count": 97,
+      "article_count": 98,
       "category": "article_tag",
       "community_id": "community:other",
       "degree": 9,
@@ -402,10 +402,10 @@
       "legacy_id": "工程实践",
       "name": "工程实践",
       "rank": 30,
-      "weighted_degree": 199
+      "weighted_degree": 201
     },
     {
-      "article_count": 96,
+      "article_count": 97,
       "category": "article_tag",
       "community_id": "community:other",
       "degree": 2,
@@ -415,7 +415,7 @@
       "legacy_id": "来源转写",
       "name": "来源转写",
       "rank": 31,
-      "weighted_degree": 192
+      "weighted_degree": 194
     },
     {
       "article_count": 26,
@@ -431,7 +431,7 @@
       "weighted_degree": 157
     },
     {
-      "article_count": 48,
+      "article_count": 49,
       "category": "article_tag",
       "community_id": "community:tag:大语言模型",
       "degree": 10,
@@ -441,7 +441,7 @@
       "legacy_id": "cs.LG",
       "name": "cs.LG",
       "rank": 33,
-      "weighted_degree": 152
+      "weighted_degree": 155
     },
     {
       "article_count": 43,
@@ -600,6 +600,19 @@
       "weighted_degree": 77
     },
     {
+      "article_count": 9,
+      "category": "article_tag",
+      "community_id": "community:tag:Technical How-to",
+      "degree": 17,
+      "description": "文章标签: Amazon SageMaker HyperPod",
+      "id": "tag:Amazon SageMaker HyperPod",
+      "layer": "tag",
+      "legacy_id": "Amazon SageMaker HyperPod",
+      "name": "Amazon SageMaker HyperPod",
+      "rank": 46,
+      "weighted_degree": 60
+    },
+    {
       "article_count": 10,
       "category": "article_tag",
       "community_id": "community:tag:Technical How-to",
@@ -609,7 +622,7 @@
       "layer": "tag",
       "legacy_id": "Foundational (100)",
       "name": "Foundational (100)",
-      "rank": 46,
+      "rank": 47,
       "weighted_degree": 58
     },
     {
@@ -622,7 +635,7 @@
       "layer": "tag",
       "legacy_id": "Best Practices",
       "name": "Best Practices",
-      "rank": 47,
+      "rank": 48,
       "weighted_degree": 56
     },
     {
@@ -635,21 +648,8 @@
       "layer": "tag",
       "legacy_id": "AI 安全",
       "name": "AI 安全",
-      "rank": 48,
-      "weighted_degree": 54.6
-    },
-    {
-      "article_count": 8,
-      "category": "article_tag",
-      "community_id": "community:tag:Technical How-to",
-      "degree": 17,
-      "description": "文章标签: Amazon SageMaker HyperPod",
-      "id": "tag:Amazon SageMaker HyperPod",
-      "layer": "tag",
-      "legacy_id": "Amazon SageMaker HyperPod",
-      "name": "Amazon SageMaker HyperPod",
       "rank": 49,
-      "weighted_degree": 53
+      "weighted_degree": 54.6
     },
     {
       "article_count": 7,
@@ -1406,7 +1406,7 @@
       "weighted_degree": 8.6
     },
     {
-      "article_count": 932,
+      "article_count": 934,
       "category": "nlp",
       "community_id": null,
       "degree": 8,
@@ -1510,7 +1510,7 @@
       "weighted_degree": 7.6
     },
     {
-      "article_count": 1253,
+      "article_count": 1255,
       "category": "ai",
       "community_id": null,
       "degree": 10,
@@ -2576,7 +2576,7 @@
       "weighted_degree": 5
     },
     {
-      "article_count": 1005,
+      "article_count": 1006,
       "category": "ai",
       "community_id": null,
       "degree": 5,
@@ -3070,7 +3070,7 @@
       "weighted_degree": 2.8
     },
     {
-      "article_count": 932,
+      "article_count": 934,
       "category": "ai",
       "community_id": null,
       "degree": 3,
