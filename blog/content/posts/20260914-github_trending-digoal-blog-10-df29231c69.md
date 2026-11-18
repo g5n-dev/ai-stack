@@ -13,9 +13,9 @@ source_snapshot_sha256: "sha256:301bef2237ef050cfabb8504268bd51fd80bbab65725cbfa
 source_payload_sha256: "sha256:49337dbc32ddb5e0e30f61f41480d19597308a1054ae77ba4019e348060a7331"
 observation_id: obs_df29231c6908a5705978c67197119473604d3d81f2f82de0fb256078ef3ea659
 event_id: evt_4af3324ff7fdd7ef94222f45e2540626e6985ace378c39c3e791829f17c20bad
-revision_id: rev_91a96ba9cf82356d42614acc5f320e59f29ec3a3cd3098d5b5d254f5c70fb106
-first_seen_at: 2026-09-14T06:16:48.374866Z
-timestamp_confidence: unknown
+revision_id: rev_24a140e230e7c8a57f5790b9bae41119059e26cbda7fa662057f0aea241862c4
+first_seen_at: 2026-09-14T06:29:48Z
+timestamp_confidence: git
 lineage_relation: original
 extractor_version: "source-contract-v1"
 discovery_method: "repository_metadata"
@@ -27,7 +27,7 @@ description: "当前只保存了标题与来源元数据，未抓取外链全文
 external_url: https://github.com/digoal/blog
 parent_observation_id: null
 source_published_at: null
-last_seen_at: 2026-09-14T06:16:48.374866Z
+last_seen_at: 2026-11-18T00:00:00Z
 ---
 
 ## 基本信息

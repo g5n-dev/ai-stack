@@ -1,8 +1,8 @@
 {
-  "active_count": 3205,
+  "active_count": 3208,
   "archived_count": 276,
-  "complete_count": 98,
-  "interpreted_brief_count": 352,
+  "complete_count": 99,
+  "interpreted_brief_count": 353,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23852,6 +23852,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20261118-arxiv-spool-low-latency-streaming-inference-for-hybrid-v-0-aa0e7ab947.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261118-arxiv-vira-toward-ultra-high-resolution-visual-agents-vi-0-51009fb859.md": {
       "reasons": [
         "interpreted_source_card"
@@ -23877,6 +23883,12 @@
       "status": "source_brief"
     },
     "posts/20261118-hacker_news-launch-hn-starsling-yc-p25-self-improving-ci-for-a-14-7bd4069e0f.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261118-hacker_news-when-ai-knows-more-than-it-can-offer-5-5ccdc02824.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -23915,10 +23927,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2755,
-  "source_file_count": 3481,
-  "source_tree_sha256": "547961e73152f47c90f177acba47fe95ac38dc9dba5e8b576e7503741d9b4aef",
-  "verified_provenance_count": 3205,
+  "source_brief_count": 2756,
+  "source_file_count": 3484,
+  "source_tree_sha256": "969103bf66f48d31d1795aaf8052cd38071abf275e53dba04fa5fc3b0c6c10e4",
+  "verified_provenance_count": 3208,
   "warning_counts": {
     "source_excerpt_truncated": 825
   }
