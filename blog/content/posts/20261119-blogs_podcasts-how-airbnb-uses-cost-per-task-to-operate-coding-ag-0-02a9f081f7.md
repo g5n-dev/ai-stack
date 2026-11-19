@@ -15,7 +15,7 @@ observation_id: obs_02a9f081f7220770d133b5928d994e7885fa25ce0b6eff6c1d405f4bdfe3
 event_id: evt_77766f45c9266a4dcc8f24d34866268194cdf083dbc3d6ae1cef3ce8507925d3
 revision_id: rev_64486973f3b50506af0d47c6afb491bf4b7fd2f656bd20940e3e750fc7a7a14a
 source_published_at: 2026-11-18T21:48:19Z
-first_seen_at: 2026-11-18T21:55:42.544131Z
+first_seen_at: 2026-11-18T22:06:59Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:f42ed45d107efc52ee85c5f72022b203818642970f1ac27b3
 description: "Airbnb 介绍了如何用真实工程任务评测编码代理模型，并通过 Amazon Bedrock 和 Amazon CloudWatch 持续监控生产表现。核心依据是每项任务成本，同时关注延迟、限流和 token 消耗。"
 external_url: https://aws.amazon.com/blogs/machine-learning/how-airbnb-uses-cost-per-task-to-operate-coding-agents-on-amazon-bedrock
 parent_observation_id: null
-last_seen_at: 2026-11-18T21:55:42.544131Z
+last_seen_at: 2026-11-19T00:00:00Z
 ---
 
 ## 基本信息
