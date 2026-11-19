@@ -1,8 +1,8 @@
 {
-  "active_count": 3220,
+  "active_count": 3224,
   "archived_count": 276,
   "complete_count": 102,
-  "interpreted_brief_count": 356,
+  "interpreted_brief_count": 357,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23947,6 +23947,33 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20261120-arxiv-knowing-what-you-know-a-trait-theory-of-reviewer-v-0-9414947fea.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20261120-blogs_podcasts-amazon-sagemaker-ai-now-detects-latency-drift-idle-0-735d1f9416.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261120-hacker_news-anthropic-hits-2t-in-nasdaq-debut-0-fa5917e879.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261120-juejin-2027年ai终于要开始干活了-0-98efc2daf6.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     }
   },
   "quarantined_count": 0,
@@ -23981,11 +24008,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2762,
-  "source_file_count": 3496,
-  "source_tree_sha256": "4512d263230a6a5b8719ec88a50f381f67f281a64fc7fc8d247f39222bb27368",
-  "verified_provenance_count": 3220,
+  "source_brief_count": 2765,
+  "source_file_count": 3500,
+  "source_tree_sha256": "5e2f5808e26274d3a4192408e0c199e599507e183f8167f4cdba5273295fc240",
+  "verified_provenance_count": 3224,
   "warning_counts": {
-    "source_excerpt_truncated": 825
+    "source_excerpt_truncated": 826
   }
 }
