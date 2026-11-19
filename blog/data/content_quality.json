@@ -1,8 +1,8 @@
 {
-  "active_count": 3216,
+  "active_count": 3220,
   "archived_count": 276,
-  "complete_count": 101,
-  "interpreted_brief_count": 355,
+  "complete_count": 102,
+  "interpreted_brief_count": 356,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23894,6 +23894,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20261119-arxiv-jailbreak-detection-on-large-language-models-via-c-0-e497c044e0.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261119-arxiv-rsibench-infra-can-agents-optimize-their-own-train-0-8c79a09d70.md": {
       "reasons": [
         "interpreted_source_card"
@@ -23901,6 +23907,12 @@
       "status": "interpreted_brief"
     },
     "posts/20261119-arxiv-stringqft-a-multiuse-textbook-resource-for-ai-assi-0-d0ceadb35a.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261119-blogs_podcasts-ainews-gemini-4-neon-gdms-opussol-contender-0-d095f837df.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -23925,6 +23937,12 @@
       "status": "source_brief"
     },
     "posts/20261119-hacker_news-gemini-4-neon-looks-like-an-opus-55-competitor-1-8d685e65ac.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261119-hacker_news-the-ai-superintelligence-debate-has-serious-flaws-2-68905d8de4.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -23963,10 +23981,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2760,
-  "source_file_count": 3492,
-  "source_tree_sha256": "db252d562a29d76249fd4abe4ba3527229c7898d48eb2d0411bf958a8ae64031",
-  "verified_provenance_count": 3216,
+  "source_brief_count": 2762,
+  "source_file_count": 3496,
+  "source_tree_sha256": "4512d263230a6a5b8719ec88a50f381f67f281a64fc7fc8d247f39222bb27368",
+  "verified_provenance_count": 3220,
   "warning_counts": {
     "source_excerpt_truncated": 825
   }
