@@ -13,9 +13,9 @@ source_snapshot_sha256: "sha256:29fe363278749ece71ebea31e8889e3a37f38626debbaac5
 source_payload_sha256: "sha256:95fb049b4f5cf76d7d944977f7d9fc818488fd9c7453d42dd8fcc00c532e1e69"
 observation_id: obs_be0aed2f51056a6d6c6f6be3844c842fd10cee1a25a0713c0c8c904167c3b26d
 event_id: evt_04f512cd267e3948257b664ce65ba5b1b00fce7a8c865e0979de96ac2446c8ea
-revision_id: rev_e30c3a0d4830e1e59da55c8db70978e550441123d83a81aa51f3c52561c2ccfa
+revision_id: rev_e6efdca237cb5e0fbe741d72002570a6ede5ab15f27bdff2fdb1222687c7b844
 source_published_at: 2026-11-18T21:34:07Z
-first_seen_at: 2026-11-18T21:55:30.601004Z
+first_seen_at: 2026-11-18T22:06:59Z
 timestamp_confidence: platform
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 13
 description: "当前只保存了标题与来源元数据，未抓取外链全文。请以原始来源和 Hacker News 讨论为准。"
 external_url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon
 parent_observation_id: null
-last_seen_at: 2026-11-18T21:55:30.601004Z
+last_seen_at: 2026-11-19T00:00:00Z
 ---
 
 ## 基本信息
