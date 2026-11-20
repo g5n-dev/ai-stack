@@ -1,8 +1,8 @@
 {
-  "active_count": 3224,
+  "active_count": 3228,
   "archived_count": 276,
-  "complete_count": 102,
-  "interpreted_brief_count": 357,
+  "complete_count": 103,
+  "interpreted_brief_count": 359,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23954,13 +23954,34 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20261120-arxiv-studying-ai-act-mentions-a-first-look-at-the-impac-2-a1b1611890.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261120-blogs_podcasts-amazon-sagemaker-ai-now-detects-latency-drift-idle-0-735d1f9416.md": {
       "reasons": [
         "concise_source_card"
       ],
       "status": "source_brief"
     },
+    "posts/20261120-blogs_podcasts-amazon-sagemaker-inference-2026-launches-in-review-0-06863d94c1.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20261120-hacker_news-anthropic-hits-2t-in-nasdaq-debut-0-fa5917e879.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261120-hacker_news-gemini-4-neon-is-the-new-1-on-the-models-engineeri-0-bda522de56.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -24008,11 +24029,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2765,
-  "source_file_count": 3500,
-  "source_tree_sha256": "5e2f5808e26274d3a4192408e0c199e599507e183f8167f4cdba5273295fc240",
-  "verified_provenance_count": 3224,
+  "source_brief_count": 2766,
+  "source_file_count": 3504,
+  "source_tree_sha256": "d2b0e637ba51c436d324216a9d0731a00cebce81b602d18285375fa50debf79b",
+  "verified_provenance_count": 3228,
   "warning_counts": {
-    "source_excerpt_truncated": 826
+    "source_excerpt_truncated": 827
   }
 }
