@@ -15,7 +15,7 @@ observation_id: obs_735d1f9416d3ebe29eda2dc6b8ca22f34615537abf1071f67dc7800af182
 event_id: evt_015e0fad275cbf5fbcc8fc1164fd8713eead10ee9f40248745f1aca635448489
 revision_id: rev_8eefff5ec381563d6cbeaa8919b35f95628bdfb019e7b5eac90c01273bc93e20
 source_published_at: 2026-11-19T21:28:18Z
-first_seen_at: 2026-11-19T21:30:58.632179Z
+first_seen_at: 2026-11-19T21:42:04Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 110
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-ai-now-detects-latency-drift-idle-gpus-and-missed-optimizations-on-your-inference-endpoints
 parent_observation_id: null
-last_seen_at: 2026-11-19T21:30:58.632179Z
+last_seen_at: 2026-11-20T00:00:00Z
 ---
 
 ## 基本信息
