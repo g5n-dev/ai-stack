@@ -1,8 +1,8 @@
 {
-  "active_count": 3228,
+  "active_count": 3232,
   "archived_count": 276,
-  "complete_count": 103,
-  "interpreted_brief_count": 359,
+  "complete_count": 104,
+  "interpreted_brief_count": 360,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -23954,11 +23954,26 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20261120-arxiv-rl-post-training-in-diffusion-transformers-is-acti-0-63c5d50779.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20261120-arxiv-studying-ai-act-mentions-a-first-look-at-the-impac-2-a1b1611890.md": {
       "reasons": [
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20261120-blogs_podcasts-ainews-anthropic-successfully-completes-largest-ip-0-6db12e7d3e.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     },
     "posts/20261120-blogs_podcasts-amazon-sagemaker-ai-now-detects-latency-drift-idle-0-735d1f9416.md": {
       "reasons": [
@@ -23976,6 +23991,12 @@
       ]
     },
     "posts/20261120-hacker_news-anthropic-hits-2t-in-nasdaq-debut-0-fa5917e879.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261120-hacker_news-frostbite-a-new-cpu-architecture-discovered-design-0-3381c1b46b.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -24029,11 +24050,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2766,
-  "source_file_count": 3504,
-  "source_tree_sha256": "d2b0e637ba51c436d324216a9d0731a00cebce81b602d18285375fa50debf79b",
-  "verified_provenance_count": 3228,
+  "source_brief_count": 2768,
+  "source_file_count": 3508,
+  "source_tree_sha256": "1e0368eca3fcefc443c1bba48bb02dd764c28dd3caede66115fefa05ff68c726",
+  "verified_provenance_count": 3232,
   "warning_counts": {
-    "source_excerpt_truncated": 827
+    "source_excerpt_truncated": 828
   }
 }
