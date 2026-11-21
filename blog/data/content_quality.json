@@ -1,5 +1,5 @@
 {
-  "active_count": 3236,
+  "active_count": 3239,
   "archived_count": 276,
   "complete_count": 105,
   "interpreted_brief_count": 362,
@@ -24023,6 +24023,21 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20261121-arxiv-tidecache-efficient-hybrid-llm-serving-with-transp-0-024d4dfaa9.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261121-blogs_podcasts-ainews-riemann-hypothesis-provedtwice-independentl-0-005f4a3e67.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20261121-blogs_podcasts-new-in-aws-quick-more-capable-flows-an-updated-web-0-4867bfdeb8.md": {
       "reasons": [
         "interpreted_source_card"
@@ -24030,6 +24045,12 @@
       "status": "interpreted_brief"
     },
     "posts/20261121-hacker_news-ai-may-have-solved-the-most-important-problem-in-m-9-22abd62956.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261121-hacker_news-clawdos-an-ai-coding-agent-for-dos-3-8497bc1e7a.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -24068,11 +24089,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2769,
-  "source_file_count": 3512,
-  "source_tree_sha256": "8daa035cdff0b685cdeefb0c1a00f008f078d3340543063aea44b4421d45baa6",
-  "verified_provenance_count": 3236,
+  "source_brief_count": 2772,
+  "source_file_count": 3515,
+  "source_tree_sha256": "c65eeca97ea135082b8ef1616ec2c02b0cec6dc6f724e8399438515224f206ed",
+  "verified_provenance_count": 3239,
   "warning_counts": {
-    "source_excerpt_truncated": 828
+    "source_excerpt_truncated": 829
   }
 }
