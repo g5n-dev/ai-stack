@@ -1,8 +1,8 @@
 {
-  "active_count": 3242,
+  "active_count": 3244,
   "archived_count": 276,
-  "complete_count": 105,
-  "interpreted_brief_count": 363,
+  "complete_count": 106,
+  "interpreted_brief_count": 364,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -24056,6 +24056,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20261122-arxiv-agentrobocritic-understanding-the-capability-of-fr-0-107bf7631d.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261122-arxiv-one-prior-two-dynamics-repurposing-video-diffusion-0-4023643184.md": {
       "reasons": [
         "concise_source_card"
@@ -24108,9 +24114,9 @@
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2774,
-  "source_file_count": 3518,
-  "source_tree_sha256": "bf3809a45c96ab454f4745ac286788124ba8edd4d395aad4acba2396c4f1b15c",
-  "verified_provenance_count": 3242,
+  "source_file_count": 3520,
+  "source_tree_sha256": "70fcf695ad20bac86aef2c18df52636e42d4015291a0a81cce821d522f354525",
+  "verified_provenance_count": 3244,
   "warning_counts": {
     "source_excerpt_truncated": 829
   }
