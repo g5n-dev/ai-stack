@@ -1,8 +1,8 @@
 {
-  "active_count": 3232,
+  "active_count": 3236,
   "archived_count": 276,
-  "complete_count": 104,
-  "interpreted_brief_count": 360,
+  "complete_count": 105,
+  "interpreted_brief_count": 362,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -24016,6 +24016,24 @@
       "warnings": [
         "source_excerpt_truncated"
       ]
+    },
+    "posts/20261121-arxiv-playcraft-designing-engaging-games-from-agent-play-0-1d08b2a6b5.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20261121-blogs_podcasts-new-in-aws-quick-more-capable-flows-an-updated-web-0-4867bfdeb8.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20261121-hacker_news-ai-may-have-solved-the-most-important-problem-in-m-9-22abd62956.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -24050,10 +24068,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2768,
-  "source_file_count": 3508,
-  "source_tree_sha256": "1e0368eca3fcefc443c1bba48bb02dd764c28dd3caede66115fefa05ff68c726",
-  "verified_provenance_count": 3232,
+  "source_brief_count": 2769,
+  "source_file_count": 3512,
+  "source_tree_sha256": "8daa035cdff0b685cdeefb0c1a00f008f078d3340543063aea44b4421d45baa6",
+  "verified_provenance_count": 3236,
   "warning_counts": {
     "source_excerpt_truncated": 828
   }
