@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:815a4e26730313192ea7bfff78767a7547cf14b31bdedb4b
 source_payload_sha256: "sha256:e5aa26dfaeb25fe0efeaeb220b6651d999683bd99eeb1be005ef55d5a9b3607a"
 observation_id: obs_06863d94c187626f5c0040cd089396ebd8c0fde1a55f3f9834e8ca12590ad8ad
 event_id: evt_5ebcb2b2ab3be8a3d2c7dbddc45b71e3f094c6c43c1242bb00b35da59258e2b9
-revision_id: rev_90cf6fe2cc27fd2c0d6ca7348e952b49fd238994bf7507fffada2bb1d2cc9ad0
+revision_id: rev_0fc0402a329bf79c532d306729989bc28495850e008ca0bab8d8152203c0f81e
 source_published_at: 2026-11-20T00:34:07Z
 first_seen_at: 2026-11-20T03:24:40Z
 timestamp_confidence: feed
@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:a8b5a240850899ea72d5895ad441b4f7dd446f196baa7335e
 description: "盘点 Amazon SageMaker 在 2026 年推出的推理能力更新，聚焦模型上线后的配置选型、GPU 资源利用、跨区域路由和延迟治理。内容通过一个客服助手团队，说明推理推荐、并发压测与部署的衔接方式。"
 external_url: https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-inference-2026-launches-in-review-part-2
 parent_observation_id: null
-last_seen_at: 2026-11-20T03:12:04.575499Z
+last_seen_at: 2026-11-21T00:00:00Z
 ---
 
 ## 基本信息
