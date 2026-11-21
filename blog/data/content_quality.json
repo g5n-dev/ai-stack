@@ -1,8 +1,8 @@
 {
-  "active_count": 3239,
+  "active_count": 3242,
   "archived_count": 276,
   "complete_count": 105,
-  "interpreted_brief_count": 362,
+  "interpreted_brief_count": 363,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -24055,6 +24055,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20261122-arxiv-one-prior-two-dynamics-repurposing-video-diffusion-0-4023643184.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261122-blogs_podcasts-cut-self-hosted-llm-cost-and-latency-with-the-dist-0-f6e744ab21.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20261122-hacker_news-llms-can-read-and-write-executables-byte-by-byte-f-16-afb244eb4a.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -24089,10 +24107,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2772,
-  "source_file_count": 3515,
-  "source_tree_sha256": "c65eeca97ea135082b8ef1616ec2c02b0cec6dc6f724e8399438515224f206ed",
-  "verified_provenance_count": 3239,
+  "source_brief_count": 2774,
+  "source_file_count": 3518,
+  "source_tree_sha256": "bf3809a45c96ab454f4745ac286788124ba8edd4d395aad4acba2396c4f1b15c",
+  "verified_provenance_count": 3242,
   "warning_counts": {
     "source_excerpt_truncated": 829
   }
