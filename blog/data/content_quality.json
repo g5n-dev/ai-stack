@@ -1,8 +1,8 @@
 {
-  "active_count": 3251,
+  "active_count": 3255,
   "archived_count": 276,
-  "complete_count": 107,
-  "interpreted_brief_count": 367,
+  "complete_count": 108,
+  "interpreted_brief_count": 368,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -24118,6 +24118,24 @@
       "warnings": [
         "source_excerpt_truncated"
       ]
+    },
+    "posts/20261123-arxiv-sok-assessing-the-evolution-of-llm-capability-in-s-0-1de91b6d50.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20261123-blogs_podcasts-perplexity-and-intelligence-0-1a10f1676d.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261123-hacker_news-show-hn-i-built-a-game-where-you-are-an-llms-subag-2-9e90f9c094.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -24152,10 +24170,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2777,
-  "source_file_count": 3527,
-  "source_tree_sha256": "ead9cc5229e6847577ebd1ba2d2ac1d79a4332a3b56fcd5190f7e7b8a2d8ea93",
-  "verified_provenance_count": 3251,
+  "source_brief_count": 2779,
+  "source_file_count": 3531,
+  "source_tree_sha256": "a63a1a201e0c248d4b87a802b02fc12e2e98344f00035a1f7bc6b3715852af00",
+  "verified_provenance_count": 3255,
   "warning_counts": {
     "source_excerpt_truncated": 830
   }
