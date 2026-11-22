@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T23:15:21Z",
+  "generated_at": "2026-11-22T03:11:17Z",
   "layers": {
     "application": {
       "color": "#7aa6b8",
@@ -626,7 +626,7 @@
       "weighted_degree": 2
     },
     {
-      "article_count": 1022,
+      "article_count": 1024,
       "category": "ai",
       "color": "#7aa6b8",
       "community_id": null,
@@ -643,7 +643,7 @@
       "weighted_degree": 4.4
     },
     {
-      "article_count": 1278,
+      "article_count": 1280,
       "category": "ai",
       "color": "#cbd5e1",
       "community_id": null,
@@ -656,7 +656,7 @@
       "legacy_id": "ai_ml",
       "level": 5,
       "name": "AI/ML项目",
-      "rank": 117,
+      "rank": 118,
       "weighted_degree": 7.2
     },
     {
@@ -690,7 +690,7 @@
       "legacy_id": "api",
       "level": 4,
       "name": "API服务",
-      "rank": 105,
+      "rank": 106,
       "weighted_degree": 9.6
     },
     {
@@ -1319,7 +1319,7 @@
       "legacy_id": "llm",
       "level": 3,
       "name": "大语言模型",
-      "rank": 109,
+      "rank": 110,
       "weighted_degree": 7.6
     },
     {
@@ -1506,7 +1506,7 @@
       "legacy_id": "python",
       "level": 1,
       "name": "Python",
-      "rank": 110,
+      "rank": 111,
       "weighted_degree": 7.6
     },
     {
@@ -1523,7 +1523,7 @@
       "legacy_id": "pytorch",
       "level": 2,
       "name": "PyTorch",
-      "rank": 180,
+      "rank": 181,
       "weighted_degree": 7
     },
     {
@@ -1540,7 +1540,7 @@
       "legacy_id": "rag",
       "level": 4,
       "name": "RAG应用",
-      "rank": 181,
+      "rank": 182,
       "weighted_degree": 6.6
     },
     {
@@ -1778,7 +1778,7 @@
       "legacy_id": "webapp",
       "level": 4,
       "name": "Web应用",
-      "rank": 100,
+      "rank": 101,
       "weighted_degree": 11
     }
   ],

@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:8d076f939f4d4a282cde9fd42d50630bc796daaf9cd661d20
 description: "这是 AWS Agent Toolkit 中的分布式 KV 缓存 Skill，可在编码智能体中评估、部署和排查基于 Amazon ElastiCache 的共享 KV 缓存，用于降低自托管 LLM 的推理成本与首字延迟。"
 external_url: https://aws.amazon.com/blogs/machine-learning/cut-self-hosted-llm-cost-and-latency-with-the-distributed-kv-caching-agent-skill
 parent_observation_id: null
-last_seen_at: 2026-11-21T17:29:56.528168Z
+last_seen_at: 2026-11-22T00:00:00Z
 ---
 
 ## 基本信息

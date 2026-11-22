@@ -23,12 +23,12 @@ source_title_chars_original: 29
 description: "核心结论 来源介绍的是一种面向企业私有资料的检索增强流程：通过文档分片、向量化与索引，把内部资料转换为可检索的知识单元，再将相关原文片段交给大语言模型生成回答。其目标是让模型回答时参考企业资料，而不只是依赖通用模型的既有知识。 这一结论描述的是技术机制，不等同于模型已经掌握业务，也不代表回答必然准确或可靠。"
 external_url: https://juejin.cn/post/7710499585361575945
 observation_id: obs_bbfbabb4050d4d0f3227db2f5974fe7afb95c006e0e81f63fd0848fc202ca20e
-revision_id: rev_3117a4b1d6931b1693d1ef11a5da212bb0abaf5963ba5fe3b320576bb7296cae
+revision_id: rev_c939b29bcc7021d9aa01c5fceb7654ee32b0efe4641577b3dbb7d1219e462f58
 event_id: evt_b6e5f9a9a93e453146f67ec39b8eccad1af120674fa29020cc97931553d3a3a6
 lineage_relation: original
 parent_observation_id: null
-first_seen_at: 2026-11-21T23:13:46.527310Z
-last_seen_at: 2026-11-21T23:15:21Z
+first_seen_at: 2026-11-22T03:10:08.829557Z
+last_seen_at: 2026-11-22T00:00:00Z
 ---
 
 ## 转写说明

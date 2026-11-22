@@ -15,7 +15,7 @@ observation_id: obs_107bf7631dd21fedffe20e388530bc64f2e5e240fd9b264bb87fefdd9dd5
 event_id: evt_a0b2991be2e7686f7e580e786b527cc826ec85df98154994659baa5a14e82d09
 revision_id: rev_2d47b8d7a45ee7fbe65e477626391e09f76ea94c7cea107d11a783aef014b878
 source_published_at: 2026-11-19T18:57:25Z
-first_seen_at: 2026-11-21T23:13:45.656484Z
+first_seen_at: 2026-11-21T23:25:20Z
 timestamp_confidence: publisher
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:9c95014dd810c20929374be8c64f039e067bd0e7b5a72247a
 description: "AgentRoboCritic 从动作层分析多模态语言智能体直接控制机器人的表现：策略智能体为每个动作说明局部意图，评论器据此判断执行结果与失败原因。研究覆盖 12 个操作基准，并发布 12,844 条动作标注数据及微调后的开源评论器 Muse-Glimmer-30B。"
 external_url: http://arxiv.org/abs/2611.26613v1
 parent_observation_id: null
-last_seen_at: 2026-11-21T23:13:45.656484Z
+last_seen_at: 2026-11-22T00:00:00Z
 ---
 
 ## 基本信息
