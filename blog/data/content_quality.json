@@ -1,8 +1,8 @@
 {
-  "active_count": 3244,
+  "active_count": 3248,
   "archived_count": 276,
   "complete_count": 106,
-  "interpreted_brief_count": 364,
+  "interpreted_brief_count": 366,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -24062,6 +24062,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20261122-arxiv-bio-pm-guided-synthetic-imu-generation-0-6ec98b90f5.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261122-arxiv-one-prior-two-dynamics-repurposing-video-diffusion-0-4023643184.md": {
       "reasons": [
         "concise_source_card"
@@ -24074,11 +24080,32 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20261122-blogs_podcasts-meta-ads-is-now-available-in-aws-quick-0-7cedfd958b.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261122-hacker_news-llms-can-read-and-write-executables-byte-by-byte-f-16-afb244eb4a.md": {
       "reasons": [
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20261122-hacker_news-pandex-official-european-law-for-ai-agents-over-mc-11-414bab6a17.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261122-juejin-agent开发-01function-callingai-如何调用工具-0-436c1e293a.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     }
   },
   "quarantined_count": 0,
@@ -24113,11 +24140,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2774,
-  "source_file_count": 3520,
-  "source_tree_sha256": "70fcf695ad20bac86aef2c18df52636e42d4015291a0a81cce821d522f354525",
-  "verified_provenance_count": 3244,
+  "source_brief_count": 2776,
+  "source_file_count": 3524,
+  "source_tree_sha256": "3004dd3f9d21194d58a186f1b25142ad25373ef4eb59905c7149c97227642e91",
+  "verified_provenance_count": 3248,
   "warning_counts": {
-    "source_excerpt_truncated": 829
+    "source_excerpt_truncated": 830
   }
 }

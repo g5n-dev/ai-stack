@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:a8b5a240850899ea72d5895ad441b4f7dd446f196baa7335e
 description: "盘点 Amazon SageMaker 在 2026 年推出的推理能力更新，聚焦模型上线后的配置选型、GPU 资源利用、跨区域路由和延迟治理。内容通过一个客服助手团队，说明推理推荐、并发压测与部署的衔接方式。"
 external_url: https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-inference-2026-launches-in-review-part-2
 parent_observation_id: null
-last_seen_at: 2026-11-21T00:00:00Z
+last_seen_at: 2026-11-22T00:00:00Z
 ---
 
 ## 基本信息

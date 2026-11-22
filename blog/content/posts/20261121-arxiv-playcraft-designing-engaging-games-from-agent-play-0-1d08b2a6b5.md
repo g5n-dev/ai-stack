@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:6d4bb7109cdb1a5f4b7a8f0e9f119a3d4fb1e2e5cfb5ae382
 description: "PlayCraft 是一种自动化游戏设计框架，通过视觉代理反复试玩并记录决策、进展与反思，再据此修改游戏，使玩家获得更有意义的练习机会，逐步提升能力。"
 external_url: http://arxiv.org/abs/2611.26624v1
 parent_observation_id: null
-last_seen_at: 2026-11-21T01:30:50.329324Z
+last_seen_at: 2026-11-22T00:00:00Z
 ---
 
 ## 基本信息
