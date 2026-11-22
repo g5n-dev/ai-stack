@@ -1,8 +1,8 @@
 {
-  "active_count": 3248,
+  "active_count": 3251,
   "archived_count": 276,
-  "complete_count": 106,
-  "interpreted_brief_count": 366,
+  "complete_count": 107,
+  "interpreted_brief_count": 367,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -24068,6 +24068,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20261122-arxiv-depth-pro-2-sharp-and-temporally-consistent-metric-0-e4d0d396cf.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261122-arxiv-one-prior-two-dynamics-repurposing-video-diffusion-0-4023643184.md": {
       "reasons": [
         "concise_source_card"
@@ -24085,6 +24091,12 @@
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20261122-hacker_news-87-of-the-anthropic-power-will-come-from-gas-and-1-16-d7e78f94bc.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20261122-hacker_news-llms-can-read-and-write-executables-byte-by-byte-f-16-afb244eb4a.md": {
       "reasons": [
@@ -24140,10 +24152,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2776,
-  "source_file_count": 3524,
-  "source_tree_sha256": "3004dd3f9d21194d58a186f1b25142ad25373ef4eb59905c7149c97227642e91",
-  "verified_provenance_count": 3248,
+  "source_brief_count": 2777,
+  "source_file_count": 3527,
+  "source_tree_sha256": "ead9cc5229e6847577ebd1ba2d2ac1d79a4332a3b56fcd5190f7e7b8a2d8ea93",
+  "verified_provenance_count": 3251,
   "warning_counts": {
     "source_excerpt_truncated": 830
   }
