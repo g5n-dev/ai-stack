@@ -23,7 +23,7 @@ source_title_chars_original: 30
 description: "核心结论 WorkBuddy 的「电脑操控」可在独立虚拟桌面中执行鼠标、键盘等 GUI 操作。来源实测覆盖了浏览器、画图和文件管理器三类任务，场景包括处理弹窗并访问网址、按描述修正未闭合图形、归整素材。 首次启用后，系统能够创建独立桌面，但 WorkBuddy 执行任务时提示 操作被拒绝。"
 external_url: https://juejin.cn/post/7710647322555760691
 observation_id: obs_935896c5be364d7f8e106796d5ddcfaec0cf0bffdf6e72c1fcc0577c0bc3925a
-revision_id: rev_37523679c58092b863173f3282de39caa1438a60dca24dedda5aab9917b48d28
+revision_id: rev_24bda69ac038d3a57ab883c84982c753228a78622e8c5164f5fcd993a9e16177
 event_id: evt_657e5661254f7c9c1491d622a1265e8be7266c9b7a180c6a15616aa93336f609
 lineage_relation: original
 parent_observation_id: null
