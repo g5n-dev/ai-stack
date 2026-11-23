@@ -23,12 +23,12 @@ source_title_chars_original: 46
 description: "核心结论 Spring Insight 将运行时设置从 中拆出，采用“启动默认值 + 本地 JSON 覆盖 + 内存当前值”的方式实现热更新。 和 仍负责从 或环境变量读取启动配置。服务启动时若存在 ，优先加载该文件；文件不存在或读取失败时，才使用启动配置。"
 external_url: https://juejin.cn/post/7710449704619147300
 observation_id: obs_e88be5f30a6b6da5f023feb2365b6e338c61d3be77f1625d696f31ffa61e41d5
-revision_id: rev_ba592789182f7bffe23c730f5355157ffc29a71d5ba85c8bd4f907e8d82b0411
+revision_id: rev_8e90dff038bb53c463115ddddf37e92c8006c61e1a1cf1003ef2de38352f104f
 event_id: evt_c0ce94a68724af85381fdf65d77f09a2bb6a359abfe97563d1a2c2f8d49d7362
 lineage_relation: original
 parent_observation_id: null
-first_seen_at: 2026-11-22T19:36:12.861603Z
-last_seen_at: 2026-11-22T11:21:00Z
+first_seen_at: 2026-11-23T00:50:37.381819Z
+last_seen_at: 2026-11-23T00:00:00Z
 ---
 
 ## 转写说明

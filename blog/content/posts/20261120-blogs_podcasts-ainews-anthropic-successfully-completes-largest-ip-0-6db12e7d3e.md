@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:36211fca079386eb8bebcea6cda9c2fca7aa9b2612b0fc467
 description: "这是一份 Anthropic 上市当日的 AI 新闻简报，涵盖其 IPO 定价与首日表现、融资规模、治理结构、安全承诺及算力投入压力。"
 external_url: https://latent.space/p/ainews-anthropic-successfully-completes-largest-ipo-in-history-valued-at-1-5t
 parent_observation_id: null
-last_seen_at: 2026-11-22T00:00:00Z
+last_seen_at: 2026-11-23T00:00:00Z
 ---
 
 ## 基本信息

@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:2ba3d6a7c80acbafc29c2bdbd4d34659cb17522aeba2fe19d
 description: "AWS Quick 新增 Meta Ads AI 连接器，让营销团队通过自然语言分析广告表现、创建或修改广告系列，并结合其他业务数据生成看板、演示文稿和自动化流程。"
 external_url: https://aws.amazon.com/blogs/machine-learning/meta-ads-is-now-available-in-aws-quick
 parent_observation_id: null
-last_seen_at: 2026-11-22T03:10:15.057256Z
+last_seen_at: 2026-11-23T00:00:00Z
 ---
 
 ## 基本信息
