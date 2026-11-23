@@ -1,8 +1,8 @@
 {
-  "active_count": 3256,
+  "active_count": 3259,
   "archived_count": 276,
-  "complete_count": 108,
-  "interpreted_brief_count": 368,
+  "complete_count": 109,
+  "interpreted_brief_count": 370,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -24119,7 +24119,19 @@
         "source_excerpt_truncated"
       ]
     },
+    "posts/20261123-arxiv-memonce-a-scalable-memory-architecture-for-large-l-2-d43ec4840a.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261123-arxiv-sok-assessing-the-evolution-of-llm-capability-in-s-0-1de91b6d50.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20261123-blogs_podcasts-ai-driven-technique-could-help-engineers-design-an-0-e652a8cea9.md": {
       "reasons": [
         "interpreted_source_card"
       ],
@@ -24177,9 +24189,9 @@
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
   "source_brief_count": 2780,
-  "source_file_count": 3532,
-  "source_tree_sha256": "e45e6aed55dec9694292c556acdd249cb16d0d6b73fd101f0fecbfa95e025c71",
-  "verified_provenance_count": 3256,
+  "source_file_count": 3535,
+  "source_tree_sha256": "9bcea6710c9e2db5f0dc2ee1c952d81a0a10d490fef292e73774a9056434fbb8",
+  "verified_provenance_count": 3259,
   "warning_counts": {
     "source_excerpt_truncated": 830
   }
