@@ -1,5 +1,5 @@
 {
-  "active_count": 3255,
+  "active_count": 3256,
   "archived_count": 276,
   "complete_count": 108,
   "interpreted_brief_count": 368,
@@ -24131,6 +24131,12 @@
       ],
       "status": "source_brief"
     },
+    "posts/20261123-hacker_news-a-beginners-guide-to-local-ai-with-inkling-qwen-an-1-a9f7ae49b5.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
     "posts/20261123-hacker_news-show-hn-i-built-a-game-where-you-are-an-llms-subag-2-9e90f9c094.md": {
       "reasons": [
         "concise_source_card"
@@ -24170,10 +24176,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2779,
-  "source_file_count": 3531,
-  "source_tree_sha256": "a63a1a201e0c248d4b87a802b02fc12e2e98344f00035a1f7bc6b3715852af00",
-  "verified_provenance_count": 3255,
+  "source_brief_count": 2780,
+  "source_file_count": 3532,
+  "source_tree_sha256": "e45e6aed55dec9694292c556acdd249cb16d0d6b73fd101f0fecbfa95e025c71",
+  "verified_provenance_count": 3256,
   "warning_counts": {
     "source_excerpt_truncated": 830
   }

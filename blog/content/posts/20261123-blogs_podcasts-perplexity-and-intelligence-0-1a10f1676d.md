@@ -15,7 +15,7 @@ observation_id: obs_1a10f1676d46fc01a909d8eab6d17033b89331ee5fd1f1e04952fc2f6f54
 event_id: evt_8394f177ebb1c39a32a1e408f76e7154e392f6cd187e4dcdb25d54207048e813
 revision_id: rev_d8363a911a3f23e730dec68908ae010122fe55c930160c47b19e0bf1bd6c8280
 source_published_at: 2026-11-22T00:00:00Z
-first_seen_at: 2026-11-22T19:36:14.355218Z
+first_seen_at: 2026-11-22T19:46:54Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 27
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://openai.com/index/perplexity-and-intelligence
 parent_observation_id: null
-last_seen_at: 2026-11-22T19:36:14.355218Z
+last_seen_at: 2026-11-23T00:00:00Z
 ---
 
 ## 基本信息
