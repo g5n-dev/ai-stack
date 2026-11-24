@@ -1,8 +1,8 @@
 {
-  "active_count": 3266,
+  "active_count": 3269,
   "archived_count": 276,
   "complete_count": 110,
-  "interpreted_brief_count": 370,
+  "interpreted_brief_count": 371,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -24190,6 +24190,24 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20261125-arxiv-pruning-autonomous-driving-vlas-what-to-preserve-f-0-82e438455d.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20261125-blogs_podcasts-how-gemini-is-changing-the-game-for-golden-states--0-a7a0adf7d6.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261125-hacker_news-llm-agents-work-for-their-parent-companies-not-for-7-02e2793598.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -24224,10 +24242,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2786,
-  "source_file_count": 3542,
-  "source_tree_sha256": "fd51c78c463f54c1a2b8020263de6abd3d447f156b19d3f5321f8fa7a709797e",
-  "verified_provenance_count": 3266,
+  "source_brief_count": 2788,
+  "source_file_count": 3545,
+  "source_tree_sha256": "9a8a2a30ec627e731ee7732d0ba859b6d5b61dac4768acd5f307cc6940656066",
+  "verified_provenance_count": 3269,
   "warning_counts": {
     "source_excerpt_truncated": 830
   }
