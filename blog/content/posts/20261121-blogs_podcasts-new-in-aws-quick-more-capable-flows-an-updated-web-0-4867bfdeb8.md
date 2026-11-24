@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:ecbe994259cdc53ac621755803933607f930a804a1c51bf9c
 description: "AWS Quick 发布新功能，重点是通过对话创建和改进业务流程，并让多个专业智能体协同处理任务、汇总结果。更新还包括网页端体验、技能复用、数据连接、安全治理和多语言支持。"
 external_url: https://aws.amazon.com/blogs/machine-learning/new-in-aws-quick-more-capable-flows-an-updated-web-experience-and-agents-that-work-together
 parent_observation_id: null
-last_seen_at: 2026-11-23T00:00:00Z
+last_seen_at: 2026-11-24T00:00:00Z
 ---
 
 ## 基本信息
