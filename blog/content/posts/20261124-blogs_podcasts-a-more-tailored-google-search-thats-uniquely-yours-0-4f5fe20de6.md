@@ -15,7 +15,7 @@ observation_id: obs_4f5fe20de68e9dfdec37bc312e73f8b092a226bb2cfacfa2a0e45f240086
 event_id: evt_8f16576511995b4dec61b18fddb5d2e8086b958f9dc9139f33e4c31affc28953
 revision_id: rev_30f410a43522fe0736c0f0709842b6e12ac8160e1831c547829e6ed17cf1a185
 source_published_at: 2026-11-23T17:00:00Z
-first_seen_at: 2026-11-23T21:19:48.308677Z
+first_seen_at: 2026-11-23T21:36:50Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 51
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps
 parent_observation_id: null
-last_seen_at: 2026-11-23T21:19:48.308677Z
+last_seen_at: 2026-11-24T00:00:00Z
 ---
 
 ## 基本信息
