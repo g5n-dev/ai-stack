@@ -31,8 +31,9 @@ def test_frontend_index_validation_accepts_zero_topics() -> None:
 def test_js_window_contract_tolerates_empty_or_identical_windows() -> None:
     source = (ROOT / "tests" / "js" / "test_trends.mjs").read_text(encoding="utf-8")
 
-    assert "if (dayIds.length > 0 || monthIds.length > 0)" in source
-    assert "assert.notDeepEqual(dayIds, monthIds)" in source
+    assert "assert.equal(window.window, name)" in source
+    assert "assert.equal(window.trends.length, reference.trend_count)" in source
+    assert "assert.equal(paths.size, 3)" in source
 
 
 def test_e2e_tolerates_a_window_without_topic_cards() -> None:

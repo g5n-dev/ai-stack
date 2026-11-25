@@ -24,8 +24,9 @@
   const WINDOW_SCHEMA_V2 = "stack_trends_window_v2";
   const TOPIC_SCHEMA_V2 = "stack_trends_topic_v2";
   const WINDOWS = Object.freeze(["24h", "7d", "30d"]);
-  const SIGNALS = Object.freeze(["all", "new", "rising", "steady", "cooling"]);
+  const SIGNALS = Object.freeze(["all", "new", "rising", "steady", "cooling", "insufficient_baseline"]);
   const VIEWS = Object.freeze(["matrix", "list"]);
+  const DEFAULT_VIEW = "list";
   const COMPONENTS = Object.freeze([
     "quantity",
     "growth",
@@ -55,8 +56,11 @@
     rising: "上升",
     steady: "稳定",
     cooling: "降温",
+    insufficient_baseline: "基线不足",
   });
-  const STATE_GLYPHS = Object.freeze({ new: "✦", rising: "↑", steady: "•", cooling: "↓" });
+  const STATE_GLYPHS = Object.freeze({
+    new: "✦", rising: "↑", steady: "•", cooling: "↓", insufficient_baseline: "—",
+  });
   const HEAT_VISUALS = Object.freeze([
     Object.freeze({ key: "cold", label: "低热", minimum: 0, color: "#75818d", rgb: "117,129,141", rings: 2, glow: 0.08 }),
     Object.freeze({ key: "watch", label: "观察", minimum: 50, color: "#7fb0c9", rgb: "127,176,201", rings: 3, glow: 0.14 }),
@@ -201,6 +205,12 @@
   function topicId(value, context = "topic id") {
     if (typeof value !== "string" || !TOPIC_ID.test(value) || value !== value.trim()) fail(context);
     return value;
+  }
+
+  function graphNodeId(value, id, context, v2) {
+    if (v2 && value === null) return null;
+    if (!v2 && value !== id) fail(context);
+    return topicId(value, context);
   }
 
   function safeAssetPath(value, context = "asset path") {
@@ -430,6 +440,38 @@
     });
   }
 
+  function validateComparison(value, context) {
+    assertExactFields(value, [
+      "baseline_available", "acceleration_available", "has_prior_evidence", "sample_counts", "shares",
+    ], context);
+    const { baseline_available, acceleration_available, has_prior_evidence } = value;
+    if (
+      typeof baseline_available !== "boolean"
+      || typeof acceleration_available !== "boolean"
+      || typeof has_prior_evidence !== "boolean"
+      || (acceleration_available && !baseline_available)
+    ) fail(context);
+    const sampleCounts = validateCounts(value.sample_counts, `${context} sample counts`);
+    assertExactFields(value.shares, ["current", "previous", "pre_previous"], `${context} shares`);
+    function historicalShare(key, available) {
+      const share = value.shares[key];
+      if (available) return finiteNumber(share, `${context} ${key} share`, 0, 1);
+      if (share !== null) fail(`${context} ${key} share`);
+      return null;
+    }
+    return Object.freeze({
+      baseline_available,
+      acceleration_available,
+      has_prior_evidence,
+      sample_counts: sampleCounts,
+      shares: Object.freeze({
+        current: finiteNumber(value.shares.current, `${context} current share`, 0, 1),
+        previous: historicalShare("previous", baseline_available),
+        pre_previous: historicalShare("pre_previous", acceleration_available),
+      }),
+    });
+  }
+
   function validateComponents(value, context) {
     assertExactFields(value, COMPONENTS, context);
     return Object.freeze(Object.fromEntries(
@@ -474,9 +516,12 @@
       "detail_path",
     ];
     if (v2) fields.push("redundant_observations", "source_diversity");
+    const hasDescription = v2 && Object.hasOwn(value || {}, "description");
+    const hasComparison = v2 && Object.hasOwn(value || {}, "comparison");
+    if (hasDescription) fields.push("description");
+    if (hasComparison) fields.push("comparison");
     assertExactFields(value, fields, context);
     const id = topicId(value.id, `${context} id`);
-    if (value.graph_node_id !== id) fail(`${context} graph node`);
     const uniqueEvents = safeInteger(value.unique_events, `${context} unique_events`, 3, 100000);
     const observations = safeInteger(value.observations, `${context} observations`, 3, 1000000);
     const redundant = v2
@@ -488,7 +533,9 @@
     return Object.freeze({
       id,
       topic: canonicalText(value.topic, `${context} topic`, 200),
-      graph_node_id: id,
+      graph_node_id: graphNodeId(value.graph_node_id, id, `${context} graph node`, v2),
+      ...(hasDescription ? { description: canonicalText(value.description, `${context} description`, 600, true) } : {}),
+      ...(hasComparison ? { comparison: validateComparison(value.comparison, `${context} comparison`) } : {}),
       score: finiteNumber(value.score, `${context} score`, 0, 100),
       state: validateSignal(value.state, `${context} state`),
       confidence: validateConfidence(value.confidence, `${context} confidence`),
@@ -578,6 +625,8 @@
       "sparkline",
     ];
     if (v2) fields.push("observations", "redundant_observations", "source_diversity");
+    const hasComparison = v2 && Object.hasOwn(value || {}, "comparison");
+    if (hasComparison) fields.push("comparison");
     assertExactFields(value, fields, context);
     const uniqueEvents = safeInteger(value.unique_events, `${context} events`, 3, 100000);
     const observations = v2
@@ -602,10 +651,11 @@
         : safeInteger(value.unique_sources, `${context} sources`, 1, 10000),
       counts: validateCounts(value.counts, `${context} counts`),
       sparkline: validateSparkline(value.sparkline, `${context} sparkline`),
+      ...(hasComparison ? { comparison: validateComparison(value.comparison, `${context} comparison`) } : {}),
     });
   }
 
-  function validateRelatedTopic(value, context) {
+  function validateRelatedTopic(value, context, v2) {
     assertExactFields(value, [
       "id",
       "topic",
@@ -614,11 +664,10 @@
       "jaccard",
     ], context);
     const id = topicId(value.id, `${context} id`);
-    if (value.graph_node_id !== id) fail(`${context} graph node`);
     return Object.freeze({
       id,
       topic: canonicalText(value.topic, `${context} topic`, 200),
-      graph_node_id: id,
+      graph_node_id: graphNodeId(value.graph_node_id, id, `${context} graph node`, v2),
       cooccurrence: safeInteger(value.cooccurrence, `${context} cooccurrence`, 2, 100000),
       jaccard: finiteNumber(value.jaccard, `${context} jaccard`, 0, 1),
     });
@@ -739,20 +788,20 @@
       || (index && v2 !== (index.schema_version === INDEX_SCHEMA_V2))
     ) fail("topic schema");
     const id = topicId(value.id, "topic id");
-    if (id !== expectedId || value.graph_node_id !== id) fail("topic identity");
+    if (id !== expectedId) fail("topic identity");
     const dataAsOf = timestamp(value.data_as_of, "topic data_as_of");
     if (index && dataAsOf !== index.data_as_of) fail("topic cutoff");
     assertExactFields(value.windows, WINDOWS, "topic windows");
     if (!Array.isArray(value.related_topics) || value.related_topics.length > 12) fail("related topics");
     if (!Array.isArray(value.evidence) || value.evidence.length > MAX_EVIDENCE) fail("topic evidence");
     const relatedTopics = value.related_topics.map((item, position) => (
-      validateRelatedTopic(item, `related_topics[${position}]`)
+      validateRelatedTopic(item, `related_topics[${position}]`, v2)
     ));
     return Object.freeze({
       schema_version: value.schema_version,
       id,
       topic: canonicalText(value.topic, "topic label", 200),
-      graph_node_id: id,
+      graph_node_id: graphNodeId(value.graph_node_id, id, "topic graph node", v2),
       data_as_of: dataAsOf,
       description: canonicalText(value.description, "topic description", 600, true),
       windows: Object.freeze(Object.fromEntries(
@@ -790,7 +839,7 @@
       scenario: normalizeStateText(params.get("scenario") || "", 160),
       query: normalizeStateText(params.get("query") || "", 100),
       topic: TOPIC_ID.test(rawTopic) && rawTopic === rawTopic.trim() ? rawTopic : "",
-      view: VIEWS.includes(view) ? view : "matrix",
+      view: VIEWS.includes(view) ? view : DEFAULT_VIEW,
     };
   }
 
@@ -803,7 +852,7 @@
     if (normalizeStateText(state.scenario, 160)) params.set("scenario", normalizeStateText(state.scenario, 160));
     if (normalizeStateText(state.query, 100)) params.set("query", normalizeStateText(state.query, 100));
     if (TOPIC_ID.test(state.topic || "")) params.set("topic", state.topic);
-    if (state.view === "list") params.set("view", "list");
+    if (VIEWS.includes(state.view)) params.set("view", state.view);
     return `?${params.toString()}`;
   }
 
@@ -867,7 +916,7 @@
     const filtered = trends.filter((trend) => {
       if (!trend || typeof trend !== "object") return false;
       if (signal !== "all" && trend.state !== signal) return false;
-      if (query && !normalizeCompare(trend.topic).includes(query)) return false;
+      if (query && ![trend.topic, trend.description].some((value) => normalizeCompare(value).includes(query))) return false;
       if (source && !(trend.sources || []).some((item) => normalizeCompare(item.name) === source)) return false;
       if (scenario && !(trend.scenarios || []).some((item) => normalizeCompare(item.name) === scenario)) return false;
       return true;
@@ -2420,6 +2469,7 @@
 
     function renderList(trends) {
       elements.list.replaceChildren();
+      const expanded = model.state.view === DEFAULT_VIEW;
       trends.forEach((item) => {
         const rank = model.windowData.trends.findIndex((candidate) => candidate.id === item.id) + 1;
         const visual = heatVisual(item.score);
@@ -2432,9 +2482,19 @@
         button.className = "trend-card__button";
         button.dataset.topicId = item.id;
         button.setAttribute("aria-pressed", String(model.state.topic === item.id));
+        const evidenceCopy = `${scoreCopy.evidence} 条独立事件 · ${scoreCopy.sources} 个来源渠道`;
+        const status = [scoreCopy.status, evidenceCopy];
+        if (item.comparison?.baseline_available) {
+          const { current, previous } = item.comparison.shares;
+          const change = new Intl.NumberFormat("zh-CN", {
+            maximumFractionDigits: 1, signDisplay: "exceptZero",
+          }).format((current - previous) * 100);
+          status.push(`收录占比 ${change} 个百分点`);
+        }
         button.setAttribute(
           "aria-label",
-          `查看 ${item.topic} 趋势详情，${scoreCopy.status}，${scoreCopy.heat}，综合得分 ${scoreCopy.score}，${scoreCopy.evidence} 篇证据，${scoreCopy.sources} 个来源`,
+          [`查看 ${item.topic} 趋势详情`, ...status, `综合得分 ${scoreCopy.score}`, item.description]
+            .filter(Boolean).join("，"),
         );
         appendText(document, button, "span", "trend-card__rank", String(rank).padStart(2, "0"));
         const copy = document.createElement("span");
@@ -2445,8 +2505,11 @@
           copy,
           "small",
           "trend-card__meta",
-          scoreCopy.status,
+          expanded ? status.join(" · ") : scoreCopy.status,
         );
+        if (expanded && item.description) {
+          appendText(document, copy, "span", "trend-card__description", item.description);
+        }
         button.append(copy);
         const details = document.createElement("span");
         details.className = "trend-card__focus-details";
@@ -2508,7 +2571,7 @@
       setButtonStates();
       setStatus(
         trends.length
-          ? `已发现 ${trends.length} 个可解释趋势；拓扑首屏显示至多 ${MAX_TOPOLOGY_CELLS} 个主题细胞域，选择即可下钻证据。`
+          ? `当前窗口收录 ${trends.length} 个技术议题。选择议题查看证据与历史比较。`
           : "当前筛选没有趋势信号。",
       );
     }
@@ -2518,9 +2581,9 @@
       const placeholder = document.createElement("div");
       placeholder.className = "trend-detail__placeholder";
       appendText(document, placeholder, "p", "trend-panel-index", "03 / EVIDENCE DRILLDOWN");
-      const heading = appendText(document, placeholder, "h2", "", "主题详情");
+      const heading = appendText(document, placeholder, "h2", "", "议题详情");
       heading.id = "trend-detail-title";
-      appendText(document, placeholder, "p", "", "选择趋势气泡或排名条目，查看评分依据、关联主题和证据文章。");
+      appendText(document, placeholder, "p", "", "选择议题查看变化依据和证据文章。");
       appendText(document, placeholder, "small", "", "站内文章在当前标签页打开；使用浏览器返回可恢复当前趋势状态。");
       elements.detail.append(placeholder);
     }
@@ -2556,11 +2619,23 @@
     function appendMetricGrid(parent, signal) {
       const metrics = document.createElement("dl");
       metrics.className = "trend-metric-grid";
-      [
-        ["当前证据", formatNumber(signal.unique_events)],
-        ["来源覆盖", formatNumber(signal.unique_sources)],
+      const comparison = signal.comparison;
+      const formatShare = new Intl.NumberFormat("zh-CN", { style: "percent", maximumFractionDigits: 1 });
+      const history = comparison ? [
+        ["本期占比", formatShare.format(comparison.shares.current)],
+        ["上期占比", comparison.baseline_available
+          ? formatShare.format(comparison.shares.previous)
+          : "基线不足"],
+      ] : [
         ["上一周期", formatNumber(signal.counts.previous)],
         ["前两周期", formatNumber(signal.counts.pre_previous)],
+      ];
+      [
+        ["本期事件", comparison
+          ? `${formatNumber(signal.unique_events)} / ${formatNumber(comparison.sample_counts.current)}`
+          : formatNumber(signal.unique_events)],
+        ["来源覆盖", formatNumber(signal.unique_sources)],
+        ...history,
       ].forEach(([label, value]) => {
         const cell = document.createElement("div");
         appendText(document, cell, "dt", "", label);
@@ -2570,11 +2645,11 @@
       parent.append(metrics);
     }
 
-    function appendComponents(parent, components) {
-      if (!components) return;
+    function appendComponents(parent, signal) {
+      if (!signal.components) return;
       const section = document.createElement("section");
       section.className = "trend-detail-section";
-      appendText(document, section, "h3", "", "为什么形成趋势");
+      appendText(document, section, "h3", "", "评分构成");
       const list = document.createElement("ul");
       list.className = "trend-component-list";
       COMPONENTS.forEach((name) => {
@@ -2583,12 +2658,19 @@
         appendText(document, row, "span", "", COMPONENT_LABELS[name]);
         const bar = document.createElement("span");
         bar.className = "trend-component-bar";
-        const fill = document.createElement("span");
-        fill.style.width = `${Math.round(components[name] * 100)}%`;
-        bar.append(fill);
+        const available = !(signal.comparison && (
+          (name === "growth" && !signal.comparison.baseline_available)
+          || (name === "acceleration" && !signal.comparison.acceleration_available)
+        ));
+        const percentage = `${Math.round(signal.components[name] * 100)}%`;
+        if (available) {
+          const fill = document.createElement("span");
+          fill.style.width = percentage;
+          bar.append(fill);
+        }
         row.append(bar);
         const output = document.createElement("output");
-        output.textContent = `${Math.round(components[name] * 100)}%`;
+        output.textContent = available ? percentage : "基线不足";
         row.append(output);
         list.append(row);
       });
@@ -2636,7 +2718,9 @@
         section,
         "p",
         "trend-score-method__definition",
-        `增长：${explanation.growthDefinition}；加速度：${explanation.accelerationDefinition}。两者 0.5 表示持平或无加速，所有子项限制在 0–1。`,
+        signal.comparison
+          ? "增长与加速度按议题事件占本站可分析事件的比例计算。历史采样不足时，相应评分项取中性值 0.5。"
+          : `增长：${explanation.growthDefinition}；加速度：${explanation.accelerationDefinition}。两者 0.5 表示持平或无加速，所有子项限制在 0–1。`,
       );
       parent.append(section);
     }
@@ -2678,11 +2762,11 @@
       parent.append(section);
     }
 
-    function appendEvidence(parent, evidence) {
+    function appendEvidence(parent, evidence, windowName) {
       if (!evidence.length) return;
       const section = document.createElement("section");
       section.className = "trend-detail-section";
-      appendText(document, section, "h3", "", `30 天证据文章（${evidence.length}）`);
+      appendText(document, section, "h3", "", `${WINDOW_LABELS[windowName]}证据文章（${evidence.length}）`);
       const list = document.createElement("ol");
       list.className = "trend-evidence-list";
       evidence.slice(0, model.visibleEvidence).forEach((item) => {
@@ -2800,16 +2884,18 @@
 
       const actions = document.createElement("div");
       actions.className = "trend-detail__actions";
-      const graph = document.createElement("a");
-      graph.className = "trend-link trend-link--graph";
-      graph.href = buildGraphUrl(
-        topic.graph_node_id,
-        root.dataset.basePath || "/",
-        buildTrendReturnUrl(windowObject.location.pathname, model.state),
-      );
-      graph.textContent = "进入知识图谱聚焦";
-      actions.append(graph);
-      if (model.watchlistStore) {
+      if (topic.graph_node_id) {
+        const graph = document.createElement("a");
+        graph.className = "trend-link trend-link--graph";
+        graph.href = buildGraphUrl(
+          topic.graph_node_id,
+          root.dataset.basePath || "/",
+          buildTrendReturnUrl(windowObject.location.pathname, model.state),
+        );
+        graph.textContent = topic.graph_node_id === topic.id ? "进入知识图谱聚焦" : "相关领域图谱";
+        actions.append(graph);
+      }
+      if (model.watchlistStore && topic.graph_node_id === topic.id) {
         const watchlist = document.createElement("button");
         watchlist.type = "button";
         watchlist.className = "trend-button";
@@ -2819,10 +2905,20 @@
         watchlist.textContent = active ? "已关注主题" : "关注此主题";
         actions.append(watchlist);
       }
-      elements.detail.append(actions);
+      if (actions.childElementCount) elements.detail.append(actions);
+
+      if (signal) appendMetricGrid(elements.detail, signal);
+      const evidenceWindow = signal ? model.state.window : "30d";
+      const cutoff = Date.parse(topic.data_as_of);
+      const span = WINDOW_BUCKETS[evidenceWindow];
+      const start = cutoff - span.span * (span.unit === "天" ? 86400000 : 3600000);
+      const evidence = topic.evidence.filter((item) => {
+        const published = Date.parse(item.published_at);
+        return published >= start && published <= cutoff;
+      });
+      appendEvidence(elements.detail, evidence, evidenceWindow);
 
       if (signal) {
-        appendMetricGrid(elements.detail, signal);
         appendScoreExplanation(elements.detail, signal);
         const seriesSection = document.createElement("section");
         seriesSection.className = "trend-detail-section";
@@ -2836,12 +2932,11 @@
         drawSparkline(canvas, signal.sparkline, signal.state);
       }
 
-      if (signal) appendComponents(elements.detail, signal.components);
+      if (signal) appendComponents(elements.detail, signal);
       appendTagSection(elements.detail, "30 天来源分布", topic.sources, "trend-source-tag", formatSourceName);
       appendTagSection(elements.detail, "30 天场景", topic.scenarios, "trend-category-tag");
       appendTagSection(elements.detail, "30 天内容分类", topic.categories, "trend-category-tag");
       appendRelatedTopics(elements.detail, topic.related_topics);
-      appendEvidence(elements.detail, topic.evidence);
     }
 
     function showDetailLoading() {
