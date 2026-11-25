@@ -13,9 +13,9 @@ source_snapshot_sha256: "sha256:80405b69106e6384a3b8e48eb8630e283e84605fce87e7a1
 source_payload_sha256: "sha256:401251ee48144c15e51c7f09df459a64c72abf07355b66d92e7d9a9f725cbfe6"
 observation_id: obs_b24333cc89f9425e4c7b7f37e91c2730963337e70f4eaef977a7aab882a8bf68
 event_id: evt_63414ebf64ace13d54e2c5269119a33e33978d8ce3b200a7c7497543470921ad
-revision_id: rev_78dc0fe5f3c208b6866233d24b620c7d7c75d2421610f6a7ed8ea2212b7527ac
+revision_id: rev_9d676028545b79e0729b18dd19298b92b99c625a4f4be73dcfb7f0b14094038e
 source_published_at: 2026-11-24T05:01:14Z
-first_seen_at: 2026-11-24T06:00:23.958335Z
+first_seen_at: 2026-11-24T06:16:24Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 126
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://aws.amazon.com/blogs/machine-learning/introducing-the-amazon-bedrock-trusted-access-api-with-anthropics-enterprise-frontier-safeguards-and-enterprise-data-controls
 parent_observation_id: null
-last_seen_at: 2026-11-24T06:00:23.958335Z
+last_seen_at: 2026-11-25T00:00:00Z
 ---
 
 ## 基本信息
