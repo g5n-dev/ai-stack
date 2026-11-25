@@ -1,8 +1,8 @@
 {
-  "active_count": 3270,
+  "active_count": 3274,
   "archived_count": 276,
-  "complete_count": 111,
-  "interpreted_brief_count": 371,
+  "complete_count": 112,
+  "interpreted_brief_count": 373,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -24191,13 +24191,34 @@
       ],
       "status": "source_brief"
     },
+    "posts/20261125-arxiv-omniact-one-policy-one-million-embodiments-0-39e67b1b4a.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261125-arxiv-repoeviagent-scalable-synthesis-of-evidence-ground-1-2b2797e6aa.md": {
       "reasons": [
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
     },
+    "posts/20261125-blogs_podcasts-ainews-gemini-4-neon-marks-gdms-full-return-as-a-f-0-2ec26a87fb.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
     "posts/20261125-blogs_podcasts-how-gemini-is-changing-the-game-for-golden-states--0-a7a0adf7d6.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261125-hacker_news-marginalia-search-money-c-rust-ai-stuff-11-ee73c619e3.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -24242,11 +24263,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2788,
-  "source_file_count": 3546,
-  "source_tree_sha256": "9fb943e7215590f5e6c05d117a72015827c27fc54a53a88bbfdd98c3960d8dd3",
-  "verified_provenance_count": 3270,
+  "source_brief_count": 2789,
+  "source_file_count": 3550,
+  "source_tree_sha256": "eb28924152408b801c4dd788acdd5bfc495753f04691f89b31a65ecdcaf9c5e8",
+  "verified_provenance_count": 3274,
   "warning_counts": {
-    "source_excerpt_truncated": 830
+    "source_excerpt_truncated": 831
   }
 }
