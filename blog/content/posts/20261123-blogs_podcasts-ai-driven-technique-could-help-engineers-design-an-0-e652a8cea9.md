@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:50516f26bc4a6ceda95e6921dbdc49b4744a06e4e26bcdde0
 description: "MIT 研究人员提出 SLIC，通过多轮强化学习和可验证奖励，训练小型语言模型自动设计模拟集成电路，并让模型依据仿真反馈持续优化方案。"
 external_url: https://news.mit.edu/2026/ai-driven-technique-could-help-engineers-design-analog-chips-faster-and-less-expensive-1123
 parent_observation_id: null
-last_seen_at: 2026-11-24T00:00:00Z
+last_seen_at: 2026-11-25T00:00:00Z
 ---
 
 ## 基本信息
