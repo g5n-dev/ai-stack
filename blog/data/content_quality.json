@@ -1,8 +1,8 @@
 {
-  "active_count": 3274,
+  "active_count": 3278,
   "archived_count": 276,
-  "complete_count": 111,
-  "interpreted_brief_count": 373,
+  "complete_count": 112,
+  "interpreted_brief_count": 375,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -24209,11 +24209,26 @@
       ],
       "status": "source_brief"
     },
+    "posts/20261126-arxiv-attack-policy-selection-can-mislead-monitor-evalua-2-4638abcd39.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261126-arxiv-spectrum-adaptation-of-ai-native-autoencoder-commu-0-379874b07d.md": {
       "reasons": [
         "interpreted_source_card"
       ],
       "status": "interpreted_brief"
+    },
+    "posts/20261126-blogs_podcasts-ainews-math-proofs-are-landing-faster-than-we-can--0-821974e795.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     },
     "posts/20261126-blogs_podcasts-the-revolution-vs-the-renaissance-thariq-shihipar--0-ccba21fa22.md": {
       "reasons": [
@@ -24222,6 +24237,12 @@
       "status": "interpreted_brief"
     },
     "posts/20261126-hacker_news-much-shorter-version-of-grh-lean-verification-from-2-d0f4230142.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261126-hacker_news-the-new-york-times-warns-photographers-not-to-upda-6-1bfb90103b.md": {
       "reasons": [
         "concise_source_card"
       ],
@@ -24269,11 +24290,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2790,
-  "source_file_count": 3550,
-  "source_tree_sha256": "90d8fb57f59504ad5495d4ad64af31c457d12a7623bb9269431a9b2d2cab4e35",
-  "verified_provenance_count": 3274,
+  "source_brief_count": 2791,
+  "source_file_count": 3554,
+  "source_tree_sha256": "0d5a758c9aadfde4f7b8db168b730ceef29ca4c9e83a2f3f2486e2132cf40137",
+  "verified_provenance_count": 3278,
   "warning_counts": {
-    "source_excerpt_truncated": 831
+    "source_excerpt_truncated": 832
   }
 }
