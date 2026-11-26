@@ -15,7 +15,7 @@ observation_id: obs_a7a0adf7d6c734e350c9ea11283c0fe8c513cc2bb1d3bcd56555bd53c3f8
 event_id: evt_852ac9ee9cc01ec6a0dfa4270d57c88882ca518242a99d488d8e81dd5604b2f5
 revision_id: rev_dafcf190a7ccb680a85b2cbfda1898291ed22620ce56aecd6c9f17690d1542ac
 source_published_at: 2026-11-24T16:00:00Z
-first_seen_at: 2026-11-25T02:24:58.854228Z
+first_seen_at: 2026-11-25T02:35:40Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -27,7 +27,7 @@ source_title_chars_original: 73
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://blog.google/products-and-platforms/products/gemini/gemini-golden-state
 parent_observation_id: null
-last_seen_at: 2026-11-25T02:24:58.854228Z
+last_seen_at: 2026-11-26T00:00:00Z
 ---
 
 ## 基本信息
