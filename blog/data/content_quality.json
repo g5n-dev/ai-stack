@@ -1,8 +1,8 @@
 {
-  "active_count": 3270,
+  "active_count": 3274,
   "archived_count": 276,
   "complete_count": 111,
-  "interpreted_brief_count": 371,
+  "interpreted_brief_count": 373,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -24208,6 +24208,33 @@
         "concise_source_card"
       ],
       "status": "source_brief"
+    },
+    "posts/20261126-arxiv-spectrum-adaptation-of-ai-native-autoencoder-commu-0-379874b07d.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20261126-blogs_podcasts-the-revolution-vs-the-renaissance-thariq-shihipar--0-ccba21fa22.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20261126-hacker_news-much-shorter-version-of-grh-lean-verification-from-2-d0f4230142.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
+    },
+    "posts/20261126-juejin-spring-ai-还是-langchain4j2026-年-java-接入大模型我把这笔架构赌注的-0-db05697ee8.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
     }
   },
   "quarantined_count": 0,
@@ -24242,11 +24269,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2788,
-  "source_file_count": 3546,
-  "source_tree_sha256": "9fb943e7215590f5e6c05d117a72015827c27fc54a53a88bbfdd98c3960d8dd3",
-  "verified_provenance_count": 3270,
+  "source_brief_count": 2790,
+  "source_file_count": 3550,
+  "source_tree_sha256": "90d8fb57f59504ad5495d4ad64af31c457d12a7623bb9269431a9b2d2cab4e35",
+  "verified_provenance_count": 3274,
   "warning_counts": {
-    "source_excerpt_truncated": 830
+    "source_excerpt_truncated": 831
   }
 }
