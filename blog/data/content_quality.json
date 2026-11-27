@@ -1,8 +1,8 @@
 {
-  "active_count": 3278,
+  "active_count": 3282,
   "archived_count": 276,
-  "complete_count": 112,
-  "interpreted_brief_count": 375,
+  "complete_count": 113,
+  "interpreted_brief_count": 377,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -24256,6 +24256,27 @@
       "warnings": [
         "source_excerpt_truncated"
       ]
+    },
+    "posts/20261128-arxiv-diverse-alternative-reasoning-traces-for-hard-math-3-3d5c80fa6d.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
+    "posts/20261128-blogs_podcasts-how-clay-builds-gtm-agents-jeff-barg-head-of-ai-0-5a4d59a634.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief",
+      "warnings": [
+        "source_excerpt_truncated"
+      ]
+    },
+    "posts/20261128-hacker_news-im-scared-of-ai-5-117d786447.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     }
   },
   "quarantined_count": 0,
@@ -24290,11 +24311,11 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2791,
-  "source_file_count": 3554,
-  "source_tree_sha256": "0d5a758c9aadfde4f7b8db168b730ceef29ca4c9e83a2f3f2486e2132cf40137",
-  "verified_provenance_count": 3278,
+  "source_brief_count": 2792,
+  "source_file_count": 3558,
+  "source_tree_sha256": "f4e25551be1360a2fa98435935ff2a953857e3cd52caabbddd29e64a32946210",
+  "verified_provenance_count": 3282,
   "warning_counts": {
-    "source_excerpt_truncated": 832
+    "source_excerpt_truncated": 833
   }
 }

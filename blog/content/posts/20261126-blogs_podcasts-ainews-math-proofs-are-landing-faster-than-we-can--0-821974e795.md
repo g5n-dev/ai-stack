@@ -15,7 +15,7 @@ observation_id: obs_821974e79513fdfe0fe5fb7bfc8f255f31efec24d4123ff7503bf472a6d5
 event_id: evt_1b7ceb2f2a48698e1f22a12ae995722998f01fa5a302cbcdf63ee64cf68db29b
 revision_id: rev_640c75961e8472ed9d64eed5c3e470af7c2a9b27c4a8770cdf97a191e75372e8
 source_published_at: 2026-11-25T22:23:41Z
-first_seen_at: 2026-11-26T15:12:02.755051Z
+first_seen_at: 2026-11-26T15:23:08Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:b969fcb705d151af680f94edb59cc810e1a83e0f0540deb76
 description: "这是一期 AI 新闻简报，聚焦 AI 辅助数学研究、复杂计算结果及前沿模型动态。内容涵盖矩阵乘法指数、VP ≠ VNP、Lean 形式化证明、密码学相关进展，以及 Gemini 4、GPT-6.2 等模型的表现与争议。"
 external_url: https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them
 parent_observation_id: null
-last_seen_at: 2026-11-26T15:12:02.755051Z
+last_seen_at: 2026-11-27T00:00:00Z
 ---
 
 ## 基本信息
