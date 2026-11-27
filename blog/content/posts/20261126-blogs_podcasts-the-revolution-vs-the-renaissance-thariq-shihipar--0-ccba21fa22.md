@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:2c6d374da9da18fe8f28ddb0161a2d0d590185195dfe74ded
 description: "这段内容整理了 Thariq Shihipar 在 AI Engineer CODE 的主题演讲，探讨 AI 批量降低软件生产成本后，人类如何继续投入时间打磨作品。他结合游戏调整、Mac Dock 和代码代理等实践，讨论软件工艺、个人工具、决策模型与实验资源分配。"
 external_url: https://latent.space/p/the_revolution_vs_the_renaissance_thariq_shihipar_openai
 parent_observation_id: null
-last_seen_at: 2026-11-26T05:00:43.950951Z
+last_seen_at: 2026-11-27T00:00:00Z
 ---
 
 ## 基本信息

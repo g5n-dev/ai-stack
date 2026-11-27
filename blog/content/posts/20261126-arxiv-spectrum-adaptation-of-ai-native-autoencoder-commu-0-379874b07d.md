@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:eb209382537697fc1497d96d6de17ad26ad99065bb1ba572e
 description: "该研究针对物理层自编码器通信在训练信道与实际信道不一致时误码率恶化的问题，提出迁移学习式适配方法：从 AWGN 预训练模型出发，仅更新部分收发端层，其余参数保持冻结。"
 external_url: http://arxiv.org/abs/2611.34942v1
 parent_observation_id: null
-last_seen_at: 2026-11-26T05:00:40.404336Z
+last_seen_at: 2026-11-27T00:00:00Z
 ---
 
 ## 基本信息
