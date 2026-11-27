@@ -27,7 +27,7 @@ source_title_chars_original: 73
 description: "当前保存的是 RSS 或来源节选，不代表原文全文。请以原始来源为准。"
 external_url: https://blog.google/products-and-platforms/products/gemini/gemini-golden-state
 parent_observation_id: null
-last_seen_at: 2026-11-26T00:00:00Z
+last_seen_at: 2026-11-27T00:00:00Z
 ---
 
 ## 基本信息

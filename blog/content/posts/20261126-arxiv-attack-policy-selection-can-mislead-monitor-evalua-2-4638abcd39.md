@@ -15,7 +15,7 @@ observation_id: obs_4638abcd39a0076924cd32b141b2ad7504ac4c09cb4ef93935aa933aab92
 event_id: evt_d2a40a49525816b7d854e492bd16069639cf682a799cc91b47c6867cf81a4722
 revision_id: rev_4f241f72e7ea9171a601e510e712983a775118bdc3bbd7e6e6cefbe5a9e1e761
 source_published_at: 2026-11-25T18:59:28Z
-first_seen_at: 2026-11-26T15:11:59.633684Z
+first_seen_at: 2026-11-26T15:23:08Z
 timestamp_confidence: publisher
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:bb00d3b5f5baa5859c5e015376d43663332e45a2e3c98f50d
 description: "这项研究评估了 AI 监控器识别危险行为的能力，发现漏报率会显著受到攻击策略的生成方式及优化程度影响。仅用基础攻击方法，可能高估监控器的实际表现。"
 external_url: http://arxiv.org/abs/2611.34934v1
 parent_observation_id: null
-last_seen_at: 2026-11-26T15:11:59.633684Z
+last_seen_at: 2026-11-27T00:00:00Z
 ---
 
 ## 基本信息
