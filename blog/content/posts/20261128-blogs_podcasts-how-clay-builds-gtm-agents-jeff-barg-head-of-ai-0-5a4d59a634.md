@@ -15,7 +15,7 @@ observation_id: obs_5a4d59a63415e415d375d2d7cfcf2dd7529c453790fadbd98213d2691714
 event_id: evt_3b537ecf9d51667c643791fef27514cb60a812df96b63e7d92b360279364f41f
 revision_id: rev_f064a126cf0902aebf4747e148ceee4a6be4b2f1791af51cda380ef13b854630
 source_published_at: 2026-11-26T23:02:48Z
-first_seen_at: 2026-11-27T18:57:14.228646Z
+first_seen_at: 2026-11-27T19:07:58Z
 timestamp_confidence: feed
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:87e1186f82d2f4865f4335402e46864e2cb943b7a694bc748
 description: "Clay 负责人 Jeff Barg 分享其如何构建面向市场运营的智能代理基础设施，涵盖 Sculptor 编码代理、模型路由、潜客筛选、工作流编排、代理评测与成本控制，以及为何采用 BullMQ 等自建技术栈。"
 external_url: https://latent.space/p/how-clay-builds-gtm-agents-jeff-barg-head-of-ai
 parent_observation_id: null
-last_seen_at: 2026-11-27T18:57:14.228646Z
+last_seen_at: 2026-11-28T00:00:00Z
 ---
 
 ## 基本信息

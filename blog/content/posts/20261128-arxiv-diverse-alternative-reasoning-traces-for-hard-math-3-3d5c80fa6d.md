@@ -15,7 +15,7 @@ observation_id: obs_3d5c80fa6d956b0a36e56ba82880a4d210303ede50abf415f3afb3b994b3
 event_id: evt_c77d116333744c8c667e8e84c8b02e0d4c05bcb2950aa4f5dc321b3973e8cd6a
 revision_id: rev_fe4b7011219d0d9ad241097761bd46e766ed98e6fc666038120cf59ae083b9b6
 source_published_at: 2026-11-25T18:59:11Z
-first_seen_at: 2026-11-27T18:57:10.882955Z
+first_seen_at: 2026-11-27T19:07:58Z
 timestamp_confidence: publisher
 lineage_relation: original
 extractor_version: "source-contract-v1"
@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:068d5269d95f3096a9882504fcd451eb328afc5abb6685b74
 description: "DART 从被拒绝的数学推理轨迹中拆解步骤，按位置加权的不确定性排序，再借助参考答案和元思考生成多样化替代步骤。它扩大了高难度数学问题的可解覆盖面，并可生成用于大语言模型后训练的推理数据。"
 external_url: http://arxiv.org/abs/2611.34928v1
 parent_observation_id: null
-last_seen_at: 2026-11-27T18:57:10.882955Z
+last_seen_at: 2026-11-28T00:00:00Z
 ---
 
 ## 基本信息

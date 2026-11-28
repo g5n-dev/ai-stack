@@ -1,8 +1,8 @@
 {
-  "active_count": 3282,
+  "active_count": 3284,
   "archived_count": 276,
   "complete_count": 113,
-  "interpreted_brief_count": 377,
+  "interpreted_brief_count": 378,
   "legacy_analysis_count": 0,
   "pages": {
     "posts/20260125-arxiv_ai-a-rolling-space-branch-and-price-algorithm-for-the-5.md": {
@@ -24263,6 +24263,12 @@
       ],
       "status": "interpreted_brief"
     },
+    "posts/20261128-arxiv-mixture-of-loops-transformer-3-bb18cbf717.md": {
+      "reasons": [
+        "interpreted_source_card"
+      ],
+      "status": "interpreted_brief"
+    },
     "posts/20261128-blogs_podcasts-how-clay-builds-gtm-agents-jeff-barg-head-of-ai-0-5a4d59a634.md": {
       "reasons": [
         "interpreted_source_card"
@@ -24271,6 +24277,12 @@
       "warnings": [
         "source_excerpt_truncated"
       ]
+    },
+    "posts/20261128-hacker_news-gpt-62-astra-solves-a-historical-mystery-5-fb8bde07ed.md": {
+      "reasons": [
+        "concise_source_card"
+      ],
+      "status": "source_brief"
     },
     "posts/20261128-hacker_news-im-scared-of-ai-5-117d786447.md": {
       "reasons": [
@@ -24311,10 +24323,10 @@
   },
   "rehydration_terminal_count": 276,
   "schema_version": "content_quality_manifest_v4",
-  "source_brief_count": 2792,
-  "source_file_count": 3558,
-  "source_tree_sha256": "f4e25551be1360a2fa98435935ff2a953857e3cd52caabbddd29e64a32946210",
-  "verified_provenance_count": 3282,
+  "source_brief_count": 2793,
+  "source_file_count": 3560,
+  "source_tree_sha256": "cf0e651701f5c71d4056fb2f2e7a261e4ff06a37974c466c6c8763ea8c63a0df",
+  "verified_provenance_count": 3284,
   "warning_counts": {
     "source_excerpt_truncated": 833
   }
