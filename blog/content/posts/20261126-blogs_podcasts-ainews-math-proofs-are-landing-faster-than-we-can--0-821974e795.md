@@ -13,7 +13,7 @@ source_snapshot_sha256: "sha256:a88da0682cd76bc4768a94a207be5e36862d33507780ffd6
 source_payload_sha256: "sha256:6d3d21a34a53f4159054f33d4f2c82c774ff5d2cb0bb1eaf3a2544ba62c50614"
 observation_id: obs_821974e79513fdfe0fe5fb7bfc8f255f31efec24d4123ff7503bf472a6d527f8
 event_id: evt_1b7ceb2f2a48698e1f22a12ae995722998f01fa5a302cbcdf63ee64cf68db29b
-revision_id: rev_640c75961e8472ed9d64eed5c3e470af7c2a9b27c4a8770cdf97a191e75372e8
+revision_id: rev_ece234d1fb9632df233004c8d18376edf1f4fd8040e80f7bc1670613612ef7c3
 source_published_at: 2026-11-25T22:23:41Z
 first_seen_at: 2026-11-26T15:23:08Z
 timestamp_confidence: feed
@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:b969fcb705d151af680f94edb59cc810e1a83e0f0540deb76
 description: "这是一期 AI 新闻简报，聚焦 AI 辅助数学研究、复杂计算结果及前沿模型动态。内容涵盖矩阵乘法指数、VP ≠ VNP、Lean 形式化证明、密码学相关进展，以及 Gemini 4、GPT-6.2 等模型的表现与争议。"
 external_url: https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them
 parent_observation_id: null
-last_seen_at: 2026-11-27T00:00:00Z
+last_seen_at: 2026-11-28T00:00:00Z
 ---
 
 ## 基本信息

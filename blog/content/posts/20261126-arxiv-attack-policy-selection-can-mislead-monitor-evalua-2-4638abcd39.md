@@ -28,7 +28,7 @@ interpretation_sha256: "sha256:bb00d3b5f5baa5859c5e015376d43663332e45a2e3c98f50d
 description: "这项研究评估了 AI 监控器识别危险行为的能力，发现漏报率会显著受到攻击策略的生成方式及优化程度影响。仅用基础攻击方法，可能高估监控器的实际表现。"
 external_url: http://arxiv.org/abs/2611.34934v1
 parent_observation_id: null
-last_seen_at: 2026-11-27T00:00:00Z
+last_seen_at: 2026-11-28T00:00:00Z
 ---
 
 ## 基本信息
