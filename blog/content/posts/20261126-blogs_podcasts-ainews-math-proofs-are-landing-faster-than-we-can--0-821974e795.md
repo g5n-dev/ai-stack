@@ -29,7 +29,7 @@ interpretation_sha256: "sha256:b969fcb705d151af680f94edb59cc810e1a83e0f0540deb76
 description: "这是一期 AI 新闻简报，聚焦 AI 辅助数学研究、复杂计算结果及前沿模型动态。内容涵盖矩阵乘法指数、VP ≠ VNP、Lean 形式化证明、密码学相关进展，以及 Gemini 4、GPT-6.2 等模型的表现与争议。"
 external_url: https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them
 parent_observation_id: null
-last_seen_at: 2026-11-27T00:00:00Z
+last_seen_at: 2026-11-28T00:00:00Z
 ---
 
 ## 基本信息
